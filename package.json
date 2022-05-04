@@ -5,7 +5,9 @@
 	"repository": "git@github.com:Project-Pandora-Game/tooling-template.git",
 	"license": "MIT",
 	"scripts": {
+		"prebuild": "rimraf dist out",
 		"build": "tsc -p ./tsconfig.src.json",
+		"predev": "rimraf dist out",
 		"dev": "tsc-watch -p ./tsconfig.src.json --onSuccess 'node --enable-source-maps ./dist/index --watch'",
 		"start": "node --enable-source-maps ./dist/index",
 		"lint": "eslint --max-warnings 0 .",
