@@ -1,5 +1,7 @@
 import { DefineAsset } from '../../../tools';
 
 DefineAsset({
-	name: 'Ball Gag (missing graphics)',
+	name: 'Nose 1',
+	bodypart: 'nose',
+	graphics: 'graphics.json',
 });

@@ -1,7 +1,7 @@
 import { DefineAsset } from '../../../tools';
 
 DefineAsset({
-	name: 'Base body',
-	bodypart: 'base',
+	name: 'Eyebrows 2',
+	bodypart: 'eyebrows',
 	graphics: 'graphics.json',
 });
