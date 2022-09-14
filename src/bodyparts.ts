@@ -2,16 +2,24 @@ import { AssetBodyPart, AssetsDefinitionFile } from 'pandora-common';
 
 export const BODYPART_ORDER = [
 	'base',
+	'nose',
+	'blush',
 	'eyes',
 	'eyebrows',
 	'lips',
-	'nose',
+	'sex',
 	'backhair',
 	'fronthair',
 ] as const;
 
 const BODYPART_DEFINITIONS: Record<BodypartName, Partial<Omit<AssetBodyPart, 'name'>>> = {
 	base: {
+		required: true,
+	},
+	nose: {
+		required: true,
+	},
+	blush: {
 		required: true,
 	},
 	eyes: {
@@ -23,7 +31,7 @@ const BODYPART_DEFINITIONS: Record<BodypartName, Partial<Omit<AssetBodyPart, 'na
 	lips: {
 		required: true,
 	},
-	nose: {
+	sex: {
 		required: true,
 	},
 	backhair: {

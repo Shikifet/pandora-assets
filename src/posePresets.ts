@@ -27,12 +27,22 @@ export const POSE_PRESETS: AssetsPosePresets<AllBones> =
 					armsPose: ArmsPose.FRONT,
 				},
 				{
-					name: 'Touching hips',
+					name: 'Touching hips 1',
 					pose: {
 						arm_r: 19,
 						arm_l: 19,
 						elbow_r: 112,
 						elbow_l: 112,
+					},
+					armsPose: ArmsPose.FRONT,
+				},
+				{
+					name: 'Touching hips 2',
+					pose: {
+						arm_r: 26,
+						arm_l: 26,
+						elbow_r: 97,
+						elbow_l: 97,
 					},
 					armsPose: ArmsPose.FRONT,
 				},
@@ -42,6 +52,16 @@ export const POSE_PRESETS: AssetsPosePresets<AllBones> =
 					pose: {
 						arm_r: 90,
 						elbow_r: 161,
+					},
+					armsPose: ArmsPose.FRONT,
+				},
+				{
+					name: 'Touching neck',
+					pose: {
+						arm_r: 70,
+						arm_l: 56,
+						elbow_r: 157,
+						elbow_l: 162,
 					},
 					armsPose: ArmsPose.FRONT,
 				},
@@ -143,6 +163,26 @@ export const POSE_PRESETS: AssetsPosePresets<AllBones> =
 						arm_l: 70,
 						elbow_r: 129,
 						elbow_l: 130,
+					},
+					armsPose: ArmsPose.FRONT,
+				},
+				{
+					name: 'Touching sex 1',
+					pose: {
+						arm_r: 66,
+						arm_l: 53,
+						elbow_r: 42,
+						elbow_l: 75,
+					},
+					armsPose: ArmsPose.FRONT,
+				},
+				{
+					name: 'Touching sex 2',
+					pose: {
+						arm_r: 50,
+						arm_l: 50,
+						elbow_r: 78,
+						elbow_l: 78,
 					},
 					armsPose: ArmsPose.FRONT,
 				},
@@ -258,6 +298,16 @@ export const POSE_PRESETS: AssetsPosePresets<AllBones> =
 					armsPose: ArmsPose.FRONT,
 				},
 				{
+					name: 'Up/touching',
+					pose: {
+						arm_r: -74,
+						arm_l: -74,
+						elbow_r: -43,
+						elbow_l: -43,
+					},
+					armsPose: ArmsPose.FRONT,
+				},
+				{
 					name: 'Raised',
 					pose: {
 						arm_r: -25,
@@ -339,10 +389,19 @@ export const POSE_PRESETS: AssetsPosePresets<AllBones> =
 					},
 				},
 				{
+					name: 'Spread minimally',
+					pose: {
+						leg_r: -3,
+						leg_l: -3,
+						sitting: 0,
+						kneeling: 0,
+					},
+				},
+				{
 					name: 'Spread slightly',
 					pose: {
-						leg_r: -8,
-						leg_l: -8,
+						leg_r: -10,
+						leg_l: -10,
 						sitting: 0,
 						kneeling: 0,
 					},
