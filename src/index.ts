@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import { join } from 'path';
 import { GetLogger, SetConsoleOutput, LogLevel, AssetsDefinitionFile, AssetsGraphicsDefinitionFile, logConfig } from 'pandora-common';
-import { SetCurrentContext } from './tools';
+import { GlobalDefineAsset, SetCurrentContext } from './tools';
 import rimraf from 'rimraf';
 import { AssetDatabase } from './tools/assetDatabase';
 import { ClearAllResources, DefineResourceInline, ExportAllResources } from './tools/resources';
@@ -9,23 +9,51 @@ import { RunWithWatch } from './tools/watch';
 import { boneDefinition } from './bones';
 import { GraphicsDatabase } from './tools/graphicsDatabase';
 import { BODYPARTS, ValidateBodyparts } from './bodyparts';
-import { ASSET_DEST_DIR, ASSET_SRC_DIR, DEST_DIR } from './constants';
+import { ASSET_DEST_DIR, ASSET_SRC_DIR, OUT_DIR, IS_PRODUCTION_BUILD } from './constants';
 import { LoadTemplates } from './templates';
 import { POSE_PRESETS } from './posePresets';
+import { LoadGitData } from './tools/git';
 
 const logger = GetLogger('Main');
 SetConsoleOutput(LogLevel.VERBOSE);
 
+let hadErrors = false;
+let hadWarnings = false;
+logConfig.logOutputs.push({
+	logLevel: LogLevel.DEBUG,
+	logLevelOverrides: {},
+	supportsColor: false,
+	onMessage(_prefix, _message, level) {
+		if (level === LogLevel.FATAL || level === LogLevel.ERROR) {
+			hadErrors = true;
+		} else if (level === LogLevel.WARNING) {
+			hadWarnings = true;
+		}
+	},
+});
+
 async function Run() {
+	// Setup environment
+	globalThis.DefineAsset = GlobalDefineAsset;
+
+	// Clear old data
+	hadErrors = false;
+	hadWarnings = false;
 	GraphicsDatabase.clear();
 	AssetDatabase.clear();
 	ClearAllResources();
 
+	// Load common data
+	await LoadGitData();
 	LoadTemplates();
 
 	for (const category of fs.readdirSync(ASSET_SRC_DIR)) {
-		const categoryDestPath = join(ASSET_DEST_DIR, category);
 		const categorySrcPath = join(ASSET_SRC_DIR, category);
+		const categoryDestPath = join(ASSET_DEST_DIR, category);
+
+		// Ignore non-directories in assets
+		if (!fs.statSync(categorySrcPath).isDirectory())
+			continue;
 
 		if (!fs.statSync(categoryDestPath).isDirectory()) {
 			throw new Error(`assets/${category} is not directory`);
@@ -63,12 +91,27 @@ async function Run() {
 		}
 	}
 
+	if (hadErrors) {
+		logger.fatal(`Some assets had errors while building, build failed.`);
+		return;
+	}
+	if (hadWarnings) {
+		if (IS_PRODUCTION_BUILD) {
+			logger.fatal(`Some assets had warnings while building, build failed.`);
+			return;
+		} else {
+			logger.warning();
+			logger.warning(`Some assets had warnings while building, these need to be fixed before PR.`);
+			logger.warning();
+		}
+	}
+
 	logger.info('Exporting result...');
 	// Remove any existing output and make empty directory
-	if (fs.existsSync(DEST_DIR)) {
-		rimraf.sync(DEST_DIR);
+	if (fs.existsSync(OUT_DIR)) {
+		rimraf.sync(OUT_DIR);
 	}
-	fs.mkdirSync(DEST_DIR);
+	fs.mkdirSync(OUT_DIR);
 
 	const graphics: AssetsGraphicsDefinitionFile = GraphicsDatabase.export();
 	const graphicsFile = DefineResourceInline('graphics.json', JSON.stringify(graphics));
@@ -85,8 +128,8 @@ async function Run() {
 
 	const definitionsFile = DefineResourceInline('assets.json', JSON.stringify(definitions));
 
-	ExportAllResources(DEST_DIR);
-	fs.writeFileSync(join(DEST_DIR, 'current'), `${definitionsFile.hash}\n`);
+	ExportAllResources(OUT_DIR);
+	fs.writeFileSync(join(OUT_DIR, 'current'), `${definitionsFile.hash}\n`);
 
 	logger.info('Done!');
 }
