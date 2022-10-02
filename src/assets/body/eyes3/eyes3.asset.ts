@@ -25,8 +25,8 @@ DefineAsset({
 	modules: {
 		pupilType: {
 			type: 'typed',
-			name: 'Pupil Type',
-			expression: 'Eye pupil',
+			name: 'Pupil Types',
+			expression: 'Eye Pupil Types',
 			interactionType: ItemInteractionType.ACCESS_ONLY,
 			variants: [
 				{
@@ -52,15 +52,15 @@ DefineAsset({
 				},
 			],
 		},
-		eyeState: {
+		eyeState_l: {
 			type: 'typed',
-			name: 'Eye State',
-			expression: 'Eyes',
+			name: 'Left Eye Open/Close',
+			expression: 'Left Eye Open/Close',
 			interactionType: ItemInteractionType.ACCESS_ONLY,
 			variants: [
 				{
 					id: 'normal',
-					name: 'Normal',
+					name: 'Open',
 					default: true,
 				},
 				{
@@ -69,5 +69,36 @@ DefineAsset({
 				},
 			],
 		},
+		eyeState_r: {
+			type: 'typed',
+			name: 'Right Eye Open/Close',
+			expression: 'Right Eye Open/Close',
+			interactionType: ItemInteractionType.ACCESS_ONLY,
+			variants: [
+				{
+					id: 'normal',
+					name: 'Open',
+					default: true,
+				},
+				{
+					id: 'closed',
+					name: 'Closed',
+				},
+			],
+		},
+	},
+	ownership: {
+		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+		credits: ['ClaudiaMia'],
+		modificationPolicy: `Fixes and New uses, otherwise ask`,
+		reusePolicy: 'Ask first',
+		licensing: [
+			{
+				source: 'Self-Made',
+				copyrightHolder: 'ClaudiaMia',
+				editedBy: 'ClaudiaMia',
+				license: 'Pandora-Use-Only',
+			},
+		],
 	},
 });

@@ -24,6 +24,7 @@ export function GlobalDefineAsset(def: IntermediateAssetDefinition): void {
 			}
 		}
 	}
+	const colorizationMaxIndex = def.colorization ? def.colorization.length - 1 : -1;
 
 	for (const [bone, value] of Object.entries(def.poseLimits?.forcePose ?? {})) {
 		if (value == null)
@@ -44,46 +45,48 @@ export function GlobalDefineAsset(def: IntermediateAssetDefinition): void {
 		}
 	}
 
-	// Validate ownership
-	if (def.ownership) {
-		// Validate responsible contributor
-		const contributor = def.ownership.responsibleContributor.toLowerCase();
-		if (GitDataAvailable &&
-			!Contributors.has(contributor) &&
-			(!CurrentCommitter || CurrentCommitter.toLowerCase() !== contributor)
-		) {
-			if (IS_PRODUCTION_BUILD || !CurrentCommitter) {
-				logger.warning('The responsible contributor was not found in the Git history.');
-			} else {
-				logger.warning(
-					'The responsible contributor was not found in the Git history.\n' +
-					`If you commit with current settings, this is your commit signature: '${CurrentCommitter}'`,
-				);
-			}
-		}
+	//#region Validate ownership data
 
-		// Validate presence of licensing data
-		if (def.graphics !== undefined && def.ownership.licensing.length === 0) {
-			logger.warning('Asset has graphics, but no licensing info');
-		}
-
-		for (const license of def.ownership.licensing) {
-			// Validate that custom license exists and is a file
-			if (license.license.startsWith('./')) {
-				const path = join(AssetSourcePath, license.license);
-				if (!fs.existsSync(path) || !fs.statSync(path).isFile()) {
-					logger.warning(`Custom license '${license.license}' doesn't exist or is not a file.`);
-				}
-			}
-		}
-		// Check that CHANGE_ME was replaced
-		if (def.ownership.licensing
-			.flatMap((l) => [l.part, l.copyrightHolder, l.editedBy])
-			.includes('CHANGE_ME')
-		) {
-			logger.warning(`Licensing data includes fields with 'CHANGE_ME' template data that need to be changed.`);
+	// Validate responsible contributor
+	const contributor = def.ownership.responsibleContributor.toLowerCase();
+	if (GitDataAvailable &&
+		!Contributors.has(contributor) &&
+		(!CurrentCommitter || CurrentCommitter.toLowerCase() !== contributor)
+	) {
+		if (IS_PRODUCTION_BUILD || !CurrentCommitter) {
+			logger.warning('The responsible contributor was not found in the Git history.');
+		} else {
+			logger.warning(
+				'The responsible contributor was not found in the Git history.\n' +
+				`If you commit with current settings, this is your commit signature: '${CurrentCommitter}'`,
+			);
 		}
 	}
+
+	// Validate presence of licensing data
+	if (def.graphics !== undefined && def.ownership.licensing.length === 0) {
+		logger.warning('Asset has graphics, but no licensing info');
+	}
+
+	for (const license of def.ownership.licensing) {
+		// Validate that custom license exists and is a file
+		if (license.license.startsWith('./')) {
+			const path = join(AssetSourcePath, license.license);
+			if (!fs.existsSync(path) || !fs.statSync(path).isFile()) {
+				// TODO: Change from `alert` to `warning` once ready
+				logger.alert(`Custom license '${license.license}' doesn't exist or is not a file.`);
+			}
+		}
+	}
+	// Check that CHANGE_ME was replaced
+	if (def.ownership.licensing
+		.flatMap((l) => [l.part, l.copyrightHolder, l.editedBy])
+		.includes('CHANGE_ME')
+	) {
+		logger.warning(`Licensing data includes fields with 'CHANGE_ME' template data that need to be changed.`);
+	}
+
+	//#endregion
 
 	if (!definitionValid) {
 		logger.error('Invalid asset definition, asset skipped');
@@ -103,8 +106,21 @@ export function GlobalDefineAsset(def: IntermediateAssetDefinition): void {
 		hasGraphics: def.graphics !== undefined,
 	};
 
+	// Load and verify graphics
 	if (def.graphics) {
-		GraphicsDatabase.registerAsset(id, LoadAssetsGraphics(join(AssetSourcePath, def.graphics)));
+		const graphics = LoadAssetsGraphics(join(AssetSourcePath, def.graphics));
+
+		const loggerGraphics = logger.prefixMessages('[Graphics]');
+
+		for (let i = 0; i < graphics.layers.length; i++) {
+			const layer = graphics.layers[i];
+
+			if (layer.colorizationIndex != null && layer.colorizationIndex > colorizationMaxIndex) {
+				loggerGraphics.warning(`Layer #${i} has colorizationIndex ${layer.colorizationIndex} outside of defined colorization (0-${colorizationMaxIndex})`);
+			}
+		}
+
+		GraphicsDatabase.registerAsset(id, graphics);
 	}
 	AssetDatabase.registerAsset(id, asset);
 }
