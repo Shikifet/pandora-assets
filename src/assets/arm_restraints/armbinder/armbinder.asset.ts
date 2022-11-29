@@ -2,6 +2,7 @@ import { ArmsPose } from 'pandora-common';
 
 DefineAsset({
 	name: 'Armbinder',
+	size: 'medium',
 	graphics: 'graphics.json',
 	colorization: [
 		{
@@ -26,6 +27,14 @@ DefineAsset({
 		},
 	],
 	modules: {
+		lock: {
+			type: 'lockSlot',
+			name: 'Lock',
+			lockRequirements: ['Lock'],
+			occupiedEffects: {
+				blockAddRemove: true,
+			},
+		},
 		gloveRing: {
 			type: 'typed',
 			name: 'Glove Ring',
@@ -56,10 +65,10 @@ DefineAsset({
 	effects: {
 		blockHands: true,
 	},
-	allowSelfEquip: false,
-	actionMessages: {
-		itemAdd: 'SOURCE_CHARACTER slipped an armbinder over TARGET_CHARACTER_DYNAMIC arms, lacing it tightly.',
-		itemRemove: 'SOURCE_CHARACTER loosened and then slipped off the armbinder from TARGET_CHARACTER_DYNAMIC arms.',
+	blockSelfAddRemove: true,
+	chat: {
+		actionAdd: 'SOURCE_CHARACTER slipped an armbinder over TARGET_CHARACTER_DYNAMIC_POSSESSIVE arms, lacing it tightly.',
+		actionRemove: 'SOURCE_CHARACTER loosened and then slipped off the armbinder from TARGET_CHARACTER_DYNAMIC_POSSESSIVE arms.',
 	},
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',

@@ -2,6 +2,7 @@ import { ItemInteractionType } from 'pandora-common';
 
 DefineAsset({
 	name: 'Metal Collar',
+	size: 'small',
 	graphics: 'graphics.json',
 	colorization: [
 		{
@@ -25,6 +26,22 @@ DefineAsset({
 		'Collar',
 	],
 	modules: {
+		lock: {
+			type: 'lockSlot',
+			name: 'Lock',
+			lockRequirements: ['Lock'],
+			occupiedEffects: {
+				blockAddRemove: true,
+			},
+		},
+		lockCollar: {
+			type: 'lockSlot',
+			name: 'Lock for collar configuration',
+			lockRequirements: ['Lock'],
+			occupiedEffects: {
+				blockModules: ['collarConfig'],
+			},
+		},
 		collarConfig: {
 			type: 'typed',
 			name: 'Collar Configuration',
@@ -105,9 +122,9 @@ DefineAsset({
 			],
 		},
 	},
-	actionMessages: {
-		itemAdd: 'SOURCE_CHARACTER fitted and closed a Metal Collar around TARGET_CHARACTER_DYNAMIC neck.',
-		itemRemove: 'SOURCE_CHARACTER opened and then removed the Metal Collar from TARGET_CHARACTER_DYNAMIC neck.',
+	chat: {
+		actionAdd: 'SOURCE_CHARACTER fitted and closed a Metal Collar around TARGET_CHARACTER_DYNAMIC_POSSESSIVE neck.',
+		actionRemove: 'SOURCE_CHARACTER opened and then removed the Metal Collar from TARGET_CHARACTER_DYNAMIC_POSSESSIVE neck.',
 	},
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',

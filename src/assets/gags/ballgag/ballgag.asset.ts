@@ -1,5 +1,6 @@
 DefineAsset({
 	name: 'Ball Gag',
+	size: 'small',
 	graphics: 'graphics.json',
 	colorization: [
 		{
@@ -11,6 +12,16 @@ DefineAsset({
 			default: '#444444',
 		},
 	],
+	modules: {
+		lock: {
+			type: 'lockSlot',
+			name: 'Lock',
+			lockRequirements: ['Lock'],
+			occupiedEffects: {
+				blockAddRemove: true,
+			},
+		},
+	},
 	effects: {
 		lipsTouch: 7,
 		jawMove: 10,
@@ -20,9 +31,9 @@ DefineAsset({
 		coherency: 4,
 		stimulus: 2,
 	},
-	actionMessages: {
-		itemAdd: 'SOURCE_CHARACTER strapped a Ball Gag tightly over TARGET_CHARACTER_DYNAMIC lips.',
-		itemRemove: 'SOURCE_CHARACTER loosened and then removed the Ball Gag from TARGET_CHARACTER_DYNAMIC lips.',
+	chat: {
+		actionAdd: 'SOURCE_CHARACTER strapped a Ball Gag tightly over TARGET_CHARACTER_DYNAMIC_POSSESSIVE lips.',
+		actionRemove: 'SOURCE_CHARACTER loosened and then removed the Ball Gag from TARGET_CHARACTER_DYNAMIC_POSSESSIVE lips.',
 	},
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',

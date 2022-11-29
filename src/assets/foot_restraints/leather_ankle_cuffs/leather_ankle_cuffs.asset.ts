@@ -2,6 +2,7 @@ import { ItemInteractionType } from 'pandora-common';
 
 DefineAsset({
 	name: 'Leather Ankle Cuffs',
+	size: 'small',
 	graphics: 'graphics.json',
 	colorization: [
 		{
@@ -26,6 +27,22 @@ DefineAsset({
 		},
 	],
 	modules: {
+		lock: {
+			type: 'lockSlot',
+			name: 'Lock',
+			lockRequirements: ['Lock'],
+			occupiedEffects: {
+				blockAddRemove: true,
+			},
+		},
+		lockChain: {
+			type: 'lockSlot',
+			name: 'Lock for cuff chains',
+			lockRequirements: ['Lock'],
+			occupiedEffects: {
+				requirements: ['Ankle_cuffs_chain'],
+			},
+		},
 		cuffState: {
 			type: 'typed',
 			name: 'Cuff states',
@@ -48,6 +65,9 @@ DefineAsset({
 							kneeling: 0,
 						},
 					},
+					attributes: [
+						'Ankle_cuffs_chain',
+					],
 				},
 				{
 					id: 'spread',
@@ -60,6 +80,9 @@ DefineAsset({
 							kneeling: 0,
 						},
 					},
+					attributes: [
+						'Ankle_cuffs_chain',
+					],
 				},
 				{
 					id: 'closed',
@@ -72,6 +95,9 @@ DefineAsset({
 							kneeling: 0,
 						},
 					},
+					attributes: [
+						'Ankle_cuffs_chain',
+					],
 				},
 				{
 					id: 'floor',
@@ -84,6 +110,9 @@ DefineAsset({
 							kneeling: 0,
 						},
 					},
+					attributes: [
+						'Ankle_cuffs_chain',
+					],
 					effects: {
 						blockRoomMovement: true,
 					},
@@ -91,9 +120,9 @@ DefineAsset({
 			],
 		},
 	},
-	actionMessages: {
-		itemAdd: 'SOURCE_CHARACTER fastened the leather cuffs around TARGET_CHARACTER_DYNAMIC ankles.',
-		itemRemove: 'SOURCE_CHARACTER loosened and slipped off the leather cuffs from TARGET_CHARACTER_DYNAMIC ankles.',
+	chat: {
+		actionAdd: 'SOURCE_CHARACTER fastened the leather cuffs around TARGET_CHARACTER_DYNAMIC_POSSESSIVE ankles.',
+		actionRemove: 'SOURCE_CHARACTER loosened and slipped off the leather cuffs from TARGET_CHARACTER_DYNAMIC_POSSESSIVE ankles.',
 	},
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',

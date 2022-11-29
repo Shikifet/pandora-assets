@@ -1,7 +1,8 @@
-import { ArmsPose, ItemInteractionType } from 'pandora-common';
+import { ArmsPose } from 'pandora-common';
 
 DefineAsset({
 	name: 'Yoke',
+	size: 'medium',
 	graphics: 'graphics.json',
 	colorization: [
 		{
@@ -30,6 +31,22 @@ DefineAsset({
 		},
 	],
 	modules: {
+		lock: {
+			type: 'lockSlot',
+			name: 'Lock',
+			lockRequirements: ['Lock'],
+			occupiedEffects: {
+				blockAddRemove: true,
+			},
+		},
+		lockCollar: {
+			type: 'lockSlot',
+			name: 'Lock for collar leash',
+			lockRequirements: ['Lock'],
+			occupiedEffects: {
+				blockModules: ['collarConfig'],
+			},
+		},
 		collarConfig: {
 			type: 'typed',
 			name: 'Collar Configuration',
@@ -95,7 +112,6 @@ DefineAsset({
 		yokeWidth: {
 			type: 'typed',
 			name: 'Yoke Width',
-			interactionType: ItemInteractionType.ADD_REMOVE,
 			variants: [
 				{
 					id: 'normal',
@@ -110,9 +126,6 @@ DefineAsset({
 							elbow_l: -119,
 						},
 					},
-					effects: {
-						blockHands: true,
-					},
 				},
 				{
 					id: 'narrow',
@@ -125,9 +138,6 @@ DefineAsset({
 							elbow_r: -153,
 							elbow_l: -153,
 						},
-					},
-					effects: {
-						blockHands: true,
 					},
 				},
 				{
@@ -142,16 +152,16 @@ DefineAsset({
 							elbow_l: -67,
 						},
 					},
-					effects: {
-						blockHands: true,
-					},
 				},
 			],
 		},
 	},
-	actionMessages: {
-		itemAdd: 'SOURCE_CHARACTER fitted and closed a Yoke around TARGET_CHARACTER_DYNAMIC neck and closed the cuffs around both wrists.',
-		itemRemove: 'SOURCE_CHARACTER opened and then removed the Yoke from TARGET_CHARACTER_DYNAMIC neck and wrists.',
+	effects: {
+		blockHands: true,
+	},
+	chat: {
+		actionAdd: 'SOURCE_CHARACTER fitted and closed a Yoke around TARGET_CHARACTER_DYNAMIC_POSSESSIVE neck and closed the cuffs around both wrists.',
+		actionRemove: 'SOURCE_CHARACTER opened and then removed the Yoke from TARGET_CHARACTER_DYNAMIC_POSSESSIVE neck and wrists.',
 	},
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
