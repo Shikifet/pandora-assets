@@ -2,6 +2,94 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "git: init submodules",
+			"type": "process",
+			"command": "git",
+			"args": [
+				"submodule",
+				"update",
+				"--init",
+				"--recursive",
+				"--progress",
+			],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": true
+			},
+			"group": "none",
+			"problemMatcher": []
+		},
+		{
+			"label": "pnpm: install",
+			"type": "process",
+			"command": "pnpm",
+			"windows": {
+				"command": "pnpm.cmd"
+			},
+			"args": [
+				"install"
+			],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": false
+			},
+			"group": "none",
+			"problemMatcher": []
+		},
+		{
+			"label": "pnpm: rebuild",
+			"type": "process",
+			"command": "pnpm",
+			"windows": {
+				"command": "pnpm.cmd"
+			},
+			"args": [
+				"rebuild"
+			],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"group": "none",
+			"problemMatcher": []
+		},
+		{
+			"label": "Setup",
+			"runOptions": {
+				"runOn": "folderOpen"
+			},
+			"dependsOn": [
+				"git: init submodules",
+				"pnpm: install"
+			],
+			"dependsOrder": "sequence",
+			"type": "shell",
+			"command": "echo Done!",
+			"presentation": {
+				"echo": false,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"close": true,
+				"clear": false
+			},
+			"group": "none",
+			"problemMatcher": []
+		},
+		{
 			"label": "Build",
 			"type": "npm",
 			"script": "build",
@@ -10,6 +98,48 @@
 				"isDefault": true
 			},
 			"problemMatcher": "$tsc"
+		},
+		{
+			"label": "Run development server",
+			"type": "npm",
+			"script": "dev:inspect",
+			"hide": true,
+			"isBackground": true,
+			"promptOnClose": false,
+			"icon": {
+				"id": "run"
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": true
+			},
+			"problemMatcher": {
+				"base": "$tsc",
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": " File change detected\\. Starting incremental compilation\\.\\.\\.",
+					"endsPattern": " Watching for file changes\\."
+				}
+			}
+		},
+		{
+			"label": "Terminate All Tasks",
+			"command": "echo ${input:terminate}",
+			"type": "shell",
+			"hide": true,
+			"problemMatcher": []
+		}
+	],
+	"inputs": [
+		{
+			"id": "terminate",
+			"type": "command",
+			"command": "workbench.action.tasks.terminate",
+			"args": "terminateAll"
 		}
 	]
 }
