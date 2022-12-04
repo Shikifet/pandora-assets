@@ -1,44 +1,31 @@
 DefineAsset({
-	name: 'Blush 1',
-	size: 'bodypart',
-	bodypart: 'blush',
+	name: 'Vaginal vibrator',
+	size: 'small',
 	graphics: 'graphics.json',
 	colorization: [
 		{
-			name: 'Blush',
-			default: '#FFFFFF',
+			name: 'Vibrator',
+			default: '#FFC1EB',
 		},
 	],
+	requirements: ['Vagina_spread'],
 	modules: {
-		blush: {
+		insertedVibrator: {
 			type: 'typed',
-			name: 'Blush Strength',
-			expression: 'Blush',
+			name: 'Penetration Depth',
 			variants: [
 				{
-					id: 'noBlush',
-					name: 'None',
+					id: 'out',
+					name: 'Mostly Out',
 					default: true,
 				},
 				{
-					id: 'faint',
-					name: 'Faint',
+					id: 'half',
+					name: 'Half Inside',
 				},
 				{
-					id: 'medium',
-					name: 'Medium',
-				},
-				{
-					id: 'strong',
-					name: 'Strong',
-				},
-				{
-					id: 'full',
-					name: 'Full',
-				},
-				{
-					id: 'deep',
-					name: 'Deeply',
+					id: 'in',
+					name: 'Deep Inside',
 				},
 			],
 		},

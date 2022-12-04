@@ -1,44 +1,34 @@
 DefineAsset({
-	name: 'Blush 1',
-	size: 'bodypart',
-	bodypart: 'blush',
+	name: 'Anal plug',
+	size: 'small',
 	graphics: 'graphics.json',
 	colorization: [
 		{
-			name: 'Blush',
-			default: '#FFFFFF',
+			name: 'Plug',
+			default: '#C4E1FF',
 		},
 	],
 	modules: {
-		blush: {
+		insertedPlug: {
 			type: 'typed',
-			name: 'Blush Strength',
-			expression: 'Blush',
+			name: 'Penetration Depth',
 			variants: [
 				{
-					id: 'noBlush',
-					name: 'None',
+					id: 'out',
+					name: 'Mostly Out',
 					default: true,
 				},
 				{
-					id: 'faint',
-					name: 'Faint',
+					id: 'half',
+					name: 'Half Inside',
 				},
 				{
-					id: 'medium',
-					name: 'Medium',
+					id: 'in',
+					name: 'Deep Inside',
 				},
 				{
-					id: 'strong',
-					name: 'Strong',
-				},
-				{
-					id: 'full',
-					name: 'Full',
-				},
-				{
-					id: 'deep',
-					name: 'Deeply',
+					id: 'plugged',
+					name: 'Plugged',
 				},
 			],
 		},
