@@ -2,7 +2,7 @@ DefineAsset({
 	name: 'Base body',
 	size: 'bodypart',
 	bodypart: 'base',
-	attributes: ['Body'],
+	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: [
 		{
@@ -13,6 +13,9 @@ DefineAsset({
 			name: 'Nipples',
 			default: '#FED1CB',
 		},
+	],
+	attributes: [
+		'Body_base',
 	],
 	ownership: {
 		responsibleContributor: 'Jomshir98 <jomshir98@protonmail.com>',

@@ -2,12 +2,17 @@ DefineAsset({
 	name: 'Blush 1',
 	size: 'bodypart',
 	bodypart: 'blush',
+	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: [
 		{
 			name: 'Blush',
 			default: '#FFFFFF',
 		},
+	],
+	attributes: [
+		'Blush',
+		'Body_texture',
 	],
 	modules: {
 		blush: {

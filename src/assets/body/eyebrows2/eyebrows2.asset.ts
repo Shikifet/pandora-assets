@@ -2,12 +2,16 @@ DefineAsset({
 	name: 'Eyebrows 2',
 	size: 'bodypart',
 	bodypart: 'eyebrows',
+	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: [
 		{
 			name: 'Eyebrows',
 			default: '#555555',
 		},
+	],
+	attributes: [
+		'Eyebrows',
 	],
 	ownership: {
 		responsibleContributor: 'Jomshir98 <jomshir98@protonmail.com>',

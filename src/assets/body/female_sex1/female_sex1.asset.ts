@@ -4,6 +4,7 @@ DefineAsset({
 	name: 'Female Sex 1',
 	size: 'bodypart',
 	bodypart: 'sex',
+	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: [
 		{
@@ -14,6 +15,10 @@ DefineAsset({
 			name: 'Hair',
 			default: '#A96B61',
 		},
+	],
+	attributes: [
+		'Sex',
+		'Vagina',
 	],
 	modules: {
 		hair: {

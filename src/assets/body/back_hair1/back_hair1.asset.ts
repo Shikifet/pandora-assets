@@ -13,6 +13,13 @@ DefineAsset({
 			default: '#AAAAAA',
 		},
 	],
+	attributes: [
+		'Hair',
+		'Hair_extension',
+	],
+	requirements: [
+		'Hair_back',
+	],
 	modules: {
 		shine: {
 			type: 'typed',

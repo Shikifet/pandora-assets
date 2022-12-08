@@ -4,13 +4,67 @@ import { AssetAttributeDefinition, Satisfies } from 'pandora-common';
 
 export const ATTRIBUTES_DEFINITION = {
 	// Bodypart attributes
-	Body: {
+	Body_base: {
 		description: 'A body',
+	},
+	Body_texture: {
+		description: 'A texture for the body',
+	},
+	Face: {
+		description: 'A face texture',
+	},
+	Blush: {
+		description: 'A facial reddening',
+	},
+	Sex: {
+		description: 'A sexual organ',
+	},
+	Vagina: {
+		description: 'A female sexual organ',
 	},
 	Vagina_spread: {
 		description: 'A spread female sex',
 	},
-	// Attachment points from items
+	Penis: {
+		description: 'A male sexual organ',
+	},
+	Hair: {
+		description: 'Hair',
+	},
+	Hair_back: {
+		description: 'Hair on the back of the head',
+	},
+	Hair_front: {
+		description: 'Hair on the front of the head',
+	},
+	Hair_extension: {
+		description: 'A hair part separating from the main hair',
+	},
+	Eyebrows: {
+		description: 'A pair of eyebrows',
+	},
+	Eyes: {
+		description: 'A pair of eyes',
+	},
+	Mouth: {
+		description: 'A mouth',
+	},
+	Nose: {
+		description: 'A nose',
+	},
+	// Items or attachment points from items
+	Underwear: {
+		description: 'An underwear',
+	},
+	Bra: {
+		description: 'A bra',
+	},
+	Panties: {
+		description: 'A pair of panties',
+	},
+	Underpants: {
+		description: 'A pair of underpants',
+	},
 	Collar: {
 		description: 'A Collar',
 	},

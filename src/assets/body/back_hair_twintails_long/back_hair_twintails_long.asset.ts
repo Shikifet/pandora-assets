@@ -9,6 +9,13 @@ DefineAsset({
 			default: '#555555',
 		},
 	],
+	attributes: [
+		'Hair',
+		'Hair_extension',
+	],
+	requirements: [
+		'Hair_back',
+	],
 	modules: {
 		config: {
 			type: 'typed',

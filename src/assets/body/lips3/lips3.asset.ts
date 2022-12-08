@@ -2,12 +2,16 @@ DefineAsset({
 	name: 'Lips 3',
 	size: 'bodypart',
 	bodypart: 'lips',
+	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: [
 		{
 			name: 'Lips',
 			default: '#FCB6B4',
 		},
+	],
+	attributes: [
+		'Mouth',
 	],
 	modules: {
 		mouth: {

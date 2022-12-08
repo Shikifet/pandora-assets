@@ -2,6 +2,7 @@ DefineAsset({
 	name: 'Eyes 4',
 	size: 'bodypart',
 	bodypart: 'eyes',
+	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: [
 		{
@@ -20,6 +21,9 @@ DefineAsset({
 			name: 'Shine',
 			default: '#FFFFFF',
 		},
+	],
+	attributes: [
+		'Eyes',
 	],
 	modules: {
 		pupilType: {
