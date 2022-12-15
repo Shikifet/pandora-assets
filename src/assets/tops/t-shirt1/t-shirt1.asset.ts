@@ -1,6 +1,7 @@
 DefineAsset({
 	name: 'T-Shirt',
 	size: 'medium',
+	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: [
 		{
@@ -11,6 +12,10 @@ DefineAsset({
 			name: 'Print',
 			default: '#FFFF00',
 		},
+	],
+	attributes: [
+		'Clothing',
+		'Clothing_upper',
 	],
 	modules: {
 		prints: {

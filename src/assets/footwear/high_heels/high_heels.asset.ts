@@ -3,6 +3,7 @@ import { ItemInteractionType } from 'pandora-common';
 DefineAsset({
 	name: 'High Heels',
 	size: 'medium',
+	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: [
 		{
@@ -13,6 +14,12 @@ DefineAsset({
 			name: 'Soles',
 			default: '#393939',
 		},
+	],
+	attributes: [
+		'Clothing',
+		'Footwear',
+		'Restraint',
+		'Restraint_legs',
 	],
 	modules: {
 		lock: {

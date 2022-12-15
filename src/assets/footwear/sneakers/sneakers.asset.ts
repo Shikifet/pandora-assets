@@ -1,6 +1,7 @@
 DefineAsset({
 	name: 'Sneakers',
 	size: 'medium',
+	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: [
 		{
@@ -15,6 +16,10 @@ DefineAsset({
 			name: 'Shoelaces',
 			default: '#FFFFFF',
 		},
+	],
+	attributes: [
+		'Clothing',
+		'Footwear',
 	],
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',

@@ -1,12 +1,17 @@
 DefineAsset({
 	name: 'Long Flowy Skirt',
 	size: 'medium',
+	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: [
 		{
 			name: 'Skirt',
 			default: '#FFFFFF',
 		},
+	],
+	attributes: [
+		'Clothing',
+		'Clothing_lower',
 	],
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',

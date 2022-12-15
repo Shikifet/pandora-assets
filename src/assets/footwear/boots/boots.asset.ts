@@ -3,6 +3,7 @@ import { ItemInteractionType } from 'pandora-common';
 DefineAsset({
 	name: 'Boots',
 	size: 'medium',
+	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: [
 		{
@@ -21,6 +22,12 @@ DefineAsset({
 			name: 'Strings',
 			default: '#000000',
 		},
+	],
+	attributes: [
+		'Clothing',
+		'Footwear',
+		'Restraint',
+		'Restraint_legs',
 	],
 	modules: {
 		lock: {

@@ -1,6 +1,7 @@
 DefineAsset({
 	name: 'Maid Dress',
 	size: 'medium',
+	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: [
 		{
@@ -23,6 +24,13 @@ DefineAsset({
 			name: 'Ribbon Lace',
 			default: '#FFFFFF',
 		},
+	],
+	attributes: [
+		'Clothing',
+		'Clothing_upper',
+		'Clothing_lower',
+		'Clothing_large',
+		'Restraint',
 	],
 	modules: {
 		lock: {

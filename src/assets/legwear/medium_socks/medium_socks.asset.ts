@@ -1,12 +1,17 @@
 DefineAsset({
 	name: 'Medium Socks',
 	size: 'small',
+	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: [
 		{
 			name: 'Socks',
 			default: '#FFFFFF',
 		},
+	],
+	attributes: [
+		'Clothing',
+		'Legwear',
 	],
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',

@@ -1,6 +1,7 @@
 DefineAsset({
 	name: 'Thigh High Socks',
 	size: 'small',
+	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: [
 		{
@@ -19,6 +20,10 @@ DefineAsset({
 			name: 'Stripe Bottom (3)',
 			default: '#83a3cc',
 		},
+	],
+	attributes: [
+		'Clothing',
+		'Legwear',
 	],
 	modules: {
 		stripes: {

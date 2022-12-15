@@ -1,6 +1,7 @@
 DefineAsset({
 	name: 'Jeans Shorts',
 	size: 'medium',
+	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: [
 		{
@@ -11,6 +12,10 @@ DefineAsset({
 			name: 'Button',
 			default: '#666666',
 		},
+	],
+	attributes: [
+		'Clothing',
+		'Clothing_lower',
 	],
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
