@@ -10,7 +10,7 @@
 			"points": "body",
 			"mirror": 0,
 			"image": {
-				"image": "ballgag_rings.png",
+				"image": "pluggag_rings.png",
 				"overrides": []
 			},
 			"name": "rings"
@@ -25,7 +25,7 @@
 			"mirror": 0,
 			"colorizationIndex": 1,
 			"image": {
-				"image": "ballgag_straps.png",
+				"image": "pluggag_straps.png",
 				"overrides": []
 			},
 			"name": "straps"
@@ -68,10 +68,52 @@
 			"mirror": 0,
 			"colorizationIndex": 0,
 			"image": {
-				"image": "ballgag_ball.png",
+				"image": "pluggag_gag.png",
 				"overrides": []
 			},
-			"name": "ball"
+			"name": "gag"
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"priority": "ABOVE_BODY",
+			"points": "body",
+			"mirror": 0,
+			"image": {
+				"image": "pluggag_gagring.png",
+				"overrides": []
+			},
+			"name": "gag ring"
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"priority": "ABOVE_BODY",
+			"points": "body",
+			"mirror": 0,
+			"colorizationIndex": 2,
+			"image": {
+				"image": "pluggag_plug.png",
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"module": "plugState",
+									"operator": "=",
+									"value": "noPlug"
+								}
+							]
+						]
+					}
+				]
+			},
+			"name": "plug"
 		},
 		{
 			"x": 0,
@@ -83,7 +125,7 @@
 			"mirror": 0,
 			"colorizationIndex": 1,
 			"image": {
-				"image": "ballgag_straps_back.png",
+				"image": "pluggag_straps_back.png",
 				"overrides": []
 			},
 			"name": "straps back"
@@ -97,7 +139,7 @@
 			"points": "body",
 			"mirror": 0,
 			"image": {
-				"image": "ballgag_buckle_back.png",
+				"image": "pluggag_buckle_back.png",
 				"overrides": []
 			},
 			"name": "buckle"

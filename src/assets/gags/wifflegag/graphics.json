@@ -10,7 +10,7 @@
 			"points": "body",
 			"mirror": 0,
 			"image": {
-				"image": "ballgag_rings.png",
+				"image": "wifflegag_rings.png",
 				"overrides": []
 			},
 			"name": "rings"
@@ -25,7 +25,7 @@
 			"mirror": 0,
 			"colorizationIndex": 1,
 			"image": {
-				"image": "ballgag_straps.png",
+				"image": "wifflegag_straps.png",
 				"overrides": []
 			},
 			"name": "straps"
@@ -68,7 +68,7 @@
 			"mirror": 0,
 			"colorizationIndex": 0,
 			"image": {
-				"image": "ballgag_ball.png",
+				"image": "wifflegag_ball.png",
 				"overrides": []
 			},
 			"name": "ball"
@@ -83,7 +83,7 @@
 			"mirror": 0,
 			"colorizationIndex": 1,
 			"image": {
-				"image": "ballgag_straps_back.png",
+				"image": "wifflegag_straps_back.png",
 				"overrides": []
 			},
 			"name": "straps back"
@@ -97,7 +97,7 @@
 			"points": "body",
 			"mirror": 0,
 			"image": {
-				"image": "ballgag_buckle_back.png",
+				"image": "wifflegag_buckle_back.png",
 				"overrides": []
 			},
 			"name": "buckle"

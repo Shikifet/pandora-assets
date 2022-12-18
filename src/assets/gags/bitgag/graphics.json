@@ -9,11 +9,12 @@
 			"priority": "ABOVE_BODY",
 			"points": "body",
 			"mirror": 0,
+			"colorizationIndex": 0,
 			"image": {
-				"image": "ballgag_rings.png",
+				"image": "bitgag_bit.png",
 				"overrides": []
 			},
-			"name": "rings"
+			"name": "bit"
 		},
 		{
 			"x": 0,
@@ -25,7 +26,7 @@
 			"mirror": 0,
 			"colorizationIndex": 1,
 			"image": {
-				"image": "ballgag_straps.png",
+				"image": "bitgag_straps.png",
 				"overrides": []
 			},
 			"name": "straps"
@@ -38,40 +39,11 @@
 			"priority": "ABOVE_BODY",
 			"points": "body",
 			"mirror": 0,
-			"colorizationIndex": 1,
 			"image": {
-				"image": "front_harness_straps.png",
-				"overrides": [
-					{
-						"image": "",
-						"condition": [
-							[
-								{
-									"module": "gagType",
-									"operator": "=",
-									"value": "standard"
-								}
-							]
-						]
-					}
-				]
-			},
-			"name": "harness straps"
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"priority": "ABOVE_BODY",
-			"points": "body",
-			"mirror": 0,
-			"colorizationIndex": 0,
-			"image": {
-				"image": "ballgag_ball.png",
+				"image": "bitgag_rings.png",
 				"overrides": []
 			},
-			"name": "ball"
+			"name": "rings"
 		},
 		{
 			"x": 0,
@@ -83,7 +55,7 @@
 			"mirror": 0,
 			"colorizationIndex": 1,
 			"image": {
-				"image": "ballgag_straps_back.png",
+				"image": "bitgag_straps_back.png",
 				"overrides": []
 			},
 			"name": "straps back"
@@ -97,7 +69,7 @@
 			"points": "body",
 			"mirror": 0,
 			"image": {
-				"image": "ballgag_buckle_back.png",
+				"image": "bitgag_buckle_back.png",
 				"overrides": []
 			},
 			"name": "buckle"

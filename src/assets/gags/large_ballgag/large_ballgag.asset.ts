@@ -1,13 +1,13 @@
 import { ItemInteractionType } from 'pandora-common';
 
 DefineAsset({
-	name: 'Ball Gag',
-	size: 'small',
+	name: 'Large Ball Gag',
+	size: 'medium',
 	graphics: 'graphics.json',
 	colorization: [
 		{
 			name: 'Ball',
-			default: '#FA5F55',
+			default: '#C99AF8',
 		},
 		{
 			name: 'Straps',
@@ -58,12 +58,12 @@ DefineAsset({
 		stimulus: 2,
 	},
 	chat: {
-		actionAdd: 'SOURCE_CHARACTER strapped a Ball Gag tightly between TARGET_CHARACTER_DYNAMIC_POSSESSIVE lips.',
-		actionRemove: 'SOURCE_CHARACTER loosened and then removed the Ball Gag from TARGET_CHARACTER_DYNAMIC_POSSESSIVE mouth.',
+		actionAdd: 'SOURCE_CHARACTER strapped a Large Ball Gag tightly between TARGET_CHARACTER_DYNAMIC_POSSESSIVE lips.',
+		actionRemove: 'SOURCE_CHARACTER loosened and then removed the Large Ball Gag from TARGET_CHARACTER_DYNAMIC_POSSESSIVE mouth.',
 	},
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
-		credits: ['ClaudiaMia', 'Jomshir'],
+		credits: ['ClaudiaMia'],
 		modificationPolicy: `Fixes and New uses, otherwise ask`,
 		reusePolicy: 'Ask first',
 		licensing: [

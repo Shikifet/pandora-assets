@@ -1,13 +1,13 @@
 import { ItemInteractionType } from 'pandora-common';
 
 DefineAsset({
-	name: 'Ball Gag',
-	size: 'small',
+	name: 'Dildo Gag',
+	size: 'medium',
 	graphics: 'graphics.json',
 	colorization: [
 		{
-			name: 'Ball',
-			default: '#FA5F55',
+			name: 'Gag',
+			default: '#484F5B',
 		},
 		{
 			name: 'Straps',
@@ -49,21 +49,21 @@ DefineAsset({
 		},
 	},
 	effects: {
-		lipsTouch: 7,
-		jawMove: 10,
-		tongueRoof: 6,
-		mouthBreath: 3,
-		throatBreath: 2,
-		coherency: 4,
-		stimulus: 2,
+		lipsTouch: 9,
+		jawMove: 9,
+		tongueRoof: 8,
+		mouthBreath: 6,
+		throatBreath: 4,
+		coherency: 7,
+		stimulus: 6,
 	},
 	chat: {
-		actionAdd: 'SOURCE_CHARACTER strapped a Ball Gag tightly between TARGET_CHARACTER_DYNAMIC_POSSESSIVE lips.',
-		actionRemove: 'SOURCE_CHARACTER loosened and then removed the Ball Gag from TARGET_CHARACTER_DYNAMIC_POSSESSIVE mouth.',
+		actionAdd: 'SOURCE_CHARACTER pushed a Dildo Gag into TARGET_CHARACTER_DYNAMIC_POSSESSIVE mouth, strapping it tight.',
+		actionRemove: 'SOURCE_CHARACTER loosened and then removed the Dildo Gag from TARGET_CHARACTER_DYNAMIC_POSSESSIVE mouth.',
 	},
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
-		credits: ['ClaudiaMia', 'Jomshir'],
+		credits: ['ClaudiaMia'],
 		modificationPolicy: `Fixes and New uses, otherwise ask`,
 		reusePolicy: 'Ask first',
 		licensing: [

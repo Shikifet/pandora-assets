@@ -1,13 +1,13 @@
 import { ItemInteractionType } from 'pandora-common';
 
 DefineAsset({
-	name: 'Ball Gag',
+	name: 'Ring Gag',
 	size: 'small',
 	graphics: 'graphics.json',
 	colorization: [
 		{
-			name: 'Ball',
-			default: '#FA5F55',
+			name: 'Ring',
+			default: '#FFFFFF',
 		},
 		{
 			name: 'Straps',
@@ -20,7 +20,7 @@ DefineAsset({
 	],
 	requirements: [
 		'Mouth_open_wide',
-		'!Mouth_tongue_out',
+		'!Mouth_open_teeth',
 	],
 	modules: {
 		lock: {
@@ -49,21 +49,21 @@ DefineAsset({
 		},
 	},
 	effects: {
-		lipsTouch: 7,
-		jawMove: 10,
-		tongueRoof: 6,
-		mouthBreath: 3,
-		throatBreath: 2,
-		coherency: 4,
+		lipsTouch: 8,
+		jawMove: 4,
+		tongueRoof: 0,
+		mouthBreath: 0,
+		throatBreath: 0,
+		coherency: 0,
 		stimulus: 2,
 	},
 	chat: {
-		actionAdd: 'SOURCE_CHARACTER strapped a Ball Gag tightly between TARGET_CHARACTER_DYNAMIC_POSSESSIVE lips.',
-		actionRemove: 'SOURCE_CHARACTER loosened and then removed the Ball Gag from TARGET_CHARACTER_DYNAMIC_POSSESSIVE mouth.',
+		actionAdd: 'SOURCE_CHARACTER strapped a Ring Gag tightly between TARGET_CHARACTER_DYNAMIC_POSSESSIVE teeth.',
+		actionRemove: 'SOURCE_CHARACTER loosened and then removed the Ring Gag from TARGET_CHARACTER_DYNAMIC_POSSESSIVE mouth.',
 	},
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
-		credits: ['ClaudiaMia', 'Jomshir'],
+		credits: ['ClaudiaMia'],
 		modificationPolicy: `Fixes and New uses, otherwise ask`,
 		reusePolicy: 'Ask first',
 		licensing: [

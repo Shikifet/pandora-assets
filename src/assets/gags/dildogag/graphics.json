@@ -9,8 +9,23 @@
 			"priority": "ABOVE_BODY",
 			"points": "body",
 			"mirror": 0,
+			"colorizationIndex": 0,
 			"image": {
-				"image": "ballgag_rings.png",
+				"image": "dildogag_dildo.png",
+				"overrides": []
+			},
+			"name": "dildo"
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"priority": "ABOVE_BODY",
+			"points": "body",
+			"mirror": 0,
+			"image": {
+				"image": "dildogag_rings.png",
 				"overrides": []
 			},
 			"name": "rings"
@@ -25,7 +40,7 @@
 			"mirror": 0,
 			"colorizationIndex": 1,
 			"image": {
-				"image": "ballgag_straps.png",
+				"image": "dildogag_straps.png",
 				"overrides": []
 			},
 			"name": "straps"
@@ -63,27 +78,12 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
-			"priority": "ABOVE_BODY",
-			"points": "body",
-			"mirror": 0,
-			"colorizationIndex": 0,
-			"image": {
-				"image": "ballgag_ball.png",
-				"overrides": []
-			},
-			"name": "ball"
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
 			"priority": "BELOW_BODY",
 			"points": "body",
 			"mirror": 0,
 			"colorizationIndex": 1,
 			"image": {
-				"image": "ballgag_straps_back.png",
+				"image": "dildogag_straps_back.png",
 				"overrides": []
 			},
 			"name": "straps back"
@@ -97,7 +97,7 @@
 			"points": "body",
 			"mirror": 0,
 			"image": {
-				"image": "ballgag_buckle_back.png",
+				"image": "dildogag_buckle_back.png",
 				"overrides": []
 			},
 			"name": "buckle"
