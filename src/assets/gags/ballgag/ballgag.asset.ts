@@ -48,6 +48,9 @@ DefineAsset({
 			],
 		},
 	},
+	occupySlots: {
+		'mouth': 6,
+	},
 	effects: {
 		lipsTouch: 7,
 		jawMove: 10,
