@@ -49,6 +49,14 @@ const ATTRIBUTES_DEFINITION = {
 		name: 'Penis',
 		description: 'A male sexual organ',
 	},
+	Penis_flaccid: {
+		name: 'Flaccid Penis',
+		description: 'A flaccid male sexual organ',
+	},
+	Penis_erect: {
+		name: 'Erect Penis',
+		description: 'An erect male sexual organ',
+	},
 	Hair: {
 		name: 'Hair',
 		description: 'Hair',
