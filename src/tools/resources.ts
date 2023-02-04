@@ -1,9 +1,12 @@
 import { GetLogger } from 'pandora-common';
 import { createHash } from 'crypto';
-import { readFileSync, writeFileSync, statSync, copyFileSync } from 'fs';
+import { readFileSync, statSync } from 'fs';
+import { writeFile, copyFile, unlink, readdir, stat } from 'fs/promises';
 import { join, basename } from 'path';
 import { AssetSourcePath } from './context';
 import { WatchFile } from './watch';
+import { IS_PRODUCTION_BUILD } from '../constants';
+import sharp from 'sharp';
 
 export type ImageCategory = 'asset' | 'background';
 
@@ -21,6 +24,22 @@ const MAX_SIZES: Record<ImageCategory, { bytes: number; text: string; }> = {
 const logger = GetLogger('Resources');
 
 const resources: Map<string, Resource> = new Map();
+const resourceFiles: Set<string> = new Set();
+
+let destinationDirectory = '';
+
+async function IsFile(path: string): Promise<boolean> {
+	try {
+		const result = await stat(path);
+		return result.isFile();
+	} catch {
+		return false;
+	}
+}
+
+export function SetResourceDestinationDirectory(path: string): void {
+	destinationDirectory = path;
+}
 
 export abstract class Resource {
 	public readonly resultName: string;
@@ -31,34 +50,113 @@ export abstract class Resource {
 		this.resultName = resultName;
 		this.size = size;
 		this.hash = hash;
+		resources.set(resultName, this);
 	}
 
-	public abstract export(destinationDirectory: string): void;
+	public abstract finalize(): Promise<void>;
+}
+
+export interface IImageResource extends Resource {
+	addResizedImage(maxWidth: number, maxHeight: number, suffix: string): string;
 }
 
 class FileResource extends Resource {
-	public readonly sourcePath: string;
+	private process: Promise<void>[] = [];
+	protected readonly baseName: string;
+	protected readonly extension: string;
+	protected readonly sourcePath: string;
 
-	constructor(resultName: string, size: number, hash: string, sourcePath: string) {
+	constructor(path: string) {
+		const sourcePath = join(AssetSourcePath, path);
+
+		if (!statSync(sourcePath).isFile()) {
+			throw new Error(`Resource ${path} not found (looking for '${sourcePath}')`);
+		}
+
+		const hash = GetResourceFileHash(sourcePath);
+		const size = GetResourceFileSize(sourcePath);
+		const resultName = basename(sourcePath).replace(/(?=(?:\.[^.]*)?$)/, `_${hash}`);
+
 		super(resultName, size, hash);
+
 		this.sourcePath = sourcePath;
+		this.baseName = resultName.replace(/\.[^.]*$/, '');
+		this.extension = resultName.replace(/^.*\.([^.]+)$/, '$1');
+
+		if (resourceFiles.has(resultName)) {
+			return;
+		}
+
+		resourceFiles.add(resultName);
+		WatchFile(sourcePath);
+
+		const dest = join(destinationDirectory, resultName);
+		this.addProcess(IsFile(dest)
+			.then(async (isFile) => {
+				if (!isFile) {
+					await copyFile(sourcePath, dest);
+				}
+			}));
 	}
 
-	public override export(destinationDirectory: string): void {
-		copyFileSync(this.sourcePath, join(destinationDirectory, this.resultName));
+	public async finalize(): Promise<void> {
+		await Promise.all(this.process);
+	}
+
+	protected addProcess(process: Promise<void> | (() => Promise<void>)): void {
+		if (typeof process === 'function') {
+			process = process();
+		}
+		this.process.push(process);
 	}
 }
 
 class InlineResource extends Resource {
-	public readonly value: Buffer;
+	private readonly finished: Promise<void>;
 
 	constructor(resultName: string, hash: string, value: Buffer) {
 		super(resultName, value.byteLength, hash);
-		this.value = value;
+		if (resourceFiles.has(this.resultName)) {
+			this.finished = Promise.resolve();
+		} else {
+			resourceFiles.add(this.resultName);
+			this.finished = writeFile(join(destinationDirectory, this.resultName), value);
+		}
 	}
 
-	public override export(destinationDirectory: string): void {
-		writeFileSync(join(destinationDirectory, this.resultName), this.value);
+	public async finalize(): Promise<void> {
+		await this.finished;
+	}
+}
+
+class ImageResource extends FileResource implements IImageResource {
+	constructor(path: string, category: ImageCategory) {
+		super(path);
+		CheckMaxSize(this, path, category);
+	}
+
+	public addResizedImage(maxWidth: number, maxHeight: number, suffix: string): string {
+		const name = `${this.baseName}_${suffix}.${this.extension}`;
+		if (resourceFiles.has(name))
+			return IS_PRODUCTION_BUILD ? name : this.resultName;
+
+		// Prevent the generated source from being deleted, even if we are not doing a production build
+		resourceFiles.add(name);
+
+		if (!IS_PRODUCTION_BUILD) {
+			return this.resultName;
+		}
+
+		this.addProcess(async () => {
+			const dest = join(destinationDirectory, name);
+			if (await IsFile(dest))
+				return;
+
+			await sharp(this.sourcePath)
+				.resize(maxWidth, maxHeight)
+				.toFile(dest);
+		});
+		return name;
 	}
 }
 
@@ -75,21 +173,8 @@ export function GetResourceFileSize(path: string): number {
 }
 
 export function DefineResource(path: string): Resource {
-	const sourcePath = join(AssetSourcePath, path);
-	if (!statSync(sourcePath).isFile()) {
-		throw new Error(`Resource ${path} not found (looking for '${sourcePath}')`);
-	}
-
-	WatchFile(sourcePath);
-
-	const hash = GetResourceFileHash(sourcePath);
-	const size = GetResourceFileSize(sourcePath);
-	const resultName = basename(sourcePath).replace(/(?=(?:\.[^.]*)?$)/, `_${hash}`);
-
-	const resource = new FileResource(resultName, size, hash, sourcePath);
-	resources.set(resultName, resource);
-
-	logger.debug(`Registered resource ${resultName}`);
+	const resource = new FileResource(path);
+	logger.debug(`Registered resource ${resource.resultName}`);
 	return resource;
 }
 
@@ -102,7 +187,6 @@ export function DefineResourceInline(name: string, value: string | Buffer): Reso
 	const resultName = name.replace(/(?=(?:\.[^.]*)?$)/, `_${hash}`);
 
 	const resource = new InlineResource(resultName, hash, value);
-	resources.set(resultName, resource);
 
 	logger.debug(`Registered resource ${resultName}`);
 	return resource;
@@ -115,28 +199,48 @@ function CheckMaxSize(resource: Resource, name: string, category: ImageCategory)
 	}
 }
 
-export function DefinePngResource(name: string, category: ImageCategory): Resource {
-	const resource = DefineResource(name);
+export function DefinePngResource(name: string, category: ImageCategory): IImageResource {
+	if (!name.endsWith('.png')) {
+		throw new Error(`Resource ${name} is not a PNG file.`);
+	}
 
-	CheckMaxSize(resource, name, category);
+	const resource = new ImageResource(name, category);
+
+	logger.debug(`Registered resource ${resource.resultName}`);
 
 	return resource;
 }
 
-export function DefineJpgResource(name: string, category: ImageCategory): Resource {
-	const resource = DefineResource(name);
+export function DefineJpgResource(name: string, category: ImageCategory): IImageResource {
+	if (!name.endsWith('.jpg')) {
+		throw new Error(`Resource ${name} is not a JPG file.`);
+	}
+	const resource = new ImageResource(name, category);
 
-	CheckMaxSize(resource, name, category);
+	logger.debug(`Registered resource ${resource.resultName}`);
 
 	return resource;
 }
 
 export function ClearAllResources(): void {
 	resources.clear();
+	resourceFiles.clear();
 }
 
-export function ExportAllResources(destinationDirectory: string): void {
-	for (const resource of resources.values()) {
-		resource.export(destinationDirectory);
-	}
+export async function ExportAllResources(): Promise<void> {
+	await Promise.all([...resources.values()]
+		.map((resource) => resource.finalize()));
+}
+
+export async function CleanOldResources(): Promise<void> {
+	const files = await readdir(destinationDirectory);
+	const cleanup = files
+		.filter((file) => !resourceFiles.has(file));
+
+	logger.debug(`Cleaning old resources: ${cleanup.map((r) => '\n - ' + r).join('')}`);
+
+	await Promise.allSettled(cleanup
+		.map((file) => join(destinationDirectory, file))
+		.map((path) => unlink(path)),
+	);
 }

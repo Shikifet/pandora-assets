@@ -2,9 +2,8 @@ import * as fs from 'fs';
 import { join } from 'path';
 import { GetLogger, SetConsoleOutput, LogLevel, AssetsDefinitionFile, AssetsGraphicsDefinitionFile, logConfig } from 'pandora-common';
 import { GlobalDefineAsset, SetCurrentContext } from './tools';
-import rimraf from 'rimraf';
 import { AssetDatabase } from './tools/assetDatabase';
-import { ClearAllResources, DefineResourceInline, ExportAllResources } from './tools/resources';
+import { CleanOldResources, ClearAllResources, DefineResourceInline, ExportAllResources, SetResourceDestinationDirectory } from './tools/resources';
 import { RunDev } from './tools/watch';
 import { boneDefinition } from './bones';
 import { GraphicsDatabase } from './tools/graphicsDatabase';
@@ -42,6 +41,7 @@ async function Run() {
 
 	// Setup environment
 	globalThis.DefineAsset = GlobalDefineAsset;
+	SetResourceDestinationDirectory(OUT_DIR);
 
 	// Clear old data
 	hadErrors = false;
@@ -50,6 +50,9 @@ async function Run() {
 	AssetDatabase.clear();
 	RoomDatabase.clear();
 	ClearAllResources();
+
+	if (!fs.existsSync(OUT_DIR))
+		fs.mkdirSync(OUT_DIR);
 
 	// Load common data
 	await LoadGitData();
@@ -121,11 +124,6 @@ async function Run() {
 	}
 
 	logger.info('Exporting result...');
-	// Remove any existing output and make empty directory
-	if (fs.existsSync(OUT_DIR)) {
-		rimraf.sync(OUT_DIR);
-	}
-	fs.mkdirSync(OUT_DIR);
 
 	const graphics: AssetsGraphicsDefinitionFile = GraphicsDatabase.export();
 	const graphicsFile = DefineResourceInline('graphics.json', JSON.stringify(graphics));
@@ -145,9 +143,12 @@ async function Run() {
 	ValidateBodyparts(definitions);
 
 	const definitionsFile = DefineResourceInline('assets.json', JSON.stringify(definitions));
+	DefineResourceInline('current', `${definitionsFile.hash}\n`);
 
-	ExportAllResources(OUT_DIR);
-	fs.writeFileSync(join(OUT_DIR, 'current'), `${definitionsFile.hash}\n`);
+	await Promise.all([
+		ExportAllResources(),
+		CleanOldResources(),
+	]);
 
 	logger.info('Done!');
 }
