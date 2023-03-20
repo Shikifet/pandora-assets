@@ -57,6 +57,12 @@ DefineAsset({
 		coherency: 4,
 		stimulus: 2,
 	},
+	coverSlots: ['mouth', 'outsideMouthArea'],
+	blockSlots: ['mouth'],
+	occupySlots: {
+		'outsideMouthArea': 2,
+		'mouth': 7,
+	},
 	chat: {
 		actionAdd: 'SOURCE_CHARACTER strapped a Large Ball Gag tightly between TARGET_CHARACTER_DYNAMIC_POSSESSIVE lips.',
 		actionRemove: 'SOURCE_CHARACTER loosened and then removed the Large Ball Gag from TARGET_CHARACTER_DYNAMIC_POSSESSIVE mouth.',

@@ -66,6 +66,10 @@ DefineAsset({
 					id: 'noPlug',
 					name: 'No Plug',
 					default: true,
+					occupySlots: {
+						'outsideMouthArea': 1,
+						'mouth': 1,
+					},
 					effects: {
 						lipsTouch: 9,
 						jawMove: 0,
@@ -89,7 +93,12 @@ DefineAsset({
 						stimulus: 3,
 					},
 					requirements: ['!Mouth_tongue_out'],
-
+					coverSlots: ['mouth', 'outsideMouthArea'],
+					blockSlots: ['mouth'],
+					occupySlots: {
+						'outsideMouthArea': 1,
+						'mouth': 1,
+					},
 				},
 				{
 					id: 'dildoplug',
@@ -104,6 +113,12 @@ DefineAsset({
 						stimulus: 6,
 					},
 					requirements: ['!Mouth_tongue_out'],
+					coverSlots: ['mouth', 'outsideMouthArea'],
+					blockSlots: ['mouth'],
+					occupySlots: {
+						'outsideMouthArea': 1,
+						'mouth': 9,
+					},
 				},
 			],
 		},
