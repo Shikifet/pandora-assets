@@ -1,17 +1,19 @@
 DefineAsset({
-	name: 'Short Elegant Skirt',
+	name: 'Latex Dress',
 	size: 'medium',
 	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: {
-		skirt: {
-			name: 'Skirt',
-			default: '#222222',
+		dress: {
+			name: 'Dress',
+			default: '#FFFFFF',
 		},
 	},
 	attributes: [
 		'Clothing',
+		'Clothing_upper',
 		'Clothing_lower',
+		'Clothing_large',
 	],
 	modules: {
 		skirtStateFront: {
@@ -45,6 +47,12 @@ DefineAsset({
 			],
 		},
 	},
+	poseLimits: {
+		bones: {
+			arm_r: [[-75, 120]],
+			arm_l: [[-75, 120]],
+		},
+	},
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 		credits: ['ClaudiaMia'],
@@ -52,10 +60,10 @@ DefineAsset({
 		reusePolicy: 'Ask first',
 		licensing: [
 			{
-				source: 'https://www.flickr.com/photos/61470346@N04/6259911046',
-				copyrightHolder: 'Maria',
+				source: 'Self-Made',
+				copyrightHolder: 'ClaudiaMia',
 				editedBy: 'ClaudiaMia',
-				license: 'CC BY-SA',
+				license: 'Pandora-Use-Only',
 			},
 		],
 	},
