@@ -58,7 +58,11 @@ DefineAsset({
 		},
 	},
 	poseLimits: {
-		arms: { position: ArmsPose.BACK },
+		arms: {
+			position: ArmsPose.BACK,
+			fingers: 'spread',
+			rotation: 'forward',
+		},
 		bones: {
 			arm_r: 104,
 			arm_l: 104,
