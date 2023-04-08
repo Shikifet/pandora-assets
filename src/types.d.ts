@@ -15,7 +15,14 @@ interface AssetRepoExtraArgs {
 	bodyparts: import('./bodyparts').BodypartName;
 	attributes: import('./attributes').AttributeNames;
 	slots: import('./slots').AssetSlotNames;
+	colorGroups: import('./colorGroups').ColorGroupNames;
 }
+
+type AssetColorization = import('pandora-common').AssetColorization<AssetRepoExtraArgs>;
+
+type IntermediateAssetColorization
+	= (Omit<AssetColorization, 'group'> & { group?: never; })
+	| (Omit<AssetColorization, 'default'> & { group: AssetRepoExtraArgs['colorGroups']; default?: never; });
 
 interface IntermediateAssetDefinition extends Pick<import('pandora-common').AssetDefinition<AssetRepoExtraArgs>, import('./tools/definition').AssetDefinitionFallthoughProperties> {
 	id?: string;
@@ -37,6 +44,7 @@ interface IntermediateAssetDefinition extends Pick<import('pandora-common').Asse
 		 */
 		licensing: LicensingInfo[];
 	};
+	colorization?: Record<string, IntermediateAssetColorization>;
 }
 
 interface IntermediateRoomBackgroundDefinition extends Pick<import('pandora-common').IChatroomBackgroundInfo,
