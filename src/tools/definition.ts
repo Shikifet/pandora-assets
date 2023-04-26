@@ -1,4 +1,4 @@
-import { AssetDefinition, AssetDefinitionPoseLimit, AssetDefinitionPoseLimits, AssetId, BONE_MAX, BONE_MIN, GetLogger, HexRGBAColorStringSchema, Logger } from 'pandora-common';
+import { AssetDefinitionPoseLimit, AssetDefinitionPoseLimits, AssetId, BONE_MAX, BONE_MIN, GetLogger, Logger, PersonalAssetDefinition } from 'pandora-common';
 import { AssetDatabase } from './assetDatabase';
 import { AssetSourcePath, DefaultId } from './context';
 import { LoadAssetsGraphics } from './graphics';
@@ -8,7 +8,7 @@ import { Contributors, CurrentCommitter, GitDataAvailable } from './git';
 import { IS_PRODUCTION_BUILD } from '../constants';
 import * as fs from 'fs';
 import { pick } from 'lodash';
-import { COLOR_GROUP_DEFINITION } from '../colorGroups';
+import { LoadAssetColorization } from './load_helpers/color';
 
 const DEFINITION_FALLTHOUGH_PROPERTIES = [
 	// Properties
@@ -34,11 +34,11 @@ const DEFINITION_FALLTHOUGH_PROPERTIES = [
 	'chat',
 	'bodypart',
 	'modules',
-] as const;
+] as const satisfies readonly (keyof PersonalAssetDefinition)[];
 
 export type AssetDefinitionFallthoughProperties = (typeof DEFINITION_FALLTHOUGH_PROPERTIES)[number] & string;
 
-export function GlobalDefineAsset(def: IntermediateAssetDefinition): void {
+export function GlobalDefineAsset(def: IntermediatePersonalAssetDefinition): void {
 	const id: AssetId = `a/${def.id ?? DefaultId()}` as const;
 
 	const logger = GetLogger('DefineAsset', `[Asset ${id}]`);
@@ -53,42 +53,11 @@ export function GlobalDefineAsset(def: IntermediateAssetDefinition): void {
 		logger.error(`Invalid size: Only bodyparts can use the 'bodypart' size`);
 	}
 
-	let colorization: Record<string, AssetColorization> | undefined;
-	if (def.colorization) {
-		colorization = {};
-		for (const [key, value] of Object.entries(def.colorization)) {
-			let minAlpha: number | undefined;
-			if (value.minAlpha != null) {
-				if (typeof value.minAlpha === 'string') {
-					minAlpha = Math.round(parseInt(value.minAlpha.slice(0, -1)) / 100 * 255);
-				} else if (value.minAlpha > 0 && value.minAlpha < 1) {
-					minAlpha = Math.round(value.minAlpha * 255);
-				} else {
-					minAlpha = Math.round(value.minAlpha);
-				}
-				if (minAlpha < 0 || minAlpha > 255) {
-					definitionValid = false;
-					logger.error(`Invalid minAlpha in colorization.${key}: '${value.minAlpha}' is not a valid alpha value, accepted range is 0-255 or 0-1 or 0%-100%`);
-				}
-			}
-			if (value.group) {
-				colorization[key] = {
-					...value,
-					minAlpha,
-					default: COLOR_GROUP_DEFINITION[value.group],
-				};
-			} else {
-				if (!HexRGBAColorStringSchema.safeParse(value.default).success) {
-					definitionValid = false;
-					logger.error(`Invalid default in colorization.${key}: '${value.default}' is not a valid color, use full hex format, like '#ffffff'`);
-				}
-				colorization[key] = {
-					...value,
-					minAlpha,
-				};
-			}
-		}
-	}
+	const {
+		colorization,
+		valid: colorizationValid,
+	} = LoadAssetColorization(logger, def.colorization);
+	definitionValid &&= colorizationValid;
 
 	if (def.poseLimits) {
 		ValidateAssetDefinitionPoseLimits(logger, 'poseLimits', def.poseLimits);
@@ -141,8 +110,9 @@ export function GlobalDefineAsset(def: IntermediateAssetDefinition): void {
 		return;
 	}
 
-	const asset: AssetDefinition = {
+	const asset: PersonalAssetDefinition<AssetRepoExtraArgs> = {
 		...pick(def, DEFINITION_FALLTHOUGH_PROPERTIES),
+		type: 'personal',
 		id,
 		colorization,
 		hasGraphics: def.graphics !== undefined,
@@ -168,7 +138,7 @@ export function GlobalDefineAsset(def: IntermediateAssetDefinition): void {
 	AssetDatabase.registerAsset(id, asset);
 }
 
-function ValidateAssetDefinitionPoseLimits(logger: Logger, context: string, limits: AssetDefinitionPoseLimits): void {
+export function ValidateAssetDefinitionPoseLimits(logger: Logger, context: string, limits: AssetDefinitionPoseLimits): void {
 	ValidateAssetDefinitionPoseLimit(logger, context, limits);
 	if (!limits.options) {
 		return;
@@ -178,7 +148,7 @@ function ValidateAssetDefinitionPoseLimits(logger: Logger, context: string, limi
 	}
 }
 
-function ValidateAssetDefinitionPoseLimit(logger: Logger, context: string, { bones, arms, leftArm, rightArm }: AssetDefinitionPoseLimit): void {
+export function ValidateAssetDefinitionPoseLimit(logger: Logger, context: string, { bones, arms, leftArm, rightArm }: AssetDefinitionPoseLimit): void {
 	for (const [name, range] of Object.entries(bones ?? {})) {
 		if (typeof range === 'number') {
 			if (range < BONE_MIN || range > BONE_MAX) {
