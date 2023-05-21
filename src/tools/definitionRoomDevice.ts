@@ -42,6 +42,7 @@ const ROOM_DEVICE_DEFINITION_FALLTHOUGH_PROPERTIES = [
 	'name',
 	'size',
 	'chat',
+	'staticAttributes',
 
 	// Graphics definition
 	'colorization',
@@ -78,6 +79,12 @@ function DefineRoomDeviceWearablePart(baseId: AssetId, slot: string, def: Interm
 		id,
 		hasGraphics: def.graphics !== undefined,
 	};
+
+	// All room device parts must be marked as a room device
+	asset.attributes ??= [];
+	if (!asset.attributes.includes('Room_device')) {
+		asset.attributes.unshift('Room_device');
+	}
 
 	// Load and verify graphics
 	if (def.graphics) {
@@ -213,6 +220,11 @@ export function GlobalDefineRoomDeviceAsset(def: IntermediateRoomDeviceDefinitio
 		id,
 		slots,
 	};
+
+	asset.staticAttributes ??= [];
+	if (!asset.staticAttributes.includes('Room_device')) {
+		asset.staticAttributes.unshift('Room_device');
+	}
 
 	AssetDatabase.registerAsset(id, asset);
 }

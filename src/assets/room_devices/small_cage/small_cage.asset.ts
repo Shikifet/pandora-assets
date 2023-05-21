@@ -1,5 +1,5 @@
 DefineRoomDeviceAsset({
-	name: 'Small cage',
+	name: 'Small Cage',
 	size: 'huge',
 	colorization: {
 		cage: {
@@ -16,7 +16,7 @@ DefineRoomDeviceAsset({
 		character_slot: {
 			name: 'Cage',
 			asset: {
-				name: 'Small cage',
+				name: 'Small Cage',
 				size: 'huge',
 				poseLimits: {
 					bones: {
@@ -25,6 +25,10 @@ DefineRoomDeviceAsset({
 						leg_r: [[-30, 0]],
 						leg_l: [[-30, 0]],
 					},
+				},
+				effects: {
+					blockHands: true,
+					// blockRoomLeave: true,
 				},
 			},
 		},

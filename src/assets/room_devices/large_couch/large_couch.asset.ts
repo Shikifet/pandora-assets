@@ -1,9 +1,9 @@
 DefineRoomDeviceAsset({
-	name: 'Large couch',
+	name: 'Large Couch',
 	size: 'huge',
 	colorization: {
 		couch: {
-			name: 'couch',
+			name: 'Couch',
 			default: '#ffffff',
 		},
 	},
