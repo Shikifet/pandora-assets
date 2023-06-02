@@ -98,6 +98,7 @@ interface IntermediateRoomBackgroundDefinition extends Pick<import('pandora-comm
 > {
 	/** The background image of the chat room; must be in `jpg` format */
 	image: `${string}.jpg`;
+	tags: import('./backgrounds/backgrounds').BackgroundTagNames[];
 	/** Info about who owns the asset(s) */
 	ownership: {
 		/** Same as author of git commits present in PR, has responsibility for this asset */

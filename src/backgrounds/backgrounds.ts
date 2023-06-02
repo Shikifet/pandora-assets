@@ -1,16 +1,107 @@
 import { DefineRoomBackground } from '../tools/roomDefinition';
+import { BackgroundTagDefinition } from 'pandora-common';
+
+type CategoryDefinition = {
+	name: string;
+	tags: Record<string, string>;
+};
+
+const TAGS_DEFINITION = {
+	time: {
+		name: 'Time',
+		tags: {
+			day: 'Day',
+			night: 'Night',
+		},
+	},
+	ambiance: {
+		name: 'Ambiance',
+		tags: {
+			chill: 'Chill',
+			cozy: 'Cozy',
+			dirty: 'Dirty',
+			foggy: 'Foggy',
+			home: 'Home',
+			padded: 'Padded',
+			urban: 'Urban',
+			damp: 'Damp',
+		},
+	},
+	location: {
+		name: 'Location',
+		tags: {
+			inside: 'Inside',
+			outside: 'Outside',
+			asylum: 'Asylum',
+			bar: 'Bar',
+			bathroom: 'Bathroom',
+			beach: 'Beach',
+			bedroom: 'Bedroom',
+			casino: 'Casino',
+			cell: 'Cell',
+			cellar: 'Cellar',
+			city: 'City',
+			dungeon: 'Dungeon',
+			entrance: 'Entrance',
+			field: 'Field',
+			forest: 'Forest',
+			foyer: 'Foyer',
+			hallway: 'Hallway',
+			garage: 'Garage',
+			garden: 'Garden',
+			gym: 'Gym',
+			livingroom: 'Livingroom',
+			lounge: 'Lounge',
+			nature: 'Nature',
+			nightclub: 'Nightclub',
+			shopping: 'Shopping',
+			storage: 'Storage',
+			street: 'Street',
+			wasteland: 'Wasteland',
+		},
+	},
+	item: {
+		name: 'Item',
+		tags: {
+			bed: 'Bed',
+			buildings: 'Buildings',
+			couch: 'Couch',
+			fireplace: 'Fireplace',
+			kennel: 'Kennel',
+			path: 'Path',
+			pool: 'Pool',
+			shower: 'Shower',
+			throne: 'Throne',
+			toilet: 'Toilet',
+			wardrobe: 'Wardrobe',
+			water: 'Water',
+		},
+	},
+	space: {
+		name: 'Space',
+		tags: {
+			space_small: 'Small',
+			space_medium: 'Medium',
+			space_large: 'Large',
+			space_verylarge: 'Very Large',
+		},
+	},
+} as const satisfies Record<string, CategoryDefinition>;
+
+type BackgroundCategoryKeys = keyof typeof TAGS_DEFINITION;
+type BackgroundTags = typeof TAGS_DEFINITION[BackgroundCategoryKeys]['tags'];
+type KeysOfUnion<T> = T extends T ? keyof T : never;
+export type BackgroundTagNames = KeysOfUnion<BackgroundTags>;
 
 const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 	{
-		// indoor
-		// cozy
-		// space: small
 		id: 'loft_living_room',
 		name: 'Loft living room',
 		image: 'loft_living_room.jpg',
 		size: [2750, 1837],
 		maxY: 720,
 		scaling: 1.3,
+		tags: ['inside', 'couch', 'cozy', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -23,15 +114,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// water
-		// beach
-		// space: medium
 		id: 'sea_house',
 		name: 'Sea house',
 		image: 'sea_house.jpg',
 		size: [2750, 1837],
 		maxY: 530,
 		scaling: 1.7,
+		tags: ['water', 'beach', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -44,17 +133,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// outside
-		// nature
-		// field
-		// day
-		// space: large
 		id: 'wheat_field',
 		name: 'Wheat field',
 		image: 'wheat_field.jpg',
 		size: [2750, 2000],
 		maxY: 1400,
 		scaling: 1.3,
+		tags: ['outside', 'nature', 'field', 'day', 'space_large'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -67,19 +152,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// outside
-		// nature
-		// forest
-		// dirty
-		// wet
-		// day
-		// space: small
 		id: 'wet_forest_road',
 		name: 'Wet forest road',
 		image: 'wet_forest_road.jpg',
 		size: [2750, 1937],
 		maxY: 950,
 		scaling: 1.8,
+		tags: ['outside', 'nature', 'forest', 'dirty', 'damp', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -92,17 +171,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// outside
-		// nature
-		// path
-		// day
-		// space: small
 		id: 'spring_path',
 		name: 'Countryside path in spring',
 		image: 'spring_path.jpg',
 		size: [2750, 1837],
 		maxY: 980,
 		scaling: 1.7,
+		tags: ['outside', 'nature', 'path', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -115,17 +190,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// outside
-		// nature
-		// field
-		// day
-		// space: large
 		id: 'corn_field',
 		name: 'Corn field',
 		image: 'corn_field.jpg',
 		size: [3050, 2237],
 		maxY: 1080,
 		scaling: 1.74,
+		tags: ['outside', 'nature', 'field', 'day', 'space_large'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -138,17 +209,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// outside
-		// nature
-		// path
-		// day
-		// space: small
 		id: 'walking_path',
 		name: 'Countryside walking path',
 		image: 'walking_path.jpg',
 		size: [2750, 1937],
 		maxY: 980,
 		scaling: 1.8,
+		tags: ['outside', 'nature', 'path', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -161,17 +228,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// outside
-		// nature
-		// garden
-		// day
-		// space: large
 		id: 'large_garden',
 		name: 'Large garden',
 		image: 'large_garden.jpg',
 		size: [5000, 3600],
 		maxY: 1400,
 		scaling: 2.0,
+		tags: ['outside', 'nature', 'garden', 'day', 'space_large'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -184,17 +247,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// dungeon
-		// cellar
-		// day
-		// space: medium
 		id: 'underground_area',
 		name: 'Underground Area',
 		image: 'underground_area.jpg',
 		size: [4000, 2800],
 		maxY: 1180,
 		scaling: 1.7,
+		tags: ['inside', 'dungeon', 'cellar', 'day', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -207,18 +266,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// outside
-		// nature
-		// forest
-		// foggy
-		// day
-		// space: small
 		id: 'foggy_forest',
 		name: 'Foggy forest',
 		image: 'foggy_forest.jpg',
 		size: [4000, 2800],
 		maxY: 780,
 		scaling: 2.3,
+		tags: ['outside', 'nature', 'forest', 'foggy', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -231,17 +285,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// outside
-		// nature
-		// forest
-		// day
-		// space: small
 		id: 'sunny_forest_clearing',
 		name: 'Sunny forest clearing',
 		image: 'sunny_forest_clearing.jpg',
 		size: [4000, 2800],
 		maxY: 1080,
 		scaling: 1.9,
+		tags: ['outside', 'nature', 'forest', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -254,17 +304,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// outside
-		// buildings
-		// wasteland
-		// day
-		// space: very large
 		id: 'abandoned_wide_space',
 		name: 'Abandoned wasteland',
 		image: 'abandoned_wide_space.jpg',
 		size: [3750, 2667],
 		maxY: 1180,
 		scaling: 2.4,
+		tags: ['outside', 'buildings', 'wasteland', 'day', 'space_verylarge'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -277,18 +323,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// outside
-		// buildings
-		// beach
-		// water
-		// day
-		// space: small
 		id: 'long_narrow_beach',
 		name: 'Long narrow beach',
 		image: 'long_narrow_beach.jpg',
 		size: [3250, 2237],
 		maxY: 680,
 		scaling: 2.1,
+		tags: ['outside', 'buildings', 'beach', 'water', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -301,17 +342,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// dungeon
-		// cellar
-		// night
-		// space: medium
 		id: 'ritual_dungeon',
 		name: 'Ritual dungeon',
 		image: 'ritual_dungeon.jpg',
 		size: [3250, 2337],
 		maxY: 630,
 		scaling: 2.3,
+		tags: ['inside', 'dungeon', 'cellar', 'night', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -325,19 +362,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// dungeon
-		// cellar
-		// storage
-		// dirty
-		// night
-		// space: medium
 		id: 'storage_cellar',
 		name: 'Storage cellar',
 		image: 'storage_cellar.jpg',
 		size: [4000, 2800],
 		maxY: 1180,
 		scaling: 1.7,
+		tags: ['inside', 'dungeon', 'cellar', 'storage', 'dirty', 'night', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -351,16 +382,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// dungeon
-		// day
-		// space: large
 		id: 'sandy_dungeon',
 		name: 'Sandy dungeon',
 		image: 'sandy_dungeon.jpg',
 		size: [4000, 2800],
 		maxY: 1080,
 		scaling: 2.2,
+		tags: ['inside', 'dungeon', 'day', 'space_large'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -373,16 +401,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// throne
-		// day
-		// space: small
 		id: 'imperial_throne_room',
 		name: 'Imperial throne room',
 		image: 'imperial_throne_room.jpg',
 		size: [3250, 2337],
 		maxY: 580,
 		scaling: 2.0,
+		tags: ['inside', 'throne', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -395,16 +420,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// throne
-		// day
-		// space: medium
 		id: 'holy_throne_room',
 		name: 'Holy throne room',
 		image: 'holy_throne_room.jpg',
 		size: [4000, 2800],
 		maxY: 650,
 		scaling: 2.0,
+		tags: ['inside', 'throne', 'day', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -418,16 +440,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// throne
-		// day
-		// space: medium
 		id: 'palace_throne_room',
 		name: 'Palace throne room',
 		image: 'palace_throne_room.jpg',
 		size: [5000, 3500],
 		maxY: 860,
 		scaling: 2.0,
+		tags: ['inside', 'throne', 'day', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -440,17 +459,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// outside
-		// bar
-		// nightclub
-		// night
-		// space: medium
 		id: 'nightclub_back',
 		name: 'Nightclub back entrance',
 		image: 'nightclub_back.jpg',
 		size: [3250, 2337],
 		maxY: 760,
 		scaling: 1.9,
+		tags: ['outside', 'bar', 'nightclub', 'night', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -463,17 +478,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// lounge
-		// casino
-		// night
-		// space: large
 		id: 'casino_lounge',
 		name: 'Casino lounge',
 		image: 'casino_lounge.jpg',
 		size: [3250, 2337],
 		maxY: 1160,
 		scaling: 1.6,
+		tags: ['inside', 'lounge', 'casino', 'night', 'space_large'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -486,17 +497,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// lounge
-		// bar
-		// night
-		// space: large
 		id: 'high_class_bar',
 		name: 'High class bar',
 		image: 'high_class_bar.jpg',
 		size: [3250, 2337],
 		maxY: 1110,
 		scaling: 1.8,
+		tags: ['inside', 'lounge', 'bar', 'night', 'space_large'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -509,17 +516,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// lounge
-		// hallway
-		// night
-		// space: large
 		id: 'white_hallway',
 		name: 'White hallway',
 		image: 'white_hallway.jpg',
 		size: [3250, 2337],
 		maxY: 1090,
 		scaling: 1.82,
+		tags: ['inside', 'lounge', 'hallway', 'night', 'space_large'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -532,17 +535,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// lounge
-		// hallway
-		// night
-		// space: large
 		id: 'red_hallway',
 		name: 'Red hallway',
 		image: 'red_hallway.jpg',
 		size: [3250, 2337],
 		maxY: 990,
 		scaling: 2.22,
+		tags: ['inside', 'lounge', 'hallway', 'night', 'space_large'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -555,17 +554,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// lounge
-		// hallway
-		// night
-		// space: large
 		id: 'club_hallway',
 		name: 'Club hallway',
 		image: 'club_hallway.jpg',
 		size: [3250, 2337],
 		maxY: 1130,
 		scaling: 1.9,
+		tags: ['inside', 'lounge', 'hallway', 'night', 'space_large'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -578,17 +573,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// lounge
-		// shopping
-		// chill
-		// space: medium
 		id: 'shopping_lounge',
 		name: 'Shopping lounge',
 		image: 'shopping_lounge.jpg',
 		size: [3250, 2337],
 		maxY: 1090,
 		scaling: 1.6,
+		tags: ['inside', 'lounge', 'shopping', 'chill', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -601,17 +592,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// outside
-		// street
-		// city
-		// day
-		// space: large
 		id: 'city_street_day',
 		name: 'City street at day',
 		image: 'city_street_day.jpg',
 		size: [3250, 2337],
 		maxY: 1120,
 		scaling: 1.82,
+		tags: ['outside', 'street', 'city', 'day', 'space_large'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -625,18 +612,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// bedroom
-		// cozy
-		// bed
-		// night
-		// space: small
 		id: 'cozy_dim_bed',
 		name: 'Cozy dim bed',
 		image: 'cozy_dim_bed.jpg',
 		size: [2250, 1737],
 		maxY: 600,
 		scaling: 1.01,
+		tags: ['inside', 'bedroom', 'cozy', 'bed', 'night', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -650,18 +632,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// outside
-		// urban
-		// garden
-		// home
-		// day
-		// space: large
 		id: 'urban_garden_with_playground',
 		name: 'Urban garden with playground',
 		image: 'urban_garden_with_playground.jpg',
 		size: [3250, 2337],
 		maxY: 1120,
 		scaling: 1.82,
+		tags: ['outside', 'urban', 'garden', 'home', 'day', 'space_large'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -674,20 +651,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// outside
-		// urban
-		// garden
-		// home
-		// pool
-		// water
-		// day
-		// space: medium
 		id: 'garden_with_pool',
 		name: 'Garden with pool',
 		image: 'garden_with_pool.jpg',
 		size: [5250, 3337],
 		maxY: 1370,
 		scaling: 1.82,
+		tags: ['outside', 'urban', 'garden', 'home', 'pool', 'water', 'day', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -700,17 +670,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// garage
-		// home
-		// day
-		// space: medium
 		id: 'large_home_garage',
 		name: 'Large home garage',
 		image: 'large_home_garage.jpg',
 		size: [2650, 1937],
 		maxY: 820,
 		scaling: 1.68,
+		tags: ['inside', 'garage', 'home', 'day', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -723,17 +689,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// gym
-		// home
-		// day
-		// space: small
 		id: 'personal_gym_room',
 		name: 'Personal gym room',
 		image: 'personal_gym_room.jpg',
 		size: [2450, 1737],
 		maxY: 560,
 		scaling: 1.58,
+		tags: ['inside', 'gym', 'home', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -746,18 +708,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// livingroom
-		// kennel
-		// home
-		// day
-		// space: medium
 		id: 'livingroom_with_kennel',
 		name: 'Livingroom with kennel',
 		image: 'livingroom_with_kennel.jpg',
 		size: [2650, 1937],
 		maxY: 820,
 		scaling: 1.58,
+		tags: ['inside', 'livingroom', 'kennel', 'home', 'day', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -770,17 +727,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// bedroom
-		// home
-		// day
-		// space: small
 		id: 'grey_bedroom',
 		name: 'Grey bedroom',
 		image: 'grey_bedroom.jpg',
 		size: [2650, 1937],
 		maxY: 760,
 		scaling: 0.9,
+		tags: ['inside', 'bedroom', 'home', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -793,18 +746,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// livingroom
-		// couch
-		// home
-		// day
-		// space: medium
 		id: 'cozy_minimal_livingroom',
 		name: 'Cozy minimal livingroom',
 		image: 'cozy_minimal_livingroom.jpg',
 		size: [2750, 1937],
 		maxY: 870,
 		scaling: 1.1,
+		tags: ['inside', 'livingroom', 'couch', 'home', 'day', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -817,19 +765,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// livingroom
-		// fireplace
-		// cozy
-		// home
-		// day
-		// space: medium
 		id: 'colorful_livingroom',
 		name: 'Colorful livingroom',
 		image: 'colorful_livingroom.jpg',
 		size: [2650, 1937],
 		maxY: 720,
 		scaling: 1.3,
+		tags: ['inside', 'livingroom', 'fireplace', 'cozy', 'home', 'day', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -842,18 +784,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// bathroom
-		// shower
-		// toilet
-		// day
-		// space: small
 		id: 'bathroom_with_dressing_room',
 		name: 'Bathroom with dressing room',
 		image: 'bathroom_with_dressing_room.jpg',
 		size: [2450, 1837],
 		maxY: 720,
 		scaling: 1.8,
+		tags: ['inside', 'bathroom', 'shower', 'toilet', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -866,18 +803,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// entrance
-		// foyer
-		// home
-		// day
-		// space: small
 		id: 'entrance_area',
 		name: 'Home entrance inside',
 		image: 'entrance_area.jpg',
 		size: [2450, 1737],
 		maxY: 460,
 		scaling: 1.58,
+		tags: ['inside', 'entrance', 'foyer', 'home', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -890,16 +822,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// wardrobe
-		// day
-		// space: small
 		id: 'wardrobe_room',
 		name: 'Wardrobe room',
 		image: 'wardrobe_room.jpg',
 		size: [2450, 1837],
 		maxY: 320,
 		scaling: 1.1,
+		tags: ['inside', 'wardrobe', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -912,18 +841,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// outside
-		// entrance
-		// urban
-		// home
-		// day
-		// space: small
 		id: 'home_entrance_outside',
 		name: 'Home entrance outside',
 		image: 'home_entrance_outside.jpg',
 		size: [2450, 1737],
 		maxY: 610,
 		scaling: 1.4,
+		tags: ['outside', 'entrance', 'urban', 'home', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -936,17 +860,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// cell
-		// padded
-		// asylum
-		// space: medium
 		id: 'padded_cell',
 		name: 'Padded Cell',
 		image: 'padded_cell.jpg',
 		size: [2750, 1947],
 		maxY: 420,
 		scaling: 1.3,
+		tags: ['inside', 'cell', 'padded', 'asylum', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -960,17 +880,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// bathroom
-		// shower
-		// day
-		// space: small
 		id: 'large_shower',
 		name: 'Large shower',
 		image: 'large_shower.jpg',
 		size: [2250, 1677],
 		maxY: 200,
 		scaling: 1.3,
+		tags: ['inside', 'bathroom', 'shower', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -983,16 +899,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// bathroom
-		// shower
-		// space: medium
 		id: 'shower_room',
 		name: 'Shower room',
 		image: 'shower_room.jpg',
 		size: [4000, 2000],
 		maxY: 125,
 		scaling: 1.8,
+		tags: ['inside', 'bathroom', 'shower', 'day', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'Jomshir98 <jomshir98@protonmail.com>',
 			licensing: [
@@ -1005,18 +918,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// inside
-		// livingroom
-		// cozy
-		// home
-		// day
-		// space: medium
 		id: 'blue_livingroom',
 		name: 'Blue livingroom',
 		image: 'blue_livingroom.jpg',
 		size: [2650, 1937],
 		maxY: 740,
 		scaling: 1.5,
+		tags: ['inside', 'livingroom', 'cozy', 'home', 'day', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -1029,15 +937,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// indoor
-		// empty
-		// space: small
 		id: 'vintage_room',
 		name: 'Vintage room',
 		image: 'vintage_room.jpg',
 		size: [2300, 1537],
 		maxY: 285,
 		scaling: 1.9,
+		tags: ['inside', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -1050,15 +956,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// indoor
-		// empty
-		// space: small
 		id: 'club_room_small',
 		name: 'Club room (small)',
 		image: 'club_room_small.jpg',
 		size: [3250, 2337],
 		maxY: 265,
 		scaling: 1.5,
+		tags: ['inside', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -1071,15 +975,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// indoor
-		// empty
-		// space: medium
 		id: 'club_room_medium',
 		name: 'Club room (medium)',
 		image: 'club_room_medium.jpg',
 		size: [2300, 1637],
 		maxY: 595,
 		scaling: 1.45,
+		tags: ['inside', 'day', 'space_medium'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -1097,15 +999,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// indoor
-		// empty
-		// space: large
 		id: 'club_room_large',
 		name: 'Club room (large)',
 		image: 'club_room_large.jpg',
 		size: [2300, 1637],
 		maxY: 895,
 		scaling: 1.3,
+		tags: ['inside', 'day', 'space_large'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -1123,16 +1023,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// indoor
-		// empty
-		// fireplace
-		// space: small
 		id: 'fireplace_room',
 		name: 'Fireplace room',
 		image: 'fireplace_room.jpg',
 		size: [3050, 1887],
 		maxY: 400,
 		scaling: 1.5,
+		tags: ['inside', 'fireplace', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -1145,16 +1042,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// indoor
-		// living room
-		// couch
-		// space: small
 		id: 'couch_living_room',
 		name: 'Couch living room',
 		image: 'couch_living_room.jpg',
 		size: [3150, 1967],
 		maxY: 345,
 		scaling: 1.7,
+		tags: ['inside', 'livingroom', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -1167,16 +1061,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// indoor
-		// empty
-		// fireplace
-		// space: small
 		id: 'cozy_fireplace_room',
 		name: 'Cozy Fireplace room',
 		image: 'cozy_fireplace_room.jpg',
 		size: [2950, 1937],
 		maxY: 430,
 		scaling: 1.5,
+		tags: ['inside', 'fireplace', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -1189,15 +1080,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// indoor
-		// empty
-		// space: small
 		id: 'green_room',
 		name: 'Green room',
 		image: 'green_room.jpg',
 		size: [2750, 1837],
 		maxY: 235,
 		scaling: 1.5,
+		tags: ['inside', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -1210,15 +1099,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// indoor
-		// empty
-		// space: small
 		id: 'grey_room',
 		name: 'Grey room',
 		image: 'grey_room.jpg',
 		size: [2750, 1837],
 		maxY: 260,
 		scaling: 1.6,
+		tags: ['inside', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -1231,16 +1118,13 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 	{
-		// indoor
-		// empty
-		// dungeon
-		// space: small
 		id: 'stone_room',
 		name: 'Stone room',
 		image: 'stone_room.jpg',
 		size: [2150, 1537],
 		maxY: 325,
 		scaling: 1.9,
+		tags: ['inside', 'dungeon', 'day', 'space_small'],
 		ownership: {
 			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 			licensing: [
@@ -1253,6 +1137,19 @@ const BACKGROUNDS: IntermediateRoomBackgroundDefinition[] = [
 		},
 	},
 ];
+
+export function LoadBackgroundTags() {
+	const result: Record<string, BackgroundTagDefinition> = {};
+	for (const { name: category, tags } of Object.values(TAGS_DEFINITION)) {
+		for (const [tagKey, name] of Object.entries(tags)) {
+			result[tagKey] = {
+				name,
+				category,
+			};
+		}
+	}
+	return result;
+}
 
 export function LoadBackgrounds() {
 	for (const background of BACKGROUNDS) {
