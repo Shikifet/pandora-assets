@@ -4,15 +4,13 @@ import { AssetSourcePath, DefaultId } from './context';
 import { LoadAssetsGraphics } from './graphics';
 import { GraphicsDatabase } from './graphicsDatabase';
 import { join } from 'path';
-import { Contributors, CurrentCommitter, GitDataAvailable } from './git';
-import { IS_PRODUCTION_BUILD } from '../constants';
-import * as fs from 'fs';
 import { pick } from 'lodash';
 import { DefinePngResource } from './resources';
 import { ValidateAssetDefinitionPoseLimits } from './definition';
 import { LoadRoomDeviceColorization } from './load_helpers/color';
+import { ValidateOwnershipData } from './licensing';
 
-const ROOM_DEVICE_WEARABLE_PART_DEFINITION_FALLTHOUGH_PROPERTIES = [
+const ROOM_DEVICE_WEARABLE_PART_DEFINITION_FALLTHROUGH_PROPERTIES = [
 	// Properties
 	'poseLimits',
 	'effects',
@@ -35,9 +33,9 @@ const ROOM_DEVICE_WEARABLE_PART_DEFINITION_FALLTHOUGH_PROPERTIES = [
 	'chat',
 ] as const satisfies readonly (keyof RoomDeviceWearablePartAssetDefinition)[];
 
-export type RoomDeviceWearablePartAssetDefinitionFallthoughProperties = (typeof ROOM_DEVICE_WEARABLE_PART_DEFINITION_FALLTHOUGH_PROPERTIES)[number] & string;
+export type RoomDeviceWearablePartAssetDefinitionFallthroughProperties = (typeof ROOM_DEVICE_WEARABLE_PART_DEFINITION_FALLTHROUGH_PROPERTIES)[number] & string;
 
-const ROOM_DEVICE_DEFINITION_FALLTHOUGH_PROPERTIES = [
+const ROOM_DEVICE_DEFINITION_FALLTHROUGH_PROPERTIES = [
 	// Asset definition
 	'name',
 	'size',
@@ -50,7 +48,7 @@ const ROOM_DEVICE_DEFINITION_FALLTHOUGH_PROPERTIES = [
 	'graphicsLayers',
 ] as const satisfies readonly (keyof RoomDeviceAssetDefinition)[];
 
-export type AssetRoomDeviceDefinitionFallthoughProperties = (typeof ROOM_DEVICE_DEFINITION_FALLTHOUGH_PROPERTIES)[number] & string;
+export type AssetRoomDeviceDefinitionFallthroughProperties = (typeof ROOM_DEVICE_DEFINITION_FALLTHROUGH_PROPERTIES)[number] & string;
 
 function DefineRoomDeviceWearablePart(baseId: AssetId, slot: string, def: IntermediateRoomDeviceWearablePartDefinition, colorizationKeys: ReadonlySet<string>): AssetId | null {
 	const id: AssetId = `${baseId}/${slot}` as const;
@@ -74,7 +72,7 @@ function DefineRoomDeviceWearablePart(baseId: AssetId, slot: string, def: Interm
 	}
 
 	const asset: RoomDeviceWearablePartAssetDefinition<AssetRepoExtraArgs> = {
-		...pick(def, ROOM_DEVICE_WEARABLE_PART_DEFINITION_FALLTHOUGH_PROPERTIES),
+		...pick(def, ROOM_DEVICE_WEARABLE_PART_DEFINITION_FALLTHROUGH_PROPERTIES),
 		type: 'roomDeviceWearablePart',
 		id,
 		hasGraphics: def.graphics !== undefined,
@@ -167,47 +165,8 @@ export function GlobalDefineRoomDeviceAsset(def: IntermediateRoomDeviceDefinitio
 
 	//#endregion
 
-	//#region Validate ownership data
-
-	// Validate responsible contributor
-	const contributor = def.ownership.responsibleContributor.toLowerCase();
-	if (GitDataAvailable &&
-		!Contributors.has(contributor) &&
-		(!CurrentCommitter || CurrentCommitter.toLowerCase() !== contributor)
-	) {
-		if (IS_PRODUCTION_BUILD || !CurrentCommitter) {
-			logger.warning('The responsible contributor was not found in the Git history.');
-		} else {
-			logger.warning(
-				'The responsible contributor was not found in the Git history.\n' +
-				`If you commit with current settings, this is your commit signature: '${CurrentCommitter}'`,
-			);
-		}
-	}
-
-	// Validate presence of licensing data
-	if (def.ownership.licensing.length === 0) {
-		logger.warning('Asset is missing licensing info');
-	}
-
-	for (const license of def.ownership.licensing) {
-		// Validate that custom license exists and is a file
-		if (license.license.startsWith('./')) {
-			const path = join(AssetSourcePath, license.license);
-			if (!fs.existsSync(path) || !fs.statSync(path).isFile()) {
-				logger.warning(`Custom license '${license.license}' doesn't exist or is not a file.`);
-			}
-		}
-	}
-	// Check that CHANGE_ME was replaced
-	if (def.ownership.licensing
-		.flatMap((l) => [l.part, l.copyrightHolder, l.editedBy])
-		.includes('CHANGE_ME')
-	) {
-		logger.warning(`Licensing data includes fields with 'CHANGE_ME' template data that need to be changed.`);
-	}
-
-	//#endregion
+	// Validate ownership data
+	ValidateOwnershipData(def.ownership, logger, true);
 
 	if (!definitionValid) {
 		logger.error('Invalid asset definition, asset skipped');
@@ -215,7 +174,7 @@ export function GlobalDefineRoomDeviceAsset(def: IntermediateRoomDeviceDefinitio
 	}
 
 	const asset: RoomDeviceAssetDefinition<AssetRepoExtraArgs> = {
-		...pick(def, ROOM_DEVICE_DEFINITION_FALLTHOUGH_PROPERTIES),
+		...pick(def, ROOM_DEVICE_DEFINITION_FALLTHROUGH_PROPERTIES),
 		type: 'roomDevice',
 		id,
 		slots,
