@@ -14,9 +14,13 @@
 	"semanticCommits": "disabled",
 	"commitMessagePrefix": "[CHORE]",
 	"configMigration": true,
+	"cloneSubmodules": true,
 	"labels": [
 		"Component: Tooling"
 	],
+	"git-submodules": {
+		"enabled": true
+	},
 	"packageRules": [
 		{
 			"matchDepTypes": [
