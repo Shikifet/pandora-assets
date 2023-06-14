@@ -9,6 +9,8 @@
 		"group:allNonMajor"
 	],
 	"autoApprove": true,
+	"automergeStrategy": "squash",
+	"platformAutomerge": true,
 	"rangeStrategy": "pin",
 	"onboardingPrTitle": "[DEV] Configure Renovate",
 	"semanticCommits": "disabled",
@@ -19,7 +21,10 @@
 		"Component: Tooling"
 	],
 	"git-submodules": {
-		"enabled": true
+		"enabled": true,
+		"automerge": true,
+		"automergeType": "branch",
+		"prCreation": "status-success"
 	},
 	"packageRules": [
 		{
