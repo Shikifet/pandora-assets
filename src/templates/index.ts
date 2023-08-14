@@ -1,4 +1,4 @@
-import { PointTemplate, PointTemplateSchema, ZodMatcher } from 'pandora-common';
+import { GetLogger, ModuleNameSchema, PointTemplate, PointTemplateSchema, SCHEME_OVERRIDE } from 'pandora-common';
 import { join } from 'path';
 import { readFileSync } from 'fs';
 import { SRC_DIR } from '../constants';
@@ -16,8 +16,6 @@ const templateList: string[] = [
 	'skirt_short',
 	'skirt_long',
 ];
-
-const IsPointTemplate = ZodMatcher(PointTemplateSchema);
 
 export function LoadTemplates() {
 	for (const templateName of templateList) {
@@ -38,9 +36,21 @@ export function LoadTemplate(name: string): PointTemplate {
 			.join('\n'),
 	) as PointTemplate;
 
-	if (!IsPointTemplate(template)) {
-		throw new Error(`Template in '${path}' is not PointTemplate`);
+	ModuleNameSchema[SCHEME_OVERRIDE]((_module, ctx) => {
+		ctx.addIssue({
+			code: 'custom',
+			message: `Modules are not allowed for templates`,
+		});
+	});
+
+	const parseResult = PointTemplateSchema.safeParse(template);
+	if (!parseResult.success) {
+		GetLogger('TemplateValidation').error(
+			`Template in '${path}' is not PointTemplateSchema:\n`,
+			parseResult.error.toString(),
+		);
+		throw new Error(`Graphics in '${path}' is not PointTemplateSchema`);
 	}
 
-	return template;
+	return parseResult.data;
 }

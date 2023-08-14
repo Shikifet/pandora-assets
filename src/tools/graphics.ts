@@ -1,10 +1,20 @@
-import { AssetGraphicsDefinition, LayerDefinition, LayerImageOverride, AssetGraphicsDefinitionSchema, LayerImageSetting, GetLogger } from 'pandora-common';
+import {
+	AssetGraphicsDefinition,
+	AssetGraphicsDefinitionSchema,
+	GetLogger,
+	LayerDefinition,
+	LayerImageOverride,
+	LayerImageSetting,
+	ModuleNameSchema,
+	SCHEME_OVERRIDE,
+} from 'pandora-common';
 import { DefinePngResource } from './resources';
 import { readFileSync } from 'fs';
 import { GraphicsDatabase } from './graphicsDatabase';
 import { WatchFile } from './watch';
+import { z } from 'zod';
 
-export function LoadAssetsGraphics(path: string): AssetGraphicsDefinition {
+export function LoadAssetsGraphics(path: string, assetModules: string[]): AssetGraphicsDefinition {
 	WatchFile(path);
 
 	const definition = JSON.parse(
@@ -13,6 +23,15 @@ export function LoadAssetsGraphics(path: string): AssetGraphicsDefinition {
 			.filter((line) => !line.trimStart().startsWith('//'))
 			.join('\n'),
 	) as AssetGraphicsDefinition;
+
+	ModuleNameSchema[SCHEME_OVERRIDE]((module, ctx) => {
+		if (!assetModules.includes(module)) {
+			ctx.addIssue({
+				code: z.ZodIssueCode.custom,
+				message: `Module '${module}' is not a valid module name`,
+			});
+		}
+	});
 
 	const parseResult = AssetGraphicsDefinitionSchema.safeParse(definition);
 

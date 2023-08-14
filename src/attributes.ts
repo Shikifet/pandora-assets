@@ -1,13 +1,14 @@
 import { cloneDeep } from 'lodash';
-import { AssetAttributeDefinition, Satisfies } from 'pandora-common';
+import { AssetAttributeDefinition, AttributeNameSchema, SCHEME_OVERRIDE } from 'pandora-common';
 import { join } from 'path';
 import { SRC_DIR } from './constants';
 import { SetCurrentContext } from './tools';
 import { DefineResource } from './tools/resources';
+import { ZodIssueCode } from 'zod';
 
 //#region Attribute definitions - an attribute defines a role
 
-const ATTRIBUTES_DEFINITION = {
+export const ATTRIBUTES_DEFINITION = {
 	// Bodypart attributes
 	Body_base: {
 		name: 'Base body',
@@ -402,13 +403,11 @@ const ATTRIBUTES_DEFINITION = {
 		description: 'A lock',
 		icon: 'lock',
 	},
-} as const;
+} as const satisfies Record<string, AssetAttributeDefinition>;
 
 //#endregion
 
 export type AttributeNames = (keyof typeof ATTRIBUTES_DEFINITION) & string;
-
-type __satisfies__EFFECTS_DEFAULT = Satisfies<typeof ATTRIBUTES_DEFINITION, Record<AttributeNames, AssetAttributeDefinition>>;
 
 export function LoadAttributes(): Record<AttributeNames, AssetAttributeDefinition> {
 	const result: Record<AttributeNames, AssetAttributeDefinition> = cloneDeep(ATTRIBUTES_DEFINITION);
@@ -421,4 +420,17 @@ export function LoadAttributes(): Record<AttributeNames, AssetAttributeDefinitio
 	}
 
 	return result;
+}
+
+export function LoadAttributeNameValidation() {
+	const attributes: readonly string[] = Object.keys(ATTRIBUTES_DEFINITION);
+
+	AttributeNameSchema[SCHEME_OVERRIDE]((attribute, ctx) => {
+		if (!attributes.includes(attribute)) {
+			ctx.addIssue({
+				code: ZodIssueCode.custom,
+				message: `Attribute '${attribute}' is not a valid attribute name`,
+			});
+		}
+	});
 }

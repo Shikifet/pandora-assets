@@ -1,5 +1,6 @@
 // TODO: Re-add `import type` after ESLint gets fixed
-import { BoneDefinitionCompressed, BoneType, CoordinatesCompressed } from 'pandora-common';
+import { BoneDefinitionCompressed, BoneNameSchema, BoneType, CoordinatesCompressed, SCHEME_OVERRIDE } from 'pandora-common';
+import { ZodIssueCode } from 'zod';
 
 const boneDefinitionImpl = {
 	arm_l: {
@@ -24,8 +25,6 @@ const boneDefinitionImpl = {
 	breasts: { type: 'body' },
 	waist: { type: 'body' },
 	hips: { type: 'body' },
-	kneeling: { type: 'pose' },
-	sitting: { type: 'pose' },
 	tiptoeing: { type: 'pose' },
 } as const;
 
@@ -44,3 +43,21 @@ type BoneDefinitionCompressedStrict = {
 export const boneDefinition = boneDefinitionImpl as Record<Key, BoneDefinitionCompressedStrict> as Record<Key, BoneDefinitionCompressed>;
 
 export type AllBones = Key | ((typeof boneDefinitionImpl)[Key] & { mirror: Mirrored<Key>; })['mirror'];
+
+export function LoadBoneNameValidation() {
+	const bones: readonly string[] = Object.keys(boneDefinition)
+		.concat(Object
+			.values(boneDefinition)
+			.filter((v) => v.mirror)
+			.map((v) => v.mirror)
+			.filter((v) => v != null) as string[]);
+
+	BoneNameSchema[SCHEME_OVERRIDE]((bone, ctx) => {
+		if (!bones.includes(bone)) {
+			ctx.addIssue({
+				code: ZodIssueCode.custom,
+				message: `Bone '${bone}' is not a valid bone name`,
+			});
+		}
+	});
+}
