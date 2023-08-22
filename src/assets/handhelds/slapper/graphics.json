@@ -14,7 +14,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "cane_handle_overlay.png",
+						"image": "slapper_handle_overlay.png",
 						"condition": [
 							[
 								{
@@ -49,12 +49,12 @@
 			"priority": "BELOW_ARM_RIGHT",
 			"points": "handheld",
 			"mirror": 1,
-			"colorizationKey": "cane",
+			"colorizationKey": "slapper",
 			"image": {
 				"image": "",
 				"overrides": [
 					{
-						"image": "cane_base.png",
+						"image": "slapper_base.png",
 						"condition": [
 							[
 								{
@@ -72,7 +72,7 @@
 						]
 					},
 					{
-						"image": "cane_base_down.png",
+						"image": "slapper_base_down.png",
 						"condition": [
 							[
 								{
@@ -94,7 +94,7 @@
 			"pointType": [
 				"handheld_r"
 			],
-			"name": "cane"
+			"name": "slapper"
 		},
 		{
 			"x": -200,
@@ -109,7 +109,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "cane_handle.png",
+						"image": "slapper_handle.png",
 						"condition": [
 							[
 								{
@@ -130,7 +130,7 @@
 						]
 					},
 					{
-						"image": "cane_handle_down.png",
+						"image": "slapper_handle_down.png",
 						"condition": [
 							[
 								{
@@ -170,7 +170,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "cane_handle_overlay_down.png",
+						"image": "slapper_handle_overlay_down.png",
 						"condition": [
 							[
 								{
@@ -210,7 +210,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "cane_handle.png",
+						"image": "slapper_handle.png",
 						"condition": [
 							[
 								{
@@ -231,7 +231,7 @@
 						]
 					},
 					{
-						"image": "cane_handle_down.png",
+						"image": "slapper_handle_down.png",
 						"condition": [
 							[
 								{
