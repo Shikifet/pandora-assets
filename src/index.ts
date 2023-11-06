@@ -129,8 +129,7 @@ async function Run() {
 				delete require.cache[require.resolve(moduleName)];
 				await require(moduleName);
 			} catch (error) {
-				logger.fatal(`Error while importing assets/${category}/${asset}\n`, error);
-				process.exit(1);
+				logger.error(`Error while importing assets/${category}/${asset}\n`, error);
 			}
 		}
 	}
@@ -173,6 +172,8 @@ async function Run() {
 }
 
 if (process.argv.includes('--watch')) {
+	// Reduce verbosity during watch to make errors more visible
+	SetConsoleOutput(LogLevel.INFO);
 	RunDev(Run).catch((error) => {
 		logger.fatal('Error starting dev server:\n', error);
 		process.exit(2);

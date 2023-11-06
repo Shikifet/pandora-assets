@@ -14,7 +14,7 @@ import { GraphicsDatabase } from './graphicsDatabase';
 import { WatchFile } from './watch';
 import { z } from 'zod';
 
-export function LoadAssetsGraphics(path: string, assetModules: string[]): AssetGraphicsDefinition {
+export function LoadAssetsGraphics(path: string, assetModules: readonly string[]): AssetGraphicsDefinition {
 	WatchFile(path);
 
 	const definition = JSON.parse(
@@ -52,16 +52,16 @@ function LoadLayerImageSetting(setting: LayerImageSetting): LayerImageSetting {
 	const overrides: LayerImageOverride[] = setting.overrides
 		.map((override) => ({
 			...override,
-			image: override.image && DefinePngResource(override.image, 'asset').resultName,
+			image: override.image && DefinePngResource(override.image, 'asset'),
 		}));
 	const alphaOverrides: LayerImageOverride[] | undefined = setting.alphaOverrides
 		?.map((override) => ({
 			...override,
-			image: override.image && DefinePngResource(override.image, 'asset').resultName,
+			image: override.image && DefinePngResource(override.image, 'asset'),
 		}));
 	return {
-		image: setting.image && DefinePngResource(setting.image, 'asset').resultName,
-		alphaImage: setting.alphaImage && DefinePngResource(setting.alphaImage, 'asset').resultName,
+		image: setting.image && DefinePngResource(setting.image, 'asset'),
+		alphaImage: setting.alphaImage && DefinePngResource(setting.alphaImage, 'asset'),
 		overrides,
 		alphaOverrides,
 	};
