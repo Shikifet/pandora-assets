@@ -78,8 +78,10 @@ DefineRoomDeviceAsset({
 									bones: {
 										leg_r: -18,
 										leg_l: -18,
+										character_rotation: 0,
 									},
 									legs: 'standing',
+									view: 'front',
 								},
 							},
 						},
@@ -98,7 +100,9 @@ DefineRoomDeviceAsset({
 										arm_r: -27,
 										elbow_l: -60,
 										elbow_r: -58,
+										character_rotation: 0,
 									},
+									view: 'front',
 								},
 								effects: {
 									blockHands: true,
@@ -122,8 +126,81 @@ DefineRoomDeviceAsset({
 										elbow_r: -58,
 										leg_r: -18,
 										leg_l: -18,
+										character_rotation: 0,
 									},
 									legs: 'standing',
+									view: 'front',
+								},
+								effects: {
+									blockHands: true,
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'tied_legs_back',
+					name: 'Tied (Legs) facing down',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot_left'],
+						slotProperties: {
+							character_slot_left: {
+								poseLimits: {
+									bones: {
+										leg_r: -18,
+										leg_l: -18,
+										character_rotation: 0,
+									},
+									legs: 'standing',
+									view: 'back',
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'tied_arms_back',
+					name: 'Tied (Arms) facing down',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot_left'],
+						slotProperties: {
+							character_slot_left: {
+								poseLimits: {
+									bones: {
+										arm_l: -25,
+										arm_r: -27,
+										elbow_l: -60,
+										elbow_r: -58,
+										character_rotation: 0,
+									},
+									view: 'back',
+								},
+								effects: {
+									blockHands: true,
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'tied_both_back',
+					name: 'Tied (Legs & Arms) facing down',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot_left'],
+						slotProperties: {
+							character_slot_left: {
+								poseLimits: {
+									bones: {
+										arm_l: -25,
+										arm_r: -27,
+										elbow_l: -60,
+										elbow_r: -58,
+										leg_r: -18,
+										leg_l: -18,
+										character_rotation: 0,
+									},
+									legs: 'standing',
+									view: 'back',
 								},
 								effects: {
 									blockHands: true,
@@ -154,8 +231,10 @@ DefineRoomDeviceAsset({
 									bones: {
 										leg_r: -18,
 										leg_l: -18,
+										character_rotation: 0,
 									},
 									legs: 'standing',
+									view: 'front',
 								},
 							},
 						},
@@ -174,7 +253,9 @@ DefineRoomDeviceAsset({
 										arm_r: -25,
 										elbow_l: -60,
 										elbow_r: -60,
+										character_rotation: 0,
 									},
+									view: 'front',
 								},
 								effects: {
 									blockHands: true,
@@ -198,8 +279,81 @@ DefineRoomDeviceAsset({
 										elbow_r: -60,
 										leg_r: -18,
 										leg_l: -18,
+										character_rotation: 0,
 									},
 									legs: 'standing',
+									view: 'front',
+								},
+								effects: {
+									blockHands: true,
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'tied_legs_back',
+					name: 'Tied (Legs) facing down',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot_right'],
+						slotProperties: {
+							character_slot_right: {
+								poseLimits: {
+									bones: {
+										leg_r: -18,
+										leg_l: -18,
+										character_rotation: 0,
+									},
+									legs: 'standing',
+									view: 'back',
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'tied_arms_back',
+					name: 'Tied (Arms) facing down',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot_right'],
+						slotProperties: {
+							character_slot_right: {
+								poseLimits: {
+									bones: {
+										arm_l: -25,
+										arm_r: -25,
+										elbow_l: -60,
+										elbow_r: -60,
+										character_rotation: 0,
+									},
+									view: 'back',
+								},
+								effects: {
+									blockHands: true,
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'tied_both_back',
+					name: 'Tied (Legs+Arms) facing down',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot_right'],
+						slotProperties: {
+							character_slot_right: {
+								poseLimits: {
+									bones: {
+										arm_l: -25,
+										arm_r: -25,
+										elbow_l: -60,
+										elbow_r: -60,
+										leg_r: -18,
+										leg_l: -18,
+										character_rotation: 0,
+									},
+									legs: 'standing',
+									view: 'back',
 								},
 								effects: {
 									blockHands: true,
@@ -236,16 +390,45 @@ DefineRoomDeviceAsset({
 			slot: 'character_slot_left',
 			characterPosition: {
 				offsetX: -288,
-				offsetY: -180,
-				disablePoseOffset: true,
+				offsetY: -680,
+				pivotOffset: {
+					x: 0,
+					y: -500,
+				},
 			},
+			characterPositionOverrides: [
+				{
+					position: {
+						offsetX: -288,
+						offsetY: -680,
+						pivotOffset: {
+							x: 0,
+							y: -500,
+						},
+						disablePoseOffset: true,
+					},
+					condition: [
+						[
+							{
+								module: 'ropes_left',
+								operator: '!=',
+								value: 'none',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'slot',
 			slot: 'character_slot_middle',
 			characterPosition: {
 				offsetX: 0,
-				offsetY: -160,
+				offsetY: -670,
+				pivotOffset: {
+					x: 0,
+					y: -500,
+				},
 			},
 		},
 		{
@@ -253,9 +436,34 @@ DefineRoomDeviceAsset({
 			slot: 'character_slot_right',
 			characterPosition: {
 				offsetX: 288,
-				offsetY: -180,
-				disablePoseOffset: true,
+				offsetY: -680,
+				pivotOffset: {
+					x: 0,
+					y: -500,
+				},
 			},
+			characterPositionOverrides: [
+				{
+					position: {
+						offsetX: 288,
+						offsetY: -680,
+						pivotOffset: {
+							x: 0,
+							y: -500,
+						},
+						disablePoseOffset: true,
+					},
+					condition: [
+						[
+							{
+								module: 'ropes_right',
+								operator: '!=',
+								value: 'none',
+							},
+						],
+					],
+				},
+			],
 		},
 	],
 	ownership: {
