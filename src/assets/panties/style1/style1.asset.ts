@@ -9,10 +9,13 @@ DefineAsset({
 			default: '#FA5F55',
 		},
 	},
-	attributes: [
-		'Underwear',
-		'Underwear_panties',
-	],
+	attributes: {
+		provides: [
+			'Clothing',
+			'Underwear',
+			'Underwear_panties',
+		],
+	},
 	modules: {
 		pantiesState: {
 			type: 'typed',
@@ -23,7 +26,10 @@ DefineAsset({
 					name: 'Normal',
 					default: true,
 					properties: {
-						hides: ['Penis'],
+						attributes: {
+							provides: ['Vagina_cover'],
+							hides: ['Penis'],
+						},
 					},
 				},
 				{
@@ -34,7 +40,10 @@ DefineAsset({
 					id: 'wedged',
 					name: 'Wedged Up',
 					properties: {
-						requirements: ['!Penis'],
+						attributes: {
+							provides: ['Vagina_cover'],
+							requires: ['!Penis'],
+						},
 					},
 				},
 				{

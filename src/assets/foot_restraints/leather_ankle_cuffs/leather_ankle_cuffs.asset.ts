@@ -1,5 +1,3 @@
-import { ItemInteractionType } from 'pandora-common';
-
 DefineAsset({
 	name: 'Leather Ankle Cuffs',
 	size: 'small',
@@ -26,11 +24,13 @@ DefineAsset({
 			default: '#FFFFFF',
 		},
 	},
-	attributes: [
-		'Restraint',
-		'Restraint_legs',
-		'Ankle_cuffs',
-	],
+	attributes: {
+		provides: [
+			'Restraint',
+			'Restraint_legs',
+			'Ankle_cuffs',
+		],
+	},
 	modules: {
 		lock: {
 			type: 'lockSlot',
@@ -43,14 +43,17 @@ DefineAsset({
 			type: 'lockSlot',
 			name: 'Lock for cuff chains',
 			occupiedProperties: {
-				requirements: ['Ankle_cuffs_chain'],
+				blockModules: ['cuffState'],
+				stateFlags: {
+					requires: {
+						chain: 'Locking requires a chain to lock.',
+					},
+				},
 			},
 		},
 		cuffState: {
 			type: 'typed',
 			name: 'Cuff states',
-			// TODO: needs 'modify' later on when a part of these can be selected via pose buttons
-			interactionType: ItemInteractionType.ACCESS_ONLY,
 			variants: [
 				{
 					id: 'unchained',
@@ -84,9 +87,9 @@ DefineAsset({
 								},
 							],
 						},
-						attributes: [
-							'Ankle_cuffs_chain',
-						],
+						stateFlags: {
+							provides: ['chain'],
+						},
 					},
 				},
 				{
@@ -100,9 +103,9 @@ DefineAsset({
 							},
 							legs: 'standing',
 						},
-						attributes: [
-							'Ankle_cuffs_chain',
-						],
+						stateFlags: {
+							provides: ['chain'],
+						},
 						effects: {
 							blockRoomMovement: true,
 							blockRoomLeave: true,

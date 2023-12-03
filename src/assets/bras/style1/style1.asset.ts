@@ -9,10 +9,13 @@ DefineAsset({
 			default: '#FA5F55',
 		},
 	},
-	attributes: [
-		'Underwear',
-		'Underwear_bra',
-	],
+	attributes: {
+		provides: [
+			'Clothing',
+			'Underwear',
+			'Underwear_bra',
+		],
+	},
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
 		credits: ['ClaudiaMia', 'Jomshir'],

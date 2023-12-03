@@ -15,15 +15,11 @@ const DEFINITION_FALLTHROUGH_PROPERTIES = [
 	'poseLimits',
 	'effects',
 	'attributes',
-	'requirements',
-	'hides',
+	'stateFlags',
 	'blockAddRemove',
 	'blockSelfAddRemove',
 	'blockModules',
 	'blockSelfModules',
-	'blockSlots',
-	'coverSlots',
-	'occupySlots',
 	'overrideColorKey',
 	'excludeFromColorInheritance',
 	'colorRibbonGroup',
@@ -67,6 +63,7 @@ export function GlobalDefineAsset(def: IntermediatePersonalAssetDefinition): voi
 
 	const propertiesValidationMetadata: PropertiesValidationMetadata = {
 		getModuleNames: () => Object.keys(def.modules ?? {}),
+		getBaseAttributes: () => (def.attributes?.provides ?? []),
 	};
 
 	// Validate base properties

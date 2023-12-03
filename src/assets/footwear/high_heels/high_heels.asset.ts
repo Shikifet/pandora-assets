@@ -15,21 +15,27 @@ DefineAsset({
 			default: '#393939',
 		},
 	},
-	attributes: [
-		'Clothing',
-		'Footwear',
-		'Restraint',
-		'Restraint_legs',
-	],
+	attributes: {
+		provides: [
+			'Clothing',
+			'Footwear',
+			'Restraint',
+			'Restraint_legs',
+		],
+	},
 	modules: {
 		lock: {
 			type: 'lockSlot',
 			name: 'Lock',
 			occupiedProperties: {
 				blockAddRemove: true,
-				requirements: ['Shoe_top_strap'],
+				blockModules: ['heelType'],
+				stateFlags: {
+					requires: {
+						strap: 'Locking requires a strap to lock.',
+					},
+				},
 			},
-
 		},
 		heelLength: {
 			type: 'typed',
@@ -83,9 +89,9 @@ DefineAsset({
 					id: 'strap',
 					name: 'With Strap',
 					properties: {
-						attributes: [
-							'Shoe_top_strap',
-						],
+						stateFlags: {
+							provides: ['strap'],
+						},
 					},
 				},
 			],
