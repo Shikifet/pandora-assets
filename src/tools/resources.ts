@@ -7,22 +7,18 @@ import { AssetSourcePath } from './context';
 import { WatchFile } from './watch';
 import sharp from 'sharp';
 
-export type ImageCategory = 'asset' | 'roomDevice' | 'background';
+export type ImageCategory = 'asset' | 'roomDevice' | 'background' | 'preview';
 
-const MAX_SIZES: Record<ImageCategory, { bytes: number; text: string; }> = {
-	asset: {
-		bytes: 1 * 1024 * 1024,
-		text: '1MiB',
-	},
-	roomDevice: {
-		bytes: 4 * 1024 * 1024,
-		text: '4MiB',
-	},
-	background: {
-		bytes: 4 * 1024 * 1024,
-		text: '4MiB',
-	},
-};
+const MAX_SIZES = {
+	asset: 1 * 1024 * 1024,
+	roomDevice: 4 * 1024 * 1024,
+	background: 4 * 1024 * 1024,
+	preview: 1 * 1024 * 1024,
+} as const satisfies Record<ImageCategory, number>;
+
+const SIZE_UNITS = ['B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB'];
+
+const PREVIEW_SIZE = 256;
 
 const logger = GetLogger('Resources');
 
@@ -164,6 +160,15 @@ class ImageResource extends FileResource implements IImageResource {
 		});
 		return name;
 	}
+
+	public addSizeCheck(exactWidth: number, exactHeight: number): void {
+		this.addProcess(async () => {
+			const { width, height } = await sharp(this.sourcePath).metadata();
+			if (width !== exactWidth || height !== exactHeight) {
+				logger.warning(`Image '${this.sourcePath}' has size ${width}x${height}, expected ${exactWidth}x${exactHeight}.`);
+			}
+		});
+	}
 }
 
 export function GetResourceBufferHash(value: Buffer): string {
@@ -199,9 +204,15 @@ export function DefineResourceInline(name: string, value: string | Buffer, resul
 }
 
 function CheckMaxSize(resource: Resource, name: string, category: ImageCategory) {
-	const maxSize = MAX_SIZES[category];
-	if (resource.size > maxSize.bytes) {
-		logger.warning(`Image '${name}' is larger than maximum allowed size of ${maxSize.text}.`);
+	const maxBytes = MAX_SIZES[category];
+	if (resource.size > maxBytes) {
+		let limitSize = maxBytes;
+		let unitIndex = 0;
+		while (limitSize >= 1024 && (limitSize % 1024) === 0 && unitIndex < (SIZE_UNITS.length - 1)) {
+			limitSize /= 1024;
+			unitIndex++;
+		}
+		logger.warning(`Image '${name}' is larger than maximum allowed size of ${limitSize} ${SIZE_UNITS[unitIndex]}`);
 	}
 }
 
@@ -244,6 +255,10 @@ export function DefineJpgResource(name: string, category: ImageCategory): string
 		throw new Error(`Resource ${name} is not a JPG file.`);
 	}
 	const resource = new ImageResource(baseName, category);
+
+	if (category === 'preview') {
+		resource.addSizeCheck(PREVIEW_SIZE, PREVIEW_SIZE);
+	}
 
 	return ProcessImageResource(resource, args);
 }
