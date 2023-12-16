@@ -21,6 +21,8 @@ DefineRoomDeviceAsset({
 			default: '#CEA278',
 		},
 	},
+	staticAttributes: ['Wall'],
+	preview: 'lamp_preview.png',
 	slots: {},
 	modules: {
 		operation: {

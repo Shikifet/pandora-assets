@@ -7,6 +7,8 @@ DefineRoomDeviceAsset({
 			default: '#924A2D',
 		},
 	},
+	staticAttributes: ['Floor'],
+	preview: 'fence_preview.png',
 	slots: {},
 	pivot: {
 		x: 800,

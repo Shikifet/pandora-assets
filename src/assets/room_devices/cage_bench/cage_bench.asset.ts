@@ -15,6 +15,8 @@ DefineRoomDeviceAsset({
 			default: '#7C0418',
 		},
 	},
+	staticAttributes: ['Play_furniture', 'Furniture'],
+	preview: 'cage_bench_preview.png',
 	slots: {
 		character_slot_inside: {
 			name: 'Lying inside',
@@ -91,16 +93,16 @@ DefineRoomDeviceAsset({
 			name: 'Door',
 			variants: [
 				{
+					id: 'open',
+					name: 'Open',
+					default: true,
+				},
+				{
 					id: 'closed',
 					name: 'Closed',
 					properties: {
 						blockSlotsEnterLeave: ['character_slot_inside'],
 					},
-				},
-				{
-					id: 'open',
-					name: 'Open',
-					default: true,
 				},
 			],
 		},
@@ -108,6 +110,11 @@ DefineRoomDeviceAsset({
 			type: 'typed',
 			name: 'Curtain cover',
 			variants: [
+				{
+					id: 'open',
+					name: 'Removed',
+					default: true,
+				},
 				{
 					id: 'closed',
 					name: 'Closed',
@@ -120,11 +127,6 @@ DefineRoomDeviceAsset({
 							},
 						},
 					},
-				},
-				{
-					id: 'open',
-					name: 'Removed',
-					default: true,
 				},
 			],
 		},

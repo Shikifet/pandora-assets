@@ -1,5 +1,5 @@
 DefineRoomDeviceAsset({
-	name: 'Small Cage',
+	name: 'Large Cage',
 	size: 'huge',
 	colorization: {
 		cage: {
@@ -11,11 +11,13 @@ DefineRoomDeviceAsset({
 			default: '#ffffff',
 		},
 	},
+	staticAttributes: ['Play_furniture'],
+	preview: 'cage_preview.png',
 	slots: {
 		character_slot: {
-			name: 'Cage',
+			name: 'Inside the cage',
 			asset: {
-				name: 'Small Cage',
+				name: 'Large Cage',
 				size: 'huge',
 				poseLimits: {
 					bones: {
@@ -34,16 +36,16 @@ DefineRoomDeviceAsset({
 			name: 'Door',
 			variants: [
 				{
+					id: 'open',
+					name: 'Open',
+					default: true,
+				},
+				{
 					id: 'closed',
 					name: 'Closed',
 					properties: {
 						blockSlotsEnterLeave: ['character_slot'],
 					},
-				},
-				{
-					id: 'open',
-					name: 'Open',
-					default: true,
 				},
 			],
 		},

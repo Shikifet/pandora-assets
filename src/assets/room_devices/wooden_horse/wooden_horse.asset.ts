@@ -27,6 +27,8 @@ DefineRoomDeviceAsset({
 			default: '#AAAAAA',
 		},
 	},
+	staticAttributes: ['Play_furniture'],
+	preview: 'horse_preview.png',
 	slots: {
 		character_slot: {
 			name: 'Wooden horse',

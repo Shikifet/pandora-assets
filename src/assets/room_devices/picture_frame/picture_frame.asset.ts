@@ -11,6 +11,8 @@ DefineRoomDeviceAsset({
 			default: '#ffffff',
 		},
 	},
+	staticAttributes: ['Wall'],
+	preview: 'picture_preview.png',
 	slots: {},
 	modules: {
 		frame: {

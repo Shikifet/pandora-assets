@@ -15,6 +15,8 @@ DefineRoomDeviceAsset({
 			default: '#F1CA96',
 		},
 	},
+	staticAttributes: ['Furniture'],
+	preview: 'frame_couch_preview.png',
 	slots: {
 		character_slot_top: {
 			name: 'Lying on top',

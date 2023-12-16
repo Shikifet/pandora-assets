@@ -17,6 +17,8 @@ DefineRoomDeviceAsset({
 			minAlpha: 0,
 		},
 	},
+	staticAttributes: ['Floor', 'Wall'],
+	preview: 'screen_preview.png',
 	slots: {},
 	pivot: {
 		x: 720,
