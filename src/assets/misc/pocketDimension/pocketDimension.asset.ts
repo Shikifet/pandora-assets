@@ -1,6 +1,7 @@
 DefineAsset({
 	name: 'Pocket dimension [PoC]',
 	size: 'large',
+	preview: 'preview.png',
 	modules: {
 		content: {
 			type: 'storage',
@@ -19,6 +20,14 @@ DefineAsset({
 		credits: ['Jomshir'],
 		modificationPolicy: `Fixes and New uses, otherwise ask`,
 		reusePolicy: 'Free to use',
-		licensing: [],
+		licensing: [
+			{
+				part: 'Preview',
+				source: 'https://www.flickr.com/photos/51686021@N07/41138945550/',
+				editedBy: 'ClaudiaMia',
+				copyrightHolder: 'Burnt Pineapple Productions',
+				license: 'Public Domain',
+			},
+		],
 	},
 });

@@ -9,6 +9,8 @@ DefineAsset({
 			default: '#E15682',
 		},
 	},
+	// size:600, y:373, centered
+	preview: 'preview.png',
 	attributes: {
 		provides: [
 			'Clothing',

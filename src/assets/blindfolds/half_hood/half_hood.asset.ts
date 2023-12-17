@@ -12,6 +12,8 @@ DefineAsset({
 			default: '#333333',
 		},
 	},
+	// size:200, y:195, centered
+	preview: 'preview.png',
 	attributes: {
 		provides: [
 			'Restraint',
