@@ -1,26 +1,24 @@
 DefineAsset({
-	name: 'Leather Jacket',
+	name: 'Leather Shoes',
 	size: 'medium',
 	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: {
-		jacket: {
-			name: 'Jacket',
-			default: '#BBBBBB',
+		shoes: {
+			name: 'Shoes',
+			default: '#A25F44',
+		},
+		soles: {
+			name: 'Soles',
+			default: '#90715D',
 		},
 	},
-	// size:500, y:334, centered
+	// size:240, y:1143, centered
 	preview: 'preview.png',
 	attributes: {
 		provides: [
 			'Clothing',
-			'Clothing_upper',
-			'Clothing_outer',
-		],
-		hides: [
-			'Underwear_bra',
-			'Underwear_corset',
-			'Clothing_upper',
+			'Footwear',
 		],
 	},
 	ownership: {
@@ -30,18 +28,18 @@ DefineAsset({
 		reusePolicy: 'Ask first',
 		licensing: [
 			{
-				part: 'used 3D model',
-				source: 'https://skfb.ly/o8Noz',
-				copyrightHolder: 'CG StudioX',
-				editedBy: 'ClaudiaMia',
-				license: 'CC BY',
-			},
-			{
 				part: 'images',
 				source: 'Self-Made',
 				copyrightHolder: 'ClaudiaMia',
 				editedBy: 'ClaudiaMia',
 				license: 'Pandora-Use-Only',
+			},
+			{
+				part: 'used 3D model',
+				source: 'https://skfb.ly/oMFCZ',
+				copyrightHolder: 'SUSUSUBE',
+				editedBy: 'ClaudiaMia',
+				license: 'CC BY',
 			},
 		],
 	},

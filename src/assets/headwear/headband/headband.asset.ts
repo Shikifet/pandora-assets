@@ -1,26 +1,19 @@
 DefineAsset({
-	name: 'Leather Jacket',
-	size: 'medium',
-	allowRandomizerUsage: true,
+	name: 'Headband',
+	size: 'small',
 	graphics: 'graphics.json',
 	colorization: {
-		jacket: {
-			name: 'Jacket',
-			default: '#BBBBBB',
+		headband: {
+			name: 'Headband',
+			default: '#EF1E83',
 		},
 	},
-	// size:500, y:334, centered
+	// size:200, y:182, centered
 	preview: 'preview.png',
 	attributes: {
 		provides: [
 			'Clothing',
-			'Clothing_upper',
-			'Clothing_outer',
-		],
-		hides: [
-			'Underwear_bra',
-			'Underwear_corset',
-			'Clothing_upper',
+			'Headgear',
 		],
 	},
 	ownership: {
@@ -31,8 +24,8 @@ DefineAsset({
 		licensing: [
 			{
 				part: 'used 3D model',
-				source: 'https://skfb.ly/o8Noz',
-				copyrightHolder: 'CG StudioX',
+				source: 'https://skfb.ly/otuxV',
+				copyrightHolder: 'Alysen',
 				editedBy: 'ClaudiaMia',
 				license: 'CC BY',
 			},

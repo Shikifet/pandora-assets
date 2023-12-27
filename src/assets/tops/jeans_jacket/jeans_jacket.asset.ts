@@ -1,15 +1,15 @@
 DefineAsset({
-	name: 'Leather Jacket',
+	name: 'Jeans Jacket',
 	size: 'medium',
 	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: {
 		jacket: {
 			name: 'Jacket',
-			default: '#BBBBBB',
+			default: '#5278A3',
 		},
 	},
-	// size:500, y:334, centered
+	// size:500, y:336, centered
 	preview: 'preview.png',
 	attributes: {
 		provides: [
@@ -17,11 +17,23 @@ DefineAsset({
 			'Clothing_upper',
 			'Clothing_outer',
 		],
-		hides: [
-			'Underwear_bra',
-			'Underwear_corset',
-			'Clothing_upper',
-		],
+	},
+	modules: {
+		sleeves: {
+			type: 'typed',
+			name: 'Jacket Type',
+			variants: [
+				{
+					id: 'none',
+					name: 'Sleeveless',
+				},
+				{
+					id: 'long',
+					name: 'Long Sleeves',
+					default: true,
+				},
+			],
+		},
 	},
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
@@ -31,8 +43,8 @@ DefineAsset({
 		licensing: [
 			{
 				part: 'used 3D model',
-				source: 'https://skfb.ly/o8Noz',
-				copyrightHolder: 'CG StudioX',
+				source: 'https://skfb.ly/owrpD',
+				copyrightHolder: 'Digital Fashionwear (DF)',
 				editedBy: 'ClaudiaMia',
 				license: 'CC BY',
 			},
