@@ -28,7 +28,7 @@
 		"lodash": "4.17.21",
 		"pandora-common": "file:pandora/pandora-common",
 		"rimraf": "5.0.5",
-		"sharp": "0.33.1",
+		"sharp": "0.33.2",
 		"simple-git": "3.22.0",
 		"zod": "3.22.4"
 	},
