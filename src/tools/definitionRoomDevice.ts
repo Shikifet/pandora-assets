@@ -30,6 +30,7 @@ const ROOM_DEVICE_WEARABLE_PART_DEFINITION_FALLTHROUGH_PROPERTIES = [
 	'size',
 	'chat',
 	'posePresets',
+	'assetPreferenceDefault',
 ] as const satisfies readonly (keyof RoomDeviceWearablePartAssetDefinition)[];
 
 export type RoomDeviceWearablePartAssetDefinitionFallthroughProperties = (typeof ROOM_DEVICE_WEARABLE_PART_DEFINITION_FALLTHROUGH_PROPERTIES)[number] & string;
@@ -43,12 +44,14 @@ const ROOM_DEVICE_DEFINITION_FALLTHROUGH_PROPERTIES = [
 	'staticAttributes',
 	'posePresets',
 	'preview',
+	'assetPreferenceDefault',
 
 	// Graphics definition
 	'colorization',
 	'colorRibbonGroup',
 	'pivot',
 	'graphicsLayers',
+	'assetPreferenceDefault',
 ] as const satisfies readonly (keyof RoomDeviceAssetDefinition)[];
 
 export type AssetRoomDeviceDefinitionFallthroughProperties = (typeof ROOM_DEVICE_DEFINITION_FALLTHROUGH_PROPERTIES)[number] & string;
