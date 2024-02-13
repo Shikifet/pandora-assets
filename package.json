@@ -2,7 +2,7 @@
 	"name": "pandora-assets",
 	"version": "0.1.0",
 	"private": true,
-	"packageManager": "pnpm@8.15.1",
+	"packageManager": "pnpm@8.15.2",
 	"repository": "git@github.com:Project-Pandora-Game/tooling-template.git",
 	"license": "MIT",
 	"scripts": {
@@ -23,7 +23,7 @@
 		"normalize": "node --enable-source-maps ./dist/tools/normalize"
 	},
 	"dependencies": {
-		"dotenv": "16.4.2",
+		"dotenv": "16.4.3",
 		"jimp": "0.22.10",
 		"lodash": "4.17.21",
 		"pandora-common": "file:pandora/pandora-common",
