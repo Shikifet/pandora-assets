@@ -1,53 +1,51 @@
 DefineRoomDeviceAsset({
-	name: 'Barrel',
+	name: 'Cardboard Box',
 	size: 'huge',
 	colorization: {
-		barrel: {
-			name: 'Barrel',
-			default: '#965441',
+		box: {
+			name: 'Box',
+			default: '#D6A577',
 		},
 	},
 	staticAttributes: ['Storage'],
-	preview: 'barrel_preview.png',
+	preview: 'preview.png',
 	slots: {
 		character_slot_inside: {
-			name: 'Inside the barrel',
+			name: 'Inside the box',
 			asset: {
-				name: 'Barrel',
+				name: 'Box',
 				size: 'huge',
 				poseLimits: {
 					bones: {
-						leg_r: [[-10, 10]],
-						leg_l: [[-10, 10]],
+						leg_r: [[-6, 10]],
+						leg_l: [[-6, 10]],
 						character_rotation: 0,
 					},
 					legs: ['standing', 'kneeling'],
 				},
-				posePresets: [
-					{
-						name: 'Holding hands up in the barrel',
-						bones: {
-							arm_r: 14,
-							arm_l: 14,
-							elbow_r: -119,
-							elbow_l: -119,
-						},
-						optional: {
-							arms: {
-								position: 'front',
-								rotation: 'up',
-								fingers: 'fist',
-							},
-						},
+			},
+		},
+		character_slot_sitting_middle: {
+			name: 'Sitting on the box',
+			asset: {
+				name: 'Box',
+				size: 'huge',
+				poseLimits: {
+					bones: {
+						leg_r: [[-30, 10]],
+						leg_l: [[-30, 10]],
+						character_rotation: 0,
 					},
-				],
+					legs: 'sitting',
+					view: 'front',
+				},
 			},
 		},
 	},
 	modules: {
 		lid: {
 			type: 'typed',
-			name: 'Barrel lid',
+			name: 'Box lid',
 			variants: [
 				{
 					id: 'open',
@@ -62,7 +60,7 @@ DefineRoomDeviceAsset({
 						slotProperties: {
 							character_slot_inside: {
 								effects: {
-									blind: 9.85,
+									blind: 9.99,
 								},
 							},
 						},
@@ -79,20 +77,20 @@ DefineRoomDeviceAsset({
 		},
 		storage: {
 			type: 'storage',
-			name: `Barrel contents`,
+			name: `Box contents`,
 			maxAcceptedSize: 'large',
 			maxCount: 10,
 		},
 	},
 	pivot: {
-		x: 500,
-		y: 1330,
+		x: 483,
+		y: 630,
 	},
 	graphicsLayers: [
 		{
 			type: 'sprite',
-			image: 'barrel-background.png',
-			colorizationKey: 'barrel',
+			image: 'cardbox_back.png',
+			colorizationKey: 'box',
 		},
 		{
 			type: 'slot',
@@ -103,7 +101,7 @@ DefineRoomDeviceAsset({
 				relativeScale: 0.96,
 				pivotOffset: {
 					x: 0,
-					y: 4,
+					y: 22,
 				},
 			},
 			characterPositionOverrides: [
@@ -128,8 +126,13 @@ DefineRoomDeviceAsset({
 		},
 		{
 			type: 'sprite',
-			image: 'barrel-lid.png',
-			colorizationKey: 'barrel',
+			image: 'cardbox_front.png',
+			colorizationKey: 'box',
+		},
+		{
+			type: 'sprite',
+			image: 'cardbox_lid.png',
+			colorizationKey: 'box',
 			imageOverrides: [
 				{
 					image: '',
@@ -146,9 +149,13 @@ DefineRoomDeviceAsset({
 			],
 		},
 		{
-			type: 'sprite',
-			image: 'barrel.png',
-			colorizationKey: 'barrel',
+			type: 'slot',
+			slot: 'character_slot_sitting_middle',
+			characterPosition: {
+				offsetX: 30,
+				offsetY: -24,
+				relativeScale: 1.08,
+			},
 		},
 	],
 	ownership: {
@@ -159,8 +166,8 @@ DefineRoomDeviceAsset({
 		licensing: [
 			{
 				part: 'used 3D model',
-				source: 'https://skfb.ly/6XM6K',
-				copyrightHolder: 'Boris Korotkov',
+				source: 'https://skfb.ly/6UyUp',
+				copyrightHolder: 'JuanCarlos CR',
 				editedBy: 'ClaudiaMia',
 				license: 'CC BY',
 			},
