@@ -24,7 +24,7 @@
 	},
 	"dependencies": {
 		"dotenv": "16.4.5",
-		"jimp": "0.22.10",
+		"jimp": "0.22.12",
 		"lodash": "4.17.21",
 		"pandora-common": "file:pandora/pandora-common",
 		"rimraf": "5.0.5",
