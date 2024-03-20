@@ -1,56 +1,39 @@
 DefineAsset({
-	name: 'Bit Gag',
-	size: 'medium',
+	name: 'Stuffing',
+	size: 'small',
 	graphics: 'graphics.json',
 	colorization: {
-		bit: {
-			name: 'Bit',
-			default: '#535971',
-		},
-		straps: {
-			name: 'Straps',
-			default: '#444444',
+		cloth: {
+			name: 'Stuffing',
+			default: '#FDF3EA',
 		},
 	},
-	preview: 'bit_preview.png',
+	// size:200, y:197, centered
+	preview: 'preview.png',
 	attributes: {
 		provides: [
 			'Restraint',
 			'Restraint_mouth',
 			'Mouth_item',
-			'Mouth_insert',
-			'Mouth_cover',
 		],
 		requires: [
 			'Mouth_open_wide',
 			'!Mouth_protruding',
 			'!Mouth_cover',
 		],
-		covers: [
-			'Mouth_item',
-		],
-	},
-	modules: {
-		lock: {
-			type: 'lockSlot',
-			name: 'Lock',
-			occupiedProperties: {
-				blockAddRemove: true,
-			},
-		},
 	},
 	effects: {
-		lipsTouch: 6,
+		lipsTouch: 2,
 		jawMove: 3,
-		tongueRoof: 2,
-		mouthBreath: 2,
-		throatBreath: 1,
+		tongueRoof: 3,
+		mouthBreath: 4,
+		throatBreath: 2,
 		coherency: 2,
 		stimulus: 1,
 	},
 	chat: {
-		actionAdd: 'SOURCE_CHARACTER strapped a Bit Gag tightly between TARGET_CHARACTER_DYNAMIC_POSSESSIVE teeth.',
-		actionRemove: 'SOURCE_CHARACTER loosened and then removed the Bit Gag from TARGET_CHARACTER_DYNAMIC_POSSESSIVE mouth.',
+		actionAdd: 'SOURCE_CHARACTER stuffed TARGET_CHARACTER_DYNAMIC_POSSESSIVE mouth.',
+		actionRemove: 'SOURCE_CHARACTER removed the stuffing in TARGET_CHARACTER_DYNAMIC_POSSESSIVE mouth.',
 	},
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
