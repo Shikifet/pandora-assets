@@ -29,7 +29,7 @@
 		"pandora-common": "file:pandora/pandora-common",
 		"rimraf": "5.0.5",
 		"sharp": "0.33.3",
-		"simple-git": "3.23.0",
+		"simple-git": "3.24.0",
 		"zod": "3.22.4"
 	},
 	"devDependencies": {
