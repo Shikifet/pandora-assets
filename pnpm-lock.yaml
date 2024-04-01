@@ -1483,17 +1483,10 @@ packages:
     resolution: {integrity: sha512-QpLcX9ZSsq3YYUUnD3nFDY8H7wctAhQj/TFKL8Ya8v5fMm3CFXxo8zStsLAl780ltoYoo1WvKUVGBQK+1ifr7g==}
     dev: false
 
-  /@types/node@18.19.28:
-    resolution: {integrity: sha512-J5cOGD9n4x3YGgVuaND6khm5x07MMdAKkRyXnjVR6KFhLMNh2yONGiP7Z+4+tBOt5mK+GvDTiacTOVGGpqiecw==}
-    dependencies:
-      undici-types: 5.26.5
-    dev: false
-
   /@types/node@20.12.2:
     resolution: {integrity: sha512-zQ0NYO87hyN6Xrclcqp7f8ZbXNbRfoGWNcMvHTPQp9UUrwI0mI7XBz+cu7/W6/VClYo2g63B0cjull/srU7LgQ==}
     dependencies:
       undici-types: 5.26.5
-    dev: true
 
   /@types/qs@6.9.7:
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
@@ -5435,12 +5428,12 @@ packages:
   file:pandora/pandora-common:
     resolution: {directory: pandora/pandora-common, type: directory}
     name: pandora-common
-    engines: {node: '>=18.x'}
+    engines: {node: '>=20.x'}
     requiresBuild: true
     dependencies:
       '@types/async-lock': 1.4.2
       '@types/lodash': 4.17.0
-      '@types/node': 18.19.28
+      '@types/node': 20.12.2
       async-lock: 1.4.1
       immer: 10.0.4
       lodash: 4.17.21
