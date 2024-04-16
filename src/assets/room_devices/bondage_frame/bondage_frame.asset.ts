@@ -85,8 +85,64 @@ DefineRoomDeviceAsset({
 					},
 				},
 				{
+					id: 'standing_legs',
+					name: 'Tied standing (Legs)',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot'],
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									bones: {
+										leg_r: -30,
+										leg_l: -30,
+										character_rotation: 0,
+									},
+								},
+								effects: {
+								},
+								attributes: {
+									requires: [
+										'Ankle_cuffs',
+									],
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'standing_arms_legs',
+					name: 'Tied standing (Arms & Legs)',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot'],
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									bones: {
+										arm_l: -70,
+										arm_r: -70,
+										elbow_l: -20,
+										elbow_r: -20,
+										leg_r: -30,
+										leg_l: -30,
+										character_rotation: 0,
+									},
+								},
+								effects: {
+									blockHands: true,
+								},
+								attributes: {
+									requires: [
+										'Wrist_cuffs',
+										'Ankle_cuffs',
+									],
+								},
+							},
+						},
+					},
+				},
+				{
 					id: 'hanging',
-					name: 'Tied Hanging (Arms)',
+					name: 'Tied hanging (Arms)',
 					properties: {
 						blockSlotsEnterLeave: ['character_slot'],
 						slotProperties: {
@@ -114,7 +170,7 @@ DefineRoomDeviceAsset({
 				},
 				{
 					id: 'hanging_and_legs',
-					name: 'Tied Hanging (Arms & Legs)',
+					name: 'Tied hanging (Arms & Legs)',
 					properties: {
 						blockSlotsEnterLeave: ['character_slot'],
 						slotProperties: {
@@ -246,6 +302,18 @@ DefineRoomDeviceAsset({
 						],
 					],
 				},
+				{
+					image: 'frame_chains_top_longer.png',
+					condition: [
+						[
+							{
+								module: 'chains',
+								operator: '=',
+								value: 'standing_arms_legs',
+							},
+						],
+					],
+				},
 			],
 			colorizationKey: 'chains',
 		},
@@ -269,6 +337,29 @@ DefineRoomDeviceAsset({
 								module: 'chains',
 								operator: '=',
 								value: 'standing',
+							},
+						],
+					],
+				},
+				{
+					position: {
+						offsetX: 0,
+						offsetY: 90,
+						disablePoseOffset: true,
+					},
+					condition: [
+						[
+							{
+								module: 'chains',
+								operator: '=',
+								value: 'standing_legs',
+							},
+						],
+						[
+							{
+								module: 'chains',
+								operator: '=',
+								value: 'standing_arms_legs',
 							},
 						],
 					],
@@ -303,6 +394,25 @@ DefineRoomDeviceAsset({
 			image: 'frame_chains_bottom_hanging.png',
 			imageOverrides: [
 				{
+					image: 'frame_chains_bottom_long_attached.png',
+					condition: [
+						[
+							{
+								module: 'chains',
+								operator: '=',
+								value: 'standing_legs',
+							},
+						],
+						[
+							{
+								module: 'chains',
+								operator: '=',
+								value: 'standing_arms_legs',
+							},
+						],
+					],
+				},
+				{
 					image: 'frame_chains_bottom_attached.png',
 					condition: [
 						[
@@ -320,7 +430,7 @@ DefineRoomDeviceAsset({
 	],
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
-		credits: ['ClaudiaMia'],
+		credits: ['ClaudiaMia', 'Angela-BC'],
 		modificationPolicy: `Fixes and New uses, otherwise ask`,
 		reusePolicy: 'Ask first',
 		licensing: [
