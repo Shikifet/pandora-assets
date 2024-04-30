@@ -57,6 +57,7 @@ DefineRoomDeviceAsset({
 		chains: {
 			type: 'typed',
 			name: 'Under the frame chains',
+			staticConfig: { slotName: 'character_slot' },
 			variants: [
 				{
 					id: 'none',
@@ -224,6 +225,7 @@ DefineRoomDeviceAsset({
 		position: {
 			type: 'typed',
 			name: 'Under the frame position',
+			staticConfig: { slotName: 'character_slot' },
 			variants: [
 				{
 					id: 'front',
@@ -257,6 +259,7 @@ DefineRoomDeviceAsset({
 		lock: {
 			type: 'lockSlot',
 			name: 'Under the frame chain locks',
+			staticConfig: { slotName: 'character_slot' },
 			lockedProperties: {
 				blockModules: ['chains', 'position'],
 			},
@@ -264,6 +267,7 @@ DefineRoomDeviceAsset({
 		frame_left: {
 			type: 'typed',
 			name: 'Left frame position',
+			staticConfig: { slotName: 'character_slot_left' },
 			variants: [
 				{
 					id: 'free_left',
@@ -302,6 +306,7 @@ DefineRoomDeviceAsset({
 		lock_left: {
 			type: 'lockSlot',
 			name: 'Left frame restraints lock',
+			staticConfig: { slotName: 'character_slot_left' },
 			lockedProperties: {
 				blockModules: ['frame_left'],
 			},
@@ -309,6 +314,7 @@ DefineRoomDeviceAsset({
 		frame_right: {
 			type: 'typed',
 			name: 'Right frame position',
+			staticConfig: { slotName: 'character_slot_right' },
 			variants: [
 				{
 					id: 'free_right',
@@ -347,6 +353,7 @@ DefineRoomDeviceAsset({
 		lock_right: {
 			type: 'lockSlot',
 			name: 'Right frame restraints lock',
+			staticConfig: { slotName: 'character_slot_right' },
 			lockedProperties: {
 				blockModules: ['frame_right'],
 			},
