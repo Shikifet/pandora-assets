@@ -30,8 +30,8 @@ importers:
         specifier: 3.24.0
         version: 3.24.0
       zod:
-        specifier: 3.23.5
-        version: 3.23.5
+        specifier: 3.23.6
+        version: 3.23.6
     devDependencies:
       '@types/express':
         specifier: 4.17.21
@@ -761,9 +761,6 @@ packages:
 
   '@types/node@16.9.1':
     resolution: {integrity: sha512-QpLcX9ZSsq3YYUUnD3nFDY8H7wctAhQj/TFKL8Ya8v5fMm3CFXxo8zStsLAl780ltoYoo1WvKUVGBQK+1ifr7g==}
-
-  '@types/node@20.12.7':
-    resolution: {integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==}
 
   '@types/node@20.12.8':
     resolution: {integrity: sha512-NU0rJLJnshZWdE/097cdCBbyW1h4hEg0xpovcoAQYHl8dnEyp/NAOiE45pvc+Bd1Dt+2r94v2eGFpQJ4R7g+2w==}
@@ -2835,6 +2832,9 @@ packages:
   zod@3.23.5:
     resolution: {integrity: sha512-fkwiq0VIQTksNNA131rDOsVJcns0pfVUjHzLrNBiF/O/Xxb5lQyEXkhZWcJ7npWsYlvs+h0jFWXXy4X46Em1JA==}
 
+  zod@3.23.6:
+    resolution: {integrity: sha512-RTHJlZhsRbuA8Hmp/iNL7jnfc4nZishjsanDAfEY1QpDQZCahUp3xDzl+zfweE9BklxMUcgBgS1b7Lvie/ZVwA==}
+
 snapshots:
 
   '@aashutoshrathi/word-wrap@1.2.6': {}
@@ -3680,10 +3680,6 @@ snapshots:
   '@types/mime@1.3.5': {}
 
   '@types/node@16.9.1': {}
-
-  '@types/node@20.12.7':
-    dependencies:
-      undici-types: 5.26.5
 
   '@types/node@20.12.8':
     dependencies:
@@ -5495,7 +5491,7 @@ snapshots:
     dependencies:
       '@types/async-lock': 1.4.2
       '@types/lodash': 4.17.0
-      '@types/node': 20.12.7
+      '@types/node': 20.12.8
       async-lock: 1.4.1
       immer: 10.1.1
       lodash: 4.17.21
@@ -6156,3 +6152,5 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   zod@3.23.5: {}
+
+  zod@3.23.6: {}
