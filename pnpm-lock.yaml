@@ -30,8 +30,8 @@ importers:
         specifier: 3.24.0
         version: 3.24.0
       zod:
-        specifier: 3.23.6
-        version: 3.23.6
+        specifier: 3.23.7
+        version: 3.23.7
     devDependencies:
       '@types/express':
         specifier: 4.17.21
@@ -2834,6 +2834,9 @@ packages:
 
   zod@3.23.6:
     resolution: {integrity: sha512-RTHJlZhsRbuA8Hmp/iNL7jnfc4nZishjsanDAfEY1QpDQZCahUp3xDzl+zfweE9BklxMUcgBgS1b7Lvie/ZVwA==}
+
+  zod@3.23.7:
+    resolution: {integrity: sha512-NBeIoqbtOiUMomACV/y+V3Qfs9+Okr18vR5c/5pHClPpufWOrsx8TENboDPe265lFdfewX2yBtNTLPvnmCxwog==}
 
 snapshots:
 
@@ -6156,3 +6159,5 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   zod@3.23.6: {}
+
+  zod@3.23.7: {}
