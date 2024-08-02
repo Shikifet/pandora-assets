@@ -518,6 +518,24 @@
 									"legs": "kneeling"
 								},
 								{
+									"module": "barWidth",
+									"operator": "=",
+									"value": "narrow"
+								},
+								{
+									"view": "front"
+								}
+							],
+							[
+								{
+									"legs": "kneeling"
+								},
+								{
+									"module": "barWidth",
+									"operator": "=",
+									"value": "normal"
+								},
+								{
 									"view": "front"
 								}
 							]
