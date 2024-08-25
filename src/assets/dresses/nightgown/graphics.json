@@ -8,7 +8,7 @@
 			"height": 1500,
 			"name": "straps front",
 			"priority": "ABOVE_BODY",
-			"points": "shirt",
+			"points": "body",
 			"mirror": 0,
 			"colorizationKey": "nightgown",
 			"image": {
@@ -23,65 +23,12 @@
 			"height": 1500,
 			"name": "front",
 			"priority": "ABOVE_BODY",
-			"points": "skirt_long",
+			"points": "custom_dresses_nightgown",
 			"mirror": 0,
 			"colorizationKey": "nightgown",
 			"image": {
 				"image": "nightgown_front_medium.png",
 				"overrides": []
-			},
-			"scaling": {
-				"scaleBone": "breasts",
-				"stops": [
-					[
-						-150,
-						{
-							"image": "nightgown_front_small.png",
-							"overrides": []
-						}
-					],
-					[
-						180,
-						{
-							"image": "nightgown_front_extreme.png",
-							"overrides": []
-						}
-					]
-				]
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"name": "front behind breasts",
-			"priority": "BELOW_BREASTS",
-			"points": "skirt_long",
-			"mirror": 0,
-			"colorizationKey": "nightgown",
-			"image": {
-				"image": "nightgown_front_medium.png",
-				"overrides": []
-			},
-			"scaling": {
-				"scaleBone": "breasts",
-				"stops": [
-					[
-						-150,
-						{
-							"image": "nightgown_front_small.png",
-							"overrides": []
-						}
-					],
-					[
-						180,
-						{
-							"image": "nightgown_front_extreme.png",
-							"overrides": []
-						}
-					]
-				]
 			}
 		},
 		{
@@ -106,11 +53,69 @@
 			"height": 1500,
 			"name": "back",
 			"priority": "BELOW_BODY",
-			"points": "skirt_long_static_breasts",
+			"points": "custom_dresses_nightgown",
 			"mirror": 0,
 			"colorizationKey": "nightgown",
 			"image": {
 				"image": "nightgown_back.png",
+				"overrides": []
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "breast",
+			"priority": "ABOVE_BODY",
+			"points": "breasts",
+			"mirror": 0,
+			"colorizationKey": "nightgown",
+			"image": {
+				"image": "breast.png",
+				"overrides": [
+					{
+						"image": "breast_small.png",
+						"condition": [
+							[
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -35
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "breasts back",
+			"priority": "BELOW_BODY",
+			"points": "breasts",
+			"mirror": 0,
+			"colorizationKey": "nightgown",
+			"image": {
+				"image": "breast_back.png",
+				"overrides": []
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "breasts cover back",
+			"priority": "BELOW_BREASTS",
+			"points": "breasts",
+			"mirror": 0,
+			"colorizationKey": "nightgown",
+			"image": {
+				"image": "breast.png",
 				"overrides": []
 			}
 		}

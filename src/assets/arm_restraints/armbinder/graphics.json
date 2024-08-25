@@ -92,7 +92,7 @@
 			"height": 1500,
 			"name": "glove",
 			"priority": "BELOW_ARM_LEFT",
-			"points": "static",
+			"points": "custom_arm_restraints_armbinder_glove",
 			"mirror": 0,
 			"colorizationKey": "glove",
 			"image": {
@@ -120,7 +120,7 @@
 			"height": 1500,
 			"name": "shine",
 			"priority": "BELOW_ARM_LEFT",
-			"points": "static",
+			"points": "custom_arm_restraints_armbinder_glove",
 			"mirror": 0,
 			"colorizationKey": "glove",
 			"image": {
@@ -240,7 +240,7 @@
 			"height": 1500,
 			"name": "glove front",
 			"priority": "ABOVE_ARM_RIGHT",
-			"points": "static",
+			"points": "custom_arm_restraints_armbinder_glove",
 			"mirror": 0,
 			"colorizationKey": "glove",
 			"image": {

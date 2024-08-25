@@ -305,12 +305,6 @@
 									"view": "back"
 								},
 								{
-									"armType": "rotation",
-									"side": "left",
-									"operator": "=",
-									"value": "forward"
-								},
-								{
 									"armType": "fingers",
 									"side": "left",
 									"operator": "=",
@@ -371,6 +365,90 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"name": "Body shadow",
+			"priority": "BODY",
+			"points": "body",
+			"pointType": [
+				"body",
+				"bodyarm"
+			],
+			"mirror": 0,
+			"colorizationKey": "skin",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"view": "back"
+								}
+							]
+						]
+					},
+					{
+						"image": "body_shadow_f.png",
+						"condition": [
+							[
+								{
+									"module": "muscleType",
+									"operator": "=",
+									"value": "standard"
+								}
+							]
+						]
+					},
+					{
+						"image": "body_shadow_m.png",
+						"condition": [
+							[
+								{
+									"module": "muscleType",
+									"operator": "=",
+									"value": "muscular"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "Body shadow back",
+			"priority": "BELOW_BODY",
+			"points": "body",
+			"pointType": [
+				"body",
+				"bodyarm"
+			],
+			"mirror": 0,
+			"colorizationKey": "skin",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "body_back_shadow.png",
+						"condition": [
+							[
+								{
+									"view": "back"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
 			"name": "Breasts",
 			"priority": "BREASTS",
 			"points": "breasts",
@@ -414,9 +492,52 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
-			"name": "Nipples",
+			"name": "Breasts shadow",
 			"priority": "BREASTS",
 			"points": "breasts",
+			"pointType": [
+				"breasts"
+			],
+			"mirror": 0,
+			"colorizationKey": "skin",
+			"image": {
+				"image": "bust_shadow.png",
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -170
+								}
+							]
+						]
+					},
+					{
+						"image": "bust_small.png",
+						"condition": [
+							[
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -70
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "Nipples",
+			"priority": "BREASTS",
+			"points": "custom_body_nipples",
 			"pointType": [
 				"breasts"
 			],

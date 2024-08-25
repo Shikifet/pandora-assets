@@ -8,7 +8,7 @@
 			"height": 1500,
 			"name": "front",
 			"priority": "ABOVE_BODY",
-			"points": "skirt_short",
+			"points": "body",
 			"pointType": [
 				"body",
 				"bodyarm"
@@ -16,7 +16,7 @@
 			"mirror": 0,
 			"colorizationKey": "partydress",
 			"image": {
-				"image": "party_dress_medium.png",
+				"image": "party_dress_front.png",
 				"overrides": []
 			},
 			"scaling": {
@@ -26,13 +26,6 @@
 						-150,
 						{
 							"image": "party_dress_back.png",
-							"overrides": []
-						}
-					],
-					[
-						180,
-						{
-							"image": "party_dress_extreme.png",
 							"overrides": []
 						}
 					]
@@ -46,7 +39,7 @@
 			"height": 1500,
 			"name": "front",
 			"priority": "ABOVE_ARM_LEFT",
-			"points": "skirt_short",
+			"points": "body",
 			"pointType": [
 				"bodyarm_l",
 				"arm_l"
@@ -54,7 +47,7 @@
 			"mirror": 1,
 			"colorizationKey": "partydress",
 			"image": {
-				"image": "party_dress_medium.png",
+				"image": "party_dress_front.png",
 				"overrides": []
 			}
 		},
@@ -65,7 +58,7 @@
 			"height": 1500,
 			"name": "front behind breasts",
 			"priority": "BELOW_BREASTS",
-			"points": "skirt_short",
+			"points": "body",
 			"pointType": [
 				"body",
 				"bodyarm"
@@ -73,7 +66,7 @@
 			"mirror": 0,
 			"colorizationKey": "partydress",
 			"image": {
-				"image": "party_dress_medium.png",
+				"image": "party_dress_front.png",
 				"overrides": []
 			},
 			"scaling": {
@@ -83,13 +76,6 @@
 						-150,
 						{
 							"image": "party_dress_back.png",
-							"overrides": []
-						}
-					],
-					[
-						180,
-						{
-							"image": "party_dress_extreme.png",
 							"overrides": []
 						}
 					]
@@ -103,7 +89,7 @@
 			"height": 1500,
 			"name": "back",
 			"priority": "BELOW_BODY",
-			"points": "skirt_short_static_breasts",
+			"points": "body",
 			"pointType": [
 				"body",
 				"bodyarm"
@@ -122,7 +108,7 @@
 			"height": 1500,
 			"name": "back",
 			"priority": "BELOW_ARM_LEFT",
-			"points": "skirt_short_static_breasts",
+			"points": "body",
 			"pointType": [
 				"bodyarm_l",
 				"arm_l"
@@ -132,6 +118,62 @@
 			"image": {
 				"image": "party_dress_back.png",
 				"overrides": []
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "breasts",
+			"priority": "ABOVE_BODY",
+			"points": "breasts",
+			"mirror": 0,
+			"colorizationKey": "partydress",
+			"image": {
+				"image": "party_dress_breasts.png",
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -165
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "breasts back",
+			"priority": "BELOW_BREASTS",
+			"points": "breasts",
+			"mirror": 0,
+			"colorizationKey": "partydress",
+			"image": {
+				"image": "party_dress_breasts.png",
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -165
+								}
+							]
+						]
+					}
+				]
 			}
 		}
 	]

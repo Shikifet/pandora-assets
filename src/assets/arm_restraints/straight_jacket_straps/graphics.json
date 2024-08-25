@@ -23,7 +23,7 @@
 			"height": 1500,
 			"name": "front arms",
 			"priority": "ABOVE_ARM_LEFT",
-			"points": "body",
+			"points": "custom_arm_restraints_straight_jacket_straps",
 			"pointType": [
 				"bodyarm_l",
 				"arm_l"
@@ -87,7 +87,7 @@
 			"height": 1500,
 			"name": "back arms",
 			"priority": "BELOW_ARM_LEFT",
-			"points": "body",
+			"points": "custom_arm_restraints_straight_jacket_straps",
 			"pointType": [
 				"bodyarm_l",
 				"arm_l"

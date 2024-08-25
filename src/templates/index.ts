@@ -12,15 +12,18 @@ const templateList: string[] = [
 	'breast_toy',
 	'breasts',
 	'handheld',
-	'horizontal_limbs_width',
-	'shirt',
-	'shirt_static_breasts',
 	'skirt_short',
-	'skirt_short_static_breasts',
 	'skirt_long',
-	'skirt_long_static_breasts',
 	// Custom templates
-	'custom_latex_dress',
+	'custom_arm_restraints_armbinder_glove',
+	'custom_arm_restraints_straight_jacket_straps', // Based on body, small edits
+	'custom_arm_restraints_torso_ropes', // Based on body, small edits
+	'custom_body_nipples',
+	'custom_dresses_latex_dress_breasts',
+	'custom_dresses_nightgown',
+	'custom_foot_restraints_leg_ropes',
+	'custom_tops_jeans_jacket_breasts',
+	'custom_tops_leather_jacket_breasts',
 ];
 
 export function LoadTemplates() {

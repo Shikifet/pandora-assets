@@ -8,11 +8,11 @@
 			"height": 1500,
 			"name": "bra breasts",
 			"priority": "ABOVE_BODY",
-			"points": "shirt_static_breasts",
+			"points": "body",
 			"mirror": 0,
 			"colorizationKey": "bra",
 			"image": {
-				"image": "bra_front_extreme.png",
+				"image": "bra_front.png",
 				"overrides": [
 					{
 						"image": "",
@@ -21,55 +21,7 @@
 								{
 									"bone": "breasts",
 									"operator": "<=",
-									"value": -170
-								}
-							]
-						]
-					},
-					{
-						"image": "bra_front_small.png",
-						"condition": [
-							[
-								{
-									"bone": "breasts",
-									"operator": "<=",
-									"value": -150
-								}
-							]
-						]
-					},
-					{
-						"image": "bra_front_medium.png",
-						"condition": [
-							[
-								{
-									"bone": "breasts",
-									"operator": "<=",
-									"value": -70
-								}
-							]
-						]
-					},
-					{
-						"image": "bra_front_large.png",
-						"condition": [
-							[
-								{
-									"bone": "breasts",
-									"operator": "<=",
-									"value": 0
-								}
-							]
-						]
-					},
-					{
-						"image": "bra_front_huge.png",
-						"condition": [
-							[
-								{
-									"bone": "breasts",
-									"operator": "<=",
-									"value": 100
+									"value": -165
 								}
 							]
 						]
@@ -84,11 +36,11 @@
 			"height": 1500,
 			"name": "bra breasts behind",
 			"priority": "BELOW_BREASTS",
-			"points": "shirt_static_breasts",
+			"points": "body",
 			"mirror": 0,
 			"colorizationKey": "bra",
 			"image": {
-				"image": "bra_front_extreme.png",
+				"image": "bra_breasts.png",
 				"overrides": [
 					{
 						"image": "",
@@ -97,55 +49,19 @@
 								{
 									"bone": "breasts",
 									"operator": "<=",
-									"value": -170
+									"value": -165
 								}
 							]
 						]
 					},
 					{
-						"image": "bra_front_small.png",
+						"image": "bra_breasts_small.png",
 						"condition": [
 							[
 								{
 									"bone": "breasts",
 									"operator": "<=",
-									"value": -150
-								}
-							]
-						]
-					},
-					{
-						"image": "bra_front_medium.png",
-						"condition": [
-							[
-								{
-									"bone": "breasts",
-									"operator": "<=",
-									"value": -70
-								}
-							]
-						]
-					},
-					{
-						"image": "bra_front_large.png",
-						"condition": [
-							[
-								{
-									"bone": "breasts",
-									"operator": "<=",
-									"value": 0
-								}
-							]
-						]
-					},
-					{
-						"image": "bra_front_huge.png",
-						"condition": [
-							[
-								{
-									"bone": "breasts",
-									"operator": "<=",
-									"value": 100
+									"value": -35
 								}
 							]
 						]
@@ -174,6 +90,86 @@
 									"bone": "breasts",
 									"operator": "<=",
 									"value": -170
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "breasts",
+			"priority": "ABOVE_BODY",
+			"points": "breasts",
+			"mirror": 0,
+			"colorizationKey": "bra",
+			"image": {
+				"image": "bra_breasts.png",
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -165
+								}
+							]
+						]
+					},
+					{
+						"image": "bra_breasts_small.png",
+						"condition": [
+							[
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -35
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "breasts back",
+			"priority": "BELOW_BREASTS",
+			"points": "breasts",
+			"mirror": 0,
+			"colorizationKey": "bra",
+			"image": {
+				"image": "bra_breasts.png",
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -165
+								}
+							]
+						]
+					},
+					{
+						"image": "bra_breasts_small.png",
+						"condition": [
+							[
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -35
 								}
 							]
 						]

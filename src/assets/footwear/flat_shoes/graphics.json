@@ -6,6 +6,32 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"name": "front Highlights",
+			"priority": "OVERLAY",
+			"points": "body",
+			"mirror": 0,
+			"colorizationKey": "shoesHighlights",
+			"image": {
+				"image": "flat_shoes_ Highlights.png",
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"view": "back"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
 			"name": "front",
 			"priority": "ABOVE_BODY",
 			"points": "body",
@@ -39,6 +65,32 @@
 			"colorizationKey": "shoes",
 			"image": {
 				"image": "flat_shoes_back.png",
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"view": "front"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "back Highlights",
+			"priority": "BELOW_BODY",
+			"points": "body",
+			"mirror": 0,
+			"colorizationKey": "shoesHighlights",
+			"image": {
+				"image": "flat_shoes_back_Highlights.png",
 				"overrides": [
 					{
 						"image": "",

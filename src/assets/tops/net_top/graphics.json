@@ -40,7 +40,7 @@
 			"height": 1500,
 			"name": "front",
 			"priority": "ABOVE_BODY",
-			"points": "shirt",
+			"points": "body",
 			"pointType": [
 				"body",
 				"bodyarm"
@@ -49,33 +49,36 @@
 			"colorizationKey": "top",
 			"image": {
 				"image": "net_top_base_front.png",
-				"overrides": []
+				"overrides": [
+					{
+						"image": "net_top_base_front3.png",
+						"condition": [
+							[
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -165
+								}
+							]
+						]
+					},
+					{
+						"image": "net_top_base_front2.png",
+						"condition": [
+							[
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -35
+								}
+							]
+						]
+					}
+				]
 			},
 			"scaling": {
 				"scaleBone": "breasts",
-				"stops": [
-					[
-						-180,
-						{
-							"image": "net_top_base_front_flat.png",
-							"overrides": []
-						}
-					],
-					[
-						100,
-						{
-							"image": "net_top_base_front_huge.png",
-							"overrides": []
-						}
-					],
-					[
-						150,
-						{
-							"image": "net_top_base_front_extreme.png",
-							"overrides": []
-						}
-					]
-				]
+				"stops": []
 			}
 		},
 		{
@@ -85,7 +88,7 @@
 			"height": 1500,
 			"name": "front shadow",
 			"priority": "ABOVE_BODY",
-			"points": "shirt",
+			"points": "body",
 			"pointType": [
 				"body",
 				"bodyarm"
@@ -130,7 +133,7 @@
 			"height": 1500,
 			"name": "arms",
 			"priority": "ABOVE_ARM_LEFT",
-			"points": "shirt",
+			"points": "body",
 			"pointType": [
 				"bodyarm_l",
 				"arm_l"
@@ -175,7 +178,7 @@
 			"height": 1500,
 			"name": "front behind breasts",
 			"priority": "BELOW_BREASTS",
-			"points": "shirt",
+			"points": "body",
 			"pointType": [
 				"body",
 				"bodyarm"
@@ -281,6 +284,86 @@
 			"image": {
 				"image": "net_top_base_back.png",
 				"overrides": []
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "bust",
+			"priority": "ABOVE_BODY",
+			"points": "breasts",
+			"mirror": 0,
+			"colorizationKey": "top",
+			"image": {
+				"image": "net_top_bust.png",
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -165
+								}
+							]
+						]
+					},
+					{
+						"image": "net_top_bust2.png",
+						"condition": [
+							[
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -35
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "bust back",
+			"priority": "BELOW_BREASTS",
+			"points": "breasts",
+			"mirror": 0,
+			"colorizationKey": "top",
+			"image": {
+				"image": "net_top_bust.png",
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -165
+								}
+							]
+						]
+					},
+					{
+						"image": "net_top_bust2.png",
+						"condition": [
+							[
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -35
+								}
+							]
+						]
+					}
+				]
 			}
 		}
 	]
