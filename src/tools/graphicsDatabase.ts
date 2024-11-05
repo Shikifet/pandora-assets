@@ -1,7 +1,7 @@
 import { Immutable } from 'immer';
 import { AssetGraphicsDefinition, AssetId, AssetsGraphicsDefinitionFile, GetLogger, PointTemplate } from 'pandora-common';
-import { GENERATE_AVIF } from '../constants';
-import { AVIF_SUFFIX } from './resources';
+import { GENERATE_AVIF } from '../constants.js';
+import { AVIF_SUFFIX } from './resources.js';
 
 const logger = GetLogger('GraphicsDatabase');
 
@@ -29,6 +29,10 @@ export const GraphicsDatabase = new class GraphicsDatabase {
 
 		this._templates.set(name, template);
 		logger.debug('Registered point template', name);
+	}
+
+	public getPointTemplate(name: string): Immutable<PointTemplate> | undefined {
+		return this._templates.get(name);
 	}
 
 	public hasPointTemplate(name: string): boolean {

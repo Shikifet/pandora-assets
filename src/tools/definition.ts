@@ -1,15 +1,16 @@
+import { cloneDeep, pick } from 'lodash-es';
 import { AssetId, GetLogger, PersonalAssetDefinition } from 'pandora-common';
-import { AssetDatabase } from './assetDatabase';
-import { AssetSourcePath, DefaultId } from './context';
-import { LoadAssetsGraphics } from './graphics';
-import { GraphicsDatabase } from './graphicsDatabase';
 import { join } from 'path';
-import { pick } from 'lodash';
-import { LoadAssetColorization } from './load_helpers/color';
-import { ValidateOwnershipData } from './licensing';
-import { PropertiesValidationMetadata, ValidateAssetProperties } from './validation/properties';
-import { ValidateAllModules } from './validation/modules';
-import { DefinePngResource, PREVIEW_SIZE } from './resources';
+import { AssetDatabase } from './assetDatabase.js';
+import { AssetSourcePath, DefaultId } from './context.js';
+import { LoadAssetsGraphics } from './graphics.js';
+import { GraphicsDatabase } from './graphicsDatabase.js';
+import { RegisterImportContextProcess } from './importContext.js';
+import { ValidateOwnershipData } from './licensing.js';
+import { LoadAssetColorization } from './load_helpers/color.js';
+import { DefinePngResource, PREVIEW_SIZE } from './resources.js';
+import { ValidateAllModules } from './validation/modules.js';
+import { PropertiesValidationMetadata, ValidateAssetProperties } from './validation/properties.js';
 
 const DEFINITION_FALLTHROUGH_PROPERTIES = [
 	// Properties
@@ -39,6 +40,10 @@ const DEFINITION_FALLTHROUGH_PROPERTIES = [
 export type AssetDefinitionFallthroughProperties = (typeof DEFINITION_FALLTHROUGH_PROPERTIES)[number] & string;
 
 export function GlobalDefineAsset(def: IntermediatePersonalAssetDefinition): void {
+	RegisterImportContextProcess(() => GlobalDefineAssetProcess(cloneDeep(def)));
+}
+
+async function GlobalDefineAssetProcess(def: IntermediatePersonalAssetDefinition): Promise<void> {
 	const id: AssetId = `a/${def.id ?? DefaultId()}` as const;
 
 	const logger = GetLogger('DefineAsset', `[Asset ${id}]`);
@@ -102,7 +107,7 @@ export function GlobalDefineAsset(def: IntermediatePersonalAssetDefinition): voi
 
 	// Load and verify graphics
 	if (def.graphics) {
-		const graphics = LoadAssetsGraphics(join(AssetSourcePath, def.graphics), Object.keys(asset.modules ?? {}));
+		const graphics = await LoadAssetsGraphics(join(AssetSourcePath, def.graphics), Object.keys(asset.modules ?? {}));
 
 		const loggerGraphics = logger.prefixMessages('[Graphics]');
 

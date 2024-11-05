@@ -1,24 +1,25 @@
 import * as fs from 'fs';
-import { join, relative } from 'path';
 import ignore from 'ignore';
-import { GetLogger, SetConsoleOutput, LogLevel, AssetsDefinitionFile, AssetsGraphicsDefinitionFile, logConfig } from 'pandora-common';
-import { GlobalDefineAsset, SetCurrentContext } from './tools';
-import { AssetDatabase } from './tools/assetDatabase';
-import { CleanOldResources, ClearAllResources, DefineResourceInline, ExportAllResources, SetResourceDestinationDirectory } from './tools/resources';
-import { RunDev } from './tools/watch';
-import { LoadBoneNameValidation, boneDefinition } from './bones';
-import { GraphicsDatabase } from './tools/graphicsDatabase';
-import { BODYPARTS, ValidateBodyparts } from './bodyparts';
-import { ASSET_DEST_DIR, ASSET_SRC_DIR, OUT_DIR, IS_PRODUCTION_BUILD, BASE_DIR } from './constants';
-import { LoadTemplates } from './templates';
-import { POSE_PRESETS } from './posePresets';
-import { LoadGitData } from './tools/git';
-import { RoomDatabase } from './tools/roomDatabase';
-import { LoadBackgroundTags, LoadBackgrounds } from './backgrounds/backgrounds';
-import { LoadAttributeNameValidation, LoadAttributes } from './attributes';
-import { APPEARANCE_RANDOMIZATION_CONFIG } from './presets';
-import { GlobalDefineRoomDeviceAsset } from './tools/definitionRoomDevice';
-import { GlobalDefineLockAsset } from './tools/definitionLock';
+import { AssetsDefinitionFile, AssetsGraphicsDefinitionFile, GetLogger, LogLevel, SetConsoleOutput, logConfig } from 'pandora-common';
+import { join, relative } from 'path';
+import { LoadAttributeNameValidation, LoadAttributes } from './attributes.js';
+import { LoadBackgroundTags, LoadBackgrounds } from './backgrounds/backgrounds.js';
+import { BODYPARTS, ValidateBodyparts } from './bodyparts.js';
+import { LoadBoneNameValidation, boneDefinition } from './bones.js';
+import { ASSET_DEST_DIR, ASSET_SRC_DIR, BASE_DIR, IS_PRODUCTION_BUILD, OUT_DIR } from './constants.js';
+import { POSE_PRESETS } from './posePresets.js';
+import { APPEARANCE_RANDOMIZATION_CONFIG } from './presets.js';
+import { LoadTemplates } from './templates/index.js';
+import { AssetDatabase } from './tools/assetDatabase.js';
+import { GlobalDefineLockAsset } from './tools/definitionLock.js';
+import { GlobalDefineRoomDeviceAsset } from './tools/definitionRoomDevice.js';
+import { LoadGitData } from './tools/git.js';
+import { GraphicsDatabase } from './tools/graphicsDatabase.js';
+import { AssetImportContext, SetCurrentImportContext } from './tools/importContext.js';
+import { GlobalDefineAsset, SetCurrentContext } from './tools/index.js';
+import { CleanOldResources, ClearAllResources, DefineResourceInline, ExportAllResources, SetResourceDestinationDirectory } from './tools/resources.js';
+import { RoomDatabase } from './tools/roomDatabase.js';
+import { RunDev } from './tools/watch.js';
 
 const logger = GetLogger('Main');
 SetConsoleOutput(LogLevel.VERBOSE);
@@ -56,10 +57,12 @@ function CheckErrors(printWarnings: boolean = true) {
 	return true;
 }
 
+const assetProcesses: AssetImportContext[] = [];
+
 async function Run() {
 	logger.info('Building...');
 
-	const ig = ignore();
+	const ig = ignore.default();
 	ig.add(fs.readFileSync(join(BASE_DIR, '.gitignore'), 'utf-8'));
 
 	// Setup environment
@@ -93,50 +96,76 @@ async function Run() {
 	const tags = LoadBackgroundTags();
 	LoadBackgrounds();
 
-	logger.info('Loading assets...');
-	for (const category of fs.readdirSync(ASSET_SRC_DIR)) {
-		const categorySrcPath = join(ASSET_SRC_DIR, category);
-		const categoryDestPath = join(ASSET_DEST_DIR, category);
+	// Do not repeat the import phase on re-run
+	if (assetProcesses.length === 0) {
+		logger.info('Loading assets...');
+		for (const category of fs.readdirSync(ASSET_SRC_DIR)) {
+			const categorySrcPath = join(ASSET_SRC_DIR, category);
+			const categoryDestPath = join(ASSET_DEST_DIR, category);
 
-		// Ignore non-directories in assets
-		if (!IsDirectory(categorySrcPath))
-			continue;
+			// Ignore non-directories in assets
+			if (!IsDirectory(categorySrcPath))
+				continue;
 
-		if (!IsDirectory(categoryDestPath)) {
-			throw new Error(`assets/${category} is not directory`);
+			if (!IsDirectory(categoryDestPath)) {
+				throw new Error(`assets/${category} is not directory`);
+			}
+
+			for (const asset of fs.readdirSync(categorySrcPath)) {
+				const assetDestPath = join(categoryDestPath, asset);
+				const assetSrcPath = join(categorySrcPath, asset);
+
+				if (ig.ignores(relative(process.cwd(), assetSrcPath))) {
+					logger.verbose(`Ignoring assets/${category}/${asset}...`);
+					continue;
+				}
+				if (!IsDirectory(assetSrcPath)) {
+					logger.warning(`assets/${category}/${asset} is not directory`);
+					continue;
+				}
+				if (!IsFile(join(assetSrcPath, `${asset}.asset.ts`))) {
+					logger.error(`assets/${category}/${asset} expected asset file '${asset}.asset.ts' not found`);
+					continue;
+				}
+				if (!IsDirectory(assetDestPath)) {
+					throw new Error(`assets/${category}/${asset} is not directory`);
+				}
+
+				const assetContext: AssetImportContext = {
+					category,
+					asset,
+					assetSourcePath: assetSrcPath,
+					processes: [],
+				};
+
+				SetCurrentImportContext(assetContext);
+
+				try {
+					const moduleName = join(assetDestPath, `${asset}.asset.js`);
+					await import(moduleName);
+					assetProcesses.push(assetContext);
+				} catch (error) {
+					logger.error(`Error while importing assets/${category}/${asset}\n`, error);
+				}
+			}
 		}
+	}
 
-		for (const asset of fs.readdirSync(categorySrcPath)) {
-			const assetDestPath = join(categoryDestPath, asset);
-			const assetSrcPath = join(categorySrcPath, asset);
+	if (!CheckErrors(false))
+		return;
 
-			if (ig.ignores(relative(process.cwd(), assetSrcPath))) {
-				logger.verbose(`Ignoring assets/${category}/${asset}...`);
-				continue;
-			}
-			if (!IsDirectory(assetSrcPath)) {
-				logger.warning(`assets/${category}/${asset} is not directory`);
-				continue;
-			}
-			if (!IsFile(join(assetSrcPath, `${asset}.asset.ts`))) {
-				logger.error(`assets/${category}/${asset} expected asset file '${asset}.asset.ts' not found`);
-				continue;
-			}
-			if (!IsDirectory(assetDestPath)) {
-				throw new Error(`assets/${category}/${asset} is not directory`);
-			}
+	SetCurrentImportContext(null);
 
-			SetCurrentContext(category, asset, assetSrcPath);
+	logger.info('Processing assets...');
+	for (const { category, asset, assetSourcePath, processes } of assetProcesses) {
+		logger.verbose(`Processing assets/${category}/${asset}...`);
+		SetCurrentContext(category, asset, assetSourcePath);
 
-			logger.verbose(`Processing assets/${category}/${asset}...`);
-
-			try {
-				const moduleName = join(assetDestPath, `${asset}.asset`);
-				delete require.cache[require.resolve(moduleName)];
-				// eslint-disable-next-line @typescript-eslint/no-require-imports
-				await require(moduleName);
-			} catch (error) {
-				logger.error(`Error while importing assets/${category}/${asset}\n`, error);
+		const pending = processes.map((p) => p());
+		const results = await Promise.allSettled(pending);
+		for (const result of results) {
+			if (result.status === 'rejected') {
+				GetLogger('Processing').error('Processing failed:\n', result.reason);
 			}
 		}
 	}

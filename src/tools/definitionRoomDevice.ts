@@ -1,16 +1,18 @@
-import { pick } from 'lodash';
-import { AssertNever, AssetId, GetLogger, RoomDeviceAssetDefinition, RoomDeviceModuleStaticData, RoomDeviceProperties, RoomDeviceWearablePartAssetDefinition } from 'pandora-common';
+import { cloneDeep, pick } from 'lodash-es';
+import { Assert, AssertNever, AssetId, GetLogger, RoomDeviceAssetDefinition, RoomDeviceModuleStaticData, RoomDeviceProperties, RoomDeviceWearablePartAssetDefinition } from 'pandora-common';
 import { join } from 'path';
-import { AssetDatabase } from './assetDatabase';
-import { AssetSourcePath, DefaultId } from './context';
-import { GENERATED_RESOLUTIONS, LoadAssetsGraphics } from './graphics';
-import { GraphicsDatabase } from './graphicsDatabase';
-import { ValidateOwnershipData } from './licensing';
-import { LoadRoomDeviceColorization } from './load_helpers/color';
-import { DefineImageResource, DefinePngResource, PREVIEW_SIZE } from './resources';
-import { ValidateAllModules } from './validation/modules';
-import { ValidateAssetProperties } from './validation/properties';
-import { RoomDevicePropertiesValidationMetadata, ValidateRoomDeviceProperties } from './validation/roomDeviceProperties';
+import { OPTIMIZE_TEXTURES } from '../constants.js';
+import { AssetDatabase } from './assetDatabase.js';
+import { AssetSourcePath, DefaultId } from './context.js';
+import { GENERATED_RESOLUTIONS, LoadAssetsGraphics } from './graphics.js';
+import { GraphicsDatabase } from './graphicsDatabase.js';
+import { RegisterImportContextProcess } from './importContext.js';
+import { ValidateOwnershipData } from './licensing.js';
+import { LoadRoomDeviceColorization } from './load_helpers/color.js';
+import { DefineImageResource, DefinePngResource, IImageResource, ImageBoundingBox, PREVIEW_SIZE } from './resources.js';
+import { ValidateAllModules } from './validation/modules.js';
+import { ValidateAssetProperties } from './validation/properties.js';
+import { RoomDevicePropertiesValidationMetadata, ValidateRoomDeviceProperties } from './validation/roomDeviceProperties.js';
 
 const ROOM_DEVICE_WEARABLE_PART_DEFINITION_FALLTHROUGH_PROPERTIES = [
 	// Properties
@@ -56,14 +58,14 @@ const ROOM_DEVICE_DEFINITION_FALLTHROUGH_PROPERTIES = [
 
 export type AssetRoomDeviceDefinitionFallthroughProperties = (typeof ROOM_DEVICE_DEFINITION_FALLTHROUGH_PROPERTIES)[number] & string;
 
-function DefineRoomDeviceWearablePart(
+async function DefineRoomDeviceWearablePart(
 	baseId: AssetId,
 	slot: string,
 	def: IntermediateRoomDeviceWearablePartDefinition,
 	colorizationKeys: ReadonlySet<string>,
 	propertiesValidationMetadata: RoomDevicePropertiesValidationMetadata,
 	preview: string | null,
-): AssetId | null {
+): Promise<AssetId | null> {
 	const id: AssetId = `${baseId}/${slot}` as const;
 
 	const logger = GetLogger('RoomDeviceWearablePart', `[Asset ${id}]`);
@@ -104,7 +106,7 @@ function DefineRoomDeviceWearablePart(
 
 	// Load and verify graphics
 	if (def.graphics) {
-		const graphics = LoadAssetsGraphics(join(AssetSourcePath, def.graphics), propertiesValidationMetadata.getModuleNames());
+		const graphics = await LoadAssetsGraphics(join(AssetSourcePath, def.graphics), propertiesValidationMetadata.getModuleNames());
 
 		const loggerGraphics = logger.prefixMessages('[Graphics]');
 
@@ -124,6 +126,10 @@ function DefineRoomDeviceWearablePart(
 }
 
 export function GlobalDefineRoomDeviceAsset(def: IntermediateRoomDeviceDefinition): void {
+	RegisterImportContextProcess(() => GlobalDefineRoomDeviceAssetProcess(cloneDeep(def)));
+}
+
+async function GlobalDefineRoomDeviceAssetProcess(def: IntermediateRoomDeviceDefinition): Promise<void> {
 	const id: AssetId = `a/${def.id ?? DefaultId()}` as const;
 
 	const logger = GetLogger('DefineRoomDeviceAsset', `[Asset ${id}]`);
@@ -151,7 +157,7 @@ export function GlobalDefineRoomDeviceAsset(def: IntermediateRoomDeviceDefinitio
 	for (const [k, v] of Object.entries(def.slots)) {
 		slotIds.add(k);
 
-		const slotWearableId = DefineRoomDeviceWearablePart(id, k, v.asset, colorizationKeys, propertiesValidationMetadata, preview);
+		const slotWearableId = await DefineRoomDeviceWearablePart(id, k, v.asset, colorizationKeys, propertiesValidationMetadata, preview);
 		if (slotWearableId == null) {
 			definitionValid = false;
 			logger.error(`Failed to process asset for slot '${k}'`);
@@ -180,8 +186,23 @@ export function GlobalDefineRoomDeviceAsset(def: IntermediateRoomDeviceDefinitio
 		logger.error(`Invalid color ribbon group: It must match one of the colorization groups.`);
 	}
 
-	function loadLayerImage(image: string): string {
-		const resource = DefineImageResource(image, 'roomDevice', 'png');
+	function loadLayerImageResource(image: string): IImageResource {
+		return DefineImageResource(image, 'roomDevice', 'png');
+	}
+
+	function loadLayerImage(image: string, minX?: number, minY?: number, boundingBox?: ImageBoundingBox): string {
+		let resource = loadLayerImageResource(image);
+
+		if (minX != null && minY != null && boundingBox != null) {
+			Assert(minX <= boundingBox.left);
+			Assert(minY <= boundingBox.top);
+			resource = resource.addCutImageRelative(
+				minX / boundingBox.width,
+				minY / boundingBox.height,
+				boundingBox.rightExclusive / boundingBox.width,
+				boundingBox.bottomExclusive / boundingBox.height,
+			);
+		}
 
 		for (const resolution of GENERATED_RESOLUTIONS) {
 			resource.addDownscaledImage(resolution);
@@ -190,13 +211,57 @@ export function GlobalDefineRoomDeviceAsset(def: IntermediateRoomDeviceDefinitio
 		return resource.resultName;
 	}
 
-	def.graphicsLayers.forEach((layer, index) => {
+	await Promise.all(def.graphicsLayers.map(async (layer, index): Promise<void> => {
 		if (layer.type === 'sprite') {
-			layer.image = layer.image && loadLayerImage(layer.image);
+			const images = Array.from(new Set<string>([
+				layer.image,
+				...(layer.imageOverrides?.map((override) => override.image) ?? []),
+			]
+				.filter(Boolean),
+			));
+
+			let minX = Infinity;
+			let minY = Infinity;
+			const boundingBoxes = new Map<string, ImageBoundingBox>();
+			if (OPTIMIZE_TEXTURES) {
+				const boundingBoxesCalculation = await Promise.all(
+					images.map((i) => loadLayerImageResource(i).getContentBoundingBox().then((box) => [i, box] as const)),
+				);
+				for (const [image, boundingBox] of boundingBoxesCalculation) {
+					boundingBoxes.set(image, boundingBox);
+
+					if (boundingBox.width === 0 || boundingBox.height === 0)
+						continue;
+
+					minX = Math.min(minX, boundingBox.left);
+					minY = Math.min(minY, boundingBox.top);
+				}
+
+				Assert(minX >= 0);
+				Assert(minY >= 0);
+				if (!Number.isFinite(minX) || !Number.isFinite(minY)) {
+					logger.warning('All layer\'s images are empty.');
+					minX = 0;
+					minY = 0;
+				} else {
+					layer.offset ??= { x: 0, y: 0 };
+					layer.offset.x += minX;
+					layer.offset.y += minY;
+					for (const override of (layer.offsetOverrides ?? [])) {
+						override.offset.x += minX;
+						override.offset.y += minY;
+					}
+				}
+			} else {
+				minX = 0;
+				minY = 0;
+			}
+
+			layer.image = layer.image && loadLayerImage(layer.image, minX, minY, boundingBoxes.get(layer.image));
 			layer.imageOverrides = layer.imageOverrides
 				?.map((override) => ({
 					...override,
-					image: override.image && loadLayerImage(override.image),
+					image: override.image && loadLayerImage(override.image, minX, minY, boundingBoxes.get(override.image)),
 				}));
 
 			if (layer.colorizationKey != null && !colorizationKeys.has(layer.colorizationKey)) {
@@ -210,7 +275,7 @@ export function GlobalDefineRoomDeviceAsset(def: IntermediateRoomDeviceDefinitio
 		} else {
 			AssertNever(layer);
 		}
-	});
+	}));
 
 	//#endregion
 
