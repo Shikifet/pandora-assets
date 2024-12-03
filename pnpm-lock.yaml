@@ -12,8 +12,8 @@ importers:
         specifier: 5.0.1
         version: 5.0.1
       dotenv:
-        specifier: 16.4.5
-        version: 16.4.5
+        specifier: 16.4.6
+        version: 16.4.6
       ignore:
         specifier: 6.0.2
         version: 6.0.2
@@ -25,7 +25,7 @@ importers:
         version: 4.17.21
       pandora-common:
         specifier: github:Project-Pandora-Game/pandora#master&path:pandora-common
-        version: https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/90de437ffcab5a8e94378cb8ab449f49be0b86cd#path:pandora-common
+        version: https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/72523c1d211900aaf0727a60b94fc198b4ba529e#path:pandora-common
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -1298,8 +1298,8 @@ packages:
   dom-walk@0.1.2:
     resolution: {integrity: sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w==}
 
-  dotenv@16.4.5:
-    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+  dotenv@16.4.6:
+    resolution: {integrity: sha512-JhcR/+KIjkkjiU8yEpaB/USlzVi3i5whwOjpIRNGi9svKEXZSe+Qp6IWAjFjv+2GViAoDRCUv/QLNziQxsLqDg==}
     engines: {node: '>=12'}
 
   dreamopt@0.8.0:
@@ -2359,8 +2359,8 @@ packages:
   pako@1.0.11:
     resolution: {integrity: sha512-4hLB8Py4zZce5s4yd9XzopqwVv/yGNhV1Bl8NTmCq1763HeK2+EwVTv+leGeL13Dnh2wfbqowVPXCIO0z4taYw==}
 
-  pandora-common@https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/90de437ffcab5a8e94378cb8ab449f49be0b86cd#path:pandora-common:
-    resolution: {path: pandora-common, tarball: https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/90de437ffcab5a8e94378cb8ab449f49be0b86cd}
+  pandora-common@https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/72523c1d211900aaf0727a60b94fc198b4ba529e#path:pandora-common:
+    resolution: {path: pandora-common, tarball: https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/72523c1d211900aaf0727a60b94fc198b4ba529e}
     version: 0.1.0
     engines: {node: '>=20.x'}
 
@@ -4462,7 +4462,7 @@ snapshots:
 
   dom-walk@0.1.2: {}
 
-  dotenv@16.4.5: {}
+  dotenv@16.4.6: {}
 
   dreamopt@0.8.0:
     dependencies:
@@ -5815,7 +5815,7 @@ snapshots:
 
   pako@1.0.11: {}
 
-  pandora-common@https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/90de437ffcab5a8e94378cb8ab449f49be0b86cd#path:pandora-common:
+  pandora-common@https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/72523c1d211900aaf0727a60b94fc198b4ba529e#path:pandora-common:
     dependencies:
       '@types/async-lock': 1.4.2
       '@types/lodash': 4.17.13
