@@ -12,8 +12,8 @@ importers:
         specifier: 5.0.1
         version: 5.0.1
       dotenv:
-        specifier: 16.4.6
-        version: 16.4.6
+        specifier: 16.4.7
+        version: 16.4.7
       ignore:
         specifier: 6.0.2
         version: 6.0.2
@@ -1298,8 +1298,8 @@ packages:
   dom-walk@0.1.2:
     resolution: {integrity: sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w==}
 
-  dotenv@16.4.6:
-    resolution: {integrity: sha512-JhcR/+KIjkkjiU8yEpaB/USlzVi3i5whwOjpIRNGi9svKEXZSe+Qp6IWAjFjv+2GViAoDRCUv/QLNziQxsLqDg==}
+  dotenv@16.4.7:
+    resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
     engines: {node: '>=12'}
 
   dreamopt@0.8.0:
@@ -4465,7 +4465,7 @@ snapshots:
 
   dom-walk@0.1.2: {}
 
-  dotenv@16.4.6: {}
+  dotenv@16.4.7: {}
 
   dreamopt@0.8.0:
     dependencies:

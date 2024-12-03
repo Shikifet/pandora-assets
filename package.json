@@ -25,7 +25,7 @@
 	},
 	"dependencies": {
 		"delaunator": "5.0.1",
-		"dotenv": "16.4.6",
+		"dotenv": "16.4.7",
 		"ignore": "6.0.2",
 		"jimp": "0.22.12",
 		"lodash-es": "4.17.21",
