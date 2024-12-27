@@ -104,6 +104,42 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"name": "mitten pads front",
+			"priority": "ABOVE_ARM_LEFT",
+			"points": "body",
+			"pointType": [
+				"bodyarm_l",
+				"arm_l"
+			],
+			"mirror": 1,
+			"colorizationKey": "pads",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "mittens_up_pads.png",
+						"condition": [
+							[
+								{
+									"armType": "rotation",
+									"side": "left",
+									"operator": "=",
+									"value": "up"
+								},
+								{
+									"view": "front"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
 			"name": "belt front",
 			"priority": "ABOVE_ARM_LEFT",
 			"points": "body",
@@ -282,6 +318,42 @@
 									"side": "left",
 									"operator": "=",
 									"value": "down"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "mitten pads back",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "body",
+			"pointType": [
+				"bodyarm_l",
+				"arm_l"
+			],
+			"mirror": 1,
+			"colorizationKey": "pads",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "mittens_down_pads.png",
+						"condition": [
+							[
+								{
+									"armType": "rotation",
+									"side": "left",
+									"operator": "=",
+									"value": "down"
+								},
+								{
+									"view": "back"
 								}
 							]
 						]
