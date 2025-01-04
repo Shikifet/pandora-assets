@@ -24,6 +24,29 @@ DefineAsset({
 			upper: 'right',
 		},
 	},
+	attributes: {
+		provides: [
+			'Restraint',
+			'Restraint_arms',
+		],
+	},
+	modules: {
+		cinch: {
+			type: 'typed',
+			name: 'Cinch',
+			variants: [
+				{
+					id: 'no',
+					name: 'No',
+				},
+				{
+					id: 'yes',
+					name: 'Yes',
+					default: true,
+				},
+			]
+		}
+	},
 	effects: {
 		blockHands: true,
 	},
