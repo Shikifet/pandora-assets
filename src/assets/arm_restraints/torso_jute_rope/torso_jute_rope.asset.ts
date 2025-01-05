@@ -8,7 +8,7 @@ DefineAsset({
 			default: '#C79A32',
 		},
 	},
-	preview: 'harness_front_over_breast.png',
+	preview: 'takate_kote_front_v2_over.png',
 	poseLimits: {
 		arms: {
 			position: 'back',
@@ -42,6 +42,21 @@ DefineAsset({
 				{
 					id: 'yes',
 					name: 'Yes',
+					default: true,
+				},
+			]
+		},
+		front: {
+			type: 'typed',
+			name: 'Cinch',
+			variants: [
+				{
+					id: 'arms_only',
+					name: 'Arms Only',
+				},
+				{
+					id: 'over_shoulder',
+					name: 'Over Shoulder',
 					default: true,
 				},
 			]
