@@ -8,7 +8,8 @@ DefineAsset({
 			default: '#C79A32',
 		},
 	},
-	preview: 'takate_kote_front_v2_over.png',
+	// size:260, y:375, centered
+	preview: 'preview.png',
 	attributes: {
 		provides: [
 			'Restraint',
@@ -141,11 +142,11 @@ DefineAsset({
 	},
 	blockSelfAddRemove: true,
 	chat: {
-		actionAdd: 'SOURCE_CHARACTER tied up a harness over TARGET_CHARACTER_DYNAMIC_POSSESSIVE, tightening it over the chest.',
-		actionRemove: 'SOURCE_CHARACTER loosened and then removed the harness from TARGET_CHARACTER_DYNAMIC_POSSESSIVE.',
+		actionAdd: 'SOURCE_CHARACTER tied Torso Jute Ropes around TARGET_CHARACTER_DYNAMIC_POSSESSIVE body.',
+		actionRemove: 'SOURCE_CHARACTER removed the Torso Jute Ropes from TARGET_CHARACTER_DYNAMIC_POSSESSIVE body.',
 	},
 	ownership: {
-		responsibleContributor: 'shikifet@gmail.com',
+		responsibleContributor: 'Shikifet <shikifet@gmail.com>',
 		credits: ['Shikifet'],
 		modificationPolicy: `Fixes and New uses, otherwise ask`,
 		reusePolicy: 'Ask first',
