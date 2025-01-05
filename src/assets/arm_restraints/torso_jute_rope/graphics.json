@@ -210,66 +210,6 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
-			"name": "harness_back",
-			"priority": "BELOW_BODY",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "rope",
-			"image": {
-				"image": "takate_kote_back_v2.png",
-				"overrides": []
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"name": "wrists",
-			"priority": "BELOW_ARM_LEFT",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "rope",
-			"image": {
-				"image": "wrists_high.png",
-				"overrides": []
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"name": "back_arms_left",
-			"priority": "BELOW_ARM_LEFT",
-			"points": "custom_arm_restraints_torso_ropes",
-			"mirror": 0,
-			"colorizationKey": "rope",
-			"image": {
-				"image": "takate_kote_back_arms_left_v2.png",
-				"overrides": []
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"name": "back_arms_right",
-			"priority": "BELOW_ARM_LEFT",
-			"points": "custom_arm_restraints_torso_ropes",
-			"mirror": 0,
-			"colorizationKey": "rope",
-			"image": {
-				"image": "takate_kote_back_arms_right_v2.png",
-				"overrides": []
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
 			"name": "back_top",
 			"priority": "BELOW_BODY",
 			"points": "custom_arm_restraints_torso_ropes",
@@ -291,6 +231,144 @@
 						]
 					}
 				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "harness_back",
+			"priority": "BELOW_BODY",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "takate_kote_back.png",
+				"overrides": [
+					{
+						"image": "takate_kote_back_v2.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "wrists_high"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "wrists",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "wrists_high.png",
+				"overrides": [
+					{
+						"image": "wrists_normal.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "wrists_normal"
+								}
+							]
+						]
+					},
+					{
+						"image": "wrists_low.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "wrists_low"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "rope_end",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "rope_end_short.png",
+				"overrides": [
+					{
+						"image": "rope_end_normal.png",
+						"condition": [
+							[
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "normal"
+								}
+							]
+						]
+					},
+					{
+						"image": "rope_end_long.png",
+						"condition": [
+							[
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "long"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "back_arms_left",
+			"priority": "BELOW_ARM_RIGHT",
+			"points": "custom_arm_restraints_torso_ropes",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "takate_kote_back_arms_left_v2.png",
+				"overrides": []
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "back_arms_right",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "custom_arm_restraints_torso_ropes",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "takate_kote_back_arms_right_v2.png",
+				"overrides": []
 			}
 		}
 	]

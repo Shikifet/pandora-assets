@@ -9,21 +9,6 @@ DefineAsset({
 		},
 	},
 	preview: 'takate_kote_front_v2_over.png',
-	poseLimits: {
-		arms: {
-			position: 'back',
-			rotation: 'forward',
-		},
-		bones: {
-			arm_r: 90,
-			arm_l: 90,
-			elbow_r: 145,
-			elbow_l: 145,
-		},
-		armsOrder: {
-			upper: 'right',
-		},
-	},
 	attributes: {
 		provides: [
 			'Restraint',
@@ -31,6 +16,91 @@ DefineAsset({
 		],
 	},
 	modules: {
+		arms: {
+			type: 'typed',
+			name: 'Arms',
+			variants: [
+				{
+					id: 'wrists_high',
+					name: 'Wrists High',
+					properties: {
+						poseLimits: {
+							arms: {
+								position: 'back',
+								rotation: 'forward',
+							},
+							bones: {
+								arm_r: 90,
+								arm_l: 90,
+								elbow_r: 145,
+								elbow_l: 145,
+							},
+							armsOrder: {
+								upper: 'right',
+							},
+						}
+					}
+				},
+				{
+					id: 'wrists_normal',
+					name: 'Wrists Normal',
+					default: true,
+					properties: {
+						poseLimits: {
+							arms: {
+								position: 'back',
+								rotation: 'forward',
+							},
+							bones: {
+								arm_r: 90,
+								arm_l: 90,
+								elbow_r: 90,
+								elbow_l: 90,
+							},
+							armsOrder: {
+								upper: 'right',
+							},
+						}
+					}
+				},
+				{
+					id: 'wrists_low',
+					name: 'Wrists Low',
+					properties: {
+						poseLimits: {
+							arms: {
+								position: 'back',
+								rotation: 'forward',
+							},
+							bones: {
+								arm_r: 90,
+								arm_l: 90,
+								elbow_r: 35,
+								elbow_l: 35,
+							},
+							armsOrder: {
+								upper: 'right',
+							},
+						}
+					}
+				},
+			]
+		},
+		front: {
+			type: 'typed',
+			name: 'Chest',
+			variants: [
+				{
+					id: 'arms_only',
+					name: 'Arms Only',
+				},
+				{
+					id: 'over_shoulder',
+					name: 'Over Shoulder',
+					default: true,
+				},
+			]
+		},
 		cinch: {
 			type: 'typed',
 			name: 'Cinch',
@@ -46,21 +116,25 @@ DefineAsset({
 				},
 			]
 		},
-		front: {
+		end: {
 			type: 'typed',
-			name: 'Cinch',
+			name: 'Rope End',
 			variants: [
 				{
-					id: 'arms_only',
-					name: 'Arms Only',
-				},
-				{
-					id: 'over_shoulder',
-					name: 'Over Shoulder',
+					id: 'short',
+					name: 'Short',
 					default: true,
 				},
+				{
+					id: 'normal',
+					name: 'Normal',
+				},
+				{
+					id: 'long',
+					name: 'Long',
+				},
 			]
-		}
+		},
 	},
 	effects: {
 		blockHands: true,
