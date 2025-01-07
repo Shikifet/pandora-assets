@@ -9,7 +9,7 @@ DefineAsset({
 		},
 	},
 	// size:260, y:375, centered
-	preview: 'preview.png',
+	preview: 'takate_kote_front_v2_over.png',
 	attributes: {
 		provides: [
 			'Restraint',

@@ -184,7 +184,7 @@
 			"height": 1500,
 			"name": "cinch behind",
 			"priority": "BELOW_BODY",
-			"points": "custom_arm_restraints_torso_ropes",
+			"points": "static",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -306,13 +306,41 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"name": "rope_end_high_wrists",
+			"priority": "BELOW_BODY",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "rope_end_short.png",
+						"condition": [
+							[
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "short"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
 			"name": "rope_end",
 			"priority": "BELOW_ARM_LEFT",
 			"points": "static",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
-				"image": "rope_end_short.png",
+				"image": "",
 				"overrides": [
 					{
 						"image": "rope_end_normal.png",
