@@ -9,7 +9,7 @@ DefineAsset({
 		},
 	},
 	// size:260, y:375, centered
-	preview: 'takate_kote_front_v2_over.png',
+	preview: 'preview.png',
 	attributes: {
 		provides: [
 			'Restraint',
@@ -85,6 +85,33 @@ DefineAsset({
 						}
 					}
 				},
+				{
+					id: 'arms_high',
+					name: 'Wrists Behind neck',
+					properties: {
+						poseLimits: {
+							arms: {
+								position: 'back',
+								rotation: 'forward',
+							},
+							bones: {
+								arm_r: -90,
+								arm_l: -90,
+								elbow_r: -145,
+								elbow_l: -145,
+							},
+							armsOrder: {
+								upper: 'right',
+							},
+						},
+						stateFlags: {
+							requires: {
+								uncinched: "Remove cinches in Cinches module",
+								untied_neck: "Remove Shoulder rope in Chest module"
+							},
+						},
+					}
+				},
 			]
 		},
 		front: {
@@ -94,11 +121,16 @@ DefineAsset({
 				{
 					id: 'arms_only',
 					name: 'Arms Only',
+					properties: {
+						stateFlags: {
+							provides: ['untied_neck'],
+						},
+					},
+					default: true,
 				},
 				{
 					id: 'over_shoulder',
 					name: 'Over Shoulder',
-					default: true,
 				},
 			]
 		},
@@ -109,11 +141,16 @@ DefineAsset({
 				{
 					id: 'no',
 					name: 'No',
+					properties: {
+						stateFlags: {
+							provides: ['uncinched'],
+						},
+					},
+					default: true
 				},
 				{
 					id: 'yes',
 					name: 'Yes',
-					default: true,
 				},
 			]
 		},

@@ -15,6 +15,18 @@
 				"image": "takate_kote_front_v2.png",
 				"overrides": [
 					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					},
+					{
 						"image": "takate_kote_front_v2_b0.png",
 						"condition": [
 							[
@@ -77,6 +89,18 @@
 				"image": "takate_kote_front_v2_over.png",
 				"overrides": [
 					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					},
+					{
 						"image": "takate_kote_front_v2_over_single.png",
 						"condition": [
 							[
@@ -103,7 +127,20 @@
 			"colorizationKey": "rope",
 			"image": {
 				"image": "takate_kote_front_arms_left_v2.png",
-				"overrides": []
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		{
@@ -146,7 +183,20 @@
 			"colorizationKey": "rope",
 			"image": {
 				"image": "takate_kote_front_arms_right_v2.png",
-				"overrides": []
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		{
@@ -257,6 +307,18 @@
 								}
 							]
 						]
+					},
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
 					}
 				]
 			}
@@ -297,6 +359,46 @@
 								}
 							]
 						]
+					},
+					{
+						"image": "arms_high.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "waist_cinched_back",
+			"priority": "BELOW_BODY",
+			"points": "custom_arm_restraints_torso_ropes",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "waist_arms_high.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
 					}
 				]
 			}
@@ -314,6 +416,23 @@
 			"image": {
 				"image": "",
 				"overrides": [
+					{
+						"image": "rope_end_short_arms_high.png",
+						"condition": [
+							[
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "short"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					},
 					{
 						"image": "rope_end_short.png",
 						"condition": [
@@ -342,6 +461,40 @@
 			"image": {
 				"image": "",
 				"overrides": [
+					{
+						"image": "rope_end_normal_arms_high.png",
+						"condition": [
+							[
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "normal"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					},
+					{
+						"image": "rope_end_long_arms_high.png",
+						"condition": [
+							[
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "long"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					},
 					{
 						"image": "rope_end_normal.png",
 						"condition": [
@@ -381,7 +534,20 @@
 			"colorizationKey": "rope",
 			"image": {
 				"image": "takate_kote_back_arms_left_v2.png",
-				"overrides": []
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		{
@@ -396,7 +562,48 @@
 			"colorizationKey": "rope",
 			"image": {
 				"image": "takate_kote_back_arms_right_v2.png",
-				"overrides": []
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "waist arms high",
+			"priority": "ABOVE_BODY",
+			"points": "custom_arm_restraints_torso_ropes",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "waist_front_arms_high.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					}
+				]
 			}
 		}
 	]
