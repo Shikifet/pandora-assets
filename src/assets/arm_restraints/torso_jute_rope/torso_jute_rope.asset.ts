@@ -112,6 +112,32 @@ DefineAsset({
 						},
 					}
 				},
+				{
+					id: 'armbinder',
+					name: 'Armbinder',
+					properties: {
+						poseLimits: {
+							arms: {
+								position: 'back',
+								rotation: 'forward',
+							},
+							bones: {
+								arm_r: 110,
+								arm_l: 110,
+								elbow_r: -15,
+								elbow_l: -15,
+							},
+							armsOrder: {
+								upper: 'right',
+							},
+						},
+						stateFlags: {
+							requires: {
+								uncinched: "Remove cinches in Cinch module"
+							},
+						},
+					}
+				},
 			]
 		},
 		extra_rope: {
