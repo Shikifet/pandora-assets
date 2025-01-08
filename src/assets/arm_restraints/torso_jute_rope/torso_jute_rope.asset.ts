@@ -23,7 +23,7 @@ DefineAsset({
 			variants: [
 				{
 					id: 'wrists_high',
-					name: 'Wrists High',
+					name: 'Box High',
 					properties: {
 						poseLimits: {
 							arms: {
@@ -44,7 +44,7 @@ DefineAsset({
 				},
 				{
 					id: 'wrists_normal',
-					name: 'Wrists Normal',
+					name: 'Box Normal',
 					default: true,
 					properties: {
 						poseLimits: {
@@ -66,7 +66,7 @@ DefineAsset({
 				},
 				{
 					id: 'wrists_low',
-					name: 'Wrists Low',
+					name: 'Box Low',
 					properties: {
 						poseLimits: {
 							arms: {
@@ -106,24 +106,24 @@ DefineAsset({
 						},
 						stateFlags: {
 							requires: {
-								uncinched: "Remove cinches in Cinches module",
-								untied_neck: "Remove Shoulder rope in Chest module"
+								uncinched: "Remove cinches in Cinch module",
+								//untied_shoulder: "Remove Extra rope in Chest module"
 							},
 						},
 					}
 				},
 			]
 		},
-		front: {
+		extra_rope: {
 			type: 'typed',
-			name: 'Chest',
+			name: 'Extra rope',
 			variants: [
 				{
 					id: 'arms_only',
-					name: 'Arms Only',
+					name: 'None',
 					properties: {
 						stateFlags: {
-							provides: ['untied_neck'],
+							provides: ['untied_shoulder'],
 						},
 					},
 					default: true,

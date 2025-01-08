@@ -105,7 +105,7 @@
 						"condition": [
 							[
 								{
-									"module": "front",
+									"module": "extra_rope",
 									"operator": "=",
 									"value": "arms_only"
 								}
@@ -262,18 +262,35 @@
 			"height": 1500,
 			"name": "back_top",
 			"priority": "BELOW_BODY",
-			"points": "custom_arm_restraints_torso_ropes",
+			"points": "static",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
 				"image": "",
 				"overrides": [
 					{
+						"image": "back_harness_shoulder_arms_high_2.png",
+						"condition": [
+							[
+								{
+									"module": "extra_rope",
+									"operator": "=",
+									"value": "over_shoulder"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					},
+					{
 						"image": "takate_kote_back_top_v2.png",
 						"condition": [
 							[
 								{
-									"module": "front",
+									"module": "extra_rope",
 									"operator": "=",
 									"value": "over_shoulder"
 								}
@@ -595,6 +612,39 @@
 						"image": "waist_front_arms_high.png",
 						"condition": [
 							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "back_arms_high",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "back_harness_shoulder_arms_high.png",
+						"condition": [
+							[
+								{
+									"module": "extra_rope",
+									"operator": "=",
+									"value": "over_shoulder"
+								},
 								{
 									"module": "arms",
 									"operator": "=",
