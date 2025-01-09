@@ -209,6 +209,11 @@
 						"condition": [
 							[
 								{
+									"module": "arms",
+									"operator": "!=",
+									"value": "armbinder"
+								},
+								{
 									"module": "cinch",
 									"operator": "=",
 									"value": "yes"
@@ -272,6 +277,11 @@
 						"condition": [
 							[
 								{
+									"module": "arms",
+									"operator": "!=",
+									"value": "armbinder"
+								},
+								{
 									"module": "cinch",
 									"operator": "=",
 									"value": "yes"
@@ -299,6 +309,11 @@
 						"image": "cinches_back.png",
 						"condition": [
 							[
+								{
+									"module": "arms",
+									"operator": "!=",
+									"value": "armbinder"
+								},
 								{
 									"module": "cinch",
 									"operator": "=",
@@ -840,6 +855,82 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"name": "armbinder_cinch_front",
+			"priority": "ABOVE_BODY",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "armbinder_front_cinch.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "armbinder"
+								},
+								{
+									"module": "cinch",
+									"operator": "=",
+									"value": "yes"
+								},
+								{
+									"module": "extra_rope",
+									"operator": "=",
+									"value": "over_shoulder"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "armbinder_cinch_behind",
+			"priority": "BELOW_BODY",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "armbinder_back_cinch.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "armbinder"
+								},
+								{
+									"module": "cinch",
+									"operator": "=",
+									"value": "yes"
+								},
+								{
+									"module": "extra_rope",
+									"operator": "=",
+									"value": "over_shoulder"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
 			"name": "armbinder_below_body",
 			"priority": "BELOW_BODY",
 			"points": "static",
@@ -873,6 +964,28 @@
 									"module": "arms",
 									"operator": "=",
 									"value": "armbinder"
+								},
+								{
+									"module": "cinch",
+									"operator": "=",
+									"value": "no"
+								}
+							]
+						]
+					},
+					{
+						"image": "armbinder_below_back_cinch.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "armbinder"
+								},
+								{
+									"module": "cinch",
+									"operator": "=",
+									"value": "yes"
 								}
 							]
 						]
