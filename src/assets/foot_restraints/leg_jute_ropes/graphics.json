@@ -8,7 +8,7 @@
 			"height": 1500,
 			"name": "legs_front_top_standing",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_leg_ropes",
+			"points": "custom_foot_restraints_duct_tape",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -39,7 +39,7 @@
 			"height": 1500,
 			"name": "legs_front_top_cinch_standing",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_leg_ropes",
+			"points": "custom_foot_restraints_duct_tape",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -75,7 +75,7 @@
 			"height": 1500,
 			"name": "legs_middle_top_standing",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_leg_ropes",
+			"points": "custom_foot_restraints_duct_tape",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -116,7 +116,7 @@
 			"height": 1500,
 			"name": "legs_middle_top_cinch_standing",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_leg_ropes",
+			"points": "custom_foot_restraints_duct_tape",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -162,7 +162,7 @@
 			"height": 1500,
 			"name": "legs_middle_bottom_standing",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_leg_ropes",
+			"points": "custom_foot_restraints_duct_tape",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -198,7 +198,7 @@
 			"height": 1500,
 			"name": "legs_middle_bottom_cinch_standing",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_leg_ropes",
+			"points": "custom_foot_restraints_duct_tape",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -239,7 +239,7 @@
 			"height": 1500,
 			"name": "legs_front_bottom_standing",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_leg_ropes",
+			"points": "custom_foot_restraints_duct_tape",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -265,7 +265,7 @@
 			"height": 1500,
 			"name": "legs_front_bottom_cinch_standing",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_leg_ropes",
+			"points": "custom_foot_restraints_duct_tape",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -291,12 +291,12 @@
 		},
 		{
 			"x": 0,
-			"y": -130,
+			"y": 30,
 			"width": 1000,
 			"height": 1500,
 			"name": "legs_front_top_sitting",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_leg_ropes",
+			"points": "custom_foot_restraints_duct_tape",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -322,12 +322,12 @@
 		},
 		{
 			"x": 0,
-			"y": -130,
+			"y": 30,
 			"width": 1000,
 			"height": 1500,
 			"name": "legs_front_top_cinch_sitting",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_leg_ropes",
+			"points": "custom_foot_restraints_duct_tape",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -358,12 +358,12 @@
 		},
 		{
 			"x": 0,
-			"y": -130,
+			"y": 10,
 			"width": 1000,
 			"height": 1500,
 			"name": "legs_middle_top_sitting",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_leg_ropes",
+			"points": "custom_foot_restraints_duct_tape",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -399,12 +399,12 @@
 		},
 		{
 			"x": 0,
-			"y": -130,
+			"y": 10,
 			"width": 1000,
 			"height": 1500,
 			"name": "legs_middle_top_cinch_sitting",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_leg_ropes",
+			"points": "custom_foot_restraints_duct_tape",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -445,12 +445,12 @@
 		},
 		{
 			"x": 0,
-			"y": -130,
+			"y": 10,
 			"width": 1000,
 			"height": 1500,
 			"name": "legs_middle_bottom_sitting",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_leg_ropes",
+			"points": "custom_foot_restraints_duct_tape",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -481,12 +481,12 @@
 		},
 		{
 			"x": 0,
-			"y": -130,
+			"y": 10,
 			"width": 1000,
 			"height": 1500,
 			"name": "legs_middle_bottom_cinch_sitting",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_leg_ropes",
+			"points": "custom_foot_restraints_duct_tape",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -522,12 +522,12 @@
 		},
 		{
 			"x": 0,
-			"y": -130,
+			"y": 0,
 			"width": 1000,
 			"height": 1500,
 			"name": "legs_front_bottom_sitting",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_leg_ropes",
+			"points": "custom_foot_restraints_duct_tape",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -548,12 +548,12 @@
 		},
 		{
 			"x": 0,
-			"y": -130,
+			"y": 0,
 			"width": 1000,
 			"height": 1500,
 			"name": "legs_front_bottom_cinch_sitting",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_leg_ropes",
+			"points": "custom_foot_restraints_duct_tape",
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
