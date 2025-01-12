@@ -1,36 +1,29 @@
 DefineAsset({
-	name: 'Slapper',
-	size: 'medium',
+	name: 'Paper Note',
+	size: 'small',
 	graphics: 'graphics.json',
 	colorization: {
-		slapper: {
-			name: 'Slapper',
-			default: '#363636',
-		},
-		handle: {
-			name: 'Handle',
-			default: '#563925',
+		paper: {
+			name: 'Paper',
+			default: '#F2E5AE',
 		},
 	},
-	// size:380, y:269, X:0
+	// size:200, y:304, X:153
 	preview: 'preview.png',
-	attributes: {
-		provides: [
-			'Handheld',
-		],
-		requires: [
-			'!Hand_restricting_cover',
-		],
-	},
 	modules: {
-		handUsage_r: {
+		location: {
 			type: 'typed',
-			name: 'Held in right hand',
+			name: 'Location of the note',
 			variants: [
 				{
-					id: 'yes',
-					name: 'Yes',
+					id: 'somewhere',
+					name: 'Kept somewhere (worn without graphics)',
 					default: true,
+
+				},
+				{
+					id: 'right',
+					name: 'Held in the right hand',
 					properties: {
 						poseLimits: {
 							rightArm: {
@@ -38,21 +31,19 @@ DefineAsset({
 								rotation: ['up', 'down'],
 							},
 						},
+						attributes: {
+							provides: [
+								'Handheld',
+							],
+							requires: [
+								'!Hand_restricting_cover',
+							],
+						},
 					},
 				},
 				{
-					id: 'no',
-					name: 'No',
-				},
-			],
-		},
-		handUsage_l: {
-			type: 'typed',
-			name: 'Held in left hand',
-			variants: [
-				{
-					id: 'yes',
-					name: 'Yes',
+					id: 'left',
+					name: 'Held in the left hand',
 					properties: {
 						poseLimits: {
 							leftArm: {
@@ -60,20 +51,18 @@ DefineAsset({
 								rotation: ['up', 'down'],
 							},
 						},
+						attributes: {
+							provides: [
+								'Handheld',
+							],
+							requires: [
+								'!Hand_restricting_cover',
+							],
+						},
 					},
-				},
-				{
-					id: 'no',
-					name: 'No',
-					default: true,
-
 				},
 			],
 		},
-	},
-	chat: {
-		actionAdd: 'SOURCE_CHARACTER put a slapper into TARGET_CHARACTER_DYNAMIC_POSSESSIVE hand.',
-		actionRemove: 'SOURCE_CHARACTER removed the slapper from TARGET_CHARACTER_DYNAMIC_POSSESSIVE hand.',
 	},
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
