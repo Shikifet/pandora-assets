@@ -5,7 +5,7 @@ DefineAsset({
 	colorization: {
 		rope: {
 			name: 'Rope',
-			default: '#C79A32',
+			default: '#D7AC4D',
 		},
 	},
 	// size:260, y:375, centered

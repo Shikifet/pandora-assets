@@ -262,9 +262,6 @@
 						"condition": [
 							[
 								{
-									"legs": "standing"
-								},
-								{
 									"module": "legs",
 									"operator": "!=",
 									"value": "single"
@@ -293,9 +290,6 @@
 						"condition": [
 							[
 								{
-									"legs": "standing"
-								},
-								{
 									"module": "legs",
 									"operator": "!=",
 									"value": "single"
@@ -323,9 +317,6 @@
 						"image": "legs_middle_top.png",
 						"condition": [
 							[
-								{
-									"legs": "standing"
-								},
 								{
 									"module": "legs",
 									"operator": "!=",
@@ -365,9 +356,6 @@
 						"condition": [
 							[
 								{
-									"legs": "standing"
-								},
-								{
 									"module": "legs",
 									"operator": "!=",
 									"value": "single"
@@ -406,9 +394,6 @@
 						"condition": [
 							[
 								{
-									"legs": "standing"
-								},
-								{
 									"module": "legs",
 									"operator": "!=",
 									"value": "single"
@@ -442,9 +427,6 @@
 						"condition": [
 							[
 								{
-									"legs": "standing"
-								},
-								{
 									"module": "legs",
 									"operator": "!=",
 									"value": "single"
@@ -471,19 +453,8 @@
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "legs_bottom.png",
-						"condition": [
-							[
-								{
-									"legs": "standing"
-								}
-							]
-						]
-					}
-				]
+				"image": "legs_bottom.png",
+				"overrides": []
 			}
 		},
 		{
@@ -497,287 +468,8 @@
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "legs_bottom_cinch.png",
-						"condition": [
-							[
-								{
-									"legs": "standing"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"name": "legs_front_top_sitting_back",
-			"priority": "BELOW_BODY",
-			"points": "custom_foot_restraints_duct_tape",
-			"mirror": 0,
-			"colorizationKey": "rope",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "legs_top.png",
-						"condition": [
-							[
-								{
-									"legs": "sitting"
-								},
-								{
-									"module": "legs",
-									"operator": "!=",
-									"value": "single"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"name": "legs_front_top_cinch_sitting_back",
-			"priority": "BELOW_BODY",
-			"points": "custom_foot_restraints_duct_tape",
-			"mirror": 0,
-			"colorizationKey": "rope",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "legs_top_cinch.png",
-						"condition": [
-							[
-								{
-									"legs": "sitting"
-								},
-								{
-									"module": "legs",
-									"operator": "!=",
-									"value": "single"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"name": "legs_middle_top_sitting_back",
-			"priority": "BELOW_BODY",
-			"points": "custom_foot_restraints_duct_tape",
-			"mirror": 0,
-			"colorizationKey": "rope",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "legs_middle_top.png",
-						"condition": [
-							[
-								{
-									"legs": "sitting"
-								},
-								{
-									"module": "legs",
-									"operator": "!=",
-									"value": "single"
-								},
-								{
-									"module": "legs",
-									"operator": "!=",
-									"value": "double"
-								},
-								{
-									"module": "legs",
-									"operator": "!=",
-									"value": "complex"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"name": "legs_middle_top_cinch_sitting_back",
-			"priority": "BELOW_BODY",
-			"points": "custom_foot_restraints_duct_tape",
-			"mirror": 0,
-			"colorizationKey": "rope",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "legs_middle_top_cinch.png",
-						"condition": [
-							[
-								{
-									"legs": "sitting"
-								},
-								{
-									"module": "legs",
-									"operator": "!=",
-									"value": "single"
-								},
-								{
-									"module": "legs",
-									"operator": "!=",
-									"value": "double"
-								},
-								{
-									"module": "legs",
-									"operator": "!=",
-									"value": "complex"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"name": "legs_middle_bottom_sitting_back",
-			"priority": "BELOW_BODY",
-			"points": "custom_foot_restraints_duct_tape",
-			"mirror": 0,
-			"colorizationKey": "rope",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "legs_middle_bottom.png",
-						"condition": [
-							[
-								{
-									"legs": "sitting"
-								},
-								{
-									"module": "legs",
-									"operator": "!=",
-									"value": "single"
-								},
-								{
-									"module": "legs",
-									"operator": "!=",
-									"value": "double"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"name": "legs_middle_bottom_cinch_sitting_back",
-			"priority": "BELOW_BODY",
-			"points": "custom_foot_restraints_duct_tape",
-			"mirror": 0,
-			"colorizationKey": "rope",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "legs_middle_bottom_cinch.png",
-						"condition": [
-							[
-								{
-									"legs": "sitting"
-								},
-								{
-									"module": "legs",
-									"operator": "!=",
-									"value": "single"
-								},
-								{
-									"module": "legs",
-									"operator": "!=",
-									"value": "double"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"name": "legs_front_bottom_sitting_back",
-			"priority": "BELOW_BODY",
-			"points": "custom_foot_restraints_duct_tape",
-			"mirror": 0,
-			"colorizationKey": "rope",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "legs_bottom.png",
-						"condition": [
-							[
-								{
-									"legs": "sitting"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"name": "legs_front_bottom_cinch_sitting_back",
-			"priority": "BELOW_BODY",
-			"points": "custom_foot_restraints_duct_tape",
-			"mirror": 0,
-			"colorizationKey": "rope",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "legs_bottom_cinch.png",
-						"condition": [
-							[
-								{
-									"legs": "sitting"
-								}
-							]
-						]
-					}
-				]
+				"image": "legs_bottom_cinch.png",
+				"overrides": []
 			}
 		},
 		{
