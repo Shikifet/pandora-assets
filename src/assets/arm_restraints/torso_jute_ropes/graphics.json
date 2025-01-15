@@ -563,24 +563,74 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "rope_end_short_armbinder.png",
+						"image": "rope_end_short.png",
 						"condition": [
 							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "wrists_high"
+								},
 								{
 									"module": "end",
 									"operator": "=",
 									"value": "short"
-								},
-								{
-									"module": "arms",
-									"operator": "=",
-									"value": "armbinder"
 								}
 							]
 						]
 					},
 					{
-						"image": "rope_end_short_arms_high.png",
+						"image": "rope_end_normal.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "wrists_high"
+								},
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "normal"
+								}
+							]
+						]
+					},
+					{
+						"image": "rope_end_long.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "wrists_high"
+								},
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "long"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 70,
+			"width": 1000,
+			"height": 1500,
+			"name": "rope_end_high_arms",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "rope_end_short.png",
 						"condition": [
 							[
 								{
@@ -597,13 +647,35 @@
 						]
 					},
 					{
-						"image": "rope_end_short.png",
+						"image": "rope_end_normal.png",
 						"condition": [
 							[
 								{
 									"module": "end",
 									"operator": "=",
-									"value": "short"
+									"value": "normal"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					},
+					{
+						"image": "rope_end_long.png",
+						"condition": [
+							[
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "long"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
 								}
 							]
 						]
@@ -625,69 +697,39 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "rope_end_normal_armbinder.png",
+						"image": "",
 						"condition": [
 							[
-								{
-									"module": "end",
-									"operator": "=",
-									"value": "normal"
-								},
 								{
 									"module": "arms",
 									"operator": "=",
 									"value": "armbinder"
 								}
-							]
-						]
-					},
-					{
-						"image": "rope_end_long_armbinder.png",
-						"condition": [
+							],
 							[
-								{
-									"module": "end",
-									"operator": "=",
-									"value": "long"
-								},
-								{
-									"module": "arms",
-									"operator": "=",
-									"value": "armbinder"
-								}
-							]
-						]
-					},
-					{
-						"image": "rope_end_normal_arms_high.png",
-						"condition": [
-							[
-								{
-									"module": "end",
-									"operator": "=",
-									"value": "normal"
-								},
 								{
 									"module": "arms",
 									"operator": "=",
 									"value": "arms_high"
 								}
+							],
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "wrists_high"
+								}
 							]
 						]
 					},
 					{
-						"image": "rope_end_long_arms_high.png",
+						"image": "rope_end_short.png",
 						"condition": [
 							[
 								{
 									"module": "end",
 									"operator": "=",
-									"value": "long"
-								},
-								{
-									"module": "arms",
-									"operator": "=",
-									"value": "arms_high"
+									"value": "short"
 								}
 							]
 						]
@@ -712,6 +754,73 @@
 									"module": "end",
 									"operator": "=",
 									"value": "long"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 25,
+			"width": 1000,
+			"height": 1500,
+			"name": "rope_end_armbinder",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "rope_end_short.png",
+						"condition": [
+							[
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "short"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "armbinder"
+								}
+							]
+						]
+					},
+					{
+						"image": "rope_end_normal.png",
+						"condition": [
+							[
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "normal"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "armbinder"
+								}
+							]
+						]
+					},
+					{
+						"image": "rope_end_long.png",
+						"condition": [
+							[
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "long"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "armbinder"
 								}
 							]
 						]
