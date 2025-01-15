@@ -9,7 +9,7 @@ DefineAsset({
 			default: '#C79A32',
 		},
 	},
-	// size:260, y:375, centered
+	// size:415, y:940, centered
 	preview: 'preview.png',
 	attributes: {
 		provides: [
