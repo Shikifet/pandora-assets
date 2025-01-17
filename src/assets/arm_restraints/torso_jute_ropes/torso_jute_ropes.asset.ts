@@ -110,6 +110,12 @@ DefineAsset({
 								//untied_shoulder: "Remove Extra rope in Chest module"
 							},
 						},
+						attributes: {
+							requires: [
+								'!Waist_rope_anchor_point'
+							]
+						}
+
 					}
 				},
 				{
@@ -201,7 +207,7 @@ DefineAsset({
 		},
 		wrists: {
 			type: 'typed',
-			name: 'Rope End',
+			name: 'Wrists',
 			variants: [
 				{
 					id: 'normal',

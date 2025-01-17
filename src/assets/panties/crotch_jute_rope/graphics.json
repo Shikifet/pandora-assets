@@ -6,6 +6,79 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"name": "hips_single",
+			"priority": "ABOVE_BODY",
+			"points": "body",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "hips_open_linked_thighs.png",
+						"condition": [
+							[
+								{
+									"module": "hips",
+									"operator": "=",
+									"value": "single"
+								},
+								{
+									"module": "legs",
+									"operator": "=",
+									"value": "attached"
+								}
+							]
+						]
+					},
+					{
+						"image": "hips_open.png",
+						"condition": [
+							[
+								{
+									"module": "hips",
+									"operator": "=",
+									"value": "single"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "hips_single_back",
+			"priority": "BELOW_BODY",
+			"points": "body",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "hips_open_back.png",
+						"condition": [
+							[
+								{
+									"module": "hips",
+									"operator": "=",
+									"value": "single"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
 			"name": "vulva_rope_front",
 			"priority": "ABOVE_BODY",
 			"points": "body",
@@ -104,6 +177,34 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"name": "waist_upper_front",
+			"priority": "ABOVE_BODY",
+			"points": "body",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "waist_upper.png",
+						"condition": [
+							[
+								{
+									"module": "waist",
+									"operator": "=",
+									"value": "rope"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
 			"name": "waist_front",
 			"priority": "ABOVE_BODY",
 			"points": "body",
@@ -127,6 +228,41 @@
 									"module": "crotch",
 									"operator": "=",
 									"value": "knot"
+								}
+							],
+							[
+								{
+									"module": "hips",
+									"operator": "=",
+									"value": "single"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "waist_upper_back",
+			"priority": "BELOW_BODY",
+			"points": "body",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "waist_upper.png",
+						"condition": [
+							[
+								{
+									"module": "waist",
+									"operator": "=",
+									"value": "rope"
 								}
 							]
 						]
@@ -163,6 +299,13 @@
 									"operator": "=",
 									"value": "knot"
 								}
+							],
+							[
+								{
+									"module": "hips",
+									"operator": "=",
+									"value": "single"
+								}
 							]
 						]
 					}
@@ -174,8 +317,8 @@
 			"y": -113,
 			"width": 1000,
 			"height": 1500,
-			"name": "waist_knot_back",
-			"priority": "BELOW_BODY",
+			"name": "waist_knot_front_normal",
+			"priority": "ABOVE_BODY",
 			"points": "body",
 			"mirror": 0,
 			"colorizationKey": "rope",
@@ -187,6 +330,11 @@
 						"condition": [
 							[
 								{
+									"module": "hips",
+									"operator": "=",
+									"value": "none"
+								},
+								{
 									"module": "crotch",
 									"operator": "!=",
 									"value": "rope"
@@ -195,6 +343,34 @@
 									"module": "crotch",
 									"operator": "!=",
 									"value": "knot"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": -84,
+			"width": 1000,
+			"height": 1500,
+			"name": "waist_knot_front_tight",
+			"priority": "ABOVE_BODY",
+			"points": "body",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "vulva_knot.png",
+						"condition": [
+							[
+								{
+									"module": "hips",
+									"operator": "=",
+									"value": "single"
 								}
 							]
 						]

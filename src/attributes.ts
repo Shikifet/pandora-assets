@@ -644,11 +644,19 @@ const ATTRIBUTES_DEFINITION_BASE = {
 		name: 'A chainable armbinder',
 		description: 'An armbinder that is chainable to another item',
 	},
-	// Rope
+	// Jute Rope
+	Waist_rope_anchor_point: {
+		name: 'Rope around waist',
+		description: 'A rope around the waist',
+	},
 	Vulva_rope_anchor_point: {
 		name: 'Crotch rope link',
-		description: 'A rope linking crotch rope to another rope, mainly tied hands',
-	}
+		description: 'A rope linking crotch rope to tied hands',
+	},
+	Thight_rope_anchor_point: {
+		name: 'Crotch rope link',
+		description: 'A rope linking crotch rope to tied thighs',
+	},
 } as const satisfies Record<string, AssetRepoAttributeDefinition>;
 
 //#endregion

@@ -9,6 +9,28 @@ DefineAsset({
 		},
 	},
 	modules: {
+		waist: {
+			type: 'typed',
+			name: 'Waist',
+			variants: [
+				{
+					id: 'none',
+					name: 'No',
+					default: true
+				},
+				{
+					id: 'rope',
+					name: 'Rope',
+					properties: {
+						attributes: {
+							provides: [
+								'Waist_rope_anchor_point'
+							],
+						}
+					}
+				}
+			]
+		},
 		crotch: {
 			type: 'typed',
 			name: 'Crotch',
@@ -58,7 +80,15 @@ DefineAsset({
 				{
 					id: 'none',
 					name: 'None',
-					default: true
+					default: true,
+					properties: {
+						stateFlags: {
+							requires: {
+								thigs_free: "Rope over hips not tied to thighs"
+							}
+
+						}
+					}
 				},
 				{
 					id: 'single',
@@ -73,11 +103,25 @@ DefineAsset({
 				{
 					id: 'none',
 					name: 'None',
-					default: true
+					default: true,
+					properties: {
+						stateFlags: {
+							provides: [
+								'thigs_free'
+							]
+						}
+					}
 				},
 				{
 					id: 'attached',
-					name: 'Attached'
+					name: 'Attached',
+					properties: {
+						attributes: {
+							requires: [
+								'Thight_rope_anchor_point'
+							]
+						}
+					}
 				}
 			]
 		},

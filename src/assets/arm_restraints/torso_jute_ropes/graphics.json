@@ -479,6 +479,23 @@
 						]
 					},
 					{
+						"image": "arms_high_linked_crotch.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								},
+								{
+									"module": "wrists",
+									"operator": "=",
+									"value": "linked"
+								}
+							]
+						]
+					},
+					{
 						"image": "arms_high.png",
 						"condition": [
 							[
@@ -514,6 +531,11 @@
 									"module": "arms",
 									"operator": "=",
 									"value": "arms_high"
+								},
+								{
+									"module": "wrists",
+									"operator": "!=",
+									"value": "linked"
 								}
 							]
 						]
@@ -634,6 +656,11 @@
 						"condition": [
 							[
 								{
+									"module": "wrists",
+									"operator": "!=",
+									"value": "linked"
+								},
+								{
 									"module": "end",
 									"operator": "=",
 									"value": "short"
@@ -651,6 +678,11 @@
 						"condition": [
 							[
 								{
+									"module": "wrists",
+									"operator": "!=",
+									"value": "linked"
+								},
+								{
 									"module": "end",
 									"operator": "=",
 									"value": "normal"
@@ -667,6 +699,93 @@
 						"image": "rope_end_long.png",
 						"condition": [
 							[
+								{
+									"module": "wrists",
+									"operator": "!=",
+									"value": "linked"
+								},
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "long"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 180,
+			"width": 1000,
+			"height": 1500,
+			"name": "rope_end_high_arms_linked",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "rope_end_short.png",
+						"condition": [
+							[
+								{
+									"module": "wrists",
+									"operator": "=",
+									"value": "linked"
+								},
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "short"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					},
+					{
+						"image": "rope_end_normal.png",
+						"condition": [
+							[
+								{
+									"module": "wrists",
+									"operator": "=",
+									"value": "linked"
+								},
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "normal"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								}
+							]
+						]
+					},
+					{
+						"image": "rope_end_long.png",
+						"condition": [
+							[
+								{
+									"module": "wrists",
+									"operator": "=",
+									"value": "linked"
+								},
 								{
 									"module": "end",
 									"operator": "=",
@@ -919,6 +1038,11 @@
 									"module": "arms",
 									"operator": "=",
 									"value": "arms_high"
+								},
+								{
+									"module": "wrists",
+									"operator": "!=",
+									"value": "linked"
 								}
 							]
 						]
@@ -1095,6 +1219,56 @@
 									"module": "cinch",
 									"operator": "=",
 									"value": "yes"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "crotch_link",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "crotch_link_armbinder.png",
+						"condition": [
+							[
+								{
+									"module": "wrists",
+									"operator": "=",
+									"value": "linked"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "armbinder"
+								}
+							]
+						]
+					},
+					{
+						"image": "crotch_link_box_low.png",
+						"condition": [
+							[
+								{
+									"module": "wrists",
+									"operator": "=",
+									"value": "linked"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "wrists_low"
 								}
 							]
 						]
