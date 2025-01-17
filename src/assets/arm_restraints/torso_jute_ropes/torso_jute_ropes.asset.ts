@@ -199,6 +199,27 @@ DefineAsset({
 				},
 			]
 		},
+		wrists: {
+			type: 'typed',
+			name: 'Rope End',
+			variants: [
+				{
+					id: 'normal',
+					name: 'Normal',
+				},
+				{
+					id: 'linked',
+					name: 'Tied To Crotch',
+					properties: {
+						attributes: {
+							requires: [
+								'Vulva_rope_anchor_point'
+							]
+						}
+					}
+				},
+			]
+		}
 	},
 	effects: {
 		blockHands: true,

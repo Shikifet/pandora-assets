@@ -644,6 +644,11 @@ const ATTRIBUTES_DEFINITION_BASE = {
 		name: 'A chainable armbinder',
 		description: 'An armbinder that is chainable to another item',
 	},
+	// Rope
+	Vulva_rope_anchor_point: {
+		name: 'Crotch rope link',
+		description: 'A rope linking crotch rope to another rope, mainly tied hands',
+	}
 } as const satisfies Record<string, AssetRepoAttributeDefinition>;
 
 //#endregion
