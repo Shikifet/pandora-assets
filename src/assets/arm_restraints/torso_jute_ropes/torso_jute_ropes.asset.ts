@@ -39,7 +39,13 @@ DefineAsset({
 							armsOrder: {
 								upper: 'right',
 							},
-						}
+						},
+
+						stateFlags: {
+							requires: {
+								wrists_unlinked_to_crotch: "Tied hands to crotch rope"
+							}
+						},
 					}
 				},
 				{
@@ -61,7 +67,12 @@ DefineAsset({
 							armsOrder: {
 								upper: 'right',
 							},
-						}
+						},
+						stateFlags: {
+							requires: {
+								wrists_unlinked_to_crotch: "Tied hands to crotch rope"
+							}
+						},
 					}
 				},
 				{
@@ -82,7 +93,7 @@ DefineAsset({
 							armsOrder: {
 								upper: 'right',
 							},
-						}
+						},
 					}
 				},
 				{
@@ -212,6 +223,13 @@ DefineAsset({
 				{
 					id: 'normal',
 					name: 'Normal',
+					properties: {
+						stateFlags: {
+							provides: [
+								'wrists_unlinked_to_crotch'
+							],
+						},
+					}
 				},
 				{
 					id: 'linked',

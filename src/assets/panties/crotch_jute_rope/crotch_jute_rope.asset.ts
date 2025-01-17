@@ -8,6 +8,8 @@ DefineAsset({
 			default: '#D7AC4D',
 		},
 	},
+	// size:260, y:560, centered
+	preview: 'preview.png',
 	modules: {
 		waist: {
 			type: 'typed',
