@@ -18,7 +18,8 @@ DefineBodypart({
 		},
 		shine: {
 			name: 'Shine',
-			default: '#FFFFFF',
+			default: '#FFFFFFCC',
+			minAlpha: 0,
 		},
 	},
 	// size:200, y:195, centered
@@ -32,7 +33,6 @@ DefineBodypart({
 		pupilType: {
 			type: 'typed',
 			name: 'Pupil Types',
-			expression: 'Eye Pupil Types',
 			variants: [
 				{
 					id: 'largePupils',
@@ -57,26 +57,6 @@ DefineBodypart({
 				},
 			],
 		},
-		eyeVariant: {
-			type: 'typed',
-			name: 'Eye Variants',
-			expression: 'Eye Variants',
-			variants: [
-				{
-					id: 'default',
-					name: 'Normal',
-					default: true,
-				},
-				{
-					id: 'wideBig',
-					name: 'Wide Eyes (Big)',
-				},
-				{
-					id: 'wideSmall',
-					name: 'Wide Eyes (Small)',
-				},
-			],
-		},
 		eyeState_l: {
 			type: 'typed',
 			name: 'Left Eye Open/Close',
@@ -90,6 +70,15 @@ DefineBodypart({
 				{
 					id: 'closed',
 					name: 'Closed',
+				},
+				{
+					id: 'blind',
+					name: 'Closed with blind effect',
+					properties: {
+						effects: {
+							blind: 4.99,
+						},
+					},
 				},
 			],
 		},
@@ -106,6 +95,56 @@ DefineBodypart({
 				{
 					id: 'closed',
 					name: 'Closed',
+				},
+				{
+					id: 'blind',
+					name: 'Closed with blind effect',
+					properties: {
+						effects: {
+							blind: 4.99,
+						},
+					},
+				},
+			],
+		},
+		eyeDirection: {
+			type: 'typed',
+			name: 'Eye Variants',
+			expression: 'Eye Variants',
+			variants: [
+				{
+					id: 'straight',
+					name: 'Straight',
+					default: true,
+				},
+				// Left<->Right is intentionally swapped for user to match the character's POV
+				{
+					id: 'left',
+					name: 'Right',
+				},
+				{
+					id: 'right',
+					name: 'Left',
+				},
+				{
+					id: 'down',
+					name: 'Down',
+				},
+				{
+					id: 'up',
+					name: 'Up',
+				},
+				{
+					id: 'rolled',
+					name: 'Rolled',
+				},
+				{
+					id: 'wideBig',
+					name: 'Wide (Big)',
+				},
+				{
+					id: 'wideSmall',
+					name: 'Wide (Small)',
 				},
 			],
 		},
