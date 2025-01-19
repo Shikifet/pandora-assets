@@ -1,5 +1,5 @@
 DefineAsset({
-	name: 'Crotch jute ropes',
+	name: 'Crotch Jute Ropes',
 	size: 'small',
 	graphics: 'graphics.json',
 	colorization: {
@@ -9,6 +9,11 @@ DefineAsset({
 		},
 	},
 	attributes: {
+		provides: [
+			'Restraint',
+			'Restraint_legs',
+			'Chastity',
+		],
 		requires: [
 			'!Penis',
 		],

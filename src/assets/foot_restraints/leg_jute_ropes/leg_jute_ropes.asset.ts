@@ -1,5 +1,5 @@
 DefineAsset({
-	name: 'Leg jute ropes',
+	name: 'Leg Jute Ropes',
 	size: 'small',
 	graphics: 'graphics.json',
 
@@ -282,9 +282,6 @@ DefineAsset({
 				},
 			],
 		},
-	},
-	effects: {
-		blockHands: true,
 	},
 	blockSelfAddRemove: true,
 	chat: {

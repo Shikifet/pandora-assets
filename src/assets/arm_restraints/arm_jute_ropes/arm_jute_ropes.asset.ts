@@ -1,5 +1,5 @@
 DefineAsset({
-	name: 'Arm jute ropes',
+	name: 'Arm Jute Ropes',
 	size: 'small',
 	graphics: 'graphics.json',
 	colorization: {

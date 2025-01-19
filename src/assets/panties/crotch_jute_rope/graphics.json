@@ -60,6 +60,23 @@
 				"image": "",
 				"overrides": [
 					{
+						"image": "hips_open_linked_thighs_back.png",
+						"condition": [
+							[
+								{
+									"module": "hips",
+									"operator": "=",
+									"value": "single"
+								},
+								{
+									"module": "legs",
+									"operator": "=",
+									"value": "attached"
+								}
+							]
+						]
+					},
+					{
 						"image": "hips_open_back.png",
 						"condition": [
 							[
