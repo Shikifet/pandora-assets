@@ -10,8 +10,8 @@ DefineAsset({
 	},
 	attributes: {
 		requires: [
-			'!Penis'
-		]
+			'!Penis',
+		],
 	},
 	// size:260, y:560, centered
 	preview: 'preview.png',
@@ -23,7 +23,7 @@ DefineAsset({
 				{
 					id: 'none',
 					name: 'No',
-					default: true
+					default: true,
 				},
 				{
 					id: 'rope',
@@ -31,12 +31,12 @@ DefineAsset({
 					properties: {
 						attributes: {
 							provides: [
-								'Waist_rope_anchor_point'
+								'Waist_rope_anchor_point',
 							],
-						}
-					}
-				}
-			]
+						},
+					},
+				},
+			],
 		},
 		crotch: {
 			type: 'typed',
@@ -44,7 +44,7 @@ DefineAsset({
 			variants: [
 				{
 					id: 'open',
-					name: 'Open'
+					name: 'Open',
 
 				},
 				{
@@ -55,13 +55,13 @@ DefineAsset({
 						attributes: {
 							provides: [
 								'Vulva_cover',
-								'Vulva_rope_anchor_point'
+								'Vulva_rope_anchor_point',
 							],
 							covers: [
 								'Vulva_item',
 							],
-						}
-					}
+						},
+					},
 				},
 				{
 					id: 'knot',
@@ -70,15 +70,15 @@ DefineAsset({
 						attributes: {
 							provides: [
 								'Vulva_cover',
-								'Vulva_rope_anchor_point'
+								'Vulva_rope_anchor_point',
 							],
 							covers: [
 								'Vulva_item',
 							],
-						}
-					}
-				}
-			]
+						},
+					},
+				},
+			],
 		},
 		hips: {
 			type: 'typed',
@@ -91,17 +91,16 @@ DefineAsset({
 					properties: {
 						stateFlags: {
 							requires: {
-								thigs_free: 'Rope over hips not tied to thighs'
-							}
-
-						}
-					}
+								thigs_free: 'Rope over hips not tied to thighs',
+							},
+						},
+					},
 				},
 				{
 					id: 'single',
-					name: 'Single'
-				}
-			]
+					name: 'Single',
+				},
+			],
 		},
 		legs: {
 			type: 'typed',
@@ -114,10 +113,10 @@ DefineAsset({
 					properties: {
 						stateFlags: {
 							provides: [
-								'thigs_free'
-							]
-						}
-					}
+								'thigs_free',
+							],
+						},
+					},
 				},
 				{
 					id: 'attached',
@@ -125,14 +124,13 @@ DefineAsset({
 					properties: {
 						attributes: {
 							requires: [
-								'Thight_rope_anchor_point'
-							]
-						}
-					}
-				}
-			]
+								'Thight_rope_anchor_point',
+							],
+						},
+					},
+				},
+			],
 		},
-
 	},
 	chat: {
 		actionAdd: 'SOURCE_CHARACTER tied Crotch Jute Ropes around TARGET_CHARACTER_DYNAMIC_POSSESSIVE body.',

@@ -43,10 +43,10 @@ DefineAsset({
 
 						stateFlags: {
 							requires: {
-								wrists_unlinked_to_crotch: 'Tied hands to crotch rope'
-							}
+								wrists_unlinked_to_crotch: 'Tied hands to crotch rope',
+							},
 						},
-					}
+					},
 				},
 				{
 					id: 'wrists_normal',
@@ -70,10 +70,10 @@ DefineAsset({
 						},
 						stateFlags: {
 							requires: {
-								wrists_unlinked_to_crotch: 'Tied hands to crotch rope'
-							}
+								wrists_unlinked_to_crotch: 'Tied hands to crotch rope',
+							},
 						},
-					}
+					},
 				},
 				{
 					id: 'wrists_low',
@@ -94,7 +94,7 @@ DefineAsset({
 								upper: 'right',
 							},
 						},
-					}
+					},
 				},
 				{
 					id: 'arms_high',
@@ -123,11 +123,11 @@ DefineAsset({
 						},
 						attributes: {
 							requires: [
-								'!Waist_rope_anchor_point'
-							]
-						}
+								'!Waist_rope_anchor_point',
+							],
+						},
 
-					}
+					},
 				},
 				{
 					id: 'armbinder',
@@ -153,9 +153,9 @@ DefineAsset({
 								//uncinched: 'Remove cinches in Cinch module'
 							},
 						},
-					}
+					},
 				},
-			]
+			],
 		},
 		extra_rope: {
 			type: 'typed',
@@ -175,7 +175,7 @@ DefineAsset({
 					id: 'over_shoulder',
 					name: 'Over Shoulder',
 				},
-			]
+			],
 		},
 		cinch: {
 			type: 'typed',
@@ -189,13 +189,13 @@ DefineAsset({
 							provides: ['uncinched'],
 						},
 					},
-					default: true
+					default: true,
 				},
 				{
 					id: 'yes',
 					name: 'Yes',
 				},
-			]
+			],
 		},
 		end: {
 			type: 'typed',
@@ -214,7 +214,7 @@ DefineAsset({
 					id: 'long',
 					name: 'Long',
 				},
-			]
+			],
 		},
 		wrists: {
 			type: 'typed',
@@ -226,10 +226,10 @@ DefineAsset({
 					properties: {
 						stateFlags: {
 							provides: [
-								'wrists_unlinked_to_crotch'
+								'wrists_unlinked_to_crotch',
 							],
 						},
-					}
+					},
 				},
 				{
 					id: 'linked',
@@ -237,13 +237,13 @@ DefineAsset({
 					properties: {
 						attributes: {
 							requires: [
-								'Vulva_rope_anchor_point'
-							]
-						}
-					}
+								'Vulva_rope_anchor_point',
+							],
+						},
+					},
 				},
-			]
-		}
+			],
+		},
 	},
 	effects: {
 		blockHands: true,

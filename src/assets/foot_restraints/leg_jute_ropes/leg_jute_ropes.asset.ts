@@ -16,7 +16,6 @@ DefineAsset({
 			'Restraint',
 			'Restraint_legs',
 		],
-
 	},
 	modules: {
 		thighs: {
@@ -55,10 +54,9 @@ DefineAsset({
 									},
 								},
 							],
-						}
+						},
 					},
-
-					default: true
+					default: true,
 				},
 				{
 					id: 'double',
@@ -91,9 +89,9 @@ DefineAsset({
 						},
 						attributes: {
 							provides: [
-								'Thight_rope_anchor_point'
-							]
-						}
+								'Thight_rope_anchor_point',
+							],
+						},
 					},
 				},
 				{
@@ -127,12 +125,12 @@ DefineAsset({
 						},
 						attributes: {
 							provides: [
-								'Thight_rope_anchor_point'
-							]
-						}
+								'Thight_rope_anchor_point',
+							],
+						},
 					},
-				}
-			]
+				},
+			],
 		},
 		legs: {
 			type: 'typed',
@@ -170,10 +168,9 @@ DefineAsset({
 									},
 								},
 							],
-						}
+						},
 					},
-
-					default: true
+					default: true,
 				},
 				{
 					id: 'double',
@@ -203,7 +200,7 @@ DefineAsset({
 									},
 								},
 							],
-						}
+						},
 					},
 				},
 				{
@@ -234,7 +231,7 @@ DefineAsset({
 									},
 								},
 							],
-						}
+						},
 					},
 				},
 				{
@@ -265,10 +262,10 @@ DefineAsset({
 									},
 								},
 							],
-						}
+						},
 					},
-				}
-			]
+				},
+			],
 		},
 		link: {
 			type: 'typed',
@@ -283,7 +280,7 @@ DefineAsset({
 					id: 'linked',
 					name: 'Linked',
 				},
-			]
+			],
 		},
 	},
 	effects: {
