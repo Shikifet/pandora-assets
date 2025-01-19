@@ -91,7 +91,7 @@ DefineAsset({
 					properties: {
 						stateFlags: {
 							requires: {
-								thigs_free: "Rope over hips not tied to thighs"
+								thigs_free: 'Rope over hips not tied to thighs'
 							}
 
 						}

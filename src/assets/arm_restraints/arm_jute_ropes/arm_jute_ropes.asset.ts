@@ -43,7 +43,7 @@ DefineAsset({
 
 						stateFlags: {
 							requires: {
-								wrists_unlinked_to_crotch: "Tied hands to crotch rope"
+								wrists_unlinked_to_crotch: 'Tied hands to crotch rope'
 							}
 						},
 					}
@@ -70,7 +70,7 @@ DefineAsset({
 						},
 						stateFlags: {
 							requires: {
-								wrists_unlinked_to_crotch: "Tied hands to crotch rope"
+								wrists_unlinked_to_crotch: 'Tied hands to crotch rope'
 							}
 						},
 					}
@@ -117,8 +117,8 @@ DefineAsset({
 						},
 						stateFlags: {
 							requires: {
-								uncinched: "Remove cinches in Cinch module",
-								//untied_shoulder: "Remove Extra rope in Chest module"
+								uncinched: 'Remove cinches in Cinch module',
+								//untied_shoulder: 'Remove Extra rope in Chest module'
 							},
 						},
 						attributes: {
@@ -150,7 +150,7 @@ DefineAsset({
 						},
 						stateFlags: {
 							requires: {
-								//uncinched: "Remove cinches in Cinch module"
+								//uncinched: 'Remove cinches in Cinch module'
 							},
 						},
 					}
