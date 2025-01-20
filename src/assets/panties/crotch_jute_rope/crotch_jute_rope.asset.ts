@@ -62,9 +62,6 @@ DefineAsset({
 								'Vulva_cover',
 								'Vulva_rope_anchor_point',
 							],
-							covers: [
-								'Vulva_item',
-							],
 						},
 					},
 				},
@@ -76,9 +73,6 @@ DefineAsset({
 							provides: [
 								'Vulva_cover',
 								'Vulva_rope_anchor_point',
-							],
-							covers: [
-								'Vulva_item',
 							],
 						},
 					},
@@ -96,7 +90,7 @@ DefineAsset({
 					properties: {
 						stateFlags: {
 							requires: {
-								thigs_free: 'Rope over hips not tied to thighs',
+								thigs_free: 'Attaching crotch rope to thighs require Hips Single rope and Thigs tied below crotch',
 							},
 						},
 					},

@@ -25,6 +25,7 @@ DefineAsset({
 				{
 					id: 'none',
 					name: 'None',
+					default: true,
 				},
 				{
 					id: 'single',
@@ -56,7 +57,6 @@ DefineAsset({
 							],
 						},
 					},
-					default: true,
 				},
 				{
 					id: 'double',

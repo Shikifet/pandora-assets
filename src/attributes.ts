@@ -650,12 +650,12 @@ const ATTRIBUTES_DEFINITION_BASE = {
 		description: 'A rope around the waist',
 	},
 	Vulva_rope_anchor_point: {
-		name: 'Crotch rope link',
-		description: 'A rope linking crotch rope to tied hands',
+		name: 'Crotch rope',
+		description: 'A crotch rope that a linking rope can be tied to',
 	},
 	Thight_rope_anchor_point: {
-		name: 'Crotch rope link',
-		description: 'A rope linking crotch rope to tied thighs',
+		name: 'Thighs rope',
+		description: 'A rope over thighs that a linking rope can be tied to',
 	},
 } as const satisfies Record<string, AssetRepoAttributeDefinition>;
 

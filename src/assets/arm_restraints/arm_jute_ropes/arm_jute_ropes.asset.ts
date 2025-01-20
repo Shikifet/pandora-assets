@@ -43,7 +43,7 @@ DefineAsset({
 
 						stateFlags: {
 							requires: {
-								wrists_unlinked_to_crotch: 'Tied hands to crotch rope',
+								wrists_unlinked_to_crotch: 'Box High pose cannot be used together with hands being tied to a crotch rope',
 							},
 						},
 					},
@@ -70,7 +70,7 @@ DefineAsset({
 						},
 						stateFlags: {
 							requires: {
-								wrists_unlinked_to_crotch: 'Tied hands to crotch rope',
+								wrists_unlinked_to_crotch: 'Box Normal pose cannot be used together with hands being tied to a crotch rope',
 							},
 						},
 					},
@@ -98,7 +98,7 @@ DefineAsset({
 				},
 				{
 					id: 'arms_high',
-					name: 'Wrists Behind neck',
+					name: 'Wrists Behind Neck',
 					properties: {
 						poseLimits: {
 							arms: {
@@ -117,8 +117,7 @@ DefineAsset({
 						},
 						stateFlags: {
 							requires: {
-								uncinched: 'Remove cinches in Cinch module',
-								//untied_shoulder: 'Remove Extra rope in Chest module'
+								uncinched: 'Wrists Behind Neck pose cannot be used together with cinched rope',
 							},
 						},
 						attributes: {
