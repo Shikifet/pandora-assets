@@ -283,7 +283,6 @@ DefineAsset({
 			],
 		},
 	},
-	blockSelfAddRemove: true,
 	chat: {
 		actionAdd: 'SOURCE_CHARACTER tied Leg Jute Ropes around TARGET_CHARACTER_DYNAMIC_POSSESSIVE body.',
 		actionRemove: 'SOURCE_CHARACTER removed the Leg Jute Ropes from TARGET_CHARACTER_DYNAMIC_POSSESSIVE body.',

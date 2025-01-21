@@ -147,11 +147,6 @@ DefineAsset({
 								upper: 'right',
 							},
 						},
-						stateFlags: {
-							requires: {
-								//uncinched: 'Remove cinches in Cinch module'
-							},
-						},
 					},
 				},
 			],
@@ -247,7 +242,6 @@ DefineAsset({
 	effects: {
 		blockHands: true,
 	},
-	blockSelfAddRemove: true,
 	chat: {
 		actionAdd: 'SOURCE_CHARACTER tied Torso Jute Ropes around TARGET_CHARACTER_DYNAMIC_POSSESSIVE body.',
 		actionRemove: 'SOURCE_CHARACTER removed the Torso Jute Ropes from TARGET_CHARACTER_DYNAMIC_POSSESSIVE body.',
