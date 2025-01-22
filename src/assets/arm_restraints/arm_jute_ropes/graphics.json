@@ -1025,6 +1025,11 @@
 			"name": "waist arms high",
 			"priority": "ABOVE_BODY",
 			"points": "custom_arm_restraints_torso_ropes",
+			"pointType": [
+				"body",
+				"bodyarm",
+				"bodyleg"
+			],
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -1043,6 +1048,9 @@
 									"module": "wrists",
 									"operator": "!=",
 									"value": "linked"
+								},
+								{
+									"attribute": "!Rope_waist"
 								}
 							]
 						]

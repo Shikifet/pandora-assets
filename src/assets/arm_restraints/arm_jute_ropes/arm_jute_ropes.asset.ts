@@ -120,12 +120,6 @@ DefineAsset({
 								uncinched: 'Wrists Behind Neck pose cannot be used together with cinched rope',
 							},
 						},
-						attributes: {
-							requires: [
-								'!Rope_waist',
-							],
-						},
-
 					},
 				},
 				{
