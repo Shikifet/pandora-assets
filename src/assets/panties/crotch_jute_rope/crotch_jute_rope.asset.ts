@@ -87,17 +87,15 @@ DefineAsset({
 					id: 'none',
 					name: 'None',
 					default: true,
-					properties: {
-						stateFlags: {
-							requires: {
-								thigs_free: 'Attaching crotch rope to thighs require Hips Single rope and Thigs tied below crotch',
-							},
-						},
-					},
 				},
 				{
 					id: 'single',
 					name: 'Single',
+					properties: {
+						stateFlags: {
+							provides: ['hips_single'],
+						},
+					},
 				},
 			],
 		},
@@ -109,13 +107,6 @@ DefineAsset({
 					id: 'none',
 					name: 'None',
 					default: true,
-					properties: {
-						stateFlags: {
-							provides: [
-								'thigs_free',
-							],
-						},
-					},
 				},
 				{
 					id: 'attached',
@@ -125,6 +116,11 @@ DefineAsset({
 							requires: [
 								'Rope_thighs_anchor_point',
 							],
+						},
+						stateFlags: {
+							requires: {
+								hips_single: 'Attaching crotch rope to thighs requires "Hips: Single" rope',
+							},
 						},
 					},
 				},
