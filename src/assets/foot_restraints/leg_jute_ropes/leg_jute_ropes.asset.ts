@@ -89,7 +89,7 @@ DefineAsset({
 						},
 						attributes: {
 							provides: [
-								'Thight_rope_anchor_point',
+								'Rope_thighs_anchor_point',
 							],
 						},
 					},
@@ -125,7 +125,7 @@ DefineAsset({
 						},
 						attributes: {
 							provides: [
-								'Thight_rope_anchor_point',
+								'Rope_thighs_anchor_point',
 							],
 						},
 					},

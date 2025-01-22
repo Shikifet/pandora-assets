@@ -36,7 +36,7 @@ DefineAsset({
 					properties: {
 						attributes: {
 							provides: [
-								'Waist_rope_anchor_point',
+								'Rope_waist',
 							],
 						},
 					},
@@ -60,7 +60,7 @@ DefineAsset({
 						attributes: {
 							provides: [
 								'Vulva_cover',
-								'Vulva_rope_anchor_point',
+								'Rope_vulva_anchor_point',
 							],
 						},
 					},
@@ -72,7 +72,7 @@ DefineAsset({
 						attributes: {
 							provides: [
 								'Vulva_cover',
-								'Vulva_rope_anchor_point',
+								'Rope_vulva_anchor_point',
 							],
 						},
 					},
@@ -123,7 +123,7 @@ DefineAsset({
 					properties: {
 						attributes: {
 							requires: [
-								'Thight_rope_anchor_point',
+								'Rope_thighs_anchor_point',
 							],
 						},
 					},

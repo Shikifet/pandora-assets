@@ -122,7 +122,7 @@ DefineAsset({
 						},
 						attributes: {
 							requires: [
-								'!Waist_rope_anchor_point',
+								'!Rope_waist',
 							],
 						},
 
@@ -231,7 +231,7 @@ DefineAsset({
 					properties: {
 						attributes: {
 							requires: [
-								'Vulva_rope_anchor_point',
+								'Rope_vulva_anchor_point',
 							],
 						},
 					},

@@ -644,16 +644,16 @@ const ATTRIBUTES_DEFINITION_BASE = {
 		name: 'A chainable armbinder',
 		description: 'An armbinder that is chainable to another item',
 	},
-	// Jute Rope
-	Waist_rope_anchor_point: {
+	// Rope
+	Rope_waist: {
 		name: 'Rope around waist',
 		description: 'A rope around the waist',
 	},
-	Vulva_rope_anchor_point: {
+	Rope_vulva_anchor_point: {
 		name: 'Crotch rope',
 		description: 'A crotch rope that a linking rope can be tied to',
 	},
-	Thight_rope_anchor_point: {
+	Rope_thighs_anchor_point: {
 		name: 'Thighs rope',
 		description: 'A rope over thighs that a linking rope can be tied to',
 	},
