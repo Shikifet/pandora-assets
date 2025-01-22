@@ -693,6 +693,10 @@ export function LoadAttributeNameValidation() {
 	const attributes: readonly string[] = Object.keys(ATTRIBUTES_DEFINITION);
 
 	AttributeNameSchema[SCHEME_OVERRIDE]((attribute, ctx) => {
+		// Allow for negation of attribute to be used as well
+		if (attribute.startsWith('!')) {
+			attribute = attribute.substring(1);
+		}
 		if (!attributes.includes(attribute)) {
 			ctx.addIssue({
 				code: ZodIssueCode.custom,
