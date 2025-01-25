@@ -20,15 +20,52 @@ DefineRoomDeviceAsset({
 		under_bamboo: {
 			name: 'Under the Bamboo',
 			asset: {
-				name: 'Bamboo',
+				name: 'Suspension Bamboo',
 				size: 'huge',
 				poseLimits: {
-
+					legs: ['standing', 'kneeling'],
 				},
 			},
 		},
 	},
 	modules: {
+		position: {
+			type: 'typed',
+			name: 'Position',
+			staticConfig: { slotName: 'under_bamboo' },
+			variants: [
+				{
+					id: 'front',
+					name: 'Front-facing',
+					default: true,
+					properties: {
+						slotProperties: {
+							under_bamboo: {
+								poseLimits: {
+									view: 'front',
+									legs: ['standing']
+								},
+							}
+						}
+					}
+				},
+				{
+					id: 'back',
+					name: 'Back-facing',
+					properties: {
+						slotProperties: {
+							under_bamboo: {
+								poseLimits: {
+									view: 'back',
+									legs: ['standing']
+								},
+							}
+						}
+					}
+				},
+			]
+		},
+
 		configuration: {
 			type: 'typed',
 			name: "Chest Line",
@@ -56,9 +93,21 @@ DefineRoomDeviceAsset({
 					default: true,
 				},
 				{
-					id: 'attached',
-					name: 'Attached',
-					default: true,
+					id: 'standing',
+					name: 'Standing',
+					properties: {
+						blockSlotsEnterLeave: ['under_bamboo'],
+						slotProperties: {
+							under_bamboo: {
+								poseLimits: {
+									legs: ['standing'],
+									bones: {
+										character_rotation: 0,
+									}
+								},
+							}
+						}
+					}
 				},
 			]
 		},
@@ -121,7 +170,6 @@ DefineRoomDeviceAsset({
 					],
 				}
 			],
-
 			offsetOverrides: [
 				{
 					offset: { x: 1338, y: -1100 },
@@ -210,6 +258,30 @@ DefineRoomDeviceAsset({
 			colorizationKey: 'rope',
 		},
 		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'bamboo_rope_chest_line_standing.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'standing',
+							},
+						],
+					],
+				}
+			],
+		},
+		{
 			type: 'slot',
 			slot: 'under_bamboo',
 			characterPosition: {
@@ -221,7 +293,33 @@ DefineRoomDeviceAsset({
 					y: 0,
 				},
 			},
-		}
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'bamboo_rope_chest_line_standing.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'standing',
+							},
+						],
+					],
+				}
+			],
+		},
+
+
 	],
 	pivot: {
 		x: 750,
