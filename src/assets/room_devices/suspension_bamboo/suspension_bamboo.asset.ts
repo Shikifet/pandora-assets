@@ -29,6 +29,22 @@ DefineRoomDeviceAsset({
 		},
 	},
 	modules: {
+		configuration: {
+			type: 'typed',
+			name: "Setup",
+			staticConfig: { slotName: 'under_bamboo' },
+			variants: [
+				{
+					id: 'frame',
+					name: 'Tied to Frame',
+					default: true,
+				},
+				{
+					id: 'hanging',
+					name: 'Tied from Ceiling',
+				},
+			]
+		},
 		position: {
 			type: 'typed',
 			name: 'Position',
@@ -43,7 +59,7 @@ DefineRoomDeviceAsset({
 							under_bamboo: {
 								poseLimits: {
 									view: 'front',
-									legs: ['standing']
+									legs: ['standing', 'kneeling']
 								},
 							}
 						}
@@ -57,28 +73,11 @@ DefineRoomDeviceAsset({
 							under_bamboo: {
 								poseLimits: {
 									view: 'back',
-									legs: ['standing']
+									legs: ['standing', 'kneeling']
 								},
 							}
 						}
 					}
-				},
-			]
-		},
-
-		configuration: {
-			type: 'typed',
-			name: "Chest Line",
-			staticConfig: { slotName: 'under_bamboo' },
-			variants: [
-				{
-					id: 'frame',
-					name: 'Frame',
-					default: true,
-				},
-				{
-					id: 'hanging',
-					name: 'Hanging',
 				},
 			]
 		},
@@ -99,9 +98,16 @@ DefineRoomDeviceAsset({
 						blockSlotsEnterLeave: ['under_bamboo'],
 						slotProperties: {
 							under_bamboo: {
+								attributes: {
+									requires: [
+										'Back_knot_anchor_point'
+									]
+								},
 								poseLimits: {
-									legs: ['standing'],
+									legs: ['standing', 'kneeling'],
 									bones: {
+										//leg_l: [[-3, 2]],
+										//leg_r: [[-3, 2]],
 										character_rotation: 0,
 									}
 								},
@@ -191,7 +197,7 @@ DefineRoomDeviceAsset({
 			colorizationKey: 'frame',
 			imageOverrides: [
 				{
-					image: 'bamboo_frame.png@2000x1650',
+					image: 'bamboo_frame.png@2000x1600',
 					condition: [
 						[
 							{
@@ -206,7 +212,7 @@ DefineRoomDeviceAsset({
 
 			offsetOverrides: [
 				{
-					offset: { x: -240, y: -250 },
+					offset: { x: -240, y: -240 },
 					condition: [
 						[
 							{
@@ -293,6 +299,24 @@ DefineRoomDeviceAsset({
 					y: 0,
 				},
 			},
+			characterPositionOverrides: [
+				{
+					position: {
+						offsetX: 0,
+						offsetY: 0,
+						disablePoseOffset: true,
+					},
+					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'standing',
+							},
+						]
+					]
+				},
+			]
 		},
 		{
 			type: 'sprite',

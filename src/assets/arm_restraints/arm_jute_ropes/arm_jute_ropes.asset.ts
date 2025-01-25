@@ -25,6 +25,11 @@ DefineAsset({
 					id: 'wrists_high',
 					name: 'Box High',
 					properties: {
+						attributes: {
+							provides: [
+								"Back_knot_anchor_point"
+							]
+						},
 						poseLimits: {
 							arms: {
 								position: 'back',
@@ -40,7 +45,6 @@ DefineAsset({
 								upper: 'right',
 							},
 						},
-
 						stateFlags: {
 							requires: {
 								wrists_unlinked_to_crotch: 'Box High pose cannot be used together with hands being tied to a crotch rope',
@@ -53,6 +57,11 @@ DefineAsset({
 					name: 'Box Normal',
 					default: true,
 					properties: {
+						attributes: {
+							provides: [
+								"Back_knot_anchor_point"
+							]
+						},
 						poseLimits: {
 							arms: {
 								position: 'back',
@@ -79,6 +88,11 @@ DefineAsset({
 					id: 'wrists_low',
 					name: 'Box Low',
 					properties: {
+						attributes: {
+							provides: [
+								"Back_knot_anchor_point"
+							]
+						},
 						poseLimits: {
 							arms: {
 								position: 'back',
