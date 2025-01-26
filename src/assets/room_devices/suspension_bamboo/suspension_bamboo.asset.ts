@@ -104,7 +104,7 @@ DefineRoomDeviceAsset({
 									]
 								},
 								poseLimits: {
-									legs: ['kneeling'],
+									legs: ['kneeling', 'standing'],
 									bones: {
 										character_rotation: 0,
 										leg_l: [[-25, 2]],
@@ -300,9 +300,7 @@ DefineRoomDeviceAsset({
 								value: 'front',
 							},
 							{
-								module: 'chest_line',
-								operator: '=',
-								value: 'kneeling',
+								legs: 'kneeling',
 							},
 						],
 					],
@@ -317,9 +315,7 @@ DefineRoomDeviceAsset({
 								value: 'front',
 							},
 							{
-								module: 'chest_line',
-								operator: '=',
-								value: 'standing',
+								legs: 'standing',
 							},
 						],
 					],
@@ -372,9 +368,7 @@ DefineRoomDeviceAsset({
 								value: 'back',
 							},
 							{
-								module: 'chest_line',
-								operator: '=',
-								value: 'kneeling',
+								legs: 'kneeling',
 							},
 						],
 					],
@@ -389,9 +383,7 @@ DefineRoomDeviceAsset({
 								value: 'back',
 							},
 							{
-								module: 'chest_line',
-								operator: '=',
-								value: 'standing',
+								legs: 'standing',
 							},
 						],
 					],
