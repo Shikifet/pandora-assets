@@ -92,8 +92,32 @@ DefineRoomDeviceAsset({
 					default: true,
 				},
 				{
+					id: 'kneeling',
+					name: 'Floor',
+					properties: {
+						blockSlotsEnterLeave: ['under_bamboo'],
+						slotProperties: {
+							under_bamboo: {
+								attributes: {
+									requires: [
+										'Back_knot_anchor_point'
+									]
+								},
+								poseLimits: {
+									legs: ['kneeling'],
+									bones: {
+										character_rotation: 0,
+										leg_l: [[-25, 2]],
+										leg_r: [[-25, 2]],
+									}
+								},
+							}
+						}
+					}
+				},
+				{
 					id: 'standing',
-					name: 'Standing',
+					name: 'Suspended',
 					properties: {
 						blockSlotsEnterLeave: ['under_bamboo'],
 						slotProperties: {
@@ -106,8 +130,6 @@ DefineRoomDeviceAsset({
 								poseLimits: {
 									legs: ['standing', 'kneeling'],
 									bones: {
-										//leg_l: [[-3, 2]],
-										//leg_r: [[-3, 2]],
 										character_rotation: 0,
 									}
 								},
@@ -269,6 +291,30 @@ DefineRoomDeviceAsset({
 			colorizationKey: 'rope',
 			imageOverrides: [
 				{
+					image: 'bamboo_rope_chest_line_kneeling.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'kneeling',
+							},
+						],
+					],
+				}
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
 					image: 'bamboo_rope_chest_line_standing.png',
 					condition: [
 						[
@@ -317,6 +363,30 @@ DefineRoomDeviceAsset({
 					]
 				},
 			]
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'bamboo_rope_chest_line_kneeling.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'kneeling',
+							},
+						],
+					],
+				}
+			],
 		},
 		{
 			type: 'sprite',
