@@ -306,14 +306,7 @@ DefineRoomDeviceAsset({
 							},
 						],
 					],
-				}
-			],
-		},
-		{
-			type: 'sprite',
-			image: '',
-			colorizationKey: 'rope',
-			imageOverrides: [
+				},
 				{
 					image: 'bamboo_rope_chest_line_standing.png',
 					condition: [
@@ -385,14 +378,7 @@ DefineRoomDeviceAsset({
 							},
 						],
 					],
-				}
-			],
-		},
-		{
-			type: 'sprite',
-			image: '',
-			colorizationKey: 'rope',
-			imageOverrides: [
+				},
 				{
 					image: 'bamboo_rope_chest_line_standing.png',
 					condition: [
