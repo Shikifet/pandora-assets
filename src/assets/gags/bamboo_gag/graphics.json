@@ -25,7 +25,7 @@
 			"priority": "ABOVE_BODY",
 			"points": "body",
 			"mirror": 0,
-			"colorizationKey": "bit",
+			"colorizationKey": "rope",
 			"image": {
 				"image": "rope_front.png",
 				"overrides": []
