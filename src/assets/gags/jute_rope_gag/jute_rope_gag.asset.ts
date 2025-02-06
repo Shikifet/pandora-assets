@@ -22,7 +22,6 @@ DefineAsset({
 		requires: [
 			'Mouth_open_wide',
 			'!Mouth_protruding',
-			'!Mouth_tongue_out',
 			'!Mouth_cover',
 		],
 		covers: [
@@ -53,6 +52,11 @@ DefineAsset({
 					id: 'knot',
 					name: 'Knot',
 					properties: {
+						attributes: {
+							requires: [
+								'!Mouth_tongue_out',
+							],
+						},
 						effects: {
 							lipsTouch: 7,
 							jawMove: 8,
@@ -69,6 +73,11 @@ DefineAsset({
 					name: 'Bit',
 					default: true,
 					properties: {
+						attributes: {
+							requires: [
+								'!Mouth_tongue_out',
+							],
+						},
 						effects: {
 							lipsTouch: 8,
 							jawMove: 9,
@@ -83,18 +92,9 @@ DefineAsset({
 			],
 		},
 	},
-	effects: {
-		lipsTouch: 6,
-		jawMove: 3,
-		tongueRoof: 2,
-		mouthBreath: 2,
-		throatBreath: 1,
-		coherency: 2,
-		stimulus: 1,
-	},
 	chat: {
-		actionAdd: 'SOURCE_CHARACTER tied a Bamboo Gag tightly between TARGET_CHARACTER_DYNAMIC_POSSESSIVE teeth.',
-		actionRemove: 'SOURCE_CHARACTER loosened and then removed the Bamboo Gag from TARGET_CHARACTER_DYNAMIC_POSSESSIVE mouth.',
+		actionAdd: 'SOURCE_CHARACTER tied a Rope Gag tightly between TARGET_CHARACTER_DYNAMIC_POSSESSIVE teeth.',
+		actionRemove: 'SOURCE_CHARACTER loosened and then removed the Rope Gag from TARGET_CHARACTER_DYNAMIC_POSSESSIVE mouth.',
 	},
 	ownership: {
 		responsibleContributor: 'Shikifet <shikifet@gmail.com>',
