@@ -83,7 +83,28 @@ DefineAsset({
 					},
 				},
 			],
-
+		},
+		vertical_bamboo: {
+			type: 'typed',
+			name: 'Vertical Bamboo',
+			variants: [
+				{
+					id: 'no',
+					name: 'No',
+					default: true,
+				},
+				{
+					id: 'yes',
+					name: 'Yes',
+					properties: {
+						attributes: {
+							requires: [
+								'Back_knot_anchor_point',
+							],
+						},
+					},
+				},
+			],
 		},
 	},
 	chat: {
