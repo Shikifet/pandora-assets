@@ -42,18 +42,7 @@
 			"image": {
 				"image": "",
 				"overrides": [
-					{
-						"image": "bamboo_elbows_long.png",
-						"condition": [
-							[
-								{
-									"module": "hands",
-									"operator": "=",
-									"value": "tied_bamboo_elbows"
-								}
-							]
-						]
-					},
+
 					{
 						"image": "bamboo_elbows.png",
 						"condition": [
