@@ -128,7 +128,20 @@
 			"colorizationKey": "rope",
 			"image": {
 				"image": "rope_arms_back.png",
-				"overrides": []
+				"overrides": [
+					{
+						"image": "rope_arms_back_vertical.png",
+						"condition": [
+							[
+								{
+									"module": "vertical_bamboo",
+									"operator": "=",
+									"value": "yes"
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		{
