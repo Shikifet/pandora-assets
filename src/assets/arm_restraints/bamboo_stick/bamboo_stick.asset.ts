@@ -39,11 +39,23 @@ DefineAsset({
 					default: true,
 				},
 				{
+					id: 'medium',
+					name: 'Medium',
+					properties: {
+						stateFlags: {
+							provides: [
+								'medium_vertical_bamboo',
+							],
+						},
+					},
+				},
+				{
 					id: 'long',
 					name: 'Long',
 					properties: {
 						stateFlags: {
 							provides: [
+								'medium_vertical_bamboo',
 								'long_vertical_bamboo',
 							],
 						},
@@ -110,7 +122,7 @@ DefineAsset({
 					properties: {
 						stateFlags: {
 							requires: {
-								long_vertical_bamboo: 'Hands cannot be tied to a Short Horizontal Bamboo',
+								medium_vertical_bamboo: 'Hands cannot be tied to a Short Horizontal Bamboo',
 							},
 						},
 						poseLimits: {
@@ -119,6 +131,28 @@ DefineAsset({
 								arm_l: 80,
 								elbow_r: -80,
 								elbow_l: -80,
+							},
+						},
+						effects: {
+							blockHands: true,
+						},
+					},
+				},
+				{
+					id: 'tied_bamboo_shoulders',
+					name: 'Tied to Bamboo High',
+					properties: {
+						stateFlags: {
+							requires: {
+								long_vertical_bamboo: 'Hands cannot be tied to a Short nor Medium Horizontal Bamboo',
+							},
+						},
+						poseLimits: {
+							bones: {
+								arm_r: 0,
+								arm_l: 0,
+								elbow_r: 0,
+								elbow_l: 0,
 							},
 						},
 						effects: {

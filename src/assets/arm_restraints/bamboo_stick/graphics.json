@@ -59,6 +59,38 @@
 						]
 					},
 					{
+						"image": "bamboo_elbows_medium.png",
+						"condition": [
+							[
+								{
+									"view": "front"
+								},
+								{
+									"module": "horizontal_bamboo",
+									"operator": "=",
+									"value": "medium"
+								}
+							]
+						]
+					},
+					{
+						"image": "bamboo_shoulders_long.png",
+						"condition": [
+							[
+								{
+									"module": "horizontal_bamboo",
+									"operator": "=",
+									"value": "long"
+								},
+								{
+									"module": "hands",
+									"operator": "=",
+									"value": "tied_bamboo_shoulders"
+								}
+							]
+						]
+					},
+					{
 						"image": "bamboo_elbows_long.png",
 						"condition": [
 							[
@@ -105,6 +137,11 @@
 							[
 								{
 									"view": "front"
+								},
+								{
+									"module": "hands",
+									"operator": "!=",
+									"value": "tied_bamboo_shoulders"
 								}
 							]
 						]
@@ -125,6 +162,21 @@
 						]
 					},
 					{
+						"image": "bamboo_elbows_medium.png",
+						"condition": [
+							[
+								{
+									"view": "back"
+								},
+								{
+									"module": "horizontal_bamboo",
+									"operator": "=",
+									"value": "medium"
+								}
+							]
+						]
+					},
+					{
 						"image": "bamboo_elbows_long.png",
 						"condition": [
 							[
@@ -135,6 +187,11 @@
 									"module": "horizontal_bamboo",
 									"operator": "=",
 									"value": "long"
+								},
+								{
+									"module": "hands",
+									"operator": "!=",
+									"value": "tied_bamboo_shoulders"
 								}
 							]
 						]
@@ -156,7 +213,19 @@
 				"image": "rope_arms_front_outer.png",
 				"overrides": [
 					{
-						"image": "rope_arms_elbows_long.png",
+						"image": "rope_arms_shoulders_long.png",
+						"condition": [
+							[
+								{
+									"module": "hands",
+									"operator": "=",
+									"value": "tied_bamboo_shoulders"
+								}
+							]
+						]
+					},
+					{
+						"image": "rope_arms_elbows_medium.png",
 						"condition": [
 							[
 								{
@@ -175,7 +244,7 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
-			"name": "Rope Arms Back Knot",
+			"name": "Rope Arms Back",
 			"priority": "BELOW_BODY",
 			"points": "static",
 			"mirror": 0,
@@ -184,7 +253,19 @@
 				"image": "rope_arms_back.png",
 				"overrides": [
 					{
-						"image": "rope_arms_elbows_long.png",
+						"image": "rope_arms_shoulders_long.png",
+						"condition": [
+							[
+								{
+									"module": "hands",
+									"operator": "=",
+									"value": "tied_bamboo_shoulders"
+								}
+							]
+						]
+					},
+					{
+						"image": "rope_arms_elbows_medium.png",
 						"condition": [
 							[
 								{
@@ -215,7 +296,7 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
-			"name": "Rope Arms Back Knot",
+			"name": "Rope Arms Back",
 			"priority": "BELOW_BODY",
 			"points": "static",
 			"mirror": 0,
@@ -224,13 +305,37 @@
 				"image": "rope_arms_back.png",
 				"overrides": [
 					{
-						"image": "rope_knot_arms_elbows_long.png",
+						"image": "",
+						"condition": [
+							[
+								{
+									"module": "hands",
+									"operator": "=",
+									"value": "tied_bamboo_shoulders"
+								}
+							]
+						]
+					},
+					{
+						"image": "rope_knot_arms_elbows_medium.png",
 						"condition": [
 							[
 								{
 									"module": "hands",
 									"operator": "=",
 									"value": "tied_bamboo_elbows"
+								}
+							]
+						]
+					},
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"module": "vertical_bamboo",
+									"operator": "=",
+									"value": "yes"
 								}
 							]
 						]
@@ -404,13 +509,51 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "rope_vertical_knot_arms_elbows_long.png",
+						"image": "rope_vertical_knot_arms_elbows_medium.png",
 						"condition": [
 							[
 								{
 									"module": "vertical_bamboo",
 									"operator": "=",
 									"value": "yes"
+								},
+								{
+									"module": "hands",
+									"operator": "!=",
+									"value": "tied_bamboo_shoulders"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": -150,
+			"width": 1000,
+			"height": 1500,
+			"name": "Bamboo Vertical Knot",
+			"priority": "BELOW_BACK_HAIR",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "rope_vertical_knot_arms_elbows_medium.png",
+						"condition": [
+							[
+								{
+									"module": "vertical_bamboo",
+									"operator": "=",
+									"value": "yes"
+								},
+								{
+									"module": "hands",
+									"operator": "=",
+									"value": "tied_bamboo_shoulders"
 								}
 							]
 						]
