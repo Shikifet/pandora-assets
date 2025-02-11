@@ -42,8 +42,8 @@ DefineAsset({
 							bones: {
 								arm_r: 80,
 								arm_l: 80,
-								elbow_r: [[-80, 95]],
-								elbow_l: [[-80, 95]],
+								elbow_r: [[-30, 95]],
+								elbow_l: [[-30, 95]],
 							},
 						},
 					},
@@ -75,6 +75,23 @@ DefineAsset({
 								arm_l: 80,
 								elbow_r: 27,
 								elbow_l: 27,
+							},
+						},
+						effects: {
+							blockHands: true,
+						},
+					},
+				},
+				{
+					id: 'tied_bamboo_elbows',
+					name: 'Tied to Bamboo',
+					properties: {
+						poseLimits: {
+							bones: {
+								arm_r: 80,
+								arm_l: 80,
+								elbow_r: -80,
+								elbow_l: -80,
 							},
 						},
 						effects: {
