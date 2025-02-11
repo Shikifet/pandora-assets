@@ -60,6 +60,26 @@
 							[
 								{
 									"view": "front"
+								},
+								{
+									"module": "horizontal_bamboo",
+									"operator": "=",
+									"value": "short"
+								}
+							]
+						]
+					},
+					{
+						"image": "bamboo_elbows_long.png",
+						"condition": [
+							[
+								{
+									"view": "front"
+								},
+								{
+									"module": "horizontal_bamboo",
+									"operator": "=",
+									"value": "long"
 								}
 							]
 						]
@@ -106,6 +126,26 @@
 							[
 								{
 									"view": "back"
+								},
+								{
+									"module": "horizontal_bamboo",
+									"operator": "=",
+									"value": "short"
+								}
+							]
+						]
+					},
+					{
+						"image": "bamboo_elbows_long.png",
+						"condition": [
+							[
+								{
+									"view": "back"
+								},
+								{
+									"module": "horizontal_bamboo",
+									"operator": "=",
+									"value": "long"
 								}
 							]
 						]

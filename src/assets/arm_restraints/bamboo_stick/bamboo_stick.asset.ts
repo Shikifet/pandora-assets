@@ -29,6 +29,28 @@ DefineAsset({
 		},
 	},
 	modules: {
+		horizontal_bamboo: {
+			type: 'typed',
+			name: 'Horizontal Bamboo',
+			variants: [
+				{
+					id: 'short',
+					name: 'Short',
+					default: true,
+				},
+				{
+					id: 'long',
+					name: 'Long',
+					properties: {
+						stateFlags: {
+							provides: [
+								'long_vertical_bamboo',
+							],
+						},
+					},
+				},
+			],
+		},
 		hands: {
 			type: 'typed',
 			name: 'Hands',
@@ -86,6 +108,11 @@ DefineAsset({
 					id: 'tied_bamboo_elbows',
 					name: 'Tied to Bamboo',
 					properties: {
+						stateFlags: {
+							requires: {
+								long_vertical_bamboo: 'Hands cannot be tied to a Short Horizontal Bamboo',
+							},
+						},
 						poseLimits: {
 							bones: {
 								arm_r: 80,
