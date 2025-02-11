@@ -305,7 +305,7 @@
 				"image": "rope_arms_back.png",
 				"overrides": [
 					{
-						"image": "",
+						"image": "rope_knot_arms_shoulders_long.png",
 						"condition": [
 							[
 								{
