@@ -98,6 +98,9 @@ DefineAsset({
 					name: 'Yes',
 					properties: {
 						attributes: {
+							provides: [
+								'Gag_anchor_point',
+							],
 							requires: [
 								'Back_knot_anchor_point',
 							],
