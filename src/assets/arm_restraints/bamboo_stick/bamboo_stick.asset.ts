@@ -167,13 +167,13 @@ DefineAsset({
 			name: 'Vertical Bamboo',
 			variants: [
 				{
-					id: 'no',
-					name: 'No',
+					id: 'none',
+					name: 'None',
 					default: true,
 				},
 				{
-					id: 'yes',
-					name: 'Yes',
+					id: 'short',
+					name: 'Short',
 					properties: {
 						attributes: {
 							provides: [
@@ -182,6 +182,40 @@ DefineAsset({
 							requires: [
 								'Back_knot_anchor_point',
 							],
+						},
+					},
+				},
+				{
+					id: 'medium',
+					name: 'Medium',
+					properties: {
+						attributes: {
+							provides: [
+								'Gag_anchor_point',
+							],
+							requires: [
+								'Back_knot_anchor_point',
+							],
+						},
+						poseLimits: {
+							legs: ['kneeling', 'standing'],
+						},
+					},
+				},
+				{
+					id: 'long',
+					name: 'Long',
+					properties: {
+						attributes: {
+							provides: [
+								'Gag_anchor_point',
+							],
+							requires: [
+								'Back_knot_anchor_point',
+							],
+						},
+						poseLimits: {
+							legs: 'standing',
 						},
 					},
 				},

@@ -21,7 +21,31 @@
 								{
 									"module": "vertical_bamboo",
 									"operator": "=",
-									"value": "yes"
+									"value": "short"
+								}
+							]
+						]
+					},
+					{
+						"image": "bamboo_vertical_medium.png",
+						"condition": [
+							[
+								{
+									"module": "vertical_bamboo",
+									"operator": "=",
+									"value": "medium"
+								}
+							]
+						]
+					},
+					{
+						"image": "bamboo_vertical_long.png",
+						"condition": [
+							[
+								{
+									"module": "vertical_bamboo",
+									"operator": "=",
+									"value": "long"
 								}
 							]
 						]
@@ -281,8 +305,8 @@
 							[
 								{
 									"module": "vertical_bamboo",
-									"operator": "=",
-									"value": "yes"
+									"operator": "!=",
+									"value": "none"
 								}
 							]
 						]
@@ -333,8 +357,8 @@
 							[
 								{
 									"module": "vertical_bamboo",
-									"operator": "=",
-									"value": "yes"
+									"operator": "!=",
+									"value": "none"
 								}
 							]
 						]
@@ -457,8 +481,8 @@
 							[
 								{
 									"module": "vertical_bamboo",
-									"operator": "=",
-									"value": "yes"
+									"operator": "!=",
+									"value": "none"
 								}
 							]
 						]
@@ -485,8 +509,8 @@
 							[
 								{
 									"module": "vertical_bamboo",
-									"operator": "=",
-									"value": "yes"
+									"operator": "!=",
+									"value": "none"
 								}
 							]
 						]
@@ -513,8 +537,8 @@
 							[
 								{
 									"module": "vertical_bamboo",
-									"operator": "=",
-									"value": "yes"
+									"operator": "!=",
+									"value": "none"
 								},
 								{
 									"module": "hands",
@@ -546,8 +570,8 @@
 							[
 								{
 									"module": "vertical_bamboo",
-									"operator": "=",
-									"value": "yes"
+									"operator": "!=",
+									"value": "none"
 								},
 								{
 									"module": "hands",
