@@ -1,18 +1,18 @@
 DefineBodypart({
-	name: 'Mouse Ears',
+	name: 'Wolf Ears',
 	bodypart: 'ears',
 	graphics: 'graphics.json',
 	colorization: {
 		outer: {
 			name: 'Outer',
-			default: '#747474',
+			default: '#333333',
 		},
 		inner: {
 			name: 'Inner',
 			default: '#FFFFFF',
 		},
 	},
-	// size:200, y:150, centered
+	// size:216, y:162, centered
 	preview: 'preview.png',
 	attributes: {
 		provides: [

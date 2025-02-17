@@ -1,26 +1,28 @@
-DefineBodypart({
-	name: 'Mouse Ears',
-	bodypart: 'ears',
+DefineAsset({
+	name: 'Artificial Wolf Ears',
+	size: 'small',
 	graphics: 'graphics.json',
 	colorization: {
 		outer: {
 			name: 'Outer',
-			default: '#747474',
+			default: '#333333',
 		},
 		inner: {
 			name: 'Inner',
 			default: '#FFFFFF',
+		},
+		headband: {
+			name: 'Headband',
+			default: '#333333',
 		},
 	},
 	// size:200, y:150, centered
 	preview: 'preview.png',
 	attributes: {
 		provides: [
+			'Clothing',
 			'Fantasy',
 			'Fantasy_ears',
-		],
-		hides: [
-			'Ears',
 		],
 	},
 	ownership: {
