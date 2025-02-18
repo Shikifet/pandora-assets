@@ -57,6 +57,50 @@
 								}
 							]
 						]
+					},
+					{
+						"image": "chopsticks_diagonal_right.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "diagonal"
+								},
+								{
+									"module": "attach",
+									"operator": "!=",
+									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">",
+									"value": 160
+								}
+							]
+						]
+					},
+					{
+						"image": "chopsticks_diagonal_left.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "reverse_diagonal"
+								},
+								{
+									"module": "attach",
+									"operator": "!=",
+									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">",
+									"value": 160
+								}
+							]
+						]
 					}
 				]
 			}
@@ -109,6 +153,60 @@
 									"module": "position",
 									"operator": "=",
 									"value": "vertical"
+								},
+								{
+									"module": "attach",
+									"operator": "!=",
+									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">",
+									"value": 60
+								},
+								{
+									"bone": "breasts",
+									"operator": "<",
+									"value": 160
+								}
+							]
+						]
+					},
+					{
+						"image": "chopsticks_diagonal_right.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "diagonal"
+								},
+								{
+									"module": "attach",
+									"operator": "!=",
+									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">",
+									"value": 60
+								},
+								{
+									"bone": "breasts",
+									"operator": "<",
+									"value": 160
+								}
+							]
+						]
+					},
+					{
+						"image": "chopsticks_diagonal_left.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "reverse_diagonal"
 								},
 								{
 									"module": "attach",
@@ -197,6 +295,60 @@
 								}
 							]
 						]
+					},
+					{
+						"image": "chopsticks_diagonal_right.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "diagonal"
+								},
+								{
+									"module": "attach",
+									"operator": "!=",
+									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">=",
+									"value": -140
+								},
+								{
+									"bone": "breasts",
+									"operator": "<",
+									"value": 60
+								}
+							]
+						]
+					},
+					{
+						"image": "chopsticks_diagonal_left.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "reverse_diagonal"
+								},
+								{
+									"module": "attach",
+									"operator": "!=",
+									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">=",
+									"value": -140
+								},
+								{
+									"bone": "breasts",
+									"operator": "<",
+									"value": 60
+								}
+							]
+						]
 					}
 				]
 			}
@@ -244,6 +396,50 @@
 									"module": "position",
 									"operator": "=",
 									"value": "vertical"
+								},
+								{
+									"module": "attach",
+									"operator": "!=",
+									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": "<",
+									"value": -140
+								}
+							]
+						]
+					},
+					{
+						"image": "chopsticks_diagonal_right.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "diagonal"
+								},
+								{
+									"module": "attach",
+									"operator": "!=",
+									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": "<",
+									"value": -140
+								}
+							]
+						]
+					},
+					{
+						"image": "chopsticks_diagonal_left.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "reverse_diagonal"
 								},
 								{
 									"module": "attach",
@@ -311,6 +507,50 @@
 									"module": "position",
 									"operator": "=",
 									"value": "vertical"
+								},
+								{
+									"module": "attach",
+									"operator": "!=",
+									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">",
+									"value": 160
+								}
+							]
+						]
+					},
+					{
+						"image": "strings_diagonal_right.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "diagonal"
+								},
+								{
+									"module": "attach",
+									"operator": "!=",
+									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">",
+									"value": 160
+								}
+							]
+						]
+					},
+					{
+						"image": "strings_diagonal_left.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "reverse_diagonal"
 								},
 								{
 									"module": "attach",
@@ -394,12 +634,66 @@
 								}
 							]
 						]
+					},
+					{
+						"image": "strings_diagonal_right.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "diagonal"
+								},
+								{
+									"module": "attach",
+									"operator": "!=",
+									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">",
+									"value": 60
+								},
+								{
+									"bone": "breasts",
+									"operator": "<",
+									"value": 160
+								}
+							]
+						]
+					},
+					{
+						"image": "strings_diagonal_left.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "reverse_diagonal"
+								},
+								{
+									"module": "attach",
+									"operator": "!=",
+									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">",
+									"value": 60
+								},
+								{
+									"bone": "breasts",
+									"operator": "<",
+									"value": 160
+								}
+							]
+						]
 					}
 				]
 			}
 		},
 		{
-			"x": 381,
+			"x": 380,
 			"y": 444,
 			"width": 135,
 			"height": 135,
@@ -446,6 +740,60 @@
 									"module": "position",
 									"operator": "=",
 									"value": "vertical"
+								},
+								{
+									"module": "attach",
+									"operator": "!=",
+									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">=",
+									"value": -140
+								},
+								{
+									"bone": "breasts",
+									"operator": "<",
+									"value": 60
+								}
+							]
+						]
+					},
+					{
+						"image": "strings_diagonal_right.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "diagonal"
+								},
+								{
+									"module": "attach",
+									"operator": "!=",
+									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">=",
+									"value": -140
+								},
+								{
+									"bone": "breasts",
+									"operator": "<",
+									"value": 60
+								}
+							]
+						]
+					},
+					{
+						"image": "strings_diagonal_left.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "reverse_diagonal"
 								},
 								{
 									"module": "attach",
@@ -511,6 +859,50 @@
 									"module": "position",
 									"operator": "=",
 									"value": "vertical"
+								},
+								{
+									"module": "attach",
+									"operator": "!=",
+									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": "<",
+									"value": -140
+								}
+							]
+						]
+					},
+					{
+						"image": "strings_diagonal_right.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "diagonal"
+								},
+								{
+									"module": "attach",
+									"operator": "!=",
+									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": "<",
+									"value": -140
+								}
+							]
+						]
+					},
+					{
+						"image": "strings_diagonal_left.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "reverse_diagonal"
 								},
 								{
 									"module": "attach",

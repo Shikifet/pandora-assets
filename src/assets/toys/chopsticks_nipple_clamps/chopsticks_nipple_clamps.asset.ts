@@ -54,7 +54,14 @@ DefineAsset({
 				{
 					id: 'horizontal',
 					name: 'Horizontal',
-					default: true,
+				},
+				{
+					id: 'diagonal',
+					name: 'Diagonal',
+				},
+				{
+					id: 'reverse_diagonal',
+					name: 'Reverse Diagonal',
 				},
 			],
 		},
