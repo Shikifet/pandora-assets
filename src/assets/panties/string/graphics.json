@@ -12,67 +12,49 @@
 			"mirror": 0,
 			"colorizationKey": "panties",
 			"image": {
-				"image": "style1.png",
+				"image": "string_front.png",
 				"overrides": [
 					{
-						"image": "style1_aside.png",
+						"image": "string_front_side.png",
 						"condition": [
 							[
 								{
 									"module": "pantiesState",
 									"operator": "=",
 									"value": "aside"
+								},
+								{
+									"view": "front"
 								}
 							]
 						]
 					},
 					{
-						"image": "style1_floor.png",
+						"image": "string_front_ankle.png",
 						"condition": [
 							[
 								{
 									"module": "pantiesState",
 									"operator": "=",
 									"value": "fully"
+								},
+								{
+									"view": "front"
 								}
 							]
 						]
 					},
 					{
-						"image": "style1_knees.png",
+						"image": "string_front_knee.png",
 						"condition": [
 							[
 								{
 									"module": "pantiesState",
 									"operator": "=",
 									"value": "knees"
-								}
-							]
-						]
-					},
-					{
-						"image": "style1_wedged.png",
-						"condition": [
-							[
+								},
 								{
-									"module": "pantiesState",
-									"operator": "=",
-									"value": "wedged"
-								}
-							]
-						]
-					}
-				],
-				"alphaImage": "alpha.png",
-				"alphaOverrides": [
-					{
-						"image": "",
-						"condition": [
-							[
-								{
-									"module": "pantiesState",
-									"operator": "=",
-									"value": "fully"
+									"view": "front"
 								}
 							]
 						]
@@ -127,7 +109,7 @@
 			"mirror": 0,
 			"colorizationKey": "panties",
 			"image": {
-				"image": "style1_back.png",
+				"image": "string_back.png",
 				"overrides": [
 					{
 						"image": "",
@@ -140,52 +122,46 @@
 						]
 					},
 					{
-						"image": "style1_floor.png",
+						"image": "string_back_ankle.png",
 						"condition": [
 							[
 								{
 									"module": "pantiesState",
 									"operator": "=",
 									"value": "fully"
+								},
+								{
+									"view": "back"
 								}
 							]
 						]
 					},
 					{
-						"image": "style1_knees.png",
+						"image": "string_back_knee.png",
 						"condition": [
 							[
 								{
 									"module": "pantiesState",
 									"operator": "=",
 									"value": "knees"
+								},
+								{
+									"view": "back"
 								}
 							]
 						]
 					},
 					{
-						"image": "style1_wedged.png",
+						"image": "string_back_side.png",
 						"condition": [
 							[
 								{
 									"module": "pantiesState",
 									"operator": "=",
-									"value": "wedged"
-								}
-							]
-						]
-					}
-				],
-				"alphaImage": "alpha.png",
-				"alphaOverrides": [
-					{
-						"image": "",
-						"condition": [
-							[
+									"value": "aside"
+								},
 								{
-									"module": "pantiesState",
-									"operator": "=",
-									"value": "fully"
+									"view": "back"
 								}
 							]
 						]

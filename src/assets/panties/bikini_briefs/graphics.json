@@ -12,10 +12,10 @@
 			"mirror": 0,
 			"colorizationKey": "panties",
 			"image": {
-				"image": "style1.png",
+				"image": "bikini_front.png",
 				"overrides": [
 					{
-						"image": "style1_aside.png",
+						"image": "bikini_front_side.png",
 						"condition": [
 							[
 								{
@@ -27,7 +27,7 @@
 						]
 					},
 					{
-						"image": "style1_floor.png",
+						"image": "bikini_ankle.png",
 						"condition": [
 							[
 								{
@@ -39,40 +39,13 @@
 						]
 					},
 					{
-						"image": "style1_knees.png",
+						"image": "bikini_knee.png",
 						"condition": [
 							[
 								{
 									"module": "pantiesState",
 									"operator": "=",
 									"value": "knees"
-								}
-							]
-						]
-					},
-					{
-						"image": "style1_wedged.png",
-						"condition": [
-							[
-								{
-									"module": "pantiesState",
-									"operator": "=",
-									"value": "wedged"
-								}
-							]
-						]
-					}
-				],
-				"alphaImage": "alpha.png",
-				"alphaOverrides": [
-					{
-						"image": "",
-						"condition": [
-							[
-								{
-									"module": "pantiesState",
-									"operator": "=",
-									"value": "fully"
 								}
 							]
 						]
@@ -127,7 +100,7 @@
 			"mirror": 0,
 			"colorizationKey": "panties",
 			"image": {
-				"image": "style1_back.png",
+				"image": "bikini_back.png",
 				"overrides": [
 					{
 						"image": "",
@@ -140,7 +113,7 @@
 						]
 					},
 					{
-						"image": "style1_floor.png",
+						"image": "bikini_ankle.png",
 						"condition": [
 							[
 								{
@@ -152,7 +125,7 @@
 						]
 					},
 					{
-						"image": "style1_knees.png",
+						"image": "bikini_knee.png",
 						"condition": [
 							[
 								{
@@ -164,28 +137,13 @@
 						]
 					},
 					{
-						"image": "style1_wedged.png",
+						"image": "bikini_back_side.png",
 						"condition": [
 							[
 								{
 									"module": "pantiesState",
 									"operator": "=",
-									"value": "wedged"
-								}
-							]
-						]
-					}
-				],
-				"alphaImage": "alpha.png",
-				"alphaOverrides": [
-					{
-						"image": "",
-						"condition": [
-							[
-								{
-									"module": "pantiesState",
-									"operator": "=",
-									"value": "fully"
+									"value": "aside"
 								}
 							]
 						]
