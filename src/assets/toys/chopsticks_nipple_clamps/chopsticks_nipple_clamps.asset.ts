@@ -29,16 +29,16 @@ DefineAsset({
 			variants: [
 				{
 					id: 'both',
-					name: 'Both',
+					name: 'Both Nipples',
 					default: true,
 				},
 				{
 					id: 'left',
-					name: 'Left Only',
+					name: 'Left Nipple',
 				},
 				{
 					id: 'right',
-					name: 'Right Only',
+					name: 'Right Nipple',
 				},
 			],
 		},
