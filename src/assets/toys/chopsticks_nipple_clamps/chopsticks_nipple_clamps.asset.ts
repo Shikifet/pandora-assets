@@ -13,8 +13,8 @@ DefineAsset({
 			default: '#8B5E00',
 		},
 	},
-	// size:200, y:197, centered
-	preview: null,
+	// size:180, y:418, centered
+	preview: 'preview.png',
 	attributes: {
 		provides: [
 			'Toy',
