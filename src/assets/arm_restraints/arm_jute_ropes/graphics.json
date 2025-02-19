@@ -49,6 +49,18 @@
 									"operator": "=",
 									"value": "hogtie_arms"
 								}
+							],
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								},
+								{
+									"module": "wrists",
+									"operator": "=",
+									"value": "linked"
+								}
 							]
 						]
 					},
@@ -576,6 +588,8 @@
 							]
 						]
 					},
+
+
 					{
 						"image": "arms_high_linked_crotch.png",
 						"condition": [
@@ -589,6 +603,33 @@
 									"module": "wrists",
 									"operator": "=",
 									"value": "linked"
+								},
+								{
+									"module": "cinch",
+									"operator": "=",
+									"value": "no"
+								}
+							]
+						]
+					},
+					{
+						"image": "arms_high_linked_crotch_cinched.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								},
+								{
+									"module": "wrists",
+									"operator": "=",
+									"value": "linked"
+								},
+								{
+									"module": "cinch",
+									"operator": "=",
+									"value": "yes"
 								}
 							]
 						]
