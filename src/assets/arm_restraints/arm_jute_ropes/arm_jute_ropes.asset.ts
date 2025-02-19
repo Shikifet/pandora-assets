@@ -23,7 +23,7 @@ DefineAsset({
 			variants: [
 				{
 					id: 'hands_front',
-					name: 'Hands Front',
+					name: 'Wrists Front',
 					properties: {
 						poseLimits: {
 							arms: {
@@ -40,24 +40,19 @@ DefineAsset({
 					},
 				},
 				{
-					id: 'wrists_high',
-					name: 'Box High',
+					id: 'arms_high',
+					name: 'Wrists High',
 					properties: {
-						attributes: {
-							provides: [
-								'Back_knot_anchor_point',
-							],
-						},
 						poseLimits: {
 							arms: {
 								position: 'back',
 								rotation: 'forward',
 							},
 							bones: {
-								arm_r: 90,
-								arm_l: 90,
-								elbow_r: 145,
-								elbow_l: 145,
+								arm_r: -90,
+								arm_l: -90,
+								elbow_r: -145,
+								elbow_l: -145,
 							},
 							armsOrder: {
 								upper: 'right',
@@ -65,45 +60,28 @@ DefineAsset({
 						},
 						stateFlags: {
 							provides: [
-								'back_knot',
+								'uncuffed_hands',
 							],
 							requires: {
-								wrists_unlinked_to_crotch: 'Box High pose cannot be used together with hands being tied to a crotch rope',
+								uncinched: 'Wrists Behind Neck pose cannot be used together with cinched rope',
 							},
 						},
 					},
 				},
 				{
-					id: 'wrists_normal',
-					name: 'Box Normal',
-					default: true,
+					id: 'hands_back',
+					name: 'Wrists Back',
 					properties: {
-						attributes: {
-							provides: [
-								'Back_knot_anchor_point',
-							],
-						},
 						poseLimits: {
 							arms: {
-								position: 'back',
+								position: 'front',
 								rotation: 'forward',
 							},
 							bones: {
 								arm_r: 90,
 								arm_l: 90,
-								elbow_r: 90,
-								elbow_l: 90,
-							},
-							armsOrder: {
-								upper: 'right',
-							},
-						},
-						stateFlags: {
-							provides: [
-								'back_knot',
-							],
-							requires: {
-								wrists_unlinked_to_crotch: 'Box Normal pose cannot be used together with hands being tied to a crotch rope',
+								elbow_r: 20,
+								elbow_l: 20,
 							},
 						},
 					},
@@ -135,32 +113,78 @@ DefineAsset({
 						stateFlags: {
 							provides: [
 								'back_knot',
+								'uncuffed_hands',
 							],
 						},
 					},
 				},
 				{
-					id: 'arms_high',
-					name: 'Wrists Behind Neck',
+					id: 'wrists_normal',
+					name: 'Box Normal',
+					default: true,
 					properties: {
+						attributes: {
+							provides: [
+								'Back_knot_anchor_point',
+							],
+						},
 						poseLimits: {
 							arms: {
 								position: 'back',
 								rotation: 'forward',
 							},
 							bones: {
-								arm_r: -90,
-								arm_l: -90,
-								elbow_r: -145,
-								elbow_l: -145,
+								arm_r: 90,
+								arm_l: 90,
+								elbow_r: 90,
+								elbow_l: 90,
 							},
 							armsOrder: {
 								upper: 'right',
 							},
 						},
 						stateFlags: {
+							provides: [
+								'back_knot',
+								'uncuffed_hands',
+							],
 							requires: {
-								uncinched: 'Wrists Behind Neck pose cannot be used together with cinched rope',
+								wrists_unlinked_to_crotch: 'Box Normal pose cannot be used together with hands being tied to a crotch rope',
+							},
+						},
+					},
+				},
+				{
+					id: 'wrists_high',
+					name: 'Box High',
+					properties: {
+						attributes: {
+							provides: [
+								'Back_knot_anchor_point',
+							],
+						},
+						poseLimits: {
+							arms: {
+								position: 'back',
+								rotation: 'forward',
+							},
+							bones: {
+								arm_r: 90,
+								arm_l: 90,
+								elbow_r: 145,
+								elbow_l: 145,
+							},
+							armsOrder: {
+								upper: 'right',
+							},
+						},
+						stateFlags: {
+							provides: [
+								'back_knot',
+								'uncuffed_hands',
+							],
+							requires: {
+								wrists_unlinked_to_crotch: 'Box High pose cannot be used together with hands being tied to a crotch rope',
 							},
 						},
 					},
@@ -184,6 +208,11 @@ DefineAsset({
 								upper: 'right',
 							},
 						},
+						stateFlags: {
+							provides: [
+								'uncuffed_hands',
+							],
+						},
 					},
 				},
 			],
@@ -200,6 +229,13 @@ DefineAsset({
 				{
 					id: 'over_shoulder',
 					name: 'Over Shoulder',
+					properties: {
+						stateFlags: {
+							requires: {
+								uncuffed_hands: 'Over Shoulder pose cannot be used with tied wrists',
+							},
+						},
+					},
 				},
 			],
 		},
