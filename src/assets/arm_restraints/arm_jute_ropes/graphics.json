@@ -170,6 +170,23 @@
 						]
 					},
 					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"module": "extra_rope",
+									"operator": "!=",
+									"value": "over_shoulder"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "armbinder"
+								}
+							]
+						]
+					},
+					{
 						"image": "takate_kote_front_v2_over_single.png",
 						"condition": [
 							[
@@ -464,6 +481,11 @@
 									"module": "extra_rope",
 									"operator": "=",
 									"value": "over_shoulder"
+								},
+								{
+									"module": "arms",
+									"operator": "!=",
+									"value": "armbinder"
 								}
 							]
 						]
@@ -1527,39 +1549,6 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
-			"name": "back_arms_high",
-			"priority": "BELOW_ARM_LEFT",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "rope",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "back_harness_shoulder_arms_high.png",
-						"condition": [
-							[
-								{
-									"module": "extra_rope",
-									"operator": "=",
-									"value": "over_shoulder"
-								},
-								{
-									"module": "arms",
-									"operator": "=",
-									"value": "arms_high"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
 			"name": "armbinder_cinch_front",
 			"priority": "ABOVE_BODY",
 			"points": "static",
@@ -2093,6 +2082,39 @@
 									"module": "arms",
 									"operator": "!=",
 									"value": "armbinder"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "back_arms_high",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "back_harness_shoulder_arms_high.png",
+						"condition": [
+							[
+								{
+									"module": "extra_rope",
+									"operator": "=",
+									"value": "over_shoulder"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
 								}
 							]
 						]
