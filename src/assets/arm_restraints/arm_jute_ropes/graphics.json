@@ -1664,79 +1664,6 @@
 				]
 			}
 		},
-
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"name": "hogtie_rope",
-			"priority": "BELOW_ARM_LEFT",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "rope",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "hogtie_wrists_high.png",
-						"condition": [
-							[
-								{
-									"module": "arms",
-									"operator": "=",
-									"value": "arms_high"
-								},
-								{
-									"module": "hogtie",
-									"operator": "=",
-									"value": "hogtie_arms"
-								},
-								{
-									"module": "cinch",
-									"operator": "=",
-									"value": "no"
-								}
-							]
-						]
-					},
-					{
-						"image": "hogtie_wrists_high_cinched.png",
-						"condition": [
-							[
-								{
-									"module": "arms",
-									"operator": "=",
-									"value": "arms_high"
-								},
-								{
-									"module": "hogtie",
-									"operator": "=",
-									"value": "hogtie_arms"
-								},
-								{
-									"module": "cinch",
-									"operator": "=",
-									"value": "yes"
-								}
-							]
-						]
-					},
-					{
-						"image": "hogtie_rope.png",
-						"condition": [
-							[
-								{
-									"module": "hogtie",
-									"operator": "=",
-									"value": "hogtie_arms"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
 		{
 			"x": 0,
 			"y": 0,
@@ -1973,6 +1900,143 @@
 									"module": "end",
 									"operator": "=",
 									"value": "long"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "hogtie_rope",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "hogtie_wrists_high.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								},
+								{
+									"module": "hogtie",
+									"operator": "=",
+									"value": "hogtie_arms"
+								},
+								{
+									"module": "cinch",
+									"operator": "=",
+									"value": "no"
+								}
+							]
+						]
+					},
+					{
+						"image": "hogtie_wrists_high_cinched.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								},
+								{
+									"module": "hogtie",
+									"operator": "=",
+									"value": "hogtie_arms"
+								},
+								{
+									"module": "cinch",
+									"operator": "=",
+									"value": "yes"
+								}
+							]
+						]
+					},
+					{
+						"image": "hogtie_rope.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "!=",
+									"value": "hands_back"
+								},
+								{
+									"module": "arms",
+									"operator": "!=",
+									"value": "arms_high"
+								},
+								{
+									"module": "hogtie",
+									"operator": "=",
+									"value": "hogtie_arms"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "hogtie_rope",
+			"priority": "BELOW_ARM_RIGHT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "hogtie_wrists_back.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "hands_back"
+								},
+								{
+									"module": "hogtie",
+									"operator": "=",
+									"value": "hogtie_arms"
+								}
+							]
+						]
+					},
+					{
+						"image": "hogtie_rope.png",
+						"condition": [
+							[
+								{
+									"module": "hogtie",
+									"operator": "=",
+									"value": "hogtie_arms"
+								},
+								{
+									"module": "arms",
+									"operator": "!=",
+									"value": "arms_high"
+								},
+								{
+									"module": "arms",
+									"operator": "!=",
+									"value": "hands_back"
 								}
 							]
 						]
