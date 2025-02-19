@@ -1,6 +1,6 @@
 DefineAsset({
-	name: 'Plain Panties',
-	size: 'small',
+	name: 'Hipster',
+	size: 'medium',
 	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: {
@@ -10,7 +10,7 @@ DefineAsset({
 		},
 		wetness: {
 			name: 'Stain',
-			default: '#B14848',
+			default: '#DFDFDF',
 		},
 	},
 	// size:240, y:570, centered
@@ -41,16 +41,6 @@ DefineAsset({
 				{
 					id: 'aside',
 					name: 'Pulled Aside',
-				},
-				{
-					id: 'wedged',
-					name: 'Wedged Up',
-					properties: {
-						attributes: {
-							provides: ['Vulva_cover'],
-							requires: ['!Penis'],
-						},
-					},
 				},
 				{
 					id: 'knees',
@@ -95,15 +85,15 @@ DefineAsset({
 		},
 	},
 	ownership: {
-		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
-		credits: ['ClaudiaMia', 'Jomshir', 'Sandrine'],
+		responsibleContributor: 'Sandrine <118102950+SandrinePDR@users.noreply.github.com>',
+		credits: ['Taja'],
 		modificationPolicy: `Fixes and New uses, otherwise ask`,
 		reusePolicy: 'Ask first',
 		licensing: [
 			{
 				source: 'Self-Made',
-				copyrightHolder: 'ClaudiaMia',
-				editedBy: 'ClaudiaMia',
+				copyrightHolder: 'Taja',
+				editedBy: 'Sandrine',
 				license: 'Pandora-Use-Only-v1-or-later',
 			},
 		],
