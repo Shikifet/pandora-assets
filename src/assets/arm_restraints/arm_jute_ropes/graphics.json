@@ -1054,6 +1054,138 @@
 		},
 		{
 			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "crotch_link",
+			"priority": "ABOVE_BODY",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "hands_cuffed_crotch_link_below.png",
+						"condition": [
+							[
+								{
+									"module": "wrists",
+									"operator": "=",
+									"value": "linked"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "hands_front"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "crotch_link",
+			"priority": "ABOVE_ARM_LEFT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "hands_cuffed_crotch_link.png",
+						"condition": [
+							[
+								{
+									"module": "wrists",
+									"operator": "=",
+									"value": "linked"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "hands_front"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "crotch_link",
+			"priority": "BELOW_BODY",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "hands_cuffed_crotch_link_below.png",
+						"condition": [
+							[
+								{
+									"module": "wrists",
+									"operator": "=",
+									"value": "linked"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "hands_back"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "crotch_link",
+			"priority": "BELOW_ARM_RIGHT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "hands_cuffed_crotch_link.png",
+						"condition": [
+							[
+								{
+									"module": "wrists",
+									"operator": "=",
+									"value": "linked"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "hands_back"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
 			"y": 25,
 			"width": 1000,
 			"height": 1500,
