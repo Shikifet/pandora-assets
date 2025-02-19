@@ -250,11 +250,6 @@ DefineAsset({
 				{
 					id: 'no',
 					name: 'No',
-					properties: {
-						stateFlags: {
-							provides: ['uncinched'],
-						},
-					},
 					default: true,
 				},
 				{
