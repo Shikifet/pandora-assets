@@ -61,6 +61,7 @@ DefineAsset({
 						stateFlags: {
 							provides: [
 								'uncuffed_hands',
+								'hogtie_anchor_point',
 							],
 						},
 					},
@@ -80,6 +81,11 @@ DefineAsset({
 								elbow_r: 20,
 								elbow_l: 20,
 							},
+						},
+						stateFlags: {
+							provides: [
+								'hogtie_anchor_point',
+							],
 						},
 					},
 				},
@@ -109,7 +115,7 @@ DefineAsset({
 						},
 						stateFlags: {
 							provides: [
-								'back_knot',
+								'hogtie_anchor_point',
 								'uncuffed_hands',
 							],
 						},
@@ -142,7 +148,7 @@ DefineAsset({
 						},
 						stateFlags: {
 							provides: [
-								'back_knot',
+								'hogtie_anchor_point',
 								'uncuffed_hands',
 							],
 							requires: {
@@ -177,7 +183,7 @@ DefineAsset({
 						},
 						stateFlags: {
 							provides: [
-								'back_knot',
+								'hogtie_anchor_point',
 								'uncuffed_hands',
 							],
 							requires: {
@@ -326,7 +332,7 @@ DefineAsset({
 						},
 						stateFlags: {
 							requires: {
-								back_knot: 'Legs cannot be hogtied without a knot on back from tied arms',
+								hogtie_anchor_point: 'Legs cannot be hogtied without a knot on back or wrist tied back',
 							},
 						},
 					},

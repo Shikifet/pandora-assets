@@ -37,6 +37,18 @@
 									"operator": "=",
 									"value": "hands_back"
 								}
+							],
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								},
+								{
+									"module": "hogtie",
+									"operator": "=",
+									"value": "hogtie_arms"
+								}
 							]
 						]
 					},
@@ -594,6 +606,11 @@
 									"module": "cinch",
 									"operator": "=",
 									"value": "no"
+								},
+								{
+									"module": "hogtie",
+									"operator": "!=",
+									"value": "hogtie_arms"
 								}
 							]
 						]
@@ -611,6 +628,11 @@
 									"module": "cinch",
 									"operator": "=",
 									"value": "yes"
+								},
+								{
+									"module": "hogtie",
+									"operator": "!=",
+									"value": "hogtie_arms"
 								}
 							]
 						]
@@ -644,6 +666,11 @@
 									"module": "wrists",
 									"operator": "!=",
 									"value": "linked"
+								},
+								{
+									"module": "hogtie",
+									"operator": "!=",
+									"value": "hogtie_arms"
 								}
 							]
 						]
@@ -777,6 +804,11 @@
 									"module": "arms",
 									"operator": "=",
 									"value": "arms_high"
+								},
+								{
+									"module": "hogtie",
+									"operator": "!=",
+									"value": "hogtie_arms"
 								}
 							]
 						]
@@ -799,6 +831,11 @@
 									"module": "arms",
 									"operator": "=",
 									"value": "arms_high"
+								},
+								{
+									"module": "hogtie",
+									"operator": "!=",
+									"value": "hogtie_arms"
 								}
 							]
 						]
@@ -821,6 +858,108 @@
 									"module": "arms",
 									"operator": "=",
 									"value": "arms_high"
+								},
+								{
+									"module": "hogtie",
+									"operator": "!=",
+									"value": "hogtie_arms"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": -5,
+			"y": -80,
+			"width": 1000,
+			"height": 1500,
+			"name": "rope_end_high_arms_hogtied",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "rope_end_short.png",
+						"condition": [
+							[
+								{
+									"module": "wrists",
+									"operator": "!=",
+									"value": "linked"
+								},
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "short"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								},
+								{
+									"module": "hogtie",
+									"operator": "=",
+									"value": "hogtie_arms"
+								}
+							]
+						]
+					},
+					{
+						"image": "rope_end_normal.png",
+						"condition": [
+							[
+								{
+									"module": "wrists",
+									"operator": "!=",
+									"value": "linked"
+								},
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "normal"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								},
+								{
+									"module": "hogtie",
+									"operator": "=",
+									"value": "hogtie_arms"
+								}
+							]
+						]
+					},
+					{
+						"image": "rope_end_long.png",
+						"condition": [
+							[
+								{
+									"module": "wrists",
+									"operator": "!=",
+									"value": "linked"
+								},
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "long"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								},
+								{
+									"module": "hogtie",
+									"operator": "=",
+									"value": "hogtie_arms"
 								}
 							]
 						]
@@ -1539,6 +1678,50 @@
 			"image": {
 				"image": "",
 				"overrides": [
+					{
+						"image": "hogtie_wrists_high.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								},
+								{
+									"module": "hogtie",
+									"operator": "=",
+									"value": "hogtie_arms"
+								},
+								{
+									"module": "cinch",
+									"operator": "=",
+									"value": "no"
+								}
+							]
+						]
+					},
+					{
+						"image": "hogtie_wrists_high_cinched.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								},
+								{
+									"module": "hogtie",
+									"operator": "=",
+									"value": "hogtie_arms"
+								},
+								{
+									"module": "cinch",
+									"operator": "=",
+									"value": "yes"
+								}
+							]
+						]
+					},
 					{
 						"image": "hogtie_rope.png",
 						"condition": [
