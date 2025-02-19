@@ -1004,6 +1004,56 @@
 		},
 		{
 			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "crotch_link",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "crotch_link_armbinder.png",
+						"condition": [
+							[
+								{
+									"module": "wrists",
+									"operator": "=",
+									"value": "linked"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "armbinder"
+								}
+							]
+						]
+					},
+					{
+						"image": "crotch_link_box_low.png",
+						"condition": [
+							[
+								{
+									"module": "wrists",
+									"operator": "=",
+									"value": "linked"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "wrists_low"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
 			"y": 25,
 			"width": 1000,
 			"height": 1500,
@@ -1343,56 +1393,7 @@
 				]
 			}
 		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"name": "crotch_link",
-			"priority": "BELOW_ARM_LEFT",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "rope",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "crotch_link_armbinder.png",
-						"condition": [
-							[
-								{
-									"module": "wrists",
-									"operator": "=",
-									"value": "linked"
-								},
-								{
-									"module": "arms",
-									"operator": "=",
-									"value": "armbinder"
-								}
-							]
-						]
-					},
-					{
-						"image": "crotch_link_box_low.png",
-						"condition": [
-							[
-								{
-									"module": "wrists",
-									"operator": "=",
-									"value": "linked"
-								},
-								{
-									"module": "arms",
-									"operator": "=",
-									"value": "wrists_low"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
+
 		{
 			"x": 0,
 			"y": 0,
