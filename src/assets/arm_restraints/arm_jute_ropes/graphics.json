@@ -133,13 +133,6 @@
 								{
 									"module": "arms",
 									"operator": "=",
-									"value": "armbinder"
-								}
-							],
-							[
-								{
-									"module": "arms",
-									"operator": "=",
 									"value": "arms_high"
 								}
 							],
