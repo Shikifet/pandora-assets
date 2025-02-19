@@ -22,6 +22,24 @@ DefineAsset({
 			name: 'Arms',
 			variants: [
 				{
+					id: 'hands_front',
+					name: 'Hands Front',
+					properties: {
+						poseLimits: {
+							arms: {
+								position: 'front',
+								rotation: 'forward',
+							},
+							bones: {
+								arm_r: 90,
+								arm_l: 90,
+								elbow_r: 20,
+								elbow_l: 20,
+							},
+						},
+					},
+				},
+				{
 					id: 'wrists_high',
 					name: 'Box High',
 					properties: {
