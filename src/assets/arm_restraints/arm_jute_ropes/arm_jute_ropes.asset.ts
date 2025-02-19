@@ -214,6 +214,7 @@ DefineAsset({
 						stateFlags: {
 							provides: [
 								'uncuffed_hands',
+								'hogtie_anchor_point',
 							],
 						},
 					},

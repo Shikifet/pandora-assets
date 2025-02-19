@@ -1982,6 +1982,11 @@
 									"module": "hogtie",
 									"operator": "=",
 									"value": "hogtie_arms"
+								},
+								{
+									"module": "arms",
+									"operator": "!=",
+									"value": "armbinder"
 								}
 							]
 						]
@@ -2016,6 +2021,18 @@
 									"operator": "=",
 									"value": "hogtie_arms"
 								}
+							],
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "armbinder"
+								},
+								{
+									"module": "hogtie",
+									"operator": "=",
+									"value": "hogtie_arms"
+								}
 							]
 						]
 					},
@@ -2037,6 +2054,11 @@
 									"module": "arms",
 									"operator": "!=",
 									"value": "hands_back"
+								},
+								{
+									"module": "arms",
+									"operator": "!=",
+									"value": "armbinder"
 								}
 							]
 						]
