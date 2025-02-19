@@ -394,6 +394,11 @@
 									"value": "hands_back"
 								},
 								{
+									"module": "arms",
+									"operator": "!=",
+									"value": "arms_high"
+								},
+								{
 									"module": "cinch",
 									"operator": "=",
 									"value": "yes"
@@ -577,13 +582,35 @@
 						]
 					},
 					{
-						"image": "arms_high.png",
+						"image": "hands_cuffed_high.png",
 						"condition": [
 							[
 								{
 									"module": "arms",
 									"operator": "=",
 									"value": "arms_high"
+								},
+								{
+									"module": "cinch",
+									"operator": "=",
+									"value": "no"
+								}
+							]
+						]
+					},
+					{
+						"image": "hands_cuffed_cinch_high.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "arms_high"
+								},
+								{
+									"module": "cinch",
+									"operator": "=",
+									"value": "yes"
 								}
 							]
 						]
@@ -1466,6 +1493,11 @@
 									"view": "front"
 								},
 								{
+									"module": "arms",
+									"operator": "=",
+									"value": "hands_front"
+								},
+								{
 									"module": "cinch",
 									"operator": "=",
 									"value": "yes"
@@ -1565,6 +1597,11 @@
 							[
 								{
 									"view": "back"
+								},
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "hands_back"
 								},
 								{
 									"module": "cinch",

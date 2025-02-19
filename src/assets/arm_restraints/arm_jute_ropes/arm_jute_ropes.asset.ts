@@ -51,8 +51,8 @@ DefineAsset({
 							bones: {
 								arm_r: -90,
 								arm_l: -90,
-								elbow_r: -145,
-								elbow_l: -145,
+								elbow_r: -150,
+								elbow_l: -150,
 							},
 							armsOrder: {
 								upper: 'right',
@@ -62,9 +62,6 @@ DefineAsset({
 							provides: [
 								'uncuffed_hands',
 							],
-							requires: {
-								uncinched: 'Wrists Behind Neck pose cannot be used together with cinched rope',
-							},
 						},
 					},
 				},
