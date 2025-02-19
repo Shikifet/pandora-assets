@@ -1,7 +1,7 @@
 DefineAsset({
 	name: 'Chopsticks Gag',
 	size: 'small',
-	requireFreeHandsToUseDefault: true,
+	requireFreeHandsToUseDefault: false,
 	graphics: 'graphics.json',
 	colorization: {
 		chopsticks: {
