@@ -343,9 +343,6 @@
 						"condition": [
 							[
 								{
-									"view": "front"
-								},
-								{
 									"module": "hogtie",
 									"operator": "=",
 									"value": "hogtie_back"
