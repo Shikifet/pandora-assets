@@ -69,6 +69,7 @@ DefineAsset({
 				{
 					id: 'hands_back',
 					name: 'Wrists Back',
+					default: true,
 					properties: {
 						poseLimits: {
 							arms: {
@@ -124,7 +125,6 @@ DefineAsset({
 				{
 					id: 'wrists_normal',
 					name: 'Box Normal',
-					default: true,
 					properties: {
 						attributes: {
 							provides: [
@@ -265,7 +265,6 @@ DefineAsset({
 				{
 					id: 'short',
 					name: 'Short',
-					default: true,
 				},
 				{
 					id: 'normal',
@@ -274,6 +273,7 @@ DefineAsset({
 				{
 					id: 'long',
 					name: 'Long',
+					default: true,
 				},
 			],
 		},
