@@ -1836,7 +1836,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "hands_cuffed.png",
+						"image": "hands_cuffed_back.png",
 						"condition": [
 							[
 								{
@@ -1856,7 +1856,7 @@
 						]
 					},
 					{
-						"image": "hands_cuffed_cinch.png",
+						"image": "hands_cuffed_back_cinch.png",
 						"condition": [
 							[
 								{

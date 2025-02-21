@@ -78,8 +78,8 @@ DefineAsset({
 							bones: {
 								arm_r: 90,
 								arm_l: 90,
-								elbow_r: 20,
-								elbow_l: 20,
+								elbow_r: 35,
+								elbow_l: 35,
 							},
 						},
 						stateFlags: {
