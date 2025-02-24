@@ -1,7 +1,7 @@
 import { CreateHairColor } from '../../../helpers/hair_base.js';
 const { colorization, modules } = CreateHairColor(true);
 
-DefineBodypart({
+const bodypart = DefineBodypart({
 	name: 'Back hair 5',
 	bodypart: 'backhair',
 	allowRandomizerUsage: true,
@@ -29,6 +29,23 @@ DefineBodypart({
 				editedBy: 'Sandrine',
 				license: 'Pandora-Use-Only-v1-or-later',
 			},
+		],
+	},
+});
+
+DefineAsset({
+	...bodypart, // Reuse most of bodypart definition
+	id: 'body/back_hair5/wig',
+	name: 'Back wig 5',
+	size: 'small',
+	attributes: {
+		provides: [
+			'Wig',
+			'Wig_back',
+		],
+		hides: [
+			'Hair_back',
+			'Hair_extension',
 		],
 	},
 });
