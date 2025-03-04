@@ -36,6 +36,86 @@
 			"priority": "FRONT_HAIR",
 			"points": "static",
 			"mirror": 0,
+			"colorizationKey": "hair",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "front_hair12_back_left.png",
+						"condition": [
+							[
+								{
+									"view": "back"
+								},
+								{
+									"module": "crown",
+									"operator": "=",
+									"value": "left"
+								}
+							]
+						]
+					},
+					{
+						"image": "front_hair12_back_right.png",
+						"condition": [
+							[
+								{
+									"view": "back"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"priority": "BELOW_BODY",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "hair",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "front_hair12_back_left.png",
+						"condition": [
+							[
+								{
+									"view": "front"
+								},
+								{
+									"module": "crown",
+									"operator": "=",
+									"value": "left"
+								}
+							]
+						]
+					},
+					{
+						"image": "front_hair12_back_right.png",
+						"condition": [
+							[
+								{
+									"view": "front"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"priority": "FRONT_HAIR",
+			"points": "static",
+			"mirror": 0,
 			"colorizationKey": "hairShine",
 			"image": {
 				"image": "",
