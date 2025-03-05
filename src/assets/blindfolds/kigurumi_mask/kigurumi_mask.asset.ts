@@ -24,7 +24,8 @@ DefineAsset({
 		},
 		eyeBackground: {
 			name: 'Eye Background',
-			default: '#FFFFFF',
+			default: '#FFFFFFD9',
+			minAlpha: 0.85,
 		},
 		shine: {
 			name: 'Eye Shine',
