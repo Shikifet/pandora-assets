@@ -10,6 +10,10 @@ DefineAsset({
 			//default: '#F1CCB3',
 			default: '#FFE3D2',
 		},
+		latches: {
+			name: 'Latches',
+			default: '#D5D5D5',
+		},
 		eyebrows: {
 			name: 'Eyebrows',
 			default: '#555555',
@@ -68,6 +72,21 @@ DefineAsset({
 				{
 					id: 'closed',
 					name: 'Closed',
+				},
+			],
+		},
+		latches: {
+			type: 'typed',
+			name: 'Latches',
+			variants: [
+				{
+					id: 'yes',
+					name: 'Yes',
+					default: true,
+				},
+				{
+					id: 'no',
+					name: 'No',
 				},
 			],
 		},
