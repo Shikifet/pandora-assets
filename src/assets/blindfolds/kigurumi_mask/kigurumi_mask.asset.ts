@@ -72,6 +72,13 @@ DefineAsset({
 				{
 					id: 'closed',
 					name: 'Closed',
+					properties: {
+						attributes: {
+							provides: [
+								'Mouth_cover',
+							],
+						},
+					},
 				},
 			],
 		},
@@ -89,6 +96,16 @@ DefineAsset({
 					name: 'No',
 				},
 			],
+		},
+		lock: {
+			type: 'lockSlot',
+			name: 'Lock',
+			lockedProperties: {
+				blockAddRemove: true,
+				blockModules: [
+					'mask',
+				],
+			},
 		},
 	},
 
