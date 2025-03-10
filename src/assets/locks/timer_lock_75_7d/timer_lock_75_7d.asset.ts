@@ -1,9 +1,9 @@
 DefineLockAsset({
-	name: 'Timer Lock',
-	assetPreferenceDefault: 'maybe',
+	name: 'Timer Lock (7d)',
+	assetPreferenceDefault: 'prevent',
 	lockSetup: {
 		timer: {
-			maxDuration: 24 * 60 * 60 * 1000,
+			maxDuration: 7 * 24 * 60 * 60 * 1000,
 		},
 	},
 	chat: {
@@ -12,10 +12,10 @@ DefineLockAsset({
 		actionUnlock: 'SOURCE_CHARACTER unlocked ITEM_ASSET_NAME on ITEM_CONTAINER_SIMPLE_DYNAMIC.',
 	},
 	ownership: {
-		responsibleContributor: 'Livie53 <itsalive53.cr1mson@gmail.com>',
-		credits: ['Livie53'],
-		modificationPolicy: 'Free to change',
-		reusePolicy: 'Free to use',
+		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+		credits: ['ClaudiaMia'],
+		modificationPolicy: `Fixes and New uses, otherwise ask`,
+		reusePolicy: 'Ask first',
 		licensing: [],
 	},
 });
