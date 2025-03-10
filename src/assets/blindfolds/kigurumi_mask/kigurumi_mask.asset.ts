@@ -51,12 +51,21 @@ DefineAsset({
 	// size:200, y:197, centered
 	preview: null,
 	attributes: {
+		provides: [
+			'Restraint',
+			'Headgear',
+			'Headgear_hood',
+			'Ear_item',
+			'Ear_cover',
+		],
 		hides: [
 			'Hair',
 			'Wig',
 			'Ears',
 			'Fantasy_ears',
-			//'Mouth'
+		],
+		covers: [
+			'Ear_item',
 		],
 	},
 	modules: {
@@ -78,6 +87,11 @@ DefineAsset({
 								'Mouth_cover',
 							],
 						},
+						stateFlags: {
+							provides: [
+								'mask_on'
+							],
+						},
 					},
 				},
 			],
@@ -87,13 +101,115 @@ DefineAsset({
 			name: 'Latches',
 			variants: [
 				{
+					id: 'no',
+					name: 'No',
+				},
+				{
 					id: 'yes',
 					name: 'Yes',
 					default: true,
 				},
+			],
+		},
+		lenses: {
+			type: 'typed',
+			name: 'Lenses',
+			variants: [
+				{
+					id: 'transparent',
+					name: 'Transparent',
+					default: true,
+					properties: {
+						attributes: {
+							provides: [
+								'Restraint_eyes',
+							],
+						},
+					},
+				},
+				{
+					id: 'translucent',
+					name: 'Translucent',
+					properties: {
+						effects: {
+							blind: 7,
+						},
+						attributes: {
+							provides: [
+								'Restraint_eyes',
+							],
+						},
+						stateFlags: {
+							requires: {
+								mask_on: 'Lenses cannot be used without mask.'
+							},
+						},
+					},
+				},
+				{
+					id: 'opaque',
+					name: 'Opaque',
+					properties: {
+						effects: {
+							blind: 10,
+						},
+						attributes: {
+							provides: [
+								'Restraint_eyes',
+							],
+						},
+						stateFlags: {
+							requires: {
+								mask_on: 'Lenses cannot be used without mask.'
+							},
+						},
+					},
+				},
+			],
+		},
+		gag: {
+			type: 'typed',
+			name: 'Gag',
+			variants: [
 				{
 					id: 'no',
 					name: 'No',
+					default: true,
+				},
+				{
+					id: 'dildo',
+					name: 'Dildo',
+					properties: {
+						attributes: {
+							requires: [
+								'Mouth_open_wide',
+								'!Mouth_tongue_out',
+								'!Mouth_protruding',
+								'!Mouth_cover',
+							],
+							provides: [
+								'Restraint',
+								'Restraint_mouth',
+								'Mouth_item',
+								'Mouth_insert',
+								'Mouth_insert_deep',
+							],
+						},
+						stateFlags: {
+							requires: {
+								mask_on: 'Gag cannot be used without mask'
+							},
+						},
+						effects: {
+							lipsTouch: 9,
+							jawMove: 9,
+							tongueRoof: 7,
+							mouthBreath: 6,
+							throatBreath: 4,
+							coherency: 7,
+							stimulus: 6,
+						},
+					},
 				},
 			],
 		},
