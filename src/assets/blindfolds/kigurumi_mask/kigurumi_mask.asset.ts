@@ -111,6 +111,21 @@ DefineAsset({
 				},
 			],
 		},
+		holes: {
+			type: 'typed',
+			name: 'Helmet Holes',
+			variants: [
+				{
+					id: 'no',
+					name: 'No',
+				},
+				{
+					id: 'yes',
+					name: 'Yes',
+					default: true,
+				},
+			],
+		},
 		lenses: {
 			type: 'typed',
 			name: 'Lenses',
@@ -220,11 +235,12 @@ DefineAsset({
 				blockAddRemove: true,
 				blockModules: [
 					'mask',
+					'lenses',
+					'gag',
 				],
 			},
 		},
 	},
-
 	chat: {
 		actionAdd: 'SOURCE_CHARACTER put ITEM_ASSET_NAME over TARGET_CHARACTER_DYNAMIC_POSSESSIVE face.',
 		actionRemove: 'SOURCE_CHARACTER removed ITEM_ASSET_NAME from TARGET_CHARACTER_DYNAMIC_POSSESSIVE face.',
