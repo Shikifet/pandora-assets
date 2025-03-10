@@ -371,6 +371,39 @@
 			"y": 3,
 			"width": 1000,
 			"height": 1500,
+			"name": "lips_background",
+			"priority": "ABOVE_BODY",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "lips_bg_grin.png",
+						"condition": [
+							[
+								{
+									"module": "mask",
+									"operator": "=",
+									"value": "closed"
+								},
+								{
+									"module": "mouth",
+									"operator": "=",
+									"value": "grin"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 3,
+			"width": 1000,
+			"height": 1500,
 			"name": "lips",
 			"priority": "ABOVE_BODY",
 			"points": "static",
@@ -387,6 +420,28 @@
 									"module": "mask",
 									"operator": "=",
 									"value": "closed"
+								},
+								{
+									"module": "mouth",
+									"operator": "=",
+									"value": "smile"
+								}
+							]
+						]
+					},
+					{
+						"image": "lips_base_grin.png",
+						"condition": [
+							[
+								{
+									"module": "mask",
+									"operator": "=",
+									"value": "closed"
+								},
+								{
+									"module": "mouth",
+									"operator": "=",
+									"value": "grin"
 								}
 							]
 						]

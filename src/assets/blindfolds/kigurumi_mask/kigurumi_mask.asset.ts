@@ -182,6 +182,22 @@ DefineAsset({
 				},
 			],
 		},
+		mouth: {
+			type: 'typed',
+			name: 'Mouth',
+			variants: [
+				{
+					id: 'smile',
+					name: 'Smile',
+					default: true,
+				},
+				{
+					id: 'grin',
+					name: 'Grin',
+					default: true,
+				},
+			],
+		},
 		gag: {
 			type: 'typed',
 			name: 'Gag',
