@@ -10,7 +10,6 @@
 			"priority": "ABOVE_BODY",
 			"points": "static",
 			"mirror": 0,
-			"colorizationKey": "",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -522,7 +521,6 @@
 			"priority": "ABOVE_BODY",
 			"points": "static",
 			"mirror": 0,
-			"colorizationKey": "",
 			"image": {
 				"image": "",
 				"overrides": [

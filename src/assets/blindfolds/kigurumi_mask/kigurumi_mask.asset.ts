@@ -6,8 +6,6 @@ DefineAsset({
 	colorization: {
 		mask: {
 			name: 'Mask',
-			//default: '#ECC7BA',
-			//default: '#F1CCB3',
 			default: '#FFE3D2',
 		},
 		mask_straps: {
@@ -57,15 +55,14 @@ DefineAsset({
 		},
 
 	},
-	// size:200, y:197, centered
-	preview: null,
+	// size:200, y:189, centered
+	preview: 'preview.png',
 	attributes: {
 		provides: [
 			'Restraint',
 			'Headgear',
 			'Headgear_hood',
 		],
-
 	},
 	modules: {
 		back: {
@@ -98,7 +95,7 @@ DefineAsset({
 						},
 						stateFlags: {
 							provides: [
-								'helmet'
+								'helmet',
 							],
 						},
 					},
@@ -124,7 +121,7 @@ DefineAsset({
 						},
 						stateFlags: {
 							provides: [
-								'helmet'
+								'helmet',
 							],
 						},
 					},
@@ -151,7 +148,7 @@ DefineAsset({
 						},
 						stateFlags: {
 							provides: [
-								'mask_on'
+								'mask_on',
 							],
 						},
 					},
@@ -173,10 +170,10 @@ DefineAsset({
 					properties: {
 						stateFlags: {
 							requires: {
-								helmet: 'Latches cannot be applied without helmet'
-							}
-						}
-					}
+								helmet: 'Latches cannot be applied without helmet',
+							},
+						},
+					},
 				},
 			],
 		},
@@ -210,7 +207,7 @@ DefineAsset({
 						},
 						stateFlags: {
 							requires: {
-								mask_on: 'Lenses cannot be used without mask.'
+								mask_on: 'Lenses cannot be used without mask.',
 							},
 						},
 					},
@@ -229,7 +226,7 @@ DefineAsset({
 						},
 						stateFlags: {
 							requires: {
-								mask_on: 'Lenses cannot be used without mask.'
+								mask_on: 'Lenses cannot be used without mask.',
 							},
 						},
 					},
@@ -279,7 +276,6 @@ DefineAsset({
 				{
 					id: 'grin',
 					name: 'Grin',
-					default: true,
 				},
 			],
 		},
@@ -313,7 +309,7 @@ DefineAsset({
 						},
 						stateFlags: {
 							requires: {
-								mask_on: 'Gag cannot be used without mask'
+								mask_on: 'Gag cannot be used without mask',
 							},
 						},
 						effects: {
