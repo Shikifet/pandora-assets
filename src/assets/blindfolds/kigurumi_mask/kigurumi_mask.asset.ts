@@ -41,6 +41,10 @@ DefineAsset({
 			default: '#FFCEBECC',
 			minAlpha: 0.1,
 		},
+		blush: {
+			name: 'Blush',
+			default: '#FFFFFF',
+		},
 		lips: {
 			name: 'Lips',
 			default: '#FCB6B4',
@@ -182,6 +186,37 @@ DefineAsset({
 				},
 			],
 		},
+		blush: {
+			type: 'typed',
+			name: 'Blush',
+			variants: [
+				{
+					id: 'noBlush',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'faint',
+					name: 'Faint',
+				},
+				{
+					id: 'medium',
+					name: 'Medium',
+				},
+				{
+					id: 'strong',
+					name: 'Strong',
+				},
+				{
+					id: 'full',
+					name: 'Full',
+				},
+				{
+					id: 'deep',
+					name: 'Deeply',
+				},
+			],
+		},
 		mouth: {
 			type: 'typed',
 			name: 'Mouth',
@@ -263,7 +298,7 @@ DefineAsset({
 	},
 	ownership: {
 		responsibleContributor: 'Shikifet <shikifet@gmail.com>',
-		credits: ['Shikifet'],
+		credits: ['Shikifet', 'ClaudiaMia', 'Echo'],
 		modificationPolicy: `Fixes and New uses, otherwise ask`,
 		reusePolicy: 'Ask first',
 		licensing: [
