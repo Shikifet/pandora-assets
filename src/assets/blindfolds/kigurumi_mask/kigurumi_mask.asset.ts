@@ -10,6 +10,10 @@ DefineAsset({
 			//default: '#F1CCB3',
 			default: '#FFE3D2',
 		},
+		mask_straps: {
+			name: 'Mask Straps',
+			default: '#4C4C4C',
+		},
 		latches: {
 			name: 'Latches',
 			default: '#D5D5D5',
@@ -21,6 +25,7 @@ DefineAsset({
 		eyeColor: {
 			name: 'Eye Color',
 			default: '#2D589B',
+			minAlpha: 0.8,
 		},
 		lashes: {
 			name: 'Eyelashes',
@@ -29,7 +34,7 @@ DefineAsset({
 		eyeBackground: {
 			name: 'Eye Background',
 			default: '#FFFFFFD9',
-			minAlpha: 0.85,
+			minAlpha: 0.6,
 		},
 		shine: {
 			name: 'Eye Shine',
@@ -59,32 +64,85 @@ DefineAsset({
 			'Restraint',
 			'Headgear',
 			'Headgear_hood',
-			'Ear_item',
-			'Ear_cover',
 		],
-		hides: [
-			'Hair',
-			'Wig',
-			'Ears',
-			'Fantasy_ears',
-		],
-		covers: [
-			'Ear_item',
-		],
+
 	},
 	modules: {
+		back: {
+			type: 'typed',
+			name: 'Back',
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'helmet',
+					name: 'Helmet',
+					properties: {
+						attributes: {
+							provides: [
+								'Ear_item',
+								'Ear_cover',
+							],
+							hides: [
+								'Hair',
+								'Wig',
+								'Ears',
+								'Fantasy_ears',
+							],
+							covers: [
+								'Ear_item',
+							],
+						},
+						stateFlags: {
+							provides: [
+								'helmet'
+							],
+						},
+					},
+				},
+				{
+					id: 'helmet_holes',
+					name: 'Helmet with Holes',
+					properties: {
+						attributes: {
+							provides: [
+								'Ear_item',
+								'Ear_cover',
+							],
+							hides: [
+								'Hair',
+								'Wig',
+								'Ears',
+								'Fantasy_ears',
+							],
+							covers: [
+								'Ear_item',
+							],
+						},
+						stateFlags: {
+							provides: [
+								'helmet'
+							],
+						},
+					},
+				},
+			],
+		},
 		mask: {
 			type: 'typed',
 			name: 'Mask',
 			variants: [
 				{
 					id: 'open',
-					name: 'Open',
-					default: true,
+					name: 'Off',
 				},
 				{
 					id: 'closed',
-					name: 'Closed',
+					name: 'On',
+					default: true,
 					properties: {
 						attributes: {
 							provides: [
@@ -107,26 +165,18 @@ DefineAsset({
 				{
 					id: 'no',
 					name: 'No',
+					default: true,
 				},
 				{
 					id: 'yes',
 					name: 'Yes',
-					default: true,
-				},
-			],
-		},
-		holes: {
-			type: 'typed',
-			name: 'Helmet Holes',
-			variants: [
-				{
-					id: 'no',
-					name: 'No',
-				},
-				{
-					id: 'yes',
-					name: 'Yes',
-					default: true,
+					properties: {
+						stateFlags: {
+							requires: {
+								helmet: 'Latches cannot be applied without helmet'
+							}
+						}
+					}
 				},
 			],
 		},
@@ -285,9 +335,13 @@ DefineAsset({
 			lockedProperties: {
 				blockAddRemove: true,
 				blockModules: [
+					'back',
 					'mask',
+					'latches',
 					'lenses',
 					'gag',
+					'blush',
+					'mouth',
 				],
 			},
 		},

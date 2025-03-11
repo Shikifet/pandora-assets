@@ -48,6 +48,23 @@
 				"image": "",
 				"overrides": [
 					{
+						"image": "mask_plate_front.png",
+						"condition": [
+							[
+								{
+									"module": "mask",
+									"operator": "=",
+									"value": "closed"
+								},
+								{
+									"module": "back",
+									"operator": "=",
+									"value": "none"
+								}
+							]
+						]
+					},
+					{
 						"image": "mask_front.png",
 						"condition": [
 							[
@@ -73,8 +90,20 @@
 			"mirror": 0,
 			"colorizationKey": "mask",
 			"image": {
-				"image": "mask_front_top.png",
+				"image": "",
 				"overrides": [
+					{
+						"image": "mask_front_top.png",
+						"condition": [
+							[
+								{
+									"module": "back",
+									"operator": "!=",
+									"value": "none"
+								}
+							]
+						]
+					}
 				]
 			}
 		},
@@ -96,9 +125,9 @@
 						"condition": [
 							[
 								{
-									"module": "holes",
+									"module": "back",
 									"operator": "=",
-									"value": "yes"
+									"value": "helmet_holes"
 								}
 							]
 						]
@@ -123,6 +152,11 @@
 						"image": "latches_open.png",
 						"condition": [
 							[
+								{
+									"module": "back",
+									"operator": "!=",
+									"value": "none"
+								},
 								{
 									"module": "latches",
 									"operator": "=",
@@ -157,6 +191,72 @@
 			}
 		},
 		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"name": "mask_plate_belts",
+			"priority": "BELOW_BODY",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "mask_straps",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "mask_plate_straps.png",
+						"condition": [
+							[
+								{
+									"module": "back",
+									"operator": "=",
+									"value": "none"
+								},
+								{
+									"module": "mask",
+									"operator": "=",
+									"value": "closed"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 5,
+			"y": 0,
+			"width": 990,
+			"height": 1500,
+			"name": "mask_plate_latches",
+			"priority": "BELOW_BODY",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "latches",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "mask_plate_buckles.png",
+						"condition": [
+							[
+								{
+									"module": "back",
+									"operator": "=",
+									"value": "none"
+								},
+								{
+									"module": "mask",
+									"operator": "=",
+									"value": "closed"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
 			"x": 5,
 			"y": 2,
 			"width": 990,
@@ -167,8 +267,21 @@
 			"mirror": 0,
 			"colorizationKey": "mask",
 			"image": {
-				"image": "mask_back.png",
-				"overrides": []
+				"image": "",
+				"overrides": [
+					{
+						"image": "mask_back.png",
+						"condition": [
+							[
+								{
+									"module": "back",
+									"operator": "!=",
+									"value": "none"
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		{
@@ -189,9 +302,9 @@
 						"condition": [
 							[
 								{
-									"module": "holes",
+									"module": "back",
 									"operator": "=",
-									"value": "yes"
+									"value": "helmet_holes"
 								}
 							]
 						]
@@ -218,6 +331,11 @@
 							[
 								{
 									"view": "front"
+								},
+								{
+									"module": "back",
+									"operator": "!=",
+									"value": "none"
 								}
 							]
 						]
@@ -495,6 +613,11 @@
 						"condition": [
 							[
 								{
+									"module": "mask",
+									"operator": "=",
+									"value": "closed"
+								},
+								{
 									"module": "blush",
 									"operator": "=",
 									"value": "faint"
@@ -506,6 +629,11 @@
 						"image": "blush_medium.png",
 						"condition": [
 							[
+								{
+									"module": "mask",
+									"operator": "=",
+									"value": "closed"
+								},
 								{
 									"module": "blush",
 									"operator": "=",
@@ -519,6 +647,11 @@
 						"condition": [
 							[
 								{
+									"module": "mask",
+									"operator": "=",
+									"value": "closed"
+								},
+								{
 									"module": "blush",
 									"operator": "=",
 									"value": "strong"
@@ -531,6 +664,11 @@
 						"condition": [
 							[
 								{
+									"module": "mask",
+									"operator": "=",
+									"value": "closed"
+								},
+								{
 									"module": "blush",
 									"operator": "=",
 									"value": "full"
@@ -542,6 +680,11 @@
 						"image": "blush_deep.png",
 						"condition": [
 							[
+								{
+									"module": "mask",
+									"operator": "=",
+									"value": "closed"
+								},
 								{
 									"module": "blush",
 									"operator": "=",
