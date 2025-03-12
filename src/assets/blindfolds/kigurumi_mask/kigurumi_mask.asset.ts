@@ -198,7 +198,8 @@ DefineAsset({
 					name: 'Translucent',
 					properties: {
 						effects: {
-							blind: 7,
+							blind: 3,
+							blurVision: 5,
 						},
 						attributes: {
 							provides: [
