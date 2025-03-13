@@ -8,6 +8,10 @@ DefineAsset({
 			name: 'Mask',
 			default: '#FFE3D2',
 		},
+		mask_helmet: {
+			name: 'Mask Helmet',
+			default: '#FFE3D2',
+		},
 		mask_straps: {
 			name: 'Mask Straps',
 			default: '#4C4C4C',
