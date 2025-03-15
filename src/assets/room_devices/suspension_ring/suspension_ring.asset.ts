@@ -202,6 +202,11 @@ DefineRoomDeviceAsset({
 		},
 		{
 			type: 'sprite',
+			image: 'rope_ring_top_end.png',
+			colorizationKey: 'rope',
+		},
+		{
+			type: 'sprite',
 			image: '',
 			colorizationKey: 'ring',
 			imageOverrides: [
