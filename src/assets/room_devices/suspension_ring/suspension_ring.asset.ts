@@ -164,6 +164,60 @@ DefineRoomDeviceAsset({
 					},
 				},
 				{
+					id: 'thigh_front_right',
+					name: 'Front-facing Right Thigh Tied',
+					properties: {
+						slotProperties: {
+							under_ring: {
+								attributes: {
+									requires: [
+										'Back_knot_anchor_point',
+									],
+								},
+								poseLimits: {
+									bones: {
+										character_rotation: 37,
+										leg_r: -83,
+									},
+								},
+								stateFlags: {
+									requires: {
+										suspension_chest: 'Thigh cannot be tied without chest line suspended',
+										front_view: 'Tying Right Thigh from this side require Front-facing vide',
+									},
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'thigh_back_left',
+					name: 'Back-facing Left Thigh Tied',
+					properties: {
+						slotProperties: {
+							under_ring: {
+								attributes: {
+									requires: [
+										'Back_knot_anchor_point',
+									],
+								},
+								poseLimits: {
+									bones: {
+										character_rotation: 37,
+										leg_l: -83,
+									},
+								},
+								stateFlags: {
+									requires: {
+										suspension_chest: 'Thigh cannot be tied without chest line suspended',
+										back_view: 'Tying Left Thigh from this side require Front-facing vide',
+									},
+								},
+							},
+						},
+					},
+				},
+				{
 					id: 'thigh_back_right',
 					name: 'Back-facing Right Thigh Tied',
 					properties: {
@@ -310,6 +364,28 @@ DefineRoomDeviceAsset({
 						],
 					],
 				},
+				{
+					image: 'thigh_line_right_back.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_right',
+							},
+						],
+					],
+				},
 			],
 		},
 
@@ -347,7 +423,46 @@ DefineRoomDeviceAsset({
 						],
 					],
 				},
-
+				{
+					position: {
+						offsetX: -365,
+						offsetY: -185,
+						disablePoseOffset: true,
+						pivotOffset: {
+							x: 0,
+							y: 0,
+						},
+					},
+					condition: [
+						[
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_right',
+							},
+						],
+					],
+				},
+				{
+					position: {
+						offsetX: -365,
+						offsetY: -185,
+						disablePoseOffset: true,
+						pivotOffset: {
+							x: 0,
+							y: 0,
+						},
+					},
+					condition: [
+						[
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_left',
+							},
+						],
+					],
+				},
 				{
 					position: {
 						offsetX: 350,
@@ -368,7 +483,6 @@ DefineRoomDeviceAsset({
 						],
 					],
 				},
-
 				{
 					position: {
 						offsetX: 0,
@@ -469,7 +583,6 @@ DefineRoomDeviceAsset({
 						],
 					],
 				},
-
 				{
 					image: 'thigh_line_left_back.png',
 					condition: [
@@ -492,6 +605,29 @@ DefineRoomDeviceAsset({
 						],
 					],
 				},
+				{
+					image: 'thigh_line_right_back.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_left',
+							},
+						],
+					],
+				},
+
 			],
 		},
 		{
@@ -529,6 +665,40 @@ DefineRoomDeviceAsset({
 								module: 'thigh_line',
 								operator: '=',
 								value: 'thigh_back_right',
+							},
+						],
+					],
+				},
+				{
+					image: 'thigh_line_right_thigh.png',
+					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_right',
+							},
+						],
+					],
+				},
+				{
+					image: 'thigh_line_right_thigh.png',
+					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_left',
 							},
 						],
 					],
