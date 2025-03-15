@@ -68,6 +68,23 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+		ring_design: {
+			type: 'typed',
+			name: 'Ring Design',
+			staticConfig: { slotName: 'under_ring' },
+			variants: [
+				{
+					id: 'single',
+					name: 'Single',
+					default: true,
+				},
+				{
+					id: 'triskell',
+					name: 'Triskell',
+				},
+			],
+		},
+
 		chest_line: {
 			type: 'typed',
 			name: 'Chest Line',
@@ -312,6 +329,30 @@ DefineRoomDeviceAsset({
 			type: 'sprite',
 			image: 'rope_ring_top_end.png',
 			colorizationKey: 'rope',
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'ring',
+			imageOverrides: [
+				{
+					image: 'ring_design_triskell.png',
+					condition: [
+						[
+							{
+								module: 'ring_design',
+								operator: '=',
+								value: 'triskell',
+							},
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
@@ -634,6 +675,30 @@ DefineRoomDeviceAsset({
 								module: 'chest_line',
 								operator: '=',
 								value: 'suspended',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'ring',
+			imageOverrides: [
+				{
+					image: 'ring_design_triskell.png',
+					condition: [
+						[
+							{
+								module: 'ring_design',
+								operator: '=',
+								value: 'triskell',
+							},
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
 							},
 						],
 					],
