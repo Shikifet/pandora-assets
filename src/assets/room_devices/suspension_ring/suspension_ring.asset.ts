@@ -84,7 +84,7 @@ DefineRoomDeviceAsset({
 					properties: {
 						blockSlotsEnterLeave: ['under_ring'],
 						slotProperties: {
-							under_bamboo: {
+							under_ring: {
 								attributes: {
 									requires: [
 										'Back_knot_anchor_point',
@@ -108,7 +108,7 @@ DefineRoomDeviceAsset({
 					properties: {
 						blockSlotsEnterLeave: ['under_ring'],
 						slotProperties: {
-							under_bamboo: {
+							under_ring: {
 								attributes: {
 									requires: [
 										'Back_knot_anchor_point',
@@ -178,6 +178,23 @@ DefineRoomDeviceAsset({
 			image: '',
 			colorizationKey: 'rope',
 			imageOverrides: [
+				{
+					image: 'chest_line_kneeling.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'kneeling',
+							},
+						],
+					],
+				},
 				{
 					image: 'chest_line_center.png',
 					condition: [
@@ -273,6 +290,23 @@ DefineRoomDeviceAsset({
 			colorizationKey: 'rope',
 			imageOverrides: [
 				{
+					image: 'chest_line_kneeling.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'kneeling',
+							},
+						],
+					],
+				},
+				{
 					image: 'chest_line_center.png',
 					condition: [
 						[
@@ -289,6 +323,14 @@ DefineRoomDeviceAsset({
 						],
 					],
 				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+
 			],
 		},
 	],
