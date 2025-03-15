@@ -176,7 +176,7 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without chest line suspended',
-										front_view: 'Tying Left Thigh from this side require Front-facing vide',
+										front_view: 'Tying Left Thigh from this side require Front-facing view',
 									},
 								},
 							},
@@ -203,7 +203,7 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without chest line suspended',
-										front_view: 'Tying Right Thigh from this side require Front-facing vide',
+										front_view: 'Tying Right Thigh from this side require Front-facing view',
 									},
 								},
 							},
@@ -230,7 +230,7 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without chest line suspended',
-										back_view: 'Tying Left Thigh from this side require Front-facing vide',
+										back_view: 'Tying Left Thigh from this side require Front-facing view',
 									},
 								},
 							},
@@ -257,7 +257,7 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without chest line suspended',
-										back_view: 'Tying Right Thigh from this side require Front-facing vide',
+										back_view: 'Tying Right Thigh from this side require Front-facing view',
 									},
 								},
 							},
