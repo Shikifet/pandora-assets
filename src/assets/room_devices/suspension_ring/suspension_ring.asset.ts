@@ -126,6 +126,72 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+		thigh_line: {
+			type: 'typed',
+			name: 'Suspension Thigh Line',
+			staticConfig: { slotName: 'under_ring' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'thigh_front_left',
+					name: 'Front-facing Left Thigh Tied',
+					properties: {
+						slotProperties: {
+							under_ring: {
+								attributes: {
+									requires: [
+										'Back_knot_anchor_point',
+									],
+								},
+								poseLimits: {
+									bones: {
+										character_rotation: -37,
+										leg_l: -83,
+									},
+								},
+								stateFlags: {
+									requires: {
+										suspension_chest: 'Thigh cannot be tied without chest line suspended',
+										front_view: 'Tying Left Thigh from this side require Front-facing vide',
+									},
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'thigh_back_right',
+					name: 'Back-facing Right Thigh Tied',
+					properties: {
+						slotProperties: {
+							under_ring: {
+								attributes: {
+									requires: [
+										'Back_knot_anchor_point',
+									],
+								},
+								poseLimits: {
+									bones: {
+										character_rotation: -37,
+										leg_r: -83,
+									},
+								},
+								stateFlags: {
+									requires: {
+										suspension_chest: 'Thigh cannot be tied without chest line suspended',
+										back_view: 'Tying Right Thigh from this side require Front-facing vide',
+									},
+								},
+							},
+						},
+					},
+				},
+			],
+		},
 	},
 	graphicsLayers: [
 		{
@@ -133,7 +199,6 @@ DefineRoomDeviceAsset({
 			image: 'ceiling_line.png',
 			colorizationKey: 'rope',
 			offset: { x: 483, y: -580 },
-
 		},
 		{
 			type: 'sprite',
@@ -209,6 +274,34 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'suspended',
 							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'none',
+							},
+						],
+					],
+				},
+
+				{
+					image: 'thigh_line_left_back.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_left',
+							},
 						],
 					],
 				},
@@ -227,7 +320,50 @@ DefineRoomDeviceAsset({
 					y: 0,
 				},
 			},
+
 			characterPositionOverrides: [
+				{
+					position: {
+						offsetX: 365,
+						offsetY: -185,
+						disablePoseOffset: true,
+						pivotOffset: {
+							x: 0,
+							y: 0,
+						},
+					},
+					condition: [
+						[
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_left',
+							},
+						],
+					],
+				},
+
+				{
+					position: {
+						offsetX: 350,
+						offsetY: -175,
+						disablePoseOffset: true,
+						pivotOffset: {
+							x: 0,
+							y: 0,
+						},
+					},
+					condition: [
+						[
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_right',
+							},
+						],
+					],
+				},
+
 				{
 					position: {
 						offsetX: 0,
@@ -320,6 +456,34 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'suspended',
 							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'none',
+							},
+						],
+					],
+				},
+
+				{
+					image: 'thigh_line_left_back.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_right',
+							},
 						],
 					],
 				},
@@ -330,7 +494,40 @@ DefineRoomDeviceAsset({
 			image: '',
 			colorizationKey: 'rope',
 			imageOverrides: [
-
+				{
+					image: 'thigh_line_left_thigh.png',
+					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_left',
+							},
+						],
+					],
+				},
+				{
+					image: 'thigh_line_left_thigh.png',
+					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_right',
+							},
+						],
+					],
+				},
 			],
 		},
 	],
