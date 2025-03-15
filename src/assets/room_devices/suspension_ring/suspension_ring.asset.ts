@@ -156,7 +156,7 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without chest line suspended',
-										front_view: 'Tying Left Thigh from this side require Front-facing vide',
+										front_view: 'Tying Left Thigh from this side require Front-facing view',
 									},
 								},
 							},
@@ -183,7 +183,7 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without chest line suspended',
-										front_view: 'Tying Right Thigh from this side require Front-facing vide',
+										front_view: 'Tying Right Thigh from this side require Front-facing view',
 									},
 								},
 							},
@@ -210,7 +210,7 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without chest line suspended',
-										back_view: 'Tying Left Thigh from this side require Front-facing vide',
+										back_view: 'Tying Left Thigh from this side require Front-facing view',
 									},
 								},
 							},
@@ -237,7 +237,61 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without chest line suspended',
-										back_view: 'Tying Right Thigh from this side require Front-facing vide',
+										back_view: 'Tying Right Thigh from this side require Front-facing view',
+									},
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'thighs_front',
+					name: 'Front-facing Thighs Tied',
+					properties: {
+						slotProperties: {
+							under_ring: {
+								attributes: {
+									requires: [
+										'Back_knot_anchor_point',
+										'Rope_above_knees_anchor_point',
+									],
+								},
+								poseLimits: {
+									bones: {
+										character_rotation: 37,
+									},
+								},
+								stateFlags: {
+									requires: {
+										suspension_chest: 'Thigh cannot be tied without chest line suspended',
+										front_view: 'Tying Right Thigh from this side require Front-facing view',
+									},
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'thighs_back',
+					name: 'Back-facing Thighs Tied',
+					properties: {
+						slotProperties: {
+							under_ring: {
+								attributes: {
+									requires: [
+										'Back_knot_anchor_point',
+										'Rope_above_knees_anchor_point',
+									],
+								},
+								poseLimits: {
+									bones: {
+										character_rotation: -37,
+									},
+								},
+								stateFlags: {
+									requires: {
+										suspension_chest: 'Thigh cannot be tied without chest line suspended',
+										back_view: 'Tying Right Thigh from this side require Back-facing view',
 									},
 								},
 							},
@@ -386,9 +440,54 @@ DefineRoomDeviceAsset({
 						],
 					],
 				},
+				{
+					image: 'thigh_line_right_back.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thighs_front',
+							},
+						],
+					],
+				},
 			],
 		},
-
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'knee_line_right.png',
+					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thighs_front',
+							},
+						],
+					],
+				},
+			],
+		},
 		{
 			type: 'slot',
 			slot: 'under_ring',
@@ -479,6 +578,46 @@ DefineRoomDeviceAsset({
 								module: 'thigh_line',
 								operator: '=',
 								value: 'thigh_back_right',
+							},
+						],
+					],
+				},
+				{
+					position: {
+						offsetX: -350,
+						offsetY: -175,
+						disablePoseOffset: true,
+						pivotOffset: {
+							x: 0,
+							y: 0,
+						},
+					},
+					condition: [
+						[
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thighs_front',
+							},
+						],
+					],
+				},
+				{
+					position: {
+						offsetX: 350,
+						offsetY: -175,
+						disablePoseOffset: true,
+						pivotOffset: {
+							x: 0,
+							y: 0,
+						},
+					},
+					condition: [
+						[
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thighs_back',
 							},
 						],
 					],
@@ -603,6 +742,23 @@ DefineRoomDeviceAsset({
 								value: 'thigh_back_right',
 							},
 						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thighs_back',
+							},
+						],
 					],
 				},
 				{
@@ -699,6 +855,23 @@ DefineRoomDeviceAsset({
 								module: 'thigh_line',
 								operator: '=',
 								value: 'thigh_back_left',
+							},
+						],
+					],
+				},
+				{
+					image: 'knee_line_left.png',
+					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thighs_back',
 							},
 						],
 					],
