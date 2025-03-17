@@ -17,7 +17,7 @@ DefineAsset({
 		lock: {
 			type: 'lockSlot',
 			name: 'Lock',
-			occupiedProperties: {
+			lockedProperties: {
 				blockAddRemove: true,
 			},
 		},
@@ -124,11 +124,10 @@ DefineAsset({
 					properties: {
 						poseLimits: {
 							legs: 'kneeling',
-							bones:
-								{
-									leg_l: [[-27, 5]],
-									leg_r: [[-27, 5]],
-								},
+							bones: {
+								leg_l: [[-27, 5]],
+								leg_r: [[-27, 5]],
+							},
 						},
 						attributes: {
 							provides: [
