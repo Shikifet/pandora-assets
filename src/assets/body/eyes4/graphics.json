@@ -6,6 +6,8 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"type": "mesh",
+			"name": "",
 			"priority": "BODY",
 			"points": "static",
 			"pointType": [
@@ -72,6 +74,8 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"type": "mesh",
+			"name": "",
 			"priority": "BODY",
 			"points": "static",
 			"pointType": [
@@ -210,6 +214,8 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"type": "mesh",
+			"name": "",
 			"priority": "BODY",
 			"points": "static",
 			"pointType": [
@@ -276,6 +282,8 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"type": "mesh",
+			"name": "",
 			"priority": "BODY",
 			"points": "static",
 			"pointType": [
@@ -378,6 +386,8 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"type": "mesh",
+			"name": "",
 			"priority": "BODY",
 			"points": "static",
 			"pointType": [

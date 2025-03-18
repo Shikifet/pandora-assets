@@ -1,24 +1,31 @@
 import { Immutable } from 'immer';
-import { AssetGraphicsDefinition, AssetId, AssetsGraphicsDefinitionFile, GetLogger, PointTemplate } from 'pandora-common';
+import { AssetGraphicsDefinition, AssetId, GetLogger, PointTemplate, type AssetSourceGraphicsInfo, type GraphicsDefinitionFile, type GraphicsSourceDefinitionFile } from 'pandora-common';
 import { GENERATE_AVIF } from '../constants.ts';
 import { AVIF_SUFFIX } from './resources.ts';
 
 const logger = GetLogger('GraphicsDatabase');
 
 export const GraphicsDatabase = new class GraphicsDatabase {
-	private assets: Map<AssetId, AssetGraphicsDefinition> = new Map();
+	private assets: Map<AssetId, {
+		graphics: Immutable<AssetGraphicsDefinition>;
+		graphicsSource: Immutable<AssetSourceGraphicsInfo>;
+	}> = new Map();
 	private _templates: Map<string, PointTemplate> = new Map();
 
 	public get templates(): ReadonlyMap<string, Immutable<PointTemplate>> {
 		return this._templates;
 	}
 
-	public registerAsset(id: AssetId, asset: AssetGraphicsDefinition, allowOverride: boolean = false): void {
-		if (this.assets.has(id) && !allowOverride) {
-			throw new Error(`Duplicate asset definition, asset '${id}' already exists`);
+	public registerAssetGraphics(
+		id: AssetId,
+		graphics: Immutable<AssetGraphicsDefinition>,
+		graphicsSource: Immutable<AssetSourceGraphicsInfo>,
+	): void {
+		if (this.assets.has(id)) {
+			throw new Error(`Duplicate asset definition, asset graphics '${id}' already exists`);
 		}
 
-		this.assets.set(id, asset);
+		this.assets.set(id, { graphics, graphicsSource });
 		logger.debug('Registered asset graphics', id);
 	}
 
@@ -39,16 +46,16 @@ export const GraphicsDatabase = new class GraphicsDatabase {
 		return this._templates.has(name);
 	}
 
-	public export(): AssetsGraphicsDefinitionFile {
+	public export(): Immutable<GraphicsDefinitionFile> {
 		const pointTemplates: Record<string, PointTemplate> = {};
 		for (const [name, template] of this._templates.entries()) {
 			pointTemplates[name] = template;
 		}
-		const assets: Record<AssetId, AssetGraphicsDefinition> = {};
-		for (const [id, graphics] of this.assets.entries()) {
-			assets[id] = graphics;
+		const assets: Record<AssetId, Immutable<AssetGraphicsDefinition>> = {};
+		for (const [id, data] of this.assets.entries()) {
+			assets[id] = data.graphics;
 		}
-		const imageFormats: AssetsGraphicsDefinitionFile['imageFormats'] = {};
+		const imageFormats: GraphicsDefinitionFile['imageFormats'] = {};
 		if (GENERATE_AVIF) {
 			imageFormats.avif = AVIF_SUFFIX;
 		}
@@ -56,6 +63,21 @@ export const GraphicsDatabase = new class GraphicsDatabase {
 			assets,
 			pointTemplates,
 			imageFormats,
+		};
+	}
+
+	public exportSource(): Immutable<GraphicsSourceDefinitionFile> {
+		const pointTemplates: Record<string, PointTemplate> = {};
+		for (const [name, template] of this._templates.entries()) {
+			pointTemplates[name] = template;
+		}
+		const assets: Record<AssetId, Immutable<AssetSourceGraphicsInfo>> = {};
+		for (const [id, data] of this.assets.entries()) {
+			assets[id] = data.graphicsSource;
+		}
+		return {
+			assets,
+			pointTemplates,
 		};
 	}
 

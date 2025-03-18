@@ -6,16 +6,14 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"type": "alphaImageMesh",
 			"name": "body mask",
 			"priority": "BODY",
 			"points": "body",
 			"mirror": 0,
-			"colorizationKey": "shoe",
 			"image": {
-				"image": "",
-				"overrides": [],
-				"alphaImage": "alpha_heels.png",
-				"alphaOverrides": [
+				"image": "alpha_heels.png",
+				"overrides": [
 					{
 						"image": "alpha_heels_back.png",
 						"condition": [
@@ -34,6 +32,33 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"type": "alphaImageMesh",
+			"name": "front",
+			"priority": "ABOVE_BODY",
+			"points": "body",
+			"mirror": 0,
+			"image": {
+				"image": "alpha_heels.png",
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"view": "back"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
 			"name": "front",
 			"priority": "ABOVE_BODY",
 			"points": "body",
@@ -64,19 +89,6 @@
 							]
 						]
 					}
-				],
-				"alphaImage": "alpha_heels.png",
-				"alphaOverrides": [
-					{
-						"image": "",
-						"condition": [
-							[
-								{
-									"view": "back"
-								}
-							]
-						]
-					}
 				]
 			}
 		},
@@ -85,6 +97,7 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"type": "mesh",
 			"name": "rings",
 			"priority": "ABOVE_BODY",
 			"points": "body",
@@ -113,6 +126,7 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"type": "mesh",
 			"name": "strings",
 			"priority": "ABOVE_BODY",
 			"points": "body",
@@ -141,6 +155,33 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"type": "alphaImageMesh",
+			"name": "back",
+			"priority": "BELOW_BODY",
+			"points": "body",
+			"mirror": 0,
+			"image": {
+				"image": "alpha_heels_back.png",
+				"overrides": [
+					{
+						"image": "",
+						"condition": [
+							[
+								{
+									"view": "front"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
 			"name": "back",
 			"priority": "BELOW_BODY",
 			"points": "body",
@@ -171,19 +212,6 @@
 							]
 						]
 					}
-				],
-				"alphaImage": "alpha_heels_back.png",
-				"alphaOverrides": [
-					{
-						"image": "",
-						"condition": [
-							[
-								{
-									"view": "front"
-								}
-							]
-						]
-					}
 				]
 			}
 		},
@@ -192,6 +220,7 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"type": "mesh",
 			"name": "soles back",
 			"priority": "BELOW_BODY",
 			"points": "body",
@@ -218,6 +247,7 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"type": "mesh",
 			"name": "soles kneeling sole",
 			"priority": "BELOW_BODY_SOLES",
 			"points": "body_soles_back",
@@ -247,6 +277,7 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"type": "mesh",
 			"name": "soles kneeling sides",
 			"priority": "BELOW_BODY_SOLES",
 			"points": "body_soles_back",

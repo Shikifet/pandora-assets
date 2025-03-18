@@ -1,16 +1,17 @@
 import { freeze } from 'immer';
 import { cloneDeep, omit, pick } from 'lodash-es';
-import { Assert, AssertNever, AssetId, GetLogger, RoomDeviceAssetDefinition, RoomDeviceModuleStaticData, RoomDeviceProperties, RoomDeviceWearablePartAssetDefinition } from 'pandora-common';
+import { Assert, AssertNever, AssetId, GetLogger, RoomDeviceAssetDefinition, RoomDeviceModuleStaticData, RoomDeviceProperties, RoomDeviceWearablePartAssetDefinition, type ImageBoundingBox } from 'pandora-common';
 import { join } from 'path';
 import { OPTIMIZE_TEXTURES } from '../constants.ts';
 import { AssetDatabase } from './assetDatabase.ts';
 import { AssetSourcePath, DefaultId } from './context.ts';
-import { GENERATED_RESOLUTIONS, LoadAssetsGraphics } from './graphics.ts';
+import { LoadAssetGraphicsFile } from './graphics.ts';
+import { GENERATED_RESOLUTIONS } from './graphicsConstants.ts';
 import { GraphicsDatabase } from './graphicsDatabase.ts';
 import { RegisterImportContextProcess } from './importContext.ts';
 import { ValidateOwnershipData } from './licensing.ts';
 import { LoadRoomDeviceColorization } from './load_helpers/color.ts';
-import { DefineImageResource, DefinePngResource, IImageResource, ImageBoundingBox, PREVIEW_SIZE } from './resources.ts';
+import { DefineImageResource, DefinePngResource, IImageResource, PREVIEW_SIZE } from './resources.ts';
 import { ValidateAssetChatMessages } from './validation/chatMessages.ts';
 import { ValidateAllModules } from './validation/modules.ts';
 import { ValidateAssetProperties, ValidateAssetPropertiesFinalize } from './validation/properties.ts';
@@ -109,19 +110,13 @@ async function DefineRoomDeviceWearablePart(
 
 	// Load and verify graphics
 	if (def.graphics) {
-		const graphics = await LoadAssetsGraphics(join(AssetSourcePath, def.graphics), propertiesValidationMetadata.getModuleNames());
+		const { graphics, graphicsSource } = await LoadAssetGraphicsFile(
+			join(AssetSourcePath, def.graphics),
+			propertiesValidationMetadata.getModuleNames(),
+			colorizationKeys,
+		);
 
-		const loggerGraphics = logger.prefixMessages('[Graphics]');
-
-		for (let i = 0; i < graphics.layers.length; i++) {
-			const layer = graphics.layers[i];
-
-			if (layer.colorizationKey != null && !colorizationKeys.has(layer.colorizationKey)) {
-				loggerGraphics.warning(`Layer #${i} has colorizationKey ${layer.colorizationKey} outside of defined colorization keys [${[...colorizationKeys].join(', ')}]`);
-			}
-		}
-
-		GraphicsDatabase.registerAsset(id, graphics);
+		GraphicsDatabase.registerAssetGraphics(id, graphics, graphicsSource);
 	}
 	AssetDatabase.registerAsset(id, asset);
 

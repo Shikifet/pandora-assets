@@ -1,6 +1,5 @@
 import { Immutable } from 'immer';
 import {
-	AssetGraphicsDefinition,
 	CloneDeepMutable,
 	Logger,
 	MakeMirroredPoints,
@@ -9,10 +8,11 @@ import {
 	PointMatchesPointType,
 	PointTemplate,
 	PointTemplateDiff,
+	type AssetSourceGraphicsDefinition,
 } from 'pandora-common';
 import { GraphicsDatabase } from '../graphicsDatabase.ts';
 
-export function AssetGraphicsValidate(definition: AssetGraphicsDefinition, logger: Logger): void {
+export function AssetGraphicsValidate(definition: AssetSourceGraphicsDefinition, logger: Logger, colorizationKeys: ReadonlySet<string>): void {
 	for (let layerIndex = 0; layerIndex < definition.layers.length; layerIndex++) {
 		const layer = definition.layers[layerIndex];
 		const layerLogger = logger.prefixMessages(`Layer #${layerIndex} (${layer.name ?? '[UNNAMED]'}): `);
@@ -53,6 +53,12 @@ export function AssetGraphicsValidate(definition: AssetGraphicsDefinition, logge
 			// Layer shouldn't define point types if all points match
 			if (calculatedPoints.every((p) => PointMatchesPointType(p, layer.pointType))) {
 				layerLogger.warning(`Layer filters for point types, but all points match anyway. Remove the unnecessary filter.`);
+			}
+		}
+
+		if (layer.type !== 'alphaImageMesh') {
+			if (layer.colorizationKey != null && !colorizationKeys.has(layer.colorizationKey)) {
+				layerLogger.warning(`Layer has colorizationKey ${layer.colorizationKey} outside of defined colorization keys [${[...colorizationKeys].join(', ')}]`);
 			}
 		}
 	}

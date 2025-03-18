@@ -4,7 +4,7 @@ import { AssetId, GetLogger, PersonalAssetDefinition } from 'pandora-common';
 import { join } from 'path';
 import { AssetDatabase } from './assetDatabase.ts';
 import { AssetSourcePath, DefaultId } from './context.ts';
-import { LoadAssetsGraphics } from './graphics.ts';
+import { LoadAssetGraphicsFile } from './graphics.ts';
 import { GraphicsDatabase } from './graphicsDatabase.ts';
 import { RegisterImportContextProcess } from './importContext.ts';
 import { ValidateOwnershipData } from './licensing.ts';
@@ -116,20 +116,13 @@ async function GlobalDefineAssetProcess(def: IntermediatePersonalAssetDefinition
 
 	// Load and verify graphics
 	if (def.graphics) {
-		const graphics = await LoadAssetsGraphics(join(AssetSourcePath, def.graphics), Object.keys(asset.modules ?? {}));
+		const { graphics, graphicsSource } = await LoadAssetGraphicsFile(
+			join(AssetSourcePath, def.graphics),
+			Object.keys(asset.modules ?? {}),
+			new Set(Object.keys(colorization ?? {})),
+		);
 
-		const loggerGraphics = logger.prefixMessages('[Graphics]');
-
-		for (let i = 0; i < graphics.layers.length; i++) {
-			const layer = graphics.layers[i];
-
-			if (layer.colorizationKey != null && colorization?.[layer.colorizationKey] == null) {
-				const colorizationKeys = new Set(Object.keys(colorization ?? {}));
-				loggerGraphics.warning(`Layer #${i} has colorizationKey ${layer.colorizationKey} outside of defined colorization keys [${[...colorizationKeys].join(', ')}]`);
-			}
-		}
-
-		GraphicsDatabase.registerAsset(id, graphics);
+		GraphicsDatabase.registerAssetGraphics(id, graphics, graphicsSource);
 	}
 	AssetDatabase.registerAsset(id, asset);
 }
