@@ -351,7 +351,7 @@ DefineAsset({
 						},
 						stateFlags: {
 							requires: {
-								helmet: 'Fantasy ears cannot be hidden without helmet',
+								helmet: 'Non-human ears cannot be hidden without helmet',
 							},
 						},
 					},
