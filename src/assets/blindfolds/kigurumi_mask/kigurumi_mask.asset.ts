@@ -91,7 +91,6 @@ DefineAsset({
 								'Hair',
 								'Wig',
 								'Ears',
-								'Fantasy_ears',
 							],
 							covers: [
 								'Ear_item',
@@ -117,7 +116,6 @@ DefineAsset({
 								'Hair',
 								'Wig',
 								'Ears',
-								'Fantasy_ears',
 							],
 							covers: [
 								'Ear_item',
@@ -148,6 +146,9 @@ DefineAsset({
 						attributes: {
 							provides: [
 								'Mouth_cover',
+							],
+							covers: [
+								'Mouth_item',
 							],
 						},
 						stateFlags: {
@@ -325,6 +326,33 @@ DefineAsset({
 							throatBreath: 4,
 							coherency: 7,
 							stimulus: 6,
+						},
+					},
+				},
+			],
+		},
+		fantasy_ears: {
+			type: 'typed',
+			name: 'Non-human Ears',
+			variants: [
+				{
+					id: 'visible',
+					name: 'Visible',
+					default: true,
+				},
+				{
+					id: 'hidden',
+					name: 'Hidden',
+					properties: {
+						attributes: {
+							hides: [
+								'Fantasy_ears',
+							],
+						},
+						stateFlags: {
+							requires: {
+								helmet: 'Non-human ears cannot be hidden without helmet',
+							},
 						},
 					},
 				},
