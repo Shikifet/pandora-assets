@@ -333,7 +333,7 @@ DefineAsset({
 		},
 		fantasy_ears: {
 			type: 'typed',
-			name: 'Fantasy Ears',
+			name: 'Non-human Ears',
 			variants: [
 				{
 					id: 'visible',
