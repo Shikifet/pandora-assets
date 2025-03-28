@@ -6,6 +6,7 @@ export const BODYPART_ORDER = [
 	'ears',
 	'nose',
 	'tail',
+	'wings',
 	'blush',
 	'bodymarks',
 	'eyes',
@@ -55,6 +56,7 @@ const BODYPART_DEFINITIONS: Record<BodypartName, Partial<Omit<AssetBodyPart, 'na
 	tail: {
 		allowMultiple: true,
 	},
+	wings: {},
 	backhair: {
 		allowMultiple: true,
 		adjustable: true,
