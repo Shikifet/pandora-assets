@@ -7,30 +7,20 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "jeans back breasts",
-			"priority": "BELOW_BODY",
-			"points": "custom_tops_jeans_jacket_breasts",
-			"mirror": 0,
-			"colorizationKey": "jacket",
-			"image": {
-				"image": "jj_back.png",
-				"overrides": []
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
 			"name": "jeans back",
 			"priority": "BELOW_BODY",
 			"points": "body",
 			"pointType": [
 				"body",
-				"bodyarm",
+				"body_l",
+				"body_r",
+				"bodyarm_l",
+				"bodyarm_r",
 				"bodyleg",
-				"leg"
+				"bodyleg_l",
+				"bodyleg_r",
+				"leg_l",
+				"leg_r"
 			],
 			"mirror": 0,
 			"colorizationKey": "jacket",
@@ -49,8 +39,8 @@
 			"priority": "BELOW_ARM_LEFT",
 			"points": "body",
 			"pointType": [
-				"arm_l",
-				"bodyarm_l"
+				"bodyarm_l",
+				"arm_l"
 			],
 			"mirror": 1,
 			"colorizationKey": "jacket",
@@ -69,8 +59,8 @@
 			"priority": "BELOW_ARM_LEFT",
 			"points": "body",
 			"pointType": [
-				"arm_l",
-				"bodyarm_l"
+				"bodyarm_l",
+				"arm_l"
 			],
 			"mirror": 1,
 			"colorizationKey": "jacket",
@@ -102,8 +92,8 @@
 			"priority": "ABOVE_ARM_LEFT",
 			"points": "body",
 			"pointType": [
-				"arm_l",
-				"bodyarm_l"
+				"bodyarm_l",
+				"arm_l"
 			],
 			"mirror": 1,
 			"colorizationKey": "jacket",
@@ -152,9 +142,15 @@
 			"points": "body",
 			"pointType": [
 				"body",
-				"bodyarm",
+				"body_l",
+				"body_r",
+				"bodyarm_l",
+				"bodyarm_r",
 				"bodyleg",
-				"leg"
+				"bodyleg_l",
+				"bodyleg_r",
+				"leg_l",
+				"leg_r"
 			],
 			"mirror": 0,
 			"colorizationKey": "jacket",
@@ -173,7 +169,7 @@
 			"priority": "ABOVE_ARM_LEFT",
 			"points": "body",
 			"pointType": [
-				"bodyarm",
+				"bodyarm_l",
 				"arm_l"
 			],
 			"mirror": 1,

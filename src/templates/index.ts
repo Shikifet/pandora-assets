@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'fs';
-import { CanonizePointTemplate, GetLogger, ModuleNameSchema, PointTemplate, PointTemplateSchema, SCHEME_OVERRIDE } from 'pandora-common';
+import { GetLogger, ModuleNameSchema, PointTemplateSourceSchema, SCHEME_OVERRIDE, type PointTemplateSource } from 'pandora-common';
 import { join, relative } from 'path';
-import { SRC_DIR, TRY_AUTOCORRECT_WARNINGS } from '../constants.ts';
+import { SRC_DIR, TRY_AUTOCORRECT_WARNINGS } from '../config.ts';
 import { GraphicsDatabase } from '../tools/graphicsDatabase.ts';
 import { TemplateValidate } from '../tools/validation/templates.ts';
 import { WatchFile } from '../tools/watch.ts';
@@ -10,6 +10,8 @@ const templateList: string[] = [
 	'static',
 	'body',
 	'body_soles_back',
+	'body_eyes',
+	'body_eyebrows',
 	'breast_toy',
 	'breasts',
 	'handheld',
@@ -37,7 +39,7 @@ export function LoadTemplates() {
 	}
 }
 
-export function LoadTemplate(name: string): PointTemplate {
+function LoadTemplate(name: string): PointTemplateSource {
 	const logger = GetLogger('TemplateValidation');
 
 	const path = join(SRC_DIR, 'templates', `${name}.json`);
@@ -61,13 +63,13 @@ export function LoadTemplate(name: string): PointTemplate {
 		});
 	});
 
-	const parseResult = PointTemplateSchema.safeParse(template);
+	const parseResult = PointTemplateSourceSchema.safeParse(template);
 	if (!parseResult.success) {
-		logger.error(`Template in '${usrPath}' is not PointTemplateSchema:\n`, parseResult.error.toString());
-		throw new Error(`Graphics in '${usrPath}' is not PointTemplateSchema`);
+		logger.error(`Template in '${usrPath}' is not PointTemplateSource:\n`, parseResult.error.toString());
+		throw new Error(`Graphics in '${usrPath}' is not PointTemplateSource`);
 	}
 
-	const canonizedExport = JSON.stringify(CanonizePointTemplate(parseResult.data), undefined, '\t').trim() + '\n';
+	const canonizedExport = JSON.stringify(parseResult.data, undefined, '\t').trim() + '\n';
 	if (canonizedExport !== rawTemplate) {
 		logger.warning(`Template in '${usrPath}' is not in its canonic form. Please use editor to correct this.`);
 		if (TRY_AUTOCORRECT_WARNINGS) {

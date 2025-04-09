@@ -12,9 +12,13 @@
 			"points": "body",
 			"pointType": [
 				"body",
-				"bodyarm",
+				"body_l",
+				"body_r",
+				"bodyarm_l",
+				"bodyarm_r",
 				"bodyleg",
-				"leg"
+				"bodyleg_l",
+				"bodyleg_r"
 			],
 			"mirror": 0,
 			"colorizationKey": "bra",
@@ -34,9 +38,13 @@
 			"points": "body",
 			"pointType": [
 				"body",
-				"bodyarm",
+				"body_l",
+				"body_r",
+				"bodyarm_l",
+				"bodyarm_r",
 				"bodyleg",
-				"leg"
+				"bodyleg_l",
+				"bodyleg_r"
 			],
 			"mirror": 0,
 			"colorizationKey": "chains",
@@ -184,9 +192,13 @@
 			"points": "body",
 			"pointType": [
 				"body",
-				"bodyarm",
+				"body_l",
+				"body_r",
+				"bodyarm_l",
+				"bodyarm_r",
 				"bodyleg",
-				"leg"
+				"bodyleg_l",
+				"bodyleg_r"
 			],
 			"mirror": 0,
 			"colorizationKey": "bra",
@@ -206,9 +218,13 @@
 			"points": "body",
 			"pointType": [
 				"body",
-				"bodyarm",
+				"body_l",
+				"body_r",
+				"bodyarm_l",
+				"bodyarm_r",
 				"bodyleg",
-				"leg"
+				"bodyleg_l",
+				"bodyleg_r"
 			],
 			"mirror": 0,
 			"colorizationKey": "chains",
