@@ -81,6 +81,7 @@ DefineRoomDeviceAsset({
 					id: 'tied',
 					name: 'Tied',
 					properties: {
+						blockSlotsEnterLeave: ['seated'],
 						slotProperties: {
 							seated: {
 								poseLimits: {
@@ -111,6 +112,7 @@ DefineRoomDeviceAsset({
 					id: 'tied',
 					name: 'Tied',
 					properties: {
+						blockSlotsEnterLeave: ['seated'],
 						slotProperties: {
 							seated: {
 								poseLimits: {
@@ -148,9 +150,26 @@ DefineRoomDeviceAsset({
 					default: true,
 				},
 				{
+					id: 'together',
+					name: 'Tied Together',
+					properties: {
+						slotProperties: {
+							seated: {
+								poseLimits: {
+									bones: {
+										leg_r: 2,
+										leg_l: 2,
+									},
+								},
+							},
+						},
+					},
+				},
+				{
 					id: 'split',
 					name: 'Split',
 					properties: {
+						blockSlotsEnterLeave: ['seated'],
 						slotProperties: {
 							seated: {
 								poseLimits: {
@@ -167,6 +186,26 @@ DefineRoomDeviceAsset({
 		},
 	},
 	graphicsLayers: [
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			offset: { x: -216, y: -740 },
+			imageOverrides: [
+				{
+					image: 'ankles_together_back.png@432x811',
+					condition: [
+						[
+							{
+								module: 'ankles',
+								operator: '=',
+								value: 'together',
+							},
+						],
+					],
+				},
+			],
+		},
 		{
 			type: 'sprite',
 			image: 'chair_base.png@432x811',
@@ -378,6 +417,26 @@ DefineRoomDeviceAsset({
 								module: 'ankles',
 								operator: '=',
 								value: 'split',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			offset: { x: -216, y: -740 },
+			imageOverrides: [
+				{
+					image: 'ankles_together.png@432x811',
+					condition: [
+						[
+							{
+								module: 'ankles',
+								operator: '=',
+								value: 'together',
 							},
 						],
 					],
