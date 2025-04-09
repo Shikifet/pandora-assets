@@ -11,6 +11,10 @@ DefineRoomDeviceAsset({
 			name: 'Cushion',
 			default: '#ED2828',
 		},
+		rope: {
+			name: 'Rope',
+			default: '#D7AC4D',
+		},
 	},
 	staticAttributes: ['Play_furniture'],
 	slots: {
@@ -26,9 +30,9 @@ DefineRoomDeviceAsset({
 		},
 	},
 	modules: {
-		arms: {
+		armrests: {
 			type: 'typed',
-			name: 'Arms',
+			name: 'Armrests',
 			staticConfig: { slotName: 'seated' },
 			variants: [
 				{
@@ -39,6 +43,11 @@ DefineRoomDeviceAsset({
 				{
 					id: 'yes',
 					name: 'Yes',
+					properties: {
+						stateFlags: {
+							provides: ['armrests'],
+						},
+					},
 				},
 			],
 		},
@@ -55,6 +64,104 @@ DefineRoomDeviceAsset({
 				{
 					id: 'cushion',
 					name: 'Cushion',
+				},
+			],
+		},
+		body: {
+			type: 'typed',
+			name: 'Body',
+			staticConfig: { slotName: 'seated' },
+			variants: [
+				{
+					id: 'free',
+					name: 'Free',
+					default: true,
+				},
+				{
+					id: 'tied',
+					name: 'Tied',
+					properties: {
+						slotProperties: {
+							seated: {
+								poseLimits: {
+									bones: {
+										arm_l: 90,
+										arm_r: 90,
+										elbow_l: [[-80, 90]],
+										elbow_r: [[-80, 90]],
+									},
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+		wrists: {
+			type: 'typed',
+			name: 'Wrists',
+			staticConfig: { slotName: 'seated' },
+			variants: [
+				{
+					id: 'free',
+					name: 'Free',
+					default: true,
+				},
+				{
+					id: 'tied',
+					name: 'Tied',
+					properties: {
+						slotProperties: {
+							seated: {
+								poseLimits: {
+									arms: {
+										position: 'back',
+									},
+									bones: {
+										arm_l: 90,
+										arm_r: 90,
+										elbow_l: -50,
+										elbow_r: -50,
+									},
+								},
+							},
+						},
+						stateFlags: {
+							provides: ['tied_wrists'],
+							requires: {
+								armrests: 'Wrists cannot be tied without armrests',
+							},
+						},
+					},
+				},
+			],
+		},
+
+		ankles: {
+			type: 'typed',
+			name: 'Ankles',
+			staticConfig: { slotName: 'seated' },
+			variants: [
+				{
+					id: 'free',
+					name: 'Free',
+					default: true,
+				},
+				{
+					id: 'split',
+					name: 'Split',
+					properties: {
+						slotProperties: {
+							seated: {
+								poseLimits: {
+									bones: {
+										leg_l: -16,
+										leg_r: -16,
+									},
+								},
+							},
+						},
+					},
 				},
 			],
 		},
@@ -82,7 +189,7 @@ DefineRoomDeviceAsset({
 								value: 'cushion',
 							},
 							{
-								module: 'arms',
+								module: 'armrests',
 								operator: '=',
 								value: 'no',
 							},
@@ -99,7 +206,7 @@ DefineRoomDeviceAsset({
 								value: 'cushion',
 							},
 							{
-								module: 'arms',
+								module: 'armrests',
 								operator: '=',
 								value: 'yes',
 							},
@@ -124,7 +231,7 @@ DefineRoomDeviceAsset({
 								value: 'cushion',
 							},
 							{
-								module: 'arms',
+								module: 'armrests',
 								operator: '=',
 								value: 'no',
 							},
@@ -141,9 +248,29 @@ DefineRoomDeviceAsset({
 								value: 'cushion',
 							},
 							{
-								module: 'arms',
+								module: 'armrests',
 								operator: '=',
 								value: 'yes',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			offset: { x: -216, y: -740 },
+			imageOverrides: [
+				{
+					image: 'wrists_armrests_back.png',
+					condition: [
+						[
+							{
+								module: 'wrists',
+								operator: '=',
+								value: 'tied',
 							},
 						],
 					],
@@ -161,7 +288,7 @@ DefineRoomDeviceAsset({
 					condition: [
 						[
 							{
-								module: 'arms',
+								module: 'armrests',
 								operator: '=',
 								value: 'yes',
 							},
@@ -193,6 +320,66 @@ DefineRoomDeviceAsset({
 					},
 					condition: [
 
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			offset: { x: -216, y: -740 },
+			imageOverrides: [
+				{
+					image: 'body.png',
+					condition: [
+						[
+							{
+								module: 'body',
+								operator: '=',
+								value: 'tied',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			offset: { x: -216, y: -740 },
+			imageOverrides: [
+				{
+					image: 'wrists_armrests.png',
+					condition: [
+						[
+							{
+								module: 'wrists',
+								operator: '=',
+								value: 'tied',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			offset: { x: -216, y: -740 },
+			imageOverrides: [
+				{
+					image: 'ankles_split.png@432x811',
+					condition: [
+						[
+							{
+								module: 'ankles',
+								operator: '=',
+								value: 'split',
+							},
+						],
 					],
 				},
 			],
