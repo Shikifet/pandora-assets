@@ -32,7 +32,7 @@ DefineRoomDeviceAsset({
 				name: 'Wooden Chair',
 				size: 'huge',
 				poseLimits: {
-					legs: ['sitting'],
+					legs: 'sitting',
 				},
 			},
 		},
@@ -84,6 +84,7 @@ DefineRoomDeviceAsset({
 										'Toy',
 										'Vulva_item',
 										'Vulva_insert',
+										'Vulva_insert_deep',
 										'Vulva_protruding',
 									],
 									requires: ['!Vulva_cover'],
@@ -103,7 +104,8 @@ DefineRoomDeviceAsset({
 										'Toy',
 										'Anus_item',
 										'Anus_insert',
-										'Anus_protruding'
+										'Anus_insert_deep',
+										'Anus_protruding',
 									],
 									requires: ['!Anus_cover'],
 								},
@@ -122,10 +124,12 @@ DefineRoomDeviceAsset({
 										'Toy',
 										'Vulva_item',
 										'Vulva_insert',
+										'Vulva_insert_deep',
 										'Vulva_protruding',
 										'Anus_item',
 										'Anus_insert',
-										'Anus_protruding'
+										'Anus_insert_deep',
+										'Anus_protruding',
 									],
 									requires: ['!Vulva_cover', '!Anus_cover'],
 								},
@@ -206,7 +210,6 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
-
 		ankles: {
 			type: 'typed',
 			name: 'Ankles',
@@ -221,6 +224,7 @@ DefineRoomDeviceAsset({
 					id: 'together',
 					name: 'Tied Together',
 					properties: {
+						blockSlotsEnterLeave: ['seated'],
 						slotProperties: {
 							seated: {
 								poseLimits: {
@@ -489,7 +493,7 @@ DefineRoomDeviceAsset({
 			type: 'sprite',
 			image: '',
 			colorizationKey: 'rope',
-			offset: { x: -216, y: -740 },
+			offset: { x: -216, y: -760 },
 			imageOverrides: [
 				{
 					image: 'body.png',
