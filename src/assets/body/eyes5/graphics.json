@@ -9,9 +9,9 @@
 			"type": "mesh",
 			"name": "Sclera",
 			"priority": "BODY",
-			"points": "static",
+			"points": "body_eyes",
 			"pointType": [
-				"static_l"
+				"eye_l"
 			],
 			"mirror": 1,
 			"colorizationKey": "sclera",
@@ -63,9 +63,9 @@
 			"type": "mesh",
 			"name": "Iris",
 			"priority": "BODY",
-			"points": "static",
+			"points": "body_eyes",
 			"pointType": [
-				"static_l"
+				"eye_l"
 			],
 			"mirror": 1,
 			"colorizationKey": "iris",
@@ -297,9 +297,9 @@
 			"type": "mesh",
 			"name": "Pupil",
 			"priority": "BODY",
-			"points": "static",
+			"points": "body_eyes",
 			"pointType": [
-				"static_l"
+				"eye_l"
 			],
 			"mirror": 1,
 			"colorizationKey": "pupil",
@@ -531,9 +531,9 @@
 			"type": "mesh",
 			"name": "Reflection",
 			"priority": "BODY",
-			"points": "static",
+			"points": "body_eyes",
 			"pointType": [
-				"static_l"
+				"eye_l"
 			],
 			"mirror": 1,
 			"colorizationKey": "reflections",
@@ -575,9 +575,9 @@
 			"type": "mesh",
 			"name": "Shadow",
 			"priority": "BODY",
-			"points": "static",
+			"points": "body_eyes",
 			"pointType": [
-				"static_l"
+				"eye_l"
 			],
 			"mirror": 1,
 			"colorizationKey": "shadow",
@@ -619,9 +619,9 @@
 			"type": "mesh",
 			"name": "Eyelashes",
 			"priority": "BODY",
-			"points": "static",
+			"points": "body_eyes",
 			"pointType": [
-				"static_l"
+				"eye_l"
 			],
 			"mirror": 1,
 			"colorizationKey": "lashes",
