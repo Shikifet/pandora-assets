@@ -87,7 +87,7 @@ DefineRoomDeviceAsset({
 										'Vulva_insert_deep',
 										'Vulva_protruding',
 									],
-									requires: ['!Vulva_cover'],
+									requires: ['Vulva_spread', '!Vulva_cover'],
 								},
 							},
 						},
@@ -131,7 +131,7 @@ DefineRoomDeviceAsset({
 										'Anus_insert_deep',
 										'Anus_protruding',
 									],
-									requires: ['!Vulva_cover', '!Anus_cover'],
+									requires: ['Vulva_spread', '!Vulva_cover', '!Anus_cover'],
 								},
 							},
 						},
@@ -476,15 +476,20 @@ DefineRoomDeviceAsset({
 				{
 					position: {
 						offsetX: 0,
-						offsetY: 0,
-						disablePoseOffset: true,
+						offsetY: -15,
 						pivotOffset: {
 							x: 0,
 							y: 0,
 						},
 					},
 					condition: [
-
+						[
+							{
+								module: 'accessories',
+								operator: '!=',
+								value: 'cushion',
+							},
+						],
 					],
 				},
 			],
@@ -533,7 +538,7 @@ DefineRoomDeviceAsset({
 			type: 'sprite',
 			image: '',
 			colorizationKey: 'rope',
-			offset: { x: -216, y: -740 },
+			offset: { x: -216, y: -760 },
 			imageOverrides: [
 				{
 					image: 'ankles_split.png@432x811',
@@ -547,14 +552,6 @@ DefineRoomDeviceAsset({
 						],
 					],
 				},
-			],
-		},
-		{
-			type: 'sprite',
-			image: '',
-			colorizationKey: 'rope',
-			offset: { x: -216, y: -740 },
-			imageOverrides: [
 				{
 					image: 'ankles_together.png@432x811',
 					condition: [
@@ -569,7 +566,6 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
-
 	],
 	pivot: {
 		x: 0,
