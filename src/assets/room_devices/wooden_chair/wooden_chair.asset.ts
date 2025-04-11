@@ -11,12 +11,20 @@ DefineRoomDeviceAsset({
 			name: 'Cushion',
 			default: '#ED2828',
 		},
+		dildo: {
+			name: 'Dildo',
+			default: '#EA4FA5',
+		},
+		plug: {
+			name: 'Plug',
+			default: '#222222',
+		},
 		rope: {
 			name: 'Rope',
 			default: '#D7AC4D',
 		},
 	},
-	staticAttributes: ['Play_furniture'],
+	staticAttributes: ['Furniture', 'Play_furniture'],
 	slots: {
 		seated: {
 			name: 'Seated',
@@ -64,6 +72,66 @@ DefineRoomDeviceAsset({
 				{
 					id: 'cushion',
 					name: 'Cushion',
+				},
+				{
+					id: 'dildo',
+					name: 'Dildo',
+					properties: {
+						slotProperties: {
+							seated: {
+								attributes: {
+									provides: [
+										'Toy',
+										'Vulva_item',
+										'Vulva_insert',
+										'Vulva_protruding',
+									],
+									requires: ['!Vulva_cover'],
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'plug',
+					name: 'Plug',
+					properties: {
+						slotProperties: {
+							seated: {
+								attributes: {
+									provides: [
+										'Toy',
+										'Anus_item',
+										'Anus_insert',
+										'Anus_protruding'
+									],
+									requires: ['!Anus_cover'],
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'double_dildo',
+					name: 'Double Dildo',
+					properties: {
+						slotProperties: {
+							seated: {
+								attributes: {
+									provides: [
+										'Toy',
+										'Vulva_item',
+										'Vulva_insert',
+										'Vulva_protruding',
+										'Anus_item',
+										'Anus_insert',
+										'Anus_protruding'
+									],
+									requires: ['!Vulva_cover', '!Anus_cover'],
+								},
+							},
+						},
+					},
 				},
 			],
 		},
@@ -122,8 +190,8 @@ DefineRoomDeviceAsset({
 									bones: {
 										arm_l: 90,
 										arm_r: 90,
-										elbow_l: -50,
-										elbow_r: -50,
+										elbow_l: -45,
+										elbow_r: -45,
 									},
 								},
 							},
@@ -257,6 +325,60 @@ DefineRoomDeviceAsset({
 		{
 			type: 'sprite',
 			image: '',
+			colorizationKey: 'plug',
+			offset: { x: -216, y: -745 },
+			imageOverrides: [
+				{
+					image: 'dildo_2.png@432x811',
+					condition: [
+						[
+							{
+								module: 'accessories',
+								operator: '=',
+								value: 'plug',
+							},
+						],
+						[
+							{
+								module: 'accessories',
+								operator: '=',
+								value: 'double_dildo',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'dildo',
+			offset: { x: -216, y: -745 },
+			imageOverrides: [
+				{
+					image: 'dildo_1.png@432x811',
+					condition: [
+						[
+							{
+								module: 'accessories',
+								operator: '=',
+								value: 'dildo',
+							},
+						],
+						[
+							{
+								module: 'accessories',
+								operator: '=',
+								value: 'double_dildo',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
 			colorizationKey: 'cushion',
 			offset: { x: -216, y: -745 },
 			imageOverrides: [
@@ -341,7 +463,7 @@ DefineRoomDeviceAsset({
 			slot: 'seated',
 			characterPosition: {
 				offsetX: 0,
-				offsetY: 0,
+				offsetY: -20,
 				relativeScale: 1,
 
 			},
@@ -443,6 +565,7 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+
 	],
 	pivot: {
 		x: 0,
