@@ -5,11 +5,11 @@ DefineRoomDeviceAsset({
 	colorization: {
 		chair: {
 			name: 'Chair',
-			default: '#FF8E31',
+			default: '#D56F1C',
 		},
 		cushion: {
 			name: 'Cushion',
-			default: '#ED2828',
+			default: '#D51D1D',
 		},
 		dildo: {
 			name: 'Dildo',
