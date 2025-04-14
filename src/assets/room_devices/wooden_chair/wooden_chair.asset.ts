@@ -182,8 +182,33 @@ DefineRoomDeviceAsset({
 					default: true,
 				},
 				{
+					id: 'tied_back',
+					name: 'Tied to Back',
+					properties: {
+						blockSlotsEnterLeave: ['seated'],
+						slotProperties: {
+							seated: {
+								poseLimits: {
+									arms: {
+										position: 'back',
+									},
+									bones: {
+										arm_l: 110,
+										arm_r: 110,
+										elbow_l: -30,
+										elbow_r: -30,
+									},
+								},
+							},
+						},
+						stateFlags: {
+							provides: ['tied_wrists'],
+						},
+					},
+				},
+				{
 					id: 'tied',
-					name: 'Tied',
+					name: 'Tied to Armrests',
 					properties: {
 						blockSlotsEnterLeave: ['seated'],
 						slotProperties: {
