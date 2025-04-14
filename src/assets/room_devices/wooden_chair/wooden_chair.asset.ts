@@ -33,6 +33,7 @@ DefineRoomDeviceAsset({
 				size: 'huge',
 				poseLimits: {
 					legs: 'sitting',
+					view: 'front',
 				},
 			},
 		},
@@ -158,8 +159,8 @@ DefineRoomDeviceAsset({
 							seated: {
 								poseLimits: {
 									bones: {
-										arm_l: 90,
-										arm_r: 90,
+										arm_l: [[90, 110]],
+										arm_r: [[90, 110]],
 										elbow_l: [[-80, 90]],
 										elbow_r: [[-80, 90]],
 									},
