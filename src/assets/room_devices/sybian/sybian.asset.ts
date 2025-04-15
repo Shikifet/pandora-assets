@@ -31,8 +31,8 @@ DefineRoomDeviceAsset({
 					legs: 'kneeling',
 					bones: {
 						character_rotation: 0,
-						leg_l: [[-180, -30]],
-						leg_r: [[-180, -30]],
+						leg_l: [[-45, -30]],
+						leg_r: [[-45, -30]],
 					},
 				},
 			},
@@ -49,7 +49,6 @@ DefineRoomDeviceAsset({
 					name: 'Front-facing',
 					default: true,
 					properties: {
-						blockSlotsEnterLeave: ['seated'],
 						slotProperties: {
 							seated: {
 								poseLimits: {
@@ -63,7 +62,6 @@ DefineRoomDeviceAsset({
 					id: 'back',
 					name: 'Back-facing',
 					properties: {
-						blockSlotsEnterLeave: ['seated'],
 						slotProperties: {
 							seated: {
 								poseLimits: {
