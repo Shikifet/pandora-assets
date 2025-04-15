@@ -207,7 +207,7 @@ DefineRoomDeviceAsset({
 				},
 				{
 					id: 'show',
-					name: 'Show Back',
+					name: 'Show on Back Side',
 				},
 			],
 		},
