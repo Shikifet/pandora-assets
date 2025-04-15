@@ -1,5 +1,5 @@
 DefineRoomDeviceAsset({
-	name: 'Sybian',
+	name: 'Sybian-type Saddle',
 	size: 'huge',
 	preview: 'preview.png',
 	colorization: {
@@ -20,12 +20,12 @@ DefineRoomDeviceAsset({
 			default: '#FFFFFF',
 		},
 	},
-	staticAttributes: ['Furniture', 'Play_furniture'],
+	staticAttributes: ['Play_furniture'],
 	slots: {
 		seated: {
 			name: 'Seated',
 			asset: {
-				name: 'Sybian',
+				name: 'Sybian-type Saddle',
 				size: 'huge',
 				poseLimits: {
 					legs: 'kneeling',
