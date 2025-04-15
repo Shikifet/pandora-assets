@@ -29,8 +29,8 @@ DefineRoomDeviceAsset({
 				size: 'huge',
 				poseLimits: {
 					legs: 'kneeling',
-					view: 'front',
 					bones: {
+						character_rotation: 0,
 						leg_l: [[-180, -30]],
 						leg_r: [[-180, -30]],
 					},
@@ -39,43 +39,41 @@ DefineRoomDeviceAsset({
 		},
 	},
 	modules: {
-		front_ring: {
+		position: {
 			type: 'typed',
-			name: 'Front_ring',
+			name: 'Character Position',
 			staticConfig: { slotName: 'seated' },
 			variants: [
 				{
-					id: 'hide',
-					name: 'Hide',
-				},
-				{
-					id: 'show',
-					name: 'Show',
+					id: 'front',
+					name: 'Front-facing',
 					default: true,
-				},
-				{
-					id: 'attached',
-					name: 'Attached to Collar',
 					properties: {
 						blockSlotsEnterLeave: ['seated'],
 						slotProperties: {
 							seated: {
-								attributes: {
-									requires: ['Collar_front_ring'],
+								poseLimits: {
+									view: 'front',
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'back',
+					name: 'Back-facing',
+					properties: {
+						blockSlotsEnterLeave: ['seated'],
+						slotProperties: {
+							seated: {
+								poseLimits: {
+									view: 'back',
 								},
 							},
 						},
 					},
 				},
 			],
-		},
-		lock_right: {
-			type: 'lockSlot',
-			name: 'Front ring lock',
-			staticConfig: { slotName: 'seated' },
-			lockedProperties: {
-				blockModules: ['front_ring'],
-			},
 		},
 		vibration: {
 			type: 'typed',
@@ -109,6 +107,94 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+		front_ring: {
+			type: 'typed',
+			name: 'Front Ring',
+			staticConfig: { slotName: 'seated' },
+			variants: [
+				{
+					id: 'hide',
+					name: 'Hide',
+				},
+				{
+					id: 'show',
+					name: 'Show',
+					default: true,
+				},
+				{
+					id: 'attached',
+					name: 'Attached to Collar',
+					properties: {
+						blockSlotsEnterLeave: ['seated'],
+						slotProperties: {
+							seated: {
+								attributes: {
+									requires: ['Collar_front_ring'],
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+		lock_front: {
+			type: 'lockSlot',
+			name: 'Front Ring Lock',
+			staticConfig: { slotName: 'seated' },
+			lockedProperties: {
+				blockModules: ['front_ring'],
+			},
+		},
+		back_ring: {
+			type: 'typed',
+			name: 'Back Ring',
+			staticConfig: { slotName: 'seated' },
+			variants: [
+				{
+					id: 'hide',
+					name: 'Hide',
+				},
+				{
+					id: 'show',
+					name: 'Show',
+					default: true,
+				},
+				{
+					id: 'attached',
+					name: 'Attached to Wrist Cuffs',
+					properties: {
+						blockSlotsEnterLeave: ['seated'],
+						slotProperties: {
+							seated: {
+								attributes: {
+									requires: ['Wrist_cuffs'],
+								},
+								poseLimits: {
+									bones: {
+										arm_l: 80,
+										arm_r: 80,
+										elbow_l: 51,
+										elbow_r: 51,
+									},
+									arms: {
+										position: 'back',
+										rotation: 'forward',
+									},
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+		lock_back: {
+			type: 'lockSlot',
+			name: 'Back Ring lock',
+			staticConfig: { slotName: 'seated' },
+			lockedProperties: {
+				blockModules: ['back_ring'],
+			},
+		},
 		brand: {
 			type: 'typed',
 			name: 'Accessories',
@@ -121,7 +207,7 @@ DefineRoomDeviceAsset({
 				},
 				{
 					id: 'show',
-					name: 'Show',
+					name: 'Show Back',
 				},
 			],
 		},
@@ -160,6 +246,23 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'show',
 							},
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+						],
+						[
+							{
+								module: 'back_ring',
+								operator: '=',
+								value: 'show',
+							},
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
 						],
 					],
 				},
@@ -171,6 +274,23 @@ DefineRoomDeviceAsset({
 								module: 'front_ring',
 								operator: '=',
 								value: 'attached',
+							},
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+						],
+						[
+							{
+								module: 'back_ring',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
 							},
 						],
 					],
@@ -190,6 +310,11 @@ DefineRoomDeviceAsset({
 								module: 'brand',
 								operator: '=',
 								value: 'show',
+							},
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
 							},
 						],
 					],
@@ -217,6 +342,36 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'dildo',
 							},
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'dildo',
+			offset: { x: -500, y: -930 },
+			imageOverrides: [
+				{
+					image: 'dildo.png',
+					condition: [
+						[
+							{
+								module: 'vibration',
+								operator: '=',
+								value: 'dildo',
+							},
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
 						],
 					],
 				},
@@ -234,7 +389,7 @@ DefineRoomDeviceAsset({
 				{
 					position: {
 						offsetX: 0,
-						offsetY: 0,
+						offsetY: -25,
 						pivotOffset: {
 							x: 0,
 							y: 0,
@@ -242,7 +397,9 @@ DefineRoomDeviceAsset({
 					},
 					condition: [
 						[
-
+							{
+								view: 'back',
+							},
 						],
 					],
 				},
@@ -261,6 +418,35 @@ DefineRoomDeviceAsset({
 								module: 'front_ring',
 								operator: '=',
 								value: 'attached',
+							},
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			offset: { x: -500, y: -900 },
+			imageOverrides: [
+				{
+					image: 'chain_wrists.png',
+					condition: [
+						[
+							{
+								module: 'back_ring',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
 							},
 						],
 					],
