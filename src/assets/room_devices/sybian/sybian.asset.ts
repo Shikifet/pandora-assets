@@ -1,7 +1,7 @@
 DefineRoomDeviceAsset({
 	name: 'Sybian',
 	size: 'huge',
-	preview: null,//'preview.png',
+	preview: 'preview.png',
 	colorization: {
 		base: {
 			name: 'Base',
