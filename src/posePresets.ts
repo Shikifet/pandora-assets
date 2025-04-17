@@ -18,6 +18,24 @@ export const POSE_PRESETS: AssetsPosePresets<AllBones> =
 		},
 		{
 			category: 'Arms (front)',
+			preview: {
+				y: 160,
+				size: 720,
+				basePose: {
+					arms: {
+						position: 'front',
+						rotation: 'forward',
+						fingers: 'spread',
+					},
+					bones: {
+						arm_r: 74,
+						arm_l: 74,
+						elbow_r: 15,
+						elbow_l: 15,
+					},
+				},
+				highlight: ['ARM_LEFT', 'ARM_RIGHT'],
+			},
 			poses: [
 				{
 					name: 'Hanging side',
@@ -426,6 +444,25 @@ export const POSE_PRESETS: AssetsPosePresets<AllBones> =
 		},
 		{
 			category: 'Arms (back)',
+			preview: {
+				y: 160,
+				size: 720,
+				basePose: {
+					view: 'back',
+					arms: {
+						position: 'back',
+						rotation: 'forward',
+						fingers: 'spread',
+					},
+					bones: {
+						arm_r: 104,
+						arm_l: 104,
+						elbow_r: -4,
+						elbow_l: -4,
+					},
+				},
+				highlight: ['ARM_LEFT', 'ARM_RIGHT'],
+			},
 			poses: [
 				{
 					name: 'Hands behind',
@@ -520,6 +557,24 @@ export const POSE_PRESETS: AssetsPosePresets<AllBones> =
 		},
 		{
 			category: 'Arms (spread)',
+			preview: {
+				y: 0,
+				size: 720,
+				highlight: ['ARM_LEFT', 'ARM_RIGHT'],
+				basePose: {
+					arms: {
+						position: 'front',
+						rotation: 'up',
+						fingers: 'spread',
+					},
+					bones: {
+						arm_r: -25,
+						arm_l: -25,
+						elbow_r: -60,
+						elbow_l: -60,
+					},
+				},
+			},
 			poses: [
 				{
 					name: 'Up and touching',
@@ -661,11 +716,28 @@ export const POSE_PRESETS: AssetsPosePresets<AllBones> =
 							fingers: 'spread',
 						},
 					},
+					preview: {
+						y: 0,
+						size: 1000,
+						highlight: ['ARM_LEFT', 'ARM_RIGHT'],
+					},
 				},
 			],
 		},
 		{
 			category: 'Legs (standing)',
+			preview: {
+				y: 650,
+				size: 700,
+				highlight: ['BODY', 'BREASTS'],
+				basePose: {
+					legs: 'standing',
+					bones: {
+						leg_r: 0,
+						leg_l: 0,
+					},
+				},
+			},
 			poses: [
 				{
 					name: 'Normal',
@@ -738,6 +810,10 @@ export const POSE_PRESETS: AssetsPosePresets<AllBones> =
 						leg_l: -50,
 					},
 					legs: 'standing',
+					preview: {
+						y: 500,
+						size: 1000,
+					},
 				},
 				{
 					name: 'Full split',
@@ -746,11 +822,34 @@ export const POSE_PRESETS: AssetsPosePresets<AllBones> =
 						leg_l: -85,
 					},
 					legs: 'standing',
+					preview: {
+						y: 500,
+						size: 1200,
+					},
 				},
 			],
 		},
 		{
 			category: 'Legs (kneeling)',
+			preview: {
+				y: 292,
+				size: 700,
+				basePose: {
+					arms: {
+						position: 'back',
+					},
+					legs: 'kneeling',
+					bones: {
+						arm_r: 74,
+						arm_l: 74,
+						elbow_r: 15,
+						elbow_l: 15,
+						leg_r: 0,
+						leg_l: 0,
+					},
+				},
+				highlight: ['BODY', 'BREASTS'],
+			},
 			poses: [
 				{
 					name: 'Kneeling',
@@ -796,6 +895,27 @@ export const POSE_PRESETS: AssetsPosePresets<AllBones> =
 		},
 		{
 			category: 'Legs (sitting)',
+			preview: {
+				y: 515,
+				size: 700,
+				basePose: {
+					arms: {
+						position: 'front',
+						rotation: 'down',
+						fingers: 'spread',
+					},
+					legs: 'sitting',
+					bones: {
+						arm_r: 74,
+						arm_l: 74,
+						elbow_r: 22,
+						elbow_l: 22,
+						leg_r: 0,
+						leg_l: 0,
+					},
+				},
+				highlight: ['BODY', 'BREASTS'],
+			},
 			poses: [
 				{
 					name: 'Sitting',
