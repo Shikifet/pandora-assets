@@ -532,7 +532,7 @@ DefineRoomDeviceAsset({
 	],
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
-		credits: ['ClaudiaMia'],
+		credits: ['ClaudiaMia', 'Shikifet'],
 		modificationPolicy: `Fixes and New uses, otherwise ask`,
 		reusePolicy: 'Ask first',
 		licensing: [
@@ -555,6 +555,13 @@ DefineRoomDeviceAsset({
 				source: 'Self-Made',
 				copyrightHolder: 'ClaudiaMia',
 				editedBy: 'ClaudiaMia',
+				license: 'Pandora-Use-Only-v1-or-later',
+			},
+			{
+				part: 'padding images',
+				source: 'Self-Made',
+				copyrightHolder: 'Shikifet',
+				editedBy: 'Shikifet',
 				license: 'Pandora-Use-Only-v1-or-later',
 			},
 		],
