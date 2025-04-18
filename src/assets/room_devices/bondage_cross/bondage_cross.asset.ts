@@ -28,64 +28,25 @@ DefineRoomDeviceAsset({
 			asset: {
 				name: 'Bondage cross',
 				size: 'huge',
-				poseLimits: {
-					legs: 'standing',
-				},
 			},
 		},
 	},
 	modules: {
-		chains: {
+		position: {
 			type: 'typed',
-			name: 'Chains',
+			name: 'Facing Position',
 			staticConfig: { slotName: 'character_slot' },
 			variants: [
 				{
-					id: 'none',
-					name: 'Not attached',
-					default: true,
-					properties: {
-						slotProperties: {
-							character_slot: {
-								poseLimits: {
-									bones: {
-										leg_r: [[-32, 10]],
-										leg_l: [[-32, 10]],
-										character_rotation: 0,
-									},
-								},
-							},
-						},
-					},
-				},
-				{
 					id: 'front',
-					name: 'Tied front-facing',
+					name: 'Front-Facing',
+					default: true,
 					properties: {
 						blockSlotsEnterLeave: ['character_slot'],
 						slotProperties: {
 							character_slot: {
 								poseLimits: {
-									bones: {
-										arm_l: -44,
-										arm_r: -44,
-										elbow_l: -21,
-										elbow_r: -21,
-										leg_r: -30,
-										leg_l: -30,
-										character_rotation: 0,
-									},
-									legs: 'standing',
 									view: 'front',
-								},
-								attributes: {
-									requires: [
-										'Wrist_cuffs',
-										'Ankle_cuffs',
-									],
-								},
-								effects: {
-									blockHands: true,
 								},
 							},
 						},
@@ -93,7 +54,44 @@ DefineRoomDeviceAsset({
 				},
 				{
 					id: 'back',
-					name: 'Tied back-facing',
+					name: 'Back-Facing',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot'],
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									view: 'back',
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+
+		wrists: {
+			type: 'typed',
+			name: 'Wrist',
+			staticConfig: { slotName: 'character_slot' },
+			variants: [
+				{
+					id: 'None',
+					name: 'None',
+					default: true,
+					properties: {
+						blockSlotsEnterLeave: ['character_slot'],
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									legs: 'standing',
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'left',
+					name: 'Left Only',
 					properties: {
 						blockSlotsEnterLeave: ['character_slot'],
 						slotProperties: {
@@ -101,86 +99,60 @@ DefineRoomDeviceAsset({
 								poseLimits: {
 									bones: {
 										arm_l: -44,
-										arm_r: -44,
 										elbow_l: -21,
+									},
+									legs: 'standing',
+								},
+								attributes: {
+									requires: [
+										'Wrist_cuffs',
+									],
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'right',
+					name: 'Right Only',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot'],
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									bones: {
+										arm_r: -44,
 										elbow_r: -21,
-										leg_r: -30,
-										leg_l: -30,
-										character_rotation: 0,
 									},
 									legs: 'standing',
-									view: 'back',
 								},
 								attributes: {
 									requires: [
 										'Wrist_cuffs',
-										'Ankle_cuffs',
 									],
-								},
-								effects: {
-									blockHands: true,
 								},
 							},
 						},
 					},
 				},
 				{
-					id: 'upsideFront',
-					name: 'Tied upside-down front-facing',
+					id: 'both',
+					name: 'Both',
 					properties: {
 						blockSlotsEnterLeave: ['character_slot'],
 						slotProperties: {
 							character_slot: {
 								poseLimits: {
 									bones: {
-										arm_l: -43,
-										arm_r: -43,
-										elbow_l: -15,
-										elbow_r: -15,
-										leg_r: -26,
-										leg_l: -26,
-										character_rotation: 180,
+										arm_l: -44,
+										elbow_l: -21,
+										arm_r: -44,
+										elbow_r: -21,
 									},
-									legs: 'standing',
-									view: 'front',
 								},
 								attributes: {
 									requires: [
 										'Wrist_cuffs',
-										'Ankle_cuffs',
-									],
-								},
-								effects: {
-									blockHands: true,
-								},
-							},
-						},
-					},
-				},
-				{
-					id: 'upsideBack',
-					name: 'Tied upside-down back-facing',
-					properties: {
-						blockSlotsEnterLeave: ['character_slot'],
-						slotProperties: {
-							character_slot: {
-								poseLimits: {
-									bones: {
-										arm_l: -43,
-										arm_r: -43,
-										elbow_l: -15,
-										elbow_r: -15,
-										leg_r: -26,
-										leg_l: -26,
-										character_rotation: 180,
-									},
-									legs: 'standing',
-									view: 'back',
-								},
-								attributes: {
-									requires: [
-										'Wrist_cuffs',
-										'Ankle_cuffs',
 									],
 								},
 								effects: {
@@ -192,6 +164,141 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+		ankles: {
+			type: 'typed',
+			name: 'Ankles',
+			staticConfig: { slotName: 'character_slot' },
+			variants: [
+				{
+					id: 'None',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'left',
+					name: 'Left Only',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot'],
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									bones: {
+										leg_l: -30,
+									},
+									legs: 'standing',
+								},
+								attributes: {
+									requires: [
+										'Ankle_cuffs',
+									],
+								},
+								effects: {
+									blockHands: true,
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'right',
+					name: 'Right Only',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot'],
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									bones: {
+										leg_r: -30,
+									},
+									legs: 'standing',
+								},
+								attributes: {
+									requires: [
+										'Ankle_cuffs',
+									],
+								},
+								effects: {
+									blockHands: true,
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'both',
+					name: 'Both',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot'],
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									bones: {
+										leg_l: -30,
+										leg_r: -30,
+									},
+									legs: 'standing',
+								},
+								attributes: {
+									requires: [
+										'Ankle_cuffs',
+									],
+								},
+								effects: {
+									blockHands: true,
+								},
+								stateFlags: {
+									provides: ['ankles_tied'],
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+		rotation: {
+			type: 'typed',
+			name: 'Rotation',
+			staticConfig: { slotName: 'character_slot' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+					properties: {
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									bones: {
+										character_rotation: 0,
+									},
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'upsideDown',
+					name: 'Upside Down',
+					properties: {
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									bones: {
+										character_rotation: 180,
+									},
+								},
+								stateFlags: {
+									requires: {
+										ankles_tied: 'Upside Down position requires both ankles tied to frame',
+									},
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+
 		setup: {
 			type: 'typed',
 			name: 'Mounting setup',
@@ -212,12 +319,20 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
-		lock: {
+		lock_wrists: {
 			type: 'lockSlot',
 			name: 'Chain locks',
 			staticConfig: { slotName: 'character_slot' },
 			lockedProperties: {
-				blockModules: ['chains'],
+				blockModules: ['wrists'],
+			},
+		},
+		lock_ankles: {
+			type: 'lockSlot',
+			name: 'Chain locks',
+			staticConfig: { slotName: 'character_slot' },
+			lockedProperties: {
+				blockModules: ['ankles'],
 			},
 		},
 	},
@@ -344,16 +459,9 @@ DefineRoomDeviceAsset({
 					condition: [
 						[
 							{
-								module: 'chains',
+								module: 'rotation',
 								operator: '=',
-								value: 'upsideFront',
-							},
-						],
-						[
-							{
-								module: 'chains',
-								operator: '=',
-								value: 'upsideBack',
+								value: 'upsideDown',
 							},
 						],
 					],
