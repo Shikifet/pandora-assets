@@ -19,6 +19,10 @@ DefineRoomDeviceAsset({
 			name: 'Nails',
 			default: '#1E1E1D',
 		},
+		padding: {
+			name: 'Padding',
+			default: '#1F1F1F',
+		},
 	},
 	staticAttributes: ['Play_furniture'],
 	preview: 'cross_preview.png',
@@ -298,7 +302,26 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
-
+		padding: {
+			type: 'typed',
+			name: 'Padding',
+			staticConfig: { slotName: null },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'center',
+					name: 'Center Only',
+				},
+				{
+					id: 'all',
+					name: 'All',
+				},
+			],
+		},
 		setup: {
 			type: 'typed',
 			name: 'Mounting setup',
@@ -321,7 +344,7 @@ DefineRoomDeviceAsset({
 		},
 		lock_wrists: {
 			type: 'lockSlot',
-			name: 'Chain locks',
+			name: 'Wrists locks',
 			staticConfig: { slotName: 'character_slot' },
 			lockedProperties: {
 				blockModules: ['wrists'],
@@ -329,7 +352,7 @@ DefineRoomDeviceAsset({
 		},
 		lock_ankles: {
 			type: 'lockSlot',
-			name: 'Chain locks',
+			name: 'Ankles locks',
 			staticConfig: { slotName: 'character_slot' },
 			lockedProperties: {
 				blockModules: ['ankles'],
@@ -435,6 +458,44 @@ DefineRoomDeviceAsset({
 			type: 'sprite',
 			image: 'nails.png',
 			colorizationKey: 'nails',
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'padding',
+			imageOverrides: [
+				{
+					image: 'padding_center.png',
+					condition: [
+						[
+							{
+								module: 'padding',
+								operator: '!=',
+								value: 'none',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'padding',
+			imageOverrides: [
+				{
+					image: 'padding_edges.png',
+					condition: [
+						[
+							{
+								module: 'padding',
+								operator: '=',
+								value: 'all',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
