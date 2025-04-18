@@ -38,7 +38,7 @@ DefineRoomDeviceAsset({
 	modules: {
 		position: {
 			type: 'typed',
-			name: 'Facing Position',
+			name: 'Facing position',
 			staticConfig: { slotName: 'character_slot' },
 			variants: [
 				{
@@ -46,7 +46,6 @@ DefineRoomDeviceAsset({
 					name: 'Front-Facing',
 					default: true,
 					properties: {
-						blockSlotsEnterLeave: ['character_slot'],
 						slotProperties: {
 							character_slot: {
 								poseLimits: {
@@ -60,7 +59,6 @@ DefineRoomDeviceAsset({
 					id: 'back',
 					name: 'Back-Facing',
 					properties: {
-						blockSlotsEnterLeave: ['character_slot'],
 						slotProperties: {
 							character_slot: {
 								poseLimits: {
@@ -83,7 +81,6 @@ DefineRoomDeviceAsset({
 					name: 'None',
 					default: true,
 					properties: {
-						blockSlotsEnterLeave: ['character_slot'],
 						slotProperties: {
 							character_slot: {
 								poseLimits: {
@@ -261,7 +258,7 @@ DefineRoomDeviceAsset({
 		},
 		rotation: {
 			type: 'typed',
-			name: 'Rotation',
+			name: 'Cross Rotation',
 			staticConfig: { slotName: 'character_slot' },
 			variants: [
 				{
