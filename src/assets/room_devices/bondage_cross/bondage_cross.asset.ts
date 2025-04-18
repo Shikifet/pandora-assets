@@ -302,6 +302,22 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+		headrest: {
+			type: 'typed',
+			name: 'Head Rest',
+			staticConfig: { slotName: null },
+			variants: [
+				{
+					id: 'no',
+					name: 'No',
+					default: true,
+				},
+				{
+					id: 'yes',
+					name: 'Yes',
+				},
+			],
+		},
 		padding: {
 			type: 'typed',
 			name: 'Padding',
@@ -443,6 +459,72 @@ DefineRoomDeviceAsset({
 								module: 'setup',
 								operator: '=',
 								value: 'hanging',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'cross',
+			imageOverrides: [
+				{
+					image: 'headrest_base.png',
+					condition: [
+						[
+							{
+								module: 'headrest',
+								operator: '=',
+								value: 'yes',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: 700 },
+					condition: [
+						[
+							{
+								module: 'rotation',
+								operator: '=',
+								value: 'upsideDown',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'padding',
+			imageOverrides: [
+				{
+					image: 'headrest_padding.png',
+					condition: [
+						[
+							{
+								module: 'headrest',
+								operator: '=',
+								value: 'yes',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: 700 },
+					condition: [
+						[
+							{
+								module: 'rotation',
+								operator: '=',
+								value: 'upsideDown',
 							},
 						],
 					],
