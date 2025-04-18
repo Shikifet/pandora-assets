@@ -304,7 +304,7 @@ DefineRoomDeviceAsset({
 		},
 		headrest: {
 			type: 'typed',
-			name: 'Head Rest',
+			name: 'Headrest',
 			staticConfig: { slotName: null },
 			variants: [
 				{
