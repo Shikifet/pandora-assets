@@ -150,6 +150,7 @@ DefineRoomDeviceAsset({
 										arm_r: -44,
 										elbow_r: -21,
 									},
+									legs: 'standing',
 								},
 								attributes: {
 									requires: [
