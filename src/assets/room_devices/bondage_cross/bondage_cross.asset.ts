@@ -19,6 +19,10 @@ DefineRoomDeviceAsset({
 			name: 'Nails',
 			default: '#1E1E1D',
 		},
+		padding: {
+			name: 'Padding',
+			default: '#1F1F1F',
+		},
 	},
 	staticAttributes: ['Play_furniture'],
 	preview: 'cross_preview.png',
@@ -28,64 +32,24 @@ DefineRoomDeviceAsset({
 			asset: {
 				name: 'Bondage cross',
 				size: 'huge',
-				poseLimits: {
-					legs: 'standing',
-				},
 			},
 		},
 	},
 	modules: {
-		chains: {
+		position: {
 			type: 'typed',
-			name: 'Chains',
+			name: 'Facing position',
 			staticConfig: { slotName: 'character_slot' },
 			variants: [
 				{
-					id: 'none',
-					name: 'Not attached',
+					id: 'front',
+					name: 'Front-Facing',
 					default: true,
 					properties: {
 						slotProperties: {
 							character_slot: {
 								poseLimits: {
-									bones: {
-										leg_r: [[-32, 10]],
-										leg_l: [[-32, 10]],
-										character_rotation: 0,
-									},
-								},
-							},
-						},
-					},
-				},
-				{
-					id: 'front',
-					name: 'Tied front-facing',
-					properties: {
-						blockSlotsEnterLeave: ['character_slot'],
-						slotProperties: {
-							character_slot: {
-								poseLimits: {
-									bones: {
-										arm_l: -44,
-										arm_r: -44,
-										elbow_l: -21,
-										elbow_r: -21,
-										leg_r: -30,
-										leg_l: -30,
-										character_rotation: 0,
-									},
-									legs: 'standing',
 									view: 'front',
-								},
-								attributes: {
-									requires: [
-										'Wrist_cuffs',
-										'Ankle_cuffs',
-									],
-								},
-								effects: {
-									blockHands: true,
 								},
 							},
 						},
@@ -93,7 +57,42 @@ DefineRoomDeviceAsset({
 				},
 				{
 					id: 'back',
-					name: 'Tied back-facing',
+					name: 'Back-Facing',
+					properties: {
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									view: 'back',
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+
+		wrists: {
+			type: 'typed',
+			name: 'Wrist',
+			staticConfig: { slotName: 'character_slot' },
+			variants: [
+				{
+					id: 'None',
+					name: 'None',
+					default: true,
+					properties: {
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									legs: 'standing',
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'left',
+					name: 'Left Only',
 					properties: {
 						blockSlotsEnterLeave: ['character_slot'],
 						slotProperties: {
@@ -101,94 +100,239 @@ DefineRoomDeviceAsset({
 								poseLimits: {
 									bones: {
 										arm_l: -44,
-										arm_r: -44,
 										elbow_l: -21,
+									},
+									legs: 'standing',
+								},
+								attributes: {
+									requires: [
+										'Wrist_cuffs',
+									],
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'right',
+					name: 'Right Only',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot'],
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									bones: {
+										arm_r: -44,
 										elbow_r: -21,
-										leg_r: -30,
+									},
+									legs: 'standing',
+								},
+								attributes: {
+									requires: [
+										'Wrist_cuffs',
+									],
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'both',
+					name: 'Both',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot'],
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									bones: {
+										arm_l: -44,
+										elbow_l: -21,
+										arm_r: -44,
+										elbow_r: -21,
+									},
+									legs: 'standing',
+								},
+								attributes: {
+									requires: [
+										'Wrist_cuffs',
+									],
+								},
+								effects: {
+									blockHands: true,
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+		ankles: {
+			type: 'typed',
+			name: 'Ankles',
+			staticConfig: { slotName: 'character_slot' },
+			variants: [
+				{
+					id: 'None',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'left',
+					name: 'Left Only',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot'],
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									bones: {
 										leg_l: -30,
+									},
+									legs: 'standing',
+								},
+								attributes: {
+									requires: [
+										'Ankle_cuffs',
+									],
+								},
+								effects: {
+									blockHands: true,
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'right',
+					name: 'Right Only',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot'],
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									bones: {
+										leg_r: -30,
+									},
+									legs: 'standing',
+								},
+								attributes: {
+									requires: [
+										'Ankle_cuffs',
+									],
+								},
+								effects: {
+									blockHands: true,
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'both',
+					name: 'Both',
+					properties: {
+						blockSlotsEnterLeave: ['character_slot'],
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									bones: {
+										leg_l: -30,
+										leg_r: -30,
+									},
+									legs: 'standing',
+								},
+								attributes: {
+									requires: [
+										'Ankle_cuffs',
+									],
+								},
+								effects: {
+									blockHands: true,
+								},
+								stateFlags: {
+									provides: ['ankles_tied'],
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+		rotation: {
+			type: 'typed',
+			name: 'Cross Rotation',
+			staticConfig: { slotName: 'character_slot' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+					properties: {
+						slotProperties: {
+							character_slot: {
+								poseLimits: {
+									bones: {
 										character_rotation: 0,
 									},
-									legs: 'standing',
-									view: 'back',
-								},
-								attributes: {
-									requires: [
-										'Wrist_cuffs',
-										'Ankle_cuffs',
-									],
-								},
-								effects: {
-									blockHands: true,
 								},
 							},
 						},
 					},
 				},
 				{
-					id: 'upsideFront',
-					name: 'Tied upside-down front-facing',
+					id: 'upsideDown',
+					name: 'Upside Down',
 					properties: {
-						blockSlotsEnterLeave: ['character_slot'],
 						slotProperties: {
 							character_slot: {
 								poseLimits: {
 									bones: {
-										arm_l: -43,
-										arm_r: -43,
-										elbow_l: -15,
-										elbow_r: -15,
-										leg_r: -26,
-										leg_l: -26,
 										character_rotation: 180,
 									},
-									legs: 'standing',
-									view: 'front',
 								},
-								attributes: {
-									requires: [
-										'Wrist_cuffs',
-										'Ankle_cuffs',
-									],
-								},
-								effects: {
-									blockHands: true,
+								stateFlags: {
+									requires: {
+										ankles_tied: 'Upside Down position requires both ankles tied to frame',
+									},
 								},
 							},
 						},
 					},
 				},
+			],
+		},
+		headrest: {
+			type: 'typed',
+			name: 'Headrest',
+			staticConfig: { slotName: null },
+			variants: [
 				{
-					id: 'upsideBack',
-					name: 'Tied upside-down back-facing',
-					properties: {
-						blockSlotsEnterLeave: ['character_slot'],
-						slotProperties: {
-							character_slot: {
-								poseLimits: {
-									bones: {
-										arm_l: -43,
-										arm_r: -43,
-										elbow_l: -15,
-										elbow_r: -15,
-										leg_r: -26,
-										leg_l: -26,
-										character_rotation: 180,
-									},
-									legs: 'standing',
-									view: 'back',
-								},
-								attributes: {
-									requires: [
-										'Wrist_cuffs',
-										'Ankle_cuffs',
-									],
-								},
-								effects: {
-									blockHands: true,
-								},
-							},
-						},
-					},
+					id: 'no',
+					name: 'No',
+					default: true,
+				},
+				{
+					id: 'yes',
+					name: 'Yes',
+				},
+			],
+		},
+		padding: {
+			type: 'typed',
+			name: 'Padding',
+			staticConfig: { slotName: null },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'center',
+					name: 'Center Only',
+				},
+				{
+					id: 'all',
+					name: 'All',
 				},
 			],
 		},
@@ -212,12 +356,20 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
-		lock: {
+		lock_wrists: {
 			type: 'lockSlot',
-			name: 'Chain locks',
+			name: 'Wrists locks',
 			staticConfig: { slotName: 'character_slot' },
 			lockedProperties: {
-				blockModules: ['chains'],
+				blockModules: ['wrists'],
+			},
+		},
+		lock_ankles: {
+			type: 'lockSlot',
+			name: 'Ankles locks',
+			staticConfig: { slotName: 'character_slot' },
+			lockedProperties: {
+				blockModules: ['ankles'],
 			},
 		},
 	},
@@ -313,6 +465,72 @@ DefineRoomDeviceAsset({
 		},
 		{
 			type: 'sprite',
+			image: '',
+			colorizationKey: 'cross',
+			imageOverrides: [
+				{
+					image: 'headrest_base.png',
+					condition: [
+						[
+							{
+								module: 'headrest',
+								operator: '=',
+								value: 'yes',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: 700 },
+					condition: [
+						[
+							{
+								module: 'rotation',
+								operator: '=',
+								value: 'upsideDown',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'padding',
+			imageOverrides: [
+				{
+					image: 'headrest_padding.png',
+					condition: [
+						[
+							{
+								module: 'headrest',
+								operator: '=',
+								value: 'yes',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: 700 },
+					condition: [
+						[
+							{
+								module: 'rotation',
+								operator: '=',
+								value: 'upsideDown',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
 			image: 'cross.png',
 			colorizationKey: 'cross',
 		},
@@ -320,6 +538,44 @@ DefineRoomDeviceAsset({
 			type: 'sprite',
 			image: 'nails.png',
 			colorizationKey: 'nails',
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'padding',
+			imageOverrides: [
+				{
+					image: 'padding_center.png',
+					condition: [
+						[
+							{
+								module: 'padding',
+								operator: '!=',
+								value: 'none',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'padding',
+			imageOverrides: [
+				{
+					image: 'padding_edges.png',
+					condition: [
+						[
+							{
+								module: 'padding',
+								operator: '=',
+								value: 'all',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
@@ -344,16 +600,9 @@ DefineRoomDeviceAsset({
 					condition: [
 						[
 							{
-								module: 'chains',
+								module: 'rotation',
 								operator: '=',
-								value: 'upsideFront',
-							},
-						],
-						[
-							{
-								module: 'chains',
-								operator: '=',
-								value: 'upsideBack',
+								value: 'upsideDown',
 							},
 						],
 					],
@@ -363,7 +612,7 @@ DefineRoomDeviceAsset({
 	],
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
-		credits: ['ClaudiaMia'],
+		credits: ['ClaudiaMia', 'Shikifet'],
 		modificationPolicy: `Fixes and New uses, otherwise ask`,
 		reusePolicy: 'Ask first',
 		licensing: [
@@ -386,6 +635,13 @@ DefineRoomDeviceAsset({
 				source: 'Self-Made',
 				copyrightHolder: 'ClaudiaMia',
 				editedBy: 'ClaudiaMia',
+				license: 'Pandora-Use-Only-v1-or-later',
+			},
+			{
+				part: 'padding images',
+				source: 'Self-Made',
+				copyrightHolder: 'Shikifet',
+				editedBy: 'Shikifet',
 				license: 'Pandora-Use-Only-v1-or-later',
 			},
 		],
