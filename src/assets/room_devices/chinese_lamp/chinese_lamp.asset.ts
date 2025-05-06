@@ -260,9 +260,24 @@ DefineRoomDeviceAsset({
 		{
 			type: 'sprite',
 			image: '',
+			clipToRoom: true,
 			imageOverrides: [
 				{
 					image: 'lamp_pendulum.png',
+					condition: [
+						[
+							{
+								module: 'configuration',
+								operator: '=',
+								value: 'hanging',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 6, y: -821 },
 					condition: [
 						[
 							{
@@ -270,36 +285,11 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'normal',
 							},
-							{
-								module: 'configuration',
-								operator: '=',
-								value: 'hanging',
-							},
 						],
 					],
 				},
 				{
-					image: 'lamp_pendulum.png@375x525',
-					condition: [
-						[
-							{
-								module: 'size',
-								operator: '=',
-								value: 'small',
-							},
-							{
-								module: 'configuration',
-								operator: '=',
-								value: 'hanging',
-							},
-						],
-
-					],
-				},
-			],
-			offsetOverrides: [
-				{
-					offset: { x: 62, y: 10 },
+					offset: { x: 6, y: -850 },
 					condition: [
 						[
 							{
