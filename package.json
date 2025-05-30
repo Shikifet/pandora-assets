@@ -54,7 +54,7 @@
 		"@types/express": "4.17.22",
 		"@types/json-diff": "1.0.3",
 		"@types/lodash-es": "4.17.12",
-		"@types/node": "22.15.28",
+		"@types/node": "22.15.29",
 		"eslint": "9.27.0",
 		"eslint-plugin-import": "2.31.0",
 		"jest": "29.7.0",
