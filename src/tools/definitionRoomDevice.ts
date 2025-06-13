@@ -1,6 +1,6 @@
-import { freeze } from 'immer';
+import { freeze, type Immutable } from 'immer';
 import { cloneDeep, omit, pick } from 'lodash-es';
-import { Assert, AssertNever, AssetId, GetLogger, RoomDeviceAssetDefinition, RoomDeviceModuleStaticData, RoomDeviceProperties, RoomDeviceWearablePartAssetDefinition, type AssetModuleDefinition, type ImageBoundingBox } from 'pandora-common';
+import { Assert, AssertNever, AssetId, GetLogger, RoomDeviceAssetDefinition, RoomDeviceModuleStaticData, RoomDeviceProperties, RoomDeviceWearablePartAssetDefinition, type AssetModuleDefinition, type GraphicsBuildContextAssetData, type ImageBoundingBox } from 'pandora-common';
 import { join } from 'path';
 import { OPTIMIZE_TEXTURES } from '../config.ts';
 import { AssetDatabase } from './assetDatabase.ts';
@@ -112,10 +112,14 @@ async function DefineRoomDeviceWearablePart(
 
 	// Load and verify graphics
 	if (def.graphics) {
-		const { graphics, graphicsSource } = await LoadAssetGraphicsFile(
-			join(AssetSourcePath, def.graphics),
+		const builtAssetData: Immutable<GraphicsBuildContextAssetData> = {
 			modules,
 			colorizationKeys,
+		};
+
+		const { graphics, graphicsSource } = await LoadAssetGraphicsFile(
+			join(AssetSourcePath, def.graphics),
+			builtAssetData,
 		);
 
 		GraphicsDatabase.registerAssetGraphics(id, graphics, graphicsSource);
@@ -276,6 +280,14 @@ async function GlobalDefineRoomDeviceAssetProcess(def: IntermediateRoomDeviceDef
 			if (!slotIds.has(layer.slot)) {
 				definitionValid = false;
 				logger.error(`Layer #${index} links to unknown slot '${layer.slot}'`);
+			}
+		} else if (layer.type === 'text') {
+			if (def.modules?.[layer.dataModule]?.type !== 'text') {
+				definitionValid = false;
+				logger.error(`Layer #${index} links module '${layer.dataModule}', but it is not a text module`);
+			}
+			if (layer.colorizationKey != null && !colorizationKeys.has(layer.colorizationKey)) {
+				logger.warning(`Layer #${index} has colorizationKey ${layer.colorizationKey} outside of defined colorization keys [${[...colorizationKeys].join(', ')}]`);
 			}
 		} else {
 			AssertNever(layer);
