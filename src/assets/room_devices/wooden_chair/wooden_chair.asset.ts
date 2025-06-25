@@ -201,6 +201,9 @@ DefineRoomDeviceAsset({
 										elbow_r: -30,
 									},
 								},
+								effects: {
+									blockHands: true,
+								},
 							},
 						},
 						stateFlags: {
@@ -225,6 +228,9 @@ DefineRoomDeviceAsset({
 										elbow_l: -45,
 										elbow_r: -45,
 									},
+								},
+								effects: {
+									blockHands: true,
 								},
 							},
 						},
