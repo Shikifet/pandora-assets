@@ -50,7 +50,7 @@
 	"devDependencies": {
 		"@eslint/js": "9.30.0",
 		"@jest/globals": "30.0.3",
-		"@stylistic/eslint-plugin": "5.0.0",
+		"@stylistic/eslint-plugin": "5.1.0",
 		"@types/delaunator": "5.0.3",
 		"@types/express": "5.0.3",
 		"@types/json-diff": "1.0.3",
