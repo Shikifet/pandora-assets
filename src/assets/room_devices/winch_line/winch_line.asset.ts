@@ -3,13 +3,21 @@ DefineRoomDeviceAsset({
 	size: 'huge',
 	//preview: 'preview.png',
 	colorization: {
-		bar: {
-			name: 'Bar',
-			default: '#8E8E8E',
-		},
 		cable: {
 			name: 'Cable',
 			default: '#8E8E8E',
+		},
+		pulley: {
+			name: 'Pulley',
+			default: '#ACACAC',
+		},
+		chains: {
+			name: 'Chains',
+			default: '#CECECE',
+		},
+		bar: {
+			name: 'Bar',
+			default: '#595757',
 		},
 	},
 	staticAttributes: ['Play_furniture'],
@@ -86,7 +94,72 @@ DefineRoomDeviceAsset({
 				},
 				{
 					id: 'extended',
-					name: 'Retracted',
+					name: 'Extended',
+				},
+			],
+		},
+		attachment: {
+			type: 'typed',
+			name: 'Attachment',
+			staticConfig: { slotName: 'under_winch' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true
+				},
+				{
+					id: 'spreader_bar',
+					name: 'Spreader Bar',
+					properties: {
+						slotProperties: {
+							under_winch: {
+								stateFlags: {
+									provides: ['spread_bar'],
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+		spreader_bar: {
+			type: 'typed',
+			name: 'Spreader Bar',
+			staticConfig: { slotName: 'under_winch' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'wrists_cuffed',
+					name: 'Wrists Cuffed',
+					properties: {
+						slotProperties: {
+							under_winch: {
+								poseLimits: {
+									bones: {
+										arm_l: -70,
+										elbow_l: -20,
+										arm_r: -70,
+										elbow_r: -20,
+									},
+								},
+								attributes: {
+									requires: [
+										'Wrist_cuffs',
+									],
+								},
+								stateFlags: {
+									requires: {
+										spread_bar: 'Wrists cannot be cuffed without a spreader bar attached to winch',
+									},
+								},
+							},
+						},
+					},
 				},
 			],
 		},
@@ -114,12 +187,37 @@ DefineRoomDeviceAsset({
 						disablePoseOffset: true,
 						pivotOffset: {
 							x: 0,
-							y: 0,
+							y: 500,
 						},
 					},
 					condition: [
 						[
-
+							{
+								module: 'cable',
+								operator: '=',
+								value: 'retracted',
+							},
+							{
+								module: 'spreader_bar',
+								operator: '!=',
+								value: 'none',
+							},
+						],
+					],
+				},
+				{
+					position: {
+						offsetX: 0,
+						offsetY: 0,
+						disablePoseOffset: true,
+					},
+					condition: [
+						[
+							{
+								module: 'spreader_bar',
+								operator: '!=',
+								value: 'none',
+							},
 						],
 					],
 				},
@@ -131,32 +229,124 @@ DefineRoomDeviceAsset({
 			clipToRoom: true,
 			colorizationKey: 'cable',
 			offset: {
-				x: -16,
+				x: -15,
 				y: -950,
 			},
-			imageOverrides: [
+			offsetOverrides: [
+				{
+					offset: { x: -15, y: -1450 },
+					condition: [
+						[
+							{
+								module: 'cable',
+								operator: '=',
+								value: 'retracted',
+							},
+						],
+					],
+				},
 			],
 		},
 		{
 			type: 'sprite',
-			image: 'winch_carabiner.png',
-			colorizationKey: 'bar',
-			offset: {
-				x: -24,
-				y: 10,
-			},
-			imageOverrides: [
-			],
-		},
-		{
-			type: 'sprite',
-			image: 'winch_bar.png',
+			image: '',
 			colorizationKey: 'bar',
 			offset: {
 				x: -250,
 				y: 0,
 			},
 			imageOverrides: [
+				{
+					image: 'winch_bar.png',
+					condition: [
+						[
+							{
+								module: 'attachment',
+								operator: '=',
+								value: 'spreader_bar',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: -250, y: -500 },
+					condition: [
+						[
+							{
+								module: 'cable',
+								operator: '=',
+								value: 'retracted',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'chains',
+			offset: {
+				x: -250,
+				y: 0,
+			},
+			imageOverrides: [
+				{
+					image: 'winch_bar_carabiners.png',
+					condition: [
+						[
+							{
+								module: 'attachment',
+								operator: '=',
+								value: 'spreader_bar',
+							},
+							{
+								module: 'spreader_bar',
+								operator: '!=',
+								value: 'none',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: -250, y: -500 },
+					condition: [
+						[
+							{
+								module: 'cable',
+								operator: '=',
+								value: 'retracted',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: 'winch_pulley.png',
+			colorizationKey: 'pulley',
+			offset: {
+				x: -25,
+				y: 5,
+			},
+			offsetOverrides: [
+				{
+					offset: { x: -25, y: -495 },
+					condition: [
+						[
+							{
+								module: 'cable',
+								operator: '=',
+								value: 'retracted',
+							},
+						],
+					],
+				},
 			],
 		},
 	],
