@@ -161,6 +161,36 @@ DefineRoomDeviceAsset({
 						},
 					},
 				},
+				{
+					id: 'ankles_cuffed',
+					name: 'Ankles Cuffed',
+					properties: {
+						slotProperties: {
+							under_winch: {
+								poseLimits: {
+									bones: {
+										character_rotation: 180,
+										leg_l: -16,
+										leg_r: -16,
+									},
+									legs: {
+										pose: ['standing'],
+									},
+								},
+								attributes: {
+									requires: [
+										'Ankle_cuffs',
+									],
+								},
+								stateFlags: {
+									requires: {
+										spread_bar: 'Ankles cannot be cuffed without a spreader bar attached to winch',
+									},
+								},
+							},
+						},
+					},
+				},
 			],
 		},
 	},
@@ -183,6 +213,27 @@ DefineRoomDeviceAsset({
 				{
 					position: {
 						offsetX: 0,
+						offsetY: -1700,
+						disablePoseOffset: true,
+					},
+					condition: [
+						[
+							{
+								module: 'cable',
+								operator: '=',
+								value: 'retracted',
+							},
+							{
+								module: 'spreader_bar',
+								operator: '=',
+								value: 'ankles_cuffed',
+							},
+						],
+					],
+				},
+				{
+					position: {
+						offsetX: 0,
 						offsetY: 0,
 						disablePoseOffset: true,
 						pivotOffset: {
@@ -201,6 +252,22 @@ DefineRoomDeviceAsset({
 								module: 'spreader_bar',
 								operator: '!=',
 								value: 'none',
+							},
+						],
+					],
+				},
+				{
+					position: {
+						offsetX: 0,
+						offsetY: -1200,
+						disablePoseOffset: true,
+					},
+					condition: [
+						[
+							{
+								module: 'spreader_bar',
+								operator: '=',
+								value: 'ankles_cuffed',
 							},
 						],
 					],
