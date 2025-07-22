@@ -253,8 +253,8 @@ DefineRoomDeviceAsset({
 								poseLimits: {
 									bones: {
 										character_rotation: 180,
-										//leg_l: -3,
-										//leg_r: -3,
+										leg_l: -2,
+										leg_r: -2,
 									},
 									legs: {
 										pose: ['standing'],
