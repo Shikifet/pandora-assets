@@ -244,6 +244,36 @@ DefineRoomDeviceAsset({
 						},
 					},
 				},
+				{
+					id: 'ankles_tied',
+					name: 'Ankle tied',
+					properties: {
+						slotProperties: {
+							under_winch: {
+								poseLimits: {
+									bones: {
+										character_rotation: 180,
+										//leg_l: -3,
+										//leg_r: -3,
+									},
+									legs: {
+										pose: ['standing'],
+									},
+								},
+								attributes: {
+									requires: [
+										'Ankle_cuffs',
+									],
+								},
+								stateFlags: {
+									requires: {
+										carabiner: 'Ankles cannot be cuffed without a carabiner attached to winch',
+									},
+								},
+							},
+						},
+					},
+				},
 			],
 		},
 	},
@@ -280,6 +310,18 @@ DefineRoomDeviceAsset({
 								module: 'spreader_bar',
 								operator: '=',
 								value: 'ankles_cuffed',
+							},
+						],
+						[
+							{
+								module: 'cable',
+								operator: '=',
+								value: 'retracted',
+							},
+							{
+								module: 'carabiner',
+								operator: '=',
+								value: 'ankles_tied',
 							},
 						],
 					],
@@ -333,6 +375,13 @@ DefineRoomDeviceAsset({
 								module: 'spreader_bar',
 								operator: '=',
 								value: 'ankles_cuffed',
+							},
+						],
+						[
+							{
+								module: 'carabiner',
+								operator: '=',
+								value: 'ankles_tied',
 							},
 						],
 					],
@@ -485,8 +534,25 @@ DefineRoomDeviceAsset({
 							},
 							{
 								module: 'carabiner',
-								operator: '!=',
-								value: 'none',
+								operator: '=',
+								value: 'wrist_tied',
+							},
+						],
+					],
+				},
+				{
+					image: 'winch_carabiner_chains_ankles.png',
+					condition: [
+						[
+							{
+								module: 'attachment',
+								operator: '=',
+								value: 'carabiner',
+							},
+							{
+								module: 'carabiner',
+								operator: '=',
+								value: 'ankles_tied',
 							},
 						],
 					],
