@@ -121,6 +121,19 @@ DefineRoomDeviceAsset({
 						},
 					},
 				},
+				{
+					id: 'carabiner',
+					name: 'Carabiner',
+					properties: {
+						slotProperties: {
+							under_winch: {
+								stateFlags: {
+									provides: ['carabiner'],
+								},
+							},
+						},
+					},
+				},
 			],
 		},
 		spreader_bar: {
@@ -193,6 +206,46 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+		carabiner: {
+			type: 'typed',
+			name: 'Carabiner',
+			staticConfig: { slotName: 'under_winch' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'wrist_tied',
+					name: 'Wrist tied',
+					properties: {
+						slotProperties: {
+							under_winch: {
+								poseLimits: {
+									bones: {
+										arm_l: -90,
+										elbow_l: -25,
+										arm_r: -90,
+										elbow_r: -25,
+									},
+								},
+								attributes: {
+									requires: [
+										'Wrist_cuffs',
+									],
+								},
+								stateFlags: {
+									requires: {
+										carabiner: 'Wrist cannot be cuffed without a carabiner attached to winch',
+									},
+								},
+							},
+						},
+					},
+				},
+			],
+		},
 	},
 	graphicsLayers: [
 
@@ -254,6 +307,18 @@ DefineRoomDeviceAsset({
 								value: 'none',
 							},
 						],
+						[
+							{
+								module: 'cable',
+								operator: '=',
+								value: 'retracted',
+							},
+							{
+								module: 'carabiner',
+								operator: '!=',
+								value: 'none',
+							},
+						],
 					],
 				},
 				{
@@ -282,6 +347,13 @@ DefineRoomDeviceAsset({
 						[
 							{
 								module: 'spreader_bar',
+								operator: '!=',
+								value: 'none',
+							},
+						],
+						[
+							{
+								module: 'carabiner',
 								operator: '!=',
 								value: 'none',
 							},
@@ -371,6 +443,48 @@ DefineRoomDeviceAsset({
 							},
 							{
 								module: 'spreader_bar',
+								operator: '!=',
+								value: 'none',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: -250, y: -500 },
+					condition: [
+						[
+							{
+								module: 'cable',
+								operator: '=',
+								value: 'retracted',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'chains',
+			offset: {
+				x: -250,
+				y: 0,
+			},
+			imageOverrides: [
+				{
+					image: 'winch_carabiner_chains.png',
+					condition: [
+						[
+							{
+								module: 'attachment',
+								operator: '=',
+								value: 'carabiner',
+							},
+							{
+								module: 'carabiner',
 								operator: '!=',
 								value: 'none',
 							},
