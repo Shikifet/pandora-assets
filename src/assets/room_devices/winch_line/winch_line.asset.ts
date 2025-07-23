@@ -152,7 +152,7 @@ DefineRoomDeviceAsset({
 				},
 				{
 					id: 'wrist_tied',
-					name: 'Wrists tied',
+					name: 'Wrists Chained',
 					properties: {
 						blockSlotsEnterLeave: ['under_winch'],
 						slotProperties: {
@@ -184,7 +184,7 @@ DefineRoomDeviceAsset({
 				},
 				{
 					id: 'ankles_tied',
-					name: 'Ankle tied',
+					name: 'Ankles Chained',
 					properties: {
 						slotProperties: {
 							under_winch: {
