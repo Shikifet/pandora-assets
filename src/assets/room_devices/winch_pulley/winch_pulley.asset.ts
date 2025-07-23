@@ -58,9 +58,6 @@ DefineRoomDeviceAsset({
 										pose: ['standing', 'kneeling'],
 									},
 								},
-								stateFlags: {
-									provides: ['front_view'],
-								},
 							},
 						},
 					},
@@ -76,9 +73,6 @@ DefineRoomDeviceAsset({
 									legs: {
 										pose: ['standing', 'kneeling'],
 									},
-								},
-								stateFlags: {
-									provides: ['back_view'],
 								},
 							},
 						},
@@ -110,7 +104,7 @@ DefineRoomDeviceAsset({
 				{
 					id: 'none',
 					name: 'None',
-					default: true
+					default: true,
 				},
 				{
 					id: 'carabiner',
@@ -195,7 +189,7 @@ DefineRoomDeviceAsset({
 										leg_r: -2,
 									},
 									legs: {
-										pose: ['standing'],
+										pose: 'standing',
 									},
 								},
 								attributes: {
@@ -269,7 +263,7 @@ DefineRoomDeviceAsset({
 										leg_r: -16,
 									},
 									legs: {
-										pose: ['standing'],
+										pose: 'standing',
 									},
 								},
 								attributes: {
