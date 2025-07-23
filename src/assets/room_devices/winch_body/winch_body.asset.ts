@@ -1,5 +1,5 @@
 DefineRoomDeviceAsset({
-	name: 'Winch Body',
+	name: 'Winch (Body)',
 	size: 'huge',
 	preview: 'preview.png',
 	colorization: {

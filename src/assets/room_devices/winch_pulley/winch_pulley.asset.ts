@@ -1,5 +1,5 @@
 DefineRoomDeviceAsset({
-	name: 'Winch Pulley',
+	name: 'Winch (Pulley)',
 	size: 'huge',
 	preview: 'preview.png',
 	colorization: {
@@ -33,7 +33,7 @@ DefineRoomDeviceAsset({
 				size: 'huge',
 				poseLimits: {
 					legs: {
-						pose: ['standing', 'kneeling', 'sitting'],
+						pose: ['standing', 'kneeling'],
 					},
 				},
 			},
@@ -166,7 +166,7 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										carabiner: 'Wrist cannot be cuffed without a carabiner attached to winch',
+										carabiner: 'Wrists cannot be chained without the Carabiner attached to the Pulley',
 									},
 								},
 								effects: {
@@ -199,7 +199,7 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										carabiner: 'Ankles cannot be cuffed without a carabiner attached to winch',
+										carabiner: 'Ankles cannot be chained without the Carabiner attached to the Pulley',
 									},
 								},
 							},
@@ -240,7 +240,7 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										spread_bar: 'Wrists cannot be cuffed without a spreader bar attached to winch',
+										spread_bar: 'Wrists cannot be cuffed without the Spreader Bar attached to the Pulley',
 									},
 								},
 								effects: {
@@ -273,7 +273,7 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										spread_bar: 'Ankles cannot be cuffed without a spreader bar attached to winch',
+										spread_bar: 'Ankles cannot be cuffed without the Spreader Bar attached to the Pulley',
 									},
 								},
 							},
@@ -290,12 +290,12 @@ DefineRoomDeviceAsset({
 			clipToRoom: true,
 			colorizationKey: 'cable',
 			offset: {
-				x: -15,
-				y: -950,
+				x: -16,
+				y: -1450,
 			},
 			offsetOverrides: [
 				{
-					offset: { x: -15, y: -1450 },
+					offset: { x: -16, y: -1950 },
 					condition: [
 						[
 							{
