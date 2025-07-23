@@ -1,7 +1,7 @@
 DefineRoomDeviceAsset({
-	name: 'Winch Line',
+	name: 'Winch Pulley',
 	size: 'huge',
-	//preview: 'preview.png',
+	preview: 'preview.png',
 	colorization: {
 		cable: {
 			name: 'Cable',
@@ -29,7 +29,7 @@ DefineRoomDeviceAsset({
 		under_winch: {
 			name: 'Under the Winch',
 			asset: {
-				name: 'Winch',
+				name: 'Winch Pulley',
 				size: 'huge',
 				poseLimits: {
 					legs: {

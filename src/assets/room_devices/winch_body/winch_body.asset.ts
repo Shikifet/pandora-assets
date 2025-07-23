@@ -1,7 +1,7 @@
 DefineRoomDeviceAsset({
 	name: 'Winch Body',
 	size: 'huge',
-	//preview: 'preview.png',
+	preview: 'preview.png',
 	colorization: {
 		shell: {
 			name: 'Shell',
@@ -17,12 +17,7 @@ DefineRoomDeviceAsset({
 		},
 	},
 	staticAttributes: ['Play_furniture'],
-	slots: {
-
-	},
-	modules: {
-
-	},
+	slots: {},
 	graphicsLayers: [
 		{
 			type: 'sprite',
