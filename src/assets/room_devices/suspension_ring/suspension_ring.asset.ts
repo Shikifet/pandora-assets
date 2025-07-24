@@ -596,6 +596,49 @@ DefineRoomDeviceAsset({
 			colorizationKey: 'rope',
 			imageOverrides: [
 				{
+					image: 'wrists_over_head.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'ankles_line',
+								operator: '!=',
+								value: 'ankles_upside_down',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
 					image: 'ankle_line_upside_down.png',
 					condition: [
 						[
@@ -1065,7 +1108,13 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'suspended',
 							},
-
+						],
+						[
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
 						],
 					],
 				},
@@ -1194,6 +1243,87 @@ DefineRoomDeviceAsset({
 								module: 'ankles_line',
 								operator: '=',
 								value: 'ankles_upside_down',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'wrists_over_head_front.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'wrists_over_head.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'ankles_line',
+								operator: '!=',
+								value: 'ankles_upside_down',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
 							},
 						],
 					],
