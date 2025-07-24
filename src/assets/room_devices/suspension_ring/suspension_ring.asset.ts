@@ -920,11 +920,7 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'suspended',
 							},
-							{
-								module: 'ring_height',
-								operator: '=',
-								value: 'normal',
-							},
+
 						],
 					],
 				},
