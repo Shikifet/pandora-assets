@@ -91,6 +91,81 @@ DefineRoomDeviceAsset({
 			],
 		},
 
+		ring_height: {
+			type: 'typed',
+			name: 'Ring Height',
+			staticConfig: { slotName: 'under_ring' },
+			variants: [
+				{
+					id: 'normal',
+					name: 'Normal',
+					default: true,
+					properties: {
+						slotProperties: {
+							under_ring: {
+								stateFlags: {
+									provides: ['height_normal'],
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'high',
+					name: 'High',
+					properties: {
+						slotProperties: {
+							under_ring: {
+								stateFlags: {
+									provides: ['height_high'],
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+
+		wrists_line: {
+			type: 'typed',
+			name: 'Wrists Line',
+			staticConfig: { slotName: 'under_ring' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'wrists_tied',
+					name: 'Wrists Tied',
+					properties: {
+						blockSlotsEnterLeave: ['under_ring'],
+						slotProperties: {
+							under_ring: {
+								poseLimits: {
+									bones: {
+										arm_l: -90,
+										elbow_l: -25,
+										arm_r: -90,
+										elbow_r: -25,
+									},
+								},
+								stateFlags: {
+									requires: {
+										height_high: 'Body ties using Wrists Line requires Ring in High Height'
+									},
+								},
+								effects: {
+									blockHands: true,
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+
 		chest_line: {
 			type: 'typed',
 			name: 'Chest Line',
@@ -123,6 +198,12 @@ DefineRoomDeviceAsset({
 										leg_r: [[-25, 6]],
 									},
 								},
+								stateFlags: {
+									provides: ['suspension_chest'],
+									//requires: {
+									//	height_normal: 'Body ties using Chest Line requires Ring in Normal Height'
+									//},
+								},
 							},
 						},
 					},
@@ -146,6 +227,9 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									provides: ['suspension_chest'],
+									//requires: {
+									//	height_normal: 'Body ties using Chest Line requires Ring in Normal Height'
+									//},
 								},
 							},
 						},
@@ -281,6 +365,20 @@ DefineRoomDeviceAsset({
 			clipToRoom: true,
 			colorizationKey: 'rope',
 			offset: { x: 483, y: -1550 },
+			offsetOverrides: [
+				{
+					offset: { x: 483, y: 1750 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
@@ -288,11 +386,39 @@ DefineRoomDeviceAsset({
 			clipToRoom: true,
 			colorizationKey: 'rope',
 			offset: { x: 483, y: -580 },
+			offsetOverrides: [
+				{
+					offset: { x: 483, y: -780 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
 			image: 'rope_ring_top_end.png',
 			colorizationKey: 'rope',
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
@@ -317,6 +443,20 @@ DefineRoomDeviceAsset({
 					],
 				},
 			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
@@ -336,6 +476,20 @@ DefineRoomDeviceAsset({
 					],
 				},
 			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
@@ -350,6 +504,20 @@ DefineRoomDeviceAsset({
 								module: 'position',
 								operator: '=',
 								value: 'front',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
@@ -582,6 +750,20 @@ DefineRoomDeviceAsset({
 					],
 				},
 			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
@@ -601,6 +783,20 @@ DefineRoomDeviceAsset({
 					],
 				},
 			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
@@ -615,6 +811,20 @@ DefineRoomDeviceAsset({
 								module: 'position',
 								operator: '=',
 								value: 'back',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
