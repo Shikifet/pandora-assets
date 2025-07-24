@@ -200,9 +200,6 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									provides: ['suspension_chest'],
-									//requires: {
-									//	height_normal: 'Body ties using Chest Line requires Ring in Normal Height'
-									//},
 								},
 							},
 						},
@@ -227,9 +224,6 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									provides: ['suspension_chest'],
-									//requires: {
-									//	height_normal: 'Body ties using Chest Line requires Ring in Normal Height'
-									//},
 								},
 							},
 						},
@@ -266,7 +260,7 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										suspension_chest: 'Thigh cannot be tied without chest line suspended',
+										suspension_chest: 'Thigh cannot be tied without Chest Line Suspended',
 										front_view: 'Tying Left Thigh from this side require Front-facing view',
 									},
 								},
@@ -293,7 +287,7 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										suspension_chest: 'Thigh cannot be tied without chest line suspended',
+										suspension_chest: 'Thigh cannot be tied without Chest Line Suspended',
 										front_view: 'Tying Right Thigh from this side require Front-facing view',
 									},
 								},
@@ -320,7 +314,7 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										suspension_chest: 'Thigh cannot be tied without chest line suspended',
+										suspension_chest: 'Thigh cannot be tied without Chest Line Suspended',
 										back_view: 'Tying Left Thigh from this side require Front-facing view',
 									},
 								},
@@ -347,7 +341,7 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										suspension_chest: 'Thigh cannot be tied without chest line suspended',
+										suspension_chest: 'Thigh cannot be tied without Chest Line Suspended',
 										back_view: 'Tying Right Thigh from this side require Front-facing view',
 									},
 								},
@@ -357,7 +351,49 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+
+		ankles_line: {
+			type: 'typed',
+			name: 'Wrists Line',
+			staticConfig: { slotName: 'under_ring' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'ankles_split',
+					name: 'Both Split',
+					properties: {
+						slotProperties: {
+							under_ring: {
+								attributes: {
+									requires: [
+										'Back_knot_anchor_point',
+									],
+								},
+								poseLimits: {
+									bones: {
+										character_rotation: 0,
+										leg_l: -40,
+										leg_r: -40,
+									},
+								},
+								stateFlags: {
+									requires: {
+										suspension_chest: 'Ankles cannot be tied without Chest Line Suspended',
+									},
+								},
+							},
+						},
+					},
+				},
+			],
+		},
 	},
+
+
 	graphicsLayers: [
 		{
 			type: 'sprite',
