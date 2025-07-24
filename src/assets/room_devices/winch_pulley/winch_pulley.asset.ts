@@ -291,11 +291,11 @@ DefineRoomDeviceAsset({
 			colorizationKey: 'cable',
 			offset: {
 				x: -16,
-				y: -1450,
+				y: -1950,
 			},
 			offsetOverrides: [
 				{
-					offset: { x: -16, y: -1950 },
+					offset: { x: -16, y: -2450 },
 					condition: [
 						[
 							{
