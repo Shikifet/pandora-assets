@@ -282,6 +282,22 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+		lock_cable: {
+			type: 'lockSlot',
+			name: 'Cable Lock',
+			staticConfig: { slotName: 'under_winch' },
+			lockedProperties: {
+				blockModules: ['cable'],
+			},
+		},
+		lock_chain: {
+			type: 'lockSlot',
+			name: 'Attachment Lock',
+			staticConfig: { slotName: 'under_winch' },
+			lockedProperties: {
+				blockModules: ['attachment', 'carabiner', 'spreader_bar'],
+			},
+		},
 	},
 	graphicsLayers: [
 		{
