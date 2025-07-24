@@ -340,21 +340,19 @@ DefineRoomDeviceAsset({
 					properties: {
 						slotProperties: {
 							under_ring: {
-								attributes: {
-									requires: [
-										'Back_knot_anchor_point',
-									],
-								},
 								poseLimits: {
 									bones: {
 										character_rotation: 0,
 										leg_l: -40,
 										leg_r: -40,
 									},
+									legs: {
+										pose: 'kneeling',
+									},
 								},
 								stateFlags: {
 									requires: {
-										suspension_point: 'Ankles cannot be tied without Wrist or Chest Line Suspended',
+										suspension_point: 'Ankles cannot be tied without Wrists over head or Chest Line Suspended',
 									},
 								},
 							},
@@ -367,11 +365,6 @@ DefineRoomDeviceAsset({
 					properties: {
 						slotProperties: {
 							under_ring: {
-								attributes: {
-									requires: [
-										'Back_knot_anchor_point',
-									],
-								},
 								poseLimits: {
 									bones: {
 										character_rotation: 180,
