@@ -126,6 +126,39 @@ DefineRoomDeviceAsset({
 			],
 		},
 
+		playstyle: {
+			type: 'typed',
+			name: 'Ring Height',
+			staticConfig: { slotName: 'under_ring' },
+			variants: [
+				{
+					id: 'standing',
+					name: 'Standing',
+					default: true,
+				},
+				{
+					id: 'kneeling',
+					name: 'Kneeling',
+					properties: {
+						slotProperties: {
+							under_ring: {
+								poseLimits: {
+									legs: {
+										pose: 'kneeling',
+									},
+									bones: {
+										character_rotation: 0,
+										leg_l: [[-25, 6]],
+										leg_r: [[-25, 6]],
+									},
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+
 		wrists_line: {
 			type: 'typed',
 			name: 'Wrists Line',
@@ -138,7 +171,7 @@ DefineRoomDeviceAsset({
 				},
 				{
 					id: 'over_head',
-					name: 'Over Head',
+					name: 'Suspended',
 					properties: {
 						blockSlotsEnterLeave: ['under_ring'],
 						slotProperties: {
@@ -175,35 +208,6 @@ DefineRoomDeviceAsset({
 					id: 'none',
 					name: 'None',
 					default: true,
-				},
-				{
-					id: 'kneeling',
-					name: 'Floor',
-					properties: {
-						blockSlotsEnterLeave: ['under_ring'],
-						slotProperties: {
-							under_ring: {
-								attributes: {
-									requires: [
-										'Back_knot_anchor_point',
-									],
-								},
-								poseLimits: {
-									legs: {
-										pose: 'kneeling',
-									},
-									bones: {
-										character_rotation: 0,
-										leg_l: [[-25, 6]],
-										leg_r: [[-25, 6]],
-									},
-								},
-								stateFlags: {
-									provides: ['suspension_chest'],
-								},
-							},
-						},
-					},
 				},
 				{
 					id: 'suspended',
@@ -709,7 +713,7 @@ DefineRoomDeviceAsset({
 								value: 'front',
 							},
 							{
-								module: 'chest_line',
+								module: 'playstyle',
 								operator: '=',
 								value: 'kneeling',
 							},
@@ -731,7 +735,7 @@ DefineRoomDeviceAsset({
 								value: 'front',
 							},
 							{
-								module: 'chest_line',
+								module: 'playstyle',
 								operator: '=',
 								value: 'kneeling',
 							},
@@ -1420,7 +1424,7 @@ DefineRoomDeviceAsset({
 								value: 'back',
 							},
 							{
-								module: 'chest_line',
+								module: 'playstyle',
 								operator: '=',
 								value: 'kneeling',
 							},
@@ -1442,7 +1446,7 @@ DefineRoomDeviceAsset({
 								value: 'back',
 							},
 							{
-								module: 'chest_line',
+								module: 'playstyle',
 								operator: '=',
 								value: 'kneeling',
 							},
