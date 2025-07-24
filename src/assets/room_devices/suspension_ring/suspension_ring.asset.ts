@@ -176,7 +176,7 @@ DefineRoomDeviceAsset({
 					name: 'None',
 					default: true,
 				},
-				{
+				/*{
 					id: 'kneeling',
 					name: 'Floor',
 					properties: {
@@ -204,7 +204,7 @@ DefineRoomDeviceAsset({
 							},
 						},
 					},
-				},
+				},*/
 				{
 					id: 'suspended',
 					name: 'Suspended',
