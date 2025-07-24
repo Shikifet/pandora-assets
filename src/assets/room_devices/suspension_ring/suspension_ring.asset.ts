@@ -614,6 +614,20 @@ DefineRoomDeviceAsset({
 					],
 				},
 			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'slot',
@@ -646,9 +660,40 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_front_left',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
 						],
 					],
 				},
+				{
+					position: {
+						offsetX: 365,
+						offsetY: -385,
+						disablePoseOffset: true,
+						pivotOffset: {
+							x: 0,
+							y: 0,
+						},
+					},
+					condition: [
+						[
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+
 				{
 					position: {
 						offsetX: -365,
@@ -666,9 +711,40 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_front_right',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
 						],
 					],
 				},
+				{
+					position: {
+						offsetX: -365,
+						offsetY: -385,
+						disablePoseOffset: true,
+						pivotOffset: {
+							x: 0,
+							y: 0,
+						},
+					},
+					condition: [
+						[
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+
 				{
 					position: {
 						offsetX: -365,
@@ -686,9 +762,41 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_back_left',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
 						],
 					],
 				},
+				{
+					position: {
+						offsetX: -365,
+						offsetY: -385,
+						disablePoseOffset: true,
+						pivotOffset: {
+							x: 0,
+							y: 0,
+						},
+					},
+					condition: [
+						[
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+
+
 				{
 					position: {
 						offsetX: 350,
@@ -706,9 +814,40 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_back_right',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
 						],
 					],
 				},
+				{
+					position: {
+						offsetX: 350,
+						offsetY: -375,
+						disablePoseOffset: true,
+						pivotOffset: {
+							x: 0,
+							y: 0,
+						},
+					},
+					condition: [
+						[
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+
 				{
 					position: {
 						offsetX: 0,
@@ -721,6 +860,32 @@ DefineRoomDeviceAsset({
 								module: 'chest_line',
 								operator: '=',
 								value: 'suspended',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+					],
+				},
+				{
+					position: {
+						offsetX: 0,
+						offsetY: -200,
+						disablePoseOffset: true,
+					},
+					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
@@ -919,7 +1084,20 @@ DefineRoomDeviceAsset({
 						],
 					],
 				},
-
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
 			],
 		},
 		{
@@ -991,6 +1169,20 @@ DefineRoomDeviceAsset({
 								module: 'thigh_line',
 								operator: '=',
 								value: 'thigh_back_left',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
