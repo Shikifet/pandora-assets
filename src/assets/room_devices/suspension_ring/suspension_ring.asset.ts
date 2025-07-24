@@ -152,6 +152,7 @@ DefineRoomDeviceAsset({
 									},
 								},
 								stateFlags: {
+									provides: ['suspension_point'],
 									requires: {
 										height_high: 'Tying wrists requires Ring in High Height'
 									},
@@ -176,35 +177,6 @@ DefineRoomDeviceAsset({
 					name: 'None',
 					default: true,
 				},
-				/*{
-					id: 'kneeling',
-					name: 'Floor',
-					properties: {
-						blockSlotsEnterLeave: ['under_ring'],
-						slotProperties: {
-							under_ring: {
-								attributes: {
-									requires: [
-										'Back_knot_anchor_point',
-									],
-								},
-								poseLimits: {
-									legs: {
-										pose: 'kneeling',
-									},
-									bones: {
-										character_rotation: 0,
-										leg_l: [[-25, 6]],
-										leg_r: [[-25, 6]],
-									},
-								},
-								stateFlags: {
-									provides: ['suspension_chest'],
-								},
-							},
-						},
-					},
-				},*/
 				{
 					id: 'suspended',
 					name: 'Suspended',
@@ -223,7 +195,7 @@ DefineRoomDeviceAsset({
 									},
 								},
 								stateFlags: {
-									provides: ['suspension_chest'],
+									provides: ['suspension_chest', 'suspension_point'],
 								},
 							},
 						},
@@ -382,7 +354,7 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										suspension_chest: 'Ankles cannot be tied without Chest Line Suspended',
+										suspension_point: 'Ankles cannot be tied without Wrist or Chest Line Suspended',
 									},
 								},
 							},
