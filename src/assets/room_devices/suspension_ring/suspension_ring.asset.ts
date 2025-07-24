@@ -543,6 +543,33 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'kneeling',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+					],
+				},
+				{
+					image: 'chest_line_kneeling_high_ring.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'kneeling',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
 						],
 					],
 				},
@@ -1014,6 +1041,33 @@ DefineRoomDeviceAsset({
 								module: 'chest_line',
 								operator: '=',
 								value: 'kneeling',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+					],
+				},
+				{
+					image: 'chest_line_kneeling_high_ring.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'kneeling',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
