@@ -137,8 +137,8 @@ DefineRoomDeviceAsset({
 					default: true,
 				},
 				{
-					id: 'wrists_tied',
-					name: 'Wrists Tied',
+					id: 'over_head',
+					name: 'Over Head',
 					properties: {
 						blockSlotsEnterLeave: ['under_ring'],
 						slotProperties: {
@@ -153,7 +153,7 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										height_high: 'Body ties using Wrists Line requires Ring in High Height'
+										height_high: 'Tying wrists requires Ring in High Height'
 									},
 								},
 								effects: {
@@ -354,7 +354,7 @@ DefineRoomDeviceAsset({
 
 		ankles_line: {
 			type: 'typed',
-			name: 'Wrists Line',
+			name: 'Ankles Line',
 			staticConfig: { slotName: 'under_ring' },
 			variants: [
 				{
@@ -383,6 +383,36 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									requires: {
 										suspension_chest: 'Ankles cannot be tied without Chest Line Suspended',
+									},
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'ankles_upside_down',
+					name: 'Upside Down',
+					properties: {
+						slotProperties: {
+							under_ring: {
+								attributes: {
+									requires: [
+										'Back_knot_anchor_point',
+									],
+								},
+								poseLimits: {
+									bones: {
+										character_rotation: 180,
+										leg_l: 2,
+										leg_r: 2,
+									},
+									legs: {
+										pose: 'standing',
+									},
+								},
+								stateFlags: {
+									requires: {
+										height_high: 'Upside Down tie requires Ring in High Height',
 									},
 								},
 							},
@@ -738,6 +768,24 @@ DefineRoomDeviceAsset({
 			},
 
 			characterPositionOverrides: [
+				{
+					position: {
+						offsetX: 0,
+						offsetY: -1150,
+						disablePoseOffset: true,
+					},
+					condition: [
+						[
+							{
+								module: 'ankles_line',
+								operator: '=',
+								value: 'ankles_upside_down',
+							},
+						],
+					],
+				},
+
+
 				{
 					position: {
 						offsetX: 365,
