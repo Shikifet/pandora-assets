@@ -357,6 +357,7 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									requires: {
 										suspension_point: 'Ankles cannot be tied without Wrists over head or Chest Line Suspended',
+										height_high: 'Tying ankles requires Ring in High Height',
 									},
 								},
 							},
