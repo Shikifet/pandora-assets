@@ -100,15 +100,6 @@ DefineRoomDeviceAsset({
 					id: 'normal',
 					name: 'Normal',
 					default: true,
-					properties: {
-						slotProperties: {
-							under_ring: {
-								stateFlags: {
-									provides: ['height_normal'],
-								},
-							},
-						},
-					},
 				},
 				{
 					id: 'high',
@@ -163,7 +154,7 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									provides: ['suspension_point'],
 									requires: {
-										height_high: 'Tying wrists requires Ring in High Height'
+										height_high: 'Tying wrists requires Ring in High Height',
 									},
 								},
 								effects: {
@@ -401,7 +392,6 @@ DefineRoomDeviceAsset({
 			],
 		},
 	},
-
 
 	graphicsLayers: [
 
@@ -889,7 +879,6 @@ DefineRoomDeviceAsset({
 					],
 				},
 
-
 				{
 					position: {
 						offsetX: 365,
@@ -1042,7 +1031,6 @@ DefineRoomDeviceAsset({
 						],
 					],
 				},
-
 
 				{
 					position: {
