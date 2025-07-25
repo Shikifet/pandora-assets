@@ -555,6 +555,7 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+
 		{
 			type: 'sprite',
 			image: '',
@@ -823,6 +824,46 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'ankles_split_front.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'ankles_line',
+								operator: '=',
+								value: 'ankles_split',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+
 		{
 			type: 'slot',
 			slot: 'under_ring',
