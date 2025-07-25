@@ -649,7 +649,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'position',
 								operator: '=',
-								value: 'back',
+								value: 'front',
 							},
 							{
 								module: 'chest_line',
