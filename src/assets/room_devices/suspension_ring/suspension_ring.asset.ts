@@ -135,6 +135,15 @@ DefineRoomDeviceAsset({
 					id: 'none',
 					name: 'None',
 					default: true,
+					properties: {
+						slotProperties: {
+							under_ring: {
+								stateFlags: {
+									provides: ['free_wrists'],
+								},
+							},
+						},
+					},
 				},
 				{
 					id: 'over_head',
@@ -377,6 +386,7 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
+										free_wrists: 'Upside Down tie requires untied Wrists',
 										height_high: 'Upside Down tie requires Ring in High Height',
 									},
 								},
