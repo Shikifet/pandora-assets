@@ -243,6 +243,7 @@ DefineRoomDeviceAsset({
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without Chest Line Suspended',
 										front_view: 'Tying Left Thigh from this side require Front-facing view',
+										free_wrists: 'This position requires untied Wrists',
 									},
 								},
 							},
@@ -270,6 +271,7 @@ DefineRoomDeviceAsset({
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without Chest Line Suspended',
 										front_view: 'Tying Right Thigh from this side require Front-facing view',
+										free_wrists: 'This position requires untied Wrists',
 									},
 								},
 							},
@@ -297,6 +299,7 @@ DefineRoomDeviceAsset({
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without Chest Line Suspended',
 										back_view: 'Tying Left Thigh from this side require Front-facing view',
+										free_wrists: 'This position requires untied Wrists',
 									},
 								},
 							},
@@ -324,6 +327,7 @@ DefineRoomDeviceAsset({
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without Chest Line Suspended',
 										back_view: 'Tying Right Thigh from this side require Front-facing view',
+										free_wrists: 'This position requires untied Wrists',
 									},
 								},
 							},
@@ -400,36 +404,16 @@ DefineRoomDeviceAsset({
 
 
 	graphicsLayers: [
+
 		{
 			type: 'sprite',
 			image: 'ceiling_line.png',
 			clipToRoom: true,
 			colorizationKey: 'rope',
-			offset: { x: 483, y: -1550 },
+			offset: { x: 483, y: -1580 },
 			offsetOverrides: [
 				{
-					offset: { x: 483, y: 1750 },
-					condition: [
-						[
-							{
-								module: 'ring_height',
-								operator: '=',
-								value: 'high',
-							},
-						],
-					],
-				},
-			],
-		},
-		{
-			type: 'sprite',
-			image: 'ceiling_line.png',
-			clipToRoom: true,
-			colorizationKey: 'rope',
-			offset: { x: 483, y: -580 },
-			offsetOverrides: [
-				{
-					offset: { x: 483, y: -780 },
+					offset: { x: 483, y: -1780 },
 					condition: [
 						[
 							{
