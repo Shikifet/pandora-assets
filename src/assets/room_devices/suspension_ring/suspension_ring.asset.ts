@@ -178,8 +178,8 @@ DefineRoomDeviceAsset({
 					default: true,
 				},
 				{
-					id: 'suspended',
-					name: 'Suspended',
+					id: 'attached',
+					name: 'Attached',
 					properties: {
 						blockSlotsEnterLeave: ['under_ring'],
 						slotProperties: {
@@ -232,7 +232,7 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										suspension_chest: 'Thigh cannot be tied without Chest Line Suspended',
+										suspension_chest: 'Thigh cannot be tied without Chest Line Attached',
 										front_view: 'Tying Left Thigh from this side require Front-facing view',
 										free_wrists: 'This position requires untied Wrists',
 									},
@@ -260,7 +260,7 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										suspension_chest: 'Thigh cannot be tied without Chest Line Suspended',
+										suspension_chest: 'Thigh cannot be tied without Chest Line Attached',
 										front_view: 'Tying Right Thigh from this side require Front-facing view',
 										free_wrists: 'This position requires untied Wrists',
 									},
@@ -288,7 +288,7 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										suspension_chest: 'Thigh cannot be tied without Chest Line Suspended',
+										suspension_chest: 'Thigh cannot be tied without Chest Line Attached',
 										back_view: 'Tying Left Thigh from this side require Front-facing view',
 										free_wrists: 'This position requires untied Wrists',
 									},
@@ -316,7 +316,7 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										suspension_chest: 'Thigh cannot be tied without Chest Line Suspended',
+										suspension_chest: 'Thigh cannot be tied without Chest Line Attached',
 										back_view: 'Tying Right Thigh from this side require Front-facing view',
 										free_wrists: 'This position requires untied Wrists',
 									},
@@ -356,7 +356,7 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										suspension_point: 'Ankles cannot be tied without Wrists over head or Chest Line Suspended',
+										suspension_point: 'Ankles cannot be tied without Wrists over head or Chest Line Attached',
 										height_high: 'Tying ankles requires Ring in High Height',
 									},
 								},
@@ -639,7 +639,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'ankles_line',
@@ -706,7 +706,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'thigh_line',
@@ -733,7 +733,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'thigh_line',
@@ -761,7 +761,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'thigh_line',
@@ -783,7 +783,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'thigh_line',
@@ -1095,7 +1095,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 						],
 						[
@@ -1388,7 +1388,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'ankles_line',
@@ -1455,7 +1455,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'thigh_line',
@@ -1482,7 +1482,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'thigh_line',
@@ -1509,7 +1509,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'thigh_line',
@@ -1531,7 +1531,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'thigh_line',
@@ -1569,7 +1569,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'thigh_line',
@@ -1586,7 +1586,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'thigh_line',
@@ -1603,7 +1603,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'thigh_line',
@@ -1620,7 +1620,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'thigh_line',
