@@ -768,6 +768,38 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_front_left',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+					],
+				},
+				{
+					image: 'thigh_line_left_back_high.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
 						],
 					],
 				},
@@ -790,9 +822,42 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_front_right',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
 						],
 					],
 				},
+				{
+					image: 'thigh_line_right_back_high.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+
 			],
 			offsetOverrides: [
 				{
@@ -897,36 +962,6 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_front_left',
 							},
-							{
-								module: 'ring_height',
-								operator: '=',
-								value: 'normal',
-							},
-						],
-					],
-				},
-				{
-					position: {
-						offsetX: 365,
-						offsetY: -385,
-						disablePoseOffset: true,
-						pivotOffset: {
-							x: 0,
-							y: 0,
-						},
-					},
-					condition: [
-						[
-							{
-								module: 'thigh_line',
-								operator: '=',
-								value: 'thigh_front_left',
-							},
-							{
-								module: 'ring_height',
-								operator: '=',
-								value: 'high',
-							},
 						],
 					],
 				},
@@ -948,36 +983,6 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_front_right',
 							},
-							{
-								module: 'ring_height',
-								operator: '=',
-								value: 'normal',
-							},
-						],
-					],
-				},
-				{
-					position: {
-						offsetX: -365,
-						offsetY: -385,
-						disablePoseOffset: true,
-						pivotOffset: {
-							x: 0,
-							y: 0,
-						},
-					},
-					condition: [
-						[
-							{
-								module: 'thigh_line',
-								operator: '=',
-								value: 'thigh_front_right',
-							},
-							{
-								module: 'ring_height',
-								operator: '=',
-								value: 'high',
-							},
 						],
 					],
 				},
@@ -998,36 +1003,6 @@ DefineRoomDeviceAsset({
 								module: 'thigh_line',
 								operator: '=',
 								value: 'thigh_back_left',
-							},
-							{
-								module: 'ring_height',
-								operator: '=',
-								value: 'normal',
-							},
-						],
-					],
-				},
-				{
-					position: {
-						offsetX: -365,
-						offsetY: -385,
-						disablePoseOffset: true,
-						pivotOffset: {
-							x: 0,
-							y: 0,
-						},
-					},
-					condition: [
-						[
-							{
-								module: 'thigh_line',
-								operator: '=',
-								value: 'thigh_back_left',
-							},
-							{
-								module: 'ring_height',
-								operator: '=',
-								value: 'high',
 							},
 						],
 					],
@@ -1049,36 +1024,6 @@ DefineRoomDeviceAsset({
 								module: 'thigh_line',
 								operator: '=',
 								value: 'thigh_back_right',
-							},
-							{
-								module: 'ring_height',
-								operator: '=',
-								value: 'normal',
-							},
-						],
-					],
-				},
-				{
-					position: {
-						offsetX: 350,
-						offsetY: -375,
-						disablePoseOffset: true,
-						pivotOffset: {
-							x: 0,
-							y: 0,
-						},
-					},
-					condition: [
-						[
-							{
-								module: 'thigh_line',
-								operator: '=',
-								value: 'thigh_back_right',
-							},
-							{
-								module: 'ring_height',
-								operator: '=',
-								value: 'high',
 							},
 						],
 					],
@@ -1516,6 +1461,38 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_back_right',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+					],
+				},
+				{
+					image: 'thigh_line_left_back_high.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
 						],
 					],
 				},
@@ -1537,6 +1514,38 @@ DefineRoomDeviceAsset({
 								module: 'thigh_line',
 								operator: '=',
 								value: 'thigh_back_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+					],
+				},
+				{
+					image: 'thigh_line_right_back_high.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
@@ -1576,6 +1585,33 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_front_left',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+					],
+				},
+				{
+					image: 'thigh_line_left_thigh_high.png',
+					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
 						],
 					],
 				},
@@ -1592,6 +1628,33 @@ DefineRoomDeviceAsset({
 								module: 'thigh_line',
 								operator: '=',
 								value: 'thigh_back_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+					],
+				},
+				{
+					image: 'thigh_line_left_thigh_high.png',
+					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
@@ -1610,6 +1673,33 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_front_right',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+					],
+				},
+				{
+					image: 'thigh_line_right_thigh_high.png',
+					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
 						],
 					],
 				},
@@ -1626,6 +1716,33 @@ DefineRoomDeviceAsset({
 								module: 'thigh_line',
 								operator: '=',
 								value: 'thigh_back_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+					],
+				},
+				{
+					image: 'thigh_line_right_thigh_high.png',
+					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
