@@ -758,7 +758,7 @@ const ATTRIBUTES_DEFINITION_BASE = DefineAttributes({
 		useAsAssetPreference: false,
 	},
 	Gag_anchor_point: {
-		name: 'Ankle rope',
+		name: 'Gag attachment point',
 		description: 'A fix point (provided by Bamboo Stick) behind the head to which a gag can be secured',
 		useAsAssetPreference: false,
 	},
