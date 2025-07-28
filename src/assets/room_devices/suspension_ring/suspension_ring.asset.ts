@@ -411,6 +411,7 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									requires: {
 										free_wrists: 'Upside Down tie requires untied Wrists',
+										suspension_point: 'Ankles cannot be tied without Chest line Attached',
 										height_high: 'Upside Down tie requires Ring in High Height',
 									},
 								},
