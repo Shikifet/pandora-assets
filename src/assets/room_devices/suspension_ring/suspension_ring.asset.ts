@@ -223,7 +223,7 @@ DefineRoomDeviceAsset({
 									},
 								},
 								stateFlags: {
-									provides: ['suspension_chest'],
+									provides: ['suspension_chest', 'suspension_high'],
 									requires: {
 										free_wrists: 'Suspension requires Wrists not tied to ring',
 										height_high: 'Suspension requires Ring in High position',
@@ -428,7 +428,7 @@ DefineRoomDeviceAsset({
 
 		stone: {
 			type: 'typed',
-			name: 'Stone',
+			name: 'Rock',
 			staticConfig: { slotName: 'under_ring' },
 			variants: [
 				{
@@ -476,6 +476,31 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									requires: {
 										dangling_right_leg: 'Stone cannot be added without Left Thigh Tied',
+									},
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'ankle_both',
+					name: 'Both Ankles',
+					properties: {
+						slotProperties: {
+							under_ring: {
+								poseLimits: {
+									bones: {
+										character_rotation: 0,
+										leg_l: 2,
+										leg_r: 2,
+									},
+									legs: {
+										pose: 'standing',
+									},
+								},
+								stateFlags: {
+									requires: {
+										suspension_high: 'Rock tied to both ankles requires Chest line being Suspended High',
 									},
 								},
 							},
@@ -1136,6 +1161,74 @@ DefineRoomDeviceAsset({
 					condition: [
 						[
 							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_both',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 160, y: 0 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'rock_rope_left.png',
+					condition: [
+						[
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_both',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 160, y: 0 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rock',
+			imageOverrides: [
+				{
+					image: 'rock_left.png',
+					condition: [
+						[
+							{
 								module: 'position',
 								operator: '=',
 								value: 'front',
@@ -1198,6 +1291,45 @@ DefineRoomDeviceAsset({
 			colorizationKey: 'rope',
 			imageOverrides: [
 				{
+					image: 'rock_rope_link_left_high.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+				{
 					image: 'rock_rope_link_left.png',
 					condition: [
 						[
@@ -1222,6 +1354,45 @@ DefineRoomDeviceAsset({
 								module: 'stone',
 								operator: '=',
 								value: 'ankle_left',
+							},
+						],
+					],
+				},
+				{
+					image: 'rock_rope_link_right_high.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
@@ -2508,6 +2679,19 @@ DefineRoomDeviceAsset({
 			colorizationKey: 'rope',
 			imageOverrides: [
 				{
+					image: 'rock_rope_link_both_high.png',
+					condition: [
+						[
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_both',
+							},
+						],
+					],
+				},
+
+				{
 					image: 'rock_rope_link_ankle_left.png',
 					condition: [
 						[
@@ -2561,6 +2745,21 @@ DefineRoomDeviceAsset({
 								module: 'stone',
 								operator: '=',
 								value: 'ankle_right',
+							},
+						],
+					],
+				},
+			],
+
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
