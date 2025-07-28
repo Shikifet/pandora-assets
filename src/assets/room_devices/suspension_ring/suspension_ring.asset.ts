@@ -221,6 +221,7 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									provides: ['suspension_chest'],
 									requires: {
+										free_wrists: 'Suspension requires Wrists not tied to ring',
 										height_high: 'Suspension requires Ring in High position',
 									},
 								},
