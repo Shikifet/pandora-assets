@@ -262,7 +262,6 @@ DefineRoomDeviceAsset({
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without Chest Line Attached',
 										front_view: 'Tying Left Thigh from this side require Front-facing view',
-										free_wrists: 'This position requires untied Wrists',
 									},
 								},
 							},
@@ -290,7 +289,6 @@ DefineRoomDeviceAsset({
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without Chest Line Attached',
 										front_view: 'Tying Right Thigh from this side require Front-facing view',
-										free_wrists: 'This position requires untied Wrists',
 									},
 								},
 							},
@@ -318,7 +316,6 @@ DefineRoomDeviceAsset({
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without Chest Line Attached',
 										back_view: 'Tying Left Thigh from this side require Front-facing view',
-										free_wrists: 'This position requires untied Wrists',
 									},
 								},
 							},
@@ -346,7 +343,6 @@ DefineRoomDeviceAsset({
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without Chest Line Attached',
 										back_view: 'Tying Right Thigh from this side require Front-facing view',
-										free_wrists: 'This position requires untied Wrists',
 									},
 								},
 							},
@@ -575,6 +571,60 @@ DefineRoomDeviceAsset({
 			image: '',
 			colorizationKey: 'rope',
 			imageOverrides: [
+				{
+					image: 'wrists_over_head_back_right.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'ankles_line',
+								operator: '!=',
+								value: 'ankles_upside_down',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_right',
+							},
+						],
+					],
+				},
+				{
+					image: 'wrists_over_head_back_left.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'ankles_line',
+								operator: '!=',
+								value: 'ankles_upside_down',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_left',
+							},
+						],
+					],
+				},
 				{
 					image: 'wrists_over_head.png',
 					condition: [
@@ -1420,6 +1470,50 @@ DefineRoomDeviceAsset({
 			colorizationKey: 'rope',
 			imageOverrides: [
 				{
+					image: 'wrists_over_head_front_right.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_right',
+							},
+						],
+					],
+				},
+				{
+					image: 'wrists_over_head_front_left.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_left',
+							},
+						],
+					],
+				},
+				{
 					image: 'wrists_over_head_front.png',
 					condition: [
 						[
@@ -1457,6 +1551,60 @@ DefineRoomDeviceAsset({
 			image: '',
 			colorizationKey: 'rope',
 			imageOverrides: [
+				{
+					image: 'wrists_over_head_back_right.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'ankles_line',
+								operator: '!=',
+								value: 'ankles_upside_down',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_left',
+							},
+						],
+					],
+				},
+				{
+					image: 'wrists_over_head_back_left.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'ankles_line',
+								operator: '!=',
+								value: 'ankles_upside_down',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_right',
+							},
+						],
+					],
+				},
 				{
 					image: 'wrists_over_head.png',
 					condition: [
