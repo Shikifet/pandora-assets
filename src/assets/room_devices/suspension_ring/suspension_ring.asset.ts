@@ -11,6 +11,10 @@ DefineRoomDeviceAsset({
 			name: 'Rope',
 			default: '#D7AC4D',
 		},
+		rock: {
+			name: 'Rope',
+			default: '#9b9b9bff',
+		},
 	},
 	staticAttributes: ['Play_furniture'],
 	slots: {
@@ -91,6 +95,82 @@ DefineRoomDeviceAsset({
 			],
 		},
 
+		ring_height: {
+			type: 'typed',
+			name: 'Ring Height',
+			staticConfig: { slotName: 'under_ring' },
+			variants: [
+				{
+					id: 'normal',
+					name: 'Normal',
+					default: true,
+				},
+				{
+					id: 'high',
+					name: 'High',
+					properties: {
+						slotProperties: {
+							under_ring: {
+								stateFlags: {
+									provides: ['height_high'],
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+
+		wrists_line: {
+			type: 'typed',
+			name: 'Wrists Line',
+			staticConfig: { slotName: 'under_ring' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+					properties: {
+						slotProperties: {
+							under_ring: {
+								stateFlags: {
+									provides: ['free_wrists'],
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'over_head',
+					name: 'Over Head',
+					properties: {
+						blockSlotsEnterLeave: ['under_ring'],
+						slotProperties: {
+							under_ring: {
+								poseLimits: {
+									bones: {
+										arm_l: -90,
+										elbow_l: -25,
+										arm_r: -90,
+										elbow_r: -25,
+									},
+								},
+								stateFlags: {
+									provides: ['suspension_point'],
+									requires: {
+										height_high: 'Tying wrists requires Ring in High Height',
+									},
+								},
+								effects: {
+									blockHands: true,
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+
 		chest_line: {
 			type: 'typed',
 			name: 'Chest Line',
@@ -102,34 +182,8 @@ DefineRoomDeviceAsset({
 					default: true,
 				},
 				{
-					id: 'kneeling',
-					name: 'Floor',
-					properties: {
-						blockSlotsEnterLeave: ['under_ring'],
-						slotProperties: {
-							under_ring: {
-								attributes: {
-									requires: [
-										'Back_knot_anchor_point',
-									],
-								},
-								poseLimits: {
-									legs: {
-										pose: 'kneeling',
-									},
-									bones: {
-										character_rotation: 0,
-										leg_l: [[-25, 6]],
-										leg_r: [[-25, 6]],
-									},
-								},
-							},
-						},
-					},
-				},
-				{
-					id: 'suspended',
-					name: 'Suspended',
+					id: 'attached',
+					name: 'Attached',
 					properties: {
 						blockSlotsEnterLeave: ['under_ring'],
 						slotProperties: {
@@ -145,7 +199,35 @@ DefineRoomDeviceAsset({
 									},
 								},
 								stateFlags: {
-									provides: ['suspension_chest'],
+									provides: ['suspension_chest', 'suspension_point'],
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'suspended',
+					name: 'Suspended High',
+					properties: {
+						blockSlotsEnterLeave: ['under_ring'],
+						slotProperties: {
+							under_ring: {
+								attributes: {
+									requires: [
+										'Back_knot_anchor_point',
+									],
+								},
+								poseLimits: {
+									legs: {
+										pose: ['standing', 'kneeling'],
+									},
+								},
+								stateFlags: {
+									provides: ['suspension_chest', 'suspension_high'],
+									requires: {
+										free_wrists: 'Suspension requires Wrists not tied to ring',
+										height_high: 'Suspension requires Ring in High position',
+									},
 								},
 							},
 						},
@@ -182,9 +264,10 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										suspension_chest: 'Thigh cannot be tied without chest line suspended',
+										suspension_chest: 'Thigh cannot be tied without Chest Line Attached',
 										front_view: 'Tying Left Thigh from this side require Front-facing view',
 									},
+									provides: ['dangling_right_leg'],
 								},
 							},
 						},
@@ -209,9 +292,10 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										suspension_chest: 'Thigh cannot be tied without chest line suspended',
+										suspension_chest: 'Thigh cannot be tied without Chest Line Attached',
 										front_view: 'Tying Right Thigh from this side require Front-facing view',
 									},
+									provides: ['dangling_left_leg'],
 								},
 							},
 						},
@@ -236,9 +320,10 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										suspension_chest: 'Thigh cannot be tied without chest line suspended',
+										suspension_chest: 'Thigh cannot be tied without Chest Line Attached',
 										back_view: 'Tying Left Thigh from this side require Front-facing view',
 									},
+									provides: ['dangling_right_leg'],
 								},
 							},
 						},
@@ -263,35 +348,111 @@ DefineRoomDeviceAsset({
 								},
 								stateFlags: {
 									requires: {
-										suspension_chest: 'Thigh cannot be tied without chest line suspended',
+										suspension_chest: 'Thigh cannot be tied without Chest Line Attached',
 										back_view: 'Tying Right Thigh from this side require Front-facing view',
 									},
+									provides: ['dangling_left_leg'],
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+
+		ankles_line: {
+			type: 'typed',
+			name: 'Ankles Line',
+			staticConfig: { slotName: 'under_ring' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'ankles_split',
+					name: 'Both Split',
+					properties: {
+						slotProperties: {
+							under_ring: {
+								poseLimits: {
+									bones: {
+										character_rotation: 0,
+										leg_l: -40,
+										leg_r: -40,
+									},
+									legs: {
+										pose: 'kneeling',
+									},
+								},
+								stateFlags: {
+									requires: {
+										suspension_point: 'Ankles cannot be tied without Wrists over head or Chest Line Attached',
+										height_high: 'Tying ankles requires Ring in High Height',
+									},
 								},
 							},
 						},
 					},
 				},
 				{
-					id: 'thighs_front',
-					name: 'Front-facing Thighs Tied',
+					id: 'ankles_upside_down',
+					name: 'Upside Down',
 					properties: {
 						slotProperties: {
 							under_ring: {
-								attributes: {
-									requires: [
-										'Back_knot_anchor_point',
-										'Rope_above_knees_anchor_point',
-									],
-								},
 								poseLimits: {
 									bones: {
-										character_rotation: 37,
+										character_rotation: 180,
+										leg_l: 2,
+										leg_r: 2,
+									},
+									legs: {
+										pose: 'standing',
 									},
 								},
 								stateFlags: {
 									requires: {
-										suspension_chest: 'Thigh cannot be tied without chest line suspended',
-										front_view: 'Tying Right Thigh from this side require Front-facing view',
+										free_wrists: 'Upside Down tie requires untied Wrists',
+										suspension_point: 'Ankles cannot be tied without Chest line Attached',
+										height_high: 'Upside Down tie requires Ring in High Height',
+									},
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+
+		stone: {
+			type: 'typed',
+			name: 'Rock',
+			staticConfig: { slotName: 'under_ring' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'ankle_left',
+					name: 'Left Ankle',
+					properties: {
+						slotProperties: {
+							under_ring: {
+								poseLimits: {
+									bones: {
+										leg_l: -37,
+									},
+									legs: {
+										pose: 'standing',
+									},
+								},
+								stateFlags: {
+									requires: {
+										dangling_left_leg: 'Stone cannot be added without Right Thigh Tied',
 									},
 								},
 							},
@@ -299,26 +460,47 @@ DefineRoomDeviceAsset({
 					},
 				},
 				{
-					id: 'thighs_back',
-					name: 'Back-facing Thighs Tied',
+					id: 'ankle_right',
+					name: 'Right Ankle',
 					properties: {
 						slotProperties: {
 							under_ring: {
-								attributes: {
-									requires: [
-										'Back_knot_anchor_point',
-										'Rope_above_knees_anchor_point',
-									],
-								},
 								poseLimits: {
 									bones: {
-										character_rotation: -37,
+										leg_r: -37,
+									},
+									legs: {
+										pose: 'standing',
 									},
 								},
 								stateFlags: {
 									requires: {
-										suspension_chest: 'Thigh cannot be tied without chest line suspended',
-										back_view: 'Tying Right Thigh from this side require Back-facing view',
+										dangling_right_leg: 'Stone cannot be added without Left Thigh Tied',
+									},
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'ankle_both',
+					name: 'Both Ankles',
+					properties: {
+						slotProperties: {
+							under_ring: {
+								poseLimits: {
+									bones: {
+										character_rotation: 0,
+										leg_l: 2,
+										leg_r: 2,
+									},
+									legs: {
+										pose: 'standing',
+									},
+								},
+								stateFlags: {
+									requires: {
+										suspension_high: 'Rock tied to both ankles requires Chest line being Suspended High',
 									},
 								},
 							},
@@ -328,25 +510,48 @@ DefineRoomDeviceAsset({
 			],
 		},
 	},
+
 	graphicsLayers: [
+
 		{
 			type: 'sprite',
 			image: 'ceiling_line.png',
 			clipToRoom: true,
 			colorizationKey: 'rope',
-			offset: { x: 483, y: -1550 },
-		},
-		{
-			type: 'sprite',
-			image: 'ceiling_line.png',
-			clipToRoom: true,
-			colorizationKey: 'rope',
-			offset: { x: 483, y: -580 },
+			offset: { x: 483, y: -1580 },
+			offsetOverrides: [
+				{
+					offset: { x: 483, y: -1780 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
 			image: 'rope_ring_top_end.png',
 			colorizationKey: 'rope',
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
@@ -371,6 +576,20 @@ DefineRoomDeviceAsset({
 					],
 				},
 			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
@@ -385,6 +604,20 @@ DefineRoomDeviceAsset({
 								module: 'position',
 								operator: '=',
 								value: 'front',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
@@ -409,12 +642,185 @@ DefineRoomDeviceAsset({
 					],
 				},
 			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'wrists_over_head_back_right.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'ankles_line',
+								operator: '!=',
+								value: 'ankles_upside_down',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_right',
+							},
+						],
+					],
+				},
+				{
+					image: 'wrists_over_head_back_left.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'ankles_line',
+								operator: '!=',
+								value: 'ankles_upside_down',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_left',
+							},
+						],
+					],
+				},
+				{
+					image: 'wrists_over_head.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'ankles_line',
+								operator: '!=',
+								value: 'ankles_upside_down',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
 			image: '',
 			colorizationKey: 'rope',
 			imageOverrides: [
+				{
+					image: 'ankle_line_upside_down.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'ankles_line',
+								operator: '=',
+								value: 'ankles_upside_down',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'chest_line_upside_down.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'ankles_line',
+								operator: '=',
+								value: 'ankles_upside_down',
+							},
+						],
+					],
+				},
+
 				{
 					image: 'chest_line_kneeling.png',
 					condition: [
@@ -428,6 +834,33 @@ DefineRoomDeviceAsset({
 								module: 'chest_line',
 								operator: '=',
 								value: 'kneeling',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+					],
+				},
+				{
+					image: 'chest_line_kneeling_high_ring.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'kneeling',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
@@ -443,6 +876,28 @@ DefineRoomDeviceAsset({
 							},
 							{
 								module: 'chest_line',
+								operator: '!=',
+								value: 'none',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'none',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'chest_line',
 								operator: '=',
 								value: 'suspended',
 							},
@@ -450,6 +905,38 @@ DefineRoomDeviceAsset({
 								module: 'thigh_line',
 								operator: '=',
 								value: 'none',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+				{
+					image: 'chest_line_center_high_ring.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'none',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
@@ -467,6 +954,28 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
 								value: 'suspended',
 							},
 							{
@@ -474,12 +983,66 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_front_left',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+				{
+					image: 'thigh_line_left_back_high.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
 						],
 					],
 				},
 				{
 					image: 'thigh_line_right_back.png',
 					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
 						[
 							{
 								module: 'position',
@@ -496,11 +1059,16 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_front_right',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
 						],
 					],
 				},
 				{
-					image: 'thigh_line_right_back.png',
+					image: 'thigh_line_right_back_high.png',
 					condition: [
 						[
 							{
@@ -511,42 +1079,356 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'thigh_line',
 								operator: '=',
-								value: 'thighs_front',
+								value: 'thigh_front_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
 				},
 			],
 		},
+
 		{
 			type: 'sprite',
 			image: '',
 			colorizationKey: 'rope',
 			imageOverrides: [
 				{
-					image: 'knee_line_right.png',
+					image: 'ankles_split_front.png',
 					condition: [
 						[
 							{
-								module: 'chest_line',
+								module: 'position',
 								operator: '=',
-								value: 'suspended',
+								value: 'front',
 							},
 							{
-								module: 'thigh_line',
+								module: 'ankles_line',
 								operator: '=',
-								value: 'thighs_front',
+								value: 'ankles_split',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
 				},
 			],
 		},
+
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rock',
+			imageOverrides: [
+				{
+					image: 'rock_left.png',
+					condition: [
+						[
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_both',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 160, y: 0 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'rock_rope_left.png',
+					condition: [
+						[
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_both',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 160, y: 0 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rock',
+			imageOverrides: [
+				{
+					image: 'rock_left.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_right',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_left',
+							},
+						],
+					],
+				},
+				{
+					image: 'rock_right.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_left',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_right',
+							},
+						],
+					],
+				},
+			],
+		},
+
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'rock_rope_link_left_high.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+				{
+					image: 'rock_rope_link_left.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_right',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_left',
+							},
+						],
+					],
+				},
+				{
+					image: 'rock_rope_link_right_high.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+				{
+					image: 'rock_rope_link_right.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_left',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_right',
+							},
+						],
+					],
+				},
+			],
+		},
+
 		{
 			type: 'slot',
 			slot: 'under_ring',
@@ -561,6 +1443,48 @@ DefineRoomDeviceAsset({
 			},
 
 			characterPositionOverrides: [
+				{
+					position: {
+						offsetX: 0,
+						offsetY: -1150,
+						disablePoseOffset: true,
+					},
+					condition: [
+						[
+							{
+								module: 'ankles_line',
+								operator: '=',
+								value: 'ankles_upside_down',
+							},
+						],
+					],
+				},
+
+				{
+					position: {
+						offsetX: 365,
+						offsetY: -385,
+						disablePoseOffset: true,
+						pivotOffset: {
+							x: 0,
+							y: 0,
+						},
+					},
+					condition: [
+						[
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_left',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+						],
+					],
+				},
 				{
 					position: {
 						offsetX: 365,
@@ -581,6 +1505,32 @@ DefineRoomDeviceAsset({
 						],
 					],
 				},
+
+				{
+					position: {
+						offsetX: -365,
+						offsetY: -385,
+						disablePoseOffset: true,
+						pivotOffset: {
+							x: 0,
+							y: 0,
+						},
+					},
+					condition: [
+						[
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_right',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+						],
+					],
+				},
 				{
 					position: {
 						offsetX: -365,
@@ -597,6 +1547,32 @@ DefineRoomDeviceAsset({
 								module: 'thigh_line',
 								operator: '=',
 								value: 'thigh_front_right',
+							},
+						],
+					],
+				},
+
+				{
+					position: {
+						offsetX: -365,
+						offsetY: -385,
+						disablePoseOffset: true,
+						pivotOffset: {
+							x: 0,
+							y: 0,
+						},
+					},
+					condition: [
+						[
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_left',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
 							},
 						],
 					],
@@ -621,9 +1597,35 @@ DefineRoomDeviceAsset({
 						],
 					],
 				},
+
 				{
 					position: {
-						offsetX: 350,
+						offsetX: 365,
+						offsetY: -385,
+						disablePoseOffset: true,
+						pivotOffset: {
+							x: 0,
+							y: 0,
+						},
+					},
+					condition: [
+						[
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_right',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+						],
+					],
+				},
+				{
+					position: {
+						offsetX: 365,
 						offsetY: -175,
 						disablePoseOffset: true,
 						pivotOffset: {
@@ -641,46 +1643,7 @@ DefineRoomDeviceAsset({
 						],
 					],
 				},
-				{
-					position: {
-						offsetX: -350,
-						offsetY: -175,
-						disablePoseOffset: true,
-						pivotOffset: {
-							x: 0,
-							y: 0,
-						},
-					},
-					condition: [
-						[
-							{
-								module: 'thigh_line',
-								operator: '=',
-								value: 'thighs_front',
-							},
-						],
-					],
-				},
-				{
-					position: {
-						offsetX: 350,
-						offsetY: -175,
-						disablePoseOffset: true,
-						pivotOffset: {
-							x: 0,
-							y: 0,
-						},
-					},
-					condition: [
-						[
-							{
-								module: 'thigh_line',
-								operator: '=',
-								value: 'thighs_back',
-							},
-						],
-					],
-				},
+
 				{
 					position: {
 						offsetX: 0,
@@ -692,7 +1655,37 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
+								value: 'attached',
+							},
+						],
+						[
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+						],
+					],
+				},
+				{
+					position: {
+						offsetX: 0,
+						offsetY: -200,
+						disablePoseOffset: true,
+					},
+					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
 								value: 'suspended',
+							},
+						],
+						[
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
 							},
 						],
 					],
@@ -722,6 +1715,20 @@ DefineRoomDeviceAsset({
 					],
 				},
 			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
@@ -736,6 +1743,20 @@ DefineRoomDeviceAsset({
 								module: 'position',
 								operator: '=',
 								value: 'back',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
@@ -760,12 +1781,304 @@ DefineRoomDeviceAsset({
 					],
 				},
 			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
 			image: '',
 			colorizationKey: 'rope',
 			imageOverrides: [
+				{
+					image: 'ankle_line_upside_down_front.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'ankles_line',
+								operator: '=',
+								value: 'ankles_upside_down',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'wrists_over_head_front_right.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_right',
+							},
+						],
+					],
+				},
+				{
+					image: 'wrists_over_head_front_left.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_left',
+							},
+						],
+					],
+				},
+				{
+					image: 'wrists_over_head_front.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'wrists_over_head_back_right.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'ankles_line',
+								operator: '!=',
+								value: 'ankles_upside_down',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_left',
+							},
+						],
+					],
+				},
+				{
+					image: 'wrists_over_head_back_left.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'ankles_line',
+								operator: '!=',
+								value: 'ankles_upside_down',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_right',
+							},
+						],
+					],
+				},
+				{
+					image: 'wrists_over_head.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'ankles_line',
+								operator: '!=',
+								value: 'ankles_upside_down',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'over_head',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'ankle_line_upside_down.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'ankles_line',
+								operator: '=',
+								value: 'ankles_upside_down',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'chest_line_upside_down.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'ankles_line',
+								operator: '=',
+								value: 'ankles_upside_down',
+							},
+						],
+					],
+				},
+
 				{
 					image: 'chest_line_kneeling.png',
 					condition: [
@@ -780,12 +2093,61 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'kneeling',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+					],
+				},
+				{
+					image: 'chest_line_kneeling_high_ring.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'kneeling',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
 						],
 					],
 				},
 				{
 					image: 'chest_line_center.png',
 					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'chest_line',
+								operator: '!=',
+								value: 'none',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'none',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
 						[
 							{
 								module: 'position',
@@ -802,12 +2164,67 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'none',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
 						],
 					],
 				},
 				{
+					image: 'chest_line_center_high_ring.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'none',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+
+				{
 					image: 'thigh_line_left_back.png',
 					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
 						[
 							{
 								module: 'position',
@@ -824,7 +2241,17 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_back_right',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
 						],
+					],
+				},
+				{
+					image: 'thigh_line_left_back_high.png',
+					condition: [
 						[
 							{
 								module: 'position',
@@ -834,12 +2261,17 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'thigh_line',
 								operator: '=',
-								value: 'thighs_back',
+								value: 'thigh_back_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
@@ -856,6 +2288,28 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
 								value: 'suspended',
 							},
 							{
@@ -863,10 +2317,55 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_back_left',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
 						],
 					],
 				},
-
+				{
+					image: 'thigh_line_right_back_high.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
 			],
 		},
 		{
@@ -881,12 +2380,56 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
 								value: 'suspended',
 							},
 							{
 								module: 'thigh_line',
 								operator: '=',
 								value: 'thigh_front_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+				{
+					image: 'thigh_line_left_thigh_high.png',
+					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
 							},
 						],
 					],
@@ -898,6 +2441,23 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest_line',
 								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
 								value: 'suspended',
 							},
 							{
@@ -905,12 +2465,56 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_back_right',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+				{
+					image: 'thigh_line_left_thigh_high.png',
+					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
 						],
 					],
 				},
 				{
 					image: 'thigh_line_right_thigh.png',
 					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
 						[
 							{
 								module: 'chest_line',
@@ -922,12 +2526,56 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_front_right',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+				{
+					image: 'thigh_line_right_thigh_high.png',
+					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_front_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
 						],
 					],
 				},
 				{
 					image: 'thigh_line_right_thigh.png',
 					condition: [
+						[
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'attached',
+							},
+							{
+								module: 'thigh_line',
+								operator: '=',
+								value: 'thigh_back_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+						],
 						[
 							{
 								module: 'chest_line',
@@ -939,22 +2587,245 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'thigh_back_left',
 							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
 						],
 					],
 				},
 				{
-					image: 'knee_line_left.png',
+					image: 'thigh_line_right_thigh_high.png',
 					condition: [
 						[
 							{
 								module: 'chest_line',
 								operator: '=',
-								value: 'suspended',
+								value: 'attached',
 							},
 							{
 								module: 'thigh_line',
 								operator: '=',
-								value: 'thighs_back',
+								value: 'thigh_back_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'ankles_split_back.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'ankles_line',
+								operator: '=',
+								value: 'ankles_split',
+							},
+						],
+					],
+				},
+			],
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'rock_rope_link_both_high.png',
+					condition: [
+						[
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_both',
+							},
+						],
+					],
+				},
+
+				{
+					image: 'rock_rope_link_ankle_left.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_right',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_left',
+							},
+						],
+					],
+				},
+				{
+					image: 'rock_rope_link_ankle_right.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_left',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_right',
+							},
+						],
+					],
+				},
+			],
+
+			offsetOverrides: [
+				{
+					offset: { x: 0, y: -200 },
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+						],
+					],
+				},
+			],
+		},
+
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'rock_rope_left.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_right',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_left',
+							},
+						],
+					],
+				},
+				{
+					image: 'rock_rope_right.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_left',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'ankle_right',
 							},
 						],
 					],
