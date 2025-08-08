@@ -1554,6 +1554,174 @@ DefineRoomDeviceAsset({
 		},
 
 		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+
+				{
+					image: 'rock_rope_link_thigh_left_high.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'frogtie_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'frogtie_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+						],
+					],
+				},
+
+				{
+					image: 'rock_rope_link_thigh_left.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'frogtie_right',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'frogtie_left',
+							},
+						],
+					],
+				},
+
+				{
+					image: 'rock_rope_link_thigh_right_high.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'frogtie_left',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'frogtie_right',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
+						],
+					],
+				},
+
+				{
+					image: 'rock_rope_link_thigh_right.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'frogtie_left',
+							},
+						],
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
+								module: 'stone',
+								operator: '=',
+								value: 'frogtie_right',
+							},
+						],
+					],
+				},
+			],
+		},
+
+		{
 			type: 'slot',
 			slot: 'under_ring',
 			characterPosition: {
