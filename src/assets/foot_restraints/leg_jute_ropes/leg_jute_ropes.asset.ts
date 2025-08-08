@@ -369,6 +369,11 @@ DefineAsset({
 								pose: 'kneeling',
 							},
 						},
+						attributes: {
+							provides: [
+								'Frogtie',
+							],
+						},
 					},
 				},
 			],
