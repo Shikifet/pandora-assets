@@ -1309,6 +1309,11 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'high',
 							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
 						],
 						[
 							{
@@ -1325,6 +1330,11 @@ DefineRoomDeviceAsset({
 								module: 'ring_height',
 								operator: '=',
 								value: 'high',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
 							},
 						],
 					],
@@ -1377,6 +1387,11 @@ DefineRoomDeviceAsset({
 								operator: '=',
 								value: 'high',
 							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
+							},
 						],
 						[
 							{
@@ -1393,6 +1408,11 @@ DefineRoomDeviceAsset({
 								module: 'ring_height',
 								operator: '=',
 								value: 'high',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
 							},
 						],
 					],
@@ -2719,6 +2739,7 @@ DefineRoomDeviceAsset({
 							},
 						],
 					],
+
 				},
 				{
 					image: 'rock_rope_link_ankle_right.png',
@@ -2760,6 +2781,11 @@ DefineRoomDeviceAsset({
 								module: 'ring_height',
 								operator: '=',
 								value: 'high',
+							},
+							{
+								module: 'chest_line',
+								operator: '=',
+								value: 'suspended',
 							},
 						],
 					],
