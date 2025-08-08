@@ -762,6 +762,11 @@ const ATTRIBUTES_DEFINITION_BASE = DefineAttributes({
 		description: 'A fix point behind the head to which a gag can be secured',
 		useAsAssetPreference: false,
 	},
+	Frogtie: {
+		name: 'Frogtie',
+		description: 'A rope tying the legs to thighs in a frogtie',
+		useAsAssetPreference: false,
+	},
 });
 
 //#endregion
