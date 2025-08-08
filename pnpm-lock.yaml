@@ -28,7 +28,7 @@ importers:
         version: 4.17.21
       pandora-common:
         specifier: github:Project-Pandora-Game/pandora#master&path:pandora-common
-        version: https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/9085321204bb7ca2b461dde8dd4d6bbfdc466bec#path:pandora-common
+        version: https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/410a12bba1f43e245ac2be88bce1ec1b0359c97b#path:pandora-common
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -49,8 +49,8 @@ importers:
         specifier: 30.0.5
         version: 30.0.5
       '@stylistic/eslint-plugin':
-        specifier: 5.2.2
-        version: 5.2.2(eslint@9.32.0)
+        specifier: 5.2.3
+        version: 5.2.3(eslint@9.32.0)
       '@types/delaunator':
         specifier: 5.0.3
         version: 5.0.3
@@ -603,8 +603,8 @@ packages:
   '@sinonjs/fake-timers@13.0.5':
     resolution: {integrity: sha512-36/hTbH2uaWuGVERyC6da9YwGWnzUZXuPro/F2LfsdOsLnCojz/iSH8MxUt/FD2S5XBSVPhmArFUXcpCQ2Hkiw==}
 
-  '@stylistic/eslint-plugin@5.2.2':
-    resolution: {integrity: sha512-bE2DUjruqXlHYP3Q2Gpqiuj2bHq7/88FnuaS0FjeGGLCy+X6a07bGVuwtiOYnPSLHR6jmx5Bwdv+j7l8H+G97A==}
+  '@stylistic/eslint-plugin@5.2.3':
+    resolution: {integrity: sha512-oY7GVkJGVMI5benlBDCaRrSC1qPasafyv5dOBLLv5MTilMGnErKhO6ziEfodDDIZbo5QxPUNW360VudJOFODMw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=9.0.0'
@@ -736,10 +736,6 @@ packages:
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
       typescript: '>=4.8.4 <6.0.0'
-
-  '@typescript-eslint/types@8.38.0':
-    resolution: {integrity: sha512-wzkUfX3plUqij4YwWaJyqhiPE5UCRVlFpKn1oCRn2O1bJ592XxWJj8ROQ3JD5MYXLORW84063z3tZTb/cs4Tyw==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@typescript-eslint/types@8.39.0':
     resolution: {integrity: sha512-ArDdaOllnCj3yn/lzKn9s0pBQYmmyme/v1HbGIGB0GB/knFI3fWMHloC+oYTJW46tVbYnGKTMDK4ah1sC2v0Kg==}
@@ -2142,8 +2138,8 @@ packages:
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
-  pandora-common@https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/9085321204bb7ca2b461dde8dd4d6bbfdc466bec#path:pandora-common:
-    resolution: {path: pandora-common, tarball: https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/9085321204bb7ca2b461dde8dd4d6bbfdc466bec}
+  pandora-common@https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/410a12bba1f43e245ac2be88bce1ec1b0359c97b#path:pandora-common:
+    resolution: {path: pandora-common, tarball: https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/410a12bba1f43e245ac2be88bce1ec1b0359c97b}
     version: 0.1.0
     engines: {node: '>=22.x'}
 
@@ -3325,10 +3321,10 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 3.0.1
 
-  '@stylistic/eslint-plugin@5.2.2(eslint@9.32.0)':
+  '@stylistic/eslint-plugin@5.2.3(eslint@9.32.0)':
     dependencies:
       '@eslint-community/eslint-utils': 4.7.0(eslint@9.32.0)
-      '@typescript-eslint/types': 8.38.0
+      '@typescript-eslint/types': 8.39.0
       eslint: 9.32.0
       eslint-visitor-keys: 4.2.1
       espree: 10.4.0
@@ -3500,8 +3496,6 @@ snapshots:
       typescript: 5.9.2
     transitivePeerDependencies:
       - supports-color
-
-  '@typescript-eslint/types@8.38.0': {}
 
   '@typescript-eslint/types@8.39.0': {}
 
@@ -5255,7 +5249,7 @@ snapshots:
 
   package-json-from-dist@1.0.1: {}
 
-  pandora-common@https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/9085321204bb7ca2b461dde8dd4d6bbfdc466bec#path:pandora-common:
+  pandora-common@https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/410a12bba1f43e245ac2be88bce1ec1b0359c97b#path:pandora-common:
     dependencies:
       '@types/async-lock': 1.4.2
       '@types/lodash-es': 4.17.12
