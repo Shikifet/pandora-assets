@@ -767,6 +767,11 @@ const ATTRIBUTES_DEFINITION_BASE = DefineAttributes({
 		description: 'A rope tying the legs to thighs in a frogtie',
 		useAsAssetPreference: false,
 	},
+	Hashira: {
+		name: 'Pillar',
+		description: 'A pillar or pole where the model can be tied to',
+		useAsAssetPreference: false,
+	},
 });
 
 //#endregion
