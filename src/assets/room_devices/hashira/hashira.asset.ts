@@ -30,7 +30,7 @@ DefineRoomDeviceAsset({
 	modules: {
 		model: {
 			type: 'typed',
-			name: 'base',
+			name: 'Model',
 			staticConfig: { slotName: 'front' },
 			variants: [
 				{
@@ -46,7 +46,7 @@ DefineRoomDeviceAsset({
 		},
 		base: {
 			type: 'typed',
-			name: 'base',
+			name: 'Base',
 			staticConfig: { slotName: 'front' },
 			variants: [
 				{
@@ -62,7 +62,7 @@ DefineRoomDeviceAsset({
 		},
 		saddle: {
 			type: 'typed',
-			name: 'saddle',
+			name: 'Saddle',
 			staticConfig: { slotName: 'front' },
 			variants: [
 				{
@@ -120,7 +120,7 @@ DefineRoomDeviceAsset({
 			type: 'sprite',
 			image: '',
 			colorizationKey: 'hashira',
-			offset: { x: -142, y: -200 },
+			offset: { x: -142, y: -180 },
 			imageOverrides: [
 				{
 					image: 'hashira_base.png',
