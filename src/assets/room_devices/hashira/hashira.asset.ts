@@ -80,6 +80,22 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+		waist: {
+			type: 'typed',
+			name: 'Waist',
+			staticConfig: { slotName: 'front' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'attached',
+					name: 'Attached',
+				},
+			],
+		},
 	},
 
 	graphicsLayers: [
