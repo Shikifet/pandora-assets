@@ -96,6 +96,38 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+		legs: {
+			type: 'typed',
+			name: 'Legs',
+			staticConfig: { slotName: 'front' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'futomomo',
+					name: 'Futomomo',
+					properties: {
+						blockSlotsEnterLeave: ['front'],
+						slotProperties: {
+							front: {
+								poseLimits: {
+									legs: {
+										pose: ['kneeling'],
+									},
+									bones: {
+										leg_l: [[-100, -2]],
+										leg_r: [[-100, -2]],
+									},
+								},
+							},
+						},
+					},
+				},
+			],
+		},
 	},
 
 	graphicsLayers: [
@@ -163,6 +195,13 @@ DefineRoomDeviceAsset({
 						disablePoseOffset: true,
 					},
 					condition: [
+						[
+							{
+								module: 'chest',
+								operator: '=',
+								value: 'attached',
+							},
+						],
 						[
 							{
 								module: 'saddle',

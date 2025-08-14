@@ -59,7 +59,7 @@
 				]
 			}
 		},
-				{
+		{
 			"x": 0,
 			"y": 0,
 			"width": 1000,
@@ -86,6 +86,35 @@
 									"module": "waist",
 									"operator": "=",
 									"value": "attached"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "legs",
+			"priority": "ABOVE_BODY",
+			"points": "body",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "futomomo.png",
+						"condition": [
+							[
+								{
+									"module": "legs",
+									"operator": "=",
+									"value": "futomomo"
 								}
 							]
 						]
