@@ -7,7 +7,10 @@ DefineRoomDeviceAsset({
 			name: 'Pillar',
 			default: '#C28858',
 		},
-
+		rope: {
+			name: 'Rope',
+			default: '#D7AC4D',
+		},
 	},
 	staticAttributes: ['Play_furniture'],
 	slots: {
@@ -24,6 +27,7 @@ DefineRoomDeviceAsset({
 				attributes: {
 					provides: ['Hashira'],
 				},
+				graphics: 'front.json',
 			},
 		},
 	},
@@ -44,22 +48,6 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
-		base: {
-			type: 'typed',
-			name: 'Base',
-			staticConfig: { slotName: 'front' },
-			variants: [
-				{
-					id: 'none',
-					name: 'None',
-					default: true,
-				},
-				{
-					id: 'show',
-					name: 'Show',
-				},
-			],
-		},
 		saddle: {
 			type: 'typed',
 			name: 'Saddle',
@@ -76,7 +64,22 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
-
+		chest: {
+			type: 'typed',
+			name: 'Chest',
+			staticConfig: { slotName: 'front' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'attached',
+					name: 'Attached',
+				},
+			],
+		},
 	},
 
 	graphicsLayers: [
@@ -118,24 +121,11 @@ DefineRoomDeviceAsset({
 		},
 		{
 			type: 'sprite',
-			image: '',
+			image: 'hashira_base.png',
 			colorizationKey: 'hashira',
 			offset: { x: -142, y: -180 },
-			imageOverrides: [
-				{
-					image: 'hashira_base.png',
-					condition: [
-						[
-							{
-								module: 'base',
-								operator: '=',
-								value: 'show',
-							},
-						],
-					],
-				},
-			],
 		},
+
 		{
 			type: 'slot',
 			slot: 'front',
@@ -168,7 +158,6 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
-
 	],
 	pivot: {
 		x: 0,
