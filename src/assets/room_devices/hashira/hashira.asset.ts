@@ -161,6 +161,29 @@ DefineRoomDeviceAsset({
 				},
 		*/
 		{
+			type: 'sprite',
+			image: 'hashira_rope_top_normal.png',
+			clipToRoom: true,
+			colorizationKey: 'rope',
+			offset: { x: -142, y: -2000 },
+
+			imageOverrides: [
+				{
+					image: 'hashira_rope_top.png',
+					condition: [
+						[
+							{
+								module: 'chest',
+								operator: '!=',
+								value: 'none',
+							},
+						],
+					],
+				},
+			],
+		},
+
+		{
 			type: 'slot',
 			slot: 'front',
 			characterPosition: {
