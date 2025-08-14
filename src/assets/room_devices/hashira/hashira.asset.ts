@@ -76,7 +76,22 @@ DefineRoomDeviceAsset({
 				},
 				{
 					id: 'attached',
-					name: 'Attached',
+					name: 'Tied to Pillar',
+				},
+				{
+					id: 'suspended',
+					name: 'Suspended',
+					properties: {
+						slotProperties: {
+							front: {
+								attributes: {
+									requires: [
+										'Back_knot_anchor_point',
+									],
+								},
+							},
+						},
+					},
 				},
 			],
 		},
@@ -92,7 +107,7 @@ DefineRoomDeviceAsset({
 				},
 				{
 					id: 'attached',
-					name: 'Attached',
+					name: 'Tied to Pillar',
 				},
 			],
 		},
@@ -174,8 +189,8 @@ DefineRoomDeviceAsset({
 						[
 							{
 								module: 'chest',
-								operator: '!=',
-								value: 'none',
+								operator: '=',
+								value: 'suspended',
 							},
 						],
 					],
@@ -208,7 +223,7 @@ DefineRoomDeviceAsset({
 							{
 								module: 'chest',
 								operator: '=',
-								value: 'attached',
+								value: 'suspended',
 							},
 						],
 						[
