@@ -131,27 +131,12 @@ DefineRoomDeviceAsset({
 	},
 
 	graphicsLayers: [
-
 		{
 			type: 'sprite',
 			image: 'hashira.png',
-			clipToRoom: false,
+			clipToRoom: true,
 			colorizationKey: 'hashira',
-			offset: { x: -142, y: -3072 },
-			imageOverrides: [
-				{
-					image: 'hashira_outdoor.png',
-					condition: [
-						[
-							{
-								module: 'model',
-								operator: '=',
-								value: 'outdoor',
-							},
-						],
-					],
-				},
-			],
+			offset: { x: -142, y: -3584 },
 			offsetOverrides: [
 				{
 					offset: { x: -142, y: -1600 },
@@ -167,13 +152,14 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
-		{
-			type: 'sprite',
-			image: 'hashira_base.png',
-			colorizationKey: 'hashira',
-			offset: { x: -142, y: -180 },
-		},
-
+		/*
+				{
+					type: 'sprite',
+					image: 'hashira_base.png',
+					colorizationKey: 'hashira',
+					offset: { x: -142, y: -180 },
+				},
+		*/
 		{
 			type: 'slot',
 			slot: 'front',
