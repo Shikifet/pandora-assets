@@ -137,6 +137,115 @@ DefineRoomDeviceAsset({
 										leg_r: [[-100, -2]],
 									},
 								},
+								stateFlags: {
+									provides: ['futomomo'],
+								},
+							},
+						},
+					},
+				},
+			],
+		},
+		futomomo: {
+			type: 'typed',
+			name: 'Futomomo Rope to Pillar',
+			staticConfig: { slotName: 'front' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+					properties: {
+						blockSlotsEnterLeave: ['front'],
+						slotProperties: {
+							front: {
+								stateFlags: {
+									requires: {
+										futomomo: 'This pose require thighs tied in futomomo position',
+									},
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'loose',
+					name: 'Loose',
+					properties: {
+						blockSlotsEnterLeave: ['front'],
+						slotProperties: {
+							front: {
+								stateFlags: {
+									requires: {
+										futomomo: 'This pose require thighs tied in futomomo position',
+									},
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'medium',
+					name: 'Medium',
+					properties: {
+						blockSlotsEnterLeave: ['front'],
+						slotProperties: {
+							front: {
+								poseLimits: {
+									bones: {
+										leg_l: [[-100, -40]],
+										leg_r: [[-100, -40]],
+									},
+								},
+								stateFlags: {
+									requires: {
+										futomomo: 'This pose require thighs tied in futomomo position',
+									},
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'short',
+					name: 'Short',
+					properties: {
+						blockSlotsEnterLeave: ['front'],
+						slotProperties: {
+							front: {
+								poseLimits: {
+									bones: {
+										leg_l: [[-100, -60]],
+										leg_r: [[-100, -60]],
+									},
+								},
+								stateFlags: {
+									requires: {
+										futomomo: 'This pose require thighs tied in futomomo position',
+									},
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'very_short',
+					name: 'Very Short',
+					properties: {
+						blockSlotsEnterLeave: ['front'],
+						slotProperties: {
+							front: {
+								poseLimits: {
+									bones: {
+										leg_l: -80,
+										leg_r: -80,
+									},
+								},
+								stateFlags: {
+									requires: {
+										futomomo: 'This pose require thighs tied in futomomo position',
+									},
+								},
 							},
 						},
 					},

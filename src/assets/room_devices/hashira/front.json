@@ -146,6 +146,11 @@
 						"condition": [
 							[
 								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
+								{
 									"module": "thighs",
 									"operator": "=",
 									"value": "futomomo"
@@ -162,6 +167,11 @@
 						"image": "leg_right_2.png",
 						"condition": [
 							[
+								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
 								{
 									"module": "thighs",
 									"operator": "=",
@@ -180,6 +190,11 @@
 						"condition": [
 							[
 								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
+								{
 									"module": "thighs",
 									"operator": "=",
 									"value": "futomomo"
@@ -196,6 +211,11 @@
 						"image": "leg_right_4.png",
 						"condition": [
 							[
+								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
 								{
 									"module": "thighs",
 									"operator": "=",
@@ -214,6 +234,11 @@
 						"condition": [
 							[
 								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
+								{
 									"module": "thighs",
 									"operator": "=",
 									"value": "futomomo"
@@ -230,6 +255,11 @@
 						"image": "leg_right_6.png",
 						"condition": [
 							[
+								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
 								{
 									"module": "thighs",
 									"operator": "=",
@@ -248,6 +278,11 @@
 						"condition": [
 							[
 								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
+								{
 									"module": "thighs",
 									"operator": "=",
 									"value": "futomomo"
@@ -264,6 +299,11 @@
 						"image": "leg_right_8.png",
 						"condition": [
 							[
+								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
 								{
 									"module": "thighs",
 									"operator": "=",
@@ -282,6 +322,11 @@
 						"condition": [
 							[
 								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
+								{
 									"module": "thighs",
 									"operator": "=",
 									"value": "futomomo"
@@ -298,6 +343,11 @@
 						"image": "leg_right_10.png",
 						"condition": [
 							[
+								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
 								{
 									"module": "thighs",
 									"operator": "=",
@@ -316,6 +366,11 @@
 						"condition": [
 							[
 								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
+								{
 									"module": "thighs",
 									"operator": "=",
 									"value": "futomomo"
@@ -332,6 +387,11 @@
 						"image": "leg_right_12.png",
 						"condition": [
 							[
+								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
 								{
 									"module": "thighs",
 									"operator": "=",
@@ -350,6 +410,11 @@
 						"condition": [
 							[
 								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
+								{
 									"module": "thighs",
 									"operator": "=",
 									"value": "futomomo"
@@ -366,6 +431,11 @@
 						"image": "leg_right_14.png",
 						"condition": [
 							[
+								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
 								{
 									"module": "thighs",
 									"operator": "=",
@@ -402,6 +472,11 @@
 						"condition": [
 							[
 								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
+								{
 									"module": "thighs",
 									"operator": "=",
 									"value": "futomomo"
@@ -418,6 +493,11 @@
 						"image": "leg_left_2.png",
 						"condition": [
 							[
+								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
 								{
 									"module": "thighs",
 									"operator": "=",
@@ -436,6 +516,11 @@
 						"condition": [
 							[
 								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
+								{
 									"module": "thighs",
 									"operator": "=",
 									"value": "futomomo"
@@ -452,6 +537,11 @@
 						"image": "leg_left_4.png",
 						"condition": [
 							[
+								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
 								{
 									"module": "thighs",
 									"operator": "=",
@@ -470,6 +560,11 @@
 						"condition": [
 							[
 								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
+								{
 									"module": "thighs",
 									"operator": "=",
 									"value": "futomomo"
@@ -486,6 +581,11 @@
 						"image": "leg_left_6.png",
 						"condition": [
 							[
+								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
 								{
 									"module": "thighs",
 									"operator": "=",
@@ -504,6 +604,11 @@
 						"condition": [
 							[
 								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
+								{
 									"module": "thighs",
 									"operator": "=",
 									"value": "futomomo"
@@ -520,6 +625,11 @@
 						"image": "leg_left_8.png",
 						"condition": [
 							[
+								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
 								{
 									"module": "thighs",
 									"operator": "=",
@@ -538,6 +648,11 @@
 						"condition": [
 							[
 								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
+								{
 									"module": "thighs",
 									"operator": "=",
 									"value": "futomomo"
@@ -554,6 +669,11 @@
 						"image": "leg_left_10.png",
 						"condition": [
 							[
+								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
 								{
 									"module": "thighs",
 									"operator": "=",
@@ -572,6 +692,11 @@
 						"condition": [
 							[
 								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
+								{
 									"module": "thighs",
 									"operator": "=",
 									"value": "futomomo"
@@ -588,6 +713,11 @@
 						"image": "leg_left_12.png",
 						"condition": [
 							[
+								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
 								{
 									"module": "thighs",
 									"operator": "=",
@@ -606,6 +736,11 @@
 						"condition": [
 							[
 								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
+								{
 									"module": "thighs",
 									"operator": "=",
 									"value": "futomomo"
@@ -622,6 +757,11 @@
 						"image": "leg_left_14.png",
 						"condition": [
 							[
+								{
+									"module": "futomomo",
+									"operator": "!=",
+									"value": "none"
+								},
 								{
 									"module": "thighs",
 									"operator": "=",
