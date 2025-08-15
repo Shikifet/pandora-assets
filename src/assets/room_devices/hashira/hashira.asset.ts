@@ -175,16 +175,16 @@ DefineRoomDeviceAsset({
 					offset: { x: -142, y: -180 },
 				},
 		*/
+
 		{
 			type: 'sprite',
-			image: 'hashira_rope_top_normal.png',
-			clipToRoom: true,
+			image: '',
 			colorizationKey: 'rope',
 			offset: { x: -500, y: -2000 },
 
 			imageOverrides: [
 				{
-					image: 'hashira_rope_top.png',
+					image: 'hashira_rope_top_link.png',
 					condition: [
 						[
 							{
@@ -231,6 +231,28 @@ DefineRoomDeviceAsset({
 								module: 'saddle',
 								operator: '=',
 								value: 'attached',
+							},
+						],
+					],
+				},
+			],
+		},
+
+		{
+			type: 'sprite',
+			image: 'hashira_rope_top_normal.png',
+			colorizationKey: 'rope',
+			offset: { x: -500, y: -2000 },
+
+			imageOverrides: [
+				{
+					image: 'hashira_rope_top.png',
+					condition: [
+						[
+							{
+								module: 'chest',
+								operator: '=',
+								value: 'suspended',
 							},
 						],
 					],
