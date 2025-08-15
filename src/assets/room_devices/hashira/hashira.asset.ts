@@ -64,6 +64,25 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+		neck: {
+			type: 'typed',
+			name: 'Neck',
+			staticConfig: { slotName: 'front' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'attached',
+					name: 'Tied to Pillar',
+					properties: {
+						blockSlotsEnterLeave: ['front'],
+					},
+				},
+			],
+		},
 		chest: {
 			type: 'typed',
 			name: 'Chest',
@@ -77,17 +96,24 @@ DefineRoomDeviceAsset({
 				{
 					id: 'attached',
 					name: 'Tied to Pillar',
+					properties: {
+						blockSlotsEnterLeave: ['front'],
+					},
 				},
 				{
 					id: 'suspended',
 					name: 'Suspended',
 					properties: {
+						blockSlotsEnterLeave: ['front'],
 						slotProperties: {
 							front: {
 								attributes: {
 									requires: [
 										'Back_knot_anchor_point',
 									],
+								},
+								stateFlags: {
+									provides: ['suspension'],
 								},
 							},
 						},
@@ -108,6 +134,9 @@ DefineRoomDeviceAsset({
 				{
 					id: 'attached',
 					name: 'Tied to Pillar',
+					properties: {
+						blockSlotsEnterLeave: ['front'],
+					},
 				},
 			],
 		},
@@ -125,7 +154,6 @@ DefineRoomDeviceAsset({
 					id: 'futomomo',
 					name: 'Futomomo',
 					properties: {
-						blockSlotsEnterLeave: ['front'],
 						slotProperties: {
 							front: {
 								poseLimits: {
@@ -148,25 +176,13 @@ DefineRoomDeviceAsset({
 		},
 		futomomo: {
 			type: 'typed',
-			name: 'Futomomo Rope to Pillar',
+			name: 'Futomomo rope to Pillar',
 			staticConfig: { slotName: 'front' },
 			variants: [
 				{
 					id: 'none',
 					name: 'None',
 					default: true,
-					properties: {
-						blockSlotsEnterLeave: ['front'],
-						slotProperties: {
-							front: {
-								stateFlags: {
-									requires: {
-										futomomo: 'This pose require thighs tied in futomomo position',
-									},
-								},
-							},
-						},
-					},
 				},
 				{
 					id: 'loose',
@@ -178,6 +194,7 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									requires: {
 										futomomo: 'This pose require thighs tied in futomomo position',
+										suspension: 'This pose require body being suspended',
 									},
 								},
 							},
@@ -200,6 +217,7 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									requires: {
 										futomomo: 'This pose require thighs tied in futomomo position',
+										suspension: 'This pose require body being suspended',
 									},
 								},
 							},
@@ -222,6 +240,7 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									requires: {
 										futomomo: 'This pose require thighs tied in futomomo position',
+										suspension: 'This pose require body being suspended',
 									},
 								},
 							},
@@ -244,6 +263,7 @@ DefineRoomDeviceAsset({
 								stateFlags: {
 									requires: {
 										futomomo: 'This pose require thighs tied in futomomo position',
+										suspension: 'This pose require body being suspended',
 									},
 								},
 							},
@@ -276,6 +296,7 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+
 		/*
 				{
 					type: 'sprite',
