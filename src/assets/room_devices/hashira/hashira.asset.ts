@@ -111,9 +111,9 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
-		legs: {
+		thighs: {
 			type: 'typed',
-			name: 'Legs',
+			name: 'Thighs',
 			staticConfig: { slotName: 'front' },
 			variants: [
 				{
@@ -180,7 +180,7 @@ DefineRoomDeviceAsset({
 			image: 'hashira_rope_top_normal.png',
 			clipToRoom: true,
 			colorizationKey: 'rope',
-			offset: { x: -142, y: -2000 },
+			offset: { x: -500, y: -2000 },
 
 			imageOverrides: [
 				{

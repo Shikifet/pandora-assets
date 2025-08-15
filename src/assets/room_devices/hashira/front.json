@@ -95,6 +95,550 @@
 		},
 		{
 			"x": 0,
+			"y": -712,
+			"width": 1000,
+			"height": 2000,
+			"type": "mesh",
+			"name": "legs",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "leg_right_1.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_l",
+									"operator": "<",
+									"value": -90
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_right_2.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_l",
+									"operator": "<",
+									"value": -80
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_right_3.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_l",
+									"operator": "<",
+									"value": -70
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_right_4.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_l",
+									"operator": "<",
+									"value": -62
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_right_5.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_l",
+									"operator": "<",
+									"value": -52
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_right_6.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_l",
+									"operator": "<",
+									"value": -44
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_right_7.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_l",
+									"operator": "<",
+									"value": -40
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_right_8.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_l",
+									"operator": "<",
+									"value": -35
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_right_9.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_l",
+									"operator": "<",
+									"value": -25
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_right_10.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_l",
+									"operator": "<",
+									"value": -19
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_right_11.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_l",
+									"operator": "<",
+									"value": -14
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_right_12.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_l",
+									"operator": "<",
+									"value": -10
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_right_13.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_l",
+									"operator": "<",
+									"value": -5
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_right_14.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_l",
+									"operator": "<",
+									"value": 0
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+				{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Chest to waist rope",
+			"priority": "ABOVE_BODY",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "chest_to_waist.png",
+						"condition": [
+							[
+								{
+									"module": "chest",
+									"operator": "=",
+									"value": "attached"
+								},
+								{
+									"module": "waist",
+									"operator": "=",
+									"value": "attached"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": -712,
+			"width": 1000,
+			"height": 2000,
+			"type": "mesh",
+			"name": "legs",
+			"priority": "BELOW_ARM_RIGHT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "leg_left_1.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_r",
+									"operator": "<",
+									"value": -90
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_left_2.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_r",
+									"operator": "<",
+									"value": -80
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_left_3.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_r",
+									"operator": "<",
+									"value": -70
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_left_4.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_r",
+									"operator": "<",
+									"value": -62
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_left_5.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_r",
+									"operator": "<",
+									"value": -52
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_left_6.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_r",
+									"operator": "<",
+									"value": -44
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_left_7.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_r",
+									"operator": "<",
+									"value": -40
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_left_8.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_r",
+									"operator": "<",
+									"value": -35
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_left_9.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_r",
+									"operator": "<",
+									"value": -25
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_left_10.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_r",
+									"operator": "<",
+									"value": -19
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_left_11.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_r",
+									"operator": "<",
+									"value": -14
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_left_12.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_r",
+									"operator": "<",
+									"value": -10
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_left_13.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_r",
+									"operator": "<",
+									"value": -5
+								}
+							]
+						]
+					},
+					{
+						"image": "leg_left_14.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								},
+								{
+									"bone": "leg_r",
+									"operator": "<",
+									"value": 0
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
@@ -112,7 +656,7 @@
 						"condition": [
 							[
 								{
-									"module": "legs",
+									"module": "thighs",
 									"operator": "=",
 									"value": "futomomo"
 								}
