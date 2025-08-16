@@ -151,6 +151,25 @@ DefineRoomDeviceAsset({
 					default: true,
 				},
 				{
+					id: 'attached',
+					name: 'Tied to Pillar',
+					properties: {
+						slotProperties: {
+							front: {
+								poseLimits: {
+									legs: {
+										pose: ['standing'],
+									},
+									bones: {
+										leg_l: 2,
+										leg_r: 2,
+									},
+								},
+							},
+						},
+					},
+				},
+				{
 					id: 'futomomo',
 					name: 'Futomomo',
 					properties: {

@@ -865,6 +865,35 @@
 					}
 				]
 			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Legs tied to Pillar",
+			"priority": "ABOVE_BODY",
+			"points": "custom_foot_restraints_duct_tape",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "legs_tied.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "attached"
+								}
+							]
+						]
+					}
+				]
+			}
 		}
 	]
 }
