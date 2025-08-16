@@ -11,6 +11,14 @@ DefineRoomDeviceAsset({
 			name: 'Rope',
 			default: '#D7AC4D',
 		},
+		leather: {
+			name: 'Leather',
+			default: '#343434',
+		},
+		bolts: {
+			name: 'Bolts',
+			default: '#CCCCCC',
+		},
 	},
 	staticAttributes: ['Play_furniture'],
 	slots: {
@@ -83,6 +91,12 @@ DefineRoomDeviceAsset({
 					properties: {
 						slotProperties: {
 							front: {
+								poseLimits: {
+									bones: {
+										leg_l: [[-100, -12]],
+										leg_r: [[-100, -12]],
+									},
+								},
 								stateFlags: {
 									provides: ['suspension'],
 								},
@@ -220,7 +234,7 @@ DefineRoomDeviceAsset({
 		},
 		thighs: {
 			type: 'typed',
-			name: 'Thighs',
+			name: 'Legs',
 			staticConfig: { slotName: 'front' },
 			variants: [
 				{
@@ -426,6 +440,48 @@ DefineRoomDeviceAsset({
 		},
 
 		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'leather',
+			offset: { x: -142, y: -600 },
+
+			imageOverrides: [
+				{
+					image: 'saddle_seat.png',
+					condition: [
+						[
+							{
+								module: 'suspension',
+								operator: '=',
+								value: 'saddle',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			offset: { x: -142, y: -600 },
+
+			imageOverrides: [
+				{
+					image: 'saddle_seat_reflection.png',
+					condition: [
+						[
+							{
+								module: 'suspension',
+								operator: '=',
+								value: 'saddle',
+							},
+						],
+					],
+				},
+			],
+		},
+
+		{
 			type: 'slot',
 			slot: 'front',
 			characterPosition: {
@@ -457,6 +513,92 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'hashira',
+			offset: { x: -142, y: -600 },
+
+			imageOverrides: [
+				{
+					image: 'saddle_base.png',
+					condition: [
+						[
+							{
+								module: 'suspension',
+								operator: '=',
+								value: 'saddle',
+							},
+						],
+					],
+				},
+			],
+		},
+
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'leather',
+			offset: { x: -142, y: -600 },
+
+			imageOverrides: [
+				{
+					image: 'saddle_leather.png',
+					condition: [
+						[
+							{
+								module: 'suspension',
+								operator: '=',
+								value: 'saddle',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			offset: { x: -142, y: -600 },
+
+			imageOverrides: [
+				{
+					image: 'saddle_leather_reflection.png',
+					condition: [
+						[
+							{
+								module: 'suspension',
+								operator: '=',
+								value: 'saddle',
+							},
+						],
+					],
+				},
+			],
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'bolts',
+			offset: { x: -142, y: -600 },
+
+			imageOverrides: [
+				{
+					image: 'saddle_bolts.png',
+					condition: [
+						[
+							{
+								module: 'suspension',
+								operator: '=',
+								value: 'saddle',
+							},
+						],
+					],
+				},
+			],
+		},
+
 
 		{
 			type: 'sprite',
