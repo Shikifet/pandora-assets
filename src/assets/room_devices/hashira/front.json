@@ -36,6 +36,64 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
+			"name": "Arms Behind Pillar Left",
+			"priority": "ABOVE_ARM_LEFT",
+			"points": "custom_arm_restraints_torso_ropes",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "arms_behind_pillar_left.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "attached"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Arms Behind Pillar Right",
+			"priority": "ABOVE_ARM_RIGHT",
+			"points": "custom_arm_restraints_torso_ropes",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "arms_behind_pillar_right.png",
+						"condition": [
+							[
+								{
+									"module": "arms",
+									"operator": "=",
+									"value": "attached"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
 			"name": "Neck",
 			"priority": "BELOW_BODY",
 			"points": "static",
