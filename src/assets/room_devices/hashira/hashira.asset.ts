@@ -429,9 +429,9 @@ DefineRoomDeviceAsset({
 					condition: [
 						[
 							{
-								module: 'chest',
+								module: 'suspension',
 								operator: '=',
-								value: 'suspended',
+								value: 'rope',
 							},
 						],
 					],
@@ -612,9 +612,16 @@ DefineRoomDeviceAsset({
 					condition: [
 						[
 							{
-								module: 'chest',
+								module: 'suspension',
 								operator: '=',
-								value: 'suspended',
+								value: 'rope',
+							},
+						],
+						[
+							{
+								module: 'futomomo',
+								operator: '!=',
+								value: 'none',
 							},
 						],
 					],
