@@ -129,6 +129,9 @@ DefineRoomDeviceAsset({
 						slotProperties: {
 							front: {
 								poseLimits: {
+									arms: {
+										position: 'back',
+									},
 									bones: {
 										arm_l: -95,
 										elbow_l: -17,
