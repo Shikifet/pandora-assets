@@ -113,7 +113,7 @@ DefineRoomDeviceAsset({
 		},
 		arms: {
 			type: 'typed',
-			name: 'Neck',
+			name: 'Arms',
 			staticConfig: { slotName: 'front' },
 			variants: [
 				{
