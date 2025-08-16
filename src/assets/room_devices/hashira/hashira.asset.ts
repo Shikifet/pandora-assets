@@ -408,15 +408,6 @@ DefineRoomDeviceAsset({
 			],
 		},
 
-		/*
-				{
-					type: 'sprite',
-					image: 'hashira_base.png',
-					colorizationKey: 'hashira',
-					offset: { x: -142, y: -180 },
-				},
-		*/
-
 		{
 			type: 'sprite',
 			image: '',
