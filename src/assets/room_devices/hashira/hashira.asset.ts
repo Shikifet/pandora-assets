@@ -1,11 +1,11 @@
 DefineRoomDeviceAsset({
 	name: 'Pillar',
 	size: 'huge',
-	preview: null,//'preview.png',
+	preview: 'preview.png',
 	colorization: {
 		hashira: {
 			name: 'Pillar',
-			default: '#C28858',
+			default: '#AC784E',
 		},
 		rope: {
 			name: 'Rope',
