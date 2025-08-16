@@ -83,6 +83,72 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+		arms: {
+			type: 'typed',
+			name: 'Neck',
+			staticConfig: { slotName: 'front' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'attached_high',
+					name: 'Tied above head',
+					properties: {
+						blockSlotsEnterLeave: ['front'],
+						slotProperties: {
+							front: {
+								poseLimits: {
+									bones: {
+										arm_l: -95,
+										elbow_l: -17,
+										arm_r: -95,
+										elbow_r: -17,
+									},
+									armsOrder: {
+										upper: 'right',
+									},
+								},
+								effects: {
+									blockHands: true,
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'attached',
+					name: 'Tied behind pillar',
+					properties: {
+						blockSlotsEnterLeave: ['front'],
+						slotProperties: {
+							front: {
+								poseLimits: {
+									arms: {
+										position: 'back',
+										rotation: 'forward',
+									},
+									bones: {
+										arm_l: 90,
+										elbow_l: 35,
+										arm_r: 90,
+										elbow_r: 35,
+									},
+									armsOrder: {
+										upper: 'right',
+									},
+								},
+								effects: {
+									blockHands: true,
+								},
+							},
+						},
+					},
+				},
+			],
+		},
 		chest: {
 			type: 'typed',
 			name: 'Chest',
