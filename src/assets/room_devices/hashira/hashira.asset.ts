@@ -250,7 +250,7 @@ DefineRoomDeviceAsset({
 							front: {
 								poseLimits: {
 									legs: {
-										pose: ['standing'],
+										pose: ['standing', 'kneeling'],
 									},
 									bones: {
 										leg_l: 2,
@@ -269,7 +269,7 @@ DefineRoomDeviceAsset({
 							front: {
 								poseLimits: {
 									legs: {
-										pose: ['kneeling'],
+										pose: 'kneeling',
 									},
 									bones: {
 										leg_l: [[-100, -2]],
@@ -589,7 +589,6 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
-
 
 		{
 			type: 'sprite',
