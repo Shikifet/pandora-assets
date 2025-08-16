@@ -48,9 +48,9 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
-		saddle: {
+		suspension: {
 			type: 'typed',
-			name: 'Saddle',
+			name: 'Suspension',
 			staticConfig: { slotName: 'front' },
 			variants: [
 				{
@@ -59,8 +59,36 @@ DefineRoomDeviceAsset({
 					default: true,
 				},
 				{
-					id: 'attached',
-					name: 'Attached',
+					id: 'rope',
+					name: 'Rope',
+					properties: {
+						blockSlotsEnterLeave: ['front'],
+						slotProperties: {
+							front: {
+								attributes: {
+									requires: [
+										'Back_knot_anchor_point',
+									],
+								},
+								stateFlags: {
+									provides: ['suspension'],
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'saddle',
+					name: 'Saddle',
+					properties: {
+						slotProperties: {
+							front: {
+								stateFlags: {
+									provides: ['suspension'],
+								},
+							},
+						},
+					},
 				},
 			],
 		},
@@ -164,25 +192,6 @@ DefineRoomDeviceAsset({
 					name: 'Tied to Pillar',
 					properties: {
 						blockSlotsEnterLeave: ['front'],
-					},
-				},
-				{
-					id: 'suspended',
-					name: 'Suspended',
-					properties: {
-						blockSlotsEnterLeave: ['front'],
-						slotProperties: {
-							front: {
-								attributes: {
-									requires: [
-										'Back_knot_anchor_point',
-									],
-								},
-								stateFlags: {
-									provides: ['suspension'],
-								},
-							},
-						},
 					},
 				},
 			],
@@ -436,16 +445,9 @@ DefineRoomDeviceAsset({
 					condition: [
 						[
 							{
-								module: 'chest',
-								operator: '=',
-								value: 'suspended',
-							},
-						],
-						[
-							{
-								module: 'saddle',
-								operator: '=',
-								value: 'attached',
+								module: 'suspension',
+								operator: '!=',
+								value: 'none',
 							},
 						],
 					],
