@@ -1,5 +1,5 @@
 DefineRoomDeviceAsset({
-	name: 'Pillar',
+	name: 'Wooden Pillar',
 	size: 'huge',
 	preview: 'preview.png',
 	colorization: {
@@ -25,7 +25,7 @@ DefineRoomDeviceAsset({
 		front: {
 			name: 'In front of pillar',
 			asset: {
-				name: 'Pillar',
+				name: 'Wooden Pillar',
 				size: 'huge',
 				poseLimits: {
 					legs: {

@@ -1,10 +1,10 @@
 DefineRoomDeviceAsset({
-	name: 'Pillar (Base)',
+	name: 'Wooden Pillar (Base)',
 	size: 'huge',
 	preview: 'preview.png',
 	colorization: {
 		hashira: {
-			name: 'Pillar (Base)',
+			name: 'Wooden Pillar (Base)',
 			default: '#AC784E',
 		},
 	},
