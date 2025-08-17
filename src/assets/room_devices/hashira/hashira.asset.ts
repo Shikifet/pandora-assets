@@ -40,22 +40,6 @@ DefineRoomDeviceAsset({
 		},
 	},
 	modules: {
-		model: {
-			type: 'typed',
-			name: 'Model',
-			staticConfig: { slotName: 'front' },
-			variants: [
-				{
-					id: 'indoor',
-					name: 'Indoor',
-					default: true,
-				},
-				{
-					id: 'outdoor',
-					name: 'Outdoor',
-				},
-			],
-		},
 		suspension: {
 			type: 'typed',
 			name: 'Suspension',
@@ -407,6 +391,43 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+
+		model: {
+			type: 'typed',
+			name: 'Model',
+			staticConfig: { slotName: 'front' },
+			variants: [
+				{
+					id: 'indoor',
+					name: 'Indoor',
+					default: true,
+				},
+				{
+					id: 'outdoor',
+					name: 'Outdoor',
+				},
+			],
+		},
+		base: {
+			type: 'typed',
+			name: 'Base',
+			staticConfig: { slotName: 'front' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'basic',
+					name: 'Basic',
+				},
+				{
+					id: 'extra_base',
+					name: 'Extra Base',
+				},
+			],
+		},
 	},
 
 	graphicsLayers: [
@@ -431,7 +452,39 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'hashira',
+			offset: { x: -142, y: -180 },
 
+			imageOverrides: [
+				{
+					image: 'hashira_base.png',
+					condition: [
+						[
+							{
+								module: 'base',
+								operator: '=',
+								value: 'basic',
+							},
+						],
+					],
+				},
+				{
+					image: 'hashira_base_big.png',
+					condition: [
+						[
+							{
+								module: 'base',
+								operator: '=',
+								value: 'extra_base',
+							},
+						],
+					],
+				},
+			],
+		},
 		{
 			type: 'sprite',
 			image: '',
