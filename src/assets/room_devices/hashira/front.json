@@ -39,10 +39,6 @@
 			"name": "Wrists Above Head",
 			"priority": "ABOVE_ARM_RIGHT",
 			"points": "static",
-			"pointType": [
-				"bodyarm_r",
-				"arm_r"
-			],
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -72,10 +68,6 @@
 			"name": "Arms Behind Pillar Left",
 			"priority": "ABOVE_ARM_LEFT",
 			"points": "custom_arm_restraints_torso_ropes",
-			"pointType": [
-				"bodyarm_l",
-				"arm_l"
-			],
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -105,10 +97,6 @@
 			"name": "Arms Behind Pillar Right",
 			"priority": "ABOVE_ARM_RIGHT",
 			"points": "custom_arm_restraints_torso_ropes",
-			"pointType": [
-				"bodyarm_r",
-				"arm_r"
-			],
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
