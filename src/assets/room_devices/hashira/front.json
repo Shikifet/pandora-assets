@@ -7,6 +7,35 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
+			"name": "Ankles Upside Down",
+			"priority": "ABOVE_BODY",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "ankles_upside_down.png",
+						"condition": [
+							[
+								{
+									"module": "suspension",
+									"operator": "=",
+									"value": "upside_down"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
 			"name": "Wrists Above Head",
 			"priority": "ABOVE_ARM_RIGHT",
 			"points": "static",

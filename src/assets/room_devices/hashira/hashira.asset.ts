@@ -86,6 +86,30 @@ DefineRoomDeviceAsset({
 					},
 				},
 				{
+					id: 'upside_down',
+					name: 'Upside Down',
+					properties: {
+						blockSlotsEnterLeave: ['front'],
+						slotProperties: {
+							front: {
+								poseLimits: {
+									legs: {
+										pose: 'standing',
+									},
+									bones: {
+										leg_l: 2,
+										leg_r: 2,
+										character_rotation: 180,
+									},
+								},
+								stateFlags: {
+									provides: ['suspension'],
+								},
+							},
+						},
+					},
+				},
+				{
 					id: 'saddle',
 					name: 'Saddle',
 					properties: {
@@ -427,6 +451,18 @@ DefineRoomDeviceAsset({
 						],
 					],
 				},
+				{
+					image: 'hashira_rope_top_link_upside_down.png',
+					condition: [
+						[
+							{
+								module: 'suspension',
+								operator: '=',
+								value: 'upside_down',
+							},
+						],
+					],
+				},
 			],
 		},
 
@@ -486,6 +522,22 @@ DefineRoomDeviceAsset({
 			},
 
 			characterPositionOverrides: [
+				{
+					position: {
+						offsetX: 0,
+						offsetY: -1240,
+						disablePoseOffset: true,
+					},
+					condition: [
+						[
+							{
+								module: 'suspension',
+								operator: '=',
+								value: 'upside_down',
+							},
+						],
+					],
+				},
 				{
 					position: {
 						offsetX: 0,
@@ -605,6 +657,13 @@ DefineRoomDeviceAsset({
 								module: 'suspension',
 								operator: '=',
 								value: 'rope',
+							},
+						],
+						[
+							{
+								module: 'suspension',
+								operator: '=',
+								value: 'upside_down',
 							},
 						],
 						[
