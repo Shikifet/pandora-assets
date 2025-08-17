@@ -274,7 +274,7 @@ DefineRoomDeviceAsset({
 							front: {
 								poseLimits: {
 									legs: {
-										pose: ['standing', 'kneeling'],
+										pose: 'standing',
 									},
 									bones: {
 										leg_l: 2,
