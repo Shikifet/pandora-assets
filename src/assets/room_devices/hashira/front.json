@@ -1005,7 +1005,7 @@
 				"bodyleg_r",
 				"leg_r"
 			],
-			"mirror": 1,
+			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
 				"image": "",
