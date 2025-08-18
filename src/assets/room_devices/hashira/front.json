@@ -282,341 +282,20 @@
 			"width": 1000,
 			"height": 2000,
 			"type": "mesh",
-			"name": "legs Link Right",
+			"name": "Legs Link",
 			"priority": "BELOW_BODY",
 			"points": "static",
-			"mirror": 0,
+			"pointType": [
+				"static",
+				"static_r"
+			],
+			"mirror": 1,
 			"colorizationKey": "rope",
 			"image": {
 				"image": "",
 				"overrides": [
 					{
-						"image": "leg_right_1.png",
-						"condition": [
-							[
-								{
-									"module": "futomomo",
-									"operator": "!=",
-									"value": "none"
-								},
-								{
-									"module": "thighs",
-									"operator": "=",
-									"value": "futomomo"
-								},
-								{
-									"bone": "leg_l",
-									"operator": "<",
-									"value": -90
-								}
-							]
-						]
-					},
-					{
-						"image": "leg_right_2.png",
-						"condition": [
-							[
-								{
-									"module": "futomomo",
-									"operator": "!=",
-									"value": "none"
-								},
-								{
-									"module": "thighs",
-									"operator": "=",
-									"value": "futomomo"
-								},
-								{
-									"bone": "leg_l",
-									"operator": "<",
-									"value": -80
-								}
-							]
-						]
-					},
-					{
-						"image": "leg_right_3.png",
-						"condition": [
-							[
-								{
-									"module": "futomomo",
-									"operator": "!=",
-									"value": "none"
-								},
-								{
-									"module": "thighs",
-									"operator": "=",
-									"value": "futomomo"
-								},
-								{
-									"bone": "leg_l",
-									"operator": "<",
-									"value": -70
-								}
-							]
-						]
-					},
-					{
-						"image": "leg_right_4.png",
-						"condition": [
-							[
-								{
-									"module": "futomomo",
-									"operator": "!=",
-									"value": "none"
-								},
-								{
-									"module": "thighs",
-									"operator": "=",
-									"value": "futomomo"
-								},
-								{
-									"bone": "leg_l",
-									"operator": "<",
-									"value": -62
-								}
-							]
-						]
-					},
-					{
-						"image": "leg_right_5.png",
-						"condition": [
-							[
-								{
-									"module": "futomomo",
-									"operator": "!=",
-									"value": "none"
-								},
-								{
-									"module": "thighs",
-									"operator": "=",
-									"value": "futomomo"
-								},
-								{
-									"bone": "leg_l",
-									"operator": "<",
-									"value": -52
-								}
-							]
-						]
-					},
-					{
-						"image": "leg_right_6.png",
-						"condition": [
-							[
-								{
-									"module": "futomomo",
-									"operator": "!=",
-									"value": "none"
-								},
-								{
-									"module": "thighs",
-									"operator": "=",
-									"value": "futomomo"
-								},
-								{
-									"bone": "leg_l",
-									"operator": "<",
-									"value": -44
-								}
-							]
-						]
-					},
-					{
-						"image": "leg_right_7.png",
-						"condition": [
-							[
-								{
-									"module": "futomomo",
-									"operator": "!=",
-									"value": "none"
-								},
-								{
-									"module": "thighs",
-									"operator": "=",
-									"value": "futomomo"
-								},
-								{
-									"bone": "leg_l",
-									"operator": "<",
-									"value": -40
-								}
-							]
-						]
-					},
-					{
-						"image": "leg_right_8.png",
-						"condition": [
-							[
-								{
-									"module": "futomomo",
-									"operator": "!=",
-									"value": "none"
-								},
-								{
-									"module": "thighs",
-									"operator": "=",
-									"value": "futomomo"
-								},
-								{
-									"bone": "leg_l",
-									"operator": "<",
-									"value": -35
-								}
-							]
-						]
-					},
-					{
-						"image": "leg_right_9.png",
-						"condition": [
-							[
-								{
-									"module": "futomomo",
-									"operator": "!=",
-									"value": "none"
-								},
-								{
-									"module": "thighs",
-									"operator": "=",
-									"value": "futomomo"
-								},
-								{
-									"bone": "leg_l",
-									"operator": "<",
-									"value": -25
-								}
-							]
-						]
-					},
-					{
-						"image": "leg_right_10.png",
-						"condition": [
-							[
-								{
-									"module": "futomomo",
-									"operator": "!=",
-									"value": "none"
-								},
-								{
-									"module": "thighs",
-									"operator": "=",
-									"value": "futomomo"
-								},
-								{
-									"bone": "leg_l",
-									"operator": "<",
-									"value": -19
-								}
-							]
-						]
-					},
-					{
-						"image": "leg_right_11.png",
-						"condition": [
-							[
-								{
-									"module": "futomomo",
-									"operator": "!=",
-									"value": "none"
-								},
-								{
-									"module": "thighs",
-									"operator": "=",
-									"value": "futomomo"
-								},
-								{
-									"bone": "leg_l",
-									"operator": "<",
-									"value": -14
-								}
-							]
-						]
-					},
-					{
-						"image": "leg_right_12.png",
-						"condition": [
-							[
-								{
-									"module": "futomomo",
-									"operator": "!=",
-									"value": "none"
-								},
-								{
-									"module": "thighs",
-									"operator": "=",
-									"value": "futomomo"
-								},
-								{
-									"bone": "leg_l",
-									"operator": "<",
-									"value": -10
-								}
-							]
-						]
-					},
-					{
-						"image": "leg_right_13.png",
-						"condition": [
-							[
-								{
-									"module": "futomomo",
-									"operator": "!=",
-									"value": "none"
-								},
-								{
-									"module": "thighs",
-									"operator": "=",
-									"value": "futomomo"
-								},
-								{
-									"bone": "leg_l",
-									"operator": "<",
-									"value": -5
-								}
-							]
-						]
-					},
-					{
-						"image": "leg_right_14.png",
-						"condition": [
-							[
-								{
-									"module": "futomomo",
-									"operator": "!=",
-									"value": "none"
-								},
-								{
-									"module": "thighs",
-									"operator": "=",
-									"value": "futomomo"
-								},
-								{
-									"bone": "leg_l",
-									"operator": "<",
-									"value": 0
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 0,
-			"y": -712,
-			"width": 1000,
-			"height": 2000,
-			"type": "mesh",
-			"name": "legs Link Left",
-			"priority": "BELOW_BODY",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "rope",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "leg_left_1.png",
+						"image": "legs_1.png",
 						"condition": [
 							[
 								{
@@ -638,7 +317,7 @@
 						]
 					},
 					{
-						"image": "leg_left_2.png",
+						"image": "legs_2.png",
 						"condition": [
 							[
 								{
@@ -660,7 +339,7 @@
 						]
 					},
 					{
-						"image": "leg_left_3.png",
+						"image": "legs_3.png",
 						"condition": [
 							[
 								{
@@ -682,7 +361,7 @@
 						]
 					},
 					{
-						"image": "leg_left_4.png",
+						"image": "legs_4.png",
 						"condition": [
 							[
 								{
@@ -704,7 +383,7 @@
 						]
 					},
 					{
-						"image": "leg_left_5.png",
+						"image": "legs_5.png",
 						"condition": [
 							[
 								{
@@ -726,7 +405,7 @@
 						]
 					},
 					{
-						"image": "leg_left_6.png",
+						"image": "legs_6.png",
 						"condition": [
 							[
 								{
@@ -748,7 +427,7 @@
 						]
 					},
 					{
-						"image": "leg_left_7.png",
+						"image": "legs_7.png",
 						"condition": [
 							[
 								{
@@ -770,7 +449,7 @@
 						]
 					},
 					{
-						"image": "leg_left_8.png",
+						"image": "legs_8.png",
 						"condition": [
 							[
 								{
@@ -792,7 +471,7 @@
 						]
 					},
 					{
-						"image": "leg_left_9.png",
+						"image": "legs_9.png",
 						"condition": [
 							[
 								{
@@ -814,7 +493,7 @@
 						]
 					},
 					{
-						"image": "leg_left_10.png",
+						"image": "legs_10.png",
 						"condition": [
 							[
 								{
@@ -836,7 +515,7 @@
 						]
 					},
 					{
-						"image": "leg_left_11.png",
+						"image": "legs_11.png",
 						"condition": [
 							[
 								{
@@ -858,7 +537,7 @@
 						]
 					},
 					{
-						"image": "leg_left_12.png",
+						"image": "legs_12.png",
 						"condition": [
 							[
 								{
@@ -880,7 +559,7 @@
 						]
 					},
 					{
-						"image": "leg_left_13.png",
+						"image": "legs_13.png",
 						"condition": [
 							[
 								{
@@ -902,7 +581,7 @@
 						]
 					},
 					{
-						"image": "leg_left_14.png",
+						"image": "legs_14.png",
 						"condition": [
 							[
 								{
