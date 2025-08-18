@@ -978,7 +978,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "futomomo_left.png",
+						"image": "futomomo.png",
 						"condition": [
 							[
 								{
@@ -1011,7 +1011,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "futomomo_right.png",
+						"image": "futomomo.png",
 						"condition": [
 							[
 								{
