@@ -975,7 +975,7 @@
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
-				"image": "futomomo_left.png",
+				"image": "",
 				"overrides": [
 					{
 						"image": "futomomo_left.png",
