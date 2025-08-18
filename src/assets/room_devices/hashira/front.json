@@ -68,6 +68,10 @@
 			"name": "Arms Behind Pillar Left",
 			"priority": "ABOVE_ARM_LEFT",
 			"points": "custom_arm_restraints_torso_ropes",
+			"pointType": [
+				"bodyarm_l",
+				"arm_l"
+			],
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -97,6 +101,10 @@
 			"name": "Arms Behind Pillar Right",
 			"priority": "ABOVE_ARM_RIGHT",
 			"points": "custom_arm_restraints_torso_ropes",
+			"pointType": [
+				"bodyarm_r",
+				"arm_r"
+			],
 			"mirror": 0,
 			"colorizationKey": "rope",
 			"image": {
@@ -307,7 +315,7 @@
 			"width": 1000,
 			"height": 2000,
 			"type": "mesh",
-			"name": "legs",
+			"name": "legs Link Right",
 			"priority": "BELOW_BODY",
 			"points": "static",
 			"mirror": 0,
@@ -632,7 +640,7 @@
 			"width": 1000,
 			"height": 2000,
 			"type": "mesh",
-			"name": "legs",
+			"name": "legs Link Left",
 			"priority": "BELOW_BODY",
 			"points": "static",
 			"mirror": 0,
@@ -957,16 +965,53 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "legs",
-			"priority": "ABOVE_BODY",
+			"name": "Legs Futomomo Left",
+			"priority": "ABOVE_LEG_LEFT",
 			"points": "body",
+			"pointType": [
+				"bodyleg_l",
+				"leg_l"
+			],
 			"mirror": 0,
+			"colorizationKey": "rope",
+			"image": {
+				"image": "futomomo_left.png",
+				"overrides": [
+					{
+						"image": "futomomo_left.png",
+						"condition": [
+							[
+								{
+									"module": "thighs",
+									"operator": "=",
+									"value": "futomomo"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Legs Futomomo Right",
+			"priority": "ABOVE_LEG_RIGHT",
+			"points": "body",
+			"pointType": [
+				"bodyleg_r",
+				"leg_r"
+			],
+			"mirror": 1,
 			"colorizationKey": "rope",
 			"image": {
 				"image": "",
 				"overrides": [
 					{
-						"image": "futomomo.png",
+						"image": "futomomo_right.png",
 						"condition": [
 							[
 								{
