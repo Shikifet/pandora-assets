@@ -39,6 +39,78 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
+			"type": "autoMesh",
+			"name": "Thighs Front",
+			"points": "body",
+			"automeshTemplate": "bodyMirror",
+			"disabledTemplateParts": [
+				"arms"
+			],
+			"graphicalLayers": [
+				{
+					"name": "",
+					"colorizationKey": "blush"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "thighsFrontColor_l"
+				}
+			],
+			"imageMap": {
+				"noColor": [
+					""
+				],
+				"medium": [
+					"thighs_medium.png"
+				],
+				"strong": [
+					"thighs_strong.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Thighs Back",
+			"points": "body",
+			"automeshTemplate": "belowBodyMirror",
+			"disabledTemplateParts": [
+				"arms"
+			],
+			"graphicalLayers": [
+				{
+					"name": "",
+					"colorizationKey": "blush"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "thighsBackColor_l"
+				}
+			],
+			"imageMap": {
+				"noColor": [
+					""
+				],
+				"medium": [
+					"thighs_medium.png"
+				],
+				"strong": [
+					"thighs_strong.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
 			"type": "mesh",
 			"name": "breasts",
 			"priority": "BREASTS",

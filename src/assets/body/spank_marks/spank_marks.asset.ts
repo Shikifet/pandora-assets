@@ -151,6 +151,90 @@ DefineBodypart({
 				},
 			],
 		},
+		thighsFrontColor_l: {
+			type: 'typed',
+			name: 'Left Front Thigh Color',
+			expression: 'Left Front Thigh Color',
+			interactionType: ItemInteractionType.ACCESS_ONLY,
+			variants: [
+				{
+					id: 'noColor',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'medium',
+					name: 'Medium',
+				},
+				{
+					id: 'strong',
+					name: 'Strong',
+				},
+			],
+		},
+		thighsFrontColor_r: {
+			type: 'typed',
+			name: 'Right Front Thigh Color',
+			expression: 'Right Front Thigh Color',
+			interactionType: ItemInteractionType.ACCESS_ONLY,
+			variants: [
+				{
+					id: 'noColor',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'medium',
+					name: 'Medium',
+				},
+				{
+					id: 'strong',
+					name: 'Strong',
+				},
+			],
+		},
+		thighsBackColor_l: {
+			type: 'typed',
+			name: 'Left Back Thigh Color',
+			expression: 'Left Back Thigh Color',
+			interactionType: ItemInteractionType.ACCESS_ONLY,
+			variants: [
+				{
+					id: 'noColor',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'medium',
+					name: 'Medium',
+				},
+				{
+					id: 'strong',
+					name: 'Strong',
+				},
+			],
+		},
+		thighsBackColor_r: {
+			type: 'typed',
+			name: 'Right Back Thigh Color',
+			expression: 'Right Back Thigh Color',
+			interactionType: ItemInteractionType.ACCESS_ONLY,
+			variants: [
+				{
+					id: 'noColor',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'medium',
+					name: 'Medium',
+				},
+				{
+					id: 'strong',
+					name: 'Strong',
+				},
+			],
+		},
 	},
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
