@@ -1,0 +1,33 @@
+{
+	"layers": [
+		{
+			"x": -75,
+			"y": -400,
+			"width": 1130,
+			"height": 1530,
+			"type": "mesh",
+			"name": "Pillory on neck",
+			"priority": "BELOW_BODY",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "chair",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "chair_pillory.png",
+						"condition": [
+							[
+								{
+									"module": "pillory",
+									"operator": "=",
+									"value": "closed"
+								}
+							]
+						]
+					}
+				]
+			}
+		}
+	]
+}
