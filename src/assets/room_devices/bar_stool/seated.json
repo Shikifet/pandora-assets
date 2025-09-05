@@ -1,4 +1,91 @@
 {
 	"layers": [
+		{
+			"x": -65,
+			"y": -58,
+			"width": 1112,
+			"height": 1662,
+			"type": "mesh",
+			"name": "Chair pilloery",
+			"priority": "BELOW_BODY",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "chair",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "chair_pillory.png",
+						"condition": [
+							[
+								{
+									"module": "pillory",
+									"operator": "=",
+									"value": "closed"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": -65,
+			"y": -58,
+			"width": 1112,
+			"height": 1662,
+			"type": "mesh",
+			"name": "Chair",
+			"priority": "BELOW_BODY",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "chair",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "chair_base.png",
+						"condition": [
+							[
+								{
+									"module": "seated",
+									"operator": "=",
+									"value": "hands_tied"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": -65,
+			"y": -58,
+			"width": 1112,
+			"height": 1662,
+			"type": "mesh",
+			"name": "Back helper",
+			"priority": "BELOW_BODY",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "metal",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "base_back_tied.png",
+						"condition": [
+							[
+								{
+									"module": "seated",
+									"operator": "=",
+									"value": "hands_tied"
+								}
+							]
+						]
+					}
+				]
+			}
+		}
 	]
 }

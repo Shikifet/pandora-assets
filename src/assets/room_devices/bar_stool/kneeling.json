@@ -1,10 +1,10 @@
 {
 	"layers": [
 		{
-			"x": -75,
-			"y": -400,
-			"width": 1130,
-			"height": 1530,
+			"x": -9,
+			"y": -405,
+			"width": 1000,
+			"height": 1500,
 			"type": "mesh",
 			"name": "Pillory on neck",
 			"priority": "BELOW_BODY",

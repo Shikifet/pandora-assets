@@ -21,8 +21,8 @@ DefineRoomDeviceAsset({
 				size: 'huge',
 				poseLimits: {
 					bones: {
-						leg_l: -16,
-						leg_r: -16,
+						leg_l: -42,
+						leg_r: -42,
 					},
 					legs: {
 						pose: 'sitting',
@@ -39,7 +39,11 @@ DefineRoomDeviceAsset({
 				size: 'huge',
 				poseLimits: {
 					legs: {
-						pose: 'sitting',
+						pose: 'kneeling',
+					},
+					bones: {
+						arm_l: [[81, 120]],
+						arm_r: [[81, 120]],
 					},
 					view: 'back',
 				},
@@ -62,6 +66,56 @@ DefineRoomDeviceAsset({
 					name: 'Closed',
 					default: true,
 					properties: {
+						slotProperties: {
+							kneeling: {
+								attributes: {
+									hides: [
+										'Hair_front',
+									],
+								},
+							},
+						},
+						blockSlotsEnterLeave: ['kneeling'],
+					},
+				},
+			],
+		},
+
+		seated: {
+			type: 'typed',
+			name: 'Seated One',
+			staticConfig: { slotName: 'seated' },
+			variants: [
+				{
+					id: 'normal',
+					name: 'Normal',
+				},
+				{
+					id: 'hands_tied',
+					name: 'Behind Backrest',
+					default: true,
+					properties: {
+						slotProperties: {
+							seated: {
+								poseLimits: {
+									arms: {
+										position: 'back',
+									},
+									/*bones: {
+										arm_l: [[81, 120]],
+										arm_r: [[81, 120]],
+										elbow_l: [[-35, 15]],
+										elbow_r: [[-35, 15]],
+									},
+									rightArm: {
+										fingers: 'fist',
+									},
+									leftArm: {
+										fingers: 'fist',
+									},*/
+								},
+							},
+						},
 						blockSlotsEnterLeave: ['kneeling'],
 					},
 				},
@@ -72,6 +126,12 @@ DefineRoomDeviceAsset({
 	graphicsLayers: [
 		{
 			type: 'sprite',
+			image: 'base_back_extra.png',
+			colorizationKey: 'metal',
+			offset: { x: -500, y: -1500 },
+		},
+		{
+			type: 'sprite',
 			image: 'base_back.png',
 			colorizationKey: 'metal',
 			offset: { x: -500, y: -1500 },
@@ -80,6 +140,12 @@ DefineRoomDeviceAsset({
 			type: 'sprite',
 			image: 'chair_base.png',
 			colorizationKey: 'chair',
+			offset: { x: -500, y: -1500 },
+		},
+		{
+			type: 'sprite',
+			image: 'base_front.png',
+			colorizationKey: 'metal',
 			offset: { x: -500, y: -1500 },
 		},
 		{
@@ -110,11 +176,12 @@ DefineRoomDeviceAsset({
 			slot: 'seated',
 			characterPosition: {
 				offsetX: 0,
-				offsetY: 0,
+				offsetY: -285,
 				relativeScale: 1,
+				disablePoseOffset: true,
 				pivotOffset: {
 					x: 0,
-					y: 450,
+					y: 0,
 				},
 			},
 
@@ -128,16 +195,31 @@ DefineRoomDeviceAsset({
 			slot: 'kneeling',
 			characterPosition: {
 				offsetX: 0,
-				offsetY: 0,
+				offsetY: 195,
+				disablePoseOffset: true,
 				pivotOffset: {
 					x: 0,
-					y: 40,
+					y: 0,
 				},
 			},
 
 			characterPositionOverrides: [
 
 			],
+		},
+		{
+			type: 'slot',
+			slot: 'seated',
+			characterPosition: {
+				offsetX: 0,
+				offsetY: 0,
+				relativeScale: 0,
+				disablePoseOffset: true,
+				pivotOffset: {
+					x: 0,
+					y: 0,
+				},
+			},
 		},
 	],
 	pivot: {
