@@ -80,35 +80,6 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
-
-		seated: {
-			type: 'typed',
-			name: 'Arms of Seated One',
-			staticConfig: { slotName: 'seated' },
-			variants: [
-				{
-					id: 'normal',
-					name: 'Normal',
-				},
-				{
-					id: 'hands_tied',
-					name: 'Behind backrest',
-					default: true,
-					properties: {
-						slotProperties: {
-							seated: {
-								poseLimits: {
-									arms: {
-										position: 'back',
-									},
-								},
-							},
-						},
-						blockSlotsEnterLeave: ['kneeling'],
-					},
-				},
-			],
-		},
 	},
 
 	graphicsLayers: [

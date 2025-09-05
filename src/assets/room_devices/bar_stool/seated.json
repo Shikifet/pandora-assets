@@ -6,7 +6,7 @@
 			"width": 1112,
 			"height": 1662,
 			"type": "mesh",
-			"name": "Chair pilloery",
+			"name": "Chair pillory",
 			"priority": "BELOW_BODY",
 			"points": "static",
 			"mirror": 0,
@@ -41,23 +41,11 @@
 			"mirror": 0,
 			"colorizationKey": "chair",
 			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "chair_base.png",
-						"condition": [
-							[
-								{
-									"module": "seated",
-									"operator": "=",
-									"value": "hands_tied"
-								}
-							]
-						]
-					}
-				]
+				"image": "chair_base.png",
+				"overrides": []
 			}
 		},
+
 		{
 			"x": -63,
 			"y": -57,
@@ -70,21 +58,8 @@
 			"mirror": 0,
 			"colorizationKey": "metal",
 			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "base_back.png",
-						"condition": [
-							[
-								{
-									"module": "seated",
-									"operator": "=",
-									"value": "hands_tied"
-								}
-							]
-						]
-					}
-				]
+				"image": "base_back.png",
+				"overrides": []
 			}
 		}
 	]
