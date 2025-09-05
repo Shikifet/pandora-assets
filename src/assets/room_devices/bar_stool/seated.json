@@ -59,10 +59,10 @@
 			}
 		},
 		{
-			"x": -65,
-			"y": -58,
-			"width": 1112,
-			"height": 1662,
+			"x": -63,
+			"y": -57,
+			"width": 1108,
+			"height": 1663,
 			"type": "mesh",
 			"name": "Back helper",
 			"priority": "BELOW_BODY",
@@ -73,7 +73,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "base_back_tied.png",
+						"image": "base_back.png",
 						"condition": [
 							[
 								{

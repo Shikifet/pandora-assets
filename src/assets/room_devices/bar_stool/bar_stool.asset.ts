@@ -83,7 +83,7 @@ DefineRoomDeviceAsset({
 
 		seated: {
 			type: 'typed',
-			name: 'Seated One',
+			name: 'Arms of Seated One',
 			staticConfig: { slotName: 'seated' },
 			variants: [
 				{
@@ -92,7 +92,7 @@ DefineRoomDeviceAsset({
 				},
 				{
 					id: 'hands_tied',
-					name: 'Behind Backrest',
+					name: 'Behind backrest',
 					default: true,
 					properties: {
 						slotProperties: {
@@ -101,18 +101,6 @@ DefineRoomDeviceAsset({
 									arms: {
 										position: 'back',
 									},
-									/*bones: {
-										arm_l: [[81, 120]],
-										arm_r: [[81, 120]],
-										elbow_l: [[-35, 15]],
-										elbow_r: [[-35, 15]],
-									},
-									rightArm: {
-										fingers: 'fist',
-									},
-									leftArm: {
-										fingers: 'fist',
-									},*/
 								},
 							},
 						},
@@ -124,6 +112,12 @@ DefineRoomDeviceAsset({
 	},
 
 	graphicsLayers: [
+		{
+			type: 'sprite',
+			image: 'base.png',
+			colorizationKey: 'metal',
+			offset: { x: -500, y: -1500 },
+		},
 		{
 			type: 'sprite',
 			image: 'base_back_extra.png',
