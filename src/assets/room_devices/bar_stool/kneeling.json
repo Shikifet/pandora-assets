@@ -28,6 +28,64 @@
 					}
 				]
 			}
+		},
+		{
+			"x": -7,
+			"y": -405,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Belts Arms",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "belts",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "belts_arms.png",
+						"condition": [
+							[
+								{
+									"module": "kneeling_belts",
+									"operator": "=",
+									"value": "attached"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": -7,
+			"y": -405,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Belts Waist",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "body",
+			"mirror": 0,
+			"colorizationKey": "belts",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "belts_waist.png",
+						"condition": [
+							[
+								{
+									"module": "kneeling_belts",
+									"operator": "=",
+									"value": "attached"
+								}
+							]
+						]
+					}
+				]
+			}
 		}
 	]
 }

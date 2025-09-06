@@ -11,6 +11,10 @@ DefineRoomDeviceAsset({
 			name: 'Metal',
 			default: '#b1b1b1ff',
 		},
+		belts: {
+			name: 'Belts',
+			default: '#111111ff',
+		},
 	},
 	staticAttributes: ['Play_furniture'],
 	slots: {
@@ -72,6 +76,44 @@ DefineRoomDeviceAsset({
 									hides: [
 										'Hair_front',
 									],
+								},
+							},
+						},
+						blockSlotsEnterLeave: ['kneeling'],
+					},
+				},
+			],
+		},
+		kneeling_belts: {
+			type: 'typed',
+			name: 'Kneeling Belts',
+			staticConfig: { slotName: 'kneeling' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'attached',
+					name: 'Attached',
+					properties: {
+						slotProperties: {
+							kneeling: {
+								poseLimits: {
+									arms: {
+										position: 'back',
+										rotation: 'forward',
+									},
+									bones: {
+										arm_r: 104,
+										arm_l: 104,
+										elbow_r: -4,
+										elbow_l: -4,
+									},
+									armsOrder: {
+										upper: 'right',
+									},
 								},
 							},
 						},
@@ -149,7 +191,6 @@ DefineRoomDeviceAsset({
 					y: 0,
 				},
 			},
-
 			characterPositionOverrides: [
 
 			],
@@ -167,24 +208,9 @@ DefineRoomDeviceAsset({
 					y: 0,
 				},
 			},
-
 			characterPositionOverrides: [
 
 			],
-		},
-		{
-			type: 'slot',
-			slot: 'seated',
-			characterPosition: {
-				offsetX: 0,
-				offsetY: 0,
-				relativeScale: 0,
-				disablePoseOffset: true,
-				pivotOffset: {
-					x: 0,
-					y: 0,
-				},
-			},
 		},
 	],
 	pivot: {
