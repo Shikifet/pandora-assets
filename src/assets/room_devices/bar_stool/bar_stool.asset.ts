@@ -145,14 +145,14 @@ DefineRoomDeviceAsset({
 		},
 		{
 			type: 'sprite',
-			image: 'chair_base.png',
-			colorizationKey: 'chair',
+			image: 'base_front.png',
+			colorizationKey: 'metal',
 			offset: { x: -500, y: -1500 },
 		},
 		{
 			type: 'sprite',
-			image: 'base_front.png',
-			colorizationKey: 'metal',
+			image: 'chair_base.png',
+			colorizationKey: 'chair',
 			offset: { x: -500, y: -1500 },
 		},
 		{
