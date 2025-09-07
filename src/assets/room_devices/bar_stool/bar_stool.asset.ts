@@ -1,7 +1,7 @@
 DefineRoomDeviceAsset({
 	name: 'Bar Stool',
 	size: 'huge',
-	preview: null,//'preview.png',
+	preview: 'preview.png',
 	colorization: {
 		chair: {
 			name: 'Chair',
@@ -52,6 +52,9 @@ DefineRoomDeviceAsset({
 						leg_r: [[-9, 6]],
 					},
 					view: 'back',
+				},
+				stateFlags: {
+					provides: ['slot_kneeling'],
 				},
 				graphics: 'kneeling.json',
 			},
@@ -158,6 +161,11 @@ DefineRoomDeviceAsset({
 										upper: 'right',
 									},
 								},
+								stateFlags: {
+									requires: {
+										slot_kneeling: 'Tying the belts requires someone on the kneeling slot',
+									},
+								},
 							},
 						},
 						blockSlotsEnterLeave: ['kneeling'],
@@ -182,6 +190,11 @@ DefineRoomDeviceAsset({
 									},
 									armsOrder: {
 										upper: 'right',
+									},
+								},
+								stateFlags: {
+									requires: {
+										slot_kneeling: 'Tying the belts requires someone on the kneeling slot',
 									},
 								},
 							},
@@ -243,9 +256,8 @@ DefineRoomDeviceAsset({
 						],
 					],
 				},
-			]
+			],
 		},
-
 
 		{
 			type: 'slot',
