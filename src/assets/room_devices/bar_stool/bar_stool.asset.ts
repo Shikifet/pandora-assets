@@ -88,8 +88,8 @@ DefineRoomDeviceAsset({
 		},
 		sitting_hands: {
 			type: 'typed',
-			name: 'Pillory',
-			staticConfig: { slotName: 'kneeling' },
+			name: 'Seat Slot: Arms',
+			staticConfig: { slotName: 'seated' },
 			variants: [
 				{
 					id: 'free',
@@ -98,7 +98,7 @@ DefineRoomDeviceAsset({
 				},
 				{
 					id: 'tied',
-					name: 'Tied behind backrest',
+					name: 'Attach to backrest',
 					properties: {
 						slotProperties: {
 							seated: {
@@ -116,6 +116,9 @@ DefineRoomDeviceAsset({
 									armsOrder: {
 										upper: 'right',
 									},
+								},
+								attributes: {
+									requires: ['Restraint_arms'],
 								},
 							},
 						},
