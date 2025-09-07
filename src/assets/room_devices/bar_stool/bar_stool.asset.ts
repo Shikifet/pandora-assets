@@ -86,6 +86,44 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
+		sitting_hands: {
+			type: 'typed',
+			name: 'Pillory',
+			staticConfig: { slotName: 'kneeling' },
+			variants: [
+				{
+					id: 'free',
+					name: 'Free',
+					default: true,
+				},
+				{
+					id: 'tied',
+					name: 'Tied behind backrest',
+					properties: {
+						slotProperties: {
+							seated: {
+								poseLimits: {
+									arms: {
+										position: 'back',
+										rotation: 'forward',
+									},
+									bones: {
+										arm_r: [[90, 120]],
+										arm_l: [[90, 120]],
+										elbow_r: [[-15, 15]],
+										elbow_l: [[-15, 15]],
+									},
+									armsOrder: {
+										upper: 'right',
+									},
+								},
+							},
+						},
+						blockSlotsEnterLeave: ['seated'],
+					},
+				},
+			],
+		},
 		kneeling_belts: {
 			type: 'typed',
 			name: 'Kneeling Slot: Belts',
