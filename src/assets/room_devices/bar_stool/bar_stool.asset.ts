@@ -88,7 +88,7 @@ DefineRoomDeviceAsset({
 		},
 		sitting_hands: {
 			type: 'typed',
-			name: 'Seat Slot: Arms',
+			name: 'Seated Slot: Arm restraints',
 			staticConfig: { slotName: 'seated' },
 			variants: [
 				{
