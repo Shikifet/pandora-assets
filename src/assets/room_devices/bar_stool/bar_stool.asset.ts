@@ -128,10 +128,10 @@ DefineRoomDeviceAsset({
 										rotation: 'forward',
 									},
 									bones: {
-										arm_r: [[90, 120]],
-										arm_l: [[90, 120]],
-										elbow_r: [[-15, 15]],
-										elbow_l: [[-15, 15]],
+										arm_r: [[88, 120]],
+										arm_l: [[88, 120]],
+										elbow_r: [[-15, 20]],
+										elbow_l: [[-15, 20]],
 									},
 									armsOrder: {
 										upper: 'right',
