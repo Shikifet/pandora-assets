@@ -64,16 +64,16 @@ DefineRoomDeviceAsset({
 	modules: {
 		pillory: {
 			type: 'typed',
-			name: 'Pillory',
+			name: 'Pillory Plank',
 			staticConfig: { slotName: 'kneeling' },
 			variants: [
 				{
 					id: 'open',
-					name: 'Open',
+					name: 'Removed',
 				},
 				{
 					id: 'closed',
-					name: 'Closed',
+					name: 'Attached',
 					default: true,
 					properties: {
 						slotProperties: {
@@ -108,7 +108,7 @@ DefineRoomDeviceAsset({
 		},
 		sitting_hands: {
 			type: 'typed',
-			name: 'Seated Slot: Arm restraints',
+			name: 'Sitting Slot: Arm restraints',
 			staticConfig: { slotName: 'seated' },
 			variants: [
 				{
@@ -118,7 +118,7 @@ DefineRoomDeviceAsset({
 				},
 				{
 					id: 'tied',
-					name: 'Attach to backrest',
+					name: 'Attached to backrest',
 					properties: {
 						slotProperties: {
 							seated: {
@@ -210,6 +210,30 @@ DefineRoomDeviceAsset({
 					},
 				},
 			],
+		},
+		lock_pillory: {
+			type: 'lockSlot',
+			name: 'Plank Lock',
+			staticConfig: { slotName: 'kneeling' },
+			lockedProperties: {
+				blockModules: ['pillory'],
+			},
+		},
+		lock_hands_backrest: {
+			type: 'lockSlot',
+			name: 'Lock restraints to backrest',
+			staticConfig: { slotName: 'seated' },
+			lockedProperties: {
+				blockModules: ['sitting_hands'],
+			},
+		},
+		lock_kneeling_belts: {
+			type: 'lockSlot',
+			name: 'Lock belts',
+			staticConfig: { slotName: 'kneeling' },
+			lockedProperties: {
+				blockModules: ['kneeling_belts'],
+			},
 		},
 	},
 
