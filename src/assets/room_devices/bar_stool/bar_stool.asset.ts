@@ -86,7 +86,7 @@ DefineRoomDeviceAsset({
 		},
 		kneeling_belts: {
 			type: 'typed',
-			name: 'Kneeling Belts',
+			name: 'Kneeling Slot: Belts',
 			staticConfig: { slotName: 'kneeling' },
 			variants: [
 				{
@@ -110,6 +110,32 @@ DefineRoomDeviceAsset({
 										arm_l: 104,
 										elbow_r: -4,
 										elbow_l: -4,
+									},
+									armsOrder: {
+										upper: 'right',
+									},
+								},
+							},
+						},
+						blockSlotsEnterLeave: ['kneeling'],
+					},
+				},
+				{
+					id: 'tight',
+					name: 'Tight',
+					properties: {
+						slotProperties: {
+							kneeling: {
+								poseLimits: {
+									arms: {
+										position: 'back',
+										rotation: 'forward',
+									},
+									bones: {
+										arm_r: 110,
+										arm_l: 110,
+										elbow_r: -15,
+										elbow_l: -15,
 									},
 									armsOrder: {
 										upper: 'right',

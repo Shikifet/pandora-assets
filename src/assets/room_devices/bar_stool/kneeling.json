@@ -54,6 +54,47 @@
 								}
 							]
 						]
+					},
+					{
+						"image": "belts_body_top.png",
+						"condition": [
+							[
+								{
+									"module": "kneeling_belts",
+									"operator": "=",
+									"value": "tight"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": -7,
+			"y": -405,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Belts Arms",
+			"priority": "BELOW_ARM_LEFT",
+			"points": "body",
+			"mirror": 0,
+			"colorizationKey": "belts",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "belts_body_bottom.png",
+						"condition": [
+							[
+								{
+									"module": "kneeling_belts",
+									"operator": "=",
+									"value": "tight"
+								}
+							]
+						]
 					}
 				]
 			}
@@ -78,8 +119,8 @@
 							[
 								{
 									"module": "kneeling_belts",
-									"operator": "=",
-									"value": "attached"
+									"operator": "!=",
+									"value": "none"
 								}
 							]
 						]
