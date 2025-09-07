@@ -48,6 +48,8 @@ DefineRoomDeviceAsset({
 					bones: {
 						arm_l: [[81, 120]],
 						arm_r: [[81, 120]],
+						leg_l: [[-9, 6]],
+						leg_r: [[-9, 6]],
 					},
 					view: 'back',
 				},

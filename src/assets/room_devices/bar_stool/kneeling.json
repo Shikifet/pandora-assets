@@ -119,8 +119,20 @@
 							[
 								{
 									"module": "kneeling_belts",
-									"operator": "!=",
-									"value": "none"
+									"operator": "=",
+									"value": "attached"
+								}
+							]
+						]
+					},
+					{
+						"image": "belts_waist_tight.png",
+						"condition": [
+							[
+								{
+									"module": "kneeling_belts",
+									"operator": "=",
+									"value": "tight"
 								}
 							]
 						]
