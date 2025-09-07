@@ -15,6 +15,10 @@ DefineRoomDeviceAsset({
 			name: 'Belts',
 			default: '#111111ff',
 		},
+		cushion: {
+			name: 'Cushion',
+			default: '#A10000',
+		},
 	},
 	staticAttributes: ['Play_furniture'],
 	slots: {
@@ -53,9 +57,6 @@ DefineRoomDeviceAsset({
 					},
 					view: 'back',
 				},
-				stateFlags: {
-					provides: ['slot_kneeling'],
-				},
 				graphics: 'kneeling.json',
 			},
 		},
@@ -86,6 +87,22 @@ DefineRoomDeviceAsset({
 						},
 						blockSlotsEnterLeave: ['kneeling'],
 					},
+				},
+			],
+		},
+		cushion: {
+			type: 'typed',
+			name: 'Cushion',
+			staticConfig: { slotName: 'kneeling' },
+			variants: [
+				{
+					id: 'no',
+					name: 'No',
+				},
+				{
+					id: 'yes',
+					name: 'Yes',
+					default: true,
 				},
 			],
 		},
@@ -161,11 +178,6 @@ DefineRoomDeviceAsset({
 										upper: 'right',
 									},
 								},
-								stateFlags: {
-									requires: {
-										slot_kneeling: 'Tying the belts requires someone on the kneeling slot',
-									},
-								},
 							},
 						},
 						blockSlotsEnterLeave: ['kneeling'],
@@ -190,11 +202,6 @@ DefineRoomDeviceAsset({
 									},
 									armsOrder: {
 										upper: 'right',
-									},
-								},
-								stateFlags: {
-									requires: {
-										slot_kneeling: 'Tying the belts requires someone on the kneeling slot',
 									},
 								},
 							},
@@ -224,6 +231,33 @@ DefineRoomDeviceAsset({
 			image: 'base_back.png',
 			colorizationKey: 'metal',
 			offset: { x: -500, y: -1500 },
+		},
+		{
+			type: 'sprite',
+			image: 'base_front_shadow.png',
+			colorizationKey: 'metal',
+			offset: { x: -500, y: -1500 },
+		},
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'cushion',
+			offset: { x: -500, y: -1500 },
+
+			imageOverrides: [
+				{
+					image: 'cushion.png',
+					condition: [
+						[
+							{
+								module: 'cushion',
+								operator: '=',
+								value: 'yes',
+							},
+						],
+					],
+				},
+			],
 		},
 		{
 			type: 'sprite',
