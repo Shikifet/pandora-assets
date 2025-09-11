@@ -141,9 +141,6 @@ DefineRoomDeviceAsset({
 										upper: 'right',
 									},
 								},
-								attributes: {
-									requires: ['Restraint_arms'],
-								},
 							},
 						},
 						blockSlotsEnterLeave: ['seated'],
