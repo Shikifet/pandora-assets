@@ -270,7 +270,7 @@ DefineRoomDeviceAsset({
 			type: 'sprite',
 			image: '',
 			colorizationKey: 'cushion',
-			offset: { x: -500, y: -1500 },
+			offset: { x: -500, y: -1495 },
 
 			imageOverrides: [
 				{
