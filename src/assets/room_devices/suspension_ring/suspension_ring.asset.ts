@@ -175,6 +175,15 @@ DefineRoomDeviceAsset({
 						blockSlotsEnterLeave: ['under_ring'],
 						slotProperties: {
 							under_ring: {
+								poseLimits: {
+									legs: {
+										pose: 'standing',
+									},
+									bones: {
+										leg_l: [[-10, 10]],
+										leg_r: [[-10, 10]],
+									},
+								},
 								attributes: {
 									requires: ['Rope_strappado_anchor_point'],
 								},
@@ -244,6 +253,7 @@ DefineRoomDeviceAsset({
 									requires: {
 										free_wrists: 'Suspension requires Wrists not tied to ring',
 										height_high: 'Suspension requires Ring in High position',
+										'!strappado': 'This pose cannot be applied while using strappado',
 									},
 								},
 							},
