@@ -1754,6 +1754,83 @@ DefineRoomDeviceAsset({
 		},
 
 		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'strappado_upside_down.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'strappado',
+							},
+							{
+								module: 'ankles_line',
+								operator: '=',
+								value: 'ankles_upside_down',
+							},
+						],
+
+					],
+				},
+				{
+					image: 'strappado_normal_standing.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'strappado',
+							},
+						],
+
+					],
+				},
+				{
+					image: 'strappado_high_standing.png',
+					condition: [
+						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'front',
+							},
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'strappado',
+							},
+						],
+
+					],
+				},
+			],
+		},
+
+		{
 			type: 'slot',
 			slot: 'under_ring',
 			characterPosition: {
@@ -3306,6 +3383,11 @@ DefineRoomDeviceAsset({
 					condition: [
 						[
 							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
 								module: 'wrists_line',
 								operator: '=',
 								value: 'strappado',
@@ -3324,6 +3406,11 @@ DefineRoomDeviceAsset({
 					condition: [
 						[
 							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
+							{
 								module: 'ring_height',
 								operator: '=',
 								value: 'normal',
@@ -3341,6 +3428,11 @@ DefineRoomDeviceAsset({
 					image: 'strappado_high_standing.png',
 					condition: [
 						[
+							{
+								module: 'position',
+								operator: '=',
+								value: 'back',
+							},
 							{
 								module: 'ring_height',
 								operator: '=',
