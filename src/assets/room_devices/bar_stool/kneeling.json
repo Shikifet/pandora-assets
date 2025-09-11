@@ -16,7 +16,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "chair_pillory.png",
+						"image": "chair_pillory_neck.png",
 						"condition": [
 							[
 								{
