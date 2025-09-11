@@ -81,7 +81,6 @@
 			"priority": "BELOW_BACK_HAIR",
 			"points": "static",
 			"mirror": 0,
-			"colorizationKey": "",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -192,7 +191,6 @@
 			"priority": "BELOW_BACK_HAIR",
 			"points": "static",
 			"mirror": 0,
-			"colorizationKey": "",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -300,7 +298,6 @@
 			"priority": "BELOW_BODY",
 			"points": "static",
 			"mirror": 0,
-			"colorizationKey": "",
 			"image": {
 				"image": "",
 				"overrides": [
