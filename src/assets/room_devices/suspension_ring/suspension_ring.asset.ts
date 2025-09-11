@@ -134,7 +134,7 @@ DefineRoomDeviceAsset({
 						slotProperties: {
 							under_ring: {
 								stateFlags: {
-									provides: ['free_wrists'],
+									provides: ['free_wrists', '!strappado'],
 								},
 							},
 						},
@@ -156,13 +156,30 @@ DefineRoomDeviceAsset({
 									},
 								},
 								stateFlags: {
-									provides: ['suspension_point'],
+									provides: ['suspension_point', '!strappado'],
 									requires: {
 										height_high: 'Tying wrists requires Ring in High Height',
 									},
 								},
 								effects: {
 									blockHands: true,
+								},
+							},
+						},
+					},
+				},
+				{
+					id: 'strappado',
+					name: 'Strappado',
+					properties: {
+						blockSlotsEnterLeave: ['under_ring'],
+						slotProperties: {
+							under_ring: {
+								attributes: {
+									requires: ['Rope_strappado_anchor_point'],
+								},
+								stateFlags: {
+									provides: ['suspension_point', 'free_wrists'],
 								},
 							},
 						},
@@ -266,6 +283,7 @@ DefineRoomDeviceAsset({
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without Chest Line Attached',
 										front_view: 'Tying Left Thigh from this side require Front-facing view',
+										'!strappado': 'This pose cannot be applied while using strappado',
 									},
 									provides: ['dangling_right_leg'],
 								},
@@ -294,6 +312,7 @@ DefineRoomDeviceAsset({
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without Chest Line Attached',
 										front_view: 'Tying Right Thigh from this side require Front-facing view',
+										'!strappado': 'This pose cannot be applied while using strappado',
 									},
 									provides: ['dangling_left_leg'],
 								},
@@ -322,6 +341,7 @@ DefineRoomDeviceAsset({
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without Chest Line Attached',
 										back_view: 'Tying Left Thigh from this side require Front-facing view',
+										'!strappado': 'This pose cannot be applied while using strappado',
 									},
 									provides: ['dangling_right_leg'],
 								},
@@ -350,6 +370,7 @@ DefineRoomDeviceAsset({
 									requires: {
 										suspension_chest: 'Thigh cannot be tied without Chest Line Attached',
 										back_view: 'Tying Right Thigh from this side require Front-facing view',
+										'!strappado': 'This pose cannot be applied while using strappado',
 									},
 									provides: ['dangling_left_leg'],
 								},
@@ -390,6 +411,7 @@ DefineRoomDeviceAsset({
 									requires: {
 										suspension_point: 'Ankles cannot be tied without Wrists over head or Chest Line Attached',
 										height_high: 'Tying ankles requires Ring in High Height',
+										'!strappado': 'This pose cannot be applied while using strappado',
 									},
 								},
 							},
@@ -3259,6 +3281,68 @@ DefineRoomDeviceAsset({
 								value: 'frogtie_right',
 							},
 						],
+					],
+				},
+			],
+		},
+
+		{
+			type: 'sprite',
+			image: '',
+			colorizationKey: 'rope',
+			imageOverrides: [
+				{
+					image: 'strappado_upside_down.png',
+					condition: [
+						[
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'strappado',
+							},
+							{
+								module: 'ankles_line',
+								operator: '=',
+								value: 'ankles_upside_down',
+							},
+						],
+
+					],
+				},
+				{
+					image: 'strappado_normal_standing.png',
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'normal',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'strappado',
+							},
+						],
+
+					],
+				},
+				{
+					image: 'strappado_high_standing.png',
+					condition: [
+						[
+							{
+								module: 'ring_height',
+								operator: '=',
+								value: 'high',
+							},
+							{
+								module: 'wrists_line',
+								operator: '=',
+								value: 'strappado',
+							},
+						],
+
 					],
 				},
 			],
