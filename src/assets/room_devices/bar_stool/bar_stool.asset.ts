@@ -9,7 +9,7 @@ DefineRoomDeviceAsset({
 		},
 		metal: {
 			name: 'Metal',
-			default: '#b1b1b1ff',
+			default: '#b1b1b1',
 		},
 		belts: {
 			name: 'Belts',
@@ -17,7 +17,7 @@ DefineRoomDeviceAsset({
 		},
 		buckles: {
 			name: 'Buckles',
-			default: '#d8d8d8ff',
+			default: '#d8d8d8',
 		},
 		cushion: {
 			name: 'Cushion',

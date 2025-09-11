@@ -300,24 +300,24 @@
 			"priority": "BELOW_BODY",
 			"points": "static",
 			"mirror": 0,
-			"colorizationKey": "buckles",
+			"colorizationKey": "",
 			"image": {
 				"image": "",
 				"overrides": [
-					//{
-					//	"image": "belts_waist_details.png",
-					//	"condition": [
-					//		[
-					//			{
-					//				"module": "kneeling_belts",
-					//				"operator": "=",
-					//				"value": "attached"
-					//			}
-					//		]
-					//	]
-					//},
 					{
-						"image": "belts_waist_tight_buckles.png",
+						"image": "belts_waist_details.png",
+						"condition": [
+							[
+								{
+									"module": "kneeling_belts",
+									"operator": "=",
+									"value": "attached"
+								}
+							]
+						]
+					},
+					{
+						"image": "belts_waist_tight_details.png",
 						"condition": [
 							[
 								{
@@ -341,24 +341,24 @@
 			"priority": "BELOW_BODY",
 			"points": "static",
 			"mirror": 0,
-			"colorizationKey": "",
+			"colorizationKey": "buckles",
 			"image": {
 				"image": "",
 				"overrides": [
-					//{
-					//	"image": "belts_waist_buckles.png",
-					//	"condition": [
-					//		[
-					//			{
-					//				"module": "kneeling_belts",
-					//				"operator": "=",
-					//				"value": "attached"
-					//			}
-					//		]
-					//	]
-					//},
 					{
-						"image": "belts_waist_tight_details.png",
+						"image": "belts_waist_buckles.png",
+						"condition": [
+							[
+								{
+									"module": "kneeling_belts",
+									"operator": "=",
+									"value": "attached"
+								}
+							]
+						]
+					},
+					{
+						"image": "belts_waist_tight_buckles.png",
 						"condition": [
 							[
 								{
