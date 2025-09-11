@@ -245,7 +245,7 @@
 			"height": 1500,
 			"type": "mesh",
 			"name": "Belts Waist",
-			"priority": "BELOW_BODY",
+			"priority": "BELOW_BACK_HAIR",
 			"points": "body",
 			"pointType": [
 				"body",
@@ -295,7 +295,7 @@
 			"height": 1500,
 			"type": "mesh",
 			"name": "Belts Waist Details",
-			"priority": "BELOW_BODY",
+			"priority": "BELOW_BACK_HAIR",
 			"points": "static",
 			"mirror": 0,
 			"image": {
@@ -335,7 +335,7 @@
 			"height": 1500,
 			"type": "mesh",
 			"name": "Belts Waist Buckles",
-			"priority": "BELOW_BODY",
+			"priority": "BELOW_BACK_HAIR",
 			"points": "static",
 			"mirror": 0,
 			"colorizationKey": "buckles",
