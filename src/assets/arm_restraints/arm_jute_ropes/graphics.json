@@ -1206,6 +1206,86 @@
 						]
 					},
 					{
+						"image": "rope_end_long_37_right.png",
+						"condition": [
+							[
+								{
+									"view": "front"
+								},
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "long"
+								},
+								{
+									"bone": "character_rotation",
+									"operator": ">",
+									"value": 36
+								}
+							]
+						]
+					},
+					{
+						"image": "rope_end_long_37_left.png",
+						"condition": [
+							[
+								{
+									"view": "front"
+								},
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "long"
+								},
+								{
+									"bone": "character_rotation",
+									"operator": "<",
+									"value": -36
+								}
+							]
+						]
+					},
+					{
+						"image": "rope_end_long_37_left.png",
+						"condition": [
+							[
+								{
+									"view": "back"
+								},
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "long"
+								},
+								{
+									"bone": "character_rotation",
+									"operator": ">",
+									"value": 36
+								}
+							]
+						]
+					},
+					{
+						"image": "rope_end_long_37_right.png",
+						"condition": [
+							[
+								{
+									"view": "back"
+								},
+								{
+									"module": "end",
+									"operator": "=",
+									"value": "long"
+								},
+								{
+									"bone": "character_rotation",
+									"operator": "<",
+									"value": -36
+								}
+							]
+						]
+					},
+					{
 						"image": "rope_end_long.png",
 						"condition": [
 							[
