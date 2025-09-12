@@ -2855,7 +2855,7 @@
 			"image": {
 				"image": "",
 				"overrides": [
-										{
+					{
 						"image": "rope_end_180.png",
 						"condition": [
 							[
