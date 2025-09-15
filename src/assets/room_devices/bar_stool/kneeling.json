@@ -36,56 +36,6 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "Belts Waist",
-			"priority": "ABOVE_BACK_HAIR",
-			"points": "body",
-			"pointType": [
-				"body",
-				"body_l",
-				"body_r",
-				"bodyarm_l",
-				"bodyarm_r",
-				"bodyleg_l",
-				"bodyleg_r"
-			],
-			"mirror": 0,
-			"colorizationKey": "belts",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "belts_waist.png",
-						"condition": [
-							[
-								{
-									"module": "kneeling_belts",
-									"operator": "=",
-									"value": "attached"
-								}
-							]
-						]
-					},
-					{
-						"image": "belts_waist_tight.png",
-						"condition": [
-							[
-								{
-									"module": "kneeling_belts",
-									"operator": "=",
-									"value": "tight"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": -7,
-			"y": -405,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
 			"name": "Belts Arms details",
 			"priority": "ABOVE_BACK_HAIR",
 			"points": "static",
@@ -225,7 +175,7 @@
 			"height": 1500,
 			"type": "mesh",
 			"name": "Belts Waist Details",
-			"priority": "BELOW_BACK_HAIR",
+			"priority": "ABOVE_BACK_HAIR",
 			"points": "static",
 			"mirror": 0,
 			"image": {
@@ -265,7 +215,7 @@
 			"height": 1500,
 			"type": "mesh",
 			"name": "Belts Waist Buckles",
-			"priority": "BELOW_BACK_HAIR",
+			"priority": "ABOVE_BACK_HAIR",
 			"points": "static",
 			"mirror": 0,
 			"colorizationKey": "buckles",
@@ -356,6 +306,56 @@
 				"overrides": [
 					{
 						"image": "belts_body_bottom.png",
+						"condition": [
+							[
+								{
+									"module": "kneeling_belts",
+									"operator": "=",
+									"value": "tight"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": -7,
+			"y": -405,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Belts Waist",
+			"priority": "ABOVE_BACK_HAIR",
+			"points": "body",
+			"pointType": [
+				"body",
+				"body_l",
+				"body_r",
+				"bodyarm_l",
+				"bodyarm_r",
+				"bodyleg_l",
+				"bodyleg_r"
+			],
+			"mirror": 0,
+			"colorizationKey": "belts",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "belts_waist.png",
+						"condition": [
+							[
+								{
+									"module": "kneeling_belts",
+									"operator": "=",
+									"value": "attached"
+								}
+							]
+						]
+					},
+					{
+						"image": "belts_waist_tight.png",
 						"condition": [
 							[
 								{
