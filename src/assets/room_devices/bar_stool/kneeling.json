@@ -36,16 +36,25 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "Belts Arms",
+			"name": "Belts Waist",
 			"priority": "ABOVE_BACK_HAIR",
-			"points": "static",
+			"points": "body",
+			"pointType": [
+				"body",
+				"body_l",
+				"body_r",
+				"bodyarm_l",
+				"bodyarm_r",
+				"bodyleg_l",
+				"bodyleg_r"
+			],
 			"mirror": 0,
 			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
 					{
-						"image": "belts_arms.png",
+						"image": "belts_waist.png",
 						"condition": [
 							[
 								{
@@ -57,7 +66,7 @@
 						]
 					},
 					{
-						"image": "belts_body_top.png",
+						"image": "belts_waist_tight.png",
 						"condition": [
 							[
 								{
@@ -158,35 +167,6 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "Belts body bottom",
-			"priority": "ABOVE_BACK_HAIR",
-			"points": "body",
-			"mirror": 0,
-			"colorizationKey": "belts",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "belts_body_bottom.png",
-						"condition": [
-							[
-								{
-									"module": "kneeling_belts",
-									"operator": "=",
-									"value": "tight"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": -7,
-			"y": -405,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
 			"name": "Belts body bottom details",
 			"priority": "ABOVE_BACK_HAIR",
 			"points": "static",
@@ -225,56 +205,6 @@
 				"overrides": [
 					{
 						"image": "belts_body_bottom_buckles.png",
-						"condition": [
-							[
-								{
-									"module": "kneeling_belts",
-									"operator": "=",
-									"value": "tight"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": -7,
-			"y": -405,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Belts Waist",
-			"priority": "ABOVE_BACK_HAIR",
-			"points": "body",
-			"pointType": [
-				"body",
-				"body_l",
-				"body_r",
-				"bodyarm_l",
-				"bodyarm_r",
-				"bodyleg_l",
-				"bodyleg_r"
-			],
-			"mirror": 0,
-			"colorizationKey": "belts",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "belts_waist.png",
-						"condition": [
-							[
-								{
-									"module": "kneeling_belts",
-									"operator": "=",
-									"value": "attached"
-								}
-							]
-						]
-					},
-					{
-						"image": "belts_waist_tight.png",
 						"condition": [
 							[
 								{
@@ -356,6 +286,76 @@
 					},
 					{
 						"image": "belts_waist_tight_buckles.png",
+						"condition": [
+							[
+								{
+									"module": "kneeling_belts",
+									"operator": "=",
+									"value": "tight"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": -7,
+			"y": -405,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Belts Arms",
+			"priority": "ABOVE_BACK_HAIR",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "belts",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "belts_arms.png",
+						"condition": [
+							[
+								{
+									"module": "kneeling_belts",
+									"operator": "=",
+									"value": "attached"
+								}
+							]
+						]
+					},
+					{
+						"image": "belts_body_top.png",
+						"condition": [
+							[
+								{
+									"module": "kneeling_belts",
+									"operator": "=",
+									"value": "tight"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": -7,
+			"y": -405,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Belts body bottom",
+			"priority": "ABOVE_BACK_HAIR",
+			"points": "body",
+			"mirror": 0,
+			"colorizationKey": "belts",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "belts_body_bottom.png",
 						"condition": [
 							[
 								{
