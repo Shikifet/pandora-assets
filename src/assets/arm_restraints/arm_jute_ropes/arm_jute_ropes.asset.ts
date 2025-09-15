@@ -211,6 +211,9 @@ DefineAsset({
 								upper: 'right',
 							},
 						},
+						attributes: {
+							provides: ['Rope_strappado_anchor_point'],
+						},
 						stateFlags: {
 							provides: [
 								'uncuffed_hands',
@@ -332,6 +335,9 @@ DefineAsset({
 							requires: {
 								hogtie_anchor_point: 'Legs cannot be hogtied without a knot on back or wrist tied back',
 							},
+						},
+						effects: {
+							blockRoomMovement: true,
 						},
 					},
 				},

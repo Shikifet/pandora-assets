@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { GetLogger, ModuleNameSchema, PointTemplateSourceSchema, SCHEME_OVERRIDE, type PointTemplateSource } from 'pandora-common';
 import { join, relative } from 'path';
+import * as z from 'zod';
 import { SRC_DIR, TRY_AUTOCORRECT_WARNINGS } from '../config.ts';
 import { GraphicsDatabase } from '../tools/graphicsDatabase.ts';
 import { TemplateValidate } from '../tools/validation/templates.ts';
@@ -16,6 +17,7 @@ const templateList: string[] = [
 	'breasts',
 	'handheld',
 	'skirt_tight',
+	'skirt_static',
 	'skirt_short',
 	'skirt_long',
 	// Custom templates
@@ -65,7 +67,7 @@ function LoadTemplate(name: string): PointTemplateSource {
 
 	const parseResult = PointTemplateSourceSchema.safeParse(template);
 	if (!parseResult.success) {
-		logger.error(`Template in '${usrPath}' is not PointTemplateSource:\n`, parseResult.error.toString());
+		logger.error(`Template in '${usrPath}' is not PointTemplateSource:\n`, z.prettifyError(parseResult.error));
 		throw new Error(`Graphics in '${usrPath}' is not PointTemplateSource`);
 	}
 

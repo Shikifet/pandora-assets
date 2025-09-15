@@ -3,6 +3,7 @@ DefineAsset({
 	size: 'medium',
 	graphics: 'graphics.json',
 	requireFreeHandsToUseDefault: true,
+	assetPreferenceDefault: 'maybe',
 	colorization: {
 		bag: {
 			name: 'Bag',
@@ -108,7 +109,6 @@ DefineAsset({
 		blockSpaceLeave: true,
 		blockRoomMovement: true,
 	},
-	blockSelfAddRemove: true,
 	chat: {
 		actionAdd: 'SOURCE_CHARACTER trapped TARGET_CHARACTER_DYNAMIC_REFLEXIVE in an ITEM_ASSET_NAME.',
 		actionAddCreate: 'SOURCE_CHARACTER created an ITEM_ASSET_NAME and trapped TARGET_CHARACTER_DYNAMIC_REFLEXIVE in it.',
