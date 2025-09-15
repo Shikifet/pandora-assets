@@ -2,10 +2,10 @@
 {
 	"layers": [
 		{
-			"x": -65,
-			"y": -58,
-			"width": 1112,
-			"height": 1662,
+			"x": -8,
+			"y": 18,
+			"width": 1000,
+			"height": 1500,
 			"type": "mesh",
 			"name": "Chair pillory",
 			"priority": "BELOW_BODY",
@@ -31,10 +31,10 @@
 			}
 		},
 		{
-			"x": -65,
-			"y": -58,
-			"width": 1112,
-			"height": 1662,
+			"x": -8,
+			"y": 18,
+			"width": 1000,
+			"height": 1500,
 			"type": "mesh",
 			"name": "Chair",
 			"priority": "BELOW_BODY",
@@ -47,10 +47,10 @@
 			}
 		},
 		{
-			"x": -63,
-			"y": -57,
-			"width": 1108,
-			"height": 1663,
+			"x": -8,
+			"y": 18,
+			"width": 1000,
+			"height": 1500,
 			"type": "mesh",
 			"name": "Back helper",
 			"priority": "BELOW_BODY",

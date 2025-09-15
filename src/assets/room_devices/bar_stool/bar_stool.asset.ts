@@ -112,7 +112,7 @@ DefineRoomDeviceAsset({
 		},
 		sitting_hands: {
 			type: 'typed',
-			name: 'Sitting Slot: Arm restraints',
+			name: 'Sitting Slot: Arms',
 			staticConfig: { slotName: 'seated' },
 			variants: [
 				{
@@ -323,7 +323,7 @@ DefineRoomDeviceAsset({
 			slot: 'seated',
 			characterPosition: {
 				offsetX: 0,
-				offsetY: -285,
+				offsetY: -228,
 				relativeScale: 1,
 				disablePoseOffset: true,
 				pivotOffset: {
