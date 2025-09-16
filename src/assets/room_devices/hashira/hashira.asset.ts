@@ -129,6 +129,13 @@ DefineRoomDeviceAsset({
 					name: 'Tied to Pillar',
 					properties: {
 						blockSlotsEnterLeave: ['front'],
+						slotProperties: {
+							front: {
+								poseLimits: {
+									view: 'front',
+								},
+							},
+						},
 					},
 				},
 			],
@@ -192,6 +199,7 @@ DefineRoomDeviceAsset({
 									armsOrder: {
 										upper: 'right',
 									},
+									view: 'front',
 								},
 								effects: {
 									blockHands: true,
@@ -217,6 +225,13 @@ DefineRoomDeviceAsset({
 					name: 'Tied to Pillar',
 					properties: {
 						blockSlotsEnterLeave: ['front'],
+						slotProperties: {
+							front: {
+								poseLimits: {
+									view: 'front',
+								},
+							},
+						},
 					},
 				},
 			],
@@ -236,6 +251,13 @@ DefineRoomDeviceAsset({
 					name: 'Tied to Pillar',
 					properties: {
 						blockSlotsEnterLeave: ['front'],
+						slotProperties: {
+							front: {
+								poseLimits: {
+									view: 'front',
+								},
+							},
+						},
 					},
 				},
 			],
@@ -264,6 +286,7 @@ DefineRoomDeviceAsset({
 										leg_l: 2,
 										leg_r: 2,
 									},
+									view: 'front',
 								},
 							},
 						},
@@ -283,6 +306,7 @@ DefineRoomDeviceAsset({
 										leg_l: [[-100, -2]],
 										leg_r: [[-100, -2]],
 									},
+									view: 'front',
 								},
 								stateFlags: {
 									provides: ['futomomo'],
