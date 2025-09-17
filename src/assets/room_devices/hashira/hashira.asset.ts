@@ -85,6 +85,7 @@ DefineRoomDeviceAsset({
 										leg_r: 2,
 										character_rotation: 180,
 									},
+									view: 'front',
 								},
 								stateFlags: {
 									provides: ['suspension'],
