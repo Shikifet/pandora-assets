@@ -97,8 +97,19 @@ DefineAsset({
 					id: 'mouth',
 					name: 'Mouth Cover',
 					properties: {
+						effects: {
+							lipsTouch: 1,
+							jawMove: 2,
+							tongueRoof: 0,
+							mouthBreath: 1,
+							throatBreath: 0,
+							coherency: 0,
+							stimulus: 1,
+						},
 						attributes: {
 							provides: [
+								'Restraint_mouth',
+								'Mouth_item',
 								'Mouth_cover',
 							],
 							requires: [
