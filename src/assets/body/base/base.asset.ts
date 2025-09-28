@@ -1,7 +1,7 @@
 import { ItemInteractionType } from 'pandora-common';
 
 DefineBodypart({
-	name: 'Base body',
+	name: 'Base Body',
 	bodypart: 'base',
 	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
@@ -41,6 +41,98 @@ DefineBodypart({
 				{
 					id: 'muscular',
 					name: 'Muscular',
+				},
+			],
+		},
+		poseLimitingArms: {
+			type: 'typed',
+			name: 'Body posing limits: Arms',
+			interactionType: ItemInteractionType.ACCESS_ONLY,
+			variants: [
+				{
+					id: 'default',
+					name: 'Default',
+					default: true,
+					properties: {
+						poseLimits: [
+							{
+								options: [
+									{
+										leftArm: {
+											rotation: 'backward',
+										},
+										bones: {
+											elbow_l: [[-180, 5], [120, 180]],
+										},
+									},
+									{
+										leftArm: {
+											rotation: 'up',
+										},
+										bones: {
+											elbow_l: [[-180, 5]],
+										},
+									},
+									{
+										leftArm: {
+											rotation: 'forward',
+										},
+										bones: {
+											elbow_l: [[-170, 170]],
+										},
+									},
+									{
+										leftArm: {
+											rotation: 'down',
+										},
+										bones: {
+											elbow_l: [[-180, -120], [-5, 180]],
+										},
+									},
+								],
+							},
+							{
+								options: [
+									{
+										rightArm: {
+											rotation: 'backward',
+										},
+										bones: {
+											elbow_r: [[-180, 5], [120, 180]],
+										},
+									},
+									{
+										rightArm: {
+											rotation: 'up',
+										},
+										bones: {
+											elbow_r: [[-180, 5]],
+										},
+									},
+									{
+										rightArm: {
+											rotation: 'forward',
+										},
+										bones: {
+											elbow_r: [[-170, 170]],
+										},
+									},
+									{
+										rightArm: {
+											rotation: 'down',
+										},
+										bones: {
+											elbow_r: [[-180, -120], [-5, 180]],
+										},
+									},
+								],
+							},
+						],
+					},
+				},
+				{
+					id: 'unlimited',
+					name: 'Not limited',
 				},
 			],
 		},
