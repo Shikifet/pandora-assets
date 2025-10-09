@@ -212,6 +212,21 @@ const TILE_TEXTURES: IntermediateTileTextureDefinition[] = [
 		},
 	},
 	{
+		id: 'carpet_04',
+		name: 'Colorable soft carpet',
+		image: 'soft_carpet.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
 		id: 'fabric_01',
 		name: 'Cushioned fabric',
 		image: 'fabric_chester.png',
@@ -222,6 +237,21 @@ const TILE_TEXTURES: IntermediateTileTextureDefinition[] = [
 					source: 'https://cc0-textures.com/t/st-white-fabric-3',
 					copyrightHolder: 'cc0-textures.com',
 					license: 'CC0',
+				},
+			],
+		},
+	},
+	{
+		id: 'fabric_02',
+		name: 'White fabric',
+		image: 'white_fabric.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
 				},
 			],
 		},
@@ -468,6 +498,96 @@ const TILE_TEXTURES: IntermediateTileTextureDefinition[] = [
 		},
 	},
 	{
+		id: 'wood_05',
+		name: 'Wooden angled floor tiles',
+		image: 'wooden_tiles_512.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://skfb.ly/pxDy7',
+					copyrightHolder: 'ChoboiAssets/alsoliman905',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
+		id: 'wood_06',
+		name: 'Square parquet',
+		image: 'square_parquet.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
+		id: 'wood_07',
+		name: 'Herringbone parquet',
+		image: 'herringbone_parquet.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
+		id: 'wood_08',
+		name: 'Smooth parquet',
+		image: 'wooden_smooth.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
+		id: 'wood_09',
+		name: 'Wooden planks',
+		image: 'wooden_planks.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
+		id: 'wood_10',
+		name: 'Wooden beams with light',
+		image: 'wooden_beams_with_lights.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://skfb.ly/oKu9s',
+					copyrightHolder: 'annaorsha',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
 		id: 'metal_01',
 		name: 'Metal surface',
 		image: 'metal-garage-door-512x512.png',
@@ -508,6 +628,21 @@ const TILE_TEXTURES: IntermediateTileTextureDefinition[] = [
 					source: 'https://cc0-textures.com/t/cc0t-fence-007-a',
 					copyrightHolder: 'cc0-textures.com',
 					license: 'CC0',
+				},
+			],
+		},
+	},
+	{
+		id: 'metal_04',
+		name: 'Metal tiles with light',
+		image: 'metal_tiles_with_light.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://skfb.ly/pxDy7',
+					copyrightHolder: 'ChoboiAssets/alsoliman905',
+					license: 'CC BY',
 				},
 			],
 		},
@@ -633,6 +768,111 @@ const TILE_TEXTURES: IntermediateTileTextureDefinition[] = [
 		},
 	},
 	{
+		id: 'stone_08',
+		name: 'Rough stone',
+		image: 'rough_stone.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
+		id: 'stone_09',
+		name: 'Brown spotted stone',
+		image: 'brown_spotted_stone.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
+		id: 'stone_10',
+		name: 'Creamy smooth stone imitation',
+		image: 'creamy_smooth_stone.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
+		id: 'stone_11',
+		name: 'Colorable smooth stone imitation',
+		image: 'colorable_smooth_stone.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
+		id: 'stone_12',
+		name: 'Brown stone wall',
+		image: 'brown_stone_wall.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
+		id: 'stone_13',
+		name: 'Natural stone wall',
+		image: 'natural_stone_wall.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
+		id: 'stone_14',
+		name: 'Natural stone floor',
+		image: 'natural_stone_floor.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
 		id: 'mosaic_01',
 		name: 'Mosaic tile 01',
 		image: 'tile_4_256x256.png',
@@ -708,6 +948,21 @@ const TILE_TEXTURES: IntermediateTileTextureDefinition[] = [
 		},
 	},
 	{
+		id: 'mosaic_06',
+		name: 'Flower mosaic tiles',
+		image: 'flower_medallion.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
 		id: 'concrete_grey_01',
 		name: 'Grey concrete 1',
 		image: 'mat_concrete_gray_01-256x256.png',
@@ -762,6 +1017,21 @@ const TILE_TEXTURES: IntermediateTileTextureDefinition[] = [
 				{
 					source: 'https://www.manytextures.com/texture/211/concrete-wall-decoration/',
 					copyrightHolder: 'ManyTextures.com',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
+		id: 'concrete_grey_05',
+		name: 'Pebble dash',
+		image: 'pebble_dash.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
 					license: 'CC BY',
 				},
 			],
@@ -1038,6 +1308,36 @@ const TILE_TEXTURES: IntermediateTileTextureDefinition[] = [
 		},
 	},
 	{
+		id: 'wallpaper_17',
+		name: 'Golden stripes wallpaper',
+		image: 'gold_stripes_wp.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
+		id: 'wallpaper_18',
+		name: 'Colorable stripes wallpaper',
+		image: 'grey_stripes_wp.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
+				},
+			],
+		},
+	},
+	{
 		id: 'cork_01',
 		name: 'Cork',
 		image: 'cork_01.png',
@@ -1048,6 +1348,21 @@ const TILE_TEXTURES: IntermediateTileTextureDefinition[] = [
 					source: 'https://ambientcg.com/view?id=Cork003',
 					copyrightHolder: 'ambientCG.com',
 					license: 'CC0',
+				},
+			],
+		},
+	},
+	{
+		id: 'tatami_01',
+		name: 'Tatami mat',
+		image: 'tatami_mat.png',
+		ownership: {
+			responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
+			licensing: [
+				{
+					source: 'https://www.swtexture.com',
+					copyrightHolder: 'swtexture',
+					license: 'CC BY',
 				},
 			],
 		},
