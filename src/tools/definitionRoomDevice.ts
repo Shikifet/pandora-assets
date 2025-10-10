@@ -1,17 +1,16 @@
+import { existsSync, readFileSync, unlinkSync, writeFileSync } from 'fs';
 import { freeze, type Immutable } from 'immer';
 import { cloneDeep, omit, pick } from 'lodash-es';
-import { Assert, AssertNever, AssetId, GetLogger, RoomDeviceAssetDefinition, RoomDeviceModuleStaticData, RoomDeviceProperties, RoomDeviceWearablePartAssetDefinition, type AssetCreditsInfo, type AssetModuleDefinition, type GraphicsBuildContextAssetData, type ImageBoundingBox } from 'pandora-common';
+import { Assert, AssetId, AssetSourceGraphicsDefinitionSchema, GetLogger, ModuleNameSchema, RoomDeviceAssetDefinition, RoomDeviceModuleStaticData, RoomDeviceProperties, RoomDeviceWearablePartAssetDefinition, SCHEME_OVERRIDE, type AssetCreditsInfo, type AssetSourceGraphicsRoomDeviceDefinition, type GraphicsBuildContextRoomDeviceData } from 'pandora-common';
 import { join } from 'path';
-import { OPTIMIZE_TEXTURES } from '../config.ts';
 import { AssetDatabase } from './assetDatabase.ts';
 import { AssetSourcePath, DefaultId, GetAssetRepositoryPath } from './context.ts';
-import { LoadAssetGraphicsFile } from './graphics.ts';
-import { GENERATED_RESOLUTIONS } from './graphicsConstants.ts';
 import { GraphicsDatabase } from './graphicsDatabase.ts';
+import { LoadRoomDeviceAssetGraphicsFile } from './graphicsRoomDevice.ts';
 import { RegisterImportContextProcess } from './importContext.ts';
 import { ValidateOwnershipData } from './licensing.ts';
 import { LoadRoomDeviceColorization } from './load_helpers/color.ts';
-import { DefineImageResource, DefinePngResource, IImageResource, PREVIEW_SIZE } from './resources.ts';
+import { DefinePngResource, PREVIEW_SIZE } from './resources.ts';
 import { ValidateAssetChatMessages } from './validation/chatMessages.ts';
 import { ValidateAllModules } from './validation/modules.ts';
 import { ValidateAssetProperties, ValidateAssetPropertiesFinalize } from './validation/properties.ts';
@@ -55,22 +54,18 @@ const ROOM_DEVICE_DEFINITION_FALLTHROUGH_PROPERTIES = [
 	'colorization',
 	'colorRibbonGroup',
 	'pivot',
-	'graphicsLayers',
 ] as const satisfies readonly (keyof RoomDeviceAssetDefinition)[];
 
 export type AssetRoomDeviceDefinitionFallthroughProperties = (typeof ROOM_DEVICE_DEFINITION_FALLTHROUGH_PROPERTIES)[number] & string;
 
-async function DefineRoomDeviceWearablePart(
+function DefineRoomDeviceWearablePart(
 	baseId: AssetId,
 	slot: string,
 	def: IntermediateRoomDeviceWearablePartDefinition,
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	modules: Record<string, AssetModuleDefinition<unknown, any>> | undefined,
-	colorizationKeys: ReadonlySet<string>,
 	propertiesValidationMetadata: RoomDevicePropertiesValidationMetadata,
 	preview: string | null,
 	credits: AssetCreditsInfo,
-): Promise<AssetId | null> {
+): AssetId | null {
 	const id: AssetId = `${baseId}/${slot}` as const;
 
 	const logger = GetLogger('RoomDeviceWearablePart', `[Asset ${id}]`);
@@ -107,24 +102,9 @@ async function DefineRoomDeviceWearablePart(
 		type: 'roomDeviceWearablePart',
 		id,
 		preview,
-		hasGraphics: def.graphics !== undefined,
 		credits,
 	};
 
-	// Load and verify graphics
-	if (def.graphics) {
-		const builtAssetData: Immutable<GraphicsBuildContextAssetData> = {
-			modules,
-			colorizationKeys,
-		};
-
-		const { graphics, graphicsSource } = await LoadAssetGraphicsFile(
-			join(AssetSourcePath, def.graphics),
-			builtAssetData,
-		);
-
-		GraphicsDatabase.registerAssetGraphics(id, graphics, graphicsSource);
-	}
 	AssetDatabase.registerAsset(id, asset);
 
 	return id;
@@ -145,8 +125,6 @@ async function GlobalDefineRoomDeviceAssetProcess(def: IntermediateRoomDeviceDef
 
 	const slots: RoomDeviceAssetDefinition<AssetRepoExtraArgs>['slots'] = {};
 	const slotIds = new Set<string>();
-
-	const colorizationKeys = new Set<string>(Object.keys(def.colorization ?? {}));
 
 	const propertiesValidationMetadata: RoomDevicePropertiesValidationMetadata = {
 		getModuleNames: () => Object.keys(def.modules ?? {}),
@@ -172,7 +150,7 @@ async function GlobalDefineRoomDeviceAssetProcess(def: IntermediateRoomDeviceDef
 	for (const [k, v] of Object.entries(def.slots)) {
 		slotIds.add(k);
 
-		const slotWearableId = await DefineRoomDeviceWearablePart(id, k, v.asset, def.modules, colorizationKeys, propertiesValidationMetadata, preview, credits);
+		const slotWearableId = DefineRoomDeviceWearablePart(id, k, v.asset, propertiesValidationMetadata, preview, credits);
 		if (slotWearableId == null) {
 			definitionValid = false;
 			logger.error(`Failed to process asset for slot '${k}'`);
@@ -187,8 +165,6 @@ async function GlobalDefineRoomDeviceAssetProcess(def: IntermediateRoomDeviceDef
 
 	//#endregion
 
-	//#region Load graphics
-
 	const {
 		colorization,
 		valid: colorizationValid,
@@ -200,107 +176,6 @@ async function GlobalDefineRoomDeviceAssetProcess(def: IntermediateRoomDeviceDef
 		definitionValid = false;
 		logger.error(`Invalid color ribbon group: It must match one of the colorization groups.`);
 	}
-
-	function loadLayerImageResource(image: string): IImageResource {
-		return DefineImageResource(image, 'roomDevice', 'png');
-	}
-
-	function loadLayerImage(image: string, minX?: number, minY?: number, boundingBox?: ImageBoundingBox): string {
-		let resource = loadLayerImageResource(image);
-
-		if (minX != null && minY != null && boundingBox != null) {
-			Assert(minX <= boundingBox.left);
-			Assert(minY <= boundingBox.top);
-			resource = resource.addCutImageRelative(
-				minX / boundingBox.width,
-				minY / boundingBox.height,
-				boundingBox.rightExclusive / boundingBox.width,
-				boundingBox.bottomExclusive / boundingBox.height,
-			);
-		}
-
-		for (const resolution of GENERATED_RESOLUTIONS) {
-			resource.addDownscaledImage(resolution);
-		}
-
-		return resource.resultName;
-	}
-
-	await Promise.all(def.graphicsLayers.map(async (layer, index): Promise<void> => {
-		if (layer.type === 'sprite') {
-			const images = Array.from(new Set<string>([
-				layer.image,
-				...(layer.imageOverrides?.map((override) => override.image) ?? []),
-			]
-				.filter(Boolean),
-			));
-
-			let minX = Infinity;
-			let minY = Infinity;
-			const boundingBoxes = new Map<string, ImageBoundingBox>();
-			if (OPTIMIZE_TEXTURES) {
-				const boundingBoxesCalculation = await Promise.all(
-					images.map((i) => loadLayerImageResource(i).getContentBoundingBox().then((box) => [i, box] as const)),
-				);
-				for (const [image, boundingBox] of boundingBoxesCalculation) {
-					boundingBoxes.set(image, boundingBox);
-
-					if (boundingBox.width === 0 || boundingBox.height === 0)
-						continue;
-
-					minX = Math.min(minX, boundingBox.left);
-					minY = Math.min(minY, boundingBox.top);
-				}
-
-				Assert(minX >= 0);
-				Assert(minY >= 0);
-				if (!Number.isFinite(minX) || !Number.isFinite(minY)) {
-					logger.warning('All layer\'s images are empty.');
-					minX = 0;
-					minY = 0;
-				} else {
-					layer.offset ??= { x: 0, y: 0 };
-					layer.offset.x += minX;
-					layer.offset.y += minY;
-					for (const override of (layer.offsetOverrides ?? [])) {
-						override.offset.x += minX;
-						override.offset.y += minY;
-					}
-				}
-			} else {
-				minX = 0;
-				minY = 0;
-			}
-
-			layer.image = layer.image && loadLayerImage(layer.image, minX, minY, boundingBoxes.get(layer.image));
-			layer.imageOverrides = layer.imageOverrides
-				?.map((override) => ({
-					...override,
-					image: override.image && loadLayerImage(override.image, minX, minY, boundingBoxes.get(override.image)),
-				}));
-
-			if (layer.colorizationKey != null && !colorizationKeys.has(layer.colorizationKey)) {
-				logger.warning(`Layer #${index} has colorizationKey ${layer.colorizationKey} outside of defined colorization keys [${[...colorizationKeys].join(', ')}]`);
-			}
-		} else if (layer.type === 'slot') {
-			if (!slotIds.has(layer.slot)) {
-				definitionValid = false;
-				logger.error(`Layer #${index} links to unknown slot '${layer.slot}'`);
-			}
-		} else if (layer.type === 'text') {
-			if (def.modules?.[layer.dataModule]?.type !== 'text') {
-				definitionValid = false;
-				logger.error(`Layer #${index} links module '${layer.dataModule}', but it is not a text module`);
-			}
-			if (layer.colorizationKey != null && !colorizationKeys.has(layer.colorizationKey)) {
-				logger.warning(`Layer #${index} has colorizationKey ${layer.colorizationKey} outside of defined colorization keys [${[...colorizationKeys].join(', ')}]`);
-			}
-		} else {
-			AssertNever(layer);
-		}
-	}));
-
-	//#endregion
 
 	if (!definitionValid) {
 		logger.error('Invalid asset definition, asset skipped');
@@ -349,6 +224,86 @@ async function GlobalDefineRoomDeviceAssetProcess(def: IntermediateRoomDeviceDef
 	asset.staticAttributes ??= [];
 	if (!asset.staticAttributes.includes('Room_device')) {
 		asset.staticAttributes.push('Room_device');
+	}
+
+	// Load and verify graphics
+	{
+		const builtAssetData: Immutable<GraphicsBuildContextRoomDeviceData> = {
+			modules: asset.modules,
+			colorizationKeys: new Set(Object.keys(colorization ?? {})),
+			slotIds,
+		};
+
+		// Migrate existing graphics if needed
+		/* eslint-disable @typescript-eslint/no-deprecated */
+		const graphicsPath = join(AssetSourcePath, def.graphics);
+		if (!existsSync(graphicsPath) && def.graphicsLayers !== undefined) {
+			logger.alert('Migrating graphics definitions to graphics file. Please remove \'graphicsLayers\' from the definition after this completes.');
+			const migratedDefinition: AssetSourceGraphicsRoomDeviceDefinition = {
+				layers: def.graphicsLayers,
+				slots: {},
+			};
+
+			ModuleNameSchema[SCHEME_OVERRIDE](() => { /* NOOP */ });
+			for (const [k, v] of Object.entries(def.slots)) {
+				if (v.asset.graphics) {
+					const rawDefinition = readFileSync(join(AssetSourcePath, v.asset.graphics), { encoding: 'utf-8' });
+					const slotDefinition = AssetSourceGraphicsDefinitionSchema.parse(JSON.parse(
+						rawDefinition
+							.split('\n')
+							.filter((line) => !line.trimStart().startsWith('//'))
+							.join('\n'),
+					));
+
+					migratedDefinition.slots[k] = {
+						layers: slotDefinition.layers,
+					};
+				}
+			}
+
+			// Write the new definition
+			const canonizedExport = JSON.stringify(migratedDefinition, undefined, '\t').trim() + '\n';
+			writeFileSync(graphicsPath, canonizedExport, { encoding: 'utf-8' });
+
+			// Remove slot graphics
+			for (const [, v] of Object.entries(def.slots)) {
+				if (v.asset.graphics) {
+					unlinkSync(join(AssetSourcePath, v.asset.graphics));
+				}
+			}
+		}
+
+		if (def.graphicsLayers !== undefined) {
+			logger.warning('Deprecated property \'graphicsLayers\' is used. Please remove it after migration to JSON graphics definition completes.');
+		}
+		for (const [k, v] of Object.entries(def.slots)) {
+			if (v.asset.graphics) {
+				logger.warning(`[slot '${k}'] Deprecated property 'graphics' is used. Please remove it after migration to JSON graphics definition completes.`);
+			}
+		}
+		/* eslint-enable @typescript-eslint/no-deprecated */
+
+		const { graphics, graphicsSource, slotGraphics } = await LoadRoomDeviceAssetGraphicsFile(
+			graphicsPath,
+			builtAssetData,
+		);
+
+		GraphicsDatabase.registerAssetGraphics(id, graphics, graphicsSource);
+
+		const usedSlots = new Set<string>();
+		for (const [k, v] of Object.entries(asset.slots)) {
+			if (Object.hasOwn(slotGraphics, k)) {
+				Assert(slotGraphics[k] != null);
+				usedSlots.add(k);
+				GraphicsDatabase.registerAssetGraphics(v.wearableAsset, slotGraphics[k], null);
+			}
+		}
+
+		for (const k of Object.keys(slotGraphics)) {
+			if (!usedSlots.has(k)) {
+				logger.warning(`Graphics contains entry for unknown slot '${k}'`);
+			}
+		}
 	}
 
 	AssetDatabase.registerAsset(id, asset);

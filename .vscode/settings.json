@@ -56,4 +56,18 @@
 			"severity": "info"
 		}
 	],
+	"json.schemas": [
+		{
+			"fileMatch": [
+				"/src/assets/**/graphics.json"
+			],
+			"url": "./out/graphicsSource-worn.schema.json"
+		},
+		{
+			"fileMatch": [
+				"/src/assets/**/roomDeviceGraphics.json"
+			],
+			"url": "./out/graphicsSource-roomDevice.schema.json"
+		}
+	],
 }
