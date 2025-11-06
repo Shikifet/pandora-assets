@@ -74,7 +74,7 @@
 		},
 		{
 			"pos": [
-				495,
+				499,
 				1450
 			],
 			"mirror": true,
@@ -83,7 +83,7 @@
 				{
 					"type": "const-shift",
 					"value": {
-						"x": -4,
+						"x": -3,
 						"y": -218
 					},
 					"condition": [
@@ -104,7 +104,7 @@
 		},
 		{
 			"pos": [
-				495,
+				499,
 				1250
 			],
 			"mirror": true,
@@ -113,7 +113,7 @@
 				{
 					"type": "const-shift",
 					"value": {
-						"x": -4,
+						"x": -3,
 						"y": -248
 					},
 					"condition": [
@@ -164,7 +164,7 @@
 		},
 		{
 			"pos": [
-				495,
+				499,
 				1324
 			],
 			"mirror": true,
@@ -173,7 +173,7 @@
 				{
 					"type": "const-shift",
 					"value": {
-						"x": -4,
+						"x": -3,
 						"y": -237
 					},
 					"condition": [

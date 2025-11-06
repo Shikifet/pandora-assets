@@ -9,7 +9,15 @@
 			"type": "mesh",
 			"name": "calves front",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_duct_tape",
+			"points": "skirt_static",
+			"pointType": [
+				"bodyleg",
+				"bodyleg_l",
+				"bodyleg_r",
+				"leg",
+				"leg_l",
+				"leg_r"
+			],
 			"mirror": 0,
 			"colorizationKey": "tape",
 			"image": {
@@ -76,7 +84,20 @@
 			"type": "mesh",
 			"name": "thighs front",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_duct_tape",
+			"points": "skirt_static",
+			"pointType": [
+				"body",
+				"body_l",
+				"body_r",
+				"bodyarm_l",
+				"bodyarm_r",
+				"bodyleg",
+				"bodyleg_l",
+				"bodyleg_r",
+				"leg",
+				"leg_l",
+				"leg_r"
+			],
 			"mirror": 0,
 			"colorizationKey": "tape",
 			"image": {
@@ -126,7 +147,20 @@
 			"type": "mesh",
 			"name": "legs front",
 			"priority": "ABOVE_BODY",
-			"points": "custom_foot_restraints_duct_tape",
+			"points": "skirt_static",
+			"pointType": [
+				"body",
+				"body_l",
+				"body_r",
+				"bodyarm_l",
+				"bodyarm_r",
+				"bodyleg",
+				"bodyleg_l",
+				"bodyleg_r",
+				"leg",
+				"leg_l",
+				"leg_r"
+			],
 			"mirror": 0,
 			"colorizationKey": "tape",
 			"image": {
@@ -155,7 +189,15 @@
 			"type": "mesh",
 			"name": "calves back",
 			"priority": "BELOW_BODY",
-			"points": "custom_foot_restraints_duct_tape",
+			"points": "skirt_static",
+			"pointType": [
+				"bodyleg",
+				"bodyleg_l",
+				"bodyleg_r",
+				"leg",
+				"leg_l",
+				"leg_r"
+			],
 			"mirror": 0,
 			"colorizationKey": "tape",
 			"image": {
@@ -222,7 +264,20 @@
 			"type": "mesh",
 			"name": "thighs back",
 			"priority": "BELOW_BODY",
-			"points": "custom_foot_restraints_duct_tape",
+			"points": "skirt_static",
+			"pointType": [
+				"body",
+				"body_l",
+				"body_r",
+				"bodyarm_l",
+				"bodyarm_r",
+				"bodyleg",
+				"bodyleg_l",
+				"bodyleg_r",
+				"leg",
+				"leg_l",
+				"leg_r"
+			],
 			"mirror": 0,
 			"colorizationKey": "tape",
 			"image": {
@@ -258,7 +313,20 @@
 			"type": "mesh",
 			"name": "legs back",
 			"priority": "BELOW_BODY",
-			"points": "custom_foot_restraints_duct_tape",
+			"points": "skirt_static",
+			"pointType": [
+				"body",
+				"body_l",
+				"body_r",
+				"bodyarm_l",
+				"bodyarm_r",
+				"bodyleg",
+				"bodyleg_l",
+				"bodyleg_r",
+				"leg",
+				"leg_l",
+				"leg_r"
+			],
 			"mirror": 0,
 			"colorizationKey": "tape",
 			"image": {
