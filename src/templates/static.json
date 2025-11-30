@@ -17,6 +17,15 @@
 		}
 	},
 	"automeshTemplates": {
+		"aboveFrontHair": {
+			"name": "Above front hair",
+			"parts": [
+				{
+					"id": "base",
+					"priority": "ABOVE_FRONT_HAIR"
+				}
+			]
+		},
 		"aboveBody": {
 			"name": "Above body",
 			"parts": [
@@ -26,12 +35,39 @@
 				}
 			]
 		},
+		"belowBreasts": {
+			"name": "Below breasts",
+			"parts": [
+				{
+					"id": "base",
+					"priority": "BELOW_BREASTS"
+				}
+			]
+		},
 		"belowBody": {
 			"name": "Below body",
 			"parts": [
 				{
 					"id": "base",
 					"priority": "BELOW_BODY"
+				}
+			]
+		},
+		"aboveBackHair": {
+			"name": "Above back hair",
+			"parts": [
+				{
+					"id": "base",
+					"priority": "ABOVE_BACK_HAIR"
+				}
+			]
+		},
+		"belowBackHair": {
+			"name": "Below back hair",
+			"parts": [
+				{
+					"id": "base",
+					"priority": "BELOW_BACK_HAIR"
 				}
 			]
 		},
@@ -106,11 +142,98 @@
 			]
 		},
 		"overlay": {
-			"name": "Overlay",
+			"name": "[Special] Overlay",
 			"parts": [
 				{
 					"id": "base",
 					"priority": "OVERLAY"
+				}
+			]
+		},
+		"background": {
+			"name": "[Special] Background",
+			"parts": [
+				{
+					"id": "base",
+					"priority": "BACKGROUND"
+				}
+			]
+		},
+		"frontHair": {
+			"name": "[Bodypart] Front hair",
+			"parts": [
+				{
+					"id": "base",
+					"priority": "FRONT_HAIR"
+				}
+			]
+		},
+		"breasts": {
+			"name": "[Bodypart] Breasts",
+			"parts": [
+				{
+					"id": "base",
+					"priority": "BREASTS"
+				}
+			]
+		},
+		"body": {
+			"name": "[Bodypart] Body",
+			"parts": [
+				{
+					"id": "base",
+					"priority": "BODY"
+				}
+			]
+		},
+		"backHair": {
+			"name": "[Bodypart] Back hair",
+			"parts": [
+				{
+					"id": "base",
+					"priority": "BACK_HAIR"
+				}
+			]
+		},
+		"arms": {
+			"name": "[Bodypart] Arms (mirrored)",
+			"parts": [
+				{
+					"id": "arms",
+					"priority": "ARM_LEFT",
+					"pointType": [
+						"static_l",
+						"static"
+					],
+					"mirror": 1
+				}
+			]
+		},
+		"legs": {
+			"name": "[Bodypart] Legs (mirrored)",
+			"parts": [
+				{
+					"id": "legs",
+					"priority": "LEG_LEFT",
+					"pointType": [
+						"static_l",
+						"static"
+					],
+					"mirror": 1
+				}
+			]
+		},
+		"soles": {
+			"name": "[Bodypart] Soles (mirrored)",
+			"parts": [
+				{
+					"id": "legs",
+					"priority": "SOLE_LEFT",
+					"pointType": [
+						"static_l",
+						"static"
+					],
+					"mirror": 1
 				}
 			]
 		}
