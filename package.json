@@ -35,7 +35,7 @@
 	},
 	"dependencies": {
 		"delaunator": "5.0.1",
-		"express": "5.1.0",
+		"express": "5.2.0",
 		"ignore": "7.0.5",
 		"immer": "11.0.1",
 		"json-diff": "1.0.6",
