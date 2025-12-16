@@ -39,7 +39,7 @@
 		"ignore": "7.0.5",
 		"immer": "11.0.1",
 		"json-diff": "1.0.6",
-		"lodash-es": "4.17.21",
+		"lodash-es": "4.17.22",
 		"pandora-common": "github:Project-Pandora-Game/pandora#master&path:pandora-common",
 		"rimraf": "6.1.2",
 		"sharp": "0.34.5",

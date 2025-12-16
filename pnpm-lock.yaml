@@ -24,11 +24,11 @@ importers:
         specifier: 1.0.6
         version: 1.0.6
       lodash-es:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.17.22
+        version: 4.17.22
       pandora-common:
         specifier: github:Project-Pandora-Game/pandora#master&path:pandora-common
-        version: https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/ced73b018b7bdd9786130e5dde9abb63fe9e87ba#path:pandora-common
+        version: https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/da4b543c3fb920ae7caf024319f9e7e809208d59#path:pandora-common
       rimraf:
         specifier: 6.1.2
         version: 6.1.2
@@ -1953,6 +1953,9 @@ packages:
   lodash-es@4.17.21:
     resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
 
+  lodash-es@4.17.22:
+    resolution: {integrity: sha512-XEawp1t0gxSi9x01glktRZ5HDy0HXqrM0x5pXQM98EaI0NxO6jVM7omDOxsuEo5UIASAnm2bRp1Jt/e0a2XU8Q==}
+
   lodash.memoize@4.1.2:
     resolution: {integrity: sha512-t7j+NzmgnQzTAYXcsHYLgimltOV1MXHtlOWf6GjL9Kj8GK5FInw5JotxvbOs+IvV1/Dzo04/fCGfLVs7aXb4Ag==}
 
@@ -2137,8 +2140,8 @@ packages:
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
-  pandora-common@https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/ced73b018b7bdd9786130e5dde9abb63fe9e87ba#path:pandora-common:
-    resolution: {path: pandora-common, tarball: https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/ced73b018b7bdd9786130e5dde9abb63fe9e87ba}
+  pandora-common@https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/da4b543c3fb920ae7caf024319f9e7e809208d59#path:pandora-common:
+    resolution: {path: pandora-common, tarball: https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/da4b543c3fb920ae7caf024319f9e7e809208d59}
     version: 0.1.0
     engines: {node: '>=22.x'}
 
@@ -4997,6 +5000,8 @@ snapshots:
 
   lodash-es@4.17.21: {}
 
+  lodash-es@4.17.22: {}
+
   lodash.memoize@4.1.2: {}
 
   lodash.merge@4.6.2: {}
@@ -5162,7 +5167,7 @@ snapshots:
 
   package-json-from-dist@1.0.1: {}
 
-  pandora-common@https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/ced73b018b7bdd9786130e5dde9abb63fe9e87ba#path:pandora-common:
+  pandora-common@https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/da4b543c3fb920ae7caf024319f9e7e809208d59#path:pandora-common:
     dependencies:
       '@types/async-lock': 1.4.2
       '@types/lodash-es': 4.17.12
