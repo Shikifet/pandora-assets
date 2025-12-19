@@ -233,7 +233,6 @@
 				}
 			]
 		},
-
 		{
 			"type": "slot",
 			"slot": "front",
@@ -281,7 +280,6 @@
 				}
 			]
 		},
-
 		{
 			"type": "sprite",
 			"offset": {
@@ -324,15 +322,24 @@
 		"front": {
 			"layers": [
 				{
-					"width": 284,
-					"height": 284,
 					"x": 358,
 					"y": 690,
-					"points": "static",
-					"mirror": 0,
+					"width": 284,
+					"height": 284,
 					"type": "mesh",
 					"name": "Saddle Base",
 					"priority": "ABOVE_BODY",
+					"points": "skirt_static",
+					"pointType": [
+						"body",
+						"bodyleg",
+						"bodyleg_l",
+						"bodyleg_r",
+						"leg",
+						"leg_l",
+						"leg_r"
+					],
+					"mirror": 0,
 					"colorizationKey": "hashira",
 					"image": {
 						"image": "",
@@ -353,15 +360,24 @@
 					}
 				},
 				{
-					"width": 284,
-					"height": 284,
 					"x": 358,
 					"y": 690,
-					"points": "static",
-					"mirror": 0,
+					"width": 284,
+					"height": 284,
 					"type": "mesh",
 					"name": "Saddle Leather",
 					"priority": "ABOVE_BODY",
+					"points": "skirt_static",
+					"pointType": [
+						"body",
+						"bodyleg",
+						"bodyleg_l",
+						"bodyleg_r",
+						"leg",
+						"leg_l",
+						"leg_r"
+					],
+					"mirror": 0,
 					"colorizationKey": "leather",
 					"image": {
 						"image": "",
@@ -382,15 +398,24 @@
 					}
 				},
 				{
-					"width": 284,
-					"height": 284,
 					"x": 358,
 					"y": 690,
-					"points": "static",
-					"mirror": 0,
+					"width": 284,
+					"height": 284,
 					"type": "mesh",
 					"name": "Saddle Leather Reflections",
 					"priority": "ABOVE_BODY",
+					"points": "skirt_static",
+					"pointType": [
+						"body",
+						"bodyleg",
+						"bodyleg_l",
+						"bodyleg_r",
+						"leg",
+						"leg_l",
+						"leg_r"
+					],
+					"mirror": 0,
 					"image": {
 						"image": "",
 						"overrides": [
@@ -410,15 +435,24 @@
 					}
 				},
 				{
-					"width": 284,
-					"height": 284,
 					"x": 358,
 					"y": 690,
-					"points": "static",
-					"mirror": 0,
+					"width": 284,
+					"height": 284,
 					"type": "mesh",
 					"name": "Saddle Bolts",
 					"priority": "ABOVE_BODY",
+					"points": "skirt_static",
+					"pointType": [
+						"body",
+						"bodyleg",
+						"bodyleg_l",
+						"bodyleg_r",
+						"leg",
+						"leg_l",
+						"leg_r"
+					],
+					"mirror": 0,
 					"colorizationKey": "bolts",
 					"image": {
 						"image": "",
