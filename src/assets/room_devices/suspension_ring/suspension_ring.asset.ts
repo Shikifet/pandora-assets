@@ -265,17 +265,6 @@ DefineRoomDeviceAsset({
 					id: 'none',
 					name: 'None',
 					default: true,
-					properties: {
-						slotProperties: {
-							under_ring: {
-								poseLimits: {
-									bones: {
-										character_rotation: 0,
-									},
-								},
-							},
-						},
-					},
 				},
 				{
 					id: 'thigh_front_left',
