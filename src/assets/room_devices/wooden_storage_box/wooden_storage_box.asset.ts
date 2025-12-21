@@ -1,28 +1,40 @@
 DefineRoomDeviceAsset({
-	name: 'Large Couch',
+	name: 'Wooden Storage Box',
 	size: 'huge',
 	colorization: {
-		couch: {
-			name: 'Couch',
-			default: '#ffffff',
+		box: {
+			name: 'Box',
+			default: '#EBB284',
+		},
+		latch: {
+			name: 'Toggle latch',
+			default: '#E2B252',
 		},
 	},
-	staticAttributes: ['Furniture'],
-	preview: 'couch_preview.png',
+	staticAttributes: ['Storage'],
+	preview: 'box_preview.png',
 	slots: {},
 	modules: {
-		storage: {
+		content: {
 			type: 'storage',
-			name: `Under the couch`,
+			name: 'Chest contents',
 			staticConfig: { slotName: null },
-			maxAcceptedSize: 'medium',
-			maxCount: 5,
+			maxCount: 15,
+			maxAcceptedSize: 'large',
+		},
+		lock: {
+			type: 'lockSlot',
+			name: 'Latch lock',
+			staticConfig: { slotName: null },
+			lockedProperties: {
+				blockModules: ['content'],
+			},
 		},
 	},
-	storageModule: 'storage',
+	storageModule: 'content',
 	pivot: {
-		x: 1400,
-		y: 950,
+		x: 395,
+		y: 390,
 	},
 	graphics: 'roomDeviceGraphics.json',
 	ownership: {
@@ -33,8 +45,8 @@ DefineRoomDeviceAsset({
 		licensing: [
 			{
 				part: 'used 3D model',
-				source: 'https://skfb.ly/oCDoA',
-				copyrightHolder: 'vasycrukov',
+				source: 'https://skfb.ly/66u7Z',
+				copyrightHolder: 'PepsiTetraHepta',
 				editedBy: 'ClaudiaMia',
 				license: 'CC BY',
 			},

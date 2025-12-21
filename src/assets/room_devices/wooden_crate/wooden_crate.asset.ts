@@ -1,28 +1,28 @@
 DefineRoomDeviceAsset({
-	name: 'Large Couch',
+	name: 'Wooden Crate',
 	size: 'huge',
 	colorization: {
-		couch: {
-			name: 'Couch',
-			default: '#ffffff',
+		crate: {
+			name: 'Crate',
+			default: '#9E7144',
 		},
 	},
-	staticAttributes: ['Furniture'],
-	preview: 'couch_preview.png',
+	staticAttributes: ['Storage'],
+	preview: 'crate_preview.png',
 	slots: {},
 	modules: {
-		storage: {
+		content: {
 			type: 'storage',
-			name: `Under the couch`,
+			name: 'Crate contents',
 			staticConfig: { slotName: null },
-			maxAcceptedSize: 'medium',
-			maxCount: 5,
+			maxCount: 15,
+			maxAcceptedSize: 'large',
 		},
 	},
-	storageModule: 'storage',
+	storageModule: 'content',
 	pivot: {
-		x: 1400,
-		y: 950,
+		x: 530,
+		y: 666,
 	},
 	graphics: 'roomDeviceGraphics.json',
 	ownership: {
@@ -33,8 +33,8 @@ DefineRoomDeviceAsset({
 		licensing: [
 			{
 				part: 'used 3D model',
-				source: 'https://skfb.ly/oCDoA',
-				copyrightHolder: 'vasycrukov',
+				source: 'https://skfb.ly/6RvDJ',
+				copyrightHolder: 'DZs',
 				editedBy: 'ClaudiaMia',
 				license: 'CC BY',
 			},

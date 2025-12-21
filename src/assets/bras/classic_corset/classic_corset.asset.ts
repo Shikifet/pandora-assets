@@ -1,31 +1,28 @@
 DefineAsset({
-	name: 'Pet Tag',
-	size: 'small',
+	name: 'Classic Corset',
+	size: 'medium',
 	requireFreeHandsToUseDefault: true,
+	allowRandomizerUsage: true,
 	graphics: 'graphics.json',
 	colorization: {
-		tag: {
-			name: 'Tag',
-			default: '#B62929',
-			minAlpha: 0.5,
+		corset: {
+			name: 'Corset',
+			default: '#3E56AF',
 		},
-		text: {
-			name: 'Text',
-			default: '#FFFFFF',
-		},
-		ring: {
-			name: 'Ring',
-			default: '#ECD399',
+		buckles: {
+			name: 'Buckles',
+			default: '#919191',
 		},
 	},
+	// size:300, y:459, centered
 	preview: 'preview.png',
 	attributes: {
 		provides: [
+			'Clothing',
 			'Restraint',
-			'Accessory',
-		],
-		requires: [
-			'Collar_front_ring',
+			'Restraint_torso',
+			'Underwear',
+			'Underwear_corset',
 		],
 	},
 	modules: {
@@ -34,17 +31,8 @@ DefineAsset({
 			name: 'Lock',
 			lockedProperties: {
 				blockAddRemove: true,
-				blockModules: ['text'],
 			},
 		},
-		text: {
-			type: 'text',
-			name: 'Text',
-		},
-	},
-	chat: {
-		actionAdd: 'SOURCE_CHARACTER added ITEM_ASSET_NAME onto TARGET_CHARACTER_DYNAMIC_POSSESSIVE ring.',
-		actionRemove: 'SOURCE_CHARACTER removed ITEM_ASSET_NAME from TARGET_CHARACTER_DYNAMIC_POSSESSIVE ring.',
 	},
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',
@@ -53,10 +41,18 @@ DefineAsset({
 		reusePolicy: 'Ask first',
 		licensing: [
 			{
+				part: 'images',
 				source: 'Self-Made',
 				copyrightHolder: 'ClaudiaMia',
 				editedBy: 'ClaudiaMia',
 				license: 'Pandora-Use-Only-v1-or-later',
+			},
+			{
+				part: 'used 3D model',
+				source: 'https://skfb.ly/6TWpR',
+				copyrightHolder: 'MarbleBallStudio',
+				editedBy: 'ClaudiaMia',
+				license: 'CC BY',
 			},
 		],
 	},
