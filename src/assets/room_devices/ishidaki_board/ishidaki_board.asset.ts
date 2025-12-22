@@ -13,7 +13,7 @@ DefineRoomDeviceAsset({
 		over_board: {
 			name: 'Kneeling over board',
 			asset: {
-				name: 'Soroban',
+				name: 'Ishidaki Board',
 				size: 'large',
 				poseLimits: {
 					legs: {
