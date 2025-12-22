@@ -1,31 +1,27 @@
 DefineRoomDeviceAsset({
 	name: 'Ishidaki Board',
-	size: 'huge',
-	preview: null,//'preview.png',
+	size: 'large',
+	preview: 'preview.png',
 	colorization: {
 		soroban: {
-			name: 'Soroban',
+			name: 'Board',
 			default: '#AC784E',
-		},
-		rope: {
-			name: 'Rope',
-			default: '#D7AC4D',
 		},
 	},
 	staticAttributes: ['Play_furniture'],
 	slots: {
 		over_board: {
-			name: 'Kneeling over Soroban',
+			name: 'Kneeling over board',
 			asset: {
 				name: 'Soroban',
-				size: 'huge',
+				size: 'large',
 				poseLimits: {
 					legs: {
 						pose: 'kneeling',
 					},
 					bones: {
-						leg_l: [[-12, 4]],
-						leg_r: [[-12, 4]],
+						leg_l: [[-12, 5]],
+						leg_r: [[-12, 5]],
 						character_rotation: 0,
 					},
 				},

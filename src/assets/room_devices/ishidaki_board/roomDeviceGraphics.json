@@ -39,9 +39,5 @@
 			]
 		}
 	],
-	"slots": {
-		"over_board": {
-			"layers": []
-		}
-	}
+	"slots": {}
 }
