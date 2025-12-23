@@ -622,6 +622,20 @@ DefineRoomDeviceAsset({
 				},
 			},
 		},
+		{
+			requiredFlags: ['suspension_point', 'straight_thighs', 'straight_ankles'],
+			properties: {
+				slotProperties: {
+					under_ring: {
+						poseLimits: {
+							bones: {
+								character_rotation: 0,
+							},
+						},
+					},
+				},
+			},
+		},
 	],
 	ownership: {
 		responsibleContributor: 'Shikifet <shikifet@gmail.com>',
