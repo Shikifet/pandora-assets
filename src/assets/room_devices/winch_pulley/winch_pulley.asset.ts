@@ -227,6 +227,7 @@ DefineRoomDeviceAsset({
 							under_winch: {
 								poseLimits: {
 									bones: {
+										character_rotation: 0,
 										leg_l: [[-18, 10]],
 										leg_r: [[-18, 10]],
 									},
