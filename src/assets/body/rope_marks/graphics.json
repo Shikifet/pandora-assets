@@ -174,10 +174,13 @@
 				"none": [
 					""
 				],
-				"single": [
+				"one": [
+					""
+				],
+				"two": [
 					"chest_top.png"
 				],
-				"full": [
+				"three": [
 					"chest_top.png"
 				]
 			}
@@ -211,10 +214,13 @@
 				"none": [
 					""
 				],
-				"single": [
+				"one": [
 					"chest_bottom.png"
 				],
-				"full": [
+				"two": [
+					"chest_bottom.png"
+				],
+				"three": [
 					"chest_bottom.png"
 				]
 			}
@@ -248,10 +254,13 @@
 				"none": [
 					""
 				],
-				"single": [
+				"one": [
 					""
 				],
-				"full": [
+				"two": [
+					""
+				],
+				"three": [
 					"chest_shoulder.png"
 				]
 			}
