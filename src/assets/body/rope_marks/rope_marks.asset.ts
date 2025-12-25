@@ -71,16 +71,12 @@ DefineBodypart({
 					default: true,
 				},
 				{
-					id: 'over',
-					name: 'Over Breast',
+					id: 'single',
+					name: 'Breasts Only',
 				},
 				{
-					id: 'below',
-					name: 'Below Breast',
-				},
-				{
-					id: 'both',
-					name: 'Both',
+					id: 'full',
+					name: 'Full',
 				},
 			],
 		},
