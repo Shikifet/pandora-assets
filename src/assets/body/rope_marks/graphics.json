@@ -101,11 +101,14 @@
 				"none": [
 					""
 				],
-				"one": [
-					"arms_upper_1.png"
+				"elbow": [
+					"arms_upper_elbow.png"
 				],
-				"two": [
-					"arms_upper_2.png"
+				"shoulder": [
+					"arms_upper_shoulder.png"
+				],
+				"both": [
+					"arms_upper_both.png"
 				]
 			}
 		},
@@ -137,11 +140,14 @@
 				"none": [
 					""
 				],
-				"one": [
-					"arms_upper_1.png"
+				"elbow": [
+					"arms_upper_elbow.png"
 				],
-				"two": [
-					"arms_upper_2.png"
+				"shoulder": [
+					"arms_upper_shoulder.png"
+				],
+				"both": [
+					"arms_upper_both.png"
 				]
 			}
 		},
@@ -274,6 +280,46 @@
 			"name": "Lower Body Front",
 			"points": "body",
 			"automeshTemplate": "body",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
+			"graphicalLayers": [
+				{
+					"name": "",
+					"colorizationKey": "mark"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "lower_body"
+				}
+			],
+			"imageMap": {
+				"none": [
+					""
+				],
+				"waist": [
+					"waist_upper.png"
+				],
+				"hips": [
+					"waist_lower.png"
+				],
+				"both": [
+					"waist_both.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Lower Body Back",
+			"points": "body",
+			"automeshTemplate": "belowBodyMirror",
 			"disabledTemplateParts": [
 				"arms",
 				"legs"

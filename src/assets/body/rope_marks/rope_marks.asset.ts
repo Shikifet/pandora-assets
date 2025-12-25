@@ -21,6 +21,31 @@ DefineBodypart({
 		],
 	},
 	modules: {
+		upperarms: {
+			type: 'typed',
+			name: 'Upper Arms Marks',
+			expression: 'Left Butt Marks',
+			interactionType: ItemInteractionType.ACCESS_ONLY,
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'elbow',
+					name: 'Elbow',
+				},
+				{
+					id: 'shoulder',
+					name: 'Shoulder',
+				},
+				{
+					id: 'both',
+					name: 'Both',
+				},
+			],
+		},
 		forearms: {
 			type: 'typed',
 			name: 'Fore Arms Marks',
@@ -42,30 +67,9 @@ DefineBodypart({
 				},
 			],
 		},
-		upperarms: {
-			type: 'typed',
-			name: 'Upper Arms Marks',
-			expression: 'Left Butt Marks',
-			interactionType: ItemInteractionType.ACCESS_ONLY,
-			variants: [
-				{
-					id: 'none',
-					name: 'None',
-					default: true,
-				},
-				{
-					id: 'one',
-					name: 'One',
-				},
-				{
-					id: 'two',
-					name: 'Two',
-				},
-			],
-		},
 		chest: {
 			type: 'typed',
-			name: 'Chest Marks',
+			name: 'Upper Body Marks',
 			expression: 'Chest Marks',
 			interactionType: ItemInteractionType.ACCESS_ONLY,
 			variants: [
