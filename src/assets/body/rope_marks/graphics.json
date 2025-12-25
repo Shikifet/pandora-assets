@@ -101,8 +101,11 @@
 				"none": [
 					""
 				],
-				"upper": [
-					"arms_upper.png"
+				"one": [
+					"arms_upper_1.png"
+				],
+				"two": [
+					"arms_upper_2.png"
 				]
 			}
 		},
@@ -134,8 +137,11 @@
 				"none": [
 					""
 				],
-				"upper": [
-					"arms_upper.png"
+				"one": [
+					"arms_upper_1.png"
+				],
+				"two": [
+					"arms_upper_2.png"
 				]
 			}
 		},

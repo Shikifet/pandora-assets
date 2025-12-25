@@ -54,8 +54,12 @@ DefineBodypart({
 					default: true,
 				},
 				{
-					id: 'upper',
-					name: 'Upper Arms',
+					id: 'one',
+					name: 'One',
+				},
+				{
+					id: 'two',
+					name: 'Two',
 				},
 			],
 		},
