@@ -40,7 +40,7 @@ DefineBodypart({
 					id: 'fore',
 					name: 'Fore Arms',
 				},
-			]
+			],
 		},
 		upperarms: {
 			type: 'typed',
@@ -56,8 +56,8 @@ DefineBodypart({
 				{
 					id: 'upper',
 					name: 'Upper Arms',
-				}
-			]
+				},
+			],
 		},
 		chest: {
 			type: 'typed',
@@ -82,8 +82,62 @@ DefineBodypart({
 					id: 'both',
 					name: 'Both',
 				},
-			]
-		}
+			],
+		},
+		thighs: {
+			type: 'typed',
+			name: 'Thighs Marks',
+			expression: 'Thighs Marks',
+			interactionType: ItemInteractionType.ACCESS_ONLY,
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'one',
+					name: 'One',
+				},
+				{
+					id: 'two',
+					name: 'Two',
+				},
+				{
+					id: 'three',
+					name: 'Three',
+				},
+			],
+		},
+		legs: {
+			type: 'typed',
+			name: 'Legs Marks',
+			expression: 'Legs Marks',
+			interactionType: ItemInteractionType.ACCESS_ONLY,
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'one',
+					name: 'One',
+				},
+				{
+					id: 'two',
+					name: 'Two',
+				},
+				{
+					id: 'three',
+					name: 'Three',
+				},
+				{
+					id: 'four',
+					name: 'Four',
+				},
+			],
+		},
 	},
 	ownership: {
 		responsibleContributor: 'Shikifet <shikifet@gmail.com>',

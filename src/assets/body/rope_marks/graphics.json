@@ -37,7 +37,7 @@
 				]
 			}
 		},
-				{
+		{
 			"x": 0,
 			"y": 0,
 			"width": 1000,
@@ -210,6 +210,87 @@
 				],
 				"both": [
 					"chest_bottom.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Thighs Front",
+			"points": "body",
+			"automeshTemplate": "body",
+			"disabledTemplateParts": [
+				"arms"
+			],
+			"graphicalLayers": [
+				{
+					"name": "",
+					"colorizationKey": "mark"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "thighs"
+				}
+			],
+			"imageMap": {
+				"none": [
+					""
+				],
+				"one": [
+					"thighs_one.png"
+				],
+				"two": [
+					"thighs_two.png"
+				],
+				"three": [
+					"thighs_three.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Legs Front",
+			"points": "body",
+			"automeshTemplate": "body",
+			"disabledTemplateParts": [
+				"arms"
+			],
+			"graphicalLayers": [
+				{
+					"name": "",
+					"colorizationKey": "mark"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "legs"
+				}
+			],
+			"imageMap": {
+				"none": [
+					""
+				],
+				"one": [
+					"legs_one.png"
+				],
+				"two": [
+					"legs_two.png"
+				],
+				"three": [
+					"legs_three.png"
+				],
+				"four": [
+					"legs_four.png"
 				]
 			}
 		}
