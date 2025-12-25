@@ -271,6 +271,46 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
+			"name": "Lower Body Front",
+			"points": "body",
+			"automeshTemplate": "body",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
+			"graphicalLayers": [
+				{
+					"name": "",
+					"colorizationKey": "mark"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "lower_body"
+				}
+			],
+			"imageMap": {
+				"none": [
+					""
+				],
+				"waist": [
+					"waist_upper.png"
+				],
+				"hips": [
+					"waist_lower.png"
+				],
+				"both": [
+					"waist_both.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
 			"name": "Thighs Front",
 			"points": "body",
 			"automeshTemplate": "body",

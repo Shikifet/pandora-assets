@@ -88,6 +88,31 @@ DefineBodypart({
 				},
 			],
 		},
+		lower_body: {
+			type: 'typed',
+			name: 'Lower Body Marks',
+			expression: 'Lower Body Marks',
+			interactionType: ItemInteractionType.ACCESS_ONLY,
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'waist',
+					name: 'Waist',
+				},
+				{
+					id: 'hips',
+					name: 'Hips',
+				},
+				{
+					id: 'both',
+					name: 'Both',
+				},
+			],
+		},
 		thighs: {
 			type: 'typed',
 			name: 'Thighs Marks',
