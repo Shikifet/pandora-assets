@@ -145,7 +145,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Chest",
+			"name": "Chest Over",
 			"points": "breasts",
 			"automeshTemplate": "breasts",
 			"disabledTemplateParts": [
@@ -170,6 +170,46 @@
 				],
 				"over": [
 					"chest_top.png"
+				],
+				"both": [
+					"chest_top.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Chest Below",
+			"points": "body",
+			"automeshTemplate": "body",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
+			"graphicalLayers": [
+				{
+					"name": "",
+					"colorizationKey": "mark"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "chest"
+				}
+			],
+			"imageMap": {
+				"none": [
+					""
+				],
+				"below": [
+					"chest_bottom.png"
+				],
+				"both": [
+					"chest_bottom.png"
 				]
 			}
 		}

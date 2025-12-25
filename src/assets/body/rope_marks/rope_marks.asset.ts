@@ -8,7 +8,7 @@ DefineBodypart({
 	colorization: {
 		mark: {
 			name: 'Color',
-			default: '#EE7664B3',
+			default: '#F94B3356',
 			minAlpha: 0.1,
 		},
 	},
@@ -77,6 +77,10 @@ DefineBodypart({
 				{
 					id: 'below',
 					name: 'Below Breast',
+				},
+				{
+					id: 'both',
+					name: 'Both',
 				},
 			]
 		}
