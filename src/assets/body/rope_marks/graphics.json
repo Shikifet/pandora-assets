@@ -439,6 +439,7 @@
 			"points": "body",
 			"automeshTemplate": "body",
 			"disabledTemplateParts": [
+				"body",
 				"arms"
 			],
 			"graphicalLayers": [
@@ -477,10 +478,11 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Legs Front",
+			"name": "Legs Back",
 			"points": "body",
 			"automeshTemplate": "belowBodyMirror",
 			"disabledTemplateParts": [
+				"body",
 				"arms"
 			],
 			"graphicalLayers": [
