@@ -36,6 +36,58 @@ DefineRoomDeviceAsset({
 		},
 	},
 	modules: {
+		align: {
+			type: 'typed',
+			name: 'Bar alignment',
+			staticConfig: { slotName: 'over' },
+			variants: [
+				{
+					id: 'anus',
+					name: 'Ass',
+					default: true,
+					properties: {
+						slotProperties: {
+							over: {
+								attributes: {
+									provides: [
+										'Toy',
+										'Anus_item',
+										'Anus_insert',
+										'Anus_insert_deep',
+										'Anus_protruding',
+									],
+								},
+							},
+						},
+						stateFlags: {
+							provides: ['align_anus'],
+						},
+					},
+				},
+				{
+					id: 'vulva',
+					name: 'Pussy',
+					properties: {
+						slotProperties: {
+							over: {
+								attributes: {
+									provides: [
+										'Toy',
+										'Vulva_item',
+										'Vulva_insert',
+										'Vulva_insert_deep',
+										'Crotch_protruding',
+									],
+								},
+							},
+						},
+						stateFlags: {
+							provides: ['align_vulva'],
+						},
+					},
+				},
+			],
+		},
 		bar: {
 			type: 'typed',
 			name: 'Bar position',
@@ -73,6 +125,9 @@ DefineRoomDeviceAsset({
 								},
 							},
 						},
+						stateFlags: {
+							provides: ['bar_extended'],
+						},
 					},
 				},
 				{
@@ -90,6 +145,9 @@ DefineRoomDeviceAsset({
 									},
 								},
 							},
+						},
+						stateFlags: {
+							provides: ['bar_extended'],
 						},
 					},
 				},
@@ -109,6 +167,32 @@ DefineRoomDeviceAsset({
 		x: 0,
 		y: 0,
 	},
+	stateFlagCombinations: [
+		{
+			requiredFlags: ['bar_extended', 'align_anus'],
+			properties: {
+				slotProperties: {
+					over: {
+						attributes: {
+							requires: ['!Anus_cover'],
+						},
+					},
+				},
+			},
+		},
+		{
+			requiredFlags: ['bar_extended', 'align_vulva'],
+			properties: {
+				slotProperties: {
+					over: {
+						attributes: {
+							requires: ['Vulva_spread', '!Vulva_cover'],
+						},
+					},
+				},
+			},
+		},
+	],
 	ownership: {
 		responsibleContributor: 'Shikifet <shikifet@gmail.com>',
 		credits: ['Shikifet'],
