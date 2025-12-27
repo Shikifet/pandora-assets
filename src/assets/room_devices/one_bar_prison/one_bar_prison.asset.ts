@@ -1,7 +1,7 @@
 DefineRoomDeviceAsset({
 	name: 'One Bar Prison',
 	size: 'huge',
-	preview: null,//'preview.png',
+	preview: 'preview.png',
 	colorization: {
 		dildo: {
 			name: 'Dildo',
