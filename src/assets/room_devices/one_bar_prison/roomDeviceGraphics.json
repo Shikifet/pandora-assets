@@ -1,0 +1,114 @@
+{
+	"layers": [
+		{
+			"x": -160,
+			"y": -80,
+			"width": 320,
+			"height": 160,
+			"type": "sprite",
+			"colorizationKey": "base",
+			"image": "base.png"
+		},
+		{
+			"x": -30,
+			"y": -450,
+			"width": 60,
+			"height": 400,
+			"type": "sprite",
+			"colorizationKey": "bar",
+			"image": "bar_upper.png",
+			"offsetOverrides": [
+				{
+					"offset": {
+						"x": -30,
+						"y": -575
+					},
+					"condition": [
+						[
+							{
+								"module": "bar",
+								"operator": "=",
+								"value": "extended"
+							}
+						]
+					]
+				},
+				{
+					"offset": {
+						"x": -30,
+						"y": -620
+					},
+					"condition": [
+						[
+							{
+								"module": "bar",
+								"operator": "=",
+								"value": "extendedMax"
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"x": -30,
+			"y": -390,
+			"width": 60,
+			"height": 400,
+			"type": "sprite",
+			"colorizationKey": "bar",
+			"image": "bar_lower.png"
+		},
+		{
+			"x": -22,
+			"y": -525,
+			"width": 44,
+			"height": 126,
+			"type": "sprite",
+			"colorizationKey": "dildo",
+			"image": "dildo.png",
+			"offsetOverrides": [
+				{
+					"offset": {
+						"x": -22,
+						"y": -650
+					},
+					"condition": [
+						[
+							{
+								"module": "bar",
+								"operator": "=",
+								"value": "extended"
+							}
+						]
+					]
+				},
+				{
+					"offset": {
+						"x": -22,
+						"y": -670
+					},
+					"condition": [
+						[
+							{
+								"module": "bar",
+								"operator": "=",
+								"value": "extendedMax"
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"type": "slot",
+			"slot": "over",
+			"characterPosition": {
+				"offsetX": 0,
+				"offsetY": 0,
+				"relativeScale": 1
+			}
+		}
+	],
+	"slots": {}
+}
