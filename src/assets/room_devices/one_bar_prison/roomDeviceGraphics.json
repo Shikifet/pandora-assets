@@ -2,9 +2,9 @@
 	"layers": [
 		{
 			"x": -160,
-			"y": -80,
+			"y": -110,
 			"width": 320,
-			"height": 160,
+			"height": 240,
 			"type": "sprite",
 			"colorizationKey": "base",
 			"image": "base.png"
@@ -51,15 +51,6 @@
 			]
 		},
 		{
-			"x": -30,
-			"y": -390,
-			"width": 60,
-			"height": 400,
-			"type": "sprite",
-			"colorizationKey": "bar",
-			"image": "bar_lower.png"
-		},
-		{
 			"x": -22,
 			"y": -525,
 			"width": 44,
@@ -88,6 +79,49 @@
 						"x": -22,
 						"y": -670
 					},
+					"condition": [
+						[
+							{
+								"module": "bar",
+								"operator": "=",
+								"value": "extendedMax"
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"x": -30,
+			"y": -390,
+			"width": 60,
+			"height": 400,
+			"type": "sprite",
+			"colorizationKey": "bar",
+			"image": "bar_lower.png"
+		},
+		{
+			"x": -30,
+			"y": -390,
+			"width": 60,
+			"height": 400,
+			"type": "sprite",
+			"image": "bar_holes.png",
+			"imageOverrides": [
+				{
+					"image": "bar_holes_extended_normal.png",
+					"condition": [
+						[
+							{
+								"module": "bar",
+								"operator": "=",
+								"value": "extended"
+							}
+						]
+					]
+				},
+				{
+					"image": "bar_holes_extended_max.png",
 					"condition": [
 						[
 							{

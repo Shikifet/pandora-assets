@@ -45,6 +45,18 @@ DefineRoomDeviceAsset({
 					id: 'retracted',
 					name: 'Retracted',
 					default: true,
+					properties: {
+						slotProperties: {
+							over: {
+								poseLimits: {
+									bones: {
+										leg_r: [[-37, 5]],
+										leg_l: [[-37, 5]],
+									},
+								},
+							},
+						},
+					},
 				},
 				{
 					id: 'extended',
@@ -55,7 +67,8 @@ DefineRoomDeviceAsset({
 							over: {
 								poseLimits: {
 									bones: {
-										tiptoeing: [[0, 180]]
+										leg_r: [[-6, 5]],
+										leg_l: [[-6, 5]],
 									},
 								},
 							},
@@ -71,7 +84,9 @@ DefineRoomDeviceAsset({
 							over: {
 								poseLimits: {
 									bones: {
-										tiptoeing: [[160, 180]]
+										tiptoeing: [[160, 180]],
+										leg_r: [[-6, 5]],
+										leg_l: [[-6, 5]],
 									},
 								},
 							},
