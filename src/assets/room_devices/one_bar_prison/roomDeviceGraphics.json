@@ -15,8 +15,6 @@
 			"width": 60,
 			"height": 400,
 			"type": "sprite",
-			"colorizationKey": "bar",
-			"image": "bar_upper.png",
 			"offsetOverrides": [
 				{
 					"offset": {
@@ -48,7 +46,9 @@
 						]
 					]
 				}
-			]
+			],
+			"colorizationKey": "bar",
+			"image": "bar_upper.png"
 		},
 		{
 			"x": -22,
@@ -56,8 +56,6 @@
 			"width": 44,
 			"height": 126,
 			"type": "sprite",
-			"colorizationKey": "dildo",
-			"image": "dildo.png",
 			"offsetOverrides": [
 				{
 					"offset": {
@@ -89,7 +87,9 @@
 						]
 					]
 				}
-			]
+			],
+			"colorizationKey": "dildo",
+			"image": "dildo.png"
 		},
 		{
 			"x": -30,
