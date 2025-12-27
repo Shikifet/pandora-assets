@@ -46,19 +46,6 @@ DefineRoomDeviceAsset({
 					name: 'Ass',
 					default: true,
 					properties: {
-						slotProperties: {
-							over: {
-								attributes: {
-									provides: [
-										'Toy',
-										'Anus_item',
-										'Anus_insert',
-										'Anus_insert_deep',
-										'Anus_protruding',
-									],
-								},
-							},
-						},
 						stateFlags: {
 							provides: ['align_anus'],
 						},
@@ -68,19 +55,6 @@ DefineRoomDeviceAsset({
 					id: 'vulva',
 					name: 'Pussy',
 					properties: {
-						slotProperties: {
-							over: {
-								attributes: {
-									provides: [
-										'Toy',
-										'Vulva_item',
-										'Vulva_insert',
-										'Vulva_insert_deep',
-										'Crotch_protruding',
-									],
-								},
-							},
-						},
 						stateFlags: {
 							provides: ['align_vulva'],
 						},
@@ -158,7 +132,7 @@ DefineRoomDeviceAsset({
 			name: 'Bar Lock',
 			staticConfig: { slotName: 'over' },
 			lockedProperties: {
-				blockModules: ['bar'],
+				blockModules: ['align', 'bar'],
 			},
 		},
 	},
@@ -174,6 +148,13 @@ DefineRoomDeviceAsset({
 				slotProperties: {
 					over: {
 						attributes: {
+							provides: [
+								'Toy',
+								'Anus_item',
+								'Anus_insert',
+								'Anus_insert_deep',
+								'Anus_protruding',
+							],
 							requires: ['!Anus_cover'],
 						},
 					},
@@ -186,6 +167,13 @@ DefineRoomDeviceAsset({
 				slotProperties: {
 					over: {
 						attributes: {
+							provides: [
+								'Toy',
+								'Vulva_item',
+								'Vulva_insert',
+								'Vulva_insert_deep',
+								'Crotch_protruding',
+							],
 							requires: ['Vulva_spread', '!Vulva_cover'],
 						},
 					},
