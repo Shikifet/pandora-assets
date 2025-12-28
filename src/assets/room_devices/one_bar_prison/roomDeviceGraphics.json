@@ -169,6 +169,11 @@
 											"module": "bar",
 											"operator": "!=",
 											"value": "retracted"
+										},
+										{
+											"module": "align",
+											"operator": "=",
+											"value": "anus"
 										}
 									]
 								]
