@@ -51,7 +51,7 @@
 			"image": "bar_upper.png"
 		},
 		{
-			"x": -22,
+			"x": -24,
 			"y": -525,
 			"width": 44,
 			"height": 126,
@@ -59,7 +59,7 @@
 			"offsetOverrides": [
 				{
 					"offset": {
-						"x": -22,
+						"x": -23,
 						"y": -650
 					},
 					"condition": [
@@ -74,7 +74,7 @@
 				},
 				{
 					"offset": {
-						"x": -22,
+						"x": -23,
 						"y": -670
 					},
 					"condition": [
