@@ -1,0 +1,221 @@
+{
+	"layers": [
+		{
+			"x": -160,
+			"y": -110,
+			"width": 320,
+			"height": 240,
+			"type": "sprite",
+			"colorizationKey": "base",
+			"image": "base.png"
+		},
+		{
+			"x": -30,
+			"y": -450,
+			"width": 60,
+			"height": 400,
+			"type": "sprite",
+			"offsetOverrides": [
+				{
+					"offset": {
+						"x": -30,
+						"y": -575
+					},
+					"condition": [
+						[
+							{
+								"module": "bar",
+								"operator": "=",
+								"value": "extended"
+							}
+						]
+					]
+				},
+				{
+					"offset": {
+						"x": -30,
+						"y": -620
+					},
+					"condition": [
+						[
+							{
+								"module": "bar",
+								"operator": "=",
+								"value": "extendedMax"
+							}
+						]
+					]
+				}
+			],
+			"colorizationKey": "bar",
+			"image": "bar_upper.png"
+		},
+		{
+			"x": -24,
+			"y": -525,
+			"width": 44,
+			"height": 126,
+			"type": "sprite",
+			"offsetOverrides": [
+				{
+					"offset": {
+						"x": -23,
+						"y": -650
+					},
+					"condition": [
+						[
+							{
+								"module": "bar",
+								"operator": "=",
+								"value": "extended"
+							}
+						]
+					]
+				},
+				{
+					"offset": {
+						"x": -23,
+						"y": -670
+					},
+					"condition": [
+						[
+							{
+								"module": "bar",
+								"operator": "=",
+								"value": "extendedMax"
+							}
+						]
+					]
+				}
+			],
+			"colorizationKey": "dildo",
+			"image": "dildo.png"
+		},
+		{
+			"x": -30,
+			"y": -390,
+			"width": 60,
+			"height": 400,
+			"type": "sprite",
+			"colorizationKey": "bar",
+			"image": "bar_lower.png"
+		},
+		{
+			"x": -30,
+			"y": -390,
+			"width": 60,
+			"height": 400,
+			"type": "sprite",
+			"image": "bar_holes.png",
+			"imageOverrides": [
+				{
+					"image": "bar_holes_extended_normal.png",
+					"condition": [
+						[
+							{
+								"module": "bar",
+								"operator": "=",
+								"value": "extended"
+							}
+						]
+					]
+				},
+				{
+					"image": "bar_holes_extended_max.png",
+					"condition": [
+						[
+							{
+								"module": "bar",
+								"operator": "=",
+								"value": "extendedMax"
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"type": "slot",
+			"slot": "over",
+			"characterPosition": {
+				"offsetX": 0,
+				"offsetY": 0,
+				"relativeScale": 1
+			}
+		}
+	],
+	"slots": {
+		"over": {
+			"layers": [
+				{
+					"x": 0,
+					"y": 0,
+					"width": 1000,
+					"height": 1500,
+					"type": "mesh",
+					"name": "Dildo",
+					"priority": "ABOVE_BODY",
+					"points": "static",
+					"mirror": 0,
+					"colorizationKey": "dildo",
+					"image": {
+						"image": "",
+						"overrides": [
+							{
+								"image": "dildo_inside_front.png",
+								"condition": [
+									[
+										{
+											"module": "bar",
+											"operator": "!=",
+											"value": "retracted"
+										},
+										{
+											"module": "align",
+											"operator": "=",
+											"value": "vulva"
+										}
+									]
+								]
+							}
+						]
+					}
+				},
+				{
+					"x": 0,
+					"y": 0,
+					"width": 1000,
+					"height": 1500,
+					"type": "mesh",
+					"name": "Plug",
+					"priority": "BELOW_BODY",
+					"points": "static",
+					"mirror": 0,
+					"colorizationKey": "dildo",
+					"image": {
+						"image": "",
+						"overrides": [
+							{
+								"image": "dildo_inside.png",
+								"condition": [
+									[
+										{
+											"module": "bar",
+											"operator": "!=",
+											"value": "retracted"
+										},
+										{
+											"module": "align",
+											"operator": "=",
+											"value": "anus"
+										}
+									]
+								]
+							}
+						]
+					}
+				}
+			]
+		}
+	}
+}
