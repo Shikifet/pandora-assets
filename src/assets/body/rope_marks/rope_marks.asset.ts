@@ -24,7 +24,7 @@ DefineBodypart({
 		upperarms: {
 			type: 'typed',
 			name: 'Upper Arms Marks',
-			expression: 'Left Butt Marks',
+			expression: 'Upper Arms Marks',
 			interactionType: ItemInteractionType.ACCESS_ONLY,
 			variants: [
 				{
@@ -49,7 +49,7 @@ DefineBodypart({
 		forearms: {
 			type: 'typed',
 			name: 'Fore Arms Marks',
-			expression: 'Left Butt Marks',
+			expression: 'Fore Arms Marks',
 			interactionType: ItemInteractionType.ACCESS_ONLY,
 			variants: [
 				{
@@ -70,7 +70,7 @@ DefineBodypart({
 		chest: {
 			type: 'typed',
 			name: 'Upper Body Marks',
-			expression: 'Chest Marks',
+			expression: 'Upper Body Marks',
 			interactionType: ItemInteractionType.ACCESS_ONLY,
 			variants: [
 				{
