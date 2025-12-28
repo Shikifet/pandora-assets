@@ -154,6 +154,40 @@
 					"height": 1500,
 					"type": "mesh",
 					"name": "Dildo",
+					"priority": "ABOVE_BODY",
+					"points": "static",
+					"mirror": 0,
+					"colorizationKey": "dildo",
+					"image": {
+						"image": "",
+						"overrides": [
+							{
+								"image": "dildo_inside_front.png",
+								"condition": [
+									[
+										{
+											"module": "bar",
+											"operator": "!=",
+											"value": "retracted"
+										},
+										{
+											"module": "align",
+											"operator": "=",
+											"value": "vulva"
+										}
+									]
+								]
+							}
+						]
+					}
+				},
+				{
+					"x": 0,
+					"y": 0,
+					"width": 1000,
+					"height": 1500,
+					"type": "mesh",
+					"name": "Plug",
 					"priority": "BELOW_BODY",
 					"points": "static",
 					"mirror": 0,
