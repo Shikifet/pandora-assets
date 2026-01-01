@@ -1,0 +1,69 @@
+{
+	"layers": [
+		{
+			"x": -250,
+			"y": -850,
+			"width": 500,
+			"height": 850,
+			"type": "sprite",
+			"colorizationKey": "suitcase",
+			"image": "suitcase_bottom.png"
+		},
+		{
+			"x": -250,
+			"y": -850,
+			"width": 500,
+			"height": 850,
+			"type": "sprite",
+			"colorizationKey": "suitcase",
+			"image": "",
+			"imageOverrides": [
+				{
+					"image": "suitcase_belts_anchor_spread.png",
+					"condition": [
+						[
+							{
+								"module": "restraints",
+								"operator": "!=",
+								"value": "foam"
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"x": -250,
+			"y": -850,
+			"width": 500,
+			"height": 850,
+			"type": "sprite",
+			"colorizationKey": "suitcase",
+			"image": "",
+			"imageOverrides": [
+				{
+					"image": "suitcase_filler_spread.png",
+					"condition": [
+						[
+							{
+								"module": "restraints",
+								"operator": "!=",
+								"value": "belts"
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"x": -250,
+			"y": -850,
+			"width": 500,
+			"height": 850,
+			"type": "sprite",
+			"colorizationKey": "suitcase",
+			"image": "suitcase_frame.png"
+		}
+	],
+	"slots": {}
+}
