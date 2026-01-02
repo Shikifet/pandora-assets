@@ -5,7 +5,15 @@ DefineRoomDeviceAsset({
 	colorization: {
 		suitcase: {
 			name: 'Suitcase',
-			default: '#a5a5a5ff',
+			default: '#CECECEFF',
+		},
+		suitcase_background: {
+			name: 'Suitcase Bottom',
+			default: '#CECECEFF',
+		},
+		filler: {
+			name: 'Filler',
+			default: '#646464ff',
 		},
 		belts: {
 			name: 'Belts',
@@ -44,7 +52,7 @@ DefineRoomDeviceAsset({
 	modules: {
 		/*position: {
 			type: 'typed',
-			name: 'Foam insert',
+			name: 'Filler insert',
 			staticConfig: { slotName: 'inside' },
 			variants: [
 				{
@@ -67,7 +75,7 @@ DefineRoomDeviceAsset({
 		*/
 		restraints: {
 			type: 'typed',
-			name: 'Foam insert',
+			name: 'Filler insert',
 			staticConfig: { slotName: 'inside' },
 			variants: [
 				{
@@ -79,8 +87,8 @@ DefineRoomDeviceAsset({
 					},
 				},
 				{
-					id: 'foam',
-					name: 'Foam',
+					id: 'filler',
+					name: 'Filler',
 					properties: {
 
 					},
@@ -92,6 +100,22 @@ DefineRoomDeviceAsset({
 
 					},
 				}
+			],
+		},
+		filler: {
+			type: 'typed',
+			name: 'Filler Type',
+			staticConfig: { slotName: 'inside' },
+			variants: [
+				{
+					id: 'basic',
+					name: 'Basic',
+					default: true,
+				},
+				{
+					id: 'foam',
+					name: 'Foam',
+				},
 			],
 		},
 	},

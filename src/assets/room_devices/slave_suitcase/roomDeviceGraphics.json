@@ -6,7 +6,7 @@
 			"width": 500,
 			"height": 850,
 			"type": "sprite",
-			"colorizationKey": "suitcase",
+			"colorizationKey": "suitcase_background",
 			"image": "suitcase_bottom.png"
 		},
 		{
@@ -25,7 +25,7 @@
 							{
 								"module": "restraints",
 								"operator": "!=",
-								"value": "foam"
+								"value": "filler"
 							}
 						]
 					]
@@ -38,9 +38,26 @@
 			"width": 500,
 			"height": 850,
 			"type": "sprite",
-			"colorizationKey": "suitcase",
+			"colorizationKey": "filler",
 			"image": "",
 			"imageOverrides": [
+				{
+					"image": "suitcase_filler_foam_spread.png",
+					"condition": [
+						[
+							{
+								"module": "filler",
+								"operator": "=",
+								"value": "foam"
+							},
+							{
+								"module": "restraints",
+								"operator": "!=",
+								"value": "belts"
+							}
+						]
+					]
+				},
 				{
 					"image": "suitcase_filler_spread.png",
 					"condition": [
@@ -103,7 +120,7 @@
 										{
 											"module": "restraints",
 											"operator": "!=",
-											"value": "foam"
+											"value": "filler"
 										}
 									]
 								]
@@ -120,7 +137,7 @@
 										{
 											"module": "restraints",
 											"operator": "!=",
-											"value": "foam"
+											"value": "filler"
 										}
 									]
 								]
@@ -137,7 +154,7 @@
 										{
 											"module": "restraints",
 											"operator": "!=",
-											"value": "foam"
+											"value": "filler"
 										}
 									]
 								]
@@ -149,7 +166,7 @@
 										{
 											"module": "restraints",
 											"operator": "!=",
-											"value": "foam"
+											"value": "filler"
 										}
 									]
 								]
@@ -183,7 +200,7 @@
 										{
 											"module": "restraints",
 											"operator": "!=",
-											"value": "foam"
+											"value": "filler"
 										}
 									]
 								]
@@ -195,7 +212,7 @@
 										{
 											"module": "restraints",
 											"operator": "!=",
-											"value": "foam"
+											"value": "filler"
 										}
 									]
 								]
@@ -229,7 +246,7 @@
 										{
 											"module": "restraints",
 											"operator": "!=",
-											"value": "foam"
+											"value": "filler"
 										}
 									]
 								]
@@ -241,7 +258,7 @@
 										{
 											"module": "restraints",
 											"operator": "!=",
-											"value": "foam"
+											"value": "filler"
 										}
 									]
 								]
@@ -270,7 +287,7 @@
 										{
 											"module": "restraints",
 											"operator": "!=",
-											"value": "foam"
+											"value": "filler"
 										}
 									]
 								]
@@ -299,7 +316,7 @@
 										{
 											"module": "restraints",
 											"operator": "!=",
-											"value": "foam"
+											"value": "filler"
 										}
 									]
 								]
