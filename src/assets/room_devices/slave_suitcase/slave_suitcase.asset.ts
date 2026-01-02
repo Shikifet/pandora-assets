@@ -30,6 +30,12 @@ DefineRoomDeviceAsset({
 					},
 					bones: {
 						character_rotation: 0,
+						arm_l: 45,
+						arm_r: 45,
+						elbow_l: -130,
+						elbow_r: -130,
+						leg_l: -40,
+						leg_r: -40,
 					},
 				},
 			},

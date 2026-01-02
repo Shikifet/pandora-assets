@@ -15,7 +15,7 @@
 			"width": 500,
 			"height": 850,
 			"type": "sprite",
-			"colorizationKey": "suitcase",
+			"colorizationKey": "belts_buckles",
 			"image": "",
 			"imageOverrides": [
 				{
@@ -63,7 +63,251 @@
 			"type": "sprite",
 			"colorizationKey": "suitcase",
 			"image": "suitcase_frame.png"
+		},
+		{
+			"type": "slot",
+			"slot": "inside",
+			"characterPosition": {
+				"offsetX": 0,
+				"offsetY": -140,
+				"relativeScale": 1
+			}
 		}
 	],
-	"slots": {}
+	"slots": {
+		"inside": {
+			"layers": [
+				{
+					"x": 0,
+					"y": 0,
+					"width": 1000,
+					"height": 1500,
+					"type": "mesh",
+					"name": "Belts",
+					"priority": "ABOVE_BODY",
+					"points": "static",
+					"mirror": 0,
+					"colorizationKey": "belts",
+					"image": {
+						"image": "",
+						"overrides": [
+							{
+								"image": "inside_belts_body_4.png",
+								"condition": [
+									[
+										{
+											"bone": "waist",
+											"operator": ">=",
+											"value": 60
+										},
+										{
+											"module": "restraints",
+											"operator": "!=",
+											"value": "foam"
+										}
+									]
+								]
+							},
+							{
+								"image": "inside_belts_body_3.png",
+								"condition": [
+									[
+										{
+											"bone": "waist",
+											"operator": ">=",
+											"value": -80
+										},
+										{
+											"module": "restraints",
+											"operator": "!=",
+											"value": "foam"
+										}
+									]
+								]
+							},
+							{
+								"image": "inside_belts_body_2.png",
+								"condition": [
+									[
+										{
+											"bone": "waist",
+											"operator": ">=",
+											"value": -160
+										},
+										{
+											"module": "restraints",
+											"operator": "!=",
+											"value": "foam"
+										}
+									]
+								]
+							},
+							{
+								"image": "inside_belts_body_1.png",
+								"condition": [
+									[
+										{
+											"module": "restraints",
+											"operator": "!=",
+											"value": "foam"
+										}
+									]
+								]
+							}
+						]
+					}
+				},
+				{
+					"x": 0,
+					"y": 0,
+					"width": 1000,
+					"height": 1500,
+					"type": "mesh",
+					"name": "Belts Arms",
+					"priority": "ARM_LEFT",
+					"points": "static",
+					"mirror": 0,
+					"colorizationKey": "belts",
+					"image": {
+						"image": "",
+						"overrides": [
+							{
+								"image": "inside_belts_arms_2.png",
+								"condition": [
+									[
+										{
+											"bone": "arm_width",
+											"operator": ">=",
+											"value": 0
+										},
+										{
+											"module": "restraints",
+											"operator": "!=",
+											"value": "foam"
+										}
+									]
+								]
+							},
+							{
+								"image": "inside_belts_arms_1.png",
+								"condition": [
+									[
+										{
+											"module": "restraints",
+											"operator": "!=",
+											"value": "foam"
+										}
+									]
+								]
+							}
+						]
+					}
+				},
+				{
+					"x": 0,
+					"y": 0,
+					"width": 1000,
+					"height": 1500,
+					"type": "mesh",
+					"name": "Belts",
+					"priority": "ABOVE_BODY",
+					"points": "static",
+					"mirror": 0,
+					"colorizationKey": "belts",
+					"image": {
+						"image": "",
+						"overrides": [
+							{
+								"image": "inside_belts_spread_legs_2.png",
+								"condition": [
+									[
+										{
+											"bone": "leg_width",
+											"operator": ">=",
+											"value": 40
+										},
+										{
+											"module": "restraints",
+											"operator": "!=",
+											"value": "foam"
+										}
+									]
+								]
+							},
+							{
+								"image": "inside_belts_spread_legs_1.png",
+								"condition": [
+									[
+										{
+											"module": "restraints",
+											"operator": "!=",
+											"value": "foam"
+										}
+									]
+								]
+							}
+						]
+					}
+				},
+				{
+					"x": 0,
+					"y": 0,
+					"width": 1000,
+					"height": 1500,
+					"type": "mesh",
+					"name": "Belts",
+					"priority": "ABOVE_BODY",
+					"points": "static",
+					"mirror": 0,
+					"colorizationKey": "belts_buckles",
+					"image": {
+						"image": "",
+						"overrides": [
+							{
+								"image": "inside_belts_buckles_spread.png",
+								"condition": [
+									[
+										{
+											"module": "restraints",
+											"operator": "!=",
+											"value": "foam"
+										}
+									]
+								]
+							}
+						]
+					}
+				},
+				{
+					"x": 0,
+					"y": 0,
+					"width": 1000,
+					"height": 1500,
+					"type": "mesh",
+					"name": "Belts Details",
+					"priority": "ABOVE_BODY",
+					"points": "static",
+					"mirror": 0,
+					"colorizationKey": "belts",
+					"image": {
+						"image": "",
+						"overrides": [
+							{
+								"image": "inside_belts_details_spread.png",
+								"condition": [
+									[
+										{
+											"module": "restraints",
+											"operator": "!=",
+											"value": "foam"
+										}
+									]
+								]
+							}
+						]
+					}
+				}
+			]
+		}
+	}
 }
