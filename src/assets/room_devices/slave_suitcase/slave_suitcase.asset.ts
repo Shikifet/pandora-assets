@@ -88,7 +88,6 @@ DefineRoomDeviceAsset({
 				{
 					id: 'closed',
 					name: 'Closed',
-					default: true,
 					properties: {
 						slotProperties: {
 							inside: {
@@ -105,6 +104,7 @@ DefineRoomDeviceAsset({
 				{
 					id: 'open',
 					name: 'Open',
+					default: true,
 				},
 			],
 		},
@@ -142,6 +142,27 @@ DefineRoomDeviceAsset({
 									stimulus: 6,
 								},
 							},
+						},
+					},
+				}
+			],
+		},
+		toys: {
+			type: 'typed',
+			name: 'Toys',
+			staticConfig: { slotName: 'inside' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'dildo',
+					name: 'Dildo',
+					properties: {
+						stateFlags: {
+							provides: ['dildo'],
 						},
 					},
 				}
@@ -222,6 +243,25 @@ DefineRoomDeviceAsset({
 							covers: [
 								'Mouth_item',
 							],
+						},
+					},
+				},
+			},
+		},
+		{
+			requiredFlags: ['closed_door', 'dildo'],
+			properties: {
+				slotProperties: {
+					inside: {
+						attributes: {
+							provides: [
+								'Toy',
+								'Vulva_item',
+								'Vulva_insert',
+								'Vulva_insert_deep',
+								'Crotch_protruding',
+							],
+							requires: ['Vulva_spread', '!Vulva_cover'],
 						},
 					},
 				},
