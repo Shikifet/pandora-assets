@@ -89,13 +89,6 @@ DefineRoomDeviceAsset({
 					id: 'closed',
 					name: 'Closed',
 					properties: {
-						slotProperties: {
-							inside: {
-								effects: {
-									blind: 10,
-								},
-							},
-						},
 						stateFlags: {
 							provides: ['closed_door'],
 						},
@@ -104,6 +97,27 @@ DefineRoomDeviceAsset({
 				{
 					id: 'open',
 					name: 'Open',
+					default: true,
+				},
+			],
+		},
+		door_type: {
+			type: 'typed',
+			name: 'Door Type',
+			staticConfig: { slotName: 'inside' },
+			variants: [
+				{
+					id: 'opaque',
+					name: 'Opaque',
+					properties: {
+						stateFlags: {
+							provides: ['blindness'],
+						},
+					},
+				},
+				{
+					id: 'translucent',
+					name: 'Translucent Window',
 					default: true,
 				},
 			],
@@ -262,6 +276,18 @@ DefineRoomDeviceAsset({
 								'Crotch_protruding',
 							],
 							requires: ['Vulva_spread', '!Vulva_cover'],
+						},
+					},
+				},
+			},
+		},
+		{
+			requiredFlags: ['closed_door', 'blindness'],
+			properties: {
+				slotProperties: {
+					inside: {
+						effects: {
+							blind: 10,
 						},
 					},
 				},

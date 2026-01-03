@@ -292,6 +292,55 @@
 				}
 			]
 		},
+				{
+			"x": -610,
+			"y": -950,
+			"width": 354,
+			"height": 1050,
+			"type": "sprite",
+			"image": "",
+			"imageOverrides": [
+				{
+					"image": "suitcase_door_latch.png",
+					"condition": [
+						[
+							{
+								"module": "door",
+								"operator": "=",
+								"value": "open"
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"x": -250,
+			"y": -850,
+			"width": 520,
+			"height": 850,
+			"type": "sprite",
+			"image": "",
+			"imageOverrides": [
+				{
+					"image": "suitcase_door_glass_window.png",
+					"condition": [
+						[
+							{
+								"module": "door",
+								"operator": "=",
+								"value": "closed"
+							},
+							{
+								"module": "door_type",
+								"operator": "=",
+								"value": "translucent"
+							}
+						]
+					]
+				}
+			]
+		},
 		{
 			"x": -610,
 			"y": -950,
@@ -323,6 +372,23 @@
 			"image": "",
 			"colorizationKey": "suitcase",
 			"imageOverrides": [
+				{
+					"image": "suitcase_door_front_translucent.png",
+					"condition": [
+						[
+							{
+								"module": "door",
+								"operator": "=",
+								"value": "closed"
+							},
+							{
+								"module": "door_type",
+								"operator": "=",
+								"value": "translucent"
+							}
+						]
+					]
+				},
 				{
 					"image": "suitcase_door_front.png",
 					"condition": [
