@@ -73,6 +73,22 @@ DefineRoomDeviceAsset({
 			],
 		},
 		*/
+		door: {
+			type: 'typed',
+			name: 'Door',
+			staticConfig: { slotName: 'inside' },
+			variants: [
+				{
+					id: 'closed',
+					name: 'Closed',
+					default: true,
+				},
+				{
+					id: 'open',
+					name: 'Open',
+				}
+			],
+		},
 		restraints: {
 			type: 'typed',
 			name: 'Filler insert',

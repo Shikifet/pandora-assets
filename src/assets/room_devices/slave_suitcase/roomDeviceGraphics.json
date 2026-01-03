@@ -89,6 +89,124 @@
 				"offsetY": -140,
 				"relativeScale": 1
 			}
+		},
+		{
+			"x": -610,
+			"y": -950,
+			"width": 354,
+			"height": 1050,
+			"type": "sprite",
+			"colorizationKey": "suitcase_background",
+			"image": "",
+			"imageOverrides": [
+				{
+					"image": "suitcase_door_bottom.png",
+					"condition": [
+						[
+							{
+								"module": "door",
+								"operator": "=",
+								"value": "open"
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"x": -610,
+			"y": -950,
+			"width": 354,
+			"height": 1050,
+			"type": "sprite",
+			"colorizationKey": "filler",
+			"image": "",
+			"imageOverrides": [
+				{
+					"image": "suitcase_door_filler_foam_spread.png",
+					"condition": [
+						[
+							{
+								"module": "restraints",
+								"operator": "!=",
+								"value": "belts"
+							},
+							{
+								"module": "filler",
+								"operator": "=",
+								"value": "foam"
+							},
+							{
+								"module": "door",
+								"operator": "=",
+								"value": "open"
+							}
+						]
+					]
+				},
+				{
+					"image": "suitcase_door_filler_spread.png",
+					"condition": [
+						[
+							{
+								"module": "restraints",
+								"operator": "!=",
+								"value": "belts"
+							},
+							{
+								"module": "door",
+								"operator": "=",
+								"value": "open"
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"x": -610,
+			"y": -950,
+			"width": 354,
+			"height": 1050,
+			"type": "sprite",
+			"colorizationKey": "suitcase",
+			"image": "",
+			"imageOverrides": [
+				{
+					"image": "suitcase_door_frame.png",
+					"condition": [
+						[
+							{
+								"module": "door",
+								"operator": "=",
+								"value": "open"
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"x": -610,
+			"y": -950,
+			"width": 354,
+			"height": 1050,
+			"type": "sprite",
+			"image": "",
+			"imageOverrides": [
+				{
+					"image": "suitcase_door_latch.png",
+					"condition": [
+						[
+							{
+								"module": "door",
+								"operator": "=",
+								"value": "open"
+							}
+						]
+					]
+				}
+			]
 		}
 	],
 	"slots": {
