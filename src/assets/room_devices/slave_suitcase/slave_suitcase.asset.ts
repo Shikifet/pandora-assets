@@ -90,6 +90,13 @@ DefineRoomDeviceAsset({
 					name: 'Closed',
 					default: true,
 					properties: {
+						slotProperties: {
+							inside: {
+								effects: {
+									blind: 10,
+								},
+							},
+						},
 						stateFlags: {
 							provides: ['closed_door'],
 						},
