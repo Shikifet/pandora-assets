@@ -27,7 +27,10 @@ DefineRoomDeviceAsset({
 			name: 'Belts Buckles',
 			default: '#d7d7d7ff',
 		},
-
+		dildo: {
+			name: 'Suitcase',
+			default: '#d000bfff',
+		},
 	},
 	staticAttributes: ['Play_furniture'],
 	slots: {
@@ -86,17 +89,56 @@ DefineRoomDeviceAsset({
 					id: 'closed',
 					name: 'Closed',
 					default: true,
+					properties: {
+						stateFlags: {
+							provides: ['closed_door'],
+						},
+					},
 				},
 				{
 					id: 'open',
 					name: 'Open',
-				}
+				},
 			],
 		},
 		text: {
 			type: 'text',
 			name: 'Label',
 			staticConfig: { slotName: 'inside' },
+		},
+		gag: {
+			type: 'typed',
+			name: 'Gag',
+			staticConfig: { slotName: 'inside' },
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'dildo',
+					name: 'Dildo',
+					properties: {
+						stateFlags: {
+							provides: ['gagged'],
+						},
+						slotProperties: {
+							inside: {
+								effects: {
+									lipsTouch: 9,
+									jawMove: 9,
+									tongueRoof: 7,
+									mouthBreath: 6,
+									throatBreath: 4,
+									coherency: 7,
+									stimulus: 6,
+								},
+							},
+						},
+					},
+				}
+			],
 		},
 		restraints: {
 			type: 'typed',
@@ -151,14 +193,28 @@ DefineRoomDeviceAsset({
 	},
 	stateFlagCombinations: [
 		{
-			requiredFlags: [],
+			requiredFlags: ['closed_door', 'gagged'],
 			properties: {
 				slotProperties: {
 					inside: {
 						attributes: {
 							provides: [
+								'Restraint',
+								'Restraint_mouth',
+								'Mouth_item',
+								'Mouth_insert',
+								'Mouth_insert_deep',
+								'Mouth_cover',
 							],
-							requires: [],
+							requires: [
+								'Mouth_open_wide',
+								'!Mouth_tongue_out',
+								'!Mouth_protruding',
+								'!Mouth_cover',
+							],
+							covers: [
+								'Mouth_item',
+							],
 						},
 					},
 				},
