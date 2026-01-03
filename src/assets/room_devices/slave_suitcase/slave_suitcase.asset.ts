@@ -7,6 +7,10 @@ DefineRoomDeviceAsset({
 			name: 'Suitcase',
 			default: '#CECECEFF',
 		},
+		text: {
+			name: 'Label',
+			default: '#404040ff',
+		},
 		suitcase_background: {
 			name: 'Suitcase Bottom',
 			default: '#CECECEFF',
@@ -88,6 +92,11 @@ DefineRoomDeviceAsset({
 					name: 'Open',
 				}
 			],
+		},
+		text: {
+			type: 'text',
+			name: 'Label',
+			staticConfig: { slotName: 'inside' },
 		},
 		restraints: {
 			type: 'typed',
