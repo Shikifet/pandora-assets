@@ -123,6 +123,34 @@
 			"image": "",
 			"imageOverrides": [
 				{
+					"image": "suitcase_side_filler_spread.png",
+					"condition": [
+						[
+							{
+								"module": "restraints",
+								"operator": "!=",
+								"value": "belts"
+							},
+							{
+								"module": "door",
+								"operator": "=",
+								"value": "open"
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"x": -610,
+			"y": -950,
+			"width": 354,
+			"height": 1050,
+			"type": "sprite",
+			"colorizationKey": "filler",
+			"image": "",
+			"imageOverrides": [
+				{
 					"image": "suitcase_door_filler_foam_spread.png",
 					"condition": [
 						[
