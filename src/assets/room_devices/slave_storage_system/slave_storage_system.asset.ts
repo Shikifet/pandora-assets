@@ -57,6 +57,27 @@ DefineRoomDeviceAsset({
 		},
 	},
 	modules: {
+		door_window: {
+			type: 'typed',
+			name: 'Sliding Panel',
+			staticConfig: { slotName: 'inside' },
+			variants: [
+				{
+					id: 'closed',
+					name: 'Closed',
+					properties: {
+						stateFlags: {
+							provides: ['blindness'],
+						},
+					},
+				},
+				{
+					id: 'open',
+					name: 'Open',
+					default: true,
+				},
+			],
+		},
 		door: {
 			type: 'typed',
 			name: 'Door',
@@ -87,27 +108,6 @@ DefineRoomDeviceAsset({
 			lockedProperties: {
 				blockModules: ['door'],
 			},
-		},
-		door_window: {
-			type: 'typed',
-			name: 'Door Window',
-			staticConfig: { slotName: 'inside' },
-			variants: [
-				{
-					id: 'closed',
-					name: 'Closed',
-					properties: {
-						stateFlags: {
-							provides: ['blindness'],
-						},
-					},
-				},
-				{
-					id: 'open',
-					name: 'Open',
-					default: true,
-				},
-			],
 		},
 		gag: {
 			type: 'typed',
