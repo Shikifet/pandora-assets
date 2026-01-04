@@ -220,6 +220,34 @@
 			"width": 354,
 			"height": 1050,
 			"type": "sprite",
+			"colorizationKey": "dildo",
+			"image": "",
+			"imageOverrides": [
+				{
+					"image": "suitcase_door_penis_stimulator.png",
+					"condition": [
+						[
+							{
+								"module": "toys",
+								"operator": "=",
+								"value": "penis_stimulator"
+							},
+							{
+								"module": "door",
+								"operator": "=",
+								"value": "open"
+							}
+						]
+					]
+				}
+			]
+		},
+		{
+			"x": -610,
+			"y": -950,
+			"width": 354,
+			"height": 1050,
+			"type": "sprite",
 			"colorizationKey": "filler",
 			"image": "",
 			"imageOverrides": [

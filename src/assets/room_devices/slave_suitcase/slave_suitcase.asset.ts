@@ -199,6 +199,15 @@ DefineRoomDeviceAsset({
 							provides: ['dildo'],
 						},
 					},
+				},
+				{
+					id: 'penis_stimulator',
+					name: 'Penis Stimulator',
+					properties: {
+						stateFlags: {
+							provides: ['penis_stimulator'],
+						},
+					},
 				}
 			],
 		},
@@ -287,6 +296,21 @@ DefineRoomDeviceAsset({
 								'Crotch_protruding',
 							],
 							requires: ['Vulva_spread', '!Vulva_cover'],
+						},
+					},
+				},
+			},
+		},
+		{
+			requiredFlags: ['closed_door', 'penis_stimulator'],
+			properties: {
+				slotProperties: {
+					inside: {
+						attributes: {
+							provides: [
+								'Toy',
+							],
+							requires: ['Penis'],
 						},
 					},
 				},
