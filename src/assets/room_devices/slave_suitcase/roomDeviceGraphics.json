@@ -109,9 +109,9 @@
 								"value": "open"
 							},
 							{
-								"module": "door_type",
+								"module": "door_window",
 								"operator": "=",
-								"value": "translucent"
+								"value": "open"
 							}
 						]
 					]
@@ -137,9 +137,9 @@
 								"value": "open"
 							},
 							{
-								"module": "door_type",
+								"module": "door_window",
 								"operator": "=",
-								"value": "translucent"
+								"value": "open"
 							}
 						]
 					]
@@ -377,9 +377,9 @@
 								"value": "closed"
 							},
 							{
-								"module": "door_type",
+								"module": "door_window",
 								"operator": "=",
-								"value": "translucent"
+								"value": "open"
 							}
 						]
 					]
@@ -427,9 +427,9 @@
 								"value": "closed"
 							},
 							{
-								"module": "door_type",
+								"module": "door_window",
 								"operator": "=",
-								"value": "translucent"
+								"value": "open"
 							}
 						]
 					]
@@ -454,13 +454,13 @@
 			"dataModule": "text",
 			"offset": {
 				"x": -200,
-				"y": -850
+				"y": -840
 			},
 			"size": {
 				"width": 400,
-				"height": 200
+				"height": 100
 			},
-			"fontSize": 64,
+			"fontSize": 32,
 			"colorizationKey": "text"
 		},
 		{

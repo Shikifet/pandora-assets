@@ -101,14 +101,14 @@ DefineRoomDeviceAsset({
 				},
 			],
 		},
-		door_type: {
+		door_window: {
 			type: 'typed',
-			name: 'Door Type',
+			name: 'Door Window',
 			staticConfig: { slotName: 'inside' },
 			variants: [
 				{
-					id: 'opaque',
-					name: 'Opaque',
+					id: 'closed',
+					name: 'Closed',
 					properties: {
 						stateFlags: {
 							provides: ['blindness'],
@@ -116,8 +116,8 @@ DefineRoomDeviceAsset({
 					},
 				},
 				{
-					id: 'translucent',
-					name: 'Translucent Window',
+					id: 'open',
+					name: 'Open',
 					default: true,
 				},
 			],
