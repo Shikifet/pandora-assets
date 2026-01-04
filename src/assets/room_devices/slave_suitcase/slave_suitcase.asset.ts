@@ -52,6 +52,10 @@ DefineRoomDeviceAsset({
 						leg_l: -40,
 						leg_r: -40,
 					},
+					arms: {
+						rotation: 'backward',
+						position: 'back',
+					},
 				},
 			},
 		},
