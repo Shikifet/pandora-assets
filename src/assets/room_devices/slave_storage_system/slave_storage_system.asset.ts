@@ -66,6 +66,8 @@ DefineRoomDeviceAsset({
 					id: 'closed',
 					name: 'Closed',
 					properties: {
+						blockSlotsEnterLeave: ['inside'],
+						blockModules: ['gag', 'breast', 'toys', 'restraints', 'filler'],
 						stateFlags: {
 							provides: ['closed_door'],
 						},
@@ -77,6 +79,14 @@ DefineRoomDeviceAsset({
 					default: true,
 				},
 			],
+		},
+		lock: {
+			type: 'lockSlot',
+			name: 'Door Lock',
+			staticConfig: { slotName: 'inside' },
+			lockedProperties: {
+				blockModules: ['door'],
+			},
 		},
 		door_window: {
 			type: 'typed',
@@ -188,6 +198,15 @@ DefineRoomDeviceAsset({
 					id: 'belts',
 					name: 'Belts',
 					default: true,
+					properties: {
+						slotProperties: {
+							inside: {
+								effects: {
+									blockHands: true,
+								},
+							},
+						},
+					},
 				},
 				{
 					id: 'filler',
@@ -196,6 +215,15 @@ DefineRoomDeviceAsset({
 				{
 					id: 'both',
 					name: 'Both',
+					properties: {
+						slotProperties: {
+							inside: {
+								effects: {
+									blockHands: true,
+								},
+							},
+						},
+					},
 				},
 			],
 		},
