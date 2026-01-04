@@ -161,6 +161,22 @@ DefineRoomDeviceAsset({
 				}
 			],
 		},
+		breast: {
+			type: 'typed',
+			name: 'Breast Stimulator',
+			staticConfig: { slotName: 'inside' },
+			variants: [
+				{
+					id: 'no',
+					name: 'No',
+					default: true,
+				},
+				{
+					id: 'yes',
+					name: 'Yes',
+				}
+			],
+		},
 		toys: {
 			type: 'typed',
 			name: 'Toys',
