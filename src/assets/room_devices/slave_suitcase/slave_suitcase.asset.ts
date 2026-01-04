@@ -1,15 +1,11 @@
 DefineRoomDeviceAsset({
-	name: 'Slave Transport System',
+	name: 'Slave Storage System',
 	size: 'huge',
-	preview: null,// 'preview.png',
+	preview: 'preview.png',
 	colorization: {
 		suitcase: {
 			name: 'Suitcase',
 			default: '#CECECEFF',
-		},
-		text: {
-			name: 'Label',
-			default: '#404040ff',
 		},
 		suitcase_background: {
 			name: 'Suitcase Bottom',
@@ -28,7 +24,7 @@ DefineRoomDeviceAsset({
 			default: '#d7d7d7ff',
 		},
 		dildo: {
-			name: 'Suitcase',
+			name: 'Toys',
 			default: '#d000bfff',
 		},
 	},
@@ -125,11 +121,6 @@ DefineRoomDeviceAsset({
 					default: true,
 				},
 			],
-		},
-		text: {
-			type: 'text',
-			name: 'Label',
-			staticConfig: { slotName: 'inside' },
 		},
 		gag: {
 			type: 'typed',

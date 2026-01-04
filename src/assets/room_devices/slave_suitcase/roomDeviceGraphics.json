@@ -505,21 +505,6 @@
 			]
 		},
 		{
-			"type": "text",
-			"name": "Label",
-			"dataModule": "text",
-			"offset": {
-				"x": -200,
-				"y": -840
-			},
-			"size": {
-				"width": 400,
-				"height": 100
-			},
-			"fontSize": 32,
-			"colorizationKey": "text"
-		},
-		{
 			"x": -256,
 			"y": -850,
 			"width": 6,
