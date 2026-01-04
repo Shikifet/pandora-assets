@@ -127,7 +127,7 @@
 			"colorizationKey": "suitcase_background",
 			"image": "",
 			"imageOverrides": [
-								{
+				{
 					"image": "suitcase_door_bottom_translucent.png",
 					"condition": [
 						[
@@ -343,8 +343,8 @@
 			"width": 354,
 			"height": 1050,
 			"type": "sprite",
-			"image": "",
 			"colorizationKey": "dildo",
+			"image": "",
 			"imageOverrides": [
 				{
 					"image": "suitcase_door_gag_dildo.png",
@@ -371,8 +371,8 @@
 			"width": 354,
 			"height": 1050,
 			"type": "sprite",
-			"image": "",
 			"colorizationKey": "dildo",
+			"image": "",
 			"imageOverrides": [
 				{
 					"image": "suitcase_door_dildo.png",
@@ -393,7 +393,7 @@
 				}
 			]
 		},
-				{
+		{
 			"x": -610,
 			"y": -950,
 			"width": 354,
@@ -470,8 +470,8 @@
 			"width": 520,
 			"height": 850,
 			"type": "sprite",
-			"image": "",
 			"colorizationKey": "suitcase",
+			"image": "",
 			"imageOverrides": [
 				{
 					"image": "suitcase_door_front_translucent.png",
