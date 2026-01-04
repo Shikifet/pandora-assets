@@ -184,30 +184,21 @@ DefineRoomDeviceAsset({
 		},
 		restraints: {
 			type: 'typed',
-			name: 'Filler insert',
+			name: 'Restraints',
 			staticConfig: { slotName: 'inside' },
 			variants: [
 				{
 					id: 'belts',
 					name: 'Belts',
 					default: true,
-					properties: {
-
-					},
 				},
 				{
 					id: 'filler',
 					name: 'Filler',
-					properties: {
-
-					},
 				},
 				{
 					id: 'both',
 					name: 'Both',
-					properties: {
-
-					},
 				}
 			],
 		},
