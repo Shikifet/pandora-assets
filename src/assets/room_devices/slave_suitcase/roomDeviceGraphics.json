@@ -510,7 +510,6 @@
 			"width": 6,
 			"height": 850,
 			"type": "sprite",
-			"colorizationKey": "suitcase_hinges",
 			"image": "suitcase_hinges.png"
 		}
 	],

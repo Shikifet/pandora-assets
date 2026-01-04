@@ -4,11 +4,11 @@ DefineRoomDeviceAsset({
 	preview: 'preview.png',
 	colorization: {
 		suitcase: {
-			name: 'Suitcase',
+			name: 'Suitcase Outside',
 			default: '#CECECEFF',
 		},
 		suitcase_background: {
-			name: 'Suitcase Bottom',
+			name: 'Suitcase Inside',
 			default: '#CECECEFF',
 		},
 		filler: {
@@ -57,29 +57,6 @@ DefineRoomDeviceAsset({
 		},
 	},
 	modules: {
-		/*position: {
-			type: 'typed',
-			name: 'Filler insert',
-			staticConfig: { slotName: 'inside' },
-			variants: [
-				{
-					id: 'legs_spread',
-					name: 'Legs Spread',
-					default: true,
-					properties: {
-
-					},
-				},
-				{
-					id: 'legs_together',
-					name: 'Legs Together',
-					properties: {
-
-					},
-				}
-			],
-		},
-		*/
 		door: {
 			type: 'typed',
 			name: 'Door',
@@ -153,7 +130,7 @@ DefineRoomDeviceAsset({
 							},
 						},
 					},
-				}
+				},
 			],
 		},
 		breast: {
@@ -169,7 +146,7 @@ DefineRoomDeviceAsset({
 				{
 					id: 'yes',
 					name: 'Yes',
-				}
+				},
 			],
 		},
 		toys: {
@@ -199,7 +176,7 @@ DefineRoomDeviceAsset({
 							provides: ['penis_stimulator'],
 						},
 					},
-				}
+				},
 			],
 		},
 		restraints: {
@@ -219,7 +196,7 @@ DefineRoomDeviceAsset({
 				{
 					id: 'both',
 					name: 'Both',
-				}
+				},
 			],
 		},
 		filler: {
