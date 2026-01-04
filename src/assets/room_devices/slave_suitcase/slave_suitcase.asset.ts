@@ -33,7 +33,7 @@ DefineRoomDeviceAsset({
 		inside: {
 			name: 'Inside',
 			asset: {
-				name: 'Slave Transport System',
+				name: 'Slave Storage System',
 				size: 'huge',
 				poseLimits: {
 					legs: {
