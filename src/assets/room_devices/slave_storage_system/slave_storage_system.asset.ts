@@ -36,6 +36,7 @@ DefineRoomDeviceAsset({
 				name: 'Slave Storage System',
 				size: 'huge',
 				poseLimits: {
+					view: 'front',
 					legs: {
 						pose: 'kneeling',
 					},
