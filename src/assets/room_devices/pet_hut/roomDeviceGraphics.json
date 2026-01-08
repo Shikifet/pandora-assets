@@ -72,6 +72,51 @@
 			"type": "sprite",
 			"colorizationKey": "outside",
 			"image": "hut_front.png"
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1528,
+			"height": 1123,
+			"type": "autoSprite",
+			"name": "Hut_Door",
+			"graphicalLayers": [
+				{
+					"name": "Bars",
+					"colorizationKey": "doorBars"
+				},
+				{
+					"name": "Frame",
+					"colorizationKey": "doorFrame"
+				},
+				{
+					"name": "Rivets",
+					"colorizationKey": "doorRivets"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "door"
+				}
+			],
+			"imageMap": {
+				"doorNo": [
+					"",
+					"",
+					""
+				],
+				"doorOpen": [
+					"hut_front_metal_bars_opened.png",
+					"hut_front_metal_frame_opened.png",
+					"hut_front_metal_rivets_opened.png"
+				],
+				"doorClosed": [
+					"hut_front_metal_bars_closed.png",
+					"hut_front_metal_frame_closed.png",
+					"hut_front_metal_rivets_closed.png"
+				]
+			}
 		}
 	],
 	"slots": {}
