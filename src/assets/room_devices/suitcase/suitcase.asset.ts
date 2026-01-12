@@ -35,21 +35,6 @@ DefineAsset({
 
 	},
 	modules: {
-		position: {
-			type: 'typed',
-			name: 'Suitcase Position',
-			variants: [
-				{
-					id: 'front',
-					name: 'Front',
-					default: true,
-				},
-				{
-					id: 'side',
-					name: 'Side',
-				},
-			],
-		},
 		status: {
 			type: 'typed',
 			name: 'Suitcase Status',
@@ -83,11 +68,29 @@ DefineAsset({
 				},
 			],
 		},
+		position: {
+			type: 'typed',
+			name: 'Closed Suitcase Position',
+			variants: [
+				{
+					id: 'front',
+					name: 'Front',
+					default: true,
+				},
+				{
+					id: 'side',
+					name: 'Side',
+				},
+			],
+		},
 	},
 	stateFlagCombinations: [
 		{
 			requiredFlags: ['closed_suitcase'],
 			properties: {
+				effects: {
+					blockHands: true,
+				},
 				attributes: {
 					hides: [
 						'Body_base',
