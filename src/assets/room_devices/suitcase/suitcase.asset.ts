@@ -35,26 +35,25 @@ DefineAsset({
 
 	},
 	modules: {
-		status: {
+		position: {
 			type: 'typed',
-			name: 'Suitcase Status',
+			name: 'Position',
 			variants: [
 				{
-					id: 'closed',
-					name: 'Closed',
+					id: 'front',
+					name: 'Front',
 					default: true,
-					properties: {
-						stateFlags: {
-							provides: ["closed_suitcase"],
-						},
-					},
 				},
 				{
-					id: 'opened',
-					name: 'Opened',
+					id: 'inside',
+					name: 'Inside',
+					default: true,
 					properties: {
 						poseLimits: {
 							view: 'front',
+							legs: {
+								pose: 'kneeling',
+							},
 							bones: {
 								leg_r: -60,
 								leg_l: -60,
@@ -64,29 +63,57 @@ DefineAsset({
 								elbow_l: [[-180, -125], [-15, 180]],
 							},
 						},
+						stateFlags: {
+							provides: ['inside_suitcase'],
+						},
 					},
 				},
 			],
 		},
-		position: {
+		status: {
 			type: 'typed',
-			name: 'Closed Suitcase Position',
+			name: 'Suitcase',
 			variants: [
 				{
 					id: 'front',
-					name: 'Front',
+					name: 'Closed Front',
 					default: true,
+					properties: {
+						stateFlags: {
+							provides: ['suitcase_closed'],
+						},
+					},
 				},
 				{
 					id: 'side',
-					name: 'Side',
+					name: 'Closed Side',
+					properties: {
+						stateFlags: {
+							provides: ['suitcase_closed'],
+						},
+					},
+				},
+				{
+					id: 'opened',
+					name: 'Opened',
+					properties: {
+						stateFlags: {
+							provides: ['suitcase_opened'],
+						},
+					},
 				},
 			],
 		},
 	},
 	stateFlagCombinations: [
 		{
-			requiredFlags: ['closed_suitcase'],
+			requiredFlags: ['suitcase_closed'],
+			properties: {
+				blockModules: ['position'],
+			},
+		},
+		{
+			requiredFlags: ['inside_suitcase', 'suitcase_closed'],
 			properties: {
 				effects: {
 					blockHands: true,
@@ -188,7 +215,6 @@ DefineAsset({
 						'Chastity',
 						'Handheld',
 						'Piercing',
-
 					],
 				},
 			},
