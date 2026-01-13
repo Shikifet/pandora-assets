@@ -1188,6 +1188,140 @@
 					}
 				]
 			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Inside Wheels",
+			"priority": "BACKGROUND",
+			"points": "static",
+			"mirror": 0,
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "front_wheels.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "inside"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
+								}
+							]
+						]
+					},
+					{
+						"image": "side_wheels.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "inside"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "side"
+								}
+							]
+						]
+					},
+					{
+						"image": "open_wheels.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "inside"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "opened"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 100,
+			"y": 400,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Front Wheels",
+			"priority": "BACKGROUND",
+			"points": "static",
+			"mirror": 0,
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "front_wheels.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "front"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
+								}
+							]
+						]
+					},
+					{
+						"image": "side_wheels.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "front"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "side"
+								}
+							]
+						]
+					},
+					{
+						"image": "open_wheels.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "front"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "opened"
+								}
+							]
+						]
+					}
+				]
+			}
 		}
 	]
 }
