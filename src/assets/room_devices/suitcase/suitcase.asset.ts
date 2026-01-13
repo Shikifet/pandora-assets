@@ -22,12 +22,11 @@ DefineAsset({
 		restraints_belts_buckles: {
 			name: 'Belts Buckles',
 			default: '#9f9f9fff',
-		}
+		},
 	},
 	preview: 'preview.png',
 	attributes: {
 		provides: [
-			'Play_furniture',
 			'Restraint',
 		],
 	},
@@ -64,7 +63,7 @@ DefineAsset({
 				{
 					id: 'side',
 					name: 'Side',
-				}
+				},
 			],
 		},
 		position: {
@@ -79,7 +78,6 @@ DefineAsset({
 				{
 					id: 'inside',
 					name: 'Inside',
-					default: true,
 					properties: {
 						poseLimits: {
 							view: 'front',
@@ -121,10 +119,9 @@ DefineAsset({
 					name: 'Opened',
 					properties: {
 						stateFlags: {
-							provides: ['suitcase_opened'],
 							requires: {
 								front_view: 'Suitcase must be in Front position while door is Opened',
-							}
+							},
 						},
 					},
 				},
@@ -174,8 +171,8 @@ DefineAsset({
 						stateFlags: {
 							provides: ['belts_attached'],
 							requires: {
-								restraints_panel: 'Harness requires an attached Restraint Panel'
-							}
+								restraints_panel: 'Harness requires an attached Restraint Panel',
+							},
 						},
 					},
 				},
