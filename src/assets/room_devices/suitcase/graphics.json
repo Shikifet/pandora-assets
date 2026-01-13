@@ -116,6 +116,23 @@
 								}
 							]
 						]
+					},
+					{
+						"image": "open_handle_bars.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "front"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "opened"
+								}
+							]
+						]
 					}
 				]
 			}
@@ -164,6 +181,23 @@
 									"module": "status",
 									"operator": "=",
 									"value": "side"
+								}
+							]
+						]
+					},
+					{
+						"image": "open_handle.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "front"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "opened"
 								}
 							]
 						]
@@ -218,6 +252,23 @@
 								}
 							]
 						]
+					},
+					{
+						"image": "open_handle_bars.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "inside"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "opened"
+								}
+							]
+						]
 					}
 				]
 			}
@@ -266,6 +317,23 @@
 									"module": "status",
 									"operator": "=",
 									"value": "side"
+								}
+							]
+						]
+					},
+					{
+						"image": "open_handle.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "inside"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "opened"
 								}
 							]
 						]
