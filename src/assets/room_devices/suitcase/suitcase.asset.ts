@@ -104,6 +104,21 @@ DefineAsset({
 				},
 			],
 		},
+		restraints_panel: {
+			type: 'typed',
+			name: 'Restraints Panel',
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+				},
+				{
+					id: 'attached',
+					name: 'Attached',
+					default: true,
+				},
+			],
+		},
 	},
 	stateFlagCombinations: [
 		{

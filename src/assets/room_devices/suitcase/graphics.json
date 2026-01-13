@@ -360,6 +360,11 @@
 						"condition": [
 							[
 								{
+									"module": "restraints_panel",
+									"operator": "=",
+									"value": "attached"
+								},
+								{
 									"module": "position",
 									"operator": "=",
 									"value": "front"
@@ -393,6 +398,11 @@
 						"image": "open_body_belts.png",
 						"condition": [
 							[
+								{
+									"module": "restraints_panel",
+									"operator": "=",
+									"value": "attached"
+								},
 								{
 									"module": "position",
 									"operator": "=",
@@ -428,6 +438,11 @@
 						"condition": [
 							[
 								{
+									"module": "restraints_panel",
+									"operator": "=",
+									"value": "attached"
+								},
+								{
 									"module": "position",
 									"operator": "=",
 									"value": "front"
@@ -461,6 +476,11 @@
 						"image": "open_center_support.png",
 						"condition": [
 							[
+								{
+									"module": "restraints_panel",
+									"operator": "=",
+									"value": "attached"
+								},
 								{
 									"module": "position",
 									"operator": "=",
@@ -632,6 +652,11 @@
 						"condition": [
 							[
 								{
+									"module": "restraints_panel",
+									"operator": "=",
+									"value": "attached"
+								},
+								{
 									"module": "position",
 									"operator": "=",
 									"value": "inside"
@@ -665,6 +690,11 @@
 						"image": "open_body_belts.png",
 						"condition": [
 							[
+								{
+									"module": "restraints_panel",
+									"operator": "=",
+									"value": "attached"
+								},
 								{
 									"module": "position",
 									"operator": "=",
@@ -700,6 +730,11 @@
 						"condition": [
 							[
 								{
+									"module": "restraints_panel",
+									"operator": "=",
+									"value": "attached"
+								},
+								{
 									"module": "position",
 									"operator": "=",
 									"value": "inside"
@@ -733,6 +768,11 @@
 						"image": "open_center_support.png",
 						"condition": [
 							[
+								{
+									"module": "restraints_panel",
+									"operator": "=",
+									"value": "attached"
+								},
 								{
 									"module": "position",
 									"operator": "=",
