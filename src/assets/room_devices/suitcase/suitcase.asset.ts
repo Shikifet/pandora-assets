@@ -24,8 +24,7 @@ DefineAsset({
 			default: '#9f9f9fff',
 		}
 	},
-	// size:350, y:455, centered
-	preview: null,//'preview.png',
+	preview: 'preview.png',
 	attributes: {
 		provides: [
 			'Play_furniture',
@@ -336,7 +335,16 @@ DefineAsset({
 						'Vulva_item',
 						'Breast_item',
 						'Mouth_item',
+						'Mouth_cover',
 						'Ear_item',
+					],
+					provides: [
+						'Mouth_cover',
+						'Anus_cover',
+						'Vulva_cover',
+						'Breast_cover',
+						'Hand_cover',
+						'Ear_cover',
 					],
 				},
 			},
