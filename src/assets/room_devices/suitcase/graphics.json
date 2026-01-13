@@ -88,6 +88,11 @@
 						"condition": [
 							[
 								{
+									"module": "handle",
+									"operator": "=",
+									"value": "extended"
+								},
+								{
 									"module": "position",
 									"operator": "=",
 									"value": "front"
@@ -105,6 +110,11 @@
 						"condition": [
 							[
 								{
+									"module": "handle",
+									"operator": "=",
+									"value": "extended"
+								},
+								{
 									"module": "position",
 									"operator": "=",
 									"value": "front"
@@ -121,6 +131,11 @@
 						"image": "open_handle_bars.png",
 						"condition": [
 							[
+								{
+									"module": "handle",
+									"operator": "=",
+									"value": "extended"
+								},
 								{
 									"module": "position",
 									"operator": "=",
@@ -156,6 +171,11 @@
 						"condition": [
 							[
 								{
+									"module": "handle",
+									"operator": "=",
+									"value": "extended"
+								},
+								{
 									"module": "position",
 									"operator": "=",
 									"value": "front"
@@ -173,6 +193,11 @@
 						"condition": [
 							[
 								{
+									"module": "handle",
+									"operator": "=",
+									"value": "extended"
+								},
+								{
 									"module": "position",
 									"operator": "=",
 									"value": "front"
@@ -189,6 +214,11 @@
 						"image": "open_handle.png",
 						"condition": [
 							[
+								{
+									"module": "handle",
+									"operator": "=",
+									"value": "extended"
+								},
 								{
 									"module": "position",
 									"operator": "=",
@@ -224,6 +254,11 @@
 						"condition": [
 							[
 								{
+									"module": "handle",
+									"operator": "=",
+									"value": "extended"
+								},
+								{
 									"module": "position",
 									"operator": "=",
 									"value": "inside"
@@ -241,6 +276,11 @@
 						"condition": [
 							[
 								{
+									"module": "handle",
+									"operator": "=",
+									"value": "extended"
+								},
+								{
 									"module": "position",
 									"operator": "=",
 									"value": "inside"
@@ -257,6 +297,11 @@
 						"image": "open_handle_bars.png",
 						"condition": [
 							[
+								{
+									"module": "handle",
+									"operator": "=",
+									"value": "extended"
+								},
 								{
 									"module": "position",
 									"operator": "=",
@@ -292,6 +337,11 @@
 						"condition": [
 							[
 								{
+									"module": "handle",
+									"operator": "=",
+									"value": "extended"
+								},
+								{
 									"module": "position",
 									"operator": "=",
 									"value": "inside"
@@ -309,6 +359,11 @@
 						"condition": [
 							[
 								{
+									"module": "handle",
+									"operator": "=",
+									"value": "extended"
+								},
+								{
 									"module": "position",
 									"operator": "=",
 									"value": "inside"
@@ -325,6 +380,11 @@
 						"image": "open_handle.png",
 						"condition": [
 							[
+								{
+									"module": "handle",
+									"operator": "=",
+									"value": "extended"
+								},
 								{
 									"module": "position",
 									"operator": "=",

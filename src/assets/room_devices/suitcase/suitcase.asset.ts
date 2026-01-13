@@ -70,6 +70,21 @@ DefineAsset({
 				},
 			],
 		},
+		handle: {
+			type: 'typed',
+			name: 'Handle',
+			variants: [
+				{
+					id: 'retracted',
+					name: 'Retracted',
+				},
+				{
+					id: 'extended',
+					name: 'Extended',
+					default: true,
+				},
+			],
+		},
 		status: {
 			type: 'typed',
 			name: 'Suitcase',
