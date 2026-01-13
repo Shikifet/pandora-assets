@@ -184,6 +184,14 @@ DefineAsset({
 				},
 			],
 		},
+		restraints_belts_lock: {
+			type: 'lockSlot',
+			name: 'Belts Lock',
+			lockedProperties: {
+				blockAddRemove: true,
+				blockModules: ['restraints_belts'],
+			},
+		},
 	},
 	stateFlagCombinations: [
 		{
