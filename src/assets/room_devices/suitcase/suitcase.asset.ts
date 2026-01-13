@@ -121,6 +121,9 @@ DefineAsset({
 					id: 'opened',
 					name: 'Opened',
 					properties: {
+						poseLimits: {
+							view: 'front',
+						},
 						stateFlags: {
 							requires: {
 								front_view: 'Suitcase must be in Front position while door is Opened',
@@ -351,7 +354,7 @@ DefineAsset({
 		},
 	],
 	chat: {
-		actionAdd: 'SOURCE_CHARACTER placed ITEM_ASSET_NAME near TARGET_CHARACTER',
+		actionAdd: 'SOURCE_CHARACTER placed ITEM_ASSET_NAME near TARGET_CHARACTER_DYNAMIC',
 		actionRemove: 'SOURCE_CHARACTER removed ITEM_ASSET_NAME from TARGET_CHARACTER',
 	},
 	ownership: {
