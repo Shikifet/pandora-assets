@@ -1048,6 +1048,45 @@
 			}
 		},
 		{
+			"x": 100,
+			"y": 400,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Open Hinges Outside",
+			"priority": "BACKGROUND",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "suitcase_latches",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "open_hinges.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "front"
+								},
+								{
+									"module": "door",
+									"operator": "=",
+									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
 			"x": 0,
 			"y": 0,
 			"width": 1000,
@@ -1366,6 +1405,45 @@
 				"overrides": [
 					{
 						"image": "open_background.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "inside"
+								},
+								{
+									"module": "door",
+									"operator": "=",
+									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Open Hinges Inside",
+			"priority": "BACKGROUND",
+			"points": "static",
+			"mirror": 0,
+			"colorizationKey": "suitcase",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "open_hinges.png",
 						"condition": [
 							[
 								{
