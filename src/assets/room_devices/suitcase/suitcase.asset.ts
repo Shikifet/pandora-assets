@@ -351,8 +351,8 @@ DefineAsset({
 		},
 	],
 	chat: {
-		actionAdd: 'SOURCE_CHARACTER put TARGET_CHARACTER_DYNAMIC_POSSESSIVE inside a ITEM_ASSET_NAME',
-		actionRemove: 'SOURCE_CHARACTER take off TARGET_CHARACTER_DYNAMIC_POSSESSIVE from ITEM_ASSET_NAME',
+		actionAdd: 'SOURCE_CHARACTER placed ITEM_ASSET_NAME near TARGET_CHARACTER',
+		actionRemove: 'SOURCE_CHARACTER removed ITEM_ASSET_NAME from TARGET_CHARACTER',
 	},
 	ownership: {
 		responsibleContributor: 'Shikifet <shikifet@gmail.com>',
