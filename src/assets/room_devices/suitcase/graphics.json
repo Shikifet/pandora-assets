@@ -25,6 +25,11 @@
 									"value": "front"
 								},
 								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
+								},
+								{
 									"module": "status",
 									"operator": "=",
 									"value": "front"
@@ -57,6 +62,11 @@
 									"module": "position",
 									"operator": "=",
 									"value": "front"
+								},
+								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
 								},
 								{
 									"module": "status",
@@ -98,6 +108,11 @@
 									"value": "front"
 								},
 								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
+								},
+								{
 									"module": "status",
 									"operator": "=",
 									"value": "front"
@@ -118,6 +133,11 @@
 									"module": "position",
 									"operator": "=",
 									"value": "front"
+								},
+								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
 								},
 								{
 									"module": "status",
@@ -142,9 +162,14 @@
 									"value": "front"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -181,6 +206,11 @@
 									"value": "front"
 								},
 								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
+								},
+								{
 									"module": "status",
 									"operator": "=",
 									"value": "front"
@@ -201,6 +231,11 @@
 									"module": "position",
 									"operator": "=",
 									"value": "front"
+								},
+								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
 								},
 								{
 									"module": "status",
@@ -225,9 +260,14 @@
 									"value": "front"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -264,6 +304,11 @@
 									"value": "inside"
 								},
 								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
+								},
+								{
 									"module": "status",
 									"operator": "=",
 									"value": "front"
@@ -284,6 +329,11 @@
 									"module": "position",
 									"operator": "=",
 									"value": "inside"
+								},
+								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
 								},
 								{
 									"module": "status",
@@ -308,9 +358,14 @@
 									"value": "inside"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -347,6 +402,11 @@
 									"value": "inside"
 								},
 								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
+								},
+								{
 									"module": "status",
 									"operator": "=",
 									"value": "front"
@@ -367,6 +427,11 @@
 									"module": "position",
 									"operator": "=",
 									"value": "inside"
+								},
+								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
 								},
 								{
 									"module": "status",
@@ -391,9 +456,14 @@
 									"value": "inside"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -423,6 +493,11 @@
 									"module": "position",
 									"operator": "=",
 									"value": "inside"
+								},
+								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
 								},
 								{
 									"module": "status",
@@ -459,6 +534,11 @@
 									"value": "inside"
 								},
 								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
+								},
+								{
 									"module": "status",
 									"operator": "=",
 									"value": "front"
@@ -491,6 +571,11 @@
 									"module": "position",
 									"operator": "=",
 									"value": "front"
+								},
+								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
 								},
 								{
 									"module": "status",
@@ -527,6 +612,11 @@
 									"value": "front"
 								},
 								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
+								},
+								{
 									"module": "status",
 									"operator": "=",
 									"value": "side"
@@ -559,6 +649,11 @@
 									"module": "position",
 									"operator": "=",
 									"value": "inside"
+								},
+								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
 								},
 								{
 									"module": "status",
@@ -595,6 +690,11 @@
 									"value": "inside"
 								},
 								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
+								},
+								{
 									"module": "status",
 									"operator": "=",
 									"value": "side"
@@ -629,9 +729,14 @@
 									"value": "front"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -663,9 +768,14 @@
 									"value": "front"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -702,9 +812,14 @@
 									"value": "front"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -741,9 +856,14 @@
 									"value": "front"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -780,9 +900,14 @@
 									"value": "front"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -819,9 +944,14 @@
 									"value": "front"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -853,9 +983,14 @@
 									"value": "front"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -887,9 +1022,14 @@
 									"value": "front"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -921,9 +1061,14 @@
 									"value": "inside"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -955,9 +1100,14 @@
 									"value": "inside"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -994,9 +1144,14 @@
 									"value": "inside"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -1033,9 +1188,14 @@
 									"value": "inside"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -1072,9 +1232,14 @@
 									"value": "inside"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -1111,9 +1276,14 @@
 									"value": "inside"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -1145,9 +1315,14 @@
 									"value": "inside"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -1179,9 +1354,14 @@
 									"value": "inside"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -1212,6 +1392,11 @@
 									"value": "inside"
 								},
 								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
+								},
+								{
 									"module": "status",
 									"operator": "=",
 									"value": "front"
@@ -1227,6 +1412,11 @@
 									"module": "position",
 									"operator": "=",
 									"value": "inside"
+								},
+								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
 								},
 								{
 									"module": "status",
@@ -1246,9 +1436,14 @@
 									"value": "inside"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
@@ -1279,6 +1474,11 @@
 									"value": "front"
 								},
 								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
+								},
+								{
 									"module": "status",
 									"operator": "=",
 									"value": "front"
@@ -1294,6 +1494,11 @@
 									"module": "position",
 									"operator": "=",
 									"value": "front"
+								},
+								{
+									"module": "door",
+									"operator": "=",
+									"value": "closed"
 								},
 								{
 									"module": "status",
@@ -1313,9 +1518,14 @@
 									"value": "front"
 								},
 								{
-									"module": "status",
+									"module": "door",
 									"operator": "=",
 									"value": "opened"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "front"
 								}
 							]
 						]
