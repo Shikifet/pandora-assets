@@ -851,6 +851,11 @@
 									"value": "attached"
 								},
 								{
+									"module": "restraints_belts",
+									"operator": "=",
+									"value": "harness"
+								},
+								{
 									"module": "position",
 									"operator": "=",
 									"value": "front"
@@ -1181,6 +1186,11 @@
 									"module": "restraints_panel",
 									"operator": "=",
 									"value": "attached"
+								},
+								{
+									"module": "restraints_belts",
+									"operator": "=",
+									"value": "harness"
 								},
 								{
 									"module": "position",
