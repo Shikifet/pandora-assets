@@ -28,6 +28,9 @@ DefineAsset({
 	attributes: {
 		provides: [
 			'Restraint',
+			'Restraint_arms',
+			'Restraint_torso',
+			'Restraint_legs',
 		],
 	},
 	modules: {
