@@ -29,10 +29,8 @@ DefineAsset({
 	attributes: {
 		provides: [
 			'Play_furniture',
+			'Restraint',
 		],
-	},
-	poseLimits: {
-
 	},
 	modules: {
 		handle: {
@@ -213,6 +211,18 @@ DefineAsset({
 			properties: {
 				effects: {
 					blockHands: true,
+					blind: 9,
+					lipsTouch: 0,
+					jawMove: 1,
+					tongueRoof: 0,
+					mouthBreath: 1,
+					throatBreath: 0,
+					coherency: 0,
+					stimulus: 0,
+					distortion: 3,
+					frequencyLoss: 2,
+					vowelLoss: 1,
+					middleLoss: 1,
 				},
 				attributes: {
 					hides: [
