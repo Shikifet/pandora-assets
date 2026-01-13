@@ -35,6 +35,41 @@ DefineAsset({
 
 	},
 	modules: {
+		handle: {
+			type: 'typed',
+			name: 'Handle',
+			variants: [
+				{
+					id: 'retracted',
+					name: 'Retracted',
+				},
+				{
+					id: 'extended',
+					name: 'Extended',
+					default: true,
+				},
+			],
+		},
+		status: {
+			type: 'typed',
+			name: 'Suitcase Position',
+			variants: [
+				{
+					id: 'front',
+					name: 'Front',
+					default: true,
+					properties: {
+						stateFlags: {
+							provides: ['front_view'],
+						},
+					},
+				},
+				{
+					id: 'side',
+					name: 'Side',
+				}
+			],
+		},
 		position: {
 			type: 'typed',
 			name: 'Character Position',
@@ -70,21 +105,6 @@ DefineAsset({
 				},
 			],
 		},
-		handle: {
-			type: 'typed',
-			name: 'Handle',
-			variants: [
-				{
-					id: 'retracted',
-					name: 'Retracted',
-				},
-				{
-					id: 'extended',
-					name: 'Extended',
-					default: true,
-				},
-			],
-		},
 		door: {
 			type: 'typed',
 			name: 'Suitcase Door',
@@ -106,7 +126,7 @@ DefineAsset({
 						stateFlags: {
 							provides: ['suitcase_opened'],
 							requires: {
-								front_view: 'Suitcase must be in Front Position',
+								front_view: 'Suitcase must be in Front position while door is Opened',
 							}
 						},
 					},
@@ -120,26 +140,6 @@ DefineAsset({
 				blockAddRemove: true,
 				blockModules: ['door'],
 			},
-		},
-		status: {
-			type: 'typed',
-			name: 'Suitcase Position',
-			variants: [
-				{
-					id: 'front',
-					name: 'Front',
-					default: true,
-					properties: {
-						stateFlags: {
-							provides: ['front_view'],
-						},
-					},
-				},
-				{
-					id: 'side',
-					name: 'Side',
-				}
-			],
 		},
 		restraints_panel: {
 			type: 'typed',
