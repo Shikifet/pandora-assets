@@ -356,7 +356,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "open_body_belts_anchors.png",
+						"image": "open_body_chest_triangle.png",
 						"condition": [
 							[
 								{
@@ -424,7 +424,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "open_body_chest_triangle.png",
+						"image": "open_body_belts_anchors.png",
 						"condition": [
 							[
 								{
