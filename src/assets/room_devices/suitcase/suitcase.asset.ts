@@ -116,11 +116,24 @@ DefineAsset({
 					id: 'attached',
 					name: 'Attached',
 					default: true,
+					properties: {
+						stateFlags: {
+							provides: ['belts_attached'],
+						},
+					},
 				},
 			],
 		},
 	},
 	stateFlagCombinations: [
+		{
+			requiredFlags: ['inside_suitcase', 'belts_attached'],
+			properties: {
+				attributes: {
+					provides: ['Vulva_cover'],
+				},
+			},
+		},
 		{
 			requiredFlags: ['suitcase_closed'],
 			properties: {
