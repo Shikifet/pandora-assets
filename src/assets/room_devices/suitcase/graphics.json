@@ -75,7 +75,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "Closed Front Handle Bars",
+			"name": "Closed Handle Bars",
 			"priority": "BACKGROUND",
 			"points": "static",
 			"mirror": 0,
@@ -96,6 +96,23 @@
 									"module": "status",
 									"operator": "=",
 									"value": "front"
+								}
+							]
+						]
+					},
+					{
+						"image": "closed_side_handle_bars.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "front"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "side"
 								}
 							]
 						]
@@ -133,6 +150,23 @@
 								}
 							]
 						]
+					},
+					{
+						"image": "closed_side_handle.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "front"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "side"
+								}
+							]
+						]
 					}
 				]
 			}
@@ -167,6 +201,23 @@
 								}
 							]
 						]
+					},
+					{
+						"image": "closed_side_handle_bars.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "inside"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "side"
+								}
+							]
+						]
 					}
 				]
 			}
@@ -198,6 +249,23 @@
 									"module": "status",
 									"operator": "=",
 									"value": "front"
+								}
+							]
+						]
+					},
+					{
+						"image": "closed_side_handle.png",
+						"condition": [
+							[
+								{
+									"module": "position",
+									"operator": "=",
+									"value": "inside"
+								},
+								{
+									"module": "status",
+									"operator": "=",
+									"value": "side"
 								}
 							]
 						]
@@ -279,16 +347,16 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "Closed Side Outside",
+			"name": "Closed Side Latches Outside",
 			"priority": "BACKGROUND",
 			"points": "static",
 			"mirror": 0,
-			"colorizationKey": "suitcase",
+			"colorizationKey": "suitcase_latches",
 			"image": {
 				"image": "",
 				"overrides": [
 					{
-						"image": "closed_side.png",
+						"image": "closed_side_latches.png",
 						"condition": [
 							[
 								{
@@ -313,16 +381,16 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "Closed Side Latches Outside",
+			"name": "Closed Side Outside",
 			"priority": "BACKGROUND",
 			"points": "static",
 			"mirror": 0,
-			"colorizationKey": "suitcase_latches",
+			"colorizationKey": "suitcase",
 			"image": {
 				"image": "",
 				"overrides": [
 					{
-						"image": "closed_side_latches.png",
+						"image": "closed_side.png",
 						"condition": [
 							[
 								{
