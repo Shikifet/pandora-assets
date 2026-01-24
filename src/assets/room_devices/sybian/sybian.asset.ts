@@ -17,7 +17,7 @@ DefineRoomDeviceAsset({
 		},
 		dildo: {
 			name: 'Dildo',
-			default: '#FFFFFF',
+			default: '#EBC68F',
 		},
 	},
 	staticAttributes: ['Play_furniture'],
