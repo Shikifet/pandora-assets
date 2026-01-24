@@ -371,7 +371,7 @@
 					"height": 1500,
 					"type": "mesh",
 					"name": "Ring Back View",
-					"priority": "ABOVE_BODY",
+					"priority": "BELOW_BODY",
 					"points": "static",
 					"mirror": 0,
 					"colorizationKey": "ring",
@@ -392,6 +392,18 @@
 											"operator": "=",
 											"value": "back"
 										}
+									],
+									[
+										{
+											"module": "back_ring",
+											"operator": "=",
+											"value": "attached_armbinder"
+										},
+										{
+											"module": "position",
+											"operator": "=",
+											"value": "back"
+										}
 									]
 								]
 							},
@@ -403,6 +415,40 @@
 											"module": "back_ring",
 											"operator": "=",
 											"value": "attached"
+										},
+										{
+											"module": "position",
+											"operator": "=",
+											"value": "back"
+										}
+									]
+								]
+							}
+						]
+					}
+				},
+				{
+					"x": 0,
+					"y": 25,
+					"width": 1000,
+					"height": 1500,
+					"type": "mesh",
+					"name": "Armbinder_clip",
+					"priority": "BELOW_ARM_LEFT",
+					"points": "static",
+					"mirror": 0,
+					"colorizationKey": "ring",
+					"image": {
+						"image": "",
+						"overrides": [
+							{
+								"image": "armbinder_clip.png",
+								"condition": [
+									[
+										{
+											"module": "back_ring",
+											"operator": "=",
+											"value": "attached_armbinder"
 										},
 										{
 											"module": "position",

@@ -186,6 +186,20 @@ DefineRoomDeviceAsset({
 						},
 					},
 				},
+				{
+					id: 'attached_armbinder',
+					name: 'Attached to Armbinder',
+					properties: {
+						blockSlotsEnterLeave: ['seated'],
+						slotProperties: {
+							seated: {
+								attributes: {
+									requires: ['Armbinder_chainable'],
+								},
+							},
+						},
+					},
+				},
 			],
 		},
 		lock_back: {
