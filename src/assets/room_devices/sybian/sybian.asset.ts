@@ -15,6 +15,10 @@ DefineRoomDeviceAsset({
 			name: 'Ring',
 			default: '#D0D0D0',
 		},
+		chains: {
+			name: 'Chains',
+			default: '#D0D0D0',
+		},
 		dildo: {
 			name: 'Dildo',
 			default: '#EBC68F',

@@ -264,6 +264,7 @@
 					"priority": "BELOW_ARM_LEFT",
 					"points": "static",
 					"mirror": 0,
+					"colorizationKey": "chains",
 					"image": {
 						"image": "",
 						"overrides": [
@@ -297,6 +298,7 @@
 					"priority": "OVERLAY",
 					"points": "static",
 					"mirror": 0,
+					"colorizationKey": "chains",
 					"image": {
 						"image": "",
 						"overrides": [
