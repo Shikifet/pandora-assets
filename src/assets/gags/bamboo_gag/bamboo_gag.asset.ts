@@ -1,3 +1,6 @@
+import { CreateRopeColor } from '../../../helpers/rope_base.ts';
+const { colorization: baseColorization, modules: baseModules } = CreateRopeColor(true);
+
 DefineAsset({
 	name: 'Bamboo Gag',
 	size: 'small',
@@ -8,10 +11,7 @@ DefineAsset({
 			name: 'Bamboo',
 			default: '#EFCA7B',
 		},
-		rope: {
-			name: 'Rope',
-			default: '#D7AC4D',
-		},
+		...baseColorization,
 	},
 	// size:200, y:197, centered
 	preview: 'preview.png',
@@ -56,6 +56,7 @@ DefineAsset({
 				},
 			],
 		},
+		...baseModules,
 	},
 	effects: {
 		lipsTouch: 6,

@@ -1,3 +1,6 @@
+import { CreateRopeColor } from '../../../helpers/rope_base.ts';
+const { colorization: baseColorization, modules: baseModules } = CreateRopeColor(true);
+
 DefineAsset({
 	name: 'Bamboo Stick',
 	size: 'medium',
@@ -7,10 +10,7 @@ DefineAsset({
 			name: 'Bamboo',
 			default: '#EFCA7B',
 		},
-		rope: {
-			name: 'Rope',
-			default: '#D7AC4D',
-		},
+		...baseColorization,
 	},
 	// size:350, y:455, centered
 	preview: 'preview.png',
@@ -225,6 +225,7 @@ DefineAsset({
 				},
 			],
 		},
+		...baseModules,
 	},
 	chat: {
 		actionAdd: 'SOURCE_CHARACTER tied ITEM_ASSET_NAME between TARGET_CHARACTER_DYNAMIC_POSSESSIVE body and arms.',

@@ -1,14 +1,12 @@
+import { CreateRopeColor } from '../../../helpers/rope_base.ts';
+const { colorization, modules: baseModules } = CreateRopeColor(true);
+
 DefineAsset({
 	name: 'Jute Rope Gag',
 	size: 'small',
 	requireFreeHandsToUseDefault: true,
 	graphics: 'graphics.json',
-	colorization: {
-		rope: {
-			name: 'Rope',
-			default: '#D7AC4D',
-		},
-	},
+	colorization,
 	// size:200, y:197, centered
 	preview: 'preview.png',
 	attributes: {
@@ -113,6 +111,7 @@ DefineAsset({
 				},
 			],
 		},
+		...baseModules,
 	},
 	chat: {
 		actionAdd: 'SOURCE_CHARACTER tied ITEM_ASSET_NAME tightly between TARGET_CHARACTER_DYNAMIC_POSSESSIVE teeth.',
