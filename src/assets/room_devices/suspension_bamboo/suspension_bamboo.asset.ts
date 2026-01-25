@@ -11,6 +11,10 @@ DefineRoomDeviceAsset({
 			name: 'Bamboo',
 			default: '#EFCA7B',
 		},
+		rope_bamboo: {
+			name: 'Rope Bamboo',
+			default: '#D7AC4D',
+		},
 		rope: {
 			name: 'Rope',
 			default: '#D7AC4D',

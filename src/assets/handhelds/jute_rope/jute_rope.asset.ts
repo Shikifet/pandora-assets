@@ -1,13 +1,11 @@
+import { CreateRopeColor } from '../../../helpers/rope_base.ts';
+const { colorization, modules: baseModules } = CreateRopeColor(true);
+
 DefineAsset({
 	name: 'Jute Rope (handheld)',
 	size: 'medium',
 	graphics: 'graphics.json',
-	colorization: {
-		rope: {
-			name: 'Rope',
-			default: '#D7AC4D',
-		},
-	},
+	colorization,
 	// size:300, y:681, X:168
 	preview: 'preview.png',
 	attributes: {
@@ -92,6 +90,7 @@ DefineAsset({
 				},
 			],
 		},
+		...baseModules,
 	},
 	chat: {
 		actionAdd: 'SOURCE_CHARACTER put ITEM_ASSET_NAME into TARGET_CHARACTER_DYNAMIC_POSSESSIVE hand.',
