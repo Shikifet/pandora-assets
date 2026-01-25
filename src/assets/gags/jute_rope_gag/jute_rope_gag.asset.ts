@@ -1,5 +1,5 @@
 import { CreateRopeColor } from '../../../helpers/rope_base.ts';
-const { colorization, modules: baseModules } = CreateRopeColor(true);
+const { colorization, modules: baseModules } = CreateRopeColor();
 
 DefineAsset({
 	name: 'Jute Rope Gag',

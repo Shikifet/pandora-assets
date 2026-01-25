@@ -1,5 +1,5 @@
 import { CreateRopeColor } from '../../../helpers/rope_base.ts';
-const { colorization: baseColorization, modules: baseModules } = CreateRopeColor(true);
+const { colorization: baseColorization, modules: baseModules } = CreateRopeColor();
 
 DefineAsset({
 	name: 'Bamboo Gag',

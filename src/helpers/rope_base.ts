@@ -1,4 +1,4 @@
-export function CreateRopeColor(withShine: boolean): {
+export function CreateRopeColor(): {
 	colorization: NonNullable<IntermediateBodypartAssetDefinition['colorization']>;
 	modules: NonNullable<IntermediateBodypartAssetDefinition['modules']>;
 } {
