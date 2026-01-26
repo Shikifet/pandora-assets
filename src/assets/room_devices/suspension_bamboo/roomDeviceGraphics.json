@@ -33,7 +33,7 @@
 				}
 			],
 			"clipToRoom": true,
-			"colorizationKey": "rope",
+			"colorizationKey": "rope_bamboo",
 			"image": "",
 			"imageOverrides": [
 				{
@@ -74,7 +74,7 @@
 				}
 			],
 			"clipToRoom": true,
-			"colorizationKey": "rope",
+			"colorizationKey": "rope_bamboo",
 			"image": "",
 			"imageOverrides": [
 				{
@@ -115,7 +115,7 @@
 				}
 			],
 			"clipToRoom": true,
-			"colorizationKey": "rope",
+			"colorizationKey": "rope_bamboo",
 			"image": "",
 			"imageOverrides": [
 				{
@@ -156,7 +156,7 @@
 				}
 			],
 			"clipToRoom": true,
-			"colorizationKey": "rope",
+			"colorizationKey": "rope_bamboo",
 			"image": "",
 			"imageOverrides": [
 				{
@@ -183,7 +183,7 @@
 				{
 					"offset": {
 						"x": -240,
-						"y": -240
+						"y": -230
 					},
 					"condition": [
 						[
@@ -236,7 +236,7 @@
 					]
 				}
 			],
-			"colorizationKey": "rope",
+			"colorizationKey": "rope_bamboo",
 			"image": "",
 			"imageOverrides": [
 				{
@@ -259,7 +259,7 @@
 			"width": 1500,
 			"height": 250,
 			"type": "sprite",
-			"colorizationKey": "rope",
+			"colorizationKey": "rope_bamboo",
 			"image": "bamboo_rope_sides.png"
 		},
 		{

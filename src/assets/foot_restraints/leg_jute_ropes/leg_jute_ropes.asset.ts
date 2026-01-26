@@ -1,14 +1,12 @@
+import { CreateRopeColor } from '../../../helpers/rope_base.ts';
+const { colorization, modules: baseModules } = CreateRopeColor();
+
 DefineAsset({
 	name: 'Leg Jute Ropes',
 	size: 'small',
 	graphics: 'graphics.json',
 
-	colorization: {
-		rope: {
-			name: 'Rope',
-			default: '#D7AC4D',
-		},
-	},
+	colorization,
 	// size:420, y:940, centered
 	preview: 'preview.png',
 	attributes: {
@@ -18,6 +16,7 @@ DefineAsset({
 		],
 	},
 	modules: {
+		...baseModules,
 		thighs: {
 			type: 'typed',
 			name: 'Thighs',
