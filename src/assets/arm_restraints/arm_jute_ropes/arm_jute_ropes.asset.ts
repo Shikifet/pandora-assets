@@ -15,6 +15,7 @@ DefineAsset({
 		],
 	},
 	modules: {
+		...baseModules,
 		arms: {
 			type: 'typed',
 			name: 'Arms',
@@ -347,7 +348,6 @@ DefineAsset({
 				},
 			],
 		},
-		...baseModules,
 	},
 	effects: {
 		blockHands: true,

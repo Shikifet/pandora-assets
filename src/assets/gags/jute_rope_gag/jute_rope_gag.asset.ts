@@ -27,6 +27,7 @@ DefineAsset({
 		],
 	},
 	modules: {
+		...baseModules,
 		gagType: {
 			type: 'typed',
 			name: 'Gag Type',
@@ -111,7 +112,6 @@ DefineAsset({
 				},
 			],
 		},
-		...baseModules,
 	},
 	chat: {
 		actionAdd: 'SOURCE_CHARACTER tied ITEM_ASSET_NAME tightly between TARGET_CHARACTER_DYNAMIC_POSSESSIVE teeth.',

@@ -8,7 +8,7 @@ DefineRoomDeviceAsset({
 			default: '#E3E3E3',
 		},
 		rope_ceiling: {
-			name: 'Rope Ceil',
+			name: 'Rope Ceiling Rope',
 			default: '#D7AC4D',
 		},
 		rope: {

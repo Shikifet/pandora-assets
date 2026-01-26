@@ -15,6 +15,7 @@ DefineAsset({
 	// size:350, y:375, centered
 	preview: 'preview.png',
 	modules: {
+		...baseModules,
 		state: {
 			type: 'typed',
 			name: 'Blanket',
@@ -118,7 +119,6 @@ DefineAsset({
 				},
 			],
 		},
-		...baseModules,
 	},
 	ownership: {
 		responsibleContributor: 'ClaudiaMia <99583892+ClaudiaMia@users.noreply.github.com>',

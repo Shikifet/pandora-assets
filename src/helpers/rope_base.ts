@@ -9,18 +9,18 @@ export function CreateRopeColor(): {
 		},
 	};
 	const modules: NonNullable<IntermediateBodypartAssetDefinition['modules']> = {
-		colorGroupHair: {
+		colorGroupRope: {
 			type: 'typed',
 			name: 'Group Rope Color',
 			variants: [
 				{
 					id: 'no',
 					name: 'No',
+					default: true,
 				},
 				{
 					id: 'yes',
 					name: 'Yes',
-					default: true,
 					properties: {
 						overrideColorKey: ['rope'],
 					},

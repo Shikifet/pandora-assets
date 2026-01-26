@@ -29,6 +29,7 @@ DefineAsset({
 		},
 	},
 	modules: {
+		...baseModules,
 		horizontal_bamboo: {
 			type: 'typed',
 			name: 'Horizontal Bamboo',
@@ -225,7 +226,6 @@ DefineAsset({
 				},
 			],
 		},
-		...baseModules,
 	},
 	chat: {
 		actionAdd: 'SOURCE_CHARACTER tied ITEM_ASSET_NAME between TARGET_CHARACTER_DYNAMIC_POSSESSIVE body and arms.',

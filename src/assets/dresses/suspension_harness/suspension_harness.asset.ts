@@ -15,6 +15,7 @@ DefineAsset({
 		],
 	},
 	modules: {
+		...baseModules,
 		chest: {
 			type: 'typed',
 			name: 'Harness',
@@ -102,7 +103,6 @@ DefineAsset({
 				},
 			],
 		},
-		...baseModules,
 	},
 	chat: {
 		actionAdd: 'SOURCE_CHARACTER tied ITEM_ASSET_NAME around TARGET_CHARACTER_DYNAMIC_POSSESSIVE body.',

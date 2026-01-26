@@ -17,6 +17,7 @@ DefineAsset({
 		],
 	},
 	modules: {
+		...baseModules,
 		end: {
 			type: 'typed',
 			name: 'Hanging Rope End',
@@ -90,7 +91,6 @@ DefineAsset({
 				},
 			],
 		},
-		...baseModules,
 	},
 	chat: {
 		actionAdd: 'SOURCE_CHARACTER put ITEM_ASSET_NAME into TARGET_CHARACTER_DYNAMIC_POSSESSIVE hand.',

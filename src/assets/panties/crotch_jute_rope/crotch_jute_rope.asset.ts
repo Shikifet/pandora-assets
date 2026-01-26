@@ -19,6 +19,7 @@ DefineAsset({
 	// size:260, y:560, centered
 	preview: 'preview.png',
 	modules: {
+		...baseModules,
 		waist: {
 			type: 'typed',
 			name: 'Waist',
@@ -124,7 +125,6 @@ DefineAsset({
 				},
 			],
 		},
-		...baseModules,
 	},
 	chat: {
 		actionAdd: 'SOURCE_CHARACTER tied ITEM_ASSET_NAME around TARGET_CHARACTER_DYNAMIC_POSSESSIVE body.',

@@ -34,6 +34,7 @@ DefineAsset({
 		],
 	},
 	modules: {
+		...baseModules,
 		attach: {
 			type: 'typed',
 			name: 'Attached to',
@@ -56,7 +57,6 @@ DefineAsset({
 				},
 			],
 		},
-		...baseModules,
 	},
 	effects: {
 		lipsTouch: 6,
