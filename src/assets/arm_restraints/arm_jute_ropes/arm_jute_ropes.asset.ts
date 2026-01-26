@@ -1,13 +1,11 @@
+import { CreateRopeColor } from '../../../helpers/rope_base.ts';
+const { colorization, modules: baseModules } = CreateRopeColor();
+
 DefineAsset({
 	name: 'Arm Jute Ropes',
 	size: 'small',
 	graphics: 'graphics.json',
-	colorization: {
-		rope: {
-			name: 'Rope',
-			default: '#D7AC4D',
-		},
-	},
+	colorization,
 	// size:260, y:375, centered
 	preview: 'preview.png',
 	attributes: {
@@ -17,6 +15,7 @@ DefineAsset({
 		],
 	},
 	modules: {
+		...baseModules,
 		arms: {
 			type: 'typed',
 			name: 'Arms',
