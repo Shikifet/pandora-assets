@@ -1,13 +1,11 @@
+import { CreateRopeColor } from '../../../helpers/rope_base.ts';
+const { colorization, modules: baseModules } = CreateRopeColor();
+
 DefineAsset({
 	name: 'Crotch Jute Ropes',
 	size: 'small',
 	graphics: 'graphics.json',
-	colorization: {
-		rope: {
-			name: 'Rope',
-			default: '#D7AC4D',
-		},
-	},
+	colorization,
 	attributes: {
 		provides: [
 			'Restraint',
@@ -21,6 +19,7 @@ DefineAsset({
 	// size:260, y:560, centered
 	preview: 'preview.png',
 	modules: {
+		...baseModules,
 		waist: {
 			type: 'typed',
 			name: 'Waist',

@@ -1,3 +1,6 @@
+import { CreateRopeColor } from '../../../helpers/rope_base.ts';
+const { colorization: baseColorization, modules: baseModules } = CreateRopeColor();
+
 DefineAsset({
 	name: 'Blanket',
 	size: 'medium',
@@ -7,14 +10,12 @@ DefineAsset({
 			name: 'Blanket',
 			default: '#7373CA',
 		},
-		rope: {
-			name: 'Rope',
-			default: '#D7AC4D',
-		},
+		...baseColorization,
 	},
 	// size:350, y:375, centered
 	preview: 'preview.png',
 	modules: {
+		...baseModules,
 		state: {
 			type: 'typed',
 			name: 'Blanket',
