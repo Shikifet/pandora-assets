@@ -30,6 +30,7 @@ const PERSONAL_DEFINITION_FALLTHROUGH_PROPERTIES = [
 	'name',
 	'wearable',
 	'allowRandomizerUsage',
+	'roomDeployment',
 	'size',
 	'chat',
 	'posePresets',
@@ -143,6 +144,7 @@ async function GlobalDefineAssetProcess(def: IntermediatePersonalAssetDefinition
 		const builtAssetData: Immutable<GraphicsBuildContextAssetData> = {
 			modules: asset.modules,
 			colorizationKeys: new Set(Object.keys(colorization ?? {})),
+			supportsInRoomGraphics: asset.roomDeployment != null,
 		};
 
 		const { graphics, graphicsSource } = await LoadAssetGraphicsFile(
