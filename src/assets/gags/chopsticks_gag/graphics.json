@@ -33,5 +33,32 @@
 				"overrides": []
 			}
 		}
+	],
+	"roomLayers": [
+		{
+			"x": -650,
+			"y": -300,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "Bamboo",
+			"graphicalLayers": [
+				{
+					"name": "Chopsticks",
+					"colorizationKey": "chopsticks"
+				},
+				{
+					"name": "Strings",
+					"colorizationKey": "strings"
+				}
+			],
+			"variables": [],
+			"imageMap": {
+				"": [
+					"chopsticks.png",
+					"strings.png"
+				]
+			}
+		}
 	]
 }

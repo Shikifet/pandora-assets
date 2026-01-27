@@ -78,5 +78,37 @@
 				]
 			}
 		}
+	],
+	"roomLayers": [
+		{
+			"x": -150,
+			"y": -150,
+			"width": 250,
+			"height": 250,
+			"type": "autoSprite",
+			"name": "Bamboo",
+			"graphicalLayers": [
+				{
+					"name": "Rope Back",
+					"colorizationKey": "rope"
+				},
+				{
+					"name": "Bamboo",
+					"colorizationKey": "bamboo"
+				},
+				{
+					"name": "Rope Front",
+					"colorizationKey": "rope"
+				}
+			],
+			"variables": [],
+			"imageMap": {
+				"": [
+					"item_rope_back.png",
+					"item_bamboo.png",
+					"item_rope_front.png"
+				]
+			}
+		}
 	]
 }

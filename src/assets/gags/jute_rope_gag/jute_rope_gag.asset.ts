@@ -7,6 +7,9 @@ DefineAsset({
 	requireFreeHandsToUseDefault: true,
 	graphics: 'graphics.json',
 	colorization,
+	roomDeployment: {
+		autoDeployRelativePosition: [-60, -100, 0],
+	},
 	// size:200, y:197, centered
 	preview: 'preview.png',
 	attributes: {
