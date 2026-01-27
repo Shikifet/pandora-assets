@@ -16,6 +16,9 @@ DefineAsset({
 			'!Penis',
 		],
 	},
+	roomDeployment: {
+		autoDeployRelativePosition: [-120, -100, -80],
+	},
 	// size:260, y:560, centered
 	preview: 'preview.png',
 	modules: {
@@ -122,6 +125,21 @@ DefineAsset({
 							},
 						},
 					},
+				},
+			],
+		},
+		room_placement: {
+			type: 'typed',
+			name: 'Room Placement',
+			variants: [
+				{
+					id: 'coiled',
+					name: 'Coiled',
+					default: true,
+				},
+				{
+					id: 'tangled',
+					name: 'Tangled',
 				},
 			],
 		},
