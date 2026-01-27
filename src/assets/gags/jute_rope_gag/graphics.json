@@ -91,7 +91,7 @@
 	"roomLayers": [
 		{
 			"x": -170,
-			"y": -200,
+			"y": -150,
 			"width": 250,
 			"height": 250,
 			"type": "autoSprite",

@@ -8,7 +8,7 @@ DefineAsset({
 	graphics: 'graphics.json',
 	colorization,
 	roomDeployment: {
-		autoDeployRelativePosition: [-120, -100, -80],
+		autoDeployRelativePosition: [-60, -100, 0],
 	},
 	// size:200, y:197, centered
 	preview: 'preview.png',
