@@ -6,6 +6,9 @@ DefineAsset({
 	size: 'small',
 	graphics: 'graphics.json',
 	colorization,
+	roomDeployment: {
+		autoDeployRelativePosition: [-120, -100, -80],
+	},
 	// size:260, y:375, centered
 	preview: 'preview.png',
 	attributes: {
@@ -345,6 +348,21 @@ DefineAsset({
 							blockRoomMovement: true,
 						},
 					},
+				},
+			],
+		},
+		room_placement: {
+			type: 'typed',
+			name: 'Room Placement',
+			variants: [
+				{
+					id: 'coiled',
+					name: 'Coiled',
+					default: true,
+				},
+				{
+					id: 'tangled',
+					name: 'Tangled',
 				},
 			],
 		},

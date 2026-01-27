@@ -3249,5 +3249,35 @@
 				]
 			}
 		}
+	],
+	"roomLayers": [
+		{
+			"x": -150,
+			"y": -250,
+			"width": 250,
+			"height": 250,
+			"type": "autoSprite",
+			"name": "Rope",
+			"graphicalLayers": [
+				{
+					"name": "Rope",
+					"colorizationKey": "rope"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "room_placement"
+				}
+			],
+			"imageMap": {
+				"coiled": [
+					"rope_coiled.png"
+				],
+				"tangled": [
+					"rope_tangled.png"
+				]
+			}
+		}
 	]
 }
