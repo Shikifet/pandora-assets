@@ -87,5 +87,38 @@
 				]
 			}
 		}
+	],
+	"roomLayers": [
+		{
+			"x": -150,
+			"y": -250,
+			"width": 250,
+			"height": 250,
+			"type": "autoSprite",
+			"name": "Rope",
+			"graphicalLayers": [
+				{
+					"name": "Rope",
+					"colorizationKey": "rope"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "gagType"
+				}
+			],
+			"imageMap": {
+				"rope": [
+					"rope_item_gag_front.png"
+				],
+				"knot": [
+					"rope_item_gag_knot.png"
+				],
+				"bit": [
+					"rope_item_gag_bit.png"
+				]
+			}
+		}
 	]
 }
