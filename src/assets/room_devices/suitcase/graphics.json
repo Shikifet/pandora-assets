@@ -1723,23 +1723,44 @@
 				},
 				{
 					"type": "typedModule",
+					"module": "status"
+				},
+				{
+					"type": "typedModule",
 					"module": "door"
 				}
 			],
 			"imageMap": {
-				"retracted:closed": [
+				"retracted:side:closed": [
 					"",
 					""
 				],
-				"retracted:opened": [
+				"retracted:side:opened": [
 					"",
 					""
 				],
-				"extended:closed": [
+				"extended:side:closed": [
+					"closed_side_handle_bars.png",
+					"closed_side_handle.png"
+				],
+				"extended:side:opened": [
+					"",
+					""
+				],
+
+				"retracted:front:closed": [
+					"",
+					""
+				],
+				"retracted:front:opened": [
+					"",
+					""
+				],
+				"extended:front:closed": [
 					"closed_front_handle_bars.png",
 					"closed_front_handle.png"
 				],
-				"extended:opened": [
+				"extended:front:opened": [
 					"open_handle_bars.png",
 					"open_handle.png"
 				]
@@ -1778,28 +1799,57 @@
 				{
 					"type": "typedModule",
 					"module": "door"
+				},
+				{
+					"type": "typedModule",
+					"module": "restraints_panel"
 				}
 			],
 			"imageMap": {
-				"side:closed": [
+				"side:closed:attached": [
 					"closed_side.png",
 					"",
 					"",
 					"closed_side_latches.png"
 				],
-				"side:opened": [
+				"side:opened:attached": [
 					"",
 					"",
 					"",
 					""
 				],
-				"front:closed": [
+				"front:closed:attached": [
 					"closed_front.png",
 					"",
 					"",
 					"closed_front_latches.png"
 				],
-				"front:opened": [
+				"front:opened:attached": [
+					"open_background.png",
+					"",
+					"",
+					""
+				],
+
+				"side:closed:none": [
+					"closed_side.png",
+					"",
+					"",
+					"closed_side_latches.png"
+				],
+				"side:opened:none": [
+					"",
+					"",
+					"",
+					""
+				],
+				"front:closed:none": [
+					"closed_front.png",
+					"",
+					"",
+					"closed_front_latches.png"
+				],
+				"front:opened:none": [
 					"open_background.png",
 					"open_side_inner_lines.png",
 					"open_side.png",
@@ -1829,6 +1879,10 @@
 				{
 					"name": "Suitcase",
 					"colorizationKey": "suitcase"
+				},
+				{
+					"name": "Latches",
+					"colorizationKey": "suitcase_latches"
 				}
 			],
 			"variables": [
@@ -1860,12 +1914,11 @@
 				"opened:attached": [
 					"open_center_support.png",
 					"open_body_belts_anchors.png",
-					"open_side.png"
+					"open_side.png",
+					"open_latches.png"
 				]
 			}
 		},
-
-
 
 		{
 			"x": 0,
