@@ -1631,5 +1631,291 @@
 				]
 			}
 		}
+	],
+	"roomLayers": [
+		{
+			"x": 0,
+			"y": -800,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "Wheels",
+			"graphicalLayers": [
+				{
+					"name": "Wheels",
+					"colorizationKey": ""
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "status"
+				},
+				{
+					"type": "typedModule",
+					"module": "door"
+				}
+			],
+			"imageMap": {
+				"front:closed": [
+					"front_wheels.png"
+				],
+				"front:opened": [
+					"open_wheels.png"
+				],
+				"side:closed": [
+					"side_wheels.png"
+				],
+				"side:opened": [
+					""
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": -800,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "Hinges",
+			"graphicalLayers": [
+				{
+					"name": "Hinges",
+					"colorizationKey": ""
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "door"
+				}
+			],
+			"imageMap": {
+				"closed": [
+					""
+				],
+				"opened": [
+					"open_hinges.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": -800,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "Handle",
+			"graphicalLayers": [
+				{
+					"name": "Handle Bar",
+					"colorizationKey": "restraints_belts_buckles"
+				},
+				{
+					"name": "Handle",
+					"colorizationKey": "suitcase"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "handle"
+				},
+				{
+					"type": "typedModule",
+					"module": "door"
+				}
+			],
+			"imageMap": {
+				"retracted:closed": [
+					"",
+					""
+				],
+				"retracted:opened": [
+					"",
+					""
+				],
+				"extended:closed": [
+					"closed_front_handle_bars.png",
+					"closed_front_handle.png"
+				],
+				"extended:opened": [
+					"open_handle_bars.png",
+					"open_handle.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": -800,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "Suitcase",
+			"graphicalLayers": [
+				{
+					"name": "Suitcase",
+					"colorizationKey": "suitcase"
+				},
+				{
+					"name": "Suitcase Inner Lines",
+					"colorizationKey": "suitcase"
+				},
+								{
+					"name": "Suitcase Side",
+					"colorizationKey": "suitcase"
+				},
+				{
+					"name": "Latches",
+					"colorizationKey": "suitcase_latches"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "status"
+				},
+				{
+					"type": "typedModule",
+					"module": "door"
+				}
+			],
+			"imageMap": {
+				"side:closed": [
+					"closed_side.png",
+					"",
+					"",
+					"closed_side_latches.png"
+				],
+				"side:opened": [
+					"",
+					"",
+					"",
+					""
+				],
+				"front:closed": [
+					"closed_front.png",
+					"",
+					"",
+					"closed_front_latches.png"
+				],
+				"front:opened": [
+					"open_background.png",
+					"open_side_inner_lines.png",
+					"open_side.png",
+					"open_latches.png"
+				]
+			}
+		},
+
+
+
+		{
+			"x": 0,
+			"y": -800,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "Restraint Panel",
+			"graphicalLayers": [
+				{
+					"name": "Panel",
+					"colorizationKey": "restraints_support"
+				},
+				{
+					"name": "Buckles",
+					"colorizationKey": "restraints_belts_buckles"
+				},
+				{
+					"name": "Suitcase",
+					"colorizationKey": "suitcase"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "door"
+				},
+				{
+					"type": "typedModule",
+					"module": "restraints_panel"
+				}
+			],
+			"imageMap": {
+				"closed:none": [
+					"",
+					"",
+					""
+				],
+				"closed:attached": [
+					"",
+					"",
+					""
+				],
+				"opened:none": [
+					"",
+					"",
+					""
+				],
+				"opened:attached": [
+					"open_center_support.png",
+					"open_body_belts_anchors.png",
+					"open_side.png"
+				]
+			}
+		},
+
+
+
+		{
+			"x": 0,
+			"y": -800,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "Belts",
+			"graphicalLayers": [
+				{
+					"name": "Belts",
+					"colorizationKey": "restraints_belts"
+				},
+				{
+					"name": "Triangle",
+					"colorizationKey": "restraints_belts_buckles"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "door"
+				},
+				{
+					"type": "typedModule",
+					"module": "restraints_panel"
+				},
+				{
+					"type": "typedModule",
+					"module": "restraints_belts"
+				}
+			],
+			"imageMap": {
+				"opened:none:none": [
+					"",
+					""
+				],
+				"opened:none:harness": [
+					"",
+					""
+				],
+				"opened:attached:none": [
+					"",
+					""
+				],
+				"opened:attached:harness": [
+					"open_body_belts.png",
+					"open_body_chest_triangle.png"
+				]
+			}
+		}
 	]
 }
