@@ -1,12 +1,13 @@
+import { CreateRopeColor } from '../../../helpers/rope_base.ts';
+const { colorization, modules: baseModules } = CreateRopeColor();
+
 DefineAsset({
 	name: 'Arm Jute Ropes',
 	size: 'small',
 	graphics: 'graphics.json',
-	colorization: {
-		rope: {
-			name: 'Rope',
-			default: '#D7AC4D',
-		},
+	colorization,
+	roomDeployment: {
+		autoDeployRelativePosition: [-60, -80, 0],
 	},
 	// size:260, y:375, centered
 	preview: 'preview.png',
@@ -17,6 +18,7 @@ DefineAsset({
 		],
 	},
 	modules: {
+		...baseModules,
 		arms: {
 			type: 'typed',
 			name: 'Arms',
@@ -346,6 +348,21 @@ DefineAsset({
 							blockRoomMovement: true,
 						},
 					},
+				},
+			],
+		},
+		room_placement: {
+			type: 'typed',
+			name: 'Room Placement',
+			variants: [
+				{
+					id: 'coiled',
+					name: 'Coiled',
+					default: true,
+				},
+				{
+					id: 'tangled',
+					name: 'Tangled',
 				},
 			],
 		},

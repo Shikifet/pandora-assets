@@ -1,13 +1,14 @@
+import { CreateRopeColor } from '../../../helpers/rope_base.ts';
+const { colorization, modules: baseModules } = CreateRopeColor();
+
 DefineAsset({
 	name: 'Jute Rope Gag',
 	size: 'small',
 	requireFreeHandsToUseDefault: true,
 	graphics: 'graphics.json',
-	colorization: {
-		rope: {
-			name: 'Rope',
-			default: '#D7AC4D',
-		},
+	colorization,
+	roomDeployment: {
+		autoDeployRelativePosition: [-60, -100, 0],
 	},
 	// size:200, y:197, centered
 	preview: 'preview.png',
@@ -29,6 +30,7 @@ DefineAsset({
 		],
 	},
 	modules: {
+		...baseModules,
 		gagType: {
 			type: 'typed',
 			name: 'Gag Type',

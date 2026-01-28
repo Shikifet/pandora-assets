@@ -24,7 +24,7 @@
 				}
 			],
 			"clipToRoom": true,
-			"colorizationKey": "rope",
+			"colorizationKey": "rope_ceiling",
 			"image": "ceiling_line.png"
 		},
 		{
@@ -50,7 +50,7 @@
 					]
 				}
 			],
-			"colorizationKey": "rope",
+			"colorizationKey": "rope_ceiling",
 			"image": "rope_ring_top_end.png"
 		},
 		{
@@ -161,7 +161,7 @@
 					]
 				}
 			],
-			"colorizationKey": "rope",
+			"colorizationKey": "rope_ceiling",
 			"image": "",
 			"imageOverrides": [
 				{

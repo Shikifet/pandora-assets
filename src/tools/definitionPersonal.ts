@@ -2,6 +2,7 @@ import { freeze, type Immutable } from 'immer';
 import { cloneDeep, omit, pick } from 'lodash-es';
 import { AssetId, GetLogger, PersonalAssetDefinition, type GraphicsBuildContextAssetData } from 'pandora-common';
 import { join } from 'path';
+import { BUILD_FOR_TEST } from '../config.ts';
 import { AssetDatabase } from './assetDatabase.ts';
 import { AssetSourcePath, DefaultId, GetAssetRepositoryPath } from './context.ts';
 import { LoadAssetGraphicsFile } from './graphics.ts';
@@ -29,6 +30,7 @@ const PERSONAL_DEFINITION_FALLTHROUGH_PROPERTIES = [
 	'name',
 	'wearable',
 	'allowRandomizerUsage',
+	'roomDeployment',
 	'size',
 	'chat',
 	'posePresets',
@@ -44,7 +46,13 @@ export type PersonalAssetDefinitionFallthroughProperties = (typeof PERSONAL_DEFI
 
 export function GlobalDefineAsset(def: IntermediatePersonalAssetDefinition): IntermediatePersonalAssetDefinition {
 	freeze(def, true);
-	RegisterImportContextProcess(() => GlobalDefineAssetProcess(cloneDeep(def)));
+
+	if (BUILD_FOR_TEST && def.useForTesting !== true) {
+		// Do not use this asset when building for test
+	} else {
+		RegisterImportContextProcess(() => GlobalDefineAssetProcess(cloneDeep(def)));
+	}
+
 	return def;
 }
 
@@ -136,6 +144,7 @@ async function GlobalDefineAssetProcess(def: IntermediatePersonalAssetDefinition
 		const builtAssetData: Immutable<GraphicsBuildContextAssetData> = {
 			modules: asset.modules,
 			colorizationKeys: new Set(Object.keys(colorization ?? {})),
+			supportsInRoomGraphics: asset.roomDeployment != null,
 		};
 
 		const { graphics, graphicsSource } = await LoadAssetGraphicsFile(

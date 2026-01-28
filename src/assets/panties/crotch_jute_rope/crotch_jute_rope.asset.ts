@@ -1,13 +1,11 @@
+import { CreateRopeColor } from '../../../helpers/rope_base.ts';
+const { colorization, modules: baseModules } = CreateRopeColor();
+
 DefineAsset({
 	name: 'Crotch Jute Ropes',
 	size: 'small',
 	graphics: 'graphics.json',
-	colorization: {
-		rope: {
-			name: 'Rope',
-			default: '#D7AC4D',
-		},
-	},
+	colorization,
 	attributes: {
 		provides: [
 			'Restraint',
@@ -18,9 +16,13 @@ DefineAsset({
 			'!Penis',
 		],
 	},
+	roomDeployment: {
+		autoDeployRelativePosition: [-90, -100, 0],
+	},
 	// size:260, y:560, centered
 	preview: 'preview.png',
 	modules: {
+		...baseModules,
 		waist: {
 			type: 'typed',
 			name: 'Waist',
@@ -123,6 +125,21 @@ DefineAsset({
 							},
 						},
 					},
+				},
+			],
+		},
+		room_placement: {
+			type: 'typed',
+			name: 'Room Placement',
+			variants: [
+				{
+					id: 'coiled',
+					name: 'Coiled',
+					default: true,
+				},
+				{
+					id: 'tangled',
+					name: 'Tangled',
 				},
 			],
 		},

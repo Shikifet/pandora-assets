@@ -13,6 +13,9 @@ DefineAsset({
 			default: '#FFFFFF',
 		},
 	},
+	roomDeployment: {
+		autoDeployRelativePosition: [-125, -134, 0],
+	},
 	// size:350, y:380, centered
 	preview: 'preview.png',
 	attributes: {
@@ -22,6 +25,29 @@ DefineAsset({
 		],
 	},
 	modules: {
+		neckline: {
+			type: 'typed',
+			name: 'T-Shirt Neckline',
+			variants: [
+				{
+					id: 'jewel',
+					name: 'Jewel',
+				},
+				{
+					id: 'round',
+					name: 'Round',
+				},
+				{
+					id: 'boat',
+					name: 'Boat',
+					default: true,
+				},
+				{
+					id: 'v-neck',
+					name: 'V-Neck',
+				},
+			],
+		},
 		prints: {
 			type: 'typed',
 			name: 'T-Shirt Print',
@@ -86,6 +112,15 @@ DefineAsset({
 					},
 				},
 				{
+					id: 'nythacorp',
+					name: 'Nythacorp Logo',
+					properties: {
+						stateFlags: {
+							provides: ['small_print'],
+						},
+					},
+				},
+				{
 					id: 'noPrint',
 					name: 'No Print',
 					properties: {
@@ -105,9 +140,17 @@ DefineAsset({
 					name: 'Sleeveless',
 				},
 				{
+					id: 'cap',
+					name: 'Cap Sleeves',
+				},
+				{
 					id: 'short',
 					name: 'Short Sleeves',
 					default: true,
+				},
+				{
+					id: 'three-quarter',
+					name: 'Three-Quarter Sleeves',
 				},
 				{
 					id: 'long',
@@ -184,6 +227,20 @@ DefineAsset({
 				source: 'Self-Made',
 				copyrightHolder: 'Freyja',
 				editedBy: 'Freyja',
+				license: 'Pandora-Use-Only-v1-or-later',
+			},
+			{
+				part: 'Necklines (jewel, round, v-neck) and sleeves (cap, three-quarter) variants',
+				source: 'Self-Made',
+				copyrightHolder: 'Klewdia',
+				editedBy: 'Klewdia',
+				license: 'Pandora-Use-Only-v1-or-later',
+			},
+			{
+				part: 'Nythacorp Logo',
+				source: 'Self-Made',
+				copyrightHolder: 'Nythaleath',
+				editedBy: 'Nythaleath',
 				license: 'Pandora-Use-Only-v1-or-later',
 			},
 		],

@@ -2,7 +2,7 @@
 	"name": "pandora-assets",
 	"version": "0.1.0",
 	"private": true,
-	"packageManager": "pnpm@10.28.0+sha512.05df71d1421f21399e053fde567cea34d446fa02c76571441bfc1c7956e98e363088982d940465fd34480d4d90a0668bc12362f8aa88000a64e83d0b0e47be48",
+	"packageManager": "pnpm@10.28.2+sha512.41872f037ad22f7348e3b1debbaf7e867cfd448f2726d9cf74c08f19507c31d2c8e7a11525b983febc2df640b5438dee6023ebb1f84ed43cc2d654d2bc326264",
 	"engines": {
 		"node": ">=24.x"
 	},
@@ -18,11 +18,16 @@
 	"type": "module",
 	"scripts": {
 		"postinstall": "node .hooks/postinstall.cjs",
-		"ci": "pnpm run build --prod && pnpm run lint && pnpm run type-check:test && pnpm run test --ci",
-		"clean": "rimraf dist",
-		"build": "pnpm run --silent clean && tsc -p ./tsconfig.json && node --enable-source-maps --env-file=.env ./dist/index",
-		"dev": "pnpm run --silent clean && tsc-watch -p ./tsconfig.json --onSuccess \"node --enable-source-maps --env-file=.env ./dist/index --watch\"",
-		"dev:inspect": "pnpm run --silent clean && tsc-watch -p ./tsconfig.json --onSuccess \"node --inspect=26958 --enable-source-maps --env-file=.env ./dist/index --watch\"",
+		"ci": "pnpm run build --prod && pnpm run lint && pnpm run build-for-test:check-no-compile && pnpm run type-check:test && pnpm run test --ci",
+		"clean": "rimraf dist out out-for-test out-for-test.tar build.log",
+		"build": "rimraf dist && tsc -p ./tsconfig.json && node --enable-source-maps --env-file=.env ./dist/index",
+		"build-for-test": "rimraf dist && tsc -p ./tsconfig.json && pnpm run --silent build-for-test:run-build",
+		"build-for-test:run-build": "node --enable-source-maps --env-file=.env ./dist/index --build-for-test",
+		"build-for-test:package": "pnpm run --silent build-for-test && node --enable-source-maps --env-file=.env ./tools/testing/prepareTestingAssets.js",
+		"build-for-test:check": "pnpm run --silent build-for-test && node --enable-source-maps --env-file=.env ./tools/testing/checkTestingAssets.js",
+		"build-for-test:check-no-compile": "pnpm run --silent build-for-test:run-build && node --enable-source-maps --env-file=.env ./tools/testing/checkTestingAssets.js",
+		"dev": "rimraf dist && tsc-watch -p ./tsconfig.json --onSuccess \"node --enable-source-maps --env-file=.env ./dist/index --watch\"",
+		"dev:inspect": "rimraf dist && tsc-watch -p ./tsconfig.json --onSuccess \"node --inspect=26958 --enable-source-maps --env-file=.env ./dist/index --watch\"",
 		"lint": "eslint --max-warnings 0 .",
 		"lint:fix": "eslint --fix .",
 		"type-check": "pnpm run '/type-check:.*/'",
@@ -39,22 +44,22 @@
 		"ignore": "7.0.5",
 		"immer": "11.1.3",
 		"json-diff": "1.0.6",
-		"lodash-es": "4.17.22",
+		"lodash-es": "4.17.23",
 		"pandora-common": "github:Project-Pandora-Game/pandora#master&path:pandora-common",
 		"rimraf": "6.1.2",
 		"sharp": "0.34.5",
 		"simple-git": "3.30.0",
-		"zod": "4.3.5"
+		"zod": "4.3.6"
 	},
 	"devDependencies": {
 		"@eslint/js": "9.39.2",
 		"@jest/globals": "30.2.0",
-		"@stylistic/eslint-plugin": "5.7.0",
+		"@stylistic/eslint-plugin": "5.7.1",
 		"@types/delaunator": "5.0.3",
 		"@types/express": "5.0.6",
 		"@types/json-diff": "1.0.3",
 		"@types/lodash-es": "4.17.12",
-		"@types/node": "24.10.7",
+		"@types/node": "24.10.9",
 		"eslint": "9.39.2",
 		"eslint-plugin-import": "2.32.0",
 		"jest": "30.2.0",
@@ -62,6 +67,6 @@
 		"tsc-watch": "7.2.0",
 		"tslib": "2.8.1",
 		"typescript": "5.9.3",
-		"typescript-eslint": "8.52.0"
+		"typescript-eslint": "8.54.0"
 	}
 }

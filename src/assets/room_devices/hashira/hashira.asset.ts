@@ -33,7 +33,7 @@ DefineRoomDeviceAsset({
 					},
 				},
 				attributes: {
-					provides: ['Hashira'],
+					provides: ['Hashira', 'Gag_anchor_point'],
 				},
 			},
 		},
