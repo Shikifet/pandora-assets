@@ -115,6 +115,7 @@ DefineAsset({
 					name: 'Closed',
 					default: true,
 					properties: {
+						blockModules: ['restraints_belts'],
 						stateFlags: {
 							provides: ['suitcase_closed'],
 						},
