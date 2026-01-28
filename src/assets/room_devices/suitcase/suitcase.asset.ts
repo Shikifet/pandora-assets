@@ -23,6 +23,10 @@ DefineAsset({
 			name: 'Belts Buckles',
 			default: '#9f9f9fff',
 		},
+		wheels: {
+			name: 'Wheels',
+			default: '#ffffffff',
+		},
 	},
 	roomDeployment: {
 		autoDeployRelativePosition: [-60, -100, 0],

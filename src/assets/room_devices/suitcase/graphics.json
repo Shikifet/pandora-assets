@@ -1643,7 +1643,7 @@
 			"graphicalLayers": [
 				{
 					"name": "Wheels",
-					"colorizationKey": ""
+					"colorizationKey": "wheels"
 				}
 			],
 			"variables": [
@@ -1681,7 +1681,7 @@
 			"graphicalLayers": [
 				{
 					"name": "Hinges",
-					"colorizationKey": ""
+					"colorizationKey": "restraints_belts_buckles"
 				}
 			],
 			"variables": [
@@ -1747,7 +1747,6 @@
 					"",
 					""
 				],
-
 				"retracted:front:closed": [
 					"",
 					""
@@ -1782,7 +1781,7 @@
 					"name": "Suitcase Inner Lines",
 					"colorizationKey": "suitcase"
 				},
-								{
+				{
 					"name": "Suitcase Side",
 					"colorizationKey": "suitcase"
 				},
@@ -1830,7 +1829,6 @@
 					"",
 					""
 				],
-
 				"side:closed:none": [
 					"closed_side.png",
 					"",
@@ -1857,9 +1855,6 @@
 				]
 			}
 		},
-
-
-
 		{
 			"x": 0,
 			"y": -800,
@@ -1899,14 +1894,17 @@
 				"closed:none": [
 					"",
 					"",
+					"",
 					""
 				],
 				"closed:attached": [
 					"",
 					"",
+					"",
 					""
 				],
 				"opened:none": [
+					"",
 					"",
 					"",
 					""
@@ -1919,7 +1917,6 @@
 				]
 			}
 		},
-
 		{
 			"x": 0,
 			"y": -800,
@@ -1952,6 +1949,22 @@
 				}
 			],
 			"imageMap": {
+				"closed:none:none": [
+					"",
+					""
+				],
+				"closed:none:harness": [
+					"",
+					""
+				],
+				"closed:attached:none": [
+					"",
+					""
+				],
+				"closed:attached:harness": [
+					"",
+					""
+				],
 				"opened:none:none": [
 					"",
 					""
