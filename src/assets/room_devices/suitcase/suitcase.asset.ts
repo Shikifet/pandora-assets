@@ -119,7 +119,7 @@ DefineAsset({
 					name: 'Closed',
 					default: true,
 					properties: {
-						blockModules: ['restraints_belts'],
+						blockModules: ['restraints_belts', 'content'],
 						stateFlags: {
 							provides: ['suitcase_closed'],
 						},
@@ -199,6 +199,12 @@ DefineAsset({
 				blockAddRemove: true,
 				blockModules: ['restraints_belts'],
 			},
+		},
+		content: {
+			type: 'storage',
+			name: 'Suitcase contents',
+			maxCount: 10,
+			maxAcceptedSize: 'medium',
 		},
 	},
 	stateFlagCombinations: [
