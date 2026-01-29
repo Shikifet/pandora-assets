@@ -163,7 +163,6 @@ DefineAsset({
 					default: true,
 					properties: {
 						stateFlags: {
-							provides: ['belts_attached'],
 							requires: {
 								restraints_panel: 'Harness requires an attached Restraint Panel',
 							},
