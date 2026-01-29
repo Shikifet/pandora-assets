@@ -40,6 +40,20 @@ DefineAsset({
 			'Restraint_legs',
 		],
 	},
+	poseLimits: {
+		view: 'front',
+		legs: {
+			pose: 'kneeling',
+		},
+		bones: {
+			leg_r: -60,
+			leg_l: -60,
+			arm_r: [[75, 140]],
+			elbow_r: [[-180, -125], [-15, 180]],
+			arm_l: [[75, 140]],
+			elbow_l: [[-180, -125], [-15, 180]],
+		},
+	},
 	modules: {
 		handle: {
 			type: 'typed',
@@ -76,40 +90,6 @@ DefineAsset({
 				},
 			],
 		},
-		position: {
-			type: 'typed',
-			name: 'Character Position',
-			variants: [
-				{
-					id: 'front',
-					name: 'Front',
-					default: true,
-				},
-				{
-					id: 'inside',
-					name: 'Inside',
-					properties: {
-						poseLimits: {
-							view: 'front',
-							legs: {
-								pose: 'kneeling',
-							},
-							bones: {
-								leg_r: -60,
-								leg_l: -60,
-								arm_r: [[75, 140]],
-								elbow_r: [[-180, -125], [-15, 180]],
-								arm_l: [[75, 140]],
-								elbow_l: [[-180, -125], [-15, 180]],
-							},
-						},
-						stateFlags: {
-							provides: ['inside_suitcase'],
-						},
-					},
-				},
-			],
-		},
 		door: {
 			type: 'typed',
 			name: 'Suitcase Door',
@@ -119,7 +99,7 @@ DefineAsset({
 					name: 'Closed',
 					default: true,
 					properties: {
-						blockModules: ['restraints_belts', 'content'],
+						blockModules: ['restraints_panel', 'restraints_belts', 'content'],
 						stateFlags: {
 							provides: ['suitcase_closed'],
 						},
@@ -188,17 +168,12 @@ DefineAsset({
 								restraints_panel: 'Harness requires an attached Restraint Panel',
 							},
 						},
+						attributes: {
+							provides: ['Vulva_cover'],
+						},
 					},
 				},
 			],
-		},
-		restraints_belts_lock: {
-			type: 'lockSlot',
-			name: 'Belts Lock',
-			lockedProperties: {
-				blockAddRemove: true,
-				blockModules: ['restraints_belts'],
-			},
 		},
 		content: {
 			type: 'storage',
@@ -209,21 +184,7 @@ DefineAsset({
 	},
 	stateFlagCombinations: [
 		{
-			requiredFlags: ['inside_suitcase', 'belts_attached'],
-			properties: {
-				attributes: {
-					provides: ['Vulva_cover'],
-				},
-			},
-		},
-		{
 			requiredFlags: ['suitcase_closed'],
-			properties: {
-				blockModules: ['position', 'restraints_panel'],
-			},
-		},
-		{
-			requiredFlags: ['inside_suitcase', 'suitcase_closed'],
 			properties: {
 				effects: {
 					blockHands: true,

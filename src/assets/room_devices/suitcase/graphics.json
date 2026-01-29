@@ -2,280 +2,6 @@
 {
 	"layers": [
 		{
-			"x": 100,
-			"y": 400,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Closed Front Outside",
-			"priority": "BACKGROUND",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "suitcase",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "closed_front.png",
-						"condition": [
-							[
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "closed"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 100,
-			"y": 400,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Closed Front Latches Outside",
-			"priority": "BACKGROUND",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "suitcase_latches",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "closed_front_latches.png",
-						"condition": [
-							[
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "closed"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 100,
-			"y": 400,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Closed Handle Bars",
-			"priority": "BACKGROUND",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "restraints_belts_buckles",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "closed_front_handle_bars.png",
-						"condition": [
-							[
-								{
-									"module": "handle",
-									"operator": "=",
-									"value": "extended"
-								},
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "closed"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
-								}
-							]
-						]
-					},
-					{
-						"image": "closed_side_handle_bars.png",
-						"condition": [
-							[
-								{
-									"module": "handle",
-									"operator": "=",
-									"value": "extended"
-								},
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "closed"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "side"
-								}
-							]
-						]
-					},
-					{
-						"image": "open_handle_bars.png",
-						"condition": [
-							[
-								{
-									"module": "handle",
-									"operator": "=",
-									"value": "extended"
-								},
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "opened"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 100,
-			"y": 400,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Closed Front Handle",
-			"priority": "BACKGROUND",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "suitcase",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "closed_front_handle.png",
-						"condition": [
-							[
-								{
-									"module": "handle",
-									"operator": "=",
-									"value": "extended"
-								},
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "closed"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
-								}
-							]
-						]
-					},
-					{
-						"image": "closed_side_handle.png",
-						"condition": [
-							[
-								{
-									"module": "handle",
-									"operator": "=",
-									"value": "extended"
-								},
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "closed"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "side"
-								}
-							]
-						]
-					},
-					{
-						"image": "open_handle.png",
-						"condition": [
-							[
-								{
-									"module": "handle",
-									"operator": "=",
-									"value": "extended"
-								},
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "opened"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
 			"x": 0,
 			"y": 0,
 			"width": 1000,
@@ -299,11 +25,6 @@
 									"value": "extended"
 								},
 								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
-								{
 									"module": "door",
 									"operator": "=",
 									"value": "closed"
@@ -326,11 +47,6 @@
 									"value": "extended"
 								},
 								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
-								{
 									"module": "door",
 									"operator": "=",
 									"value": "closed"
@@ -351,11 +67,6 @@
 									"module": "handle",
 									"operator": "=",
 									"value": "extended"
-								},
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
 								},
 								{
 									"module": "door",
@@ -397,11 +108,6 @@
 									"value": "extended"
 								},
 								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
-								{
 									"module": "door",
 									"operator": "=",
 									"value": "closed"
@@ -424,11 +130,6 @@
 									"value": "extended"
 								},
 								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
-								{
 									"module": "door",
 									"operator": "=",
 									"value": "closed"
@@ -449,11 +150,6 @@
 									"module": "handle",
 									"operator": "=",
 									"value": "extended"
-								},
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
 								},
 								{
 									"module": "door",
@@ -490,11 +186,6 @@
 						"condition": [
 							[
 								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
-								{
 									"module": "door",
 									"operator": "=",
 									"value": "closed"
@@ -529,11 +220,6 @@
 						"condition": [
 							[
 								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
-								{
 									"module": "door",
 									"operator": "=",
 									"value": "closed"
@@ -542,84 +228,6 @@
 									"module": "status",
 									"operator": "=",
 									"value": "front"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 100,
-			"y": 400,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Closed Side Latches Outside",
-			"priority": "BACKGROUND",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "suitcase_latches",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "closed_side_latches.png",
-						"condition": [
-							[
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "closed"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "side"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 100,
-			"y": 400,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Closed Side Outside",
-			"priority": "BACKGROUND",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "suitcase",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "closed_side.png",
-						"condition": [
-							[
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "closed"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "side"
 								}
 							]
 						]
@@ -645,11 +253,6 @@
 						"image": "closed_side.png",
 						"condition": [
 							[
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
 								{
 									"module": "door",
 									"operator": "=",
@@ -685,11 +288,6 @@
 						"condition": [
 							[
 								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
-								{
 									"module": "door",
 									"operator": "=",
 									"value": "closed"
@@ -698,387 +296,6 @@
 									"module": "status",
 									"operator": "=",
 									"value": "side"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 100,
-			"y": 400,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Open Side Latches Outside",
-			"priority": "BACKGROUND",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "suitcase_latches",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "open_latches.png",
-						"condition": [
-							[
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "opened"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 100,
-			"y": 400,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Open Side Outside",
-			"priority": "BACKGROUND",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "suitcase",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "open_side.png",
-						"condition": [
-							[
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "opened"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 100,
-			"y": 400,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Open Belts Anchors Outside",
-			"priority": "BACKGROUND",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "restraints_belts_buckles",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "open_body_chest_triangle.png",
-						"condition": [
-							[
-								{
-									"module": "restraints_panel",
-									"operator": "=",
-									"value": "attached"
-								},
-								{
-									"module": "restraints_belts",
-									"operator": "=",
-									"value": "harness"
-								},
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "opened"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 100,
-			"y": 400,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Open Belts Anchors Outside",
-			"priority": "BACKGROUND",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "restraints_belts",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "open_body_belts.png",
-						"condition": [
-							[
-								{
-									"module": "restraints_panel",
-									"operator": "=",
-									"value": "attached"
-								},
-								{
-									"module": "restraints_belts",
-									"operator": "=",
-									"value": "harness"
-								},
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "opened"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 100,
-			"y": 400,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Open Belts Anchors Outside",
-			"priority": "BACKGROUND",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "restraints_belts_buckles",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "open_body_belts_anchors.png",
-						"condition": [
-							[
-								{
-									"module": "restraints_panel",
-									"operator": "=",
-									"value": "attached"
-								},
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "opened"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 100,
-			"y": 400,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Open center support Outside",
-			"priority": "BACKGROUND",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "restraints_support",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "open_center_support.png",
-						"condition": [
-							[
-								{
-									"module": "restraints_panel",
-									"operator": "=",
-									"value": "attached"
-								},
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "opened"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 100,
-			"y": 400,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Open Side Outside",
-			"priority": "BACKGROUND",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "suitcase",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "open_side_inner_lines.png",
-						"condition": [
-							[
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "opened"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 100,
-			"y": 400,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Open background Outside",
-			"priority": "BACKGROUND",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "suitcase",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "open_background.png",
-						"condition": [
-							[
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "opened"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 100,
-			"y": 400,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Open Hinges Outside",
-			"priority": "BACKGROUND",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "suitcase_latches",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "open_hinges.png",
-						"condition": [
-							[
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "opened"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
 								}
 							]
 						]
@@ -1104,11 +321,6 @@
 						"image": "open_side.png",
 						"condition": [
 							[
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
 								{
 									"module": "door",
 									"operator": "=",
@@ -1144,11 +356,6 @@
 						"condition": [
 							[
 								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
-								{
 									"module": "door",
 									"operator": "=",
 									"value": "opened"
@@ -1186,11 +393,6 @@
 									"module": "restraints_panel",
 									"operator": "=",
 									"value": "attached"
-								},
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
 								},
 								{
 									"module": "door",
@@ -1237,11 +439,6 @@
 									"value": "harness"
 								},
 								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
-								{
 									"module": "door",
 									"operator": "=",
 									"value": "opened"
@@ -1284,11 +481,6 @@
 									"module": "restraints_belts",
 									"operator": "=",
 									"value": "harness"
-								},
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
 								},
 								{
 									"module": "door",
@@ -1330,11 +522,6 @@
 									"value": "attached"
 								},
 								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
-								{
 									"module": "door",
 									"operator": "=",
 									"value": "opened"
@@ -1368,11 +555,6 @@
 						"image": "open_side_inner_lines.png",
 						"condition": [
 							[
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
 								{
 									"module": "door",
 									"operator": "=",
@@ -1408,11 +590,6 @@
 						"condition": [
 							[
 								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
-								{
 									"module": "door",
 									"operator": "=",
 									"value": "opened"
@@ -1447,11 +624,6 @@
 						"condition": [
 							[
 								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
-								{
 									"module": "door",
 									"operator": "=",
 									"value": "opened"
@@ -1485,11 +657,6 @@
 						"condition": [
 							[
 								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
-								{
 									"module": "door",
 									"operator": "=",
 									"value": "closed"
@@ -1507,11 +674,6 @@
 						"condition": [
 							[
 								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
-								{
 									"module": "door",
 									"operator": "=",
 									"value": "closed"
@@ -1528,93 +690,6 @@
 						"image": "open_wheels.png",
 						"condition": [
 							[
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "inside"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "opened"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 100,
-			"y": 400,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "Front Wheels",
-			"priority": "BACKGROUND",
-			"points": "static",
-			"mirror": 0,
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "front_wheels.png",
-						"condition": [
-							[
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "closed"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "front"
-								}
-							]
-						]
-					},
-					{
-						"image": "side_wheels.png",
-						"condition": [
-							[
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
-								{
-									"module": "door",
-									"operator": "=",
-									"value": "closed"
-								},
-								{
-									"module": "status",
-									"operator": "=",
-									"value": "side"
-								}
-							]
-						]
-					},
-					{
-						"image": "open_wheels.png",
-						"condition": [
-							[
-								{
-									"module": "position",
-									"operator": "=",
-									"value": "front"
-								},
 								{
 									"module": "door",
 									"operator": "=",
