@@ -5,11 +5,11 @@ DefineAsset({
 	colorization: {
 		suitcase: {
 			name: 'Suitcase',
-			default: '#D5D5D5',
+			default: '#BE0000',
 		},
 		suitcase_latches: {
 			name: 'Suitcase Latches',
-			default: '#9f9f9fff',
+			default: '#DDB30A',
 		},
 		restraints_support: {
 			name: 'Restraints Support',
@@ -20,7 +20,7 @@ DefineAsset({
 			default: '#363636ff',
 		},
 		restraints_belts_buckles: {
-			name: 'Belts Buckles',
+			name: 'Metal pieces',
 			default: '#9f9f9fff',
 		},
 		wheels: {
