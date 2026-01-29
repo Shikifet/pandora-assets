@@ -187,6 +187,7 @@ DefineAsset({
 			properties: {
 				effects: {
 					blockHands: true,
+					blockRoomMovement: true,
 					blind: 10,
 					lipsTouch: 0,
 					jawMove: 1,
