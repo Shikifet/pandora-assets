@@ -986,7 +986,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "Nose1_side.png",
+						"image": "nose1_side.png",
 						"condition": [
 							[
 								{
@@ -1349,7 +1349,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "Nose1_side.png",
+						"image": "nose1_side.png",
 						"condition": [
 							[
 								{
