@@ -10,7 +10,7 @@ DefineAsset({
 		},
 		strings: {
 			name: 'Strings',
-			default: '#8B5E00',
+			group: 'rope'
 		},
 	},
 	roomDeployment: {
@@ -26,6 +26,24 @@ DefineAsset({
 		],
 	},
 	modules: {
+		colorStringsGroupRope: {
+			type: 'typed',
+			name: 'Group Strings to Rope Color',
+			variants: [
+				{
+					id: 'no',
+					name: 'No',
+					default: true,
+				},
+				{
+					id: 'yes',
+					name: 'Yes',
+					properties: {
+						overrideColorKey: ['strings'],
+					},
+				},
+			],
+		},
 		attach: {
 			type: 'typed',
 			name: 'Attach on',
