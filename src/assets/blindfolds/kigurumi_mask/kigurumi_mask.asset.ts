@@ -47,7 +47,7 @@ DefineAsset({
 		},
 		shine: {
 			name: 'Eye Shine',
-			default: '#A8CEE4CC',
+			default: '#FFFFFFCC',
 			minAlpha: 0,
 		},
 		nose: {
