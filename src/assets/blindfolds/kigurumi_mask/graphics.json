@@ -491,16 +491,20 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "eyelashess",
+			"name": "pupils",
 			"priority": "ABOVE_BODY",
 			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "lashes",
+			"pointType": [
+				"static",
+				"static_l"
+			],
+			"mirror": 1,
+			"colorizationKey": "eyeColor_l",
 			"image": {
 				"image": "",
 				"overrides": [
 					{
-						"image": "eyelashes.png",
+						"image": "cornea.png",
 						"condition": [
 							[
 								{
@@ -520,20 +524,16 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "pupils",
+			"name": "eyelashess",
 			"priority": "ABOVE_BODY",
 			"points": "static",
-			"pointType": [
-				"static",
-				"static_l"
-			],
-			"mirror": 1,
-			"colorizationKey": "eyeColor_l",
+			"mirror": 0,
+			"colorizationKey": "lashes",
 			"image": {
 				"image": "",
 				"overrides": [
 					{
-						"image": "cornea.png",
+						"image": "eyelashes.png",
 						"condition": [
 							[
 								{
@@ -1418,16 +1418,16 @@
 					"colorizationKey": "eyeBackground"
 				},
 				{
-					"name": "Eyelashes",
-					"colorizationKey": "lashes"
-				},
-				{
 					"name": "Cornea L",
 					"colorizationKey": "eyeColor_l"
 				},
 				{
 					"name": "Cornea R",
 					"colorizationKey": "eyeColor_r"
+				},
+				{
+					"name": "Eyelashes",
+					"colorizationKey": "lashes"
 				},
 				{
 					"name": "Nose",
@@ -1439,9 +1439,9 @@
 				"": [
 					"mask_side.png",
 					"eyebase_side.png",
-					"eyelashes_side.png",
 					"cornea_side_r.png",
 					"cornea_side_l.png",
+					"eyelashes_side.png",
 					"nose1_side.png"
 				]
 			}
