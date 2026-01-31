@@ -69,6 +69,9 @@ DefineAsset({
 			default: '#FF7BE6',
 		},
 	},
+	roomDeployment: {
+		autoDeployRelativePosition: [-100, -80, 0],
+	},
 	// size:200, y:189, centered
 	preview: 'preview.png',
 	attributes: {
@@ -390,11 +393,6 @@ DefineAsset({
 						'Mouth_insert',
 						'Mouth_insert_deep',
 					],
-				},
-				stateFlags: {
-					requires: {
-						mask_on: 'Gag cannot be used without mask',
-					},
 				},
 				effects: {
 					lipsTouch: 9,

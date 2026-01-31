@@ -829,13 +829,9 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "pupils",
+			"name": "Pupils Side back",
 			"priority": "OVERLAY",
 			"points": "static",
-			"pointType": [
-				"static",
-				"static_l"
-			],
 			"mirror": 1,
 			"colorizationKey": "eyeColor_l",
 			"image": {
@@ -862,7 +858,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "eyes",
+			"name": "Eyes Side back",
 			"priority": "OVERLAY",
 			"points": "static",
 			"mirror": 0,
@@ -891,7 +887,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "eyelashess",
+			"name": "Eyelashes Side back",
 			"priority": "OVERLAY",
 			"points": "static",
 			"mirror": 0,
@@ -920,7 +916,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "",
+			"name": "Nose Side back",
 			"priority": "OVERLAY",
 			"points": "static",
 			"previewOverrides": {
@@ -952,7 +948,7 @@
 			"width": 990,
 			"height": 1500,
 			"type": "mesh",
-			"name": "",
+			"name": "Blush side back",
 			"priority": "OVERLAY",
 			"points": "static",
 			"mirror": 0,
@@ -1054,7 +1050,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "lips_background",
+			"name": "Lips Side back",
 			"priority": "OVERLAY",
 			"points": "static",
 			"mirror": 0,
@@ -1087,7 +1083,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "lips",
+			"name": "Lips Side back",
 			"priority": "OVERLAY",
 			"points": "static",
 			"mirror": 0,
@@ -1138,7 +1134,7 @@
 			"width": 990,
 			"height": 1500,
 			"type": "mesh",
-			"name": "mask_front",
+			"name": "Mask Side",
 			"priority": "OVERLAY",
 			"points": "static",
 			"mirror": 0,
@@ -1167,7 +1163,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "eyelashess",
+			"name": "Eyelashes Side",
 			"priority": "OVERLAY",
 			"points": "static",
 			"mirror": 0,
@@ -1196,7 +1192,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "eyes",
+			"name": "Eyes Side",
 			"priority": "OVERLAY",
 			"points": "static",
 			"mirror": 0,
@@ -1225,13 +1221,9 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "pupils",
+			"name": "Pupils Side",
 			"priority": "OVERLAY",
 			"points": "static",
-			"pointType": [
-				"static",
-				"static_l"
-			],
 			"mirror": 1,
 			"colorizationKey": "eyeColor_l",
 			"image": {
@@ -1258,7 +1250,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "",
+			"name": "Nose Side",
 			"priority": "OVERLAY",
 			"points": "static",
 			"previewOverrides": {
@@ -1290,7 +1282,7 @@
 			"width": 990,
 			"height": 1500,
 			"type": "mesh",
-			"name": "mask_front",
+			"name": "Mask Front Opacity",
 			"priority": "OVERLAY",
 			"points": "static",
 			"mirror": 0,
@@ -1318,7 +1310,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "",
+			"name": "Dildo",
 			"priority": "OVERLAY",
 			"points": "static",
 			"previewOverrides": {
@@ -1346,6 +1338,116 @@
 							]
 						]
 					}
+				]
+			}
+		}
+	],
+	"roomLayers": [
+		{
+			"x": -500,
+			"y": -300,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "Base",
+			"graphicalLayers": [
+				{
+					"name": "Mask",
+					"colorizationKey": "mask"
+				},
+				{
+					"name": "Eye background",
+					"colorizationKey": "eyeBackground"
+				},
+				{
+					"name": "Eyelashes",
+					"colorizationKey": "lashes"
+				},
+				{
+					"name": "Cornea",
+					"colorizationKey": "eyeColor_l"
+				},
+				{
+					"name": "Nose",
+					"colorizationKey": "nose"
+				}
+			],
+			"variables": [],
+			"imageMap": {
+				"": [
+					"mask_side.png",
+					"eyebase_side.png",
+					"eyelashes_side.png",
+					"cornea_side.png",
+					"nose1_side.png"
+				]
+			}
+		},
+		{
+			"x": -500,
+			"y": -300,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "Blush",
+			"graphicalLayers": [
+				{
+					"name": "Blush",
+					"colorizationKey": "blush"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "blush"
+				}
+			],
+			"imageMap": {
+				"noBlush": [
+					""
+				],
+				"faint": [
+					"blush_faint_side.png"
+				],
+				"medium": [
+					"blush_medium_side.png"
+				],
+				"strong": [
+					"blush_strong_side.png"
+				],
+				"full": [
+					"blush_full_side.png"
+				],
+				"deep": [
+					"blush_deep_side.png"
+				]
+			}
+		},
+		{
+			"x": -500,
+			"y": -300,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "Mouth",
+			"graphicalLayers": [
+				{
+					"name": "Lips",
+					"colorizationKey": "lips"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "mouth"
+				}
+			],
+			"imageMap": {
+				"smile": [
+					"lips_smile_side.png"
+				],
+				"grin": [
+					"lips_base_grin_side.png"
 				]
 			}
 		}
