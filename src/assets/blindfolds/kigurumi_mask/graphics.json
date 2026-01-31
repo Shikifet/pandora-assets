@@ -829,7 +829,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "Pupils Side back",
+			"name": "Pupils Side back L",
 			"priority": "OVERLAY",
 			"points": "static",
 			"mirror": 1,
@@ -838,7 +838,36 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "cornea_side.png",
+						"image": "cornea_side_l.png",
+						"condition": [
+							[
+								{
+									"module": "mask",
+									"operator": "=",
+									"value": "side"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Pupils Side back R",
+			"priority": "OVERLAY",
+			"points": "static",
+			"mirror": 1,
+			"colorizationKey": "eyeColor_r",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "cornea_side_r.png",
 						"condition": [
 							[
 								{
@@ -1221,7 +1250,36 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "Pupils Side",
+			"name": "Pupils Side L",
+			"priority": "OVERLAY",
+			"points": "static",
+			"mirror": 1,
+			"colorizationKey": "eyeColor_r",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "cornea_side_l.png",
+						"condition": [
+							[
+								{
+									"module": "mask",
+									"operator": "=",
+									"value": "side"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Pupils Side R",
 			"priority": "OVERLAY",
 			"points": "static",
 			"mirror": 1,
@@ -1230,7 +1288,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "cornea_side.png",
+						"image": "cornea_side_r.png",
 						"condition": [
 							[
 								{
@@ -1364,8 +1422,12 @@
 					"colorizationKey": "lashes"
 				},
 				{
-					"name": "Cornea",
+					"name": "Cornea L",
 					"colorizationKey": "eyeColor_l"
+				},
+				{
+					"name": "Cornea R",
+					"colorizationKey": "eyeColor_r"
 				},
 				{
 					"name": "Nose",
@@ -1378,7 +1440,8 @@
 					"mask_side.png",
 					"eyebase_side.png",
 					"eyelashes_side.png",
-					"cornea_side.png",
+					"cornea_side_r.png",
+					"cornea_side_l.png",
 					"nose1_side.png"
 				]
 			}
