@@ -10,7 +10,7 @@ DefineAsset({
 		},
 		strings: {
 			name: 'Strings',
-			group: 'rope'
+			group: 'rope',
 		},
 	},
 	roomDeployment: {
