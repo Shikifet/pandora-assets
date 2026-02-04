@@ -65,7 +65,7 @@ DefineAsset({
 			minAlpha: 0,
 		},
 		dildo: {
-			name: 'Lips',
+			name: 'Dildo',
 			default: '#FF7BE6',
 		},
 	},
