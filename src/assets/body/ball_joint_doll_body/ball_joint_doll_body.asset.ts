@@ -1,7 +1,6 @@
 DefineBodypart({
 	name: 'Ball-joint Doll Body',
 	bodypart: 'base',
-	allowRandomizerUsage: false,
 	graphics: 'graphics.json',
 	colorization: {
 		body: {
