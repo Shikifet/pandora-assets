@@ -27,7 +27,7 @@ DefineAsset({
 			group: 'lips',
 		},
 	},
-	//overrideColorKey: ['lips'],
+	overrideColorKey: ['lips'],
 	roomDeployment: {
 		autoDeployRelativePosition: [-50, -100, 0],
 	},
