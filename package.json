@@ -54,7 +54,7 @@
 	"devDependencies": {
 		"@eslint/js": "9.39.3",
 		"@jest/globals": "30.2.0",
-		"@stylistic/eslint-plugin": "5.9.0",
+		"@stylistic/eslint-plugin": "5.10.0",
 		"@types/delaunator": "5.0.3",
 		"@types/express": "5.0.6",
 		"@types/json-diff": "1.0.3",
