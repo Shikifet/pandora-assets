@@ -7,7 +7,7 @@ DefineBodypart({
 	graphics: 'graphics.json',
 	colorization: {
 		nails: {
-			name: 'Color',
+			name: 'Nail Polish',
 			default: '#D61800'
 		},
 	},
@@ -19,15 +19,32 @@ DefineBodypart({
 		],
 	},
 	modules: {
-		toenails: {
+		fingernails: {
 			type: 'typed',
-			name: 'Toenails',
-			expression: 'Toenails',
+			name: 'Fingernail Polish',
+			expression: 'Fingernail Polish',
 			interactionType: ItemInteractionType.ACCESS_ONLY,
 			variants: [
 				{
-					id: 'natural',
-					name: 'Natural',
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'painted',
+					name: 'Painted',
+				},
+			],
+		},
+		toenails: {
+			type: 'typed',
+			name: 'Toenail Polish',
+			expression: 'Toenail Polish',
+			interactionType: ItemInteractionType.ACCESS_ONLY,
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
 					default: true,
 				},
 				{
@@ -44,6 +61,13 @@ DefineBodypart({
 		reusePolicy: 'Ask first',
 		licensing: [
 			{
+				part: 'fingernails',
+				source: 'Self-Made',
+				copyrightHolder: 'Sandrine',
+				license: 'Pandora-Use-Only-v1-or-later',
+			},
+			{
+				part: 'toenails',
 				source: 'Self-Made',
 				copyrightHolder: 'Shikifet',
 				editedBy: 'Shikifet',
