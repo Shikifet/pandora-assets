@@ -7,7 +7,7 @@
 			"width": 1500,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "front_mesh",
+			"name": "fingernails_front",
 			"points": "body",
 			"automeshTemplate": "aboveBody",
 			"disabledTemplateParts": [
@@ -142,7 +142,7 @@
 			"width": 1500,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "back_mesh",
+			"name": "fingernails_back",
 			"points": "body",
 			"automeshTemplate": "belowBody",
 			"disabledTemplateParts": [
@@ -277,7 +277,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "back_mesh",
+			"name": "toenails_front",
 			"points": "body",
 			"automeshTemplate": "aboveBody",
 			"disabledTemplateParts": [
@@ -292,24 +292,24 @@
 			],
 			"variables": [
 				{
-					"type": "view"
-				},
-				{
 					"type": "typedModule",
 					"module": "toenails"
+				},
+				{
+					"type": "view"
 				}
 			],
 			"imageMap": {
-				"front:natural": [
+				"none:front": [
 					""
 				],
-				"front:painted": [
+				"painted:front": [
 					"toenails.png"
 				],
-				"back:natural": [
+				"none:back": [
 					""
 				],
-				"back:painted": [
+				"painted:back": [
 					""
 				]
 			}

@@ -8,11 +8,10 @@ DefineBodypart({
 	colorization: {
 		nails: {
 			name: 'Nail Polish',
-			default: '#D61800'
+			default: '#D61800',
 		},
 	},
-	// size:320, y:383, centered
-	preview: null,//'preview.png',
+	preview: 'preview.png',
 	attributes: {
 		provides: [
 			'Body_texture',
