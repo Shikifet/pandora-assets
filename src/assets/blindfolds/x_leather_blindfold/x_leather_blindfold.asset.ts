@@ -7,19 +7,22 @@ DefineAsset({
 	colorization: {
 		blindfold: {
 			name: 'Blindfold',
+			default: '#B90000',
+		},
+		straps: {
+			name: 'Straps',
 			default: '#2A2A2A',
 		},
 		bolts: {
 			name: 'Bolts',
 			default: '#E0E0E0',
 		},
-		straps: {
-			name: 'Straps',
-			default: '#444444',
-		},
 	},
-	// size:200, y:197, centered
-	preview: null,//'preview.png',
+	// size:180, y:200, centered
+	preview: 'preview.png',
+	roomDeployment: {
+		autoDeployRelativePosition: [-50, -100, 0],
+	},
 	attributes: {
 		provides: [
 			'Restraint',
