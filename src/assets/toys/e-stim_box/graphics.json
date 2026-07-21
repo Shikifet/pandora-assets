@@ -116,6 +116,50 @@
 					""
 				]
 			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"automeshTemplate": "aboveBody",
+			"points": "static",
+			"name": "Leds",
+			"graphicalLayers": [
+				{
+					"name": "Led A",
+					"colorizationKey": "box_leds"
+				},
+				{
+					"name": "Led B",
+					"colorizationKey": "box_leds"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "power"
+				}
+			],
+			"imageMap": {
+				"none": [
+					"",
+					""
+				],
+				"power_a": [
+					"led_a.png",
+					""
+				],
+				"power_b": [
+					"",
+					"led_b.png"
+				],
+				"power_ab": [
+					"led_a.png",
+					"led_b.png"
+				]
+			}
 		}
 	]
 }

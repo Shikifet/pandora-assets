@@ -16,6 +16,10 @@ DefineAsset({
 			name: 'Box Details',
 			default: '#c4c100',
 		},
+		box_leds: {
+			name: 'Leds',
+			default: '#c70000'
+		},
 		wires: {
 			name: 'Wires',
 			default: '#ffffff'
@@ -31,6 +35,29 @@ DefineAsset({
 		],
 	},
 	modules: {
+		power: {
+			type: 'typed',
+			name: 'Output A',
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'power_a',
+					name: 'Output A',
+				},
+				{
+					id: 'power_b',
+					name: 'Output B',
+				},
+				{
+					id: 'power_ab',
+					name: 'Output A+B',
+				},
+			],
+		},
 		output_a: {
 			type: 'typed',
 			name: 'Output A',
