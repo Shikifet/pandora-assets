@@ -792,6 +792,11 @@ const ATTRIBUTES_DEFINITION_BASE = DefineAttributes({
 		description: 'A rope tying the arms to which a strappado can be held',
 		useAsAssetPreference: false,
 	},
+	Chastity_cage_estim_node: {
+		name: 'Chastity Cage E-stim node',
+		description: 'A node where a E-stim box can be attached to',
+		useAsAssetPreference: false,
+	},
 });
 
 //#endregion
