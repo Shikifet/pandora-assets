@@ -160,6 +160,42 @@
 					"led_b.png"
 				]
 			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"automeshTemplate": "aboveBody",
+			"points": "static",
+			"name": "Power Level",
+			"graphicalLayers": [
+				{
+					"name": "Power Level",
+					"colorizationKey": "box_leds"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "power_level"
+				}
+			],
+			"imageMap": {
+				"none": [
+					""
+				],
+				"low": [
+					"power_low.png"
+				],
+				"mid": [
+					"power_mid.png"
+				],
+				"high": [
+					"power_high.png"
+				]
+			}
 		}
 	]
 }

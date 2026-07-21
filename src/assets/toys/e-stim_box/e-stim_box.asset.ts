@@ -18,7 +18,7 @@ DefineAsset({
 		},
 		box_leds: {
 			name: 'Leds',
-			default: '#c70000'
+			default: '#2FD300'
 		},
 		wires: {
 			name: 'Wires',
@@ -55,6 +55,29 @@ DefineAsset({
 				{
 					id: 'power_ab',
 					name: 'Output A+B',
+				},
+			],
+		},
+		power_level: {
+			type: 'typed',
+			name: 'Output A',
+			variants: [
+				{
+					id: 'none',
+					name: 'None',
+					default: true,
+				},
+				{
+					id: 'low',
+					name: 'Low',
+				},
+				{
+					id: 'mid',
+					name: 'Medium',
+				},
+				{
+					id: 'high',
+					name: 'High',
 				},
 			],
 		},
