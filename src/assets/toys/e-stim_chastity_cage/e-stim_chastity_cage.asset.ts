@@ -25,6 +25,7 @@ DefineAsset({
 	preview: null,//'preview.png',
 	attributes: {
 		provides: [
+			'Toy',
 			'Restraint',
 			'Chastity',
 		],
