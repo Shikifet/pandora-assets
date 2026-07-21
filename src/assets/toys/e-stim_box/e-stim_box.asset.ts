@@ -37,7 +37,7 @@ DefineAsset({
 	modules: {
 		power: {
 			type: 'typed',
-			name: 'Output A',
+			name: 'Power Led Indicator',
 			variants: [
 				{
 					id: 'none',
@@ -60,7 +60,7 @@ DefineAsset({
 		},
 		power_level: {
 			type: 'typed',
-			name: 'Output A',
+			name: 'Power Level',
 			variants: [
 				{
 					id: 'none',
@@ -83,11 +83,11 @@ DefineAsset({
 		},
 		output_a: {
 			type: 'typed',
-			name: 'Output A',
+			name: 'Wires Output A',
 			variants: [
 				{
 					id: 'no',
-					name: 'No',
+					name: 'None',
 					default: true,
 					properties: {
 						stateFlags: {
@@ -120,11 +120,11 @@ DefineAsset({
 		},
 		output_b: {
 			type: 'typed',
-			name: 'Output B',
+			name: 'Wires Output B',
 			variants: [
 				{
 					id: 'no',
-					name: 'No',
+					name: 'None',
 					default: true,
 					properties: {
 						stateFlags: {
