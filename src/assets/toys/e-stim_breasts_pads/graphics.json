@@ -7,7 +7,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "Left_160",
+			"name": "Left_A",
 			"mirror": 0,
 			"priority": "ABOVE_BODY",
 			"points": "static",
@@ -29,6 +29,18 @@
 									"operator": "<=",
 									"value": -125
 								}
+							],
+							[
+								{
+									"module": "pads",
+									"operator": "=",
+									"value": "both"
+								},
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -125
+								}
 							]
 						]
 					}
@@ -41,7 +53,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "Left_160",
+			"name": "Left_B",
 			"mirror": 0,
 			"priority": "ABOVE_BODY",
 			"points": "static",
@@ -68,6 +80,23 @@
 									"operator": "<=",
 									"value": 50
 								}
+							],
+							[
+								{
+									"module": "pads",
+									"operator": "=",
+									"value": "both"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">",
+									"value": -125
+								},
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": 50
+								}
 							]
 						]
 					}
@@ -80,7 +109,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "Left_160",
+			"name": "Left_C",
 			"mirror": 0,
 			"priority": "ABOVE_BODY",
 			"points": "static",
@@ -107,6 +136,23 @@
 									"operator": "<",
 									"value": 160
 								}
+							],
+							[
+								{
+									"module": "pads",
+									"operator": "=",
+									"value": "both"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">",
+									"value": 50
+								},
+								{
+									"bone": "breasts",
+									"operator": "<",
+									"value": 160
+								}
 							]
 						]
 					}
@@ -119,7 +165,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "mesh",
-			"name": "Left_160",
+			"name": "Left_D",
 			"mirror": 0,
 			"priority": "ABOVE_BODY",
 			"points": "static",
@@ -135,6 +181,210 @@
 									"module": "pads",
 									"operator": "=",
 									"value": "left"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">",
+									"value": 160
+								}
+							],
+							[
+								{
+									"module": "pads",
+									"operator": "=",
+									"value": "both"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">",
+									"value": 160
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 7,
+			"y": -23,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Right_A",
+			"mirror": 0,
+			"priority": "ABOVE_BODY",
+			"points": "static",
+			"colorizationKey": "pads",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "pad_right.png",
+						"condition": [
+							[
+								{
+									"module": "pads",
+									"operator": "=",
+									"value": "right"
+								},
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -125
+								}
+							],
+							[
+								{
+									"module": "pads",
+									"operator": "=",
+									"value": "both"
+								},
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": -125
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Right_B",
+			"mirror": 0,
+			"priority": "ABOVE_BODY",
+			"points": "static",
+			"colorizationKey": "pads",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "pad_right.png",
+						"condition": [
+							[
+								{
+									"module": "pads",
+									"operator": "=",
+									"value": "right"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">",
+									"value": -125
+								},
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": 50
+								}
+							],
+							[
+								{
+									"module": "pads",
+									"operator": "=",
+									"value": "both"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">",
+									"value": -125
+								},
+								{
+									"bone": "breasts",
+									"operator": "<=",
+									"value": 50
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": -2,
+			"y": 4,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Right_C",
+			"mirror": 0,
+			"priority": "ABOVE_BODY",
+			"points": "static",
+			"colorizationKey": "pads",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "pad_right.png",
+						"condition": [
+							[
+								{
+									"module": "pads",
+									"operator": "=",
+									"value": "right"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">",
+									"value": 50
+								},
+								{
+									"bone": "breasts",
+									"operator": "<",
+									"value": 160
+								}
+							],
+							[
+								{
+									"module": "pads",
+									"operator": "=",
+									"value": "both"
+								},
+								{
+									"bone": "breasts",
+									"operator": ">",
+									"value": 50
+								},
+								{
+									"bone": "breasts",
+									"operator": "<",
+									"value": 160
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		{
+			"x": -5,
+			"y": 10,
+			"width": 1000,
+			"height": 1500,
+			"type": "mesh",
+			"name": "Right_D",
+			"mirror": 0,
+			"priority": "ABOVE_BODY",
+			"points": "static",
+			"colorizationKey": "pads",
+			"image": {
+				"image": "",
+				"overrides": [
+					{
+						"image": "pad_right.png",
+						"condition": [
+							[
+								{
+									"module": "pads",
+									"operator": "=",
+									"value": "right"
 								},
 								{
 									"bone": "breasts",
