@@ -108,11 +108,26 @@ DefineAsset({
 					},
 				},
 				{
-					id: 'plug',
-					name: 'Plug',
+					id: 'breast_pad_left',
+					name: 'Left Breast Pad',
 					properties: {
+						attributes: {
+							requires: ['Left_breast_pad_estim_node'],
+						},
 						stateFlags: {
-							provides: ['plug_a'],
+							provides: ['left_breast_pad_a'],
+						},
+					},
+				},
+				{
+					id: 'breast_pad_right',
+					name: 'Right Breast Pad',
+					properties: {
+						attributes: {
+							requires: ['Right_breast_pad_estim_node'],
+						},
+						stateFlags: {
+							provides: ['right_breast_pad_a'],
 						},
 					},
 				},
@@ -145,11 +160,26 @@ DefineAsset({
 					},
 				},
 				{
-					id: 'plug',
-					name: 'Plug',
+					id: 'breast_pad_left',
+					name: 'Left Breast Pad',
 					properties: {
+						attributes: {
+							requires: ['Left_breast_pad_estim_node'],
+						},
 						stateFlags: {
-							provides: ['plug_b'],
+							provides: ['left_breast_pad_b'],
+						},
+					},
+				},
+				{
+					id: 'breast_pad_right',
+					name: 'Right Breast Pad',
+					properties: {
+						attributes: {
+							requires: ['Right_breast_pad_estim_node'],
+						},
+						stateFlags: {
+							provides: ['right_breast_pad_b'],
 						},
 					},
 				},
@@ -168,11 +198,21 @@ DefineAsset({
 			},
 		},
 		{
-			requiredFlags: ['plug_a', 'plug_b'],
+			requiredFlags: ['left_breast_pad_a', 'left_breast_pad_b'],
 			properties: {
 				stateFlags: {
 					requires: {
-						none_a: 'Plug already attached to power',
+						none_a: 'Left Breast Pad already attached to power',
+					},
+				},
+			},
+		},
+		{
+			requiredFlags: ['right_breast_pad_a', 'right_breast_pad_b'],
+			properties: {
+				stateFlags: {
+					requires: {
+						none_a: 'RightBreast Pad already attached to power',
 					},
 				},
 			},

@@ -31,14 +31,29 @@ DefineAsset({
 				{
 					id: 'left',
 					name: 'Left',
+					properties: {
+						attributes: {
+							provides: ['Left_breast_pad_estim_node'],
+						},
+					},
 				},
 				{
 					id: 'right',
 					name: 'Right',
+					properties: {
+						attributes: {
+							provides: ['Right_breast_pad_estim_node'],
+						},
+					},
 				},
 				{
 					id: 'both',
 					name: 'Both',
+					properties: {
+						attributes: {
+							provides: ['Left_breast_pad_estim_node', 'Right_breast_pad_estim_node'],
+						},
+					},
 				},
 			],
 		},

@@ -797,6 +797,16 @@ const ATTRIBUTES_DEFINITION_BASE = DefineAttributes({
 		description: 'A node where a E-stim box can be attached to',
 		useAsAssetPreference: false,
 	},
+	Left_breast_pad_estim_node: {
+		name: 'Left Breast Pad E-stim node',
+		description: 'A node where a E-stim box can be attached to',
+		useAsAssetPreference: false,
+	},
+	Right_breast_pad_estim_node: {
+		name: 'Right Breast Pad E-stim node',
+		description: 'A node where a E-stim box can be attached to',
+		useAsAssetPreference: false,
+	},
 });
 
 //#endregion
