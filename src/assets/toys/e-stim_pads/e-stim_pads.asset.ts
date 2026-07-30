@@ -25,7 +25,7 @@ DefineAsset({
 	modules: {
 		breast_pads: {
 			type: 'typed',
-			name: 'Pads',
+			name: 'Breasts',
 			variants: [
 				{
 					id: 'none',
@@ -63,7 +63,7 @@ DefineAsset({
 		},
 		crotch_pads: {
 			type: 'typed',
-			name: 'Pads',
+			name: 'Crotch',
 			variants: [
 				{
 					id: 'no',

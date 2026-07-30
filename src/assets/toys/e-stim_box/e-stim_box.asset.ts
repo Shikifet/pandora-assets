@@ -131,6 +131,18 @@ DefineAsset({
 						},
 					},
 				},
+				{
+					id: 'crotch',
+					name: 'Crotch Pad',
+					properties: {
+						attributes: {
+							requires: ['Crotch_pad_estim_node'],
+						},
+						stateFlags: {
+							provides: ['crotch_pad_a'],
+						},
+					},
+				},
 			],
 		},
 		output_b: {
@@ -183,6 +195,18 @@ DefineAsset({
 						},
 					},
 				},
+				{
+					id: 'crotch',
+					name: 'Crotch Pad',
+					properties: {
+						attributes: {
+							requires: ['Crotch_pad_estim_node'],
+						},
+						stateFlags: {
+							provides: ['crotch_pad_b'],
+						},
+					},
+				},
 			],
 		},
 	},
@@ -192,7 +216,7 @@ DefineAsset({
 			properties: {
 				stateFlags: {
 					requires: {
-						none_a: 'Cage already attached to power',
+						none_a: 'Cage already attached to power box',
 					},
 				},
 			},
@@ -202,7 +226,7 @@ DefineAsset({
 			properties: {
 				stateFlags: {
 					requires: {
-						none_a: 'Left Breast Pad already attached to power',
+						none_a: 'Left Breast Pad already attached to power box',
 					},
 				},
 			},
@@ -212,7 +236,17 @@ DefineAsset({
 			properties: {
 				stateFlags: {
 					requires: {
-						none_a: 'RightBreast Pad already attached to power',
+						none_a: 'RightBreast Pad already attached to power box',
+					},
+				},
+			},
+		},
+		{
+			requiredFlags: ['crotch_pad_a', 'crotch_pad_b'],
+			properties: {
+				stateFlags: {
+					requires: {
+						none_a: 'Crotch Pad already attached to power box',
 					},
 				},
 			},
