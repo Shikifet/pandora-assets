@@ -150,7 +150,7 @@
 								},
 								{
 									"bone": "breasts",
-									"operator": "<",
+									"operator": "<=",
 									"value": 160
 								}
 							]
