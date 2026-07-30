@@ -29,7 +29,52 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Box",
+			"enableCond": [
+				[
+					{
+						"module": "position",
+						"operator": "=",
+						"value": "left"
+					}
+				]
+			],
+			"name": "Box Left",
+			"points": "static",
+			"automeshTemplate": "aboveBody",
+			"graphicalLayers": [
+				{
+					"name": "PowerBox Base",
+					"colorizationKey": "box_base"
+				},
+				{
+					"name": "PowerBox Details",
+					"colorizationKey": "box_details"
+				}
+			],
+			"variables": [],
+			"imageMap": {
+				"": [
+					"box_base.png",
+					"box_details.png"
+				]
+			}
+		},
+		{
+			"x": -48,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"enableCond": [
+				[
+					{
+						"module": "position",
+						"operator": "=",
+						"value": "right"
+					}
+				]
+			],
+			"name": "Box Right",
 			"points": "static",
 			"automeshTemplate": "aboveBody",
 			"graphicalLayers": [
@@ -56,6 +101,15 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
+			"enableCond": [
+				[
+					{
+						"module": "position",
+						"operator": "=",
+						"value": "left"
+					}
+				]
+			],
 			"name": "Output A",
 			"points": "static",
 			"automeshTemplate": "aboveBody",
@@ -98,6 +152,66 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
+			"enableCond": [
+				[
+					{
+						"module": "position",
+						"operator": "=",
+						"value": "right"
+					}
+				]
+			],
+			"name": "Output A Right",
+			"points": "static",
+			"automeshTemplate": "aboveBody",
+			"graphicalLayers": [
+				{
+					"name": "Wires",
+					"colorizationKey": "wires"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "output_a"
+				}
+			],
+			"imageMap": {
+				"no": [
+					""
+				],
+				"cage": [
+					"wires_cage_a_right.png"
+				],
+				"plug": [
+					""
+				],
+				"breast_pad_left": [
+					""
+				],
+				"breast_pad_right": [
+					""
+				],
+				"crotch": [
+					"wires_crotch_a_right.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"enableCond": [
+				[
+					{
+						"module": "position",
+						"operator": "=",
+						"value": "left"
+					}
+				]
+			],
 			"name": "Output B",
 			"points": "static",
 			"automeshTemplate": "aboveBody",
@@ -143,9 +257,65 @@
 			"enableCond": [
 				[
 					{
+						"module": "position",
+						"operator": "=",
+						"value": "right"
+					}
+				]
+			],
+			"name": "Output B",
+			"points": "static",
+			"automeshTemplate": "aboveBody",
+			"graphicalLayers": [
+				{
+					"name": "Wires",
+					"colorizationKey": "wires"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "output_b"
+				}
+			],
+			"imageMap": {
+				"no": [
+					""
+				],
+				"cage": [
+					"wires_cage_b_right.png"
+				],
+				"plug": [
+					""
+				],
+				"breast_pad_left": [
+					""
+				],
+				"breast_pad_right": [
+					""
+				],
+				"crotch": [
+					"wires_crotch_b_right.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"enableCond": [
+				[
+					{
 						"module": "output_a",
 						"operator": "=",
 						"value": "breast_pad_left"
+					},
+					{
+						"module": "position",
+						"operator": "=",
+						"value": "left"
 					}
 				]
 			],
@@ -197,6 +367,11 @@
 						"module": "output_b",
 						"operator": "=",
 						"value": "breast_pad_left"
+					},
+					{
+						"module": "position",
+						"operator": "=",
+						"value": "left"
 					}
 				]
 			],
@@ -248,6 +423,11 @@
 						"module": "output_a",
 						"operator": "=",
 						"value": "breast_pad_right"
+					},
+					{
+						"module": "position",
+						"operator": "=",
+						"value": "left"
 					}
 				]
 			],
@@ -299,6 +479,11 @@
 						"module": "output_b",
 						"operator": "=",
 						"value": "breast_pad_right"
+					},
+					{
+						"module": "position",
+						"operator": "=",
+						"value": "left"
 					}
 				]
 			],
@@ -344,7 +529,69 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
+			"enableCond": [
+				[
+					{
+						"module": "position",
+						"operator": "=",
+						"value": "left"
+					}
+				]
+			],
 			"name": "Leds",
+			"points": "static",
+			"automeshTemplate": "aboveBody",
+			"graphicalLayers": [
+				{
+					"name": "Led A",
+					"colorizationKey": "box_leds"
+				},
+				{
+					"name": "Led B",
+					"colorizationKey": "box_leds"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "power"
+				}
+			],
+			"imageMap": {
+				"none": [
+					"",
+					""
+				],
+				"power_a": [
+					"led_a.png",
+					""
+				],
+				"power_b": [
+					"",
+					"led_b.png"
+				],
+				"power_ab": [
+					"led_a.png",
+					"led_b.png"
+				]
+			}
+		},
+		{
+			"x": -48,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"enableCond": [
+				[
+					{
+						"module": "position",
+						"operator": "=",
+						"value": "right"
+					}
+				]
+			],
+			"name": "Leds Right",
 			"points": "static",
 			"automeshTemplate": "aboveBody",
 			"graphicalLayers": [
@@ -388,6 +635,60 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
+			"enableCond": [
+				[
+					{
+						"module": "position",
+						"operator": "=",
+						"value": "left"
+					}
+				]
+			],
+			"name": "Power Level",
+			"points": "static",
+			"automeshTemplate": "aboveBody",
+			"graphicalLayers": [
+				{
+					"name": "Power Level",
+					"colorizationKey": "box_leds"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "power_level"
+				}
+			],
+			"imageMap": {
+				"none": [
+					""
+				],
+				"low": [
+					"power_low.png"
+				],
+				"mid": [
+					"power_mid.png"
+				],
+				"high": [
+					"power_high.png"
+				]
+			}
+		},
+		{
+			"x": -48,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"enableCond": [
+				[
+					{
+						"module": "position",
+						"operator": "=",
+						"value": "right"
+					}
+				]
+			],
 			"name": "Power Level",
 			"points": "static",
 			"automeshTemplate": "aboveBody",

@@ -7,6 +7,7 @@ DefineAsset({
 		belt: {
 			name: 'Belt',
 			default: '#444444',
+			minAlpha: 0,
 		},
 		box_base: {
 			name: 'Box',
@@ -18,7 +19,7 @@ DefineAsset({
 		},
 		box_leds: {
 			name: 'Leds',
-			default: '#2FD300'
+			default: '#2FD300',
 		},
 		wires: {
 			name: 'Wires',
@@ -35,6 +36,21 @@ DefineAsset({
 		],
 	},
 	modules: {
+		position: {
+			type: 'typed',
+			name: 'Power Box Position',
+			variants: [
+				{
+					id: 'right',
+					name: 'Right Side',
+				},
+				{
+					id: 'left',
+					name: 'Left Side',
+					default: true,
+				},
+			],
+		},
 		power: {
 			type: 'typed',
 			name: 'Power Led Indicator',
