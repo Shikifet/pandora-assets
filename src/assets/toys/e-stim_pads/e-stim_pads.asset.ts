@@ -1,12 +1,16 @@
 DefineAsset({
-	name: 'E-stim Breasts Pads',
+	name: 'E-stim Pads',
 	size: 'small',
 	requireFreeHandsToUseDefault: false,
 	graphics: 'graphics.json',
 	colorization: {
-		pads: {
+		breast_pads: {
 			name: 'Pads',
 			default: '#FF5EE3',
+		},
+		crotch_pads: {
+			name: 'Pads',
+			default: '#f9f7f7',
 		},
 	},
 	//roomDeployment: {
@@ -19,7 +23,7 @@ DefineAsset({
 		],
 	},
 	modules: {
-		pads: {
+		breast_pads: {
 			type: 'typed',
 			name: 'Pads',
 			variants: [
@@ -52,6 +56,26 @@ DefineAsset({
 					properties: {
 						attributes: {
 							provides: ['Left_breast_pad_estim_node', 'Right_breast_pad_estim_node'],
+						},
+					},
+				},
+			],
+		},
+		crotch_pads: {
+			type: 'typed',
+			name: 'Pads',
+			variants: [
+				{
+					id: 'no',
+					name: 'No',
+					default: true,
+				},
+				{
+					id: 'yes',
+					name: 'Yes',
+					properties: {
+						attributes: {
+							provides: ['Crotch_pad_estim_node'],
 						},
 					},
 				},

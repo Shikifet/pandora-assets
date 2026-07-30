@@ -807,6 +807,11 @@ const ATTRIBUTES_DEFINITION_BASE = DefineAttributes({
 		description: 'A node where a E-stim box can be attached to',
 		useAsAssetPreference: false,
 	},
+	Crotch_pad_estim_node: {
+		name: 'Crotch Pad E-stim node',
+		description: 'A node where a E-stim box can be attached to',
+		useAsAssetPreference: false,
+	},
 });
 
 //#endregion
