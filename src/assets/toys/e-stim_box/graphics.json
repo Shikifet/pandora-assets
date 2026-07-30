@@ -81,6 +81,12 @@
 				"plug": [
 					""
 				],
+				"breast_pad_left": [
+					""
+				],
+				"breast_pad_right": [
+					""
+				],
 				"crotch": [
 					"wires_crotch_a.png"
 				]
@@ -115,6 +121,12 @@
 					"wires_cage_b.png"
 				],
 				"plug": [
+					""
+				],
+				"breast_pad_left": [
+					""
+				],
+				"breast_pad_right": [
 					""
 				],
 				"crotch": [
