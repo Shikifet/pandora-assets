@@ -131,13 +131,64 @@
 			"enableCond": [
 				[
 					{
+						"module": "output_a",
+						"operator": "=",
+						"value": "breast_pad_left"
+					}
+				]
+			],
+			"name": "Breasts wires left output a",
+			"points": "static",
+			"automeshTemplate": "aboveBody",
+			"graphicalLayers": [
+				{
+					"name": "Wires",
+					"colorizationKey": "wires"
+				}
+			],
+			"variables": [
+				{
+					"type": "bone",
+					"bone": "breasts",
+					"stops": [
+						-125,
+						50,
+						160
+					]
+				}
+			],
+			"imageMap": {
+
+				"-180": [
+					"wires_breasts_left_b_a.png"
+				],
+				"-125": [
+					"wires_breasts_left_b_b.png"
+				],
+				"50": [
+					"wires_breasts_left_b_c.png"
+				],
+				"160": [
+					"wires_breasts_left_b_d.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"enableCond": [
+				[
+					{
 						"module": "output_b",
 						"operator": "=",
 						"value": "breast_pad_left"
 					}
 				]
 			],
-			"name": "Breasts wires left",
+			"name": "Breasts wires left output b",
 			"points": "static",
 			"automeshTemplate": "aboveBody",
 			"graphicalLayers": [
@@ -170,6 +221,108 @@
 				],
 				"160": [
 					"wires_breasts_left_d.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"enableCond": [
+				[
+					{
+						"module": "output_a",
+						"operator": "=",
+						"value": "breast_pad_right"
+					}
+				]
+			],
+			"name": "Breasts wires right output a",
+			"points": "static",
+			"automeshTemplate": "aboveBody",
+			"graphicalLayers": [
+				{
+					"name": "Wires",
+					"colorizationKey": "wires"
+				}
+			],
+			"variables": [
+				{
+					"type": "bone",
+					"bone": "breasts",
+					"stops": [
+						-125,
+						50,
+						160
+					]
+				}
+			],
+			"imageMap": {
+
+				"-180": [
+					"wires_breasts_right_a_a.png"
+				],
+				"-125": [
+					"wires_breasts_right_a_b.png"
+				],
+				"50": [
+					"wires_breasts_right_a_c.png"
+				],
+				"160": [
+					"wires_breasts_right_a_d.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"enableCond": [
+				[
+					{
+						"module": "output_b",
+						"operator": "=",
+						"value": "breast_pad_right"
+					}
+				]
+			],
+			"name": "Breasts wires right output b",
+			"points": "static",
+			"automeshTemplate": "aboveBody",
+			"graphicalLayers": [
+				{
+					"name": "Wires",
+					"colorizationKey": "wires"
+				}
+			],
+			"variables": [
+				{
+					"type": "bone",
+					"bone": "breasts",
+					"stops": [
+						-125,
+						50,
+						160
+					]
+				}
+			],
+			"imageMap": {
+
+				"-180": [
+					"wires_breasts_right_b_a.png"
+				],
+				"-125": [
+					"wires_breasts_right_b_b.png"
+				],
+				"50": [
+					"wires_breasts_right_b_c.png"
+				],
+				"160": [
+					"wires_breasts_right_b_d.png"
 				]
 			}
 		},
