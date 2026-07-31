@@ -440,5 +440,103 @@
 				]
 			}
 		}
+	],
+	"roomLayers": [
+		{
+			"x": -470,
+			"y": -480,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "front_mesh",
+			"graphicalLayers": [
+				{
+					"name": "Left Breast Pads",
+					"colorizationKey": "breast_pads"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "breast_pads"
+				}
+			],
+			"imageMap": {
+				"none": [
+					""
+				],
+				"left": [
+					""
+				],
+				"right": [
+					"breast_pad_right.png"
+				],
+				"both": [
+					"breast_pad_right.png"
+				]
+			}
+		},
+		{
+			"x": -530,
+			"y": -470,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "front_mesh",
+			"graphicalLayers": [
+				{
+					"name": "Left Breast Pads",
+					"colorizationKey": "breast_pads"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "breast_pads"
+				}
+			],
+			"imageMap": {
+				"none": [
+					""
+				],
+				"left": [
+					"breast_pad_left.png"
+				],
+				"right": [
+					""
+				],
+				"both": [
+					"breast_pad_left.png"
+				]
+			}
+		},
+		{
+			"x": -500,
+			"y": -700,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "front_mesh",
+			"graphicalLayers": [
+				{
+					"name": "Crotch Pads",
+					"colorizationKey": "crotch_pads"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "crotch_pads"
+				}
+			],
+			"imageMap": {
+				"no": [
+					""
+				],
+				"yes": [
+					"crotch_pads.png"
+				]
+			}
+		}
 	]
 }
