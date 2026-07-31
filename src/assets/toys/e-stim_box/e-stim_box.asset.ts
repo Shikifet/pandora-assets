@@ -124,6 +124,18 @@ DefineAsset({
 					},
 				},
 				{
+					id: 'nipple_clamps',
+					name: 'Nipple Clamps',
+					properties: {
+						attributes: {
+							requires: ['Nipple_clamps_estim_node'],
+						},
+						stateFlags: {
+							provides: ['nipple_clamps_a'],
+						},
+					},
+				},
+				{
 					id: 'breast_pad_left',
 					name: 'Left Breast Pad',
 					properties: {
@@ -188,6 +200,18 @@ DefineAsset({
 					},
 				},
 				{
+					id: 'nipple_clamps',
+					name: 'Nipple Clamps',
+					properties: {
+						attributes: {
+							requires: ['Nipple_clamps_estim_node'],
+						},
+						stateFlags: {
+							provides: ['nipple_clamps_b'],
+						},
+					},
+				},
+				{
 					id: 'breast_pad_left',
 					name: 'Left Breast Pad',
 					properties: {
@@ -233,6 +257,16 @@ DefineAsset({
 				stateFlags: {
 					requires: {
 						none_a: 'Cage already attached to power box',
+					},
+				},
+			},
+		},
+		{
+			requiredFlags: ['nipple_clamps_a', 'nipple_clamps_b'],
+			properties: {
+				stateFlags: {
+					requires: {
+						none_a: 'Nipple Clamps already attached to power box',
 					},
 				},
 			},

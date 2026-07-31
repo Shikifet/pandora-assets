@@ -60,7 +60,7 @@
 			}
 		},
 		{
-			"x": -48,
+			"x": -47,
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
@@ -135,6 +135,9 @@
 				"plug": [
 					""
 				],
+				"nipple_clamps": [
+					""
+				],
 				"breast_pad_left": [
 					""
 				],
@@ -184,6 +187,9 @@
 					"wires_cage_a_right.png"
 				],
 				"plug": [
+					""
+				],
+				"nipple_clamps": [
 					""
 				],
 				"breast_pad_left": [
@@ -299,6 +305,140 @@
 				]
 			}
 		},
+
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"enableCond": [
+				[
+					{
+						"module": "output_a",
+						"operator": "=",
+						"value": "nipple_clamps"
+					}
+				]
+			],
+			"name": "Nipple Clamps left output a",
+			"points": "static",
+			"automeshTemplate": "aboveBody",
+			"graphicalLayers": [
+				{
+					"name": "Wires",
+					"colorizationKey": "wires"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "position"
+				},
+				{
+					"type": "bone",
+					"bone": "breasts",
+					"stops": [
+						-125,
+						50,
+						160
+					]
+				}
+			],
+			"imageMap": {
+				"right:-180": [
+					"wires_clamps_a_a_right.png"
+				],
+				"right:-125": [
+					"wires_clamps_b_a_right.png"
+				],
+				"right:50": [
+					"wires_clamps_c_a_right.png"
+				],
+				"right:160": [
+					"wires_clamps_d_a_right.png"
+				],
+				"left:-180": [
+					"wires_clamps_a_a.png"
+				],
+				"left:-125": [
+					"wires_clamps_b_a.png"
+				],
+				"left:50": [
+					"wires_clamps_c_a.png"
+				],
+				"left:160": [
+					"wires_clamps_d_a.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"enableCond": [
+				[
+					{
+						"module": "output_b",
+						"operator": "=",
+						"value": "nipple_clamps"
+					}
+				]
+			],
+			"name": "Nipple Clamps left output b",
+			"points": "static",
+			"automeshTemplate": "aboveBody",
+			"graphicalLayers": [
+				{
+					"name": "Wires",
+					"colorizationKey": "wires"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "position"
+				},
+				{
+					"type": "bone",
+					"bone": "breasts",
+					"stops": [
+						-125,
+						50,
+						160
+					]
+				}
+			],
+			"imageMap": {
+				"right:-180": [
+					"wires_clamps_a_b_right.png"
+				],
+				"right:-125": [
+					"wires_clamps_b_b_right.png"
+				],
+				"right:50": [
+					"wires_clamps_c_b_right.png"
+				],
+				"right:160": [
+					"wires_clamps_d_b_right.png"
+				],
+				"left:-180": [
+					"wires_clamps_a_b.png"
+				],
+				"left:-125": [
+					"wires_clamps_b_b.png"
+				],
+				"left:50": [
+					"wires_clamps_c_b.png"
+				],
+				"left:160": [
+					"wires_clamps_d_b.png"
+				]
+			}
+		},
+
 		{
 			"x": 0,
 			"y": 0,
@@ -617,7 +757,7 @@
 			}
 		},
 		{
-			"x": -48,
+			"x": -47,
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
@@ -715,7 +855,7 @@
 			}
 		},
 		{
-			"x": -48,
+			"x": -47,
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
