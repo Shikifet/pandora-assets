@@ -7,9 +7,13 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Belt",
+			"name": "Belt Front",
 			"points": "body",
 			"automeshTemplate": "aboveBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
 			"graphicalLayers": [
 				{
 					"name": "Belt",
@@ -29,9 +33,13 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Belt",
+			"name": "Belt Back",
 			"points": "body",
 			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
 			"graphicalLayers": [
 				{
 					"name": "Belt",
@@ -132,7 +140,7 @@
 					}
 				]
 			],
-			"name": "Output A",
+			"name": "Output A Left",
 			"points": "static",
 			"automeshTemplate": "aboveBody",
 			"graphicalLayers": [
@@ -153,9 +161,6 @@
 				],
 				"cage": [
 					"wires_cage_a.png"
-				],
-				"plug": [
-					""
 				],
 				"nipple_clamps": [
 					""
@@ -208,9 +213,6 @@
 				"cage": [
 					"wires_cage_a_right.png"
 				],
-				"plug": [
-					""
-				],
 				"nipple_clamps": [
 					""
 				],
@@ -240,7 +242,7 @@
 					}
 				]
 			],
-			"name": "Output B",
+			"name": "Output B Left",
 			"points": "static",
 			"automeshTemplate": "aboveBody",
 			"graphicalLayers": [
@@ -262,7 +264,7 @@
 				"cage": [
 					"wires_cage_b.png"
 				],
-				"plug": [
+				"nipple_clamps": [
 					""
 				],
 				"breast_pad_left": [
@@ -291,7 +293,7 @@
 					}
 				]
 			],
-			"name": "Output B",
+			"name": "Output B Right",
 			"points": "static",
 			"automeshTemplate": "aboveBody",
 			"graphicalLayers": [
@@ -313,7 +315,7 @@
 				"cage": [
 					"wires_cage_b_right.png"
 				],
-				"plug": [
+				"nipple_clamps": [
 					""
 				],
 				"breast_pad_left": [
@@ -327,7 +329,6 @@
 				]
 			}
 		},
-
 		{
 			"x": 0,
 			"y": 0,
@@ -460,7 +461,6 @@
 				]
 			}
 		},
-
 		{
 			"x": 0,
 			"y": 0,
