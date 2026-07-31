@@ -29,6 +29,28 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
+			"name": "Belt",
+			"points": "body",
+			"automeshTemplate": "belowBody",
+			"graphicalLayers": [
+				{
+					"name": "Belt",
+					"colorizationKey": "belt"
+				}
+			],
+			"variables": [],
+			"imageMap": {
+				"": [
+					"belt.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
 			"enableCond": [
 				[
 					{
@@ -902,8 +924,8 @@
 	],
 	"roomLayers": [
 		{
-			"x": -600,
-			"y": -550,
+			"x": -500,
+			"y": -650,
 			"width": 1000,
 			"height": 1500,
 			"type": "autoSprite",
