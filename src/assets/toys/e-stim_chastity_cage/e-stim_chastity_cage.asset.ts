@@ -4,25 +4,26 @@ DefineAsset({
 	requireFreeHandsToUseDefault: false,
 	graphics: 'graphics.json',
 	colorization: {
-		ring: {
-			name: 'Ring',
-			default: '#000000',
-		},
 		cage: {
 			name: 'Cage',
 			default: '#AE1313A8',
 			minAlpha: 0.8,
 
 		},
+		ring: {
+			name: 'Ring',
+			default: '#000000',
+		},
 		nodes: {
-			name: 'Cage',
+			name: 'Nodes',
 			default: '#161616a8',
 		}
 	},
 	//roomDeployment: {
 	//	autoDeployRelativePosition: [50, -60, 0],
 	//},
-	preview: null,//'preview.png',
+	// size:80, y:707, centered
+	preview: 'preview.png',
 	attributes: {
 		provides: [
 			'Toy',

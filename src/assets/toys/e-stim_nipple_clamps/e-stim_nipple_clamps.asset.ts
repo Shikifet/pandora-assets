@@ -1,5 +1,5 @@
 DefineAsset({
-	name: 'E-stim Clamps',
+	name: 'E-stim Nipple Clamps',
 	size: 'small',
 	requireFreeHandsToUseDefault: false,
 	graphics: 'graphics.json',
@@ -12,7 +12,8 @@ DefineAsset({
 	//roomDeployment: {
 	//	autoDeployRelativePosition: [50, -60, 0],
 	//},
-	preview: null,//'preview.png',
+	// size:220, y:376, centered
+	preview: 'preview.png',
 	attributes: {
 		provides: [
 			'Toy',

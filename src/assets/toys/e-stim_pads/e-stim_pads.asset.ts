@@ -16,7 +16,8 @@ DefineAsset({
 	//roomDeployment: {
 	//	autoDeployRelativePosition: [50, -60, 0],
 	//},
-	preview: null,//'preview.png',
+	// size:350, y:423, centered
+	preview: 'preview.png',
 	attributes: {
 		provides: [
 			'Toy'
