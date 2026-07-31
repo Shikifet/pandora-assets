@@ -286,7 +286,47 @@ DefineAsset({
 			properties: {
 				stateFlags: {
 					requires: {
-						none_a: 'RightBreast Pad already attached to power box',
+						none_a: 'Right Breast Pad already attached to power box',
+					},
+				},
+			},
+		},
+		{
+			requiredFlags: ['nipple_clamps_a', 'left_breast_pad_b'],
+			properties: {
+				stateFlags: {
+					requires: {
+						none_a: 'Nipples already attached to power box',
+					},
+				},
+			},
+		},
+		{
+			requiredFlags: ['nipple_clamps_a', 'right_breast_pad_b'],
+			properties: {
+				stateFlags: {
+					requires: {
+						none_a: 'Nipples already attached to power box',
+					},
+				},
+			},
+		},
+		{
+			requiredFlags: ['nipple_clamps_b', 'left_breast_pad_a'],
+			properties: {
+				stateFlags: {
+					requires: {
+						none_a: 'Nipples already attached to power box',
+					},
+				},
+			},
+		},
+		{
+			requiredFlags: ['nipple_clamps_b', 'right_breast_pad_a'],
+			properties: {
+				stateFlags: {
+					requires: {
+						none_a: 'Nipples already attached to power box',
 					},
 				},
 			},
