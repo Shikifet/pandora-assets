@@ -899,5 +899,108 @@
 				]
 			}
 		}
+	],
+	"roomLayers": [
+		{
+			"x": -600,
+			"y": -550,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "Box Floor",
+			"graphicalLayers": [
+				{
+					"name": "PowerBox Base",
+					"colorizationKey": "box_base"
+				},
+				{
+					"name": "PowerBox Details",
+					"colorizationKey": "box_details"
+				}
+			],
+			"variables": [],
+			"imageMap": {
+				"": [
+					"box_base.png",
+					"box_details.png"
+				]
+			}
+		},
+		{
+			"x": -600,
+			"y": -550,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "Leds Floor",
+			"graphicalLayers": [
+				{
+					"name": "Led A",
+					"colorizationKey": "box_leds"
+				},
+				{
+					"name": "Led B",
+					"colorizationKey": "box_leds"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "power"
+				}
+			],
+			"imageMap": {
+				"none": [
+					"",
+					""
+				],
+				"power_a": [
+					"led_a.png",
+					""
+				],
+				"power_b": [
+					"",
+					"led_b.png"
+				],
+				"power_ab": [
+					"led_a.png",
+					"led_b.png"
+				]
+			}
+		},
+		{
+			"x": -600,
+			"y": -550,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "Power Level Floor",
+			"graphicalLayers": [
+				{
+					"name": "Power Level",
+					"colorizationKey": "box_leds"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "power_level"
+				}
+			],
+			"imageMap": {
+				"none": [
+					""
+				],
+				"low": [
+					"power_low.png"
+				],
+				"mid": [
+					"power_mid.png"
+				],
+				"high": [
+					"power_high.png"
+				]
+			}
+		}
 	]
 }
