@@ -65,5 +65,53 @@
 				]
 			}
 		}
+	],
+	"roomLayers": [
+				{
+			"x": -500,
+			"y": -750,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoSprite",
+			"name": "Cage Floor",
+			"graphicalLayers": [
+				{
+					"name": "Nodes Inside",
+					"colorizationKey": "nodes"
+				},
+				{
+					"name": "Cage",
+					"colorizationKey": "cage"
+				},
+				{
+					"name": "Ring",
+					"colorizationKey": "ring"
+				},
+				{
+					"name": "Nodes Outside",
+					"colorizationKey": "nodes"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "nodes"
+				}
+			],
+			"imageMap": {
+				"no": [
+					"",
+					"tube.png",
+					"ring.png",
+					""
+				],
+				"yes": [
+					"nodes_inside.png",
+					"tube.png",
+					"ring.png",
+					"nodes_outside.png"
+				]
+			}
+		}
 	]
 }
