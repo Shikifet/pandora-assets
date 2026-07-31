@@ -20,7 +20,7 @@ DefineAsset({
 	preview: 'preview.png',
 	attributes: {
 		provides: [
-			'Toy'
+			'Toy',
 		],
 	},
 	modules: {

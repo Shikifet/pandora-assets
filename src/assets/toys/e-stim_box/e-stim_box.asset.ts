@@ -23,7 +23,7 @@ DefineAsset({
 		},
 		wires: {
 			name: 'Wires',
-			default: '#ffffff'
+			default: '#ffffff',
 		},
 	},
 	roomDeployment: {

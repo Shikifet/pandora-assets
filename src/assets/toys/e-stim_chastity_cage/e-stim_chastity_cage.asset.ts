@@ -17,7 +17,7 @@ DefineAsset({
 		nodes: {
 			name: 'Nodes',
 			default: '#161616a8',
-		}
+		},
 	},
 	roomDeployment: {
 		autoDeployRelativePosition: [-20, -60, 0],
