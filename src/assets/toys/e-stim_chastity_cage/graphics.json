@@ -7,9 +7,9 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"automeshTemplate": "aboveBody",
-			"points": "static",
 			"name": "Cage",
+			"points": "static",
+			"automeshTemplate": "aboveBody",
 			"graphicalLayers": [
 				{
 					"name": "Nodes Inside",
@@ -67,7 +67,7 @@
 		}
 	],
 	"roomLayers": [
-				{
+		{
 			"x": -500,
 			"y": -750,
 			"width": 1000,

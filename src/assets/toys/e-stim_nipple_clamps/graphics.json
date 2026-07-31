@@ -28,17 +28,17 @@
 				}
 			],
 			"imageMap": {
-				"-180": [
-					"clamps_a.png"
-				],
-				"-125": [
-					"clamps_b.png"
-				],
 				"50": [
 					"clamps_c.png"
 				],
 				"160": [
 					"clamps_d.png"
+				],
+				"-180": [
+					"clamps_a.png"
+				],
+				"-125": [
+					"clamps_b.png"
 				]
 			}
 		}
@@ -57,9 +57,7 @@
 					"colorizationKey": "clamps"
 				}
 			],
-			"variables": [
-
-			],
+			"variables": [],
 			"imageMap": {
 				"": [
 					"clamps_floor.png"
