@@ -106,11 +106,6 @@ DefineAsset({
 					id: 'no',
 					name: 'None',
 					default: true,
-					properties: {
-						stateFlags: {
-							provides: ['none_a'],
-						},
-					},
 				},
 				{
 					id: 'cage',
@@ -182,11 +177,6 @@ DefineAsset({
 					id: 'no',
 					name: 'None',
 					default: true,
-					properties: {
-						stateFlags: {
-							provides: ['none_b'],
-						},
-					},
 				},
 				{
 					id: 'cage',
@@ -255,91 +245,55 @@ DefineAsset({
 		{
 			requiredFlags: ['cage_a', 'cage_b'],
 			properties: {
-				stateFlags: {
-					requires: {
-						none_a: 'Cage already attached to power box',
-					},
-				},
+				invalid: 'Cage already attached to power box',
 			},
 		},
 		{
 			requiredFlags: ['nipple_clamps_a', 'nipple_clamps_b'],
 			properties: {
-				stateFlags: {
-					requires: {
-						none_a: 'Nipple Clamps already attached to power box',
-					},
-				},
+				invalid: 'Nipple Clamps already attached to power box',
 			},
 		},
 		{
 			requiredFlags: ['left_breast_pad_a', 'left_breast_pad_b'],
 			properties: {
-				stateFlags: {
-					requires: {
-						none_a: 'Left Breast Pad already attached to power box',
-					},
-				},
+				invalid: 'Left Breast Pad already attached to power box',
 			},
 		},
 		{
 			requiredFlags: ['right_breast_pad_a', 'right_breast_pad_b'],
 			properties: {
-				stateFlags: {
-					requires: {
-						none_a: 'Right Breast Pad already attached to power box',
-					},
-				},
+				invalid: 'Right Breast Pad already attached to power box',
 			},
 		},
 		{
 			requiredFlags: ['nipple_clamps_a', 'left_breast_pad_b'],
 			properties: {
-				stateFlags: {
-					requires: {
-						none_a: 'Nipples already attached to power box',
-					},
-				},
+				invalid: 'Nipples already attached to power box',
 			},
 		},
 		{
 			requiredFlags: ['nipple_clamps_a', 'right_breast_pad_b'],
 			properties: {
-				stateFlags: {
-					requires: {
-						none_a: 'Nipples already attached to power box',
-					},
-				},
+				invalid: 'Nipples already attached to power box',
 			},
 		},
 		{
 			requiredFlags: ['nipple_clamps_b', 'left_breast_pad_a'],
 			properties: {
-				stateFlags: {
-					requires: {
-						none_a: 'Nipples already attached to power box',
-					},
-				},
+				invalid: 'Nipples already attached to power box',
 			},
 		},
 		{
 			requiredFlags: ['nipple_clamps_b', 'right_breast_pad_a'],
 			properties: {
-				stateFlags: {
-					requires: {
-						none_a: 'Nipples already attached to power box',
-					},
-				},
+				invalid: 'Nipples already attached to power box',
 			},
 		},
 		{
 			requiredFlags: ['crotch_pad_a', 'crotch_pad_b'],
 			properties: {
-				stateFlags: {
-					requires: {
-						none_a: 'Crotch Pad already attached to power box',
-					},
-				},
+				invalid: 'Crotch Pad already attached to power box',
 			},
 		},
 	],
