@@ -62,6 +62,10 @@ DefineAsset({
 							provides: [
 								'Underwear_bra',
 							],
+							requires: [
+								'!Breast_protruding_l',
+								'!Breast_protruding_r',
+							],
 						},
 					},
 				},
@@ -85,7 +89,7 @@ DefineAsset({
 							provides: [
 								'Underwear_panties',
 							],
-							hides: ['Penis'],
+							hides: ['Penis_flaccid'],
 						},
 					},
 				},
