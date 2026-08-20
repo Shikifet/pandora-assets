@@ -25,7 +25,7 @@ importers:
         version: 4.18.1
       pandora-common:
         specifier: github:Project-Pandora-Game/pandora#master&path:pandora-common
-        version: https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/52e52694ff947149d99f6146976caa13377d2671#path:pandora-common(zod@4.4.3)
+        version: https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/9544eb7da2d0df67452fc8935face3651bdefadd#path:pandora-common(zod@4.4.3)
       rimraf:
         specifier: 6.1.3
         version: 6.1.3
@@ -2188,8 +2188,8 @@ packages:
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
-  pandora-common@https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/52e52694ff947149d99f6146976caa13377d2671#path:pandora-common:
-    resolution: {gitHosted: true, integrity: sha512-AOLzh0mftSJSoTYE2QGvkW68leam4DaD9qUtYb6Us8RjhtQYKu9ZJk8kPPzzd/UOQU/cAsGZQ0m77h9mz8q1tw==, path: pandora-common, tarball: https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/52e52694ff947149d99f6146976caa13377d2671}
+  pandora-common@https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/9544eb7da2d0df67452fc8935face3651bdefadd#path:pandora-common:
+    resolution: {gitHosted: true, integrity: sha512-E7+nBYTOJEIRAaTI57i1VJyT+CrLPu2vunZy3adelHOIUkKDF6JHu4FBycgBYaj982f8yTzZntfoNDEnScOyeg==, path: pandora-common, tarball: https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/9544eb7da2d0df67452fc8935face3651bdefadd}
     version: 0.1.0
     engines: {node: '>=24.x'}
     peerDependencies:
@@ -5261,7 +5261,7 @@ snapshots:
 
   package-json-from-dist@1.0.1: {}
 
-  pandora-common@https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/52e52694ff947149d99f6146976caa13377d2671#path:pandora-common(zod@4.4.3):
+  pandora-common@https://codeload.github.com/Project-Pandora-Game/pandora/tar.gz/9544eb7da2d0df67452fc8935face3651bdefadd#path:pandora-common(zod@4.4.3):
     dependencies:
       '@types/async-lock': 1.4.2
       '@types/lodash-es': 4.17.12
