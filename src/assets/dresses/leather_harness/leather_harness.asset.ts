@@ -55,6 +55,25 @@ DefineAsset({
 				},
 			],
 		},
+		hips: {
+			type: 'typed',
+			name: 'Hips Model',
+			variants: [
+				{
+					id: 'no',
+					name: 'No',
+					default: true,
+				},
+				{
+					id: 'basic',
+					name: 'Basic',
+				},
+				{
+					id: 'center_ring',
+					name: 'Center Ring',
+				},
+			],
+		},
 	},
 	ownership: {
 		responsibleContributor: 'Shikifet <shikifet@gmail.com>',

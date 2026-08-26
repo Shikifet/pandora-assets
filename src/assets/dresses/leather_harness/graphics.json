@@ -142,6 +142,77 @@
 					"front_harness_waist_belts_body.png"
 				]
 			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Belt Front",
+			"points": "static",
+			"automeshTemplate": "aboveBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
+			"graphicalLayers": [
+				{
+					"name": "Rings",
+					"colorizationKey": "rings"
+				},
+				{
+					"name": "Belts",
+					"colorizationKey": "leather"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "hips"
+				}
+			],
+			"imageMap": {
+				"none": [
+					"",
+					""
+				],
+				"basic": [
+					"front_harness_hips_rings_static_simple.png",
+					"front_harness_hips_belts_static_simple.png"
+				],
+				"center_ring": [
+					"front_harness_hips_rings_static.png",
+					"front_harness_hips_belts_static.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Belt Front",
+			"points": "body",
+			"automeshTemplate": "aboveBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
+			"graphicalLayers": [
+				{
+					"name": "Belts",
+					"colorizationKey": "leather"
+				}
+			],
+			"variables": [
+			],
+			"imageMap": {
+				"": [
+					"front_harness_hips_belts_body.png"
+				]
+			}
 		}
 	]
 }
