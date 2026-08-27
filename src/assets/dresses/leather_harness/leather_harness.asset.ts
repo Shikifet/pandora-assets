@@ -16,9 +16,6 @@ DefineAsset({
 			default: '#DADADA',
 		},
 	},
-	//roomDeployment: {
-	//autoDeployRelativePosition: [75, -40, 0],
-	//},
 	// size:450, y:377, centered
 	preview: 'preview_white.png',
 	attributes: {
@@ -104,6 +101,14 @@ DefineAsset({
 					name: 'Yes',
 				},
 			],
+		},
+		lock: {
+			type: 'lockSlot',
+			name: 'Lock',
+			lockedProperties: {
+				blockAddRemove: true,
+				blockModules: ['colorGroupLeather', 'chest', 'waist', 'hips', 'thighs'],
+			},
 		},
 	},
 	ownership: {

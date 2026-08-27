@@ -9,7 +9,7 @@ export function CreateLeatherColor(): {
 		},
 	};
 	const modules: NonNullable<IntermediateBodypartAssetDefinition['modules']> = {
-		colorGroupRope: {
+		colorGroupLeather: {
 			type: 'typed',
 			name: 'Group Leather Color',
 			variants: [
