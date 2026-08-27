@@ -13,6 +13,11 @@
 				[
 					{
 						"view": "front"
+					},
+					{
+						"module": "chest",
+						"operator": "=",
+						"value": "yes"
 					}
 				]
 			],
@@ -327,6 +332,15 @@
 				"arms",
 				"legs"
 			],
+			"enableCond": [
+				[
+					{
+						"module": "chest",
+						"operator": "=",
+						"value": "yes"
+					}
+				]
+			],
 			"graphicalLayers": [
 				{
 					"name": "Belts",
@@ -352,6 +366,15 @@
 			"disabledTemplateParts": [
 				"arms",
 				"legs"
+			],
+			"enableCond": [
+				[
+					{
+						"module": "chest",
+						"operator": "=",
+						"value": "yes"
+					}
+				]
 			],
 			"graphicalLayers": [
 				{

@@ -30,23 +30,22 @@ DefineAsset({
 		...baseModules,
 		chest: {
 			type: 'typed',
-			name: 'Chest Model',
+			name: 'Chest',
 			variants: [
 				{
-					id: 'a',
-					name: 'A',
-					default: true,
+					id: 'no',
+					name: 'No',
 				},
 				{
-					id: 'b',
-					name: 'B',
+					id: 'yes',
+					name: 'Yes',
+					default: true,
 				},
-
 			],
 		},
 		waist: {
 			type: 'typed',
-			name: 'Waist Model',
+			name: 'Waist Extension',
 			variants: [
 				{
 					id: 'no',
@@ -66,7 +65,7 @@ DefineAsset({
 		},
 		hips: {
 			type: 'typed',
-			name: 'Hips Model',
+			name: 'Hips',
 			variants: [
 				{
 					id: 'no',
