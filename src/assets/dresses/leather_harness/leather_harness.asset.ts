@@ -89,6 +89,21 @@ DefineAsset({
 				},
 			],
 		},
+		thighs: {
+			type: 'typed',
+			name: 'Thighs',
+			variants: [
+				{
+					id: 'no',
+					name: 'No',
+					default: true,
+				},
+				{
+					id: 'yes',
+					name: 'Yes',
+				},
+			],
+		},
 	},
 	ownership: {
 		responsibleContributor: 'Shikifet <shikifet@gmail.com>',
