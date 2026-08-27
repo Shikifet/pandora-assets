@@ -7,8 +7,6 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Front Static",
-			"points": "static",
 			"enableCond": [
 				[
 					{
@@ -21,6 +19,8 @@
 					}
 				]
 			],
+			"name": "Front Static",
+			"points": "static",
 			"automeshTemplate": "aboveBody",
 			"disabledTemplateParts": [
 				"arms",
@@ -334,26 +334,18 @@
 				],
 				"basic": [
 					"front_harness_hips_bolts_static_simple.png"
-
 				],
 				"center_ring": [
 					"front_harness_hips_bolts_static.png"
 				]
 			}
 		},
-				{
+		{
 			"x": 0,
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Back Waist Belts Body",
-			"points": "body",
-			"automeshTemplate": "belowBody",
-			"disabledTemplateParts": [
-				"arms",
-				"legs"
-			],
 			"enableCond": [
 				[
 					{
@@ -363,13 +355,20 @@
 					}
 				]
 			],
+			"name": "Back Waist Belts Body",
+			"points": "body",
+			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
 			"graphicalLayers": [
 				{
 					"name": "Belts",
 					"colorizationKey": "leather"
 				}
 			],
-			"variables": [ ],
+			"variables": [],
 			"imageMap": {
 				"": [
 					"back_harness_chest_belts_body.png"
@@ -382,13 +381,6 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Back Chest Belts Static",
-			"points": "static",
-			"automeshTemplate": "belowBody",
-			"disabledTemplateParts": [
-				"arms",
-				"legs"
-			],
 			"enableCond": [
 				[
 					{
@@ -397,6 +389,13 @@
 						"value": "yes"
 					}
 				]
+			],
+			"name": "Back Chest Belts Static",
+			"points": "static",
+			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
 			],
 			"graphicalLayers": [
 				{
@@ -412,7 +411,7 @@
 					"colorizationKey": "rings"
 				}
 			],
-			"variables": [ ],
+			"variables": [],
 			"imageMap": {
 				"": [
 					"back_harness_chest_belts_static.png",
@@ -421,7 +420,6 @@
 				]
 			}
 		},
-
 		{
 			"x": 0,
 			"y": 0,
@@ -453,7 +451,8 @@
 			],
 			"imageMap": {
 				"no": [
-
+					"",
+					""
 				],
 				"basic": [
 					"back_harness_hips_rings_static_simple.png",
@@ -471,13 +470,6 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Back Waist Belts Body",
-			"points": "body",
-			"automeshTemplate": "belowBody",
-			"disabledTemplateParts": [
-				"arms",
-				"legs"
-			],
 			"enableCond": [
 				[
 					{
@@ -486,6 +478,13 @@
 						"value": "no"
 					}
 				]
+			],
+			"name": "Back Waist Belts Body",
+			"points": "body",
+			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
 			],
 			"graphicalLayers": [
 				{
@@ -498,7 +497,7 @@
 					"type": "typedModule",
 					"module": "hips"
 				}
-			 ],
+			],
 			"imageMap": {
 				"no": [
 					"back_harness_waist_belts_body.png"
@@ -517,13 +516,6 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Back Waist Belts Static",
-			"points": "static",
-			"automeshTemplate": "belowBody",
-			"disabledTemplateParts": [
-				"arms",
-				"legs"
-			],
 			"enableCond": [
 				[
 					{
@@ -532,6 +524,13 @@
 						"value": "no"
 					}
 				]
+			],
+			"name": "Back Waist Belts Static",
+			"points": "static",
+			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
 			],
 			"graphicalLayers": [
 				{
@@ -548,7 +547,7 @@
 					"type": "typedModule",
 					"module": "hips"
 				}
-			 ],
+			],
 			"imageMap": {
 				"no": [
 					"back_harness_waist_buckles_details_static_simple.png",
@@ -570,13 +569,6 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Back Hips Belts Body",
-			"points": "body",
-			"automeshTemplate": "belowBody",
-			"disabledTemplateParts": [
-				"arms",
-				"legs"
-			],
 			"enableCond": [
 				[
 					{
@@ -586,13 +578,20 @@
 					}
 				]
 			],
+			"name": "Back Hips Belts Body",
+			"points": "body",
+			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
 			"graphicalLayers": [
 				{
 					"name": "Belts",
 					"colorizationKey": "leather"
 				}
 			],
-			"variables": [ ],
+			"variables": [],
 			"imageMap": {
 				"": [
 					"back_harness_hips_belts_body.png"
@@ -605,13 +604,6 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Back Hips Buckles Body",
-			"points": "body",
-			"automeshTemplate": "belowBody",
-			"disabledTemplateParts": [
-				"arms",
-				"legs"
-			],
 			"enableCond": [
 				[
 					{
@@ -620,6 +612,13 @@
 						"value": "center_ring"
 					}
 				]
+			],
+			"name": "Back Hips Buckles Body",
+			"points": "body",
+			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
 			],
 			"graphicalLayers": [
 				{
@@ -631,7 +630,7 @@
 					"colorizationKey": "rings"
 				}
 			],
-			"variables": [ ],
+			"variables": [],
 			"imageMap": {
 				"": [
 					"back_harness_waist_buckles_details_body.png",
@@ -645,13 +644,6 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Back Hips Bolts Static",
-			"points": "static",
-			"automeshTemplate": "belowBody",
-			"disabledTemplateParts": [
-				"arms",
-				"legs"
-			],
 			"enableCond": [
 				[
 					{
@@ -660,6 +652,13 @@
 						"value": "no"
 					}
 				]
+			],
+			"name": "Back Hips Bolts Static",
+			"points": "static",
+			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
 			],
 			"graphicalLayers": [
 				{
@@ -672,7 +671,7 @@
 					"type": "typedModule",
 					"module": "hips"
 				}
-			 ],
+			],
 			"imageMap": {
 				"no": [
 					""
@@ -691,13 +690,6 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Back Hips Bolts Body",
-			"points": "body",
-			"automeshTemplate": "belowBody",
-			"disabledTemplateParts": [
-				"arms",
-				"legs"
-			],
 			"enableCond": [
 				[
 					{
@@ -706,6 +698,13 @@
 						"value": "no"
 					}
 				]
+			],
+			"name": "Back Hips Bolts Body",
+			"points": "body",
+			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
 			],
 			"graphicalLayers": [
 				{
@@ -718,7 +717,7 @@
 					"type": "typedModule",
 					"module": "hips"
 				}
-			 ],
+			],
 			"imageMap": {
 				"no": [
 					""
@@ -737,12 +736,6 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Front Thighs Body",
-			"points": "body",
-			"automeshTemplate": "aboveBody",
-			"disabledTemplateParts": [
-				"arms"
-			],
 			"enableCond": [
 				[
 					{
@@ -751,6 +744,12 @@
 						"value": "yes"
 					}
 				]
+			],
+			"name": "Front Thighs Body",
+			"points": "body",
+			"automeshTemplate": "aboveBody",
+			"disabledTemplateParts": [
+				"arms"
 			],
 			"graphicalLayers": [
 				{
@@ -796,13 +795,6 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Back Thighs Body",
-			"points": "body",
-			"automeshTemplate": "belowBody",
-			"disabledTemplateParts": [
-				"arms",
-				"body"
-			],
 			"enableCond": [
 				[
 					{
@@ -811,6 +803,13 @@
 						"value": "yes"
 					}
 				]
+			],
+			"name": "Back Thighs Body",
+			"points": "body",
+			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"body"
 			],
 			"graphicalLayers": [
 				{
@@ -826,7 +825,7 @@
 					"colorizationKey": "rings"
 				}
 			],
-			"variables": [ ],
+			"variables": [],
 			"imageMap": {
 				"": [
 					"back_harness_thighs_belts_body.png",

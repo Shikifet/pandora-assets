@@ -23,6 +23,7 @@ DefineAsset({
 	preview: null,//'preview.png',
 	attributes: {
 		provides: [
+			'Restraint',
 			'Restraint_torso',
 		],
 	},
