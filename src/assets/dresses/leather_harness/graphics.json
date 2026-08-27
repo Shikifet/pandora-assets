@@ -605,6 +605,46 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
+			"name": "Back Hips Buckles Body",
+			"points": "body",
+			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
+			"enableCond": [
+				[
+					{
+						"module": "hips",
+						"operator": "=",
+						"value": "center_ring"
+					}
+				]
+			],
+			"graphicalLayers": [
+				{
+					"name": "Buckles Details",
+					"colorizationKey": "leather"
+				},
+				{
+					"name": "Buckles",
+					"colorizationKey": "rings"
+				}
+			],
+			"variables": [ ],
+			"imageMap": {
+				"": [
+					"back_harness_waist_buckles_details_body.png",
+					"back_harness_waist_buckles_body.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
 			"name": "Back Hips Bolts Static",
 			"points": "static",
 			"automeshTemplate": "belowBody",
