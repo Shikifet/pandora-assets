@@ -749,13 +749,55 @@
 			"points": "body",
 			"automeshTemplate": "aboveBody",
 			"disabledTemplateParts": [
-				"arms"
+				"arms",
+				"body"
 			],
 			"graphicalLayers": [
 				{
 					"name": "Rings",
 					"colorizationKey": "rings"
-				},
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "hips"
+				}
+			],
+			"imageMap": {
+				"no": [
+					"front_harness_thighs_rings_body.png"
+				],
+				"basic": [
+					"front_harness_thighs_rings_body.png"
+				],
+				"center_ring": [
+					"front_harness_thighs_rings_body.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"enableCond": [
+				[
+					{
+						"module": "thighs",
+						"operator": "=",
+						"value": "yes"
+					}
+				]
+			],
+			"name": "Front Thighs Body",
+			"points": "body",
+			"automeshTemplate": "aboveBody",
+			"disabledTemplateParts": [
+				"arms"
+			],
+			"graphicalLayers": [
 				{
 					"name": "Belts",
 					"colorizationKey": "leather"
@@ -773,17 +815,14 @@
 			],
 			"imageMap": {
 				"no": [
-					"front_harness_thighs_rings_body.png",
 					"front_harness_thighs_belts_body.png",
 					"front_harness_thighs_bolts_body.png"
 				],
 				"basic": [
-					"front_harness_thighs_rings_body.png",
 					"front_harness_thighs_belts_body_top.png",
 					"front_harness_thighs_bolts_body_top.png"
 				],
 				"center_ring": [
-					"front_harness_thighs_rings_body.png",
 					"front_harness_thighs_belts_body_top.png",
 					"front_harness_thighs_bolts_body_top.png"
 				]
