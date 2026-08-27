@@ -115,15 +115,27 @@
 			"variables": [
 				{
 					"type": "typedModule",
+					"module": "chest"
+				},
+				{
+					"type": "typedModule",
 					"module": "waist"
 				}
 			],
 			"imageMap": {
-				"no": [
+				"no:no": [
 					"",
 					""
 				],
-				"yes": [
+				"no:yes": [
+					"front_harness_waist_rings_static.png",
+					""
+				],
+				"yes:no": [
+					"",
+					""
+				],
+				"yes:yes": [
 					"front_harness_waist_rings_static.png",
 					"front_harness_waist_belts_static.png"
 				]
@@ -185,15 +197,25 @@
 			"variables": [
 				{
 					"type": "typedModule",
+					"module": "chest"
+				},
+				{
+					"type": "typedModule",
 					"module": "waist"
 				}
 			],
 			"imageMap": {
-				"no": [
+				"no:no": [
 					""
 				],
-				"yes": [
+				"no:yes": [
 					"front_harness_waist_bolts_static.png"
+				],
+				"yes:no": [
+					""
+				],
+				"yes:yes": [
+					"front_harness_waist_bolts_static_top.png"
 				]
 			}
 		},
