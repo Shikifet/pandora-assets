@@ -17,10 +17,10 @@ DefineAsset({
 		},
 	},
 	//roomDeployment: {
-	//	autoDeployRelativePosition: [75, -40, 0],
+	//autoDeployRelativePosition: [75, -40, 0],
 	//},
-	// size:200, y:400, centered
-	preview: null,//'preview.png',
+	// size:450, y:377, centered
+	preview: 'preview_white.png',
 	attributes: {
 		provides: [
 			'Restraint',
@@ -58,7 +58,7 @@ DefineAsset({
 					name: 'Yes',
 					properties: {
 						stateFlags: {
-							provides: ['waist_ring']
+							provides: ['waist_ring'],
 						},
 					},
 				},
