@@ -551,12 +551,12 @@
 			 ],
 			"imageMap": {
 				"no": [
-					"back_harness_waist_buckles_details_static.png",
-					"back_harness_waist_buckles_static.png"
+					"back_harness_waist_buckles_details_static_simple.png",
+					"back_harness_waist_buckles_static_simple.png"
 				],
 				"basic": [
-					"back_harness_waist_buckles_details_static.png",
-					"back_harness_waist_buckles_static.png"
+					"back_harness_waist_buckles_details_static_simple.png",
+					"back_harness_waist_buckles_static_simple.png"
 				],
 				"center_ring": [
 					"",
