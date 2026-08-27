@@ -341,42 +341,7 @@
 				]
 			}
 		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"type": "autoMesh",
-			"name": "Back Chest Belts Static",
-			"points": "static",
-			"automeshTemplate": "belowBody",
-			"disabledTemplateParts": [
-				"arms",
-				"legs"
-			],
-			"enableCond": [
-				[
-					{
-						"module": "chest",
-						"operator": "=",
-						"value": "yes"
-					}
-				]
-			],
-			"graphicalLayers": [
 				{
-					"name": "Belts",
-					"colorizationKey": "leather"
-				}
-			],
-			"variables": [ ],
-			"imageMap": {
-				"": [
-					"back_harness_chest_belts_static.png"
-				]
-			}
-		},
-		{
 			"x": 0,
 			"y": 0,
 			"width": 1000,
@@ -411,6 +376,52 @@
 				]
 			}
 		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Back Chest Belts Static",
+			"points": "static",
+			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
+			"enableCond": [
+				[
+					{
+						"module": "chest",
+						"operator": "=",
+						"value": "yes"
+					}
+				]
+			],
+			"graphicalLayers": [
+				{
+					"name": "Belts",
+					"colorizationKey": "leather"
+				},
+				{
+					"name": "Buckles Details",
+					"colorizationKey": "leather"
+				},
+				{
+					"name": "Buckles",
+					"colorizationKey": "buckles"
+				}
+			],
+			"variables": [ ],
+			"imageMap": {
+				"": [
+					"back_harness_chest_belts_static.png",
+					"back_harness_chest_buckles_details_static.png",
+					"back_harness_chest_buckles_static.png"
+				]
+			}
+		},
+
 		{
 			"x": 0,
 			"y": 0,
