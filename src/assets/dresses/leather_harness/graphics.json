@@ -7,8 +7,15 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Belt Front",
+			"name": "Front Static",
 			"points": "static",
+			"enableCond": [
+				[
+					{
+						"view": "front"
+					}
+				]
+			],
 			"automeshTemplate": "aboveBody",
 			"disabledTemplateParts": [
 				"arms",
@@ -26,6 +33,10 @@
 				{
 					"name": "Breasts",
 					"colorizationKey": "leather"
+				},
+				{
+					"name": "Bolts",
+					"colorizationKey": "bolts"
 				}
 			],
 			"variables": [
@@ -41,31 +52,35 @@
 				}
 			],
 			"imageMap": {
-
-				"-180": [
-					"front_harness_chest_rings_static_a.png",
-					"front_harness_chest_belts_static_a.png",
-					"front_harness_chest_belts_breasts_static_ab.png"
-				],
-				"-125": [
-					"front_harness_chest_rings_static_a.png",
-					"front_harness_chest_belts_static_a.png",
-					"front_harness_chest_belts_breasts_static_ab.png"
-				],
-				"-35": [
-					"front_harness_chest_rings_static_a.png",
-					"front_harness_chest_belts_static_a.png",
-					"front_harness_chest_belts_breasts_static_c.png"
-				],
 				"50": [
 					"front_harness_chest_rings_static_a.png",
 					"front_harness_chest_belts_static_a.png",
-					"front_harness_chest_belts_breasts_static_d.png"
+					"front_harness_chest_belts_breasts_static_d.png",
+					"front_harness_chest_bolts_static.png"
 				],
 				"160": [
 					"front_harness_chest_rings_static_a.png",
 					"front_harness_chest_belts_static_a.png",
-					"front_harness_chest_belts_breasts_static_e.png"
+					"front_harness_chest_belts_breasts_static_e.png",
+					"front_harness_chest_bolts_static.png"
+				],
+				"-180": [
+					"front_harness_chest_rings_static_a.png",
+					"front_harness_chest_belts_static_a.png",
+					"front_harness_chest_belts_breasts_static_ab.png",
+					"front_harness_chest_bolts_static.png"
+				],
+				"-125": [
+					"front_harness_chest_rings_static_a.png",
+					"front_harness_chest_belts_static_a.png",
+					"front_harness_chest_belts_breasts_static_ab.png",
+					"front_harness_chest_bolts_static.png"
+				],
+				"-35": [
+					"front_harness_chest_rings_static_a.png",
+					"front_harness_chest_belts_static_a.png",
+					"front_harness_chest_belts_breasts_static_c.png",
+					"front_harness_chest_bolts_static.png"
 				]
 			}
 		},
@@ -75,7 +90,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Belt Front",
+			"name": "Front Waist Static",
 			"points": "static",
 			"automeshTemplate": "aboveBody",
 			"disabledTemplateParts": [
@@ -115,7 +130,7 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Belt Front",
+			"name": "Belt Front Waist Body",
 			"points": "body",
 			"automeshTemplate": "aboveBody",
 			"disabledTemplateParts": [
@@ -136,7 +151,7 @@
 			],
 			"imageMap": {
 				"no": [
-
+					""
 				],
 				"yes": [
 					"front_harness_waist_belts_body.png"
@@ -149,7 +164,41 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Belt Front",
+			"name": "Front Waist Bolt Static",
+			"points": "static",
+			"automeshTemplate": "aboveBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
+			"graphicalLayers": [
+				{
+					"name": "Bolts",
+					"colorizationKey": "bolts"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "waist"
+				}
+			],
+			"imageMap": {
+				"no": [
+					""
+				],
+				"yes": [
+					"front_harness_waist_bolts_static.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Front Hip Static",
 			"points": "static",
 			"automeshTemplate": "aboveBody",
 			"disabledTemplateParts": [
@@ -173,7 +222,7 @@
 				}
 			],
 			"imageMap": {
-				"none": [
+				"no": [
 					"",
 					""
 				],
@@ -193,7 +242,16 @@
 			"width": 1000,
 			"height": 1500,
 			"type": "autoMesh",
-			"name": "Belt Front",
+			"enableCond": [
+				[
+					{
+						"module": "hips",
+						"operator": "!=",
+						"value": "no"
+					}
+				]
+			],
+			"name": "Belt Hips Front Body",
 			"points": "body",
 			"automeshTemplate": "aboveBody",
 			"disabledTemplateParts": [
@@ -204,13 +262,231 @@
 				{
 					"name": "Belts",
 					"colorizationKey": "leather"
+				},
+				{
+					"name": "Bolts",
+					"colorizationKey": "bolts"
+				}
+			],
+			"variables": [],
+			"imageMap": {
+				"": [
+					"front_harness_hips_belts_body.png",
+					"front_harness_hips_bolts_body.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Front Hip Bolt Static",
+			"points": "static",
+			"automeshTemplate": "aboveBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
+			"graphicalLayers": [
+				{
+					"name": "Bolts",
+					"colorizationKey": "bolts"
 				}
 			],
 			"variables": [
+				{
+					"type": "typedModule",
+					"module": "hips"
+				}
 			],
 			"imageMap": {
+				"no": [
+					""
+				],
+				"basic": [
+					"front_harness_hips_bolts_static_simple.png"
+
+				],
+				"center_ring": [
+					"front_harness_hips_bolts_static.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Back Chest Belts Static",
+			"points": "static",
+			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
+			"graphicalLayers": [
+				{
+					"name": "Belts",
+					"colorizationKey": "leather"
+				}
+			],
+			"variables": [ ],
+			"imageMap": {
 				"": [
-					"front_harness_hips_belts_body.png"
+					"back_harness_chest_belts_static.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Back Waist Belts Body",
+			"points": "body",
+			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
+			"graphicalLayers": [
+				{
+					"name": "Belts",
+					"colorizationKey": "leather"
+				}
+			],
+			"variables": [ ],
+			"imageMap": {
+				"": [
+					"back_harness_chest_belts_body.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Back Hips Static",
+			"points": "static",
+			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
+			"graphicalLayers": [
+				{
+					"name": "Rings",
+					"colorizationKey": "rings"
+				},
+				{
+					"name": "Belts",
+					"colorizationKey": "leather"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "hips"
+				}
+			],
+			"imageMap": {
+				"no": [
+
+				],
+				"basic": [
+					"back_harness_hips_rings_static_simple.png",
+					"back_harness_hips_belts_static_simple.png"
+				],
+				"center_ring": [
+					"back_harness_hips_rings_static.png",
+					"back_harness_hips_belts_static.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Back Waist Belts Body",
+			"points": "body",
+			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
+			"enableCond": [
+				[
+					{
+						"module": "waist",
+						"operator": "!=",
+						"value": "no"
+					}
+				]
+			],
+			"graphicalLayers": [
+				{
+					"name": "Belts",
+					"colorizationKey": "leather"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "hips"
+				}
+			 ],
+			"imageMap": {
+				"no": [
+					"back_harness_waist_belts_body.png"
+				],
+				"basic": [
+					"back_harness_waist_belts_body.png"
+				],
+				"center_ring": [
+					"back_harness_waist_hips_belts_body.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Back Hips Belts Body",
+			"points": "body",
+			"automeshTemplate": "belowBody",
+			"disabledTemplateParts": [
+				"arms",
+				"legs"
+			],
+			"enableCond": [
+				[
+					{
+						"module": "hips",
+						"operator": "!=",
+						"value": "no"
+					}
+				]
+			],
+			"graphicalLayers": [
+				{
+					"name": "Belts",
+					"colorizationKey": "leather"
+				}
+			],
+			"variables": [ ],
+			"imageMap": {
+				"": [
+					"back_harness_hips_belts_body.png"
 				]
 			}
 		}

@@ -11,6 +11,10 @@ DefineAsset({
 			name: 'Rings',
 			default: '#DADADA',
 		},
+		bolts: {
+			name: 'Bolts',
+			default: '#DADADA',
+		},
 	},
 	//roomDeployment: {
 	//	autoDeployRelativePosition: [75, -40, 0],
@@ -42,7 +46,7 @@ DefineAsset({
 		},
 		waist: {
 			type: 'typed',
-			name: 'Chest Model',
+			name: 'Waist Model',
 			variants: [
 				{
 					id: 'no',
@@ -52,6 +56,11 @@ DefineAsset({
 				{
 					id: 'yes',
 					name: 'Yes',
+					properties: {
+						stateFlags: {
+							provides: ['waist_ring']
+						},
+					},
 				},
 			],
 		},
@@ -71,6 +80,13 @@ DefineAsset({
 				{
 					id: 'center_ring',
 					name: 'Center Ring',
+					properties: {
+						stateFlags: {
+							requires: {
+								waist_ring: 'Hips center ring requires waist ring',
+							},
+						},
+					},
 				},
 			],
 		},
