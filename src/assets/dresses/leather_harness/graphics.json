@@ -409,7 +409,7 @@
 				},
 				{
 					"name": "Buckles",
-					"colorizationKey": "buckles"
+					"colorizationKey": "rings"
 				}
 			],
 			"variables": [ ],
@@ -671,6 +671,14 @@
 				{
 					"name": "Bolts",
 					"colorizationKey": "bolts"
+				},
+				{
+					"name": "Buckles_details",
+					"colorizationKey": "leather"
+				},
+				{
+					"name": "Buckles",
+					"colorizationKey": "rings"
 				}
 			],
 			"variables": [
@@ -723,12 +731,22 @@
 				{
 					"name": "Belts",
 					"colorizationKey": "leather"
+				},
+				{
+					"name": "Buckles Details",
+					"colorizationKey": "leather"
+				},
+				{
+					"name": "Buckles",
+					"colorizationKey": "rings"
 				}
 			],
 			"variables": [ ],
 			"imageMap": {
 				"": [
-					"back_harness_thighs_belts_body.png"
+					"back_harness_thighs_belts_body.png",
+					"back_harness_thighs_buckles_details_body.png",
+					"back_harness_thighs_buckles_body.png"
 				]
 			}
 		}
