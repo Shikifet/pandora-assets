@@ -764,14 +764,6 @@
 				{
 					"name": "Bolts",
 					"colorizationKey": "bolts"
-				},
-				{
-					"name": "Buckles_details",
-					"colorizationKey": "leather"
-				},
-				{
-					"name": "Buckles",
-					"colorizationKey": "rings"
 				}
 			],
 			"variables": [
