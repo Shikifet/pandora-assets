@@ -6,273 +6,35 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
-			"type": "mesh",
-			"name": "small ring strap",
-			"priority": "BELOW_ARM_LEFT",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "straps",
-			"image": {
-				"image": "",
-				"overrides": [
+			"type": "autoMesh",
+			"enableCond": [
+				[
 					{
-						"image": "armbinder_small_ring_strap.png",
-						"condition": [
-							[
-								{
-									"module": "gloveRing",
-									"operator": "=",
-									"value": "ring"
-								}
-							]
-						]
+						"module": "gloveRing",
+						"operator": "=",
+						"value": "ring"
 					}
 				]
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "small ring",
-			"priority": "BELOW_ARM_LEFT",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "bigRings",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "armbinder_small_ring.png",
-						"condition": [
-							[
-								{
-									"module": "gloveRing",
-									"operator": "=",
-									"value": "ring"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "small ring strap",
-			"priority": "BELOW_ARM_LEFT",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "straps",
-			"image": {
-				"image": "",
-				"overrides": [
-					{
-						"image": "armbinder_small_ring_strap.png",
-						"condition": [
-							[
-								{
-									"module": "gloveRing",
-									"operator": "=",
-									"value": "ring"
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "glove",
-			"priority": "BELOW_ARM_LEFT",
-			"points": "custom_arm_restraints_armbinder_glove",
-			"mirror": 0,
-			"colorizationKey": "glove",
-			"image": {
-				"image": "armbinder_glove.png",
-				"overrides": [
-					{
-						"image": "armbinder_glove_tight.png",
-						"condition": [
-							[
-								{
-									"module": "lacing",
-									"operator": "=",
-									"value": "tight"
-								}
-							]
-						]
-					},
-					{
-						"image": "armbinder_glove_bigarms.png",
-						"condition": [
-							[
-								{
-									"bone": "arm_width",
-									"operator": ">",
-									"value": 0
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "shine",
-			"priority": "BELOW_ARM_LEFT",
-			"points": "custom_arm_restraints_armbinder_glove",
-			"mirror": 0,
-			"colorizationKey": "glove",
-			"image": {
-				"image": "armbinder_shine.png",
-				"overrides": []
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "large ring",
-			"priority": "BELOW_BODY",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "bigRings",
-			"image": {
-				"image": "armbinder_big_ring.png",
-				"overrides": []
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "straps",
-			"priority": "BELOW_ARM_LEFT",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "straps",
-			"image": {
-				"image": "armbinder_straps.png",
-				"overrides": []
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "shoulder straps",
-			"priority": "BELOW_BODY",
-			"points": "body",
-			"pointType": [
-				"body",
-				"body_l",
-				"body_r",
-				"bodyarm_l",
-				"bodyarm_r",
-				"bodyleg_l",
-				"bodyleg_r"
 			],
-			"mirror": 0,
-			"colorizationKey": "straps",
-			"image": {
-				"image": "armbinder_shoulder_straps.png",
-				"overrides": []
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "seam",
-			"priority": "BELOW_ARM_LEFT",
+			"name": "Small Ring",
 			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "glove",
-			"image": {
-				"image": "armbinder_seam.png",
-				"overrides": []
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "rings",
-			"priority": "BELOW_ARM_LEFT",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "smallRings",
-			"image": {
-				"image": "armbinder_rings.png",
-				"overrides": []
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "strings",
-			"priority": "BELOW_ARM_LEFT",
-			"points": "static",
-			"mirror": 0,
-			"colorizationKey": "strings",
-			"image": {
-				"image": "armbinder_strings.png",
-				"overrides": []
-			}
-		},
-		{
-			"x": 0,
-			"y": 0,
-			"width": 1000,
-			"height": 1500,
-			"type": "mesh",
-			"name": "shoulder straps front",
-			"priority": "ABOVE_BODY",
-			"points": "body",
-			"pointType": [
-				"body",
-				"body_l",
-				"body_r",
-				"bodyarm_l",
-				"bodyarm_r",
-				"bodyleg_l",
-				"bodyleg_r"
+			"automeshTemplate": "belowArms",
+			"graphicalLayers": [
+				{
+					"name": "Straps",
+					"colorizationKey": "straps"
+				},
+				{
+					"name": "Ring",
+					"colorizationKey": "bigRings"
+				}
 			],
-			"mirror": 0,
-			"colorizationKey": "straps",
-			"image": {
-				"image": "armbinder_straps_front.png",
-				"overrides": []
+			"variables": [],
+			"imageMap": {
+				"": [
+					"armbinder_small_ring_strap.png",
+					"armbinder_small_ring.png"
+				]
 			}
 		},
 		{
@@ -280,39 +42,175 @@
 			"y": 0,
 			"width": 1000,
 			"height": 1500,
-			"type": "mesh",
-			"name": "glove front",
-			"priority": "ABOVE_ARM_RIGHT",
-			"points": "custom_arm_restraints_armbinder_glove",
-			"mirror": 0,
-			"colorizationKey": "glove",
-			"image": {
-				"image": "armbinder_glove.png",
-				"overrides": [
-					{
-						"image": "armbinder_glove_tight.png",
-						"condition": [
-							[
-								{
-									"module": "lacing",
-									"operator": "=",
-									"value": "tight"
-								}
-							]
-						]
-					},
-					{
-						"image": "armbinder_glove_bigarms.png",
-						"condition": [
-							[
-								{
-									"bone": "arm_width",
-									"operator": ">",
-									"value": 0
-								}
-							]
-						]
-					}
+			"type": "autoMesh",
+			"name": "Glove",
+			"points": "static",
+			"automeshTemplate": "belowArms",
+			"graphicalLayers": [
+				{
+					"name": "Glove",
+					"colorizationKey": "glove"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "lacing"
+				},
+				{
+					"type": "bone",
+					"bone": "arm_width",
+					"stops": [
+						0
+					]
+				}
+			],
+			"imageMap": {
+				"normal:-180": [
+					"armbinder_glove.png"
+				],
+				"tight:-180": [
+					"armbinder_glove_tight.png"
+				],
+				"normal:0": [
+					"armbinder_glove_bigarms.png"
+				],
+				"tight:0": [
+					"armbinder_glove_tight.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Glove Details",
+			"points": "static",
+			"automeshTemplate": "belowArms",
+			"graphicalLayers": [
+				{
+					"name": "Glove",
+					"colorizationKey": "glove"
+				},
+				{
+					"name": "Big Ring",
+					"colorizationKey": "bigRings"
+				},
+				{
+					"name": "Straps",
+					"colorizationKey": "straps"
+				},
+				{
+					"name": "Seam",
+					"colorizationKey": "glove"
+				},
+				{
+					"name": "Small Rings",
+					"colorizationKey": "smallRings"
+				},
+				{
+					"name": "Strings",
+					"colorizationKey": "strings"
+				}
+			],
+			"variables": [],
+			"imageMap": {
+				"": [
+					"armbinder_shine.png",
+					"armbinder_big_ring.png",
+					"armbinder_straps.png",
+					"armbinder_seam.png",
+					"armbinder_rings.png",
+					"armbinder_strings.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Shoulder Straps",
+			"points": "static",
+			"automeshTemplate": "belowBody",
+			"graphicalLayers": [
+				{
+					"name": "Glove",
+					"colorizationKey": "glove"
+				}
+			],
+			"variables": [],
+			"imageMap": {
+				"": [
+					"armbinder_shoulder_straps.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Shoulder Straps Front",
+			"points": "static",
+			"automeshTemplate": "aboveBody",
+			"graphicalLayers": [
+				{
+					"name": "Straps",
+					"colorizationKey": "straps"
+				}
+			],
+			"variables": [],
+			"imageMap": {
+				"": [
+					"armbinder_straps_front.png"
+				]
+			}
+		},
+		{
+			"x": 0,
+			"y": 0,
+			"width": 1000,
+			"height": 1500,
+			"type": "autoMesh",
+			"name": "Glove",
+			"points": "static",
+			"automeshTemplate": "belowBody",
+			"graphicalLayers": [
+				{
+					"name": "Glove",
+					"colorizationKey": "glove"
+				}
+			],
+			"variables": [
+				{
+					"type": "typedModule",
+					"module": "lacing"
+				},
+				{
+					"type": "bone",
+					"bone": "arm_width",
+					"stops": [
+						0
+					]
+				}
+			],
+			"imageMap": {
+				"normal:-180": [
+					"armbinder_glove.png"
+				],
+				"tight:-180": [
+					"armbinder_glove_tight.png"
+				],
+				"normal:0": [
+					"armbinder_glove_bigarms.png"
+				],
+				"tight:0": [
+					"armbinder_glove_tight.png"
 				]
 			}
 		}
