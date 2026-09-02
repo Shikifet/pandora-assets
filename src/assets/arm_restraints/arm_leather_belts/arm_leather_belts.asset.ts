@@ -34,6 +34,11 @@ DefineAsset({
 				{
 					id: 'yes',
 					name: 'Yes',
+					properties: {
+						stateFlags: {
+							provides: ['belted_arms'],
+						},
+					},
 				},
 			],
 		},
@@ -49,6 +54,11 @@ DefineAsset({
 				{
 					id: 'yes',
 					name: 'Yes',
+					properties: {
+						stateFlags: {
+							provides: ['belted_arms'],
+						},
+					},
 				},
 			],
 		},
@@ -64,6 +74,11 @@ DefineAsset({
 				{
 					id: 'yes',
 					name: 'Yes',
+					properties: {
+						stateFlags: {
+							provides: ['belted_forearms'],
+						},
+					},
 				},
 			],
 		},
@@ -80,20 +95,8 @@ DefineAsset({
 					id: 'yes',
 					name: 'Yes',
 					properties: {
-						poseLimits: {
-							arms: {
-								position: 'back',
-								rotation: 'forward',
-							},
-							bones: {
-								arm_r: 110,
-								arm_l: 110,
-								elbow_r: -15,
-								elbow_l: -15,
-							},
-							armsOrder: {
-								upper: 'right',
-							},
+						stateFlags: {
+							provides: ['belted_forearms'],
 						},
 					},
 				},
@@ -109,7 +112,44 @@ DefineAsset({
 		},
 	},
 	stateFlagCombinations: [
-
+		{
+			requiredFlags: ['belted_arms'],
+			properties: {
+				poseLimits: {
+					arms: {
+						position: 'back',
+						rotation: 'forward',
+					},
+					bones: {
+						arm_r: 110,
+						arm_l: 110,
+					},
+					armsOrder: {
+						upper: 'right',
+					},
+				},
+			}
+		},
+		{
+			requiredFlags: ['belted_forearms'],
+			properties: {
+				poseLimits: {
+					arms: {
+						position: 'back',
+						rotation: 'forward',
+					},
+					bones: {
+						arm_r: 110,
+						arm_l: 110,
+						elbow_r: -15,
+						elbow_l: -15,
+					},
+					armsOrder: {
+						upper: 'right',
+					},
+				},
+			}
+		}
 	],
 	ownership: {
 		responsibleContributor: 'Shikifet <shikifet@gmail.com>',
