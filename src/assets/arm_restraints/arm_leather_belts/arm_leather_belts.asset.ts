@@ -54,6 +54,9 @@ DefineAsset({
 						stateFlags: {
 							provides: ['belted_arms'],
 						},
+						attributes: {
+							provides: ['Elbow_belt'],
+						},
 					},
 				},
 			],
@@ -126,11 +129,14 @@ DefineAsset({
 						upper: 'right',
 					},
 				},
-			}
+			},
 		},
 		{
 			requiredFlags: ['belted_forearms'],
 			properties: {
+				effects: {
+					blockHands: true,
+				},
 				poseLimits: {
 					arms: {
 						position: 'back',
@@ -146,8 +152,8 @@ DefineAsset({
 						upper: 'right',
 					},
 				},
-			}
-		}
+			},
+		},
 	],
 	ownership: {
 		responsibleContributor: 'Shikifet <shikifet@gmail.com>',

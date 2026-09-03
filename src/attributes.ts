@@ -837,6 +837,11 @@ const ATTRIBUTES_DEFINITION_BASE = DefineAttributes({
 		description: 'A node where a E-stim box can be attached to',
 		useAsAssetPreference: false,
 	},
+	Elbow_belt: {
+		name: 'Elbow belt',
+		description: 'A belt placing elbows almost touching',
+		useAsAssetPreference: false,
+	},
 });
 
 //#endregion

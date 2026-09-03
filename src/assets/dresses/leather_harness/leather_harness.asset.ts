@@ -18,6 +18,7 @@ DefineAsset({
 		provides: [
 			'Restraint',
 			'Restraint_torso',
+			'Restraint_arms',
 		],
 	},
 	modules: {
@@ -69,12 +70,18 @@ DefineAsset({
 				{
 					id: 'basic',
 					name: 'Basic',
+					properties: {
+						stateFlags: {
+							provides: ['hip_rings'],
+						},
+					},
 				},
 				{
 					id: 'center_ring',
 					name: 'Center Ring',
 					properties: {
 						stateFlags: {
+							provides: ['hip_rings'],
 							requires: {
 								waist_ring: 'Hips center ring requires waist ring',
 							},
@@ -98,12 +105,54 @@ DefineAsset({
 				},
 			],
 		},
-		lock: {
+		lock_harness: {
+			type: 'lockSlot',
+			name: 'Lock Harness',
+			lockedProperties: {
+				blockAddRemove: true,
+				blockModules: ['colorGroupLeather', 'chest', 'waist', 'hips', 'thighs'],
+			},
+		},
+		wrists_cuffs: {
+			type: 'typed',
+			name: 'Clip cuffs',
+			variants: [
+				{
+					id: 'no',
+					name: 'No',
+					default: true,
+				},
+				{
+					id: 'yes',
+					name: 'Yes',
+					properties: {
+						effects: {
+							blockHands: true,
+						},
+						stateFlags: {
+							requires: {
+								hip_rings: 'Clipping cuffs requires enabling hips module',
+							},
+						},
+						attributes: {
+							requires: ['Elbow_belt', 'Wrist_cuffs_chainable'],
+						},
+						poseLimits: {
+							bones: {
+								elbow_l: [[-60, -50]],
+								elbow_r: [[-60, -50]],
+							},
+						},
+					},
+				},
+			],
+		},
+		lock_cuffs: {
 			type: 'lockSlot',
 			name: 'Lock',
 			lockedProperties: {
 				blockAddRemove: true,
-				blockModules: ['colorGroupLeather', 'chest', 'waist', 'hips', 'thighs'],
+				blockModules: ['wrists_cuffs'],
 			},
 		},
 	},
