@@ -11,7 +11,7 @@
 			"priority": "ABOVE_BODY",
 			"points": "skirt_static",
 			"mirror": 0,
-			"colorizationKey": "leather",
+			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -40,7 +40,7 @@
 			"priority": "ABOVE_BODY",
 			"points": "skirt_static",
 			"mirror": 0,
-			"colorizationKey": "leather",
+			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -76,7 +76,7 @@
 			"priority": "ABOVE_BODY",
 			"points": "skirt_static",
 			"mirror": 0,
-			"colorizationKey": "leather",
+			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -112,7 +112,7 @@
 			"priority": "ABOVE_BODY",
 			"points": "skirt_static",
 			"mirror": 0,
-			"colorizationKey": "leather",
+			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -141,7 +141,7 @@
 			"priority": "ABOVE_BODY",
 			"points": "skirt_static",
 			"mirror": 0,
-			"colorizationKey": "leather",
+			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -329,7 +329,7 @@
 			"priority": "ABOVE_BODY",
 			"points": "skirt_static",
 			"mirror": 0,
-			"colorizationKey": "leather",
+			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -358,7 +358,7 @@
 			"priority": "ABOVE_BODY",
 			"points": "skirt_static",
 			"mirror": 0,
-			"colorizationKey": "leather",
+			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -394,7 +394,7 @@
 			"priority": "ABOVE_BODY",
 			"points": "skirt_static",
 			"mirror": 0,
-			"colorizationKey": "leather",
+			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -430,7 +430,7 @@
 			"priority": "ABOVE_BODY",
 			"points": "skirt_static",
 			"mirror": 0,
-			"colorizationKey": "leather",
+			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -459,7 +459,7 @@
 			"priority": "ABOVE_BODY",
 			"points": "skirt_static",
 			"mirror": 0,
-			"colorizationKey": "leather",
+			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -488,7 +488,7 @@
 			"priority": "BELOW_BODY",
 			"points": "skirt_static",
 			"mirror": 0,
-			"colorizationKey": "leather",
+			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -517,7 +517,7 @@
 			"priority": "BELOW_BODY",
 			"points": "skirt_static",
 			"mirror": 0,
-			"colorizationKey": "leather",
+			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -553,7 +553,7 @@
 			"priority": "BELOW_BODY",
 			"points": "skirt_static",
 			"mirror": 0,
-			"colorizationKey": "leather",
+			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -589,7 +589,7 @@
 			"priority": "BELOW_BODY",
 			"points": "skirt_static",
 			"mirror": 0,
-			"colorizationKey": "leather",
+			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
@@ -618,7 +618,7 @@
 			"priority": "BELOW_BODY",
 			"points": "skirt_static",
 			"mirror": 0,
-			"colorizationKey": "leather",
+			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [

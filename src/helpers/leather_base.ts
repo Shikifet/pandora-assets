@@ -3,9 +3,9 @@ export function CreateLeatherColor(): {
 	modules: NonNullable<IntermediateBodypartAssetDefinition['modules']>;
 } {
 	const colorization: NonNullable<IntermediateBodypartAssetDefinition['colorization']> = {
-		leather: {
-			name: 'Leather',
-			group: 'leather',
+		belts: {
+			name: 'Belts',
+			group: 'belts',
 		},
 		buckles: {
 			name: 'Buckles',
@@ -26,7 +26,7 @@ export function CreateLeatherColor(): {
 					id: 'yes',
 					name: 'Yes',
 					properties: {
-						overrideColorKey: ['leather', 'buckles'],
+						overrideColorKey: ['belts', 'buckles'],
 					},
 				},
 			],

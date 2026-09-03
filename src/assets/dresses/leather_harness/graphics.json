@@ -33,11 +33,11 @@
 				},
 				{
 					"name": "Belts",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				},
 				{
 					"name": "Breasts",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				},
 				{
 					"name": "Bolts",
@@ -109,7 +109,7 @@
 				},
 				{
 					"name": "Belts",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				}
 			],
 			"variables": [
@@ -157,7 +157,7 @@
 			"graphicalLayers": [
 				{
 					"name": "Belts",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				}
 			],
 			"variables": [
@@ -239,7 +239,7 @@
 				},
 				{
 					"name": "Belts",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				}
 			],
 			"variables": [
@@ -288,7 +288,7 @@
 			"graphicalLayers": [
 				{
 					"name": "Belts",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				},
 				{
 					"name": "Bolts",
@@ -365,7 +365,7 @@
 			"graphicalLayers": [
 				{
 					"name": "Belts",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				}
 			],
 			"variables": [],
@@ -400,11 +400,11 @@
 			"graphicalLayers": [
 				{
 					"name": "Belts",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				},
 				{
 					"name": "Buckles Details",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				},
 				{
 					"name": "Buckles",
@@ -440,7 +440,7 @@
 				},
 				{
 					"name": "Belts",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				}
 			],
 			"variables": [
@@ -489,7 +489,7 @@
 			"graphicalLayers": [
 				{
 					"name": "Belts",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				}
 			],
 			"variables": [
@@ -535,7 +535,7 @@
 			"graphicalLayers": [
 				{
 					"name": "Buckles Details",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				},
 				{
 					"name": "Buckles",
@@ -588,7 +588,7 @@
 			"graphicalLayers": [
 				{
 					"name": "Belts",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				}
 			],
 			"variables": [],
@@ -623,7 +623,7 @@
 			"graphicalLayers": [
 				{
 					"name": "Buckles Details",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				},
 				{
 					"name": "Buckles",
@@ -800,7 +800,7 @@
 			"graphicalLayers": [
 				{
 					"name": "Belts",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				},
 				{
 					"name": "Bolts",
@@ -853,11 +853,11 @@
 			"graphicalLayers": [
 				{
 					"name": "Belts",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				},
 				{
 					"name": "Buckles Details",
-					"colorizationKey": "leather"
+					"colorizationKey": "belts"
 				},
 				{
 					"name": "Buckles",
