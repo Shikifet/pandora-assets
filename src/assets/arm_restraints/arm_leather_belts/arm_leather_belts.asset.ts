@@ -123,6 +123,8 @@ DefineAsset({
 					bones: {
 						arm_r: 110,
 						arm_l: 110,
+						elbow_r: [[-60, 40]],
+						elbow_l: [[-60, 40]],
 					},
 					armsOrder: {
 						upper: 'right',
