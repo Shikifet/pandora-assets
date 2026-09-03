@@ -145,8 +145,8 @@ DefineAsset({
 								pose: 'sitting',
 							},
 							bones: {
-								leg_r: 2,
-								leg_l: 2,
+								leg_r: 4,
+								leg_l: 4,
 							},
 						},
 						{
