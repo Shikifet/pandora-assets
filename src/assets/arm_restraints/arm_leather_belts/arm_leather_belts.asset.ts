@@ -7,10 +7,6 @@ DefineAsset({
 	graphics: 'graphics.json',
 	colorization: {
 		...baseColorization,
-		buckles: {
-			name: 'Buckles',
-			default: '#DADADA',
-		}
 	},
 	// size:450, y:377, centered
 	preview: null,

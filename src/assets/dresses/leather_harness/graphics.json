@@ -29,7 +29,7 @@
 			"graphicalLayers": [
 				{
 					"name": "Rings",
-					"colorizationKey": "rings"
+					"colorizationKey": "buckles"
 				},
 				{
 					"name": "Belts",
@@ -105,7 +105,7 @@
 			"graphicalLayers": [
 				{
 					"name": "Rings",
-					"colorizationKey": "rings"
+					"colorizationKey": "buckles"
 				},
 				{
 					"name": "Belts",
@@ -235,7 +235,7 @@
 			"graphicalLayers": [
 				{
 					"name": "Rings",
-					"colorizationKey": "rings"
+					"colorizationKey": "buckles"
 				},
 				{
 					"name": "Belts",
@@ -408,7 +408,7 @@
 				},
 				{
 					"name": "Buckles",
-					"colorizationKey": "rings"
+					"colorizationKey": "buckles"
 				}
 			],
 			"variables": [],
@@ -436,7 +436,7 @@
 			"graphicalLayers": [
 				{
 					"name": "Rings",
-					"colorizationKey": "rings"
+					"colorizationKey": "buckles"
 				},
 				{
 					"name": "Belts",
@@ -539,7 +539,7 @@
 				},
 				{
 					"name": "Buckles",
-					"colorizationKey": "rings"
+					"colorizationKey": "buckles"
 				}
 			],
 			"variables": [
@@ -627,7 +627,7 @@
 				},
 				{
 					"name": "Buckles",
-					"colorizationKey": "rings"
+					"colorizationKey": "buckles"
 				}
 			],
 			"variables": [],
@@ -755,7 +755,7 @@
 			"graphicalLayers": [
 				{
 					"name": "Rings",
-					"colorizationKey": "rings"
+					"colorizationKey": "buckles"
 				}
 			],
 			"variables": [
@@ -861,7 +861,7 @@
 				},
 				{
 					"name": "Buckles",
-					"colorizationKey": "rings"
+					"colorizationKey": "buckles"
 				}
 			],
 			"variables": [],

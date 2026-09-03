@@ -7,10 +7,6 @@ DefineAsset({
 	graphics: 'graphics.json',
 	colorization: {
 		...baseColorization,
-		rings: {
-			name: 'Rings',
-			default: '#DADADA',
-		},
 		bolts: {
 			name: 'Bolts',
 			default: '#DADADA',

@@ -7,6 +7,7 @@ export const COLOR_GROUP_DEFINITION = {
 	lips: '#FCB6B4',
 	rope: '#D7AC4D',
 	leather: '#343434',
+	buckles: '#DADADA',
 } as const satisfies Readonly<Record<string, HexRGBAColorString>>;
 
 if (Object.values(COLOR_GROUP_DEFINITION).some((color) => !HexRGBAColorStringSchema.safeParse(color).success)) {

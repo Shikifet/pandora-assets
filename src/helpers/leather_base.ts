@@ -7,6 +7,10 @@ export function CreateLeatherColor(): {
 			name: 'Leather',
 			group: 'leather',
 		},
+		buckles: {
+			name: 'Buckles',
+			group: 'buckles',
+		},
 	};
 	const modules: NonNullable<IntermediateBodypartAssetDefinition['modules']> = {
 		colorGroupLeather: {
@@ -22,7 +26,7 @@ export function CreateLeatherColor(): {
 					id: 'yes',
 					name: 'Yes',
 					properties: {
-						overrideColorKey: ['leather'],
+						overrideColorKey: ['leather', 'buckles'],
 					},
 				},
 			],
