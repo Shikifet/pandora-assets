@@ -8,8 +8,8 @@ DefineAsset({
 	colorization: {
 		...baseColorization,
 	},
-	// size:450, y:377, centered
-	preview: null,
+	// size:360, y:900, centered
+	preview: 'preview.png',
 	attributes: {
 		provides: [
 			'Restraint',
