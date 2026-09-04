@@ -12,6 +12,9 @@ DefineAsset({
 			default: '#DADADA',
 		},
 	},
+	roomDeployment: {
+		autoDeployRelativePosition: [150, -60, 0],
+	},
 	// size:450, y:377, centered
 	preview: 'preview.png',
 	attributes: {

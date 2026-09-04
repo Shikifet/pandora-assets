@@ -873,5 +873,32 @@
 				]
 			}
 		}
+	],
+	"roomLayers": [
+		{
+			"x": -400,
+			"y": -120,
+			"width": 400,
+			"height": 400,
+			"type": "autoSprite",
+			"name": "Belt",
+			"graphicalLayers": [
+				{
+					"name": "Rings",
+					"colorizationKey": "buckles"
+				},
+				{
+					"name": "Belts",
+					"colorizationKey": "belts"
+				}
+			],
+			"variables": [],
+			"imageMap": {
+				"": [
+					"room_rings.png",
+					"room_belts.png"
+				]
+			}
+		}
 	]
 }
