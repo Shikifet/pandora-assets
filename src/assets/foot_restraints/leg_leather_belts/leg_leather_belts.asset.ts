@@ -8,6 +8,9 @@ DefineAsset({
 	colorization: {
 		...baseColorization,
 	},
+	roomDeployment: {
+		autoDeployRelativePosition: [150, -60, 0],
+	},
 	// size:360, y:900, centered
 	preview: 'preview.png',
 	attributes: {

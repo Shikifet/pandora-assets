@@ -1359,5 +1359,37 @@
 				]
 			}
 		}
+	],
+	"roomLayers": [
+		{
+			"x": -125,
+			"y": -40,
+			"width": 250,
+			"height": 250,
+			"type": "autoSprite",
+			"name": "Belt",
+			"graphicalLayers": [
+				{
+					"name": "Belt",
+					"colorizationKey": "belts"
+				},
+				{
+					"name": "Buckle",
+					"colorizationKey": "buckles"
+				},
+				{
+					"name": "Buckle Details",
+					"colorizationKey": "belts"
+				}
+			],
+			"variables": [],
+			"imageMap": {
+				"": [
+					"room_belt.png",
+					"room_buckle.png",
+					"room_buckle_details.png"
+				]
+			}
+		}
 	]
 }
