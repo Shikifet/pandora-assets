@@ -118,7 +118,7 @@ DefineAsset({
 		},
 		wrists_cuffs: {
 			type: 'typed',
-			name: 'Clip cuffs',
+			name: 'Clip cuffs to hips at back',
 			variants: [
 				{
 					id: 'no',
