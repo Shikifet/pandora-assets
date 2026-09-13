@@ -106,7 +106,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "belts_knees_below_kneeling.png",
+						"image": "",
 						"condition": [
 							[
 								{
@@ -167,7 +167,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "belts_shins_kneeling.png",
+						"image": "",
 						"condition": [
 							[
 								{
@@ -211,7 +211,7 @@
 				"image": "",
 				"overrides": [
 					{
-						"image": "belts_ankles_kneeling.png",
+						"image": "",
 						"condition": [
 							[
 								{
