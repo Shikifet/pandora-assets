@@ -45,6 +45,31 @@
 				"image": "",
 				"overrides": [
 					{
+						"image": "belts_knees_above_kneeling.png",
+						"condition": [
+							[
+								{
+									"legs": "kneeling"
+								},
+								{
+									"module": "knees",
+									"operator": "=",
+									"value": "below"
+								}
+							],
+							[
+								{
+									"legs": "kneeling"
+								},
+								{
+									"module": "knees",
+									"operator": "=",
+									"value": "both"
+								}
+							]
+						]
+					},
+					{
 						"image": "belts_knees_above.png",
 						"condition": [
 							[
@@ -80,6 +105,31 @@
 			"image": {
 				"image": "",
 				"overrides": [
+					{
+						"image": "belts_knees_below_kneeling.png",
+						"condition": [
+							[
+								{
+									"legs": "kneeling"
+								},
+								{
+									"module": "knees",
+									"operator": "=",
+									"value": "below"
+								}
+							],
+							[
+								{
+									"legs": "kneeling"
+								},
+								{
+									"module": "knees",
+									"operator": "=",
+									"value": "both"
+								}
+							]
+						]
+					},
 					{
 						"image": "belts_knees_below.png",
 						"condition": [
@@ -117,6 +167,21 @@
 				"image": "",
 				"overrides": [
 					{
+						"image": "belts_shins_kneeling.png",
+						"condition": [
+							[
+								{
+									"legs": "kneeling"
+								},
+								{
+									"module": "shins",
+									"operator": "=",
+									"value": "yes"
+								}
+							]
+						]
+					},
+					{
 						"image": "belts_shins.png",
 						"condition": [
 							[
@@ -145,6 +210,21 @@
 			"image": {
 				"image": "",
 				"overrides": [
+					{
+						"image": "belts_ankles_kneeling.png",
+						"condition": [
+							[
+								{
+									"legs": "kneeling"
+								},
+								{
+									"module": "shins",
+									"operator": "=",
+									"value": "yes"
+								}
+							]
+						]
+					},
 					{
 						"image": "belts_ankles.png",
 						"condition": [
@@ -522,6 +602,31 @@
 				"image": "",
 				"overrides": [
 					{
+						"image": "belts_knees_above_kneeling.png",
+						"condition": [
+							[
+								{
+									"legs": "kneeling"
+								},
+								{
+									"module": "knees",
+									"operator": "=",
+									"value": "below"
+								}
+							],
+							[
+								{
+									"legs": "kneeling"
+								},
+								{
+									"module": "knees",
+									"operator": "=",
+									"value": "both"
+								}
+							]
+						]
+					},
+					{
 						"image": "belts_knees_above.png",
 						"condition": [
 							[
@@ -557,6 +662,31 @@
 			"image": {
 				"image": "",
 				"overrides": [
+					{
+						"image": "belts_knees_below_kneeling.png",
+						"condition": [
+							[
+								{
+									"legs": "kneeling"
+								},
+								{
+									"module": "knees",
+									"operator": "=",
+									"value": "below"
+								}
+							],
+							[
+								{
+									"legs": "kneeling"
+								},
+								{
+									"module": "knees",
+									"operator": "=",
+									"value": "both"
+								}
+							]
+						]
+					},
 					{
 						"image": "belts_knees_below.png",
 						"condition": [
@@ -594,6 +724,21 @@
 				"image": "",
 				"overrides": [
 					{
+						"image": "belts_shins_kneeling.png",
+						"condition": [
+							[
+								{
+									"legs": "kneeling"
+								},
+								{
+									"module": "shins",
+									"operator": "=",
+									"value": "yes"
+								}
+							]
+						]
+					},
+					{
 						"image": "belts_shins.png",
 						"condition": [
 							[
@@ -622,6 +767,21 @@
 			"image": {
 				"image": "",
 				"overrides": [
+					{
+						"image": "belts_ankles_kneeling.png",
+						"condition": [
+							[
+								{
+									"legs": "kneeling"
+								},
+								{
+									"module": "shins",
+									"operator": "=",
+									"value": "yes"
+								}
+							]
+						]
+					},
 					{
 						"image": "belts_ankles.png",
 						"condition": [
