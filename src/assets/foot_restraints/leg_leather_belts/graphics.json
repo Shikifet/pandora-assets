@@ -9,7 +9,7 @@
 			"type": "mesh",
 			"name": "Belt Thighs Front",
 			"priority": "ABOVE_BODY",
-			"points": "skirt_static",
+			"points": "skirt_tight",
 			"mirror": 0,
 			"colorizationKey": "belts",
 			"image": {
@@ -38,37 +38,12 @@
 			"type": "mesh",
 			"name": "Belt Knees Above Front",
 			"priority": "ABOVE_BODY",
-			"points": "skirt_static",
+			"points": "skirt_tight",
 			"mirror": 0,
 			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
-					{
-						"image": "belts_knees_above_kneeling.png",
-						"condition": [
-							[
-								{
-									"legs": "kneeling"
-								},
-								{
-									"module": "knees",
-									"operator": "=",
-									"value": "below"
-								}
-							],
-							[
-								{
-									"legs": "kneeling"
-								},
-								{
-									"module": "knees",
-									"operator": "=",
-									"value": "both"
-								}
-							]
-						]
-					},
 					{
 						"image": "belts_knees_above.png",
 						"condition": [
@@ -99,7 +74,7 @@
 			"type": "mesh",
 			"name": "Belt Knees Below Front",
 			"priority": "ABOVE_BODY",
-			"points": "skirt_static",
+			"points": "skirt_tight",
 			"mirror": 0,
 			"colorizationKey": "belts",
 			"image": {
@@ -160,7 +135,7 @@
 			"type": "mesh",
 			"name": "Belt Shins Below Front",
 			"priority": "ABOVE_BODY",
-			"points": "skirt_static",
+			"points": "skirt_tight",
 			"mirror": 0,
 			"colorizationKey": "belts",
 			"image": {
@@ -204,7 +179,7 @@
 			"type": "mesh",
 			"name": "Belt Ankles Below Front",
 			"priority": "ABOVE_BODY",
-			"points": "skirt_static",
+			"points": "skirt_tight",
 			"mirror": 0,
 			"colorizationKey": "belts",
 			"image": {
@@ -566,7 +541,7 @@
 			"type": "mesh",
 			"name": "Belt Thighs Back",
 			"priority": "BELOW_BODY",
-			"points": "skirt_static",
+			"points": "skirt_tight",
 			"mirror": 0,
 			"colorizationKey": "belts",
 			"image": {
@@ -595,37 +570,12 @@
 			"type": "mesh",
 			"name": "Belt Knees Above Back",
 			"priority": "BELOW_BODY",
-			"points": "skirt_static",
+			"points": "skirt_tight",
 			"mirror": 0,
 			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
-					{
-						"image": "belts_knees_above_kneeling.png",
-						"condition": [
-							[
-								{
-									"legs": "kneeling"
-								},
-								{
-									"module": "knees",
-									"operator": "=",
-									"value": "below"
-								}
-							],
-							[
-								{
-									"legs": "kneeling"
-								},
-								{
-									"module": "knees",
-									"operator": "=",
-									"value": "both"
-								}
-							]
-						]
-					},
 					{
 						"image": "belts_knees_above.png",
 						"condition": [
@@ -656,37 +606,12 @@
 			"type": "mesh",
 			"name": "Belt Knees Below Back",
 			"priority": "BELOW_BODY",
-			"points": "skirt_static",
+			"points": "skirt_tight",
 			"mirror": 0,
 			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
-					{
-						"image": "belts_knees_below_kneeling.png",
-						"condition": [
-							[
-								{
-									"legs": "kneeling"
-								},
-								{
-									"module": "knees",
-									"operator": "=",
-									"value": "below"
-								}
-							],
-							[
-								{
-									"legs": "kneeling"
-								},
-								{
-									"module": "knees",
-									"operator": "=",
-									"value": "both"
-								}
-							]
-						]
-					},
 					{
 						"image": "belts_knees_below.png",
 						"condition": [
@@ -717,27 +642,12 @@
 			"type": "mesh",
 			"name": "Belt Shins Below Back",
 			"priority": "BELOW_BODY",
-			"points": "skirt_static",
+			"points": "skirt_tight",
 			"mirror": 0,
 			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
-					{
-						"image": "belts_shins_kneeling.png",
-						"condition": [
-							[
-								{
-									"legs": "kneeling"
-								},
-								{
-									"module": "shins",
-									"operator": "=",
-									"value": "yes"
-								}
-							]
-						]
-					},
 					{
 						"image": "belts_shins.png",
 						"condition": [
@@ -761,27 +671,12 @@
 			"type": "mesh",
 			"name": "Belt Ankles Below Back",
 			"priority": "BELOW_BODY",
-			"points": "skirt_static",
+			"points": "skirt_tight",
 			"mirror": 0,
 			"colorizationKey": "belts",
 			"image": {
 				"image": "",
 				"overrides": [
-					{
-						"image": "belts_ankles_kneeling.png",
-						"condition": [
-							[
-								{
-									"legs": "kneeling"
-								},
-								{
-									"module": "shins",
-									"operator": "=",
-									"value": "yes"
-								}
-							]
-						]
-					},
 					{
 						"image": "belts_ankles.png",
 						"condition": [
