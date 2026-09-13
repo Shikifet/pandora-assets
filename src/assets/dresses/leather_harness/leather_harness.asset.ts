@@ -138,7 +138,7 @@ DefineAsset({
 							},
 						},
 						attributes: {
-							requires: ['Elbow_belt', 'Wrist_cuffs_chainable'],
+							requires: ['Elbows_restraint', 'Wrist_cuffs_chainable'],
 						},
 						poseLimits: {
 							bones: {
@@ -152,7 +152,7 @@ DefineAsset({
 		},
 		lock_cuffs: {
 			type: 'lockSlot',
-			name: 'Lock',
+			name: 'Lock for Cuffs',
 			lockedProperties: {
 				blockAddRemove: true,
 				blockModules: ['wrists_cuffs'],

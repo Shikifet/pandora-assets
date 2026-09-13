@@ -58,7 +58,7 @@ DefineAsset({
 							provides: ['belted_arms'],
 						},
 						attributes: {
-							provides: ['Elbow_belt'],
+							provides: ['Elbows_restraint'],
 						},
 					},
 				},
